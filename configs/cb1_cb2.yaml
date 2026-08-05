@@ -1,0 +1,60 @@
+# Dual Janus screen: CB1 antagonist + CB2 agonist
+name: janus_cb1ant_cb2ago
+focus: endocannabinoid
+profile: janus_cannabinoid
+
+targets:
+  cb1:
+    name: CB1
+    gene: CNR1
+    uniprot: P21554
+    desired_activity: antagonist
+    # Prefer antagonist-bound PDB when available (update after structure pick)
+    pdb: null
+  cb2:
+    name: CB2
+    gene: CNR2
+    uniprot: P34972
+    desired_activity: agonist
+    pdb: null
+
+rationale: >
+  Screen for dual ligands that antagonize CB1 while agonizing CB2
+  (Janus / Yin-Yang cannabinoids), in chemical space related to
+  CBD-like scaffolds without requiring CBD itself as the hit.
+
+seeds:
+  # Literature dual / Janus references (fill SMILES in data/libraries later)
+  - URB447
+  - AM12435
+  - GW405833
+  - AM1710
+
+library:
+  chemreps_gz: data/raw/chembl_chemreps.txt.gz
+  sample_size: 50000
+  seed: 42
+
+paths:
+  library: data/libraries/chembl_batch.smi
+  hits: results/hits/janus_dual_ranked.csv
+  report: results/reports/janus_dual_report.md
+  poses_cb1: results/docking/cb1
+  poses_cb2: results/docking/cb2
+
+filters:
+  min_mw: 200
+  max_mw: 550
+  min_logp: 0.0
+  max_logp: 6.0
+  max_hbd: 5
+  max_hba: 10
+  max_rotb: 12
+  max_tpsa: 120
+
+docking:
+  enabled: false
+  exhaustiveness: 8
+  num_modes: 9
+  # Ranking: favor strong CB1 antagonist pose + strong CB2 agonist pose
+  score_mode: dual_janus
