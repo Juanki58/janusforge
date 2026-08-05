@@ -1,7 +1,12 @@
 # Dual Janus screen: CB1 antagonist + CB2 agonist
+# Brújula: cannabis-first + análogos THCV-like; receptor limpio primero;
+# fibrosis/IPF = filtro de indicación segundo (no justifica CB1 sucio)
 name: janus_cb1ant_cb2ago
-focus: endocannabinoid
-profile: janus_cannabinoid
+focus: cannabis_chemome_cb1ant_cb2ago
+indication: idiopathic_pulmonary_fibrosis  # indication filter AFTER clean receptor profile
+profile: janus_cannabinoid  # CB1 antagonist + CB2 agonist (Yin-Yang)
+chemical_north: cannabis_first_thcv_seed_analogs_allowed
+aging_context: fibrosis_as_aging_hallmark
 
 targets:
   cb1:
@@ -9,26 +14,62 @@ targets:
     gene: CNR1
     uniprot: P21554
     desired_activity: antagonist
-    # Prefer antagonist-bound PDB when available (update after structure pick)
-    pdb: null
+    role_in_fibrosis: profibrotic_proinflammatory_when_overactive
+    # Antagonist-bound structure for docking (AM6538)
+    pdb: 5TGZ
+    pdb_notes: Crystal structure of human CB1 with stabilizing antagonist AM6538
+    # Contrast (do not optimize toward): agonist-bound 5XRA / 5XR8
   cb2:
     name: CB2
     gene: CNR2
     uniprot: P34972
     desired_activity: agonist
-    pdb: null
+    role_in_fibrosis: antifibrotic_antiinflammatory_when_activated
+    # Agonist-bound / active-state structure for docking
+    pdb: 6PT0
+    pdb_notes: Cryo-EM CB2-Gi with agonist WIN 55,212-2; alt 6KPF
+    # Contrast: antagonist-bound 5ZTY (AM10257)
 
 rationale: >
-  Screen for dual ligands that antagonize CB1 while agonizing CB2
-  (Janus / Yin-Yang cannabinoids), in chemical space related to
-  CBD-like scaffolds without requiring CBD itself as the hit.
+  Cannabis-first: fitocannabinoides naturales como template/PoC; semilla
+  prioritaria Δ9-THCV (Janus imperfecto con flip CB1 dosis-dependiente).
+  Análogos cercanos / semi-sintéticos THCV-like permitidos (cadena alquílica,
+  esterificación, bioisósteros del resorcinol) para limpiar flip CB1, ADME y
+  periferia. Prioridad absoluta: perfil receptor limpio CB1 ant / CB2 ago;
+  fibrosis/IPF es el para-qué (filtro de indicación después), no una excusa
+  para farmacología CB1 sucia. URB447 y duales sintéticos = comparadores de
+  diseño, no norte cannabis. CBD-like = región/control, sin exigir CBD como
+  hit. Preferir acción periférica (evitar antagonismo CB1 central tipo
+  rimonabant). Ver docs/quimioma_cannabico_cb1_cb2.md y
+  docs/literatura_fibrosis_cb1_cb2.md.
+
+disease_rationale:
+  primary: IPF
+  secondary:
+    - pulmonary_fibrosis_bleomycin_models
+    - liver_fibrosis
+    - kidney_fibrosis
+    - cardiac_fibrosis
+    - skin_fibrosis
+  key_refs:
+    - doi: 10.1038/sj.bjp.0707442     # Pertwee THCV / CBD / THC CB1-CB2
+    - doi: 10.1111/bph.12944          # McPartland CBD/THCV systematic review
+    - doi: 10.1172/jci.insight.92281  # CB1 overactivity in IPF
+    - doi: 10.1172/jci.insight.187967  # CB1 in profibrotic alveolar macrophages
+    - doi: 10.1002/prp2.1219          # CB2 agonists in organ fibrosis
+    - doi: 10.1186/s12890-023-02747-3 # JWH133 pulmonary fibrosis
+    - doi: 10.1016/j.bmcl.2008.12.059 # URB447 design comparator
 
 seeds:
-  # Literature dual / Janus references (fill SMILES in data/libraries later)
-  - URB447
+  # Cannabis-first seed + design comparators (fill SMILES in data/libraries later)
+  - THCV            # natural Janus-imperfect prototype (CB1 flip at high dose)
+  - THCVA           # acid / polarity / periphery hypothesis
+  - CBDV            # varin scaffold secondary
+  - URB447          # synthetic design comparator: peripheral CB1 ant / CB2 ago
   - AM12435
   - GW405833
   - AM1710
+  # Controls / anti-seeds (for contrast, not optimization targets): THC, CBD, THCP
 
 library:
   chemreps_gz: data/raw/chembl_chemreps.txt.gz
@@ -41,6 +82,8 @@ paths:
   report: results/reports/janus_dual_report.md
   poses_cb1: results/docking/cb1
   poses_cb2: results/docking/cb2
+  literature: docs/literatura_fibrosis_cb1_cb2.md
+  chemome: docs/quimioma_cannabico_cb1_cb2.md
 
 filters:
   min_mw: 200
@@ -51,6 +94,8 @@ filters:
   max_hba: 10
   max_rotb: 12
   max_tpsa: 120
+  # Prefer peripheral-leaning properties; refine when CNS-penetration model lands
+  prefer_peripheral: true
 
 docking:
   enabled: false
@@ -58,3 +103,5 @@ docking:
   num_modes: 9
   # Ranking: favor strong CB1 antagonist pose + strong CB2 agonist pose
   score_mode: dual_janus
+  cb1_structure_mode: antagonist
+  cb2_structure_mode: agonist
