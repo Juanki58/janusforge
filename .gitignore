@@ -23,7 +23,8 @@ Thumbs.db
 # --- Sensitive / bulky science data: never push ---
 data/raw/
 data/processed/
-data/libraries/
+data/libraries/*
+!data/libraries/quimioma_semillas.csv
 data/targets/**/*.pdb
 data/targets/**/*.pdbqt
 results/docking/
@@ -41,6 +42,9 @@ results/reports/figures/
 *.csv
 *.tsv
 *.xlsx
+
+# Small curated seed library (operational chemome map; not a mass hit table)
+!data/libraries/quimioma_semillas.csv
 
 # Allow markdown reports under results/reports/
 !results/reports/

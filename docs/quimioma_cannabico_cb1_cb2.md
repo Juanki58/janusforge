@@ -28,38 +28,61 @@ Este documento fija la **brújula química** del proyecto: un mapa vivo del **qu
 
 ## 3. Matriz del Quimioma Cannábico
 
-Convenciones de la columna **Diagnóstico**:
+**Tabla operativa (trackeable):** [`../data/libraries/quimioma_semillas.csv`](../data/libraries/quimioma_semillas.csv)  
+Columnas: `name`, `common_name`, `category`, `smiles`, `role`, perfiles CB1/CB2, notas fibrosis, refs, `confidence`, `notes`.  
+SMILES curados desde PubChem (CID en `notes`); no inventados. Si faltara confianza en una estructura futura, `smiles` vacío + `confidence=low`.
 
-- **semilla** — PoC natural o análogo cercano del perfil Janus deseado; punto de partida de optimización.
-- **secundaria** — interés químico o periférico, pero no prototipo Janus claro.
-- **interesante** — señal parcial o hipótesis abierta; evidencia incompleta.
-- **control** — referencia conocida (agonista, polifarmacológico, etc.) para contrastar ensayos.
-- **anti-semilla** — perfil incompatible con el norte (p. ej. agonismo CB1 fuerte); no optimizar hacia aquí.
-- **ambiguo / poco caracterizado** — datos insuficientes o contradictorios; no asignar afinidades firmes.
+### 3.1. Cómo leer el `role`
 
-Los perfiles CB1/CB2 se redactan en lenguaje funcional (antagonista, agonista parcial, baja afinidad, etc.). Donde no hay consenso firme se marca **evidencia limitada** o **poco caracterizado**. No se inventan Ki/IC50; cuando se citan órdenes de magnitud, vienen de revisiones o papers primarios referenciados abajo.
+| `role` | Significado operativo |
+|--------|------------------------|
+| **seed** | PoC / punto de partida de optimización del perfil Janus (hoy: Δ9-THCV imperfecto). |
+| **secondary** | Scaffold o región útil, pero no prototipo Janus claro (p. ej. CBDV). |
+| **interesting** | Hipótesis abierta o periferia/SAR (ácidos, C4); evidencia incompleta — radar, no hit. |
+| **control** | Referencia para contrastar ensayos (polifarmacología, agonismo débil, etc.). |
+| **anti_seed** | Perfil incompatible con el norte (agonismo CB1 fuerte / SAR “más THC”); no optimizar hacia aquí. |
+| **design_comparator** | Ancla sintética del perfil Janus limpio + periferia (URB447); **no** es el norte cannabis. |
 
-| Categoria | Candidato | Perfil CB1 | Perfil CB2 | Fibrosis/FPI / notas | Diagnóstico |
-|-----------|-----------|------------|------------|----------------------|-------------|
-| Propílico neutro (varin) | **Δ9-THCV** | Antagonista / modulador negativo en muchos ensayos *in vitro* y a dosis bajas *in vivo*; a dosis altas puede comportarse como **agonista** (flip bifásico). Perfil tejido- y ligando-dependiente (Pertwee). | Agonista parcial en varios ensayos *in vitro* (revisiones Pertwee / McPartland). Algunos reportes conflictivos (agonismo vs antagonismo según ensayo). | Sin datos robustos en FPI/bleomicina como Janus limpio. PoC natural del perfil *deseado a baja dosis*, pero el flip CB1 impide tratarlo como fármaco listo. | **semilla** (prototipo Janus *imperfecto*) |
-| Propílico neutro (varin) | **CBDV** | Baja afinidad ortostérica típica; no es antagonista CB1 “limpio” tipo THCV. Efectos a menudo independientes de CB1 (TRP, GPR55, etc.). | Afinidad baja–moderada según fuente; en algunos ensayos más actividad relativa en CB2 que en CB1, pero **no** un agonista CB2 canónico potente. Evidencia limitada para perfil Janus. | Interés antiinflamatorio / neuroinflamatorio en literatura, mecanismos no CB1/CB2-dominantes. No hay ancla FPI sólida vía Janus. | **secundaria** / interesante (scaffold varin, no PoC Janus) |
-| Ácido propílico | **THCVA** (ácido) | Poco caracterizado en ensayos funcionales CB1 modernos frente a THCV neutro. El carboxilo aumenta polaridad → hipótesis de **menor penetración SNC** / mayor sesgo periférico tras (o sin) decarboxilación controlada. | Poco caracterizado. | Interés principal: **periferia / polaridad / prodrug** del scaffold THCV, no potencia demostrada en fibrosis. Decarboxilación → THCV (y su flip). | **secundaria** (interés periferia) |
-| Mayores / controles | **CBD** | Baja afinidad; antagonismo funcional / modulación negativa de agonistas en algunos tejidos; polifarmacología alta (no Janus limpio). | No es agonista CB2 canónico “puro”; interacciones complejas. | Efectos antifibróticos reportados en ciertos modelos; atribución mecanística ambigua (no prueba el perfil Janus). | **control** (región química útil; no dogma) |
-| Mayores / controles | **Δ9-THC** | Agonista parcial CB1 (psicoactivo). | Agonista parcial CB2. | Irrelevante como candidato Janus; útil como control positivo de agonismo CB1. | **anti-semilla** / control |
-| Menor | **CBG** | Afinidad baja–micromolar; efectos parciales / inciertos en CB1. | Agonista parcial débil en varios ensayos; sesgo CB2>CB1 en parte de la literatura. | Antiinflamatorio en modelos diversos; no perfil Janus limpio. Evidencia FPI vía CB1-ant/CB2-ago: limitada. | **interesante** (control de parcial agonismo CB2 débil) |
-| Menor | **CBC** | Actividad CB1 débil / parcial en algunos ensayos; a menudo efectos vía TRP. | Agonista parcial con cierto sesgo CB2 en literatura reciente; evidencia heterogénea. | Poco anclado a FPI Janus. | **interesante** / poco caracterizado como Janus |
-| Menor (oxidado) | **CBN** | Agonista parcial débil CB1 (menos potente que THC). | Agonista parcial débil CB2. | No Janus; control de agonismo débil dual. | **control** / anti-semilla suave |
-| Menor cadena larga | **THCP** (Δ9-THC heptílico) | Agonista CB1 de alta afinidad reportada (cadena C7); dirección **opuesta** al norte Janus. | Agonismo CB2 también reportado; no limpia el problema CB1. | No priorizar. Sirve de control estructural: alargar cadena hacia “más THC” empeora el perfil deseado. | **anti-semilla** / ambiguo para CB2 pero **malo para CB1** |
-| Menor cadena C4 | **CBD-C4** / nor-CBD / análogos butílicos | Poco caracterizado de forma sistemática vs CBD/CBDV. | Poco caracterizado. | Placeholder de SAR de cadena (C3–C5); no asignar perfil Janus sin datos. | **ambiguo / poco caracterizado** |
-| Otros minors | CBGV, CBCV, CBDA, CBGA, etc. | En general **poco caracterizados** de forma funcional dual CB1-ant/CB2-ago. | Idem. | Mantener en radar de inventario; no priorizar sin binding/función. | **ambiguo / poco caracterizado** |
-| Análogo de diseño (no cannabis) | **URB447** | Antagonista CB1 periférico (literatura LoVerme 2009). | Agonista CB2. | No es hit de FPI; **comparador de diseño** del perfil Janus limpio + periferia. | **control de diseño** (no norte cannabis) |
-| Análogo de diseño (opcional) | Series tipo AM1710 / ligandos duales citados en config | Variable; verificar paper a paper. | Variable. | Anclas sintéticas para SAR, no semilla vegetal. | **control de diseño** |
+Los perfiles CB1/CB2 se redactan en lenguaje funcional. Donde no hay consenso firme: **evidencia limitada** / **poco caracterizado**. No se inventan Ki/IC50 en esta fase de mapa.
 
-### Lectura rápida de la matriz
+### 3.2. Matriz curada (resumen)
+
+| Categoria | Candidato | `role` | Perfil CB1 (resumen) | Perfil CB2 (resumen) | Fibrosis / notas | Conf. | PubChem |
+|-----------|-----------|--------|----------------------|----------------------|------------------|-------|---------|
+| Propílico neutro | **Δ9-THCV** | seed | Antagonista / modulador negativo *in vitro* y a dosis bajas *in vivo*; **flip** a agonista a dosis altas | Agonista parcial (ensayos heterogéneos) | PoC natural imperfecto; sin ancla FPI Janus limpia | high | [93147](https://pubchem.ncbi.nlm.nih.gov/compound/93147) |
+| Ácido propílico | **THCVA** | interesting | Poco caracterizado vs THCV neutro | Poco caracterizado | Polaridad / hipótesis periferia; decarboxilación → THCV | medium | [59444416](https://pubchem.ncbi.nlm.nih.gov/compound/59444416) |
+| Propílico neutro | **CBDV** | secondary | Baja afinidad; no CB1-ant limpio tipo THCV | No CB2 ago canónico potente | Mecanismos a menudo no CB1/CB2-dominantes | high | [11601669](https://pubchem.ncbi.nlm.nih.gov/compound/11601669) |
+| Mayor | **CBD** | control | Baja afinidad; polifarmacología | No CB2 ago “puro” | Antifibrótico en algunos modelos ≠ prueba Janus | high | [644019](https://pubchem.ncbi.nlm.nih.gov/compound/644019) |
+| Mayor | **Δ9-THC** | anti_seed | Agonista parcial CB1 | Agonista parcial CB2 | Control positivo de agonismo CB1 | high | [16078](https://pubchem.ncbi.nlm.nih.gov/compound/16078) |
+| Menor | **CBG** | control | Baja / incierta | Ago parcial débil; a veces CB2>CB1 | No Janus limpio | high | [5315659](https://pubchem.ncbi.nlm.nih.gov/compound/5315659) |
+| Menor oxidado | **CBN** | control | Ago parcial débil CB1 | Ago parcial débil CB2 | Control dual débil | high | [2543](https://pubchem.ncbi.nlm.nih.gov/compound/2543) |
+| Menor | **CBC** | control | Débil / TRP | Ago parcial CB2 (heterogéneo) | Poco anclado a FPI Janus | medium | [30219](https://pubchem.ncbi.nlm.nih.gov/compound/30219) |
+| Menor C7 | **Δ9-THCP** | anti_seed | Ago CB1 alta afinidad (cadena larga) | También ago CB2 reportado | Control SAR: alargar cadena empeora el norte | high | [6453074](https://pubchem.ncbi.nlm.nih.gov/compound/6453074) |
+| Menor C4 | **CBD-C4** (CBDB) | interesting | Poco caracterizado vs CBD/CBDV | Poco caracterizado | Placeholder SAR C3–C5 | medium | [59444413](https://pubchem.ncbi.nlm.nih.gov/compound/59444413) |
+| Diseño (no cannabis) | **URB447** | design_comparator | Antagonista CB1 periférico | Agonista CB2 | Comparador de diseño; no hit FPI ni norte planta | high | [25195055](https://pubchem.ncbi.nlm.nih.gov/compound/25195055) |
+
+Otros minors (CBGV, CBCV, CBDA, CBGA, etc.): radar de inventario; **poco caracterizados** como dual CB1-ant/CB2-ago — no priorizar sin binding/función.
+
+### 3.3. Lectura rápida de la matriz
 
 1. **Solo THCV** se acerca al arquetipo natural “CB1↓ / CB2↑”, y lo hace de forma **imperfecta** (flip).
 2. El resto del quimioma aporta **controles**, **scaffolds parciales** o **hipótesis de polaridad** (ácidos), no un segundo PoC Janus tan claro.
 3. Si tras inventariar y caracterizar no aparece nada más limpio que THCV flip-prone, el proyecto **debe salir del naturalismo estricto** hacia análogos THCV-like (decisión 1), o declarar fracaso temprano del brazo “solo planta” (sección 7).
+4. Criterio de éxito pre-Vina: [`criterio_exito_janus.md`](criterio_exito_janus.md).
+
+### 3.4. Hipótesis THCV-like (breves; pre-síntesis)
+
+Direcciones de diseño ancladas al scaffold THCV, **sin** exigir hits publicados:
+
+| Hipótesis | Idea química | Qué se busca vs THCV |
+|-----------|--------------|----------------------|
+| **H1 — Cadena C3→C4** | Homólogo butílico del núcleo THCV (vecino a C3 varin; no saltar a C5–C7 tipo THC/THCP) | Ajustar eficacia CB1 (menos agonismo residual) manteniendo engagement CB2 |
+| **H2 — Ácido / polaridad** | THCVA o ésteres/ácidos del scaffold | Sesgo periférico hipotético; prodrug o neutro liberado en periferia — con cuidado: decarboxilación regenera el flip |
+| **H3 — Polaridad sin perder ago CB2** | Bioisósteros del fenol/resorcinol o grupos que suban TPSA sin matar CB2 | Menos SNC + CB2 ago estable |
+| **H4 — Congelar el flip** | Restricción conformacional / saturación del anillo cerca del farmacóforo CB1 | Separar antagonismo CB1 de agonismo a alta ocupación |
+| **H5 — Entrega pulmonar** | Formulación / propiedades compatibles con pulmón (indicación FPI) | Periferia por ruta, no solo por estructura |
+
+**Regla:** estas hipótesis priorizan **limpiar el flip** y estabilizar CB1-ant + CB2-ago; no “más efecto fibrosis” con CB1 sucio. Detalle de palancas: sección 4.3.
 
 ---
 
@@ -156,6 +179,8 @@ Declarar **fracaso temprano del brazo natural estricto** (no necesariamente del 
 |---------|-----|
 | [`literatura_fibrosis_cb1_cb2.md`](literatura_fibrosis_cb1_cb2.md) | Memoria biológica: por qué CB1-ant / CB2-ago importa en fibrosis/IPF |
 | Este documento | Brújula química: qué del cannabis (y análogos) merece el perfil |
+| [`../data/libraries/quimioma_semillas.csv`](../data/libraries/quimioma_semillas.csv) | Tabla operativa de semillas / controles / SMILES (mapa, no hit table masiva) |
+| [`criterio_exito_janus.md`](criterio_exito_janus.md) | Umbral pre-ensayo: “más limpio que THCV” antes de Vina |
 | [`configs/cb1_cb2.yaml`](../configs/cb1_cb2.yaml) | Configuración de foco: cannabis-first, semilla THCV, análogos permitidos, fibrosis como filtro segundo |
 | [`README.md`](../README.md) / [`docs/README.md`](README.md) | Entrada al mapa |
 
