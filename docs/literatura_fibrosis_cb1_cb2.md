@@ -34,19 +34,19 @@ Tres decisiones operativas condicionan cómo leer el resto de esta memoria:
 
 ### 2.1. Fibrosis como rasgo del envejecimiento
 
-La fibrosis es la acumulación patológica de colágeno y otros componentes de la MEC, mediada sobre todo por la activación de fibroblastos y su transición a **miofibroblastos** (células α-SMA⁺, productoras intensas de colágeno). Este proceso no es exclusivo de una enfermedad concreta: aparece en cicatrización aberrante, en órganos sometidos a lesión crónica y, de forma creciente con la edad, como parte del deterioro tisular asociado al envejecimiento. Inflamación de bajo grado, senescencia celular, disfunción mitocondrial y remodelado de la MEC convergen en un terreno fértil para la fibrogénesis.
+La fibrosis es la acumulación patológica de colágeno y otros componentes de la MEC, mediada sobre todo por la activación de fibroblastos y su transición a **miofibroblastos** (células alpha-SMA+, productoras intensas de colágeno). Este proceso no es exclusivo de una enfermedad concreta: aparece en cicatrización aberrante, en órganos sometidos a lesión crónica y, de forma creciente con la edad, como parte del deterioro tisular asociado al envejecimiento. Inflamación de bajo grado, senescencia celular, disfunción mitocondrial y remodelado de la MEC convergen en un terreno fértil para la fibrogénesis.
 
 Desde el punto de vista del descubrimiento de fármacos, atacar “la fibrosis” exige elegir un contexto clínico donde (i) la necesidad médica sea alta, (ii) existan modelos experimentales y biomarcadores, y (iii) haya anclaje molecular creíble para la hipótesis terapéutica. En janusforge, ese contexto prioritario es la **IPF**, sin renunciar a la relevancia del mismo eje en otros órganos.
 
 ### 2.2. Fibrosis pulmonar idiopática (IPF)
 
-La IPF es una enfermedad intersticial pulmonar progresiva, de causa desconocida, caracterizada por cicatrización irreversible del parénquima pulmonar, deterioro de la capacidad de difusión y, en última instancia, insuficiencia respiratoria. El pronóstico sigue siendo grave pese a tratamientos antifibróticos aprobados (p. ej. pirfenidona, nintedanib), que ralentizan pero no detienen la enfermedad ni revierten el daño establecido. La patogenia es multifactorial: lesión epitelial alveolar, activación de macrófagos, señales de TGF-β y PDGF, transición fibroblasto–miofibroblasto y depósito de colágeno.
+La IPF es una enfermedad intersticial pulmonar progresiva, de causa desconocida, caracterizada por cicatrización irreversible del parénquima pulmonar, deterioro de la capacidad de difusión y, en última instancia, insuficiencia respiratoria. El pronóstico sigue siendo grave pese a tratamientos antifibróticos aprobados (p. ej. pirfenidona, nintedanib), que ralentizan pero no detienen la enfermedad ni revierten el daño establecido. La patogenia es multifactorial: lesión epitelial alveolar, activación de macrófagos, señales de TGF-beta y PDGF, transición fibroblasto–miofibroblasto y depósito de colágeno.
 
 Esa complejidad sugiere que estrategias de **un solo blanco** pueden ser insuficientes, y que enfoques que modulen varios nodos del microambiente fibrótico —incluyendo mediadores lipídicos como los endocannabinoides— merecen exploración sistemática.
 
 ### 2.3. Fibrosis en otros órganos y el ECS
 
-Más allá del pulmón, la activación de CB1 se ha asociado a progresión fibrótica en **hígado**, **riñón**, **corazón** y **piel**, mientras que agonistas de CB2 han mostrado efectos antifibróticos o antiinflamatorios en varios de esos mismos tejidos (véase sección 4). Esto no implica que un único fármaco Janus cure “toda” fibrosis, pero sí que el **eje CB1↑ / CB2↓** (o, más precisamente, señalización CB1 excesiva frente a señalización CB2 insuficiente o poco explotada) es un patrón recurrente en fibrogénesis orgánica. La IPF es, por tanto, el *caso de uso prioritario*; la fibrosis multiórgano es el *contexto biológico* que da sentido a la hipótesis.
+Más allá del pulmón, la activación de CB1 se ha asociado a progresión fibrótica en **hígado**, **riñón**, **corazón** y **piel**, mientras que agonistas de CB2 han mostrado efectos antifibróticos o antiinflamatorios en varios de esos mismos tejidos (véase sección 4). Esto no implica que un único fármaco Janus cure “toda” fibrosis, pero sí que el **eje CB1 up / CB2 down** (o, más precisamente, señalización CB1 excesiva frente a señalización CB2 insuficiente o poco explotada) es un patrón recurrente en fibrogénesis orgánica. La IPF es, por tanto, el *caso de uso prioritario*; la fibrosis multiórgano es el *contexto biológico* que da sentido a la hipótesis.
 
 ---
 
@@ -100,7 +100,7 @@ Revisiones recientes sintetizan el potencial terapéutico de agentes que activan
 - reducción de citocinas proinflamatorias;
 - inhibición o atenuación de la transformación fibroblasto → miofibroblasto;
 - menor acumulación de MEC / colágeno;
-- modulación de vías como TGF-β, ERK y otras cascadas fibrogénicas.
+- modulación de vías como TGF-beta, ERK y otras cascadas fibrogénicas.
 
 Fuente de revisión:  
 Therapeutic potential of agents targeting cannabinoid type 2 receptors in organ fibrosis. *Pharmacol Res Perspect.*  
@@ -132,7 +132,7 @@ De forma sugerente, se ha propuesto que parte de los efectos antiinflamatorios/a
 
 ### 6.2. Por qué un solo ligando dual y no dos fármacos
 
-Un ligando dual no es automáticamente superior a una combinación. Las razones para buscarlo incluyen: farmacocinética unificada, posible ocupación simultánea de ambos receptores en el mismo microambiente, simplificación del desarrollo preclínico temprano, y el hecho de que **ya existen precedentes químicos** de moléculas con ese perfil opuesto (URB447 y otros ligandos Janus). El riesgo es obvio: optimizar dos actividades a la vez es más difícil que optimizar una. Por eso janusforge trata el problema como un **rankeo multiobjetivo** (CB1↓ + CB2↑ + filtros ADME/drug-likeness), no como un docking trivial a un único bolsillo.
+Un ligando dual no es automáticamente superior a una combinación. Las razones para buscarlo incluyen: farmacocinética unificada, posible ocupación simultánea de ambos receptores en el mismo microambiente, simplificación del desarrollo preclínico temprano, y el hecho de que **ya existen precedentes químicos** de moléculas con ese perfil opuesto (URB447 y otros ligandos Janus). El riesgo es obvio: optimizar dos actividades a la vez es más difícil que optimizar una. Por eso janusforge trata el problema como un **rankeo multiobjetivo** (CB1-ant + CB2-ago + filtros ADME/drug-likeness), no como un docking trivial a un único bolsillo.
 
 ### 6.3. Yin-Yang estructural
 
@@ -190,7 +190,7 @@ Los híbridos CB1/iNOS (p. ej. MRI-1867 / zevaquenabant en literatura de fibrosi
 Para conectar la hipótesis con biología celular operable:
 
 1. **Macrófagos / inmunidad innata.** CB1 en macrófagos alveolares se asocia a estados proinflamatorios y profibróticos (p. ej. vía IRF5 en trabajos de IPF). CB2, expresado en células inmunes, modula la intensidad de la respuesta inflamatoria.
-2. **Fibroblastos y miofibroblastos.** La activación de CB2 puede reducir señales fibrogénicas (TGF-β, colágeno, α-SMA) y limitar la transformación a miofibroblasto; la señalización CB1 excesiva favorece el entorno que sostiene esa transformación.
+2. **Fibroblastos y miofibroblastos.** La activación de CB2 puede reducir señales fibrogénicas (TGF-beta, colágeno, alpha-SMA) y limitar la transformación a miofibroblasto; la señalización CB1 excesiva favorece el entorno que sostiene esa transformación.
 3. **Epitelio y microambiente.** La lesión epitelial inicia y mantiene el ciclo de reparación aberrante; el ECS actúa como modulador lipídico de ese microambiente (AEA elevada, FAAH disminuida en algunos contextos de IPF).
 
 El ligando Janus ideal debería, en ensayos futuros (fuera del alcance in silico inmediato), atenuar marcadores de activación miofibroblástica y de inflamación pulmonar sin señales de antagonismo CB1 central.
@@ -235,7 +235,7 @@ Janusforge es un repositorio **independiente** (no un branch de molforge) orient
 1. **Mapa del quimioma cannábico** ([`quimioma_cannabico_cb1_cb2.md`](quimioma_cannabico_cb1_cb2.md)): inventariar fitocannabinoides y análogos cercanos; clasificar semilla / control / anti-semilla; anclar THCV como PoC imperfecto.
 2. **Definición explícita del perfil** en configuración (`configs/cb1_cb2.yaml`): CB1 antagonista, CB2 agonista, cannabis-first + análogos THCV-like permitidos, fibrosis/IPF como filtro de indicación *segundo*.
 3. **Semillas químicas**: THCV (+ ácidos/análogos cercanos) como norte cannabis; URB447 y otras referencias Janus como **comparadores de diseño**; espacio CBD-like como región/control *sin* exigir CBD como hit.
-4. **Solo después**, cuando el mapa lo justifique: librería candidata, filtros drug-likeness/PAINS (sesgo periférico), priorización por similitud/farmacóforo dual, docking/scoring dual (`score_mode: dual_janus`) y rankeo CB1↓ + CB2↑ + ADME.
+4. **Solo después**, cuando el mapa lo justifique: librería candidata, filtros drug-likeness/PAINS (sesgo periférico), priorización por similitud/farmacóforo dual, docking/scoring dual (`score_mode: dual_janus`) y rankeo CB1-ant + CB2-ago + ADME.
 
 El presente documento es la **memoria biológica** (fibrosis / ECS). La **brújula química** vive en el quimioma. Ambos deben ampliarse con papers, ensayos y descartes —no solo con scores de docking.
 

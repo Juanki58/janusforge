@@ -34,11 +34,13 @@ GPP (vía MEP plastidial) prenila el ácido aromático vía geraniltransferasa (
 THCAS, CBDAS y CBCAS actúan sobre **CBGVA** de forma análoga a CBGA:
 
 ```
-butanoil-CoA → … → divarinolic acid + GPP → CBGVA
-                                              ↓ THCAS
-                                           THCVA  ──(calor/luz)──→  THCV
-                                              ↓ CBDAS
-                                           CBDVA  ──decbox──→  CBDV
+butanoil-CoA -> ... -> divarinolic acid + GPP -> CBGVA
+                         | THCAS
+                         v
+                      THCVA  --(calor/luz)-->  THCV
+                         | CBDAS
+                         v
+                      CBDVA  --decbox-->  CBDV
 ```
 
 En la planta, los cannabinoides se acumulan como **ácidos**; los neutros (THCV, THC) aparecen por **descarboxilación** no enzimática (secado, calor, UV). Por tanto, en flor fresca el marcador dominante de un quimiotipo “THCV alto” suele ser **THCVA**, no THCV neutro.

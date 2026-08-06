@@ -65,7 +65,7 @@ Otros minors (CBGV, CBCV, CBDA, CBGA, etc.): radar de inventario; **poco caracte
 
 ### 3.3. Lectura rápida de la matriz
 
-1. **Solo THCV** se acerca al arquetipo natural “CB1↓ / CB2↑”, y lo hace de forma **imperfecta** (flip).
+1. **Solo THCV** se acerca al arquetipo natural “CB1 ant / CB2 ago”, y lo hace de forma **imperfecta** (flip).
 2. El resto del quimioma aporta **controles**, **scaffolds parciales** o **hipótesis de polaridad** (ácidos), no un segundo PoC Janus tan claro.
 3. Si tras inventariar y caracterizar no aparece nada más limpio que THCV flip-prone, el proyecto **debe salir del naturalismo estricto** hacia análogos THCV-like (decisión 1), o declarar fracaso temprano del brazo “solo planta” (sección 7).
 4. Criterio de éxito pre-Vina: [`criterio_exito_janus.md`](criterio_exito_janus.md).
@@ -122,9 +122,9 @@ Estos criterios se aplican **después** de tener (o priorizar) un perfil de rece
 
 | Eje | Por qué importa | Nota crítica |
 |-----|-----------------|--------------|
-| **TGF-β1** | Motor central de fibrogénesis y transición a miofibroblasto | Modular TGF-β vía ECS es plausible; no implica que cualquier cannabinoide sea antifibrótico |
+| **TGF-beta1** | Motor central de fibrogénesis y transición a miofibroblasto | Modular TGF-beta vía ECS es plausible; no implica que cualquier cannabinoide sea antifibrótico |
 | **EMT / pérdida de fenotipo epitelial** | Reparación aberrante del alvéolo | Extrapolación fuerte; no todos los modelos ECS lo capturan |
-| **Fibroblastos → miofibroblastos** (α-SMA, contractilidad) | Productores de MEC | CB2 ago y CB1 ant tienen apoyo preclínico *por separado*; el dual falta |
+| **Fibroblastos -> miofibroblastos** (alpha-SMA, contractilidad) | Productores de MEC | CB2 ago y CB1 ant tienen apoyo preclínico *por separado*; el dual falta |
 | **AEC2** (células epiteliales alveolares tipo II) | Nicho de lesión/reparación en IPF | Datos ECS directos aún limitados |
 | **Colágeno I/III** y matriz | Readout clásico de fibrosis | Necesario pero no específico de mecanismo Janus |
 | **Inflamación** (macrófagos alveolares, citocinas) | CB1 en macrófagos profibróticos (Cinar et al.); CB2 en inmunomodulación | Buen puente mecanístico; no sustituye histología fibrótica |
@@ -140,7 +140,7 @@ Estos criterios se aplican **después** de tener (o priorizar) un perfil de rece
 1. Binding / función: CB1 antagonismo (sin agonismo residual problemático en la ventana dosis).
 2. Binding / función: CB2 agonismo (parcial aceptable si estable y periférico).
 3. ADME / periferia (SNC bajo o entrega pulmonar).
-4. Modelos celulares de fibrogénesis (TGF-β, miofibroblasto, colágeno).
+4. Modelos celulares de fibrogénesis (TGF-beta, miofibroblasto, colágeno).
 5. Modelos *in vivo* de fibrosis pulmonar (y solo entonces claims de FPI).
 
 ---

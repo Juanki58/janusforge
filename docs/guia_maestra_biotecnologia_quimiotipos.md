@@ -26,10 +26,10 @@ El cribado in silico y la literatura cromatográfica confirman que variedades em
 
 | Rol | Compuesto | Acumulación típica (orden de magnitud) |
 |-----|-----------|----------------------------------------|
-| **Semilla** | Δ⁹-THCV | 1 % – 5 % |
-| **Anti-semilla** | Δ⁹-THC | 15 % – 24 % (inevitable en el mismo tejido) |
+| **Semilla** | Δ9-THCV | ~0.2 % – 5 % (landrace/retail; muy lote-dependiente) |
+| **Anti-semilla** | Δ9-THC | ~15 % – 25 % (co-acumulado en el mismo tejido) |
 
-> **Nota de coherencia.** En [`quimiotipos_varinas_thcv.md`](quimiotipos_varinas_thcv.md) §3.2–3.3, revisiones recientes sitúan THCV de “Durban Poison” a menudo en **0.2–1.8 %** frente a THC de dos dígitos: el claim retail de “cepa THCV” es marketing; el dilema (THC domina) se mantiene.
+> **Nota de coherencia.** En [`quimiotipos_varinas_thcv.md`](quimiotipos_varinas_thcv.md) sec. 3.2–3.3, revisiones recientes sitúan THCV de “Durban Poison” a menudo en **0.2–1.8 %** frente a THC de dos dígitos; claims retail de “1–5 % THCV” existen pero no son un ratio canónico. El dilema (THC domina) se mantiene.
 
 ### Conclusión farmacológica obligada
 
@@ -43,13 +43,11 @@ La planta aporta la **prueba de concepto moleculocéntrica**, pero **no** el pro
 
 Cuando el programa in silico identifique y valide los hits moleculares (sean la THCVA natural pura o análogos THCV-like), la producción física del compuesto se articulará mediante tres vías tecnológicas fundamentadas:
 
-```
-                               ┌───► 1. Edición Genética CRISPR/Cas9 (Knockout de Olivetol Sintasa)
-                               │
-[ CANDIDATO JANUS VALIDADO ] ──┼───► 2. Biología Sintética / Fermentación en Levaduras (S. cerevisiae)
-                               │
-                               └───► 3. Síntesis Orgánica / Derivación Semi-sintética (Hipótesis H1–H5)
-```
+**Rutas desde un candidato Janus validado:**
+
+1. Edición genética CRISPR/Cas9 (knockout de olivetol sintasa)
+2. Biología sintética / fermentación en levaduras (*S. cerevisiae*)
+3. Síntesis orgánica / derivación semi-sintética (hipótesis H1–H5)
 
 ### Vía A: Edición Genética por CRISPR/Cas9 (Knockout enzimático)
 
@@ -90,6 +88,6 @@ Este documento debe ser consultado en los siguientes hitos del desarrollo:
 
 ## Nota de jerarquía (Nivel 0)
 
-**Jerarquía:** este documento queda fijado como el **ancla conceptual Nivel 0**. Si en el futuro dudamos de por qué no compramos semillas de *Durban Poison* para extraer aceite, volvemos a la Sección 1 de esta guía y recordamos que del orden del **~80 %** del perfil cannabinoide dominante sería THC profibrótico (THC 15–24 % frente a THCV 1–5 % en el mismo tejido).
+**Jerarquía:** este documento queda fijado como el **ancla conceptual Nivel 0**. Si en el futuro dudamos de por qué no compramos semillas de *Durban Poison* para extraer aceite, volvemos a la Sección 1 de esta guía y recordamos que el perfil dominante suele ser THC profibrótico (THC ~15–25 % frente a THCV a menudo <2 % en citas modernas de esa landrace; en el mejor caso retail sigue siendo minor frente a THC).
 
 **Visión completa:** janusforge abarca desde el byte de docking hasta la levadura en el biorreactor.
