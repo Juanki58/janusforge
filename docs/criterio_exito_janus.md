@@ -49,3 +49,5 @@ Un análogo / hit se considera **mejora pre-ensayo** respecto a THCV si, en la e
 ## Referencia rápida
 
 Semillas y roles: [`../data/libraries/quimioma_semillas.csv`](../data/libraries/quimioma_semillas.csv) · biología fibrosis: [`literatura_fibrosis_cb1_cb2.md`](literatura_fibrosis_cb1_cb2.md).
+
+Retrospectiva Vina del panel (afinidad/pose proxy, no gates funcionales): [`../results/reports/retrospective_panel_separation.md`](../results/reports/retrospective_panel_separation.md).

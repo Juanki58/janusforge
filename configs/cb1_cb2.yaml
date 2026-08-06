@@ -18,6 +18,9 @@ targets:
     # Antagonist-bound structure for docking (AM6538)
     pdb: 5TGZ
     pdb_notes: Crystal structure of human CB1 with stabilizing antagonist AM6538
+    ligand_resname: ZDG   # AM6538 in 5TGZ (CCD ZDG)
+    chains: [A]
+    receptor_pdbqt: data/targets/cb1/5TGZ_rec.pdbqt
     # Contrast (do not optimize toward): agonist-bound 5XRA / 5XR8
   cb2:
     name: CB2
@@ -28,6 +31,9 @@ targets:
     # Agonist-bound / active-state structure for docking
     pdb: 6PT0
     pdb_notes: Cryo-EM CB2-Gi with agonist WIN 55,212-2; alt 6KPF
+    ligand_resname: WI5   # WIN 55,212-2 in 6PT0
+    chains: null          # keep all protein chains needed for pocket
+    receptor_pdbqt: data/targets/cb2/6PT0_rec.pdbqt
     # Contrast: antagonist-bound 5ZTY (AM10257)
 
 rationale: >
@@ -78,10 +84,14 @@ library:
 
 paths:
   library: data/libraries/chembl_batch.smi
+  panel_csv: data/libraries/quimioma_semillas.csv
+  panel_ligands: data/processed/panel_ligands
   hits: results/hits/janus_dual_ranked.csv
+  retrospective_scores: results/docking/retrospective_panel/retrospective_scores.csv
   report: results/reports/janus_dual_report.md
-  poses_cb1: results/docking/cb1
-  poses_cb2: results/docking/cb2
+  retrospective_report: results/reports/retrospective_panel_separation.md
+  poses_cb1: results/docking/retrospective_panel/cb1
+  poses_cb2: results/docking/retrospective_panel/cb2
   literature: docs/literatura_fibrosis_cb1_cb2.md
   chemome: docs/quimioma_cannabico_cb1_cb2.md
 
@@ -98,10 +108,36 @@ filters:
   prefer_peripheral: true
 
 docking:
-  enabled: false
+  enabled: true
+  # Path opcional; si null, resolve_vina busca tools/vina.exe y ../molforge/tools/vina.exe
+  vina_binary: ../molforge/tools/vina.exe
   exhaustiveness: 8
   num_modes: 9
+  seed: 42
+  ph: 7.4
+  box_size: 22.0
   # Ranking: favor strong CB1 antagonist pose + strong CB2 agonist pose
   score_mode: dual_janus
   cb1_structure_mode: antagonist
   cb2_structure_mode: agonist
+  # Boxes: rellenados por scripts/prepare_receptors.py → data/targets/*/box.json
+  # (también configs/docking_boxes_generated.yaml). Valores abajo = placeholder
+  # hasta la primera preparación; el runner prioriza box.json.
+  cb1:
+    receptor: data/targets/cb1/5TGZ_rec.pdbqt
+    box:
+      center_x: 43.638   # centroide ZDG (AM6538) en 5TGZ
+      center_y: 27.470
+      center_z: 318.531
+      size_x: 22.0
+      size_y: 22.0
+      size_z: 22.0
+  cb2:
+    receptor: data/targets/cb2/6PT0_rec.pdbqt
+    box:
+      center_x: 98.379   # centroide WI5 (WIN 55,212-2) en 6PT0
+      center_y: 109.559
+      center_z: 123.801
+      size_x: 22.0
+      size_y: 22.0
+      size_z: 22.0

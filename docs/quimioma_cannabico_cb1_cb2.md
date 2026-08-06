@@ -211,4 +211,8 @@ Declarar **fracaso temprano del brazo natural estricto** (no necesariamente del 
 - Si un minor pasa de “poco caracterizado” a perfil Janus limpio, promoverlo a **semilla** y bajar THCV a “semilla histórica / control de flip”.
 - Enlazar resultados futuros de binding (no solo docking) en `results/reports/`.
 
+### Nota (2026-08-06) — retrospectiva Vina del panel de 11
+
+Se lanzó una validación retrospectiva pequeña (preparación 3D pH 7.4 + docking dual Vina en CB1 **5TGZ** / CB2 **6PT0**) sobre `data/libraries/quimioma_semillas.csv`, para comprobar si THCV/URB447 se separan de anti-semillas por **afinidad/pose proxy** (no por función). Informe: [`../results/reports/retrospective_panel_separation.md`](../results/reports/retrospective_panel_separation.md).
+
 *Fin de la versión actual del quimioma. Ampliar en prosa y tablas, no solo en listas de deseos.*

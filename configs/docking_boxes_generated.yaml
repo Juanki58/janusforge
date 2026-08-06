@@ -1,0 +1,25 @@
+# Generado por scripts/prepare_receptors.py — no editar a mano
+cb1:
+  pdb: 5TGZ
+  receptor_pdbqt: data/targets/cb1/5TGZ_rec.pdbqt
+  box:
+    center_x: 43.638
+    center_y: 27.47
+    center_z: 318.531
+    size_x: 22.0
+    size_y: 22.0
+    size_z: 22.0
+  ligand_resname: ZDG
+  box_source: co-crystallized_ligand_centroid
+cb2:
+  pdb: 6PT0
+  receptor_pdbqt: data/targets/cb2/6PT0_rec.pdbqt
+  box:
+    center_x: 98.379
+    center_y: 109.559
+    center_z: 123.801
+    size_x: 22.0
+    size_y: 22.0
+    size_z: 22.0
+  ligand_resname: WI5
+  box_source: co-crystallized_ligand_centroid

@@ -1,0 +1,16 @@
+{
+  "center_x": 43.638,
+  "center_y": 27.47,
+  "center_z": 318.531,
+  "size_x": 22.0,
+  "size_y": 22.0,
+  "size_z": 22.0,
+  "source": "co-crystallized_ligand_centroid",
+  "ligand_resname": "ZDG",
+  "ligand_chain": "A",
+  "ligand_resseq": 2001,
+  "ligand_natoms": 33,
+  "ligand_pdb": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb1\\5TGZ_ligand.pdb",
+  "receptor_pdbqt": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb1\\5TGZ_rec.pdbqt",
+  "pdb_id": "5TGZ"
+}
