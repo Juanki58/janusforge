@@ -32,6 +32,14 @@ results/hits/
 results/structures/
 results/reports/figures/
 
+# --- Track 1 H1–H5 analogs / design candidates (IP; local only) ---
+data/libraries/h1_h5*
+data/libraries/janus_analogs*
+data/processed/h1_h5*
+results/docking/h1_h5*
+results/hits/h1_h5*
+*janus_h*_*.csv
+
 # Molecule / pose / table artifacts
 *.pdbqt
 *.pdb

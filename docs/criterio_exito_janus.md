@@ -41,6 +41,10 @@ Un análogo / hit se considera **mejora pre-ensayo** respecto a THCV si, en la e
 
 Tras la retrospectiva del panel (THCV vs THC: gap dual ≈ **−0.20 kcal/mol** — poca separación scaffold-scaffold), un análogo THCV-like cuenta como **éxito de separación in silico** solo si, en el **mismo panel retrospectivo** (mismos receptores, cajas, exhaustiveness/seed), supera de forma clara la separación THCV–THC (dual y, preferible, ejes CB1/CB2) frente a anti-semillas — **sin** incumplir gates 1–3 funcionales cuando haya dato. Un score alto aislado no basta (anti-criterio abajo). Detalle de hipótesis: [`quimiotipos_varinas_thcv.md`](quimiotipos_varinas_thcv.md).
 
+### Batch 1 (H1–H5) — ejecución local
+
+Track 1 Batch 1 se genera y dockea **en local** (`scripts/generate_h1_h5_candidates.py` → Vina 5TGZ/6PT0). Estructuras/SMILES de análogos nuevos **no se publican** (gitignored). Resumen público sin SMILES: [`../results/reports/h1_h5_batch1_gate_summary.md`](../results/reports/h1_h5_batch1_gate_summary.md). Gate duro proxy: `dual < dual_THCV` **y** `(dual_THC − dual) > 0.40` kcal/mol (claramente > ~0.20).
+
 ---
 
 ## Anti-criterios (no son éxito)
