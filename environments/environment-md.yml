@@ -1,0 +1,28 @@
+# OpenMM MD stack for scripts/run_md_openmm_lead.py
+# Linux/macOS only — AmberTools is not published on win-64 conda-forge.
+# On Windows hosts, run via WSL2 or Docker (Linux container + optional --gpus).
+#
+#   conda env create -f environments/environment-md.yml
+#   conda activate janus_md
+#   conda run -n janus_md python scripts/run_md_openmm_lead.py --ns 2
+#
+# GPU (Linux): after create, pin CUDA matching the driver, e.g.
+#   conda install -n janus_md -c conda-forge "cuda-version=12.2" openmm
+#
+name: janus_md
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - openmm
+  - openmmforcefields
+  - openff-toolkit
+  - ambertools
+  - mdtraj
+  - pdbfixer
+  - rdkit
+  - numpy
+  - pandas
+  - pyyaml
+  - matplotlib
+  - mdanalysis
