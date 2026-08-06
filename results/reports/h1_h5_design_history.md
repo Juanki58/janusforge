@@ -27,6 +27,21 @@
 - Misma métrica de gate; refs delta9-THCV / delta9-THC en el mismo run
 - Pregunta crítica: ¿el híbrido mejora, o el COOH mata CB1 otra vez?
 - **Resultado:** 0/6 PASS. El COOH/éster **mata CB1 otra vez** (CB1 ≪ THCV); volumen 1′ neutro (Et/cPr) no supera el umbral claro vs THC. 1′-Me (Batch 1) sigue siendo el único PASS proxy marginal.
+- Lecciones: ver “Lecciones técnicas” en el resumen Batch 2.
+
+## Cierre — barrido rápido (Batch 1–2)
+
+- **Fin de fase** de exploración rápida H1–H5 (hipótesis anchas: cadena/rama, ácidos/ésteres, ω-F, 9,10-H2, ArOMe lite, híbridos H1×H2, volumen 1′ Et/cPr).
+- Único PASS proxy marginal acumulado: **JANUS_H1_02** (1′-metilo sobre scaffold THCV-like neutro).
+- Vina estático ≠ éxito Janus funcional; gates 1–3 siguen abiertos.
+
+## Siguiente fase — refino scaffold JANUS_H1_02 (Batch 3 planificado, no ejecutado)
+
+- Plan público (IDs conceptuales, sin SMILES): [`h1_h5_batch3_plan.md`](h1_h5_batch3_plan.md)
+- Estrategia Batch 3:
+  1. **Bioisósteros no polares / extremo de cadena lipofílica** manteniendo **1′-Me**, para intentar amplificar el gap vs THC hacia **>0.80** kcal/mol si es posible (proxy; no garantía funcional).
+  2. **Periferia / TPSA** vía éteres pequeños, F estratégico o bioisósteros de fenol — **sin ácidos libres (-COOH)** que penalicen el bolsillo CB1 en Vina estático.
+- Docking Batch 3: **no ejecutado** en este cierre de fase.
 
 ## Scripts (genéricos; sin SMILES de análogos)
 

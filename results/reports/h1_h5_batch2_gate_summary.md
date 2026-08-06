@@ -33,6 +33,12 @@
 
 **0/6 PASS.** El híbrido **no mejora**: el COOH/éster aromático **mata CB1 otra vez** (CB1 ≈ −5.9 a −6.6 vs THCV −8.9) pese a CB2 decente; dual queda claramente peor que THCV. Volumen 1′ neutro: Et (H1_03) gana dual por un pelo (−9.429 vs −9.392) pero gap vs THC solo 0.233 ≪ 0.40; cPr no ayuda. **1′-Me (Batch 1) sigue siendo el único PASS proxy marginal.** Vina ≠ Janus; gates funcionales abiertos.
 
+## Lecciones técnicas
+
+- **COOH / COOMe** en anillo A hunden CB1 a ~**−6 kcal/mol** en Vina estático (vs THCV ~−8.9); CB2 puede seguir decente, pero el dual se derrumba.
+- **Volumen 1′ Et / cPr** no ayuda a superar el umbral claro vs THC; solo **1′-Me** (JANUS_H1_02, Batch 1) se tolera como PASS proxy marginal.
+- **H1×H2** falla por **polaridad en anillo A**, no por falta de volumen en 1′: el híbrido no rescata CB1.
+
 ## IP
 
 - CSV/SDF/PDBQT de candidatos: gitignored (`data/libraries/h1_h5*`, `results/docking/h1_h5*`, `results/hits/h1_h5*`).
