@@ -1,7 +1,7 @@
 # Criterio de éxito Janus (in silico / pre-ensayo)
 
 > Una página operativa. Complementa [`quimioma_cannabico_cb1_cb2.md`](quimioma_cannabico_cb1_cb2.md).  
-> Fecha: 2026-08-06. **Antes de Vina / docking masivo.**
+> Fecha: 2026-08-06. Gates funcionales pre-ensayo + gate de separación proxy (panel retrospectivo; sin docking masivo nuevo).
 
 ---
 
@@ -37,6 +37,12 @@ Un análogo / hit se considera **mejora pre-ensayo** respecto a THCV si, en la e
 
 ---
 
+## Gate de separación proxy (análogo vs THCV natural)
+
+Tras la retrospectiva del panel (THCV vs THC: gap dual ≈ **−0.20 kcal/mol** — poca separación scaffold-scaffold), un análogo THCV-like cuenta como **éxito de separación in silico** solo si, en el **mismo panel retrospectivo** (mismos receptores, cajas, exhaustiveness/seed), supera de forma clara la separación THCV–THC (dual y, preferible, ejes CB1/CB2) frente a anti-semillas — **sin** incumplir gates 1–3 funcionales cuando haya dato. Un score alto aislado no basta (anti-criterio abajo). Detalle de hipótesis: [`quimiotipos_varinas_thcv.md`](quimiotipos_varinas_thcv.md).
+
+---
+
 ## Anti-criterios (no son éxito)
 
 - Score de docking alto en CB1 o CB2 **sin** coherencia con el perfil funcional deseado.
@@ -48,6 +54,6 @@ Un análogo / hit se considera **mejora pre-ensayo** respecto a THCV si, en la e
 
 ## Referencia rápida
 
-Semillas y roles: [`../data/libraries/quimioma_semillas.csv`](../data/libraries/quimioma_semillas.csv) · biología fibrosis: [`literatura_fibrosis_cb1_cb2.md`](literatura_fibrosis_cb1_cb2.md).
+Semillas y roles: [`../data/libraries/quimioma_semillas.csv`](../data/libraries/quimioma_semillas.csv) · biología fibrosis: [`literatura_fibrosis_cb1_cb2.md`](literatura_fibrosis_cb1_cb2.md) · varinas / diseño THCV-like: [`quimiotipos_varinas_thcv.md`](quimiotipos_varinas_thcv.md).
 
 Retrospectiva Vina del panel (afinidad/pose proxy, no gates funcionales): [`../results/reports/retrospective_panel_separation.md`](../results/reports/retrospective_panel_separation.md).

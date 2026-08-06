@@ -70,19 +70,19 @@ Otros minors (CBGV, CBCV, CBDA, CBGA, etc.): radar de inventario; **poco caracte
 3. Si tras inventariar y caracterizar no aparece nada más limpio que THCV flip-prone, el proyecto **debe salir del naturalismo estricto** hacia análogos THCV-like (decisión 1), o declarar fracaso temprano del brazo “solo planta” (sección 7).
 4. Criterio de éxito pre-Vina: [`criterio_exito_janus.md`](criterio_exito_janus.md).
 
-### 3.4. Hipótesis THCV-like (breves; pre-síntesis)
+### 3.4. Hipótesis THCV-like (refinadas tras gap Vina THCV≈THC)
 
-Direcciones de diseño ancladas al scaffold THCV, **sin** exigir hits publicados:
+**Anclaje.** En la retrospectiva del panel, THCV apenas se separa de THC (gap dual ≈ **−0.20 kcal/mol**); URB447 sí. El natural C3 no basta como discriminador de afinidad proxy. Origen vegetal de varinas y prosa completa de H1–H5: [`quimiotipos_varinas_thcv.md`](quimiotipos_varinas_thcv.md). Informe: [`../results/reports/retrospective_panel_separation.md`](../results/reports/retrospective_panel_separation.md).
 
-| Hipótesis | Idea química | Qué se busca vs THCV |
-|-----------|--------------|----------------------|
-| **H1 — Cadena C3→C4** | Homólogo butílico del núcleo THCV (vecino a C3 varin; no saltar a C5–C7 tipo THC/THCP) | Ajustar eficacia CB1 (menos agonismo residual) manteniendo engagement CB2 |
-| **H2 — Ácido / polaridad** | THCVA o ésteres/ácidos del scaffold | Sesgo periférico hipotético; prodrug o neutro liberado en periferia — con cuidado: decarboxilación regenera el flip |
-| **H3 — Polaridad sin perder ago CB2** | Bioisósteros del fenol/resorcinol o grupos que suban TPSA sin matar CB2 | Menos SNC + CB2 ago estable |
-| **H4 — Congelar el flip** | Restricción conformacional / saturación del anillo cerca del farmacóforo CB1 | Separar antagonismo CB1 de agonismo a alta ocupación |
-| **H5 — Entrega pulmonar** | Formulación / propiedades compatibles con pulmón (indicación FPI) | Periferia por ruta, no solo por estructura |
+| Hipótesis | Idea química | Racional post-retrospectiva | Riesgo principal |
+|-----------|--------------|----------------------------|------------------|
+| **H1 — C3→C4 controlada** | Homólogo butílico (no C5–C7) | Ganar contacto hidrofóbico / cerrar gap proxy vs THC **sin** flip a agonismo tipo THC | Deslizar a anti-semilla |
+| **H2 — Ácido / THCVA-like** | Carboxilo o prodrug periférico | Polaridad / menor CNS; THCVA ya dio CB1 proxy más débil en el panel | Descarboxilación → flip |
+| **H3 — Bioisóstero resorcinol** | Modular fenoles / H-bond | Alterar pose y eficacia CB1 sin alargar cadena a THC | Perder CB2 ago |
+| **H4 — Congelar el flip** | Restricción conformacional | Atacar la bifasicidad (defecto funcional de THCV), no solo el score | Síntesis / overfitting cristal |
+| **H5 — N-heterociclo polar** | Rasgos tipo URB447 *sobre* scaffold THCV | URB447 separó en Vina; importar polaridad sin abandonar cannabis-first | Salir del espacio semilla |
 
-**Regla:** estas hipótesis priorizan **limpiar el flip** y estabilizar CB1-ant + CB2-ago; no “más efecto fibrosis” con CB1 sucio. Detalle de palancas: sección 4.3.
+**Regla:** priorizar **limpiar el flip** + superar separación THCV–THC en el mismo panel ([`criterio_exito_janus.md`](criterio_exito_janus.md)); no “más fibrosis” con CB1 sucio. Palancas amplias: §4.3.
 
 ---
 
@@ -179,8 +179,9 @@ Declarar **fracaso temprano del brazo natural estricto** (no necesariamente del 
 |---------|-----|
 | [`literatura_fibrosis_cb1_cb2.md`](literatura_fibrosis_cb1_cb2.md) | Memoria biológica: por qué CB1-ant / CB2-ago importa en fibrosis/IPF |
 | Este documento | Brújula química: qué del cannabis (y análogos) merece el perfil |
+| [`quimiotipos_varinas_thcv.md`](quimiotipos_varinas_thcv.md) | Biosíntesis C3/varinas, landraces, ratios; H1–H5 THCV-like vs gap Vina |
 | [`../data/libraries/quimioma_semillas.csv`](../data/libraries/quimioma_semillas.csv) | Tabla operativa de semillas / controles / SMILES (mapa, no hit table masiva) |
-| [`criterio_exito_janus.md`](criterio_exito_janus.md) | Umbral pre-ensayo: “más limpio que THCV” antes de Vina |
+| [`criterio_exito_janus.md`](criterio_exito_janus.md) | Umbral: “más limpio que THCV” + superar separación THCV–THC en panel |
 | [`configs/cb1_cb2.yaml`](../configs/cb1_cb2.yaml) | Configuración de foco: cannabis-first, semilla THCV, análogos permitidos, fibrosis como filtro segundo |
 | [`README.md`](../README.md) / [`docs/README.md`](README.md) | Entrada al mapa |
 
@@ -213,6 +214,6 @@ Declarar **fracaso temprano del brazo natural estricto** (no necesariamente del 
 
 ### Nota (2026-08-06) — retrospectiva Vina del panel de 11
 
-Se lanzó una validación retrospectiva pequeña (preparación 3D pH 7.4 + docking dual Vina en CB1 **5TGZ** / CB2 **6PT0**) sobre `data/libraries/quimioma_semillas.csv`, para comprobar si THCV/URB447 se separan de anti-semillas por **afinidad/pose proxy** (no por función). Informe: [`../results/reports/retrospective_panel_separation.md`](../results/reports/retrospective_panel_separation.md).
+Se lanzó una validación retrospectiva pequeña (preparación 3D pH 7.4 + docking dual Vina en CB1 **5TGZ** / CB2 **6PT0**) sobre `data/libraries/quimioma_semillas.csv`, para comprobar si THCV/URB447 se separan de anti-semillas por **afinidad/pose proxy** (no por función). Informe: [`../results/reports/retrospective_panel_separation.md`](../results/reports/retrospective_panel_separation.md). Lectura química: THCV≈THC en dual → hipótesis y literatura de varinas en [`quimiotipos_varinas_thcv.md`](quimiotipos_varinas_thcv.md).
 
 *Fin de la versión actual del quimioma. Ampliar en prosa y tablas, no solo en listas de deseos.*

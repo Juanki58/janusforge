@@ -16,7 +16,7 @@ Tres decisiones operativas condicionan cómo leer el resto de esta memoria:
 2. **Receptor-first.** La prioridad absoluta es un perfil **CB1 antagonista / CB2 agonista limpio**. La fibrosis/FPI es el *para qué* —filtro de indicación **después**—, no una excusa para tolerar farmacología sucia en CB1.
 3. **Mapa vivo antes que docking masivo.** El inventario y el juicio químico viven en [`quimioma_cannabico_cb1_cb2.md`](quimioma_cannabico_cb1_cb2.md); esta memoria ancla la biología de fibrosis y el eje ECS.
 
-**Puente químico.** El prototipo natural imperfecto del perfil Janus es **Δ9-THCV** (antagonismo CB1 en muchos ensayos / dosis bajas + agonismo parcial CB2, con flip agonista CB1 a dosis altas). URB447 y otros duales sintéticos siguen siendo *comparadores de diseño*, no el norte cannabis. Detalle, matriz y criterios de fracaso temprano: documento del quimioma.
+**Puente químico.** El prototipo natural imperfecto del perfil Janus es **Δ9-THCV** (antagonismo CB1 en muchos ensayos / dosis bajas + agonismo parcial CB2, con flip agonista CB1 a dosis altas). URB447 y otros duales sintéticos siguen siendo *comparadores de diseño*, no el norte cannabis. Detalle, matriz y criterios de fracaso temprano: documento del quimioma. Origen vegetal de las varinas (biosíntesis C3, landraces, por qué la planta co-produce THC) e hipótesis THCV-like: [`quimiotipos_varinas_thcv.md`](quimiotipos_varinas_thcv.md).
 
 ---
 
