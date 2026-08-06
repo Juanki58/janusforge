@@ -20,4 +20,10 @@
 **Datos operativos (mapa, no hit table masiva):**  
 [`../data/libraries/quimioma_semillas.csv`](../data/libraries/quimioma_semillas.csv) — semillas / controles / comparadores con SMILES curados (PubChem) y roles.
 
+### Exportación consolidada
+
+| Archivo | Contenido |
+|---------|-----------|
+| [exports/janusforge_memoria_completa.pdf](exports/janusforge_memoria_completa.pdf) | Copia PDF legible: Guía Maestra Nivel 0 + literatura fibrosis + quimioma + varinas/THCV + criterio de éxito + informe retrospectivo. Regenerar con `python scripts/build_memoria_pdf.py` (requiere `markdown` y `xhtml2pdf`). |
+
 Para el overview técnico del repo, ver el [README raíz](../README.md).
