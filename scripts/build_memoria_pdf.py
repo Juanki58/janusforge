@@ -14,7 +14,7 @@ OUT_PDF = ROOT / "docs" / "exports" / "janusforge_memoria_completa.pdf"
 
 SECTIONS = [
     (
-        "Guía Maestra Nivel 0 — Fundamentación biotecnológica y hoja de ruta de quimiotipos",
+        "Guía Maestra Nivel 0 v1.0 — Track 1 (ligando) vs Track 2 (supply)",
         ROOT / "docs" / "guia_maestra_biotecnologia_quimiotipos.md",
     ),
     (

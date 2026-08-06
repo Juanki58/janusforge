@@ -2,11 +2,11 @@
 
 Índice breve de la documentación del proyecto.
 
-### Nivel 0 — Guía Primaria de Referencia
+### Nivel 0 — Documento Normativo (Norma Fuente Matrix)
 
 | Documento | Contenido |
 |-----------|-----------|
-| [guia_maestra_biotecnologia_quimiotipos.md](guia_maestra_biotecnologia_quimiotipos.md) | **Norma fuente**: dilema del quimiotipo natural (THCV vs THC anti-semilla), tres vías de obtención limpia (CRISPR / fermentación / síntesis H1–H5), matriz de consulta retroactiva. Ancla conceptual del proyecto. |
+| [guia_maestra_biotecnologia_quimiotipos.md](guia_maestra_biotecnologia_quimiotipos.md) | **Documento Normativo Nivel 0 v1.0 (Oficial / Congelada):** desacopla **Track 1** (*Drug Discovery* — ligando / análogos H1–H5, prioritario) de **Track 2** (*Supply Chain* — síntesis, breeding/MAS A-nat, fermentación, CRISPR). Matriz de auditoría retroactiva. |
 
 ### Nivel ≥1 — Documentos operativos
 
@@ -24,6 +24,6 @@
 
 | Archivo | Contenido |
 |---------|-----------|
-| [exports/janusforge_memoria_completa.pdf](exports/janusforge_memoria_completa.pdf) | Copia PDF legible: Guía Maestra Nivel 0 + literatura fibrosis + quimioma + varinas/THCV + criterio de éxito + informe retrospectivo. Regenerar con `python scripts/build_memoria_pdf.py` (requiere `markdown` y `xhtml2pdf`). |
+| [exports/janusforge_memoria_completa.pdf](exports/janusforge_memoria_completa.pdf) | Copia PDF legible: Guía Maestra Nivel 0 v1.0 (Track 1 ligando vs Track 2 supply) + literatura fibrosis + quimioma + varinas/THCV + criterio de éxito + informe retrospectivo. Regenerar con `python scripts/build_memoria_pdf.py` (requiere `markdown` y `xhtml2pdf`). |
 
 Para el overview técnico del repo, ver el [README raíz](../README.md).

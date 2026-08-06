@@ -1,93 +1,84 @@
-# Guía Maestra: Fundamentación Biotecnológica y Hoja de Ruta de Quimiotipos (janusforge)
+# Guía Maestra: Fundamentación del Programa y Hoja de Ruta de Suministro (`janusforge`)
 
 | | |
 |---|---|
-| **Estatus del Documento** | Guía Primaria de Referencia (**Nivel 0 / Norma Fuente**) |
+| **Jerarquía del Documento** | Documento Normativo Nivel 0 (Norma Fuente Matrix) |
+| **Versión** | 1.0 (Oficial / Congelada) |
 | **Última revisión** | 2026-08-06 |
+| **Propósito** | Establecer la jerarquía operativa del proyecto. Separa el desarrollo del candidato terapéutico (Track 1) de las estrategias de suministro de biomasa y controles (Track 2). |
 
 ---
 
-## Propósito
+## 1. Declaración de Principios y Desacoplamiento de Tracks
 
-Servir de ancla científica e histórica cuando el proyecto requiera evaluar **retroactivamente** la viabilidad de extracción, edición genética, síntesis o escalado biotecnológico de los candidatos Janus.
+`janusforge` es un programa de descubrimiento de fármacos (*Drug Discovery*) enfocado en el perfil Janus (CB1-ant / CB2-ago) para la fibrosis pulmonar (IPF).
 
-Documentos subordinados (Nivel ≥1):
+- **El Cuello de Botella es Farmacológico, no Agrícola:** La Δ9-THCV natural presenta una ventana terapéutica estrecha y un efecto bifásico (*flip* a agonista en CB1 a dosis altas) con un gap energético in silico insignificante frente al Δ9-THC (−0.20 kcal/mol). Ningún proceso de cultivo ni extracción botánica corrige las limitaciones intrínsecas de la molécula nativa.
+- **El Fármaco no es la Planta:** La planta representa la prueba de concepto (PoC) inicial. La solución terapéutica requerirá análogos dirigidos (H1–H5) o derivados puros funcionalizados.
 
-- [`quimiotipos_varinas_thcv.md`](quimiotipos_varinas_thcv.md) — biosíntesis C3/varinas, landraces, hipótesis H1–H5
+### Diagrama de tracks
+
+```text
+TRACK 1: DRUG DISCOVERY (PRIORIDAD #1)
+  [ In Silico / Docking Dual ] ──► [ Análogos H1–H5 ] ──► [ Síntesis / Ensayos In Vitro ]
+                                                              ▲
+TRACK 2: SUPPLY CHAIN (INFRAESTRUCTURA)                       │
+  [ Estándares Puros ] ──► [ Breeding / MAS THC-Zero ] ───────┘
+```
+
+| Track | Rol | Prioridad |
+|-------|-----|-----------|
+| **Track 1 — Drug Discovery** | Diseño de ligando / análogos H1–H5; resuelve el cuello de botella farmacológico | **#1 (núcleo prioritario)** |
+| **Track 2 — Supply Chain** | Producción de biomasa, estándares puros y controles experimentales | Secundario (infraestructura) |
+
+---
+
+## 2. Track 1 (Prioritario): Descubrimiento y Optimización del Ligando Janus
+
+El objetivo central del programa es la síntesis o selección de moléculas que superen el *gate* de selectividad THCV–THC mediante las 5 hipótesis de optimización (H1–H5):
+
+1. **H1 (Extensión de Cadena C3 → C4 / CBDB-like):** Bloqueo estérico del bucle TM3–TM6 en CB1.
+2. **H2 (Derivados Carboxílicos / THCVA / Ésteres):** Aumento de TPSA/LogP para restricción periférica e incapacidad de cruzar la BBB.
+3. **H3 (Bioisósteros del Resorcinol):** Optimización de la red de enlaces de H en la cavidad activa de CB2.
+4. **H4 (Modificación conformacional del anillo central):** Reducción de insaturación para fijar estado inactivo en CB1.
+5. **H5 (Sustitución en C1′):** Ramificación en posición bencílica para maximizar el sesgo periférico.
+
+---
+
+## 3. Track 2 (Secundario): Matriz de Evaluación de Fuentes de Suministro (Supply)
+
+Para la obtención de material de referencia, controles experimentales o precursores de extracción (cuando el candidato requiera andamiajes naturales), las opciones de suministro se priorizan formalmente según el siguiente veredicto técnico:
+
+| Estrategia de Supply | Pureza / CMC | Resolución del Flip Janus | Velocidad a In Vitro | Regulación EU | Prioridad en Track 2 |
+|:---|:---:|:---:|:---:|:---:|:---:|
+| **Síntesis / Estándar Puro** | **Alta** | **Alta (H1–H5)** | **Rápida** | N/A (Químico) | **#1 (Inmediata)** |
+| **Breeding / MAS THC-Zero (A-nat)** | Media | Baja (misma mol) | Lenta (Años) | **Fuerte (No-OGM)** | **#2 (Materia Prima)** |
+| **Biología Sintética / Fermentación** | Alta | Baja (misma mol) | Media | Media (No planta) | **#3 (Escalado Limpio)** |
+| **Edición Genética (CRISPR/Cas9)** | Media | Baja (misma mol) | Media | Débil / Cara (OGM/NBT) | **#4 (Reserva)** |
+
+### Análisis de las opciones de biomasa vegetal
+
+- **Vía A-nat (Breeding / Selección asistida MAS):** Es la primera opción de suministro de biomasa no-OGM si se requiere material vegetal de partida con THC inferior a 0.1 %. No obstante, solo suministra el precursor o estándar, no el fármaco optimizado.
+- **CRISPR / NBTs:** Queda relegada a alternativa de reserva si el *breeding* tradicional no alcanza el rendimiento requerido y el marco regulatorio europeo sobre nuevas técnicas genómicas (NGT) lo permite.
+
+---
+
+## 4. Matriz de Auditoría Retroactiva
+
+Consúltese esta guía en las revisiones del hito de investigación:
+
+| Pregunta de auditoría | Respuesta normativa |
+|-----------------------|---------------------|
+| **¿Estamos atascados en la obtención del cultivar?** | Revisar Sección 1: el cuello de botella es la molécula (H1–H5); el cultivar es secundario. |
+| **¿Qué vía de biomasa defender ante un comité para regulación en la UE?** | Revisar Sección 3: Vía A-nat (Breeding/MAS no-OGM) como opción #1 de supply vegetal. |
+
+---
+
+## Documentos relacionados (Nivel ≥1)
+
+Enlaces subordinados; no alteran la norma de este documento:
+
 - [`quimioma_cannabico_cb1_cb2.md`](quimioma_cannabico_cb1_cb2.md) — brújula química del quimioma CB1/CB2
+- [`quimiotipos_varinas_thcv.md`](quimiotipos_varinas_thcv.md) — biosíntesis C3/varinas, landraces, hipótesis H1–H5
 - [`criterio_exito_janus.md`](criterio_exito_janus.md) — gates de éxito pre-ensayo
-- [`../results/reports/retrospective_panel_separation.md`](../results/reports/retrospective_panel_separation.md) — separación proxy del panel retrospectivo
-
----
-
-## 1. El Dilema del Quimiotipo Natural: Por qué la planta no da el fármaco directo
-
-El cribado in silico y la literatura cromatográfica confirman que variedades emblemáticas ricas en Δ⁹-THCV (como la landrace sudafricana *Durban Poison* o líneas genéticas asociadas):
-
-| Rol | Compuesto | Acumulación típica (orden de magnitud) |
-|-----|-----------|----------------------------------------|
-| **Semilla** | Δ9-THCV | ~0.2 % – 5 % (landrace/retail; muy lote-dependiente) |
-| **Anti-semilla** | Δ9-THC | ~15 % – 25 % (co-acumulado en el mismo tejido) |
-
-> **Nota de coherencia.** En [`quimiotipos_varinas_thcv.md`](quimiotipos_varinas_thcv.md) sec. 3.2–3.3, revisiones recientes sitúan THCV de “Durban Poison” a menudo en **0.2–1.8 %** frente a THC de dos dígitos; claims retail de “1–5 % THCV” existen pero no son un ratio canónico. El dilema (THC domina) se mantiene.
-
-### Conclusión farmacológica obligada
-
-Dado que el Δ⁹-THC es un **agonista de CB₁** que desencadena cascadas profibróticas en los macrófagos alveolares y psicoactividad central, un **extracto crudo de planta viva no es clínicamente viable** para fibrosis pulmonar (IPF).
-
-La planta aporta la **prueba de concepto moleculocéntrica**, pero **no** el producto final sin intervención química o biotecnológica.
-
----
-
-## 2. Hoja de Ruta Biotecnológica: 3 Vías Reales para Obtener el Quimiotipo Janus Limpio
-
-Cuando el programa in silico identifique y valide los hits moleculares (sean la THCVA natural pura o análogos THCV-like), la producción física del compuesto se articulará mediante tres vías tecnológicas fundamentadas:
-
-**Rutas desde un candidato Janus validado:**
-
-1. Edición genética CRISPR/Cas9 (knockout de olivetol sintasa)
-2. Biología sintética / fermentación en levaduras (*S. cerevisiae*)
-3. Síntesis orgánica / derivación semi-sintética (hipótesis H1–H5)
-
-### Vía A: Edición Genética por CRISPR/Cas9 (Knockout enzimático)
-
-| | |
-|---|---|
-| **Mecanismo** | Silenciamiento o inactivación selectiva del gen de la **olivetol sintasa** (vía del ácido olivetólico / serie C₅). |
-| **Resultado** | La planta anula la biosíntesis de THC y CBD, canalizando el 100 % del sustrato (geranil pirofosfato + ácido divarinólico) hacia la THC-sintasa, produciendo **THCVA / THCV pura libre de THC**. |
-| **Estatus científico** | Viable y validado por la industria biotecnológica (mutagénesis dirigida en cannabinoides minoritarios). |
-
-### Vía B: Biología Sintética y Fermentación (Biorreactores)
-
-| | |
-|---|---|
-| **Mecanismo** | Inserción de la ruta metabólica de la serie propílica (C₃) en microorganismos chasis (*Saccharomyces cerevisiae* o *E. coli*). |
-| **Resultado** | Producción fermentativa escalable de Δ⁹-THCV o THCVA pura, **0.0 % THC**, sin necesidad de suelo, cultivo vegetal ni procesos complejos de separación cromatográfica. |
-
-### Vía C: Optimización Química y Análogos Semi-sintéticos (Hipótesis H1–H5)
-
-| | |
-|---|---|
-| **Mecanismo** | Modificación dirigida del andamiaje de la THCV (extensión de cadena C₃ → C₄, bioisósteros del resorcinol, funcionalización carboxílica/periférica). Detalle operativo: [`quimiotipos_varinas_thcv.md`](quimiotipos_varinas_thcv.md) §5. |
-| **Resultado** | Moléculas sintéticas que corrigen el flip agonista de la THCV natural y fijan la restricción periférica (PSA/LogP). |
-
----
-
-## 3. Matriz de Consulta Retroactiva para Fases Futuras
-
-Este documento debe ser consultado en los siguientes hitos del desarrollo:
-
-| Hito del Proyecto | Pregunta a responder mediante esta Guía |
-|-------------------|-----------------------------------------|
-| **Fase In Silico (Actual)** | ¿Por qué no usamos mezclas complejas ni docking de aceites completos? *(Ver Sección 1)* |
-| **Fase de In Vitro / Ensayos** | ¿Compramos estándar puro de THCV o mandamos a sintetizar el análogo H1–H5? |
-| **Fase de Propiedad Intelectual** | ¿Protegemos el análogo sintético (Vía C) o la línea vegetal knockout (Vía A)? |
-| **Fase de Escalado Preclínico** | ¿Qué vía de producción (Fermentación Vía B vs Síntesis Vía C) ofrece mejor coste/pureza sin THC? |
-
----
-
-## Nota de jerarquía (Nivel 0)
-
-**Jerarquía:** este documento queda fijado como el **ancla conceptual Nivel 0**. Si en el futuro dudamos de por qué no compramos semillas de *Durban Poison* para extraer aceite, volvemos a la Sección 1 de esta guía y recordamos que el perfil dominante suele ser THC profibrótico (THC ~15–25 % frente a THCV a menudo <2 % en citas modernas de esa landrace; en el mejor caso retail sigue siendo minor frente a THC).
-
-**Visión completa:** janusforge abarca desde el byte de docking hasta la levadura en el biorreactor.
+- [`../results/reports/retrospective_panel_separation.md`](../results/reports/retrospective_panel_separation.md) — separación proxy del panel retrospectivo (gap dual ≈ −0.20 kcal/mol)
