@@ -30,7 +30,11 @@ data/targets/**/*.pdbqt
 results/docking/
 results/hits/
 results/structures/
+results/md/
 results/reports/figures/
+
+# Local MD virtualenv (optional)
+.venv-md/
 
 # --- Track 1 H1–H5 analogs / design candidates (IP; local only) ---
 data/libraries/h1_h5*

@@ -43,6 +43,7 @@
 - Diseño: 1′-Me fijo + ω-F / bioisóstero de cadena / F en rama / cadena corta / éteres de fenol (sin COOH/COOMe); control H1_02 regenerado en el mismo run
 - **Resultado:** 5/7 PASS. Control H1_02 se reproduce (PASS). Solo **JANUS_H1_02c** mejora dual vs control y alcanza aspiración gap vs THC > 0.80 (0.856). Éteres de fenol (OMe/OEt) no ayudan.
 - **Lección:** priorizar extremo de cadena no polar sobre enmascarar fenol; periferia ácida sigue prohibida. Vina ≠ Janus.
+- **Lead #1 in silico:** **JANUS_H1_02c**. Gap 0.856 = proxy Vina; ω-F PASS sin batir H1_02; siguiente = MD vs THCV en 5TGZ ([`md_lead_plan.md`](md_lead_plan.md)). MD corta / sin membrana ≠ α.
 
 ## Scripts (genéricos; sin SMILES de análogos)
 
@@ -50,4 +51,5 @@
 - `scripts/generate_h1_h5_batch2.py` — Batch 2
 - `scripts/generate_h1_h5_batch3.py` — Batch 3
 - `scripts/analyze_h1_h5_gate.py` — gate + informes (`--batch h1_h5_batchN`)
+- `scripts/run_md_openmm_lead.py` — MD OpenMM lead vs THCV (poses locales gitignored)
 - Prep/dock: `scripts/prepare_panel_3d.py`, `scripts/run_retrospective_dock.py`

@@ -1,0 +1,21 @@
+# Optional MD stack for scripts/run_md_openmm_lead.py
+# Prefer a dedicated env (Python 3.11–3.13). On Windows, conda-forge is the
+# reliable path for OpenFF + GAFF2; PyPI currently has no usable openff-toolkit
+# release (0.18.0 was yanked as a non-maintainer upload).
+
+# --- conda-forge (recommended) ---
+#   conda create -n janus-md -c conda-forge python=3.12 \
+#     openmm openmmforcefields openff-toolkit ambertools mdtraj pdbfixer \
+#     rdkit numpy pandas pyyaml
+#   conda activate janus-md
+
+# --- pip (partial; GAFF2 still needs OpenFF from conda/git) ---
+openmm>=8.0
+pdbfixer>=1.9
+mdtraj>=1.9
+numpy>=1.26
+pandas>=2.0
+pyyaml>=6.0
+rdkit>=2024.3.1
+# openmmforcefields>=0.14   # requires working openff-toolkit
+# openff-toolkit>=0.15      # install via conda-forge, not yanked PyPI 0.18.0

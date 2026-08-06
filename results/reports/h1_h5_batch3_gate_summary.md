@@ -40,6 +40,18 @@
 
 **Crítico vs H1_02:** solo **JANUS_H1_02c** mejora dual (−10.052 vs −9.779) y es el único con gap vs THC **0.856 > 0.80** (aspiración). ω-F / F-rama / cadena corta PASS pero no superan al control. Mantener periferia **sin** ácidos sigue validado (ningún colapso CB1 tipo Batch 2). Vina ≠ Janus; gates funcionales abiertos.
 
+## Lead #1 in silico: JANUS_H1_02c
+
+**Selección:** único diseño que mejora dual vs control H1_02 y alcanza la aspiración gap vs THC **0.856** kcal/mol.
+
+Matices (no sobreinterpretar):
+
+- El gap **0.856 es proxy Vina** (ocupación/afinidad de pose), no evidencia de agonismo ni de Janus α.
+- **Éteres de fenol fallan** (02b/02e): enmascarar el OH no es el camino en este panel.
+- **ω-F (02a) PASS** y mejora vs THCV, pero **no bate** al control H1_02 ni a 02c.
+- **Siguiente paso = MD** en CB1 inactivo 5TGZ: lead vs Δ9-THCV (¿1′-metilo como trinquete geométrico?). Protocolo y limitaciones: [`md_lead_plan.md`](md_lead_plan.md). Script: `scripts/run_md_openmm_lead.py`.
+- Nota: **Vina ≠ α**; una MD corta en agua (sin membrana) tampoco prueba agonismo — solo estabilidad geométrica del estado inactivo.
+
 ## Lecciones técnicas
 
 - Extremo de cadena no polar (bioisóstero tipo 02c) amplifica el gap proxy vs THC sin tocar anillo A ácido.
@@ -49,6 +61,7 @@
 ## IP
 
 - CSV/SDF/PDBQT de candidatos: gitignored (`data/libraries/h1_h5*`, `results/docking/h1_h5*`, `results/hits/h1_h5*`).
+- MD local: `results/md/` (gitignored); sin estructuras en informes públicos.
 - Detalle con SMILES (local): `results/hits/h1_h5_batch3/gate_detail.md`.
 - Historial: [`h1_h5_design_history.md`](h1_h5_design_history.md).
 
