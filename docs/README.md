@@ -2,6 +2,14 @@
 
 Índice breve de la documentación del proyecto.
 
+### Nivel 0 — Guía Primaria de Referencia
+
+| Documento | Contenido |
+|-----------|-----------|
+| [guia_maestra_biotecnologia_quimiotipos.md](guia_maestra_biotecnologia_quimiotipos.md) | **Norma fuente**: dilema del quimiotipo natural (THCV vs THC anti-semilla), tres vías de obtención limpia (CRISPR / fermentación / síntesis H1–H5), matriz de consulta retroactiva. Ancla conceptual del proyecto. |
+
+### Nivel ≥1 — Documentos operativos
+
 | Documento | Contenido |
 |-----------|-----------|
 | [quimioma_cannabico_cb1_cb2.md](quimioma_cannabico_cb1_cb2.md) | **Brújula química** (castellano): mapa vivo del quimioma cannábico CB1/CB2, THCV como prototipo Janus imperfecto, análogos permitidos, criterios de fibrosis como filtro *segundo*, reglas de pipeline y fracaso temprano. Enlaza la tabla operativa de semillas. |

@@ -15,6 +15,9 @@ No es un cribado genérico de “cannabinoides”. El objetivo es priorizar liga
 | **Para qué** | Aliados terapéuticos frente a **fibrosis**, con prioridad en **fibrosis pulmonar idiopática (IPF)** *después* de tener perfil de receptor aceptable; el mismo eje es relevante en fibrosis hepática, renal, cardíaca y cutánea. |
 | **Por qué** | En IPF y otros órganos fibróticos, la **sobreactividad de CB1** es profibrótica/proinflamatoria; el **agonismo de CB2** tiende a ser antiinflamatorio/antifibrótico. Un ligando dual —idealmente de acción periférica— podría modular ambos brazos sin repetir la toxicidad de SNC de antagonistas CB1 centrados (p. ej. rimonabant). |
 
+**Nivel 0 — Guía Primaria de Referencia del Proyecto** (fundación biotecnológica + hoja de ruta de quimiotipos):  
+→ [`docs/guia_maestra_biotecnologia_quimiotipos.md`](docs/guia_maestra_biotecnologia_quimiotipos.md)
+
 **Brújula química** (mapa vivo del quimioma CB1/CB2):  
 → [`docs/quimioma_cannabico_cb1_cb2.md`](docs/quimioma_cannabico_cb1_cb2.md)
 
@@ -85,6 +88,7 @@ Ver [`configs/cb1_cb2.yaml`](configs/cb1_cb2.yaml) (cannabis-first + semilla THC
 ## Documentación
 
 - [`docs/README.md`](docs/README.md) — índice
+- [`docs/guia_maestra_biotecnologia_quimiotipos.md`](docs/guia_maestra_biotecnologia_quimiotipos.md) — **Nivel 0** / Guía Primaria (biotecnología + quimiotipos)
 - [`docs/quimioma_cannabico_cb1_cb2.md`](docs/quimioma_cannabico_cb1_cb2.md) — brújula química / quimioma CB1–CB2
 - [`docs/literatura_fibrosis_cb1_cb2.md`](docs/literatura_fibrosis_cb1_cb2.md) — memoria biológica fibrosis / ECS
 
