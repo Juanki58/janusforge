@@ -1,11 +1,12 @@
-# H1–H5 Batch 1 — gate summary (public)
+# Iteración 1 — librería de diseño (H1–H5) — gate summary (public)
 
-> **No SMILES.** Structures and pose files stay local/gitignored. Vina = affinity/pose proxy only — not functional Janus success (see [`docs/criterio_exito_janus.md`](../../docs/criterio_exito_janus.md)).
+> **No SMILES.** Structures and pose files stay local/gitignored. Vina = affinity/pose proxy only — not functional Janus success (see [`docs/criterio_exito_janus.md`](../../docs/criterio_exito_janus.md)).  
+> Historial: [`h1_h5_design_history.md`](h1_h5_design_history.md).
 
 - Fecha: 2026-08-06
 - Panel local: `data/libraries/h1_h5_batch1.csv` (gitignored)
 - Scores: `results/docking/h1_h5_batch1/retrospective_scores.csv` (gitignored)
-- Receptores: CB1 5TGZ / CB2 6PT0; exhaustiveness moderado (8–16)
+- Receptores: CB1 5TGZ / CB2 6PT0; exhaustiveness=12; seed=42
 
 ## Métrica de gate duro
 
@@ -33,8 +34,9 @@
 
 **1/7 PASS (solo JANUS_H1_02), y es marginal** (gap vs THC 0.458 kcal/mol, umbral 0.40). En este run el gap THCV–THC cayó a −0.129 (vs ≈−0.20 en retrospectiva exh=8): el proxy es ruidoso. H2 (ácidos/ésteres) empeoran dual por CB1 débil — esperable y no = fallo de periferia. H1-C4, H3-F, H4, H5 no baten a THCV. **No hay hit Janus**; hace falta binding/función.
 
+**Lección → Batch 2:** 1′-Me movió la aguja; siguiente iteración = H1×H2 + volumen 1′ ([`h1_h5_design_history.md`](h1_h5_design_history.md)).
+
 ## IP
 
 - CSV/SDF/PDBQT de candidatos: gitignored (`data/libraries/h1_h5*`, `results/docking/h1_h5*`, `results/hits/h1_h5*`).
 - Detalle con SMILES (local): `results/hits/h1_h5_batch1/gate_detail.md`.
-

@@ -64,6 +64,12 @@ def main() -> int:
     )
     ap.add_argument("--exhaustiveness", type=int, default=None)
     ap.add_argument("--seed", type=int, default=None)
+    ap.add_argument(
+        "--ligand-dir",
+        type=Path,
+        default=None,
+        help="Optional prebuilt PDBQT cache (default: data/processed/panel_ligands).",
+    )
     args = ap.parse_args()
 
     cfg = yaml.safe_load(args.config.read_text(encoding="utf-8"))
@@ -99,7 +105,11 @@ def main() -> int:
     print(f"exhaustiveness={exhaustiveness} seed={seed} num_modes={num_modes} ph={ph}")
 
     rows = []
-    ligand_cache = ROOT / "data/processed/panel_ligands"
+    ligand_cache = (
+        args.ligand_dir
+        if args.ligand_dir is not None
+        else ROOT / "data/processed/panel_ligands"
+    )
     for i, r in df.iterrows():
         name = str(r["name"])
         smiles = str(r["smiles"])
