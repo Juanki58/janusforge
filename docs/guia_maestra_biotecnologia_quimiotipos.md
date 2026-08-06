@@ -61,6 +61,10 @@ Para la obtención de material de referencia, controles experimentales o precurs
 - **Vía A-nat (Breeding / Selección asistida MAS):** Es la primera opción de suministro de biomasa no-OGM si se requiere material vegetal de partida con THC inferior a 0.1 %. No obstante, solo suministra el precursor o estándar, no el fármaco optimizado.
 - **CRISPR / NBTs:** Queda relegada a alternativa de reserva si el *breeding* tradicional no alcanza el rendimiento requerido y el marco regulatorio europeo sobre nuevas técnicas genómicas (NGT) lo permite.
 
+### Puerta botánica / IP abierta (sin elevar Track 2)
+
+La vía vegetal **no se cierra**: patentes de método/proceso, cáñamo industrial / AEMPS y partners de breeding (IRTA/CSIC) se documentan a coste cero mientras la ejecución diaria sigue en Track 1 (*in silico*). Detalle operativo → [`apendice_ip_supply_botanico.md`](apendice_ip_supply_botanico.md).
+
 ---
 
 ## 4. Matriz de Auditoría Retroactiva
@@ -81,4 +85,6 @@ Enlaces subordinados; no alteran la norma de este documento:
 - [`quimioma_cannabico_cb1_cb2.md`](quimioma_cannabico_cb1_cb2.md) — brújula química del quimioma CB1/CB2
 - [`quimiotipos_varinas_thcv.md`](quimiotipos_varinas_thcv.md) — biosíntesis C3/varinas, landraces, hipótesis H1–H5
 - [`criterio_exito_janus.md`](criterio_exito_janus.md) — gates de éxito pre-ensayo
+- [`literatura_prioridad_y_novelty.md`](literatura_prioridad_y_novelty.md) — auditoría de prior art / novelty (2026-08-06): el *rationale* Janus×IPF es intelectualmente predecible; el hueco demostrable es el cierre experimental (análogo limpio + fibrosis pulmonar), no el concepto
+- [`apendice_ip_supply_botanico.md`](apendice_ip_supply_botanico.md) — puerta botánica/IP abierta a coste cero (método, AEMPS, IRTA/CSIC); no desplaza Track 1
 - [`../results/reports/retrospective_panel_separation.md`](../results/reports/retrospective_panel_separation.md) — separación proxy del panel retrospectivo (gap dual ≈ −0.20 kcal/mol)

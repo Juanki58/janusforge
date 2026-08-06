@@ -34,7 +34,15 @@ SECTIONS = [
         ROOT / "docs" / "criterio_exito_janus.md",
     ),
     (
-        "Apéndice E — Informe retrospectivo: separación del panel",
+        "Apéndice E — Prioridad literaria y novelty / FTO",
+        ROOT / "docs" / "literatura_prioridad_y_novelty.md",
+    ),
+    (
+        "Apéndice F — IP / supply botánico (puerta abierta a coste cero)",
+        ROOT / "docs" / "apendice_ip_supply_botanico.md",
+    ),
+    (
+        "Apéndice G — Informe retrospectivo: separación del panel",
         ROOT / "results" / "reports" / "retrospective_panel_separation.md",
     ),
 ]

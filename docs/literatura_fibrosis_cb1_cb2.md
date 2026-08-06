@@ -217,6 +217,8 @@ Estas entradas se reflejan en `configs/cb1_cb2.yaml` y podrán refinarse cuando 
 
 ## 10. Gaps (huecos de conocimiento y de traslación)
 
+> **Novelty check (2026-08-06).** Una auditoría explícita de solapamiento con literatura y patentes visibles —incluyendo la duda de si el *rationale* Janus×IPF es “demasiado obvio”— está en [`literatura_prioridad_y_novelty.md`](literatura_prioridad_y_novelty.md). Resumen: el perfil Janus, la farmacología de THCV y la biología CB1/CB2 en fibrosis **sí** están muy publicados; el cruce experimental **THCV (o Janus limpio) × IPF/bleomicina** no apareció en esa búsqueda (ausencia ≠ inexistencia). Leer ese documento antes de reivindicar prioridad o IP.
+
 1. **Falta de un Janus clínico validado en IPF.** Existe apoyo fuerte para antagonismo CB1 en fibrosis pulmonar y para agonismo CB2 en fibrosis orgánica, pero un ligando dual CB1-ant/CB2-ago **demostrado en IPF** sigue siendo, en esencia, una hipótesis a validar.
 2. **Polifarmacología y sesgo de señalización.** CB1 y CB2 no son interruptores binarios; agonismo sesgado, ocupación parcial y off-targets pueden alterar el beneficio.
 3. **Seguridad a largo plazo.** La IPF exige tratamientos crónicos; el margen SNC de cualquier antagonismo CB1 debe caracterizarse con rigor.

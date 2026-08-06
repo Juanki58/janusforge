@@ -16,6 +16,8 @@
 | [quimiotipos_varinas_thcv.md](quimiotipos_varinas_thcv.md) | **Varinas / THCV–THCVA** (castellano): biosíntesis C3 vs C5, landraces africanas (matices vs marketing), ratios, implicación planta→análogos; hipótesis H1–H5 THCV-like ancladas al gap retrospectivo Vina. |
 | [criterio_exito_janus.md](criterio_exito_janus.md) | **Criterio de éxito** in silico / pre-ensayo (1 página): qué significa “perfil Janus más limpio que THCV”; incluye superar separación THCV–THC en el panel retrospectivo. |
 | [literatura_fibrosis_cb1_cb2.md](literatura_fibrosis_cb1_cb2.md) | **Memoria biológica** (castellano): fibrosis / IPF, eje endocannabinoide CB1/CB2, hipótesis Janus (CB1 antagonista + CB2 agonista), precedentes, gaps. Documento vivo; el norte químico remite al quimioma. |
+| [literatura_prioridad_y_novelty.md](literatura_prioridad_y_novelty.md) | **Auditoría de novelty / prior art** (castellano, 2026-08-06): concepto Janus×fibrosis = prior art; THCV×IPF sin paper primario (ventana); NCE periférico H1–H5 = white space. Claims teóricos de uso no viables. |
+| [apendice_ip_supply_botanico.md](apendice_ip_supply_botanico.md) | **Apéndice IP / supply botánico:** puerta abierta a coste cero (patentes de método, cáñamo/AEMPS, breeding IRTA–CSIC). No eleva Track 2: ejecución diaria = Track 1 in silico. |
 
 **Datos operativos (mapa, no hit table masiva):**  
 [`../data/libraries/quimioma_semillas.csv`](../data/libraries/quimioma_semillas.csv) — semillas / controles / comparadores con SMILES curados (PubChem) y roles.
@@ -24,6 +26,6 @@
 
 | Archivo | Contenido |
 |---------|-----------|
-| [exports/janusforge_memoria_completa.pdf](exports/janusforge_memoria_completa.pdf) | Copia PDF legible: Guía Maestra Nivel 0 v1.0 (Track 1 ligando vs Track 2 supply) + literatura fibrosis + quimioma + varinas/THCV + criterio de éxito + informe retrospectivo. Regenerar con `python scripts/build_memoria_pdf.py` (requiere `markdown` y `xhtml2pdf`). |
+| [exports/janusforge_memoria_completa.pdf](exports/janusforge_memoria_completa.pdf) | Copia PDF legible: Guía Maestra Nivel 0 v1.0 + literatura fibrosis + quimioma + varinas/THCV + criterio de éxito + novelty/FTO + apéndice IP botánico + informe retrospectivo. Regenerar con `python scripts/build_memoria_pdf.py` (requiere `markdown` y `xhtml2pdf`). |
 
 Para el overview técnico del repo, ver el [README raíz](../README.md).
