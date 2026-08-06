@@ -35,17 +35,19 @@
 - Único PASS proxy marginal acumulado: **JANUS_H1_02** (1′-metilo sobre scaffold THCV-like neutro).
 - Vina estático ≠ éxito Janus funcional; gates 1–3 siguen abiertos.
 
-## Siguiente fase — refino scaffold JANUS_H1_02 (Batch 3 planificado, no ejecutado)
+## Iteración 3 — refino JANUS_H1_02 / 1′-Me (Batch 3)
 
-- Plan público (IDs conceptuales, sin SMILES): [`h1_h5_batch3_plan.md`](h1_h5_batch3_plan.md)
-- Estrategia Batch 3:
-  1. **Bioisósteros no polares / extremo de cadena lipofílica** manteniendo **1′-Me**, para intentar amplificar el gap vs THC hacia **>0.80** kcal/mol si es posible (proxy; no garantía funcional).
-  2. **Periferia / TPSA** vía éteres pequeños, F estratégico o bioisósteros de fenol — **sin ácidos libres (-COOH)** que penalicen el bolsillo CB1 en Vina estático.
-- Docking Batch 3: **no ejecutado** en este cierre de fase.
+- Plan: [`h1_h5_batch3_plan.md`](h1_h5_batch3_plan.md)
+- Resumen: [`h1_h5_batch3_gate_summary.md`](h1_h5_batch3_gate_summary.md)
+- Panel local: `data/libraries/h1_h5_batch3.csv` (gitignored)
+- Diseño: 1′-Me fijo + ω-F / bioisóstero de cadena / F en rama / cadena corta / éteres de fenol (sin COOH/COOMe); control H1_02 regenerado en el mismo run
+- **Resultado:** 5/7 PASS. Control H1_02 se reproduce (PASS). Solo **JANUS_H1_02c** mejora dual vs control y alcanza aspiración gap vs THC > 0.80 (0.856). Éteres de fenol (OMe/OEt) no ayudan.
+- **Lección:** priorizar extremo de cadena no polar sobre enmascarar fenol; periferia ácida sigue prohibida. Vina ≠ Janus.
 
 ## Scripts (genéricos; sin SMILES de análogos)
 
 - `scripts/generate_h1_h5_candidates.py` — Batch 1
 - `scripts/generate_h1_h5_batch2.py` — Batch 2
+- `scripts/generate_h1_h5_batch3.py` — Batch 3
 - `scripts/analyze_h1_h5_gate.py` — gate + informes (`--batch h1_h5_batchN`)
 - Prep/dock: `scripts/prepare_panel_3d.py`, `scripts/run_retrospective_dock.py`
