@@ -12,7 +12,7 @@
 La retrospectiva Vina del panel quimioma mostró que **Δ9-THCV apenas se separa de Δ9-THC** en afinidad/pose dual (gap dual THCV−THC ≈ **−0.20 kcal/mol**), mientras que el comparador URB447 sí empuja la separación grupal. Eso obliga a dos movimientos en paralelo:
 
 1. Entender **de dónde salen las varinas en la planta** (biosíntesis C3, geografía, ratios reales vs marketing).
-2. Definir **hipótesis químicas THCV-like** que puedan superar ese gap de proxy *y/o* limpiar el flip CB1 — sin pretender que Vina mida agonismo vs antagonismo.
+2. Definir **hipótesis químicas THCV-like** que puedan superar ese gap de proxy *y/o* limpiar el flip CB1 — sin pretender que Vina mida agonismo vs antagonismo. El mecanismo del flip (equilibrio R ⇌ R\*, C3 vs C5/TM6, meta α ≤ 0 en ensayo) está en [`mecanismo_flip_thcv_cb1.md`](mecanismo_flip_thcv_cb1.md).
 
 ---
 

@@ -90,6 +90,8 @@ Otros minors (CBGV, CBCV, CBDA, CBGA, etc.): radar de inventario; **poco caracte
 
 ### 4.1. El flip CB1 y la ventana bifásica
 
+Marco ampliado (R ⇌ R\*, C3 vs C5 / toggle TM6, tabla de eficacia esquemática, H1–H5 y matices Vina ≠ α): [`mecanismo_flip_thcv_cb1.md`](mecanismo_flip_thcv_cb1.md).
+
 La revisión clásica de Pertwee (2008) resume el núcleo del problema: Δ9-THCV **antagoniza** agonistas en tejidos que expresan CB1 con potencia relativamente alta y de modo tejido-/ligando-dependiente, y a la vez es **agonista parcial de CB2** en varios ensayos *in vitro*. *In vivo*, sin embargo, puede comportarse como **antagonista CB1 a dosis bajas** y como **agonista CB1 a dosis altas** (antinocicepción, hipotermia, inmovilidad en anillo, sustitución parcial de THC en discriminación de drogas). Esa bifasicidad no es un detalle cosmético: es el defecto que impide llamar a THCV un Janus “limpio”.
 
 Revisiones posteriores (p. ej. McPartland et al., 2015) enfatizan que THCV **no es rimonabant**: alta afinidad y antagonismo *in vitro* no se traducen siempre en un fenotipo de antagonismo CB1 central robusto y estable *in vivo*. Eso es bueno para seguridad psiquiátrica relativa, pero malo para la **predicibilidad** del perfil terapéutico.

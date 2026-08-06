@@ -9,7 +9,7 @@
 
 ¿Qué significa, *antes* de binding húmedo y de fibrosis, que un candidato tenga un **perfil Janus más limpio que THCV**?
 
-THCV es la semilla: CB1 antagonista (a menudo) + CB2 agonista parcial, con **flip CB1** dosis-dependiente. “Más limpio que THCV” no es “más potente en un modelo de fibrosis”, ni “más parecido a CBD”.
+THCV es la semilla: CB1 antagonista (a menudo) + CB2 agonista parcial, con **flip CB1** dosis-dependiente. “Más limpio que THCV” no es “más potente en un modelo de fibrosis”, ni “más parecido a CBD”. El marco biofísico (R ⇌ R\*, cadena C3 vs toggle TM6, meta funcional α ≤ 0) y por qué el proxy Vina no mide el flip están en [`mecanismo_flip_thcv_cb1.md`](mecanismo_flip_thcv_cb1.md).
 
 ---
 
