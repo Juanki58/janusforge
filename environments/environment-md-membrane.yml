@@ -1,0 +1,36 @@
+# OpenMM membrane MD stack for scripts/run_md_openmm_membrane_lead.py
+# Linux/macOS only — AmberTools (packmol_memgen) is not published on win-64 conda-forge.
+# On Windows hosts, run via Docker (Linux container + optional --gpus) or WSL2.
+#
+#   conda env create -f environments/environment-md-membrane.yml
+#   conda activate janus_md_membrane
+#   conda run -n janus_md_membrane python scripts/run_md_openmm_membrane_lead.py --dry-run
+#   conda run -n janus_md_membrane python scripts/run_md_openmm_membrane_lead.py --ns 20 --ligand all
+#
+# Reuse existing Docker volume from soluble MD (janus_md env) by installing packmol:
+#   docker run --rm -v janus_md_mamba:/opt/conda -v "$PWD:/work" -w /work \
+#     mambaorg/micromamba:2 bash -lc \
+#     'micromamba install -y -n janus_md -c conda-forge packmol && \
+#      micromamba run -n janus_md python scripts/run_md_openmm_membrane_lead.py --dry-run'
+#
+# GPU (Linux): after create, pin CUDA matching the driver, e.g.
+#   conda install -n janus_md_membrane -c conda-forge "cuda-version=12.2" openmm
+#
+name: janus_md_membrane
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - openmm
+  - openmmforcefields
+  - openff-toolkit
+  - ambertools          # packmol_memgen + antechamber (Linux/macOS)
+  - packmol             # explicit; also pulled by ambertools
+  - mdtraj
+  - pdbfixer
+  - rdkit
+  - numpy
+  - pandas
+  - pyyaml
+  - matplotlib
+  - mdanalysis

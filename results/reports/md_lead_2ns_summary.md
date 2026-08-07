@@ -53,3 +53,7 @@ TM ranges (UniProt / GPCRdb): TM3 185–220; TM6 332–369. RMSD vs minimized fr
 
 - Aggregate CSV: `results/md/janus_h1_02c_vs_thcv_5tgz.csv`
 - Per ligand: `results/md/<id>/production.dcd`, `minimized.pdb`, `production.log`, `metrics_summary.json`, `frame_metrics.csv`
+
+## Siguiente = membrane MD (A1+A3)
+
+Escalón aprobado: **POPC explícita + 20 ns**, panel **H1_02c vs THCV vs THC**, go/no-go hacia ensayo in vitro u Opción D (URB447/Yin-Yang). Protocolo: [`md_membrane_20ns_plan.md`](md_membrane_20ns_plan.md). Script: `scripts/run_md_openmm_membrane_lead.py`.

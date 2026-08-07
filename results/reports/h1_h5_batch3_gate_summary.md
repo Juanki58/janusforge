@@ -49,8 +49,9 @@ Matices (no sobreinterpretar):
 - El gap **0.856 es proxy Vina** (ocupación/afinidad de pose), no evidencia de agonismo ni de Janus α.
 - **Éteres de fenol fallan** (02b/02e): enmascarar el OH no es el camino en este panel.
 - **ω-F (02a) PASS** y mejora vs THCV, pero **no bate** al control H1_02 ni a 02c.
-- **Siguiente paso = MD** en CB1 inactivo 5TGZ: lead vs Δ9-THCV (¿1′-metilo como trinquete geométrico?). Protocolo y limitaciones: [`md_lead_plan.md`](md_lead_plan.md). Script: `scripts/run_md_openmm_lead.py`.
-- Nota: **Vina ≠ α**; una MD corta en agua (sin membrana) tampoco prueba agonismo — solo estabilidad geométrica del estado inactivo.
+- MD 2 ns en agua (lead vs THCV): mixto/débil — [`md_lead_2ns_summary.md`](md_lead_2ns_summary.md).
+- **Siguiente paso = membrane MD** (A1+A3): CB1 5TGZ en **POPC** 20 ns, panel **H1_02c vs THCV vs THC**, go/no-go hacia ensayo in vitro u Opción D. Plan: [`md_membrane_20ns_plan.md`](md_membrane_20ns_plan.md). Script: `scripts/run_md_openmm_membrane_lead.py`.
+- Nota: **Vina ≠ α**; MD en membrana 20 ns × 1 réplica tampoco prueba agonismo — solo priorización del estado inactivo.
 
 ## Lecciones técnicas
 

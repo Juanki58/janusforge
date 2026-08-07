@@ -355,6 +355,66 @@ def filter_receptor_pdb(
     return dst
 
 
+def protonate_receptor_pdb(src: Path, dst: Path, pH: float = 7.0) -> Path:
+    """Rebuild incomplete sidechains + add hydrogens; keep UniProt resSeq.
+
+    5TGZ often has truncated sidechains (e.g. MET with only CB). Modeller
+    addHydrogens alone fails template matching on those residues. PDBFixer
+    adds missing heavy atoms; keepIds=True preserves UniProt numbering so
+    TM3/TM6 selections stay valid. Intentionally does NOT rebuild missing
+    loops (ICL3 gap after flavodoxin strip).
+    """
+    from openmm.app import PDBFile
+    from pdbfixer import PDBFixer
+
+    fixer = PDBFixer(filename=str(src))
+    fixer.findMissingResidues()
+    # Do not insert the deleted ICL3 / fusion gap as a modelled loop
+    fixer.missingResidues = {}
+    fixer.findNonstandardResidues()
+    fixer.replaceNonstandardResidues()
+    fixer.findMissingAtoms()
+    fixer.addMissingAtoms()
+    fixer.addMissingHydrogens(pH)
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    with open(dst, "w", encoding="utf-8") as fh:
+        PDBFile.writeFile(fixer.topology, fixer.positions, fh, keepIds=True)
+
+    # Sanity: UniProt TM6 must still be addressable after protonation
+    resseqs = []
+    for line in dst.read_text(encoding="utf-8", errors="replace").splitlines():
+        if line.startswith("ATOM") and line[12:16].strip() == "CA":
+            try:
+                resseqs.append(int(line[22:26]))
+            except ValueError:
+                continue
+    if resseqs and max(resseqs) < 332:
+        raise RuntimeError(
+            f"Protonated receptor lost UniProt numbering (CA resSeq max={max(resseqs)}). "
+            "TM6 selection would fail."
+        )
+    return dst
+
+
+def _uniprot_ca_resseqs_from_pdb(pdb_path: Path) -> list[int]:
+    """Ordered Cα UniProt/resSeq list from a filtered receptor PDB."""
+    out: list[int] = []
+    for line in pdb_path.read_text(encoding="utf-8", errors="replace").splitlines():
+        if line.startswith("ATOM") and line[12:16].strip() == "CA":
+            try:
+                out.append(int(line[22:26]))
+            except ValueError:
+                continue
+    return out
+
+
+def _map_uniprot_range_to_serial(
+    uniprot_order: list[int], lo: int, hi: int
+) -> list[int]:
+    """Map UniProt inclusive range → 1-based serial resSeq after renumbering."""
+    return [i + 1 for i, u in enumerate(uniprot_order) if lo <= u <= hi]
+
+
 def validate_inputs(cfg: MDConfig, ligand_ids: list[str]) -> list[str]:
     problems: list[str] = []
     if not cfg.receptor_pdb.is_file():
@@ -402,6 +462,8 @@ def build_and_run_complex(
     filter_receptor_pdb(
         cfg.receptor_pdb, rec_filt, cfg.keep_residue_ranges, cfg.strip_fusion
     )
+    rec_prot = work / "receptor_cb1_protonated.pdb"
+    protonate_receptor_pdb(rec_filt, rec_prot)
 
     pose_path = pose_pdbqt_path(cfg.dock_dir, ligand_id)
     if ligand_sdf is None:
@@ -417,7 +479,7 @@ def build_and_run_complex(
     forcefield = app.ForceField("amber14-all.xml", "amber14/tip3p.xml")
     forcefield.registerTemplateGenerator(gaff.generator)
 
-    protein = PDBFile(str(rec_filt))
+    protein = PDBFile(str(rec_prot))
     # Write ligand PDB from OpenFF for Modeller
     lig_pdb = work / f"{ligand_id}_lig.pdb"
     off_mol.to_file(str(lig_pdb), file_format="pdb")
@@ -569,26 +631,36 @@ def analyze_trajectory(
     traj = md.load(str(trajectory_dcd), top=str(topology_pdb))
     top = traj.topology
 
-    def ca_atoms(lo: int, hi: int) -> list[int]:
-        sel = top.select(
-            f"name CA and resid {lo} to {hi}"
-        )
-        # mdtraj resid is 0-indexed sequential — prefer PDB resSeq via expression
-        # Fallback: filter by residue.resSeq
-        idxs = []
+    def ca_atoms_by_resseq(targets: set[int]) -> list[int]:
+        idxs: list[int] = []
         for a in top.atoms:
             if a.name != "CA":
                 continue
             try:
                 r = int(a.residue.resSeq)
             except Exception:  # noqa: BLE001
-                r = a.residue.index
-            if lo <= r <= hi:
+                r = a.residue.index + 1
+            if r in targets:
                 idxs.append(a.index)
-        return idxs if idxs else list(sel)
+        return idxs
 
-    tm3_idx = ca_atoms(tm3[0], tm3[1])
-    tm6_idx = ca_atoms(tm6[0], tm6[1])
+    def resolve_tm_ca(lo: int, hi: int) -> list[int]:
+        """Select TM Cα by UniProt resSeq; remap if topology was renumbered 1..N."""
+        direct = ca_atoms_by_resseq(set(range(lo, hi + 1)))
+        if len(direct) >= 3:
+            return direct
+        # Legacy PDBFixer outputs: serial 1..N. Map via receptor_cb1_nofusion.pdb.
+        nofusion = topology_pdb.parent / "receptor_cb1_nofusion.pdb"
+        if nofusion.is_file():
+            order = _uniprot_ca_resseqs_from_pdb(nofusion)
+            serial = _map_uniprot_range_to_serial(order, lo, hi)
+            mapped = ca_atoms_by_resseq(set(serial))
+            if len(mapped) >= 3:
+                return mapped
+        return direct
+
+    tm3_idx = resolve_tm_ca(tm3[0], tm3[1])
+    tm6_idx = resolve_tm_ca(tm6[0], tm6[1])
     if len(tm6_idx) < 3:
         raise RuntimeError(
             f"Too few TM6 CA atoms ({len(tm6_idx)}) for range {tm6}. "

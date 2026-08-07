@@ -83,3 +83,11 @@ Si OpenFF/GAFF2 faltan, el script hace **dry-run** de inputs y sale con mensaje 
 ## Lectura de resultado (cuando corra)
 
 Comparar lado a lado lead vs THCV: ¿TM6 más quieta / COM TM3–TM6 más estable / fenol más persistente en el lead? Eso **sugiere** trinquete en el estado inactivo; no sustituye ensayo funcional.
+
+## Siguiente = membrane MD (A1+A3)
+
+Resultado 2 ns en agua: mixto / débil ([`md_lead_2ns_summary.md`](md_lead_2ns_summary.md)). **Siguiente paso:** MD en **POPC explícita** 20 ns, panel triplete H1_02c vs THCV vs THC (agonista control), con criterio go/no-go hacia ensayo in vitro u Opción D.
+
+- Plan: [`md_membrane_20ns_plan.md`](md_membrane_20ns_plan.md)  
+- Script: `scripts/run_md_openmm_membrane_lead.py`  
+- Env: `environments/environment-md-membrane.yml`
