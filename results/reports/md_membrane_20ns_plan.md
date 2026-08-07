@@ -93,18 +93,25 @@ python scripts/run_md_openmm_membrane_lead.py --ligand thc --build-only --platfo
 ### Windows host → Docker (mismo volumen `janus_md_mamba` del run 2 ns)
 
 ```powershell
-# Asegurar packmol en el env janus_md (ambertools ya incluye packmol_memgen)
+# Dry-run (3 poses + deps)
 docker run --rm -v janus_md_mamba:/opt/conda -v "${PWD}:/work" -w /work `
   mambaorg/micromamba:2 bash -lc `
-  "micromamba install -y -n janus_md -c conda-forge packmol && micromamba run -n janus_md python scripts/run_md_openmm_membrane_lead.py --dry-run --ligand all"
+  "micromamba run -n janus_md python scripts/run_md_openmm_membrane_lead.py --dry-run --ligand all"
 
-# Producción background
+# Producción 20 ns × 3 (background)
+New-Item -ItemType Directory -Force -Path results/md/membrane | Out-Null
 docker rm -f janus_md_memb20 2>$null
 docker run -d --name janus_md_memb20 --gpus all `
   -v janus_md_mamba:/opt/conda -v "${PWD}:/work" -w /work `
   mambaorg/micromamba:2 bash -lc `
   "micromamba run -n janus_md python scripts/run_md_openmm_membrane_lead.py --ns 20 --ligand all --platform CUDA 2>&1 | tee /work/results/md/membrane/run_20ns_docker.log; echo EXIT_CODE=`$? | tee -a /work/results/md/membrane/run_20ns_docker.log"
+
+# Monitor
+docker ps -a --filter name=janus_md_memb20
+Get-Content results/md/membrane/run_20ns_docker.log -Tail 40
 ```
+
+**Estado sesión (2026-08-07):** dry-run Docker OK (3 poses + `membrane_ready`). Build/producción GPU no arrancó aquí (aprobación Docker bloqueada en el agente); comando listo arriba.
 
 ## Estimación wall-time (GTX 1060 6GB)
 
