@@ -137,3 +137,23 @@ Si la GPU está ocupada o el build falla, el dry-run y `--build-only` siguen sie
 
 - No push de coordenadas / SMILES / DCD / PDB de membrana.  
 - Informes públicos: IDs, métricas numéricas, veredicto go/no-go — **sin estructuras**.
+
+## Fix 2026-08-08: GLY missing H after packmol-memgen
+
+**Root cause:** charmmlipid2amber (post-packmol-memgen) renumbers residues and strips protein hydrogens (N-terminal GLY lost amide/N-term H). OpenMM mber14 then fails at createSystem with `No template found for residue 1 (GLY) ... missing 1 hydrogen`.
+
+**Mitigation in** `scripts/run_md_openmm_membrane_lead.py`:
+- `repair_packed_membrane_pdb`: PDBFixer on **protein-only** atoms (`pH=7.4`), stitch lipids/water/ligand back, unique resSeq, `TER` before lipids (avoid full-system pdbfixer on POPC).
+- Then `modeller.addHydrogens(forcefield, pH=7.4)` before `createSystem`.
+- Writes `membrane_system_fixed.pdb`, `system_ready.pdb`, `packmol_memgen/packed_membrane_fixed.pdb`.
+- Reuses existing `membrane_system.pdb` when present to avoid re-packing.
+
+
+## Fix 2026-08-08b: PA / Misaligned PDB / OpenMM lipid17
+
+**Root cause PA:** `packmol-memgen` runs `charmmlipid2amber`, splitting each POPC into Amber fragments `PA`+`PC`+`OL`. OpenMM `amber14/lipid17.xml` only defines intact `POPC` (not PA/PC/OL), so `createSystem` failed.
+
+**Root cause Misaligned residue name:** full-system PDB rewrites via string slicing broke fixed-width columns (serial/resSeq overflow) ? OpenMM `Misaligned residue name`.
+
+**Fix:** prefer `packed_membrane.pdb_FORCED` (pre-charmmlipid2amber, intact POPC); load/repair with **ParmEd + PDBFixer(protein-only) + OpenFF ligand reinsert**; strip spurious inter-lipid bonds; rename ions to tip3p `CL`/`K`/`NA`; persist `system_ready.pdb` via ParmEd (keeps 4-char POPC). No string-sliced PDB edits.
+

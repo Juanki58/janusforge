@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """OpenMM membrane MD: CB1 inactive 5TGZ in explicit POPC + water + NaCl.
 
 Triplet panel (default --ligand all):
@@ -24,10 +24,10 @@ Force field
 
 Metrics
 -------
-- Cα RMSD of TM6 vs minimized frame
-- COM distance of Cα atoms TM3 vs TM6
-- Helix-axis angle TM3–TM6 (degrees; THC expected to open relative to inactive)
-- Phenolic H-bond persistence (% frames; ligand OH → protein acceptor)
+- CÎ± RMSD of TM6 vs minimized frame
+- COM distance of CÎ± atoms TM3 vs TM6
+- Helix-axis angle TM3â€“TM6 (degrees; THC expected to open relative to inactive)
+- Phenolic H-bond persistence (% frames; ligand OH â†’ protein acceptor)
 
 CLI aliases for --ligand: h1_02c, thcv, thc, all (or full ids).
 
@@ -117,9 +117,9 @@ class MembraneMDConfig:
     seed: int = 42
     platform: Optional[str] = None
     strip_fusion: bool = True
-    # packmol_memgen: water slab thickness (Å) above/below leaflet
+    # packmol_memgen: water slab thickness (Ã…) above/below leaflet
     water_dist_a: float = 15.0
-    # xy padding around protein for bilayer extent (Å)
+    # xy padding around protein for bilayer extent (Ã…)
     lipid_dist_a: float = 15.0
 
 
@@ -310,7 +310,7 @@ def orient_complex_for_membrane(
     tm3: tuple[int, int],
     tm6: tuple[int, int],
 ) -> Path:
-    """Rotate complex so TM3/TM6 Cα PCA axis ≈ Z, then center XY/Z at origin.
+    """Rotate complex so TM3/TM6 CÎ± PCA axis â‰ˆ Z, then center XY/Z at origin.
 
     Avoids packmol-memgen MEMEMBED+keepligs path (broken on ligand complexes in
     AmberTools 2025.1). Output is suitable for ``--preoriented``.
@@ -359,7 +359,7 @@ def orient_complex_for_membrane(
     vals, vecs = np.linalg.eigh(cov)
     axis = vecs[:, int(np.argmax(vals))]
     axis = axis / (np.linalg.norm(axis) + 1e-12)
-    # Rotation that maps axis → +Z
+    # Rotation that maps axis â†’ +Z
     z = np.array([0.0, 0.0, 1.0])
     v = np.cross(axis, z)
     c = float(np.dot(axis, z))
@@ -386,6 +386,237 @@ def orient_complex_for_membrane(
     out_pdb.parent.mkdir(parents=True, exist_ok=True)
     out_pdb.write_text("\n".join(out_lines) + "\n", encoding="utf-8")
     return out_pdb
+
+
+
+
+_STANDARD_AA = {
+    "ALA", "ARG", "ASN", "ASP", "CYS", "GLN", "GLU", "GLY", "HIS", "ILE",
+    "LEU", "LYS", "MET", "PHE", "PRO", "SER", "THR", "TRP", "TYR", "VAL",
+    "HID", "HIE", "HIP", "HSD", "HSE", "HSP", "CYX", "ASH", "GLH", "LYN",
+}
+
+_LIG_NAMES = {"LIG", "UNL", "MOL"}
+
+# amber14/tip3p.xml ion residue names (not Amber Cl-/K+/Na+)
+_ION_RENAME = {
+    "Cl-": "CL",
+    "CL-": "CL",
+    "CLA": "CL",
+    "K+": "K",
+    "Na+": "NA",
+    "NA+": "NA",
+    "SOD": "NA",
+    "POT": "K",
+    "TIP3": "HOH",
+    "WAT": "HOH",
+    "TP3": "HOH",
+}
+
+
+def _find_openmm_membrane_pdb(work: Path, memb_pdb: Optional[Path] = None) -> Path:
+    """Prefer packmol-memgen FORCED (intact POPC) over charmmlipid2amber PA/PC/OL."""
+    pack = work / "packmol_memgen"
+    ordered = [
+        pack / "packed_membrane.pdb_FORCED",
+        pack / "membrane_system.pdb",
+        work / "membrane_system.pdb",
+        memb_pdb,
+        pack / "packed_membrane.pdb",
+    ]
+    popc_hits: list[Path] = []
+    any_hits: list[Path] = []
+    for p in ordered:
+        if p is None or not p.is_file() or p in any_hits:
+            continue
+        any_hits.append(p)
+        head = p.read_text(encoding="utf-8", errors="replace")[:300_000]
+        if "POPC" in head:
+            popc_hits.append(p)
+    if popc_hits:
+        return popc_hits[0]
+    if any_hits:
+        return any_hits[0]
+    raise FileNotFoundError(f"No membrane PDB under {work}")
+
+
+def _strip_spurious_inter_residue_bonds(struct: Any) -> int:
+    """Remove distance-perceived bonds between separate lipids/waters/ions.
+
+    ParmEd PDB load invents inter-POPC bonds that break OpenMM lipid17 matching
+    ("bonds are different" / missing terminal group).
+    """
+    remove = []
+    for bond in list(struct.bonds):
+        r1, r2 = bond.atom1.residue, bond.atom2.residue
+        if r1 is r2:
+            continue
+        if r1.name in _STANDARD_AA and r2.name in _STANDARD_AA:
+            continue  # keep peptide bonds
+        remove.append(bond)
+    for bond in remove:
+        struct.bonds.remove(bond)
+    return len(remove)
+
+
+def _normalize_solvent_ion_names(struct: Any) -> None:
+    for res in struct.residues:
+        if res.name in _ION_RENAME:
+            res.name = _ION_RENAME[res.name]
+        # amber14/tip3p names + force Z (PDB/ParmEd often misreads Cl as carbon)
+        if res.name == "CL":
+            for atom in res.atoms:
+                atom.name = "Cl"
+                atom.atomic_number = 17
+        elif res.name == "NA":
+            for atom in res.atoms:
+                atom.name = "Na"
+                atom.atomic_number = 11
+        elif res.name == "K":
+            for atom in res.atoms:
+                atom.name = "K"
+                atom.atomic_number = 19
+
+
+
+def prepare_membrane_for_openmm(
+    memb_pdb: Path,
+    work: Path,
+    off_mol: Any,
+    pH: float = 7.4,
+) -> tuple[Any, Any, Path]:
+    """Build OpenMM-ready topology/positions from packmol-memgen output.
+
+    Root causes addressed
+    ---------------------
+    1. charmmlipid2amber splits POPC -> PA/PC/OL; OpenMM amber14/lipid17.xml
+       only knows intact POPC. Use ``*.pdb_FORCED`` (pre-conversion).
+    2. Never rewrite full-system PDBs with string slicing (Misaligned residue
+       name). Persist only via ParmEd / OpenMM PDBFile on subsets.
+    3. Protein H stripped by packmol -> PDBFixer on protein-only.
+    4. Ligand H stripped by --keepligs -> reinsert full OpenFF ligand.
+    5. ParmEd inter-lipid bonds stripped before createSystem.
+    """
+    import tempfile
+
+    import numpy as np
+    import parmed as pmd
+    from openmm.app import PDBFile
+    from pdbfixer import PDBFixer
+
+    src = _find_openmm_membrane_pdb(work, memb_pdb)
+    print(f"  membrane source for OpenMM lipid17: {src}", flush=True)
+    if "FORCED" not in src.name and src.read_text(encoding="utf-8", errors="replace").find(" PA ") > 0:
+        forced = work / "packmol_memgen" / "packed_membrane.pdb_FORCED"
+        if forced.is_file():
+            src = forced
+            print(f"  switching to FORCED POPC PDB: {src}", flush=True)
+
+    struct = pmd.load_file(str(src))
+    _normalize_solvent_ion_names(struct)
+    n_rm = _strip_spurious_inter_residue_bonds(struct)
+    print(f"  stripped {n_rm} spurious inter-residue bonds", flush=True)
+
+    prot_idx = [a.idx for a in struct.atoms if a.residue.name in _STANDARD_AA]
+    lig_idx = [a.idx for a in struct.atoms if a.residue.name.upper() in _LIG_NAMES]
+    oth_idx = [
+        a.idx
+        for a in struct.atoms
+        if a.idx not in set(prot_idx) and a.idx not in set(lig_idx)
+    ]
+    protein = struct[prot_idx]
+    other = struct[oth_idx]
+    lig_orig = struct[lig_idx] if lig_idx else None
+    _strip_spurious_inter_residue_bonds(other)
+
+    with tempfile.TemporaryDirectory() as td:
+        td_path = Path(td)
+        prot_path = td_path / "prot.pdb"
+        protein.save(str(prot_path), overwrite=True)
+        fixer = PDBFixer(filename=str(prot_path))
+        fixer.findMissingResidues()
+        fixer.missingResidues = {}
+        fixer.findNonstandardResidues()
+        fixer.replaceNonstandardResidues()
+        fixer.findMissingAtoms()
+        fixer.addMissingAtoms()
+        fixer.addMissingHydrogens(pH)
+        prot_h_path = td_path / "prot_h.pdb"
+        with open(prot_h_path, "w", encoding="utf-8") as fh:
+            PDBFile.writeFile(fixer.topology, fixer.positions, fh, keepIds=True)
+        protein_h = pmd.load_file(str(prot_h_path))
+        _strip_spurious_inter_residue_bonds(protein_h)
+
+    # Full OpenFF ligand (packmol often leaves ~heavy atoms only)
+    off_mol.name = "LIG"
+    if off_mol.n_conformers == 0:
+        off_mol.generate_conformers(n_conformers=1)
+    with tempfile.TemporaryDirectory() as td:
+        td_path = Path(td)
+        lig_path = td_path / "lig.pdb"
+        off_mol.to_file(str(lig_path), file_format="pdb")
+        lig = pmd.load_file(str(lig_path))
+        for res in lig.residues:
+            res.name = "LIG"
+    if lig_orig is not None and len(lig_orig.atoms) > 0:
+        ref = {
+            a.name.strip().upper(): np.array([a.xx, a.xy, a.xz], dtype=float)
+            for a in lig_orig.atoms
+            if a.atomic_number != 1
+        }
+        P: list[list[float]] = []
+        Q: list[list[float]] = []
+        for a in lig.atoms:
+            if a.atomic_number == 1:
+                continue
+            key = a.name.strip().upper()
+            if key in ref:
+                P.append([a.xx, a.xy, a.xz])
+                Q.append(ref[key].tolist())
+        if len(P) >= 3:
+            P_arr = np.asarray(P, dtype=float)
+            Q_arr = np.asarray(Q, dtype=float)
+            p0 = P_arr.mean(axis=0)
+            q0 = Q_arr.mean(axis=0)
+            U, _, Vt = np.linalg.svd((P_arr - p0).T @ (Q_arr - q0))
+            R = Vt.T @ U.T
+            if np.linalg.det(R) < 0:
+                Vt[-1, :] *= -1
+                R = Vt.T @ U.T
+            for a in lig.atoms:
+                v = np.array([a.xx, a.xy, a.xz], dtype=float)
+                w = (v - p0) @ R + q0
+                a.xx, a.xy, a.xz = float(w[0]), float(w[1]), float(w[2])
+            print(f"  reinserted OpenFF ligand (aligned {len(P)} heavy atoms)", flush=True)
+        else:
+            print("  warn: ligand heavy-atom align failed; using OpenFF coords", flush=True)
+
+    combined = protein_h + lig + other
+    _normalize_solvent_ion_names(combined)
+    _strip_spurious_inter_residue_bonds(combined)
+    # Preserve / restore periodic box (PME). Concatenation drops box vectors.
+    if getattr(struct, "box", None) is not None:
+        combined.box = struct.box
+    else:
+        import numpy as np
+        xyz = np.asarray(combined.coordinates, dtype=float)
+        span = xyz.max(axis=0) - xyz.min(axis=0) + 2.0  # Angstrom pad
+        combined.box = [float(span[0]), float(span[1]), float(span[2]), 90.0, 90.0, 90.0]
+    print(f"  periodic box (A): {list(combined.box)}", flush=True)
+
+    ready = work / "system_ready.pdb"
+    # ParmEd preserves 4-char POPC; OpenMM PDBFile would truncate to POP.
+    combined.save(str(ready), overwrite=True)
+    shutil.copy2(ready, work / "membrane_system_fixed.pdb")
+    pack_dir = work / "packmol_memgen"
+    pack_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(ready, pack_dir / "packed_membrane_fixed.pdb")
+    print(
+        f"  system_ready: atoms={len(combined.atoms)} bonds={len(combined.bonds)} -> {ready}",
+        flush=True,
+    )
+    return combined.topology, combined.positions, ready
+
 
 
 def run_packmol_memgen(
@@ -481,6 +712,11 @@ def run_packmol_memgen(
             chosen = cand
             if "POPC" in text_head or text_head.count("ATOM") > 5000:
                 break
+    # OpenMM amber14/lipid17 expects intact POPC, not charmmlipid2amber PA/PC/OL.
+    forced = out_dir / "packed_membrane.pdb_FORCED"
+    if forced.is_file():
+        chosen = forced
+        print(f"  using FORCED POPC PDB for OpenMM: {forced}", flush=True)
     if chosen is None:
         raise RuntimeError(
             f"packmol_memgen finished but no lipid-containing PDB found in {out_dir}. "
@@ -542,11 +778,20 @@ def build_and_run_membrane_complex(
         memb_pdb = work / "membrane_system.pdb"
         shutil.copy2(prebuilt_pdb, memb_pdb)
     else:
-        pack_dir = work / "packmol_memgen"
-        memb_pdb = run_packmol_memgen(complex_pdb, pack_dir, cfg, deps)
-        # copy to work root for convenience
-        shutil.copy2(memb_pdb, work / "membrane_system.pdb")
-        memb_pdb = work / "membrane_system.pdb"
+        forced = work / "packmol_memgen" / "packed_membrane.pdb_FORCED"
+        if forced.is_file():
+            print(
+                f"[{ligand_id}] reusing packmol FORCED POPC "
+                f"({forced.stat().st_size} bytes)",
+                flush=True,
+            )
+            shutil.copy2(forced, work / "membrane_system.pdb")
+            memb_pdb = work / "membrane_system.pdb"
+        else:
+            pack_dir = work / "packmol_memgen"
+            memb_pdb = run_packmol_memgen(complex_pdb, pack_dir, cfg, deps)
+            shutil.copy2(memb_pdb, work / "membrane_system.pdb")
+            memb_pdb = work / "membrane_system.pdb"
 
     forcefield = app.ForceField(
         "amber14-all.xml",
@@ -555,11 +800,12 @@ def build_and_run_membrane_complex(
     )
     forcefield.registerTemplateGenerator(gaff.generator)
 
-    pdb = PDBFile(str(memb_pdb))
-    modeller = Modeller(pdb.topology, pdb.positions)
+    topology, positions, memb_pdb = prepare_membrane_for_openmm(
+        memb_pdb, work, off_mol, pH=7.4
+    )
+    modeller = Modeller(topology, positions)
 
-    # If packmol_memgen stripped ligand naming, try to ensure LIG is present;
-    # otherwise system may still include it as UNL/MOL from merged PDB.
+    print(f"[{ligand_id}] createSystem (amber14/lipid17 POPC + GAFF ligand)...", flush=True)
     system = forcefield.createSystem(
         modeller.topology,
         nonbondedMethod=PME,
@@ -717,7 +963,7 @@ def analyze_membrane_trajectory(
     tm3: tuple[int, int],
     tm6: tuple[int, int],
 ) -> dict[str, Any]:
-    """TM6 RMSD, TM3–TM6 COM distance, helix-axis angle, phenolic H-bond %."""
+    """TM6 RMSD, TM3â€“TM6 COM distance, helix-axis angle, phenolic H-bond %."""
     try:
         import mdtraj as md
         import numpy as np
@@ -991,7 +1237,7 @@ def dry_run(cfg: MembraneMDConfig, ligand_ids: list[str]) -> int:
         print("WARNING: amber14/lipid17.xml not loadable")
     if not deps.get("packmol_memgen"):
         print(
-            "WARNING: packmol_memgen missing — production needs AmberTools "
+            "WARNING: packmol_memgen missing â€” production needs AmberTools "
             "or --prebuilt-pdb. Dry-run of poses still OK."
         )
         write_stub_metrics(
@@ -1006,7 +1252,7 @@ def dry_run(cfg: MembraneMDConfig, ligand_ids: list[str]) -> int:
         cfg.metrics_csv,
         ligand_ids,
         cfg,
-        note="dry-run OK; membrane deps ready — re-run without --dry-run",
+        note="dry-run OK; membrane deps ready â€” re-run without --dry-run",
     )
     print(f"membrane deps ready. stub: {cfg.metrics_csv}")
     return 0
