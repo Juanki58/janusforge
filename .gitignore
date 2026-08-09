@@ -47,6 +47,12 @@ results/docking/h1_h5*
 results/hits/h1_h5*
 *janus_h*_*.csv
 
+# --- Track D synthetic Janus panel (local; may include ex-lead refs) ---
+data/libraries/option_d*
+data/processed/option_d*
+results/docking/option_d*
+results/hits/option_d*
+
 # Molecule / pose / table artifacts
 *.pdbqt
 *.pdb

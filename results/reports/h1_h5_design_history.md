@@ -44,14 +44,22 @@
 - **Resultado:** 5/7 PASS. Control H1_02 se reproduce (PASS). Solo **JANUS_H1_02c** mejora dual vs control y alcanza aspiración gap vs THC > 0.80 (0.856). Éteres de fenol (OMe/OEt) no ayudan.
 - **Lección:** priorizar extremo de cadena no polar sobre enmascarar fenol; periferia ácida sigue prohibida. Vina ≠ Janus.
 - **Lead #1 in silico:** **JANUS_H1_02c**. Gap 0.856 = proxy Vina; ω-F PASS sin batir H1_02; MD 2 ns en agua vs THCV = mixto/débil ([`md_lead_2ns_summary.md`](md_lead_2ns_summary.md)).
-- **Batch membrane completo (2026-08-09):** POPC 20 ns × 3 (H1_02c, THCV, THC) OK. Resumen público: [`md_membrane_20ns_summary.md`](md_membrane_20ns_summary.md). Gate Track 1: **NO-GO** — lead no congela TM6 mejor que THCV; H-bond fenólico se recupera vs agua pero no bate THCV; diferenciación vs THC parcial (fenol sí, TM3–TM6 no). 1 réplica / 20 ns ≠ α. **Siguiente:** evaluar Opción D (URB447 / Yin-Yang) o réplicas/ventanas más largas solo como exploración.
+- **Batch membrane completo (2026-08-09):** POPC 20 ns × 3 (H1_02c, THCV, THC) OK. Resumen público: [`md_membrane_20ns_summary.md`](md_membrane_20ns_summary.md). Gate Track 1: **NO-GO** — lead no congela TM6 mejor que THCV; H-bond fenólico se recupera vs agua pero no bate THCV; diferenciación vs THC parcial (fenol sí, TM3–TM6 no). 1 réplica / 20 ns ≠ α.
+
+## Pivot Opción D (2026-08-10) — eje sintético URB447 / Yin-Yang
+
+- Decisión: **abandonar como eje principal** el andamiaje fitocannabinoide THCV-like tras NO-GO membrana. THCV / H1_02c quedan como control / PoC / *ex-lead*, no lead de desarrollo.
+- Documento: [`option_d_pivot_urb447.md`](option_d_pivot_urb447.md)
+- Primer panel retrospectivo: [`option_d_batch1_gate_summary.md`](option_d_batch1_gate_summary.md) (URB447, AM1710, GW405833 + refs; sin SMILES públicos de NCE)
+- Qiu 2023: cita de clase Yin-Yang; **sin** SMILES en panel (no CID/SMILES público fiable)
 
 ## Scripts (genéricos; sin SMILES de análogos)
 
 - `scripts/generate_h1_h5_candidates.py` — Batch 1
 - `scripts/generate_h1_h5_batch2.py` — Batch 2
 - `scripts/generate_h1_h5_batch3.py` — Batch 3
-- `scripts/analyze_h1_h5_gate.py` — gate + informes (`--batch h1_h5_batchN`)
+- `scripts/analyze_h1_h5_gate.py` — gate + informes (`--batch h1_h5_batchN` o `option_d_batch1`)
+- `scripts/generate_option_d_batch1.py` — panel Track D (publicado + refs; gitignored)
 - `scripts/run_md_openmm_lead.py` — MD OpenMM lead vs THCV en agua (poses locales gitignored)
 - `scripts/run_md_openmm_membrane_lead.py` — MD OpenMM POPC membrane lead vs THCV vs THC
 - Prep/dock: `scripts/prepare_panel_3d.py`, `scripts/run_retrospective_dock.py`

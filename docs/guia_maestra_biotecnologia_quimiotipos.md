@@ -14,28 +14,31 @@
 `janusforge` es un programa de descubrimiento de fármacos (*Drug Discovery*) enfocado en el perfil Janus (CB1-ant / CB2-ago) para la fibrosis pulmonar (IPF).
 
 - **El Cuello de Botella es Farmacológico, no Agrícola:** La Δ9-THCV natural presenta una ventana terapéutica estrecha y un efecto bifásico (*flip* a agonista en CB1 a dosis altas) con un gap energético in silico insignificante frente al Δ9-THC (−0.20 kcal/mol). Ningún proceso de cultivo ni extracción botánica corrige las limitaciones intrínsecas de la molécula nativa.
-- **El Fármaco no es la Planta:** La planta representa la prueba de concepto (PoC) inicial. La solución terapéutica requerirá análogos dirigidos (H1–H5) o derivados puros funcionalizados.
+- **El Fármaco no es la Planta:** La planta (THCV) es PoC / control natural. Tras NO-GO MD membrana del eje THCV-like ([`../results/reports/md_membrane_20ns_summary.md`](../results/reports/md_membrane_20ns_summary.md)), Track 1 prioriza **scaffolds sintéticos Janus / Yin-Yang** (URB447 y publicados) — pivot: [`../results/reports/option_d_pivot_urb447.md`](../results/reports/option_d_pivot_urb447.md).
 
 ### Diagrama de tracks
 
 ```text
-TRACK 1: DRUG DISCOVERY (PRIORIDAD #1)
-  [ In Silico / Docking Dual ] ──► [ Análogos H1–H5 ] ──► [ Síntesis / Ensayos In Vitro ]
+TRACK 1: DRUG DISCOVERY (PRIORIDAD #1) — eje sintético (Opción D)
+  [ Docking Dual URB447/Yin-Yang ] ──► [ SAR sintético ] ──► [ Síntesis / Ensayos In Vitro ]
                                                               ▲
 TRACK 2: SUPPLY CHAIN (INFRAESTRUCTURA)                       │
   [ Estándares Puros ] ──► [ Breeding / MAS THC-Zero ] ───────┘
+  (THCV / fitocannabinoides = controles / PoC, no lead)
 ```
 
 | Track | Rol | Prioridad |
 |-------|-----|-----------|
-| **Track 1 — Drug Discovery** | Diseño de ligando / análogos H1–H5; resuelve el cuello de botella farmacológico | **#1 (núcleo prioritario)** |
+| **Track 1 — Drug Discovery** | Scaffold sintético Janus (URB447 / Yin-Yang); H1–H5 fitocannabinoide = fase cerrada / contraste | **#1 (núcleo prioritario)** |
 | **Track 2 — Supply Chain** | Producción de biomasa, estándares puros y controles experimentales | Secundario (infraestructura) |
 
 ---
 
-## 2. Track 1 (Prioritario): Descubrimiento y Optimización del Ligando Janus
+## 2. Track 1 (Prioritario): Descubrimiento del Ligando Janus (eje sintético)
 
-El objetivo central del programa es la síntesis o selección de moléculas que superen el *gate* de selectividad THCV–THC mediante las 5 hipótesis de optimización (H1–H5):
+**Norte actual (Opción D):** ligandos sintéticos con perfil CB1-ant / CB2-ago ya anclados en literatura (URB447; AM1710 / GW405833; diseño Yin-Yang tipo Qiu 2023 como clase). Gate proxy Batch 1: [`../results/reports/option_d_batch1_gate_summary.md`](../results/reports/option_d_batch1_gate_summary.md).
+
+**Fase cerrada (contexto):** las 5 hipótesis H1–H5 sobre andamiaje THCV-like se exploraron in silico y cerraron en NO-GO de membrana; se conservan como lecciones / contraste, no como eje:
 
 1. **H1 (Extensión de Cadena C3 → C4 / CBDB-like):** Bloqueo estérico del bucle TM3–TM6 en CB1.
 2. **H2 (Derivados Carboxílicos / THCVA / Ésteres):** Aumento de TPSA/LogP para restricción periférica e incapacidad de cruzar la BBB.

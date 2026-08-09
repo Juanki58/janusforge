@@ -9,7 +9,7 @@
 
 ¿Qué significa, *antes* de binding húmedo y de fibrosis, que un candidato tenga un **perfil Janus más limpio que THCV**?
 
-THCV es la semilla: CB1 antagonista (a menudo) + CB2 agonista parcial, con **flip CB1** dosis-dependiente. “Más limpio que THCV” no es “más potente en un modelo de fibrosis”, ni “más parecido a CBD”. El marco biofísico (R ⇌ R\*, cadena C3 vs toggle TM6, meta funcional α ≤ 0) y por qué el proxy Vina no mide el flip están en [`mecanismo_flip_thcv_cb1.md`](mecanismo_flip_thcv_cb1.md).
+THCV es el **PoC natural / control** del perfil Janus imperfecto (CB1 ant a menudo + CB2 ago parcial, con **flip CB1** dosis-dependiente) — **no** el lead de Track 1 tras el NO-GO de membrana ([`../results/reports/md_membrane_20ns_summary.md`](../results/reports/md_membrane_20ns_summary.md)). El eje actual prioriza **scaffolds sintéticos Janus / Yin-Yang** (URB447 y publicados; pivot: [`../results/reports/option_d_pivot_urb447.md`](../results/reports/option_d_pivot_urb447.md)). “Más limpio que THCV” sigue siendo la pregunta de gates 1–3; no significa “más potente en fibrosis” ni “más parecido a CBD”. Marco biofísico del flip: [`mecanismo_flip_thcv_cb1.md`](mecanismo_flip_thcv_cb1.md).
 
 ---
 
@@ -45,7 +45,11 @@ Tras la retrospectiva del panel (THCV vs THC: gap dual ≈ **−0.20 kcal/mol** 
 
 Track 1 se generó y dockeó **en local** (`scripts/generate_h1_h5_candidates.py`, `scripts/generate_h1_h5_batch2.py` → Vina 5TGZ/6PT0). Estructuras/SMILES de análogos nuevos **no se publican** (gitignored). Resúmenes públicos sin SMILES: [`../results/reports/h1_h5_batch1_gate_summary.md`](../results/reports/h1_h5_batch1_gate_summary.md), [`../results/reports/h1_h5_batch2_gate_summary.md`](../results/reports/h1_h5_batch2_gate_summary.md). Historial de diseño (lecciones, sin estructuras): [`../results/reports/h1_h5_design_history.md`](../results/reports/h1_h5_design_history.md). Gate duro proxy: `dual < dual_THCV` **y** `(dual_THC − dual) > 0.40` kcal/mol (claramente > ~0.20).
 
-**Cierre de barrido:** Batch 1–2 agotó el muestreo ancho H1–H5; único PASS proxy marginal = scaffold **1′-Me** (JANUS_H1_02). La siguiente fase es **refino de esa serie** (Batch 3 planificado, no ejecutado): periferia sin -COOH libre; ver [`../results/reports/h1_h5_batch3_plan.md`](../results/reports/h1_h5_batch3_plan.md).
+**Cierre de barrido fitocannabinoide:** Batch 1–3 + MD membrana → **NO-GO** como eje Track 1 (lead H1_02c no gana vs THCV en POPC). Historial: [`../results/reports/h1_h5_design_history.md`](../results/reports/h1_h5_design_history.md).
+
+### Track D — scaffold sintético (activo)
+
+Norte operativo: **URB447 / Yin-Yang publicados** (misma métrica de gate proxy vs THCV/THC salvo que se documente ajuste). Resumen Batch 1: [`../results/reports/option_d_batch1_gate_summary.md`](../results/reports/option_d_batch1_gate_summary.md). Pivot: [`../results/reports/option_d_pivot_urb447.md`](../results/reports/option_d_pivot_urb447.md).
 ---
 
 ## Anti-criterios (no son éxito)

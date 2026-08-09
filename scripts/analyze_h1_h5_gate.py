@@ -32,7 +32,20 @@ CLEAR_GAP_MIN = 0.40
 BATCH_LABELS = {
     "h1_h5_batch1": "Iteración 1 — librería de diseño (H1–H5)",
     "h1_h5_batch2": "Iteración 2 — H1×H2 híbridos + volumen 1′",
+    "h1_h5_batch3": "Iteración 3 — refino JANUS_H1_02 (1′-Me)",
+    "option_d_batch1": "Opción D — panel sintético URB447 / Yin-Yang (Batch 1)",
 }
+ASPIRATION_GAP_VS_THC = 0.80
+
+# Roles evaluated by the hard separation gate (not refs)
+GATE_EVAL_ROLES = frozenset(
+    {
+        "design_candidate",
+        "design_comparator",
+        "yin_yang_published",
+        "ex_lead_phytocannabinoid",
+    }
+)
 
 
 def _fmt(x) -> str:
@@ -64,7 +77,7 @@ def evaluate(df: pd.DataFrame) -> pd.DataFrame:
         gap_mag_vs_thc = None if dual is None else dual_thc - dual
         better_than_thcv = dual is not None and dual < dual_thcv
         clear_vs_thc = gap_mag_vs_thc is not None and gap_mag_vs_thc > CLEAR_GAP_MIN
-        is_cand = str(r.get("role", "")) == "design_candidate"
+        is_cand = str(r.get("role", "")) in GATE_EVAL_ROLES
         passes = bool(is_cand and better_than_thcv and clear_vs_thc)
         rows.append(
             {
@@ -105,7 +118,7 @@ def write_detail(
     dual_thc = eval_df.attrs["dual_thc"]
     thcv_thc_gap = eval_df.attrs["thcv_thc_gap"]
     n_pass = int(eval_df["pass_gate"].sum())
-    n_cand = int((eval_df["role"] == "design_candidate").sum())
+    n_cand = int(eval_df["role"].isin(GATE_EVAL_ROLES).sum())
     label = BATCH_LABELS.get(batch, batch)
 
     lines = [
@@ -118,7 +131,7 @@ def write_detail(
         f"THCV−THC gap = {_fmt(thcv_thc_gap)} kcal/mol",
         f"- Hard gate: dual < THCV **and** (dual_THC − dual) > {CLEAR_GAP_MIN:.2f} "
         f"(clearly > ~{THCV_THC_REF_GAP:.2f})",
-        f"- Passed: **{n_pass}/{n_cand}** design candidates",
+        f"- Passed: **{n_pass}/{n_cand}** evaluated ligands",
         "",
         "| ID | hyp/role | SMILES | CB1 | CB2 | dual | vs THCV | vs THC | pass |",
         "|----|----------|--------|-----|-----|------|---------|--------|------|",
@@ -132,6 +145,121 @@ def write_detail(
         )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def _option_d_verdict(eval_df: pd.DataFrame, n_pass: int, n_cand: int) -> str:
+    """Critical reading: do published synthetics beat phytocannabinoid Track1 lead?"""
+    by = {r["name"]: r for _, r in eval_df.iterrows()}
+    passed = eval_df[eval_df["pass_gate"]]["name"].tolist()
+    synth = [
+        n
+        for n in ("URB447", "AM1710", "GW405833")
+        if n in by and str(by[n]["role"]) in GATE_EVAL_ROLES
+    ]
+    synth_pass = [n for n in synth if n in passed]
+    ex = by.get("JANUS_H1_02c")
+    parts = [
+        f"**Resultado:** {n_pass}/{n_cand} PASS"
+        + (f" ({', '.join(passed)})." if passed else "."),
+        f"Sintéticos publicados evaluados: {', '.join(synth) or 'ninguno'}; "
+        f"PASS: {', '.join(synth_pass) or 'ninguno'}.",
+    ]
+    if ex is not None and ex["dual"] is not None:
+        parts.append(
+            f"**Ex-lead fitocannabinoide H1_02c:** dual={_fmt(ex['dual'])}, "
+            f"gap vs THC={_fmt(ex.get('gap_mag_vs_thc'))} "
+            f"({'PASS' if ex['pass_gate'] else 'fail'} en este run) — "
+            "contexto post NO-GO MD membrana; no reabre Track 1 como eje."
+        )
+    urb = by.get("URB447")
+    if urb is not None and urb["dual"] is not None:
+        parts.append(
+            f"**URB447 (semilla sintética Track D):** dual={_fmt(urb['dual'])}, "
+            f"gap vs THC={_fmt(urb.get('gap_mag_vs_thc'))} "
+            f"({'PASS' if urb['pass_gate'] else 'fail'})."
+        )
+    parts.append(
+        "Umbrales = mismos que H1–H5 (dual < THCV y gap vs THC > 0.40). "
+        "Vina = afinidad/pose proxy; **no** éxito Janus funcional. "
+        "Qiu 2023 citado en docs, sin SMILES en panel (estructura no en PubChem fiable)."
+    )
+    return " ".join(parts)
+
+
+def _batch3_verdict(eval_df: pd.DataFrame, n_pass: int, n_cand: int) -> str:
+    """Critical reading vs Batch-1 control JANUS_H1_02 and aspiration gap ~0.80."""
+    by = {r["name"]: r for _, r in eval_df.iterrows()}
+
+    def dual(name: str) -> float | None:
+        r = by.get(name)
+        return None if r is None or r["dual"] is None else float(r["dual"])
+
+    def gap_thc(name: str) -> float | None:
+        r = by.get(name)
+        if r is None or r.get("gap_mag_vs_thc") is None:
+            return None
+        return float(r["gap_mag_vs_thc"])
+
+    ctrl = "JANUS_H1_02"
+    ctrl_dual = dual(ctrl)
+    ctrl_gap = gap_thc(ctrl)
+    ctrl_pass = bool(by[ctrl]["pass_gate"]) if ctrl in by else False
+
+    refinements = [
+        n
+        for n in (
+            "JANUS_H1_02a",
+            "JANUS_H1_02b",
+            "JANUS_H1_02c",
+            "JANUS_H1_02d",
+            "JANUS_H1_02e",
+            "JANUS_H1_02f",
+        )
+        if n in by
+    ]
+    passed = eval_df[eval_df["pass_gate"]]["name"].tolist()
+    aspirants = [
+        n
+        for n in [ctrl, *refinements]
+        if gap_thc(n) is not None and gap_thc(n) > ASPIRATION_GAP_VS_THC
+    ]
+    better_than_ctrl = [
+        n
+        for n in refinements
+        if ctrl_dual is not None and dual(n) is not None and dual(n) < ctrl_dual
+    ]
+
+    parts = [
+        f"**Resultado:** {n_pass}/{n_cand} PASS"
+        + (f" ({', '.join(passed)})." if passed else "."),
+    ]
+    if ctrl in by:
+        parts.append(
+            f"**Control H1_02:** dual={_fmt(ctrl_dual)}, gap vs THC={_fmt(ctrl_gap)} "
+            f"({'PASS' if ctrl_pass else 'fail'} en este run)."
+        )
+    if better_than_ctrl:
+        parts.append(
+            f"Refinos con dual mejor (más negativo) que H1_02: {', '.join(better_than_ctrl)}."
+        )
+    else:
+        parts.append(
+            "Ningún refino mejora dual respecto al control H1_02 en este run."
+        )
+    if aspirants:
+        parts.append(
+            f"Aspiración gap vs THC > {ASPIRATION_GAP_VS_THC:.2f}: "
+            f"{', '.join(aspirants)}."
+        )
+    else:
+        parts.append(
+            f"Ningún análogo alcanza aspiración gap vs THC > {ASPIRATION_GAP_VS_THC:.2f} "
+            "(no es requisito único del gate duro)."
+        )
+    parts.append(
+        "Vina = afinidad/pose proxy; gates funcionales 1–3 siguen abiertos. **No hay hit Janus.**"
+    )
+    return " ".join(parts)
 
 
 def _batch2_verdict(eval_df: pd.DataFrame, n_pass: int, n_cand: int) -> str:
@@ -210,7 +338,7 @@ def write_public_summary(
     dual_thc = eval_df.attrs["dual_thc"]
     thcv_thc_gap = eval_df.attrs["thcv_thc_gap"]
     n_pass = int(eval_df["pass_gate"].sum())
-    n_cand = int((eval_df["role"] == "design_candidate").sum())
+    n_cand = int(eval_df["role"].isin(GATE_EVAL_ROLES).sum())
     label = BATCH_LABELS.get(batch, batch)
     scores_rel = (
         scores_path.relative_to(ROOT).as_posix()
@@ -219,6 +347,11 @@ def write_public_summary(
     )
     exh_txt = str(exhaustiveness) if exhaustiveness is not None else "12"
     seed_txt = str(seed) if seed is not None else "42"
+    agg_label = (
+        "ligandos evaluados (sintéticos / ex-lead)"
+        if batch.startswith("option_d")
+        else "candidatos de diseño"
+    )
 
     lines = [
         f"# {label} — gate summary (public)",
@@ -240,7 +373,7 @@ def write_public_summary(
         f"- **PASS** solo si: (1) `dual < dual_THCV` y (2) `(dual_THC − dual) > {CLEAR_GAP_MIN:.2f}` "
         f"(claramente > separación THCV–THC ≈ {THCV_THC_REF_GAP:.2f})",
         "",
-        f"**Resultado agregado:** {n_pass}/{n_cand} candidatos de diseño pasaron el gate. "
+        f"**Resultado agregado:** {n_pass}/{n_cand} {agg_label} pasaron el gate. "
         f"Exhaustiveness={exh_txt}; seed={seed_txt}.",
         "",
         "## Tabla (IDs + scores; sin SMILES)",
@@ -250,12 +383,13 @@ def write_public_summary(
     ]
     for _, r in eval_df.iterrows():
         gate = "—"
-        if r["role"] == "design_candidate":
+        role = str(r["role"])
+        if role in GATE_EVAL_ROLES:
             gate = "PASS" if r["pass_gate"] else "fail"
-        elif r["role"] in {"seed", "anti_seed"}:
+        elif role in {"seed", "anti_seed"}:
             gate = "ref"
         hyp = _hyp_label(r)
-        if r["role"] in {"seed", "anti_seed"}:
+        if role in {"seed", "anti_seed"}:
             hyp = "REF"
         smiles_ok = "sí" if r.get("smiles") not in (None, "", float("nan")) else "—"
         # smiles always present in scores; design rows are valid if docked
@@ -267,9 +401,33 @@ def write_public_summary(
             f"{_fmt(r['vs_thc'])} | {gate} |"
         )
 
+    # Aspiration note (Batch 3+ / Option D): flag gaps vs THC > ~0.80
+    aspir = eval_df[
+        eval_df["role"].isin(GATE_EVAL_ROLES)
+        & eval_df["gap_mag_vs_thc"].notna()
+        & (eval_df["gap_mag_vs_thc"] > ASPIRATION_GAP_VS_THC)
+    ]["name"].tolist()
+    if batch in {"h1_h5_batch3", "option_d_batch1"}:
+        lines += [
+            "",
+            "## Aspiración (informativa)",
+            "",
+            f"- Gap vs THC > ~{ASPIRATION_GAP_VS_THC:.2f} kcal/mol: "
+            + (
+                ", ".join(aspir)
+                if aspir
+                else "ninguno en este run (no es requisito único del gate)"
+            ),
+            "",
+        ]
+
     lines += ["", "## Veredicto", ""]
     if batch == "h1_h5_batch2":
         lines.append(_batch2_verdict(eval_df, n_pass, n_cand))
+    elif batch == "h1_h5_batch3":
+        lines.append(_batch3_verdict(eval_df, n_pass, n_cand))
+    elif batch == "option_d_batch1":
+        lines.append(_option_d_verdict(eval_df, n_pass, n_cand))
     elif n_pass == 0:
         lines.append(
             "Ningún análogo supera el gate duro de separación proxy frente a THCV/THC. "
@@ -294,15 +452,30 @@ def write_public_summary(
                 "Sigue siendo **solo** ocupación/afinidad — gates funcionales 1–3 siguen abiertos."
             )
 
+    if batch.startswith("option_d"):
+        ip_paths = (
+            "`data/libraries/option_d*`, `results/docking/option_d*`, "
+            "`results/hits/option_d*`"
+        )
+        pivot = (
+            "- Pivot Track D: [`option_d_pivot_urb447.md`](option_d_pivot_urb447.md); "
+            "NO-GO membrana: [`md_membrane_20ns_summary.md`](md_membrane_20ns_summary.md)."
+        )
+    else:
+        ip_paths = (
+            "`data/libraries/h1_h5*`, `results/docking/h1_h5*`, `results/hits/h1_h5*`"
+        )
+        pivot = ""
     lines += [
         "",
         "## IP",
         "",
-        "- CSV/SDF/PDBQT de candidatos: gitignored "
-        "(`data/libraries/h1_h5*`, `results/docking/h1_h5*`, `results/hits/h1_h5*`).",
+        f"- CSV/SDF/PDBQT de panel: gitignored ({ip_paths}).",
         f"- Detalle con SMILES (local): `results/hits/{batch}/gate_detail.md`.",
-        "",
     ]
+    if pivot:
+        lines.append(pivot)
+    lines.append("")
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -364,7 +537,7 @@ def main() -> int:
             "seed": args.seed,
         },
         "n_pass": int(eval_df["pass_gate"].sum()),
-        "n_candidates": int((eval_df["role"] == "design_candidate").sum()),
+        "n_candidates": int(eval_df["role"].isin(GATE_EVAL_ROLES).sum()),
         "rows": eval_df.drop(columns=["smiles"], errors="ignore").to_dict(
             orient="records"
         ),
