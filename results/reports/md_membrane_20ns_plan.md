@@ -111,7 +111,7 @@ docker ps -a --filter name=janus_md_memb20
 Get-Content results/md/membrane/run_20ns_docker.log -Tail 40
 ```
 
-**Estado sesión (2026-08-07):** dry-run Docker OK (3 poses + `membrane_ready`). Build/producción GPU no arrancó aquí (aprobación Docker bloqueada en el agente); comando listo arriba.
+**Estado (2026-08-09): batch membrane completo.** Producción 20 ns × 3 ligandos (`status: ok`). Resumen gate público: [`md_membrane_20ns_summary.md`](md_membrane_20ns_summary.md) → **NO-GO** Track 1 (veredicto crítico allí). Artefactos locales en `results/md/membrane/<id>/`.
 
 ## Estimación wall-time (GTX 1060 6GB)
 
