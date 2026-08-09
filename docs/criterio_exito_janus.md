@@ -49,7 +49,7 @@ Track 1 se generó y dockeó **en local** (`scripts/generate_h1_h5_candidates.py
 
 ### Track D — scaffold sintético (activo)
 
-Norte operativo: **URB447 / Yin-Yang publicados** (misma métrica de gate proxy vs THCV/THC salvo que se documente ajuste). Resumen Batch 1: [`../results/reports/option_d_batch1_gate_summary.md`](../results/reports/option_d_batch1_gate_summary.md). Pivot: [`../results/reports/option_d_pivot_urb447.md`](../results/reports/option_d_pivot_urb447.md).
+Norte operativo: **URB447 / Yin-Yang publicados** (misma métrica de gate proxy vs THCV/THC salvo que se documente ajuste). Resumen Batch 1: [`../results/reports/option_d_batch1_gate_summary.md`](../results/reports/option_d_batch1_gate_summary.md). Batch 2 (fase ligera docking; MD diferida): [`../results/reports/option_d_batch2_gate_summary.md`](../results/reports/option_d_batch2_gate_summary.md). Pivot: [`../results/reports/option_d_pivot_urb447.md`](../results/reports/option_d_pivot_urb447.md).
 ---
 
 ## Anti-criterios (no son éxito)

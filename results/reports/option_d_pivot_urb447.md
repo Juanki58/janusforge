@@ -29,6 +29,14 @@ Tras el gate de membrana POPC 20 ns ([`md_membrane_20ns_summary.md`](md_membrane
 - Gate proxy dual 5TGZ/6PT0: [`option_d_batch1_gate_summary.md`](option_d_batch1_gate_summary.md)
 - Scripts: `scripts/generate_option_d_batch1.py`, `scripts/prepare_panel_3d.py`, `scripts/run_retrospective_dock.py`, `scripts/analyze_h1_h5_gate.py --batch option_d_batch1`
 
+## Batch 2 — fase ligera (docking done; MD diferida)
+
+- **Estado (2026-08-10):** fase ligera de docking CPU **completada**. MD / OpenMM **diferida** (no membrana, no agua en este lote).
+- Panel local SAR URB447: `data/libraries/option_d_batch2.csv` (gitignored; IDs `JANUS_D2_*` + refs URB447 / GW405833 / THCV / THC)
+- Gate proxy: [`option_d_batch2_gate_summary.md`](option_d_batch2_gate_summary.md) — lista filtrada rankeada por dual; sin SMILES públicos
+- Scripts: `scripts/generate_option_d_batch2.py`, `scripts/analyze_h1_h5_gate.py --batch option_d_batch2`
+- Siguiente (cuando se reactive): MD solo sobre top PASS priorizados — no reabrir Track 1 fitocannabinoide
+
 ## Criterio / guía
 
 Ver actualización en [`docs/criterio_exito_janus.md`](../../docs/criterio_exito_janus.md) y nota en historial [`h1_h5_design_history.md`](h1_h5_design_history.md).

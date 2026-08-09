@@ -53,13 +53,21 @@
 - Primer panel retrospectivo: [`option_d_batch1_gate_summary.md`](option_d_batch1_gate_summary.md) (URB447, AM1710, GW405833 + refs; sin SMILES públicos de NCE)
 - Qiu 2023: cita de clase Yin-Yang; **sin** SMILES en panel (no CID/SMILES público fiable)
 
+## Opción D Batch 2 (2026-08-10) — fase ligera docking
+
+- **Fase ligera docking done; MD diferida.** Solo Vina CPU dual 5TGZ/6PT0 (exh=8, seed=42); sin OpenMM.
+- Panel local SAR mínimo alrededor de URB447 (`JANUS_D2_*`) + refs; SMILES gitignored.
+- Resumen público (IDs + scores): [`option_d_batch2_gate_summary.md`](option_d_batch2_gate_summary.md)
+- Lista filtrada rankeada por dual lista para priorizar; MD solo si se reabre sobre top PASS.
+
 ## Scripts (genéricos; sin SMILES de análogos)
 
 - `scripts/generate_h1_h5_candidates.py` — Batch 1
 - `scripts/generate_h1_h5_batch2.py` — Batch 2
 - `scripts/generate_h1_h5_batch3.py` — Batch 3
-- `scripts/analyze_h1_h5_gate.py` — gate + informes (`--batch h1_h5_batchN` o `option_d_batch1`)
-- `scripts/generate_option_d_batch1.py` — panel Track D (publicado + refs; gitignored)
+- `scripts/analyze_h1_h5_gate.py` — gate + informes (`--batch h1_h5_batchN` o `option_d_batchN`)
+- `scripts/generate_option_d_batch1.py` — panel Track D Batch 1 (publicado + refs; gitignored)
+- `scripts/generate_option_d_batch2.py` — panel Track D Batch 2 SAR URB447 (gitignored)
 - `scripts/run_md_openmm_lead.py` — MD OpenMM lead vs THCV en agua (poses locales gitignored)
 - `scripts/run_md_openmm_membrane_lead.py` — MD OpenMM POPC membrane lead vs THCV vs THC
 - Prep/dock: `scripts/prepare_panel_3d.py`, `scripts/run_retrospective_dock.py`

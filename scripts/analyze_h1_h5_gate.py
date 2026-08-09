@@ -34,6 +34,7 @@ BATCH_LABELS = {
     "h1_h5_batch2": "Iteración 2 — H1×H2 híbridos + volumen 1′",
     "h1_h5_batch3": "Iteración 3 — refino JANUS_H1_02 (1′-Me)",
     "option_d_batch1": "Opción D — panel sintético URB447 / Yin-Yang (Batch 1)",
+    "option_d_batch2": "Opción D — SAR URB447 (Batch 2, fase ligera)",
 }
 ASPIRATION_GAP_VS_THC = 0.80
 
@@ -184,6 +185,36 @@ def _option_d_verdict(eval_df: pd.DataFrame, n_pass: int, n_cand: int) -> str:
         "Qiu 2023 citado en docs, sin SMILES en panel (estructura no en PubChem fiable)."
     )
     return " ".join(parts)
+
+
+def _option_d_batch2_verdict(eval_df: pd.DataFrame, n_pass: int, n_cand: int) -> str:
+    """Batch 2: URB447 SAR light docking — filter + rank; MD deferred."""
+    n_fail = n_cand - n_pass
+    passed = eval_df[eval_df["pass_gate"]].sort_values("dual")
+    top = passed.head(5)
+    top_txt = (
+        ", ".join(
+            f"{r['name']} (dual={_fmt(r['dual'])}, gap={_fmt(r['gap_mag_vs_thc'])})"
+            for _, r in top.iterrows()
+        )
+        if len(top)
+        else "ninguno"
+    )
+    urb = eval_df[eval_df["name"] == "URB447"]
+    urb_txt = ""
+    if not urb.empty and urb.iloc[0]["dual"] is not None:
+        u = urb.iloc[0]
+        urb_txt = (
+            f" Semilla URB447: dual={_fmt(u['dual'])}, "
+            f"gap vs THC={_fmt(u.get('gap_mag_vs_thc'))} "
+            f"({'PASS' if u['pass_gate'] else 'fail'})."
+        )
+    return (
+        f"**Resultado Batch 2 (fase ligera):** {n_pass}/{n_cand} PASS; "
+        f"{n_fail} fail. Top por dual: {top_txt}.{urb_txt} "
+        "MD / OpenMM **diferida** — solo docking CPU Vina. "
+        "Vina = afinidad/pose proxy; **no** éxito Janus funcional."
+    )
 
 
 def _batch3_verdict(eval_df: pd.DataFrame, n_pass: int, n_cand: int) -> str:
@@ -407,7 +438,7 @@ def write_public_summary(
         & eval_df["gap_mag_vs_thc"].notna()
         & (eval_df["gap_mag_vs_thc"] > ASPIRATION_GAP_VS_THC)
     ]["name"].tolist()
-    if batch in {"h1_h5_batch3", "option_d_batch1"}:
+    if batch in {"h1_h5_batch3", "option_d_batch1", "option_d_batch2"}:
         lines += [
             "",
             "## Aspiración (informativa)",
@@ -421,6 +452,42 @@ def write_public_summary(
             "",
         ]
 
+    # Batch 2: ranked PASS list + fail count (public IDs only)
+    if batch == "option_d_batch2":
+        n_fail = n_cand - n_pass
+        passed_rank = eval_df[eval_df["pass_gate"]].sort_values("dual")
+        lines += [
+            "",
+            "## Top PASS (rank por dual; sin SMILES)",
+            "",
+            f"- PASS: **{n_pass}** · fail: **{n_fail}** · evaluados: **{n_cand}**",
+            "",
+            "| rank | ID | hipótesis | CB1 | CB2 | dual | gap vs THC |",
+            "|------|----|-----------|-----|-----|------|------------|",
+        ]
+        for i, (_, r) in enumerate(passed_rank.iterrows(), start=1):
+            lines.append(
+                f"| {i} | {r['name']} | {_hyp_label(r)} | {_fmt(r['cb1_vina'])} | "
+                f"{_fmt(r['cb2_vina'])} | {_fmt(r['dual'])} | "
+                f"{_fmt(r['gap_mag_vs_thc'])} |"
+            )
+        if n_pass == 0:
+            lines.append("| — | — | — | — | — | — | — |")
+        lines += [
+            "",
+            "## IDs filtrados (PASS) rankeados por dual",
+            "",
+        ]
+        if n_pass:
+            for i, (_, r) in enumerate(passed_rank.iterrows(), start=1):
+                lines.append(
+                    f"{i}. `{r['name']}` — dual={_fmt(r['dual'])}, "
+                    f"gap vs THC={_fmt(r['gap_mag_vs_thc'])}"
+                )
+        else:
+            lines.append("_Ningún ID pasó el gate duro en este run._")
+        lines.append("")
+
     lines += ["", "## Veredicto", ""]
     if batch == "h1_h5_batch2":
         lines.append(_batch2_verdict(eval_df, n_pass, n_cand))
@@ -428,6 +495,8 @@ def write_public_summary(
         lines.append(_batch3_verdict(eval_df, n_pass, n_cand))
     elif batch == "option_d_batch1":
         lines.append(_option_d_verdict(eval_df, n_pass, n_cand))
+    elif batch == "option_d_batch2":
+        lines.append(_option_d_batch2_verdict(eval_df, n_pass, n_cand))
     elif n_pass == 0:
         lines.append(
             "Ningún análogo supera el gate duro de separación proxy frente a THCV/THC. "
