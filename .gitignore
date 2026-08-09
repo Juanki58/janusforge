@@ -36,6 +36,9 @@ results/reports/figures/
 # Local MD virtualenv (optional)
 .venv-md/
 
+# Visor molecular local
+.venv_visor/
+
 # --- Track 1 H1–H5 analogs / design candidates (IP; local only) ---
 data/libraries/h1_h5*
 data/libraries/janus_analogs*

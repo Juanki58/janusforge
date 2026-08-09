@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Janusforge Visor Molecular</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.4.2/3Dmol-min.js"></script>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --panel: #1a2332;
+      --panel2: #243044;
+      --text: #e8eef7;
+      --muted: #9aadc2;
+      --accent: #3d9cfd;
+      --accent2: #5ecf9a;
+      --warn: #f0b429;
+      --danger: #f07178;
+      --border: #2e3d52;
+      --radius: 10px;
+      --font: "Segoe UI", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; height: 100%;
+      background: var(--bg); color: var(--text);
+      font-family: var(--font);
+    }
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+    header {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 0.65rem 1rem;
+      background: linear-gradient(90deg, #152033, #1a2a40);
+      border-bottom: 1px solid var(--border);
+    }
+    header h1 {
+      margin: 0; font-size: 1.05rem; font-weight: 650; letter-spacing: 0.02em;
+    }
+    header .meta { color: var(--muted); font-size: 0.78rem; }
+    header .actions { margin-left: auto; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    button, .btn {
+      background: var(--panel2); color: var(--text);
+      border: 1px solid var(--border); border-radius: 8px;
+      padding: 0.4rem 0.75rem; cursor: pointer; font-size: 0.85rem;
+    }
+    button.primary { background: var(--accent); color: #061018; border-color: transparent; font-weight: 600; }
+    button.ghost { background: transparent; }
+    button:hover { filter: brightness(1.08); }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    main {
+      flex: 1; display: grid;
+      grid-template-columns: 320px 1fr 280px;
+      min-height: 0;
+    }
+    @media (max-width: 1100px) {
+      main { grid-template-columns: 1fr; grid-template-rows: auto 50vh auto; }
+    }
+    aside, section {
+      border-right: 1px solid var(--border);
+      overflow: auto; min-height: 0;
+    }
+    aside:last-of-type { border-right: none; border-left: 1px solid var(--border); }
+    .panel-pad { padding: 0.85rem; }
+    h2 { margin: 0 0 0.6rem; font-size: 0.95rem; }
+    h3 { margin: 1rem 0 0.4rem; font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+    #viewer {
+      width: 100%; height: 100%; min-height: 360px;
+      background: radial-gradient(ellipse at center, #1b2838 0%, #0b1018 70%);
+      position: relative;
+    }
+    #viewer-empty {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      color: var(--muted); text-align: center; padding: 2rem; pointer-events: none;
+      z-index: 1;
+    }
+    .file-list { list-style: none; margin: 0; padding: 0; }
+    .file-list li {
+      padding: 0.45rem 0.5rem; border-radius: 6px; cursor: pointer;
+      border: 1px solid transparent; margin-bottom: 0.25rem;
+      font-size: 0.78rem; line-height: 1.35;
+    }
+    .file-list li:hover { background: var(--panel2); }
+    .file-list li.active { border-color: var(--accent); background: #1e3350; }
+    .file-list li.disabled { opacity: 0.45; cursor: default; }
+    .badge {
+      display: inline-block; font-size: 0.68rem; padding: 0.1rem 0.35rem;
+      border-radius: 999px; background: #2a3b52; color: var(--muted); margin-right: 0.25rem;
+    }
+    .badge.receptor { background: #2a4060; color: #8ec5ff; }
+    .badge.ligando { background: #2a4a3a; color: #8ee0b5; }
+    .badge.complejo { background: #4a3a2a; color: #f0c98a; }
+    .badge.metricas { background: #3a2a4a; color: #d0b0ff; }
+    .wizard {
+      background: var(--panel); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 0.85rem; margin-bottom: 0.85rem;
+    }
+    .hidden { display: none !important; }
+    .wizard p { margin: 0 0 0.7rem; color: var(--muted); font-size: 0.85rem; }
+    .wizard-options { display: flex; flex-direction: column; gap: 0.4rem; }
+    .wizard-options button { text-align: left; }
+    .steps {
+      background: #152030; border-left: 3px solid var(--accent2);
+      padding: 0.65rem 0.75rem; border-radius: 0 8px 8px 0;
+      font-size: 0.82rem; color: var(--muted); margin-bottom: 0.85rem;
+    }
+    .steps ol { margin: 0.35rem 0 0; padding-left: 1.2rem; }
+    .steps li { margin: 0.25rem 0; }
+    .help-box, .ask-box {
+      background: var(--panel); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 0.75rem; margin-bottom: 0.75rem;
+      font-size: 0.82rem; white-space: pre-wrap;
+    }
+    .ask-box textarea {
+      width: 100%; min-height: 70px; resize: vertical;
+      background: var(--bg); color: var(--text);
+      border: 1px solid var(--border); border-radius: 6px;
+      padding: 0.5rem; font-family: inherit; font-size: 0.82rem;
+    }
+    .ask-box .row { display: flex; gap: 0.4rem; margin-top: 0.4rem; }
+    .toolbar {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      padding: 0.5rem 0.75rem; border-top: 1px solid var(--border);
+      background: var(--panel);
+    }
+    .status {
+      font-size: 0.75rem; color: var(--muted); padding: 0.35rem 0.75rem;
+      border-top: 1px solid var(--border);
+    }
+    .status.err { color: var(--danger); }
+    .status.ok { color: var(--accent2); }
+    .empty-hint {
+      background: #2a2418; border: 1px solid #5a4a20; color: #f0d090;
+      padding: 0.7rem; border-radius: 8px; font-size: 0.8rem; margin-bottom: 0.75rem;
+    }
+    .filter-row { display: flex; gap: 0.35rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+    .filter-row input {
+      flex: 1; min-width: 120px;
+      background: var(--bg); color: var(--text);
+      border: 1px solid var(--border); border-radius: 6px;
+      padding: 0.35rem 0.5rem; font-size: 0.8rem;
+    }
+    select {
+      background: var(--bg); color: var(--text);
+      border: 1px solid var(--border); border-radius: 6px;
+      padding: 0.35rem; font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Janusforge Visor Molecular</h1>
+      <div class="meta">Local · {{ repo_root }}</div>
+    </div>
+    <div class="actions">
+      <button type="button" id="btn-rescan">Re-escanear</button>
+      <button type="button" id="btn-wizard" class="ghost">Asistente</button>
+      <button type="button" id="btn-clear" class="ghost">Limpiar 3D</button>
+    </div>
+  </header>
+
+  <main>
+    <aside class="panel-pad">
+      <div id="wizard" class="wizard">
+        <h2>¿Qué quieres ver?</h2>
+        <p>Elige un modo. El visor escaneará <code>results/docking</code>, <code>results/md</code> y <code>data/targets</code>.</p>
+        <div class="wizard-options">
+          <button type="button" class="primary" data-mode="pose">Pose docking (receptor + ligando)</button>
+          <button type="button" data-mode="compare">Comparar 3 ligandos (H1 / THCV / THC)</button>
+          <button type="button" data-mode="receptor">Receptor solo</button>
+          <button type="button" data-mode="help">Solo ayuda / explorar lista</button>
+        </div>
+      </div>
+
+      <div id="steps" class="steps hidden">
+        <strong>Pasos</strong>
+        <ol id="steps-list"></ol>
+      </div>
+
+      <div id="empty-hint" class="empty-hint hidden"></div>
+
+      <h2>Archivos detectados <span id="file-count" class="badge">0</span></h2>
+      <div class="filter-row">
+        <input type="search" id="filter-q" placeholder="Filtrar nombre / lead…" />
+        <select id="filter-role">
+          <option value="">Todos los roles</option>
+          <option value="receptor">Receptor</option>
+          <option value="ligando">Ligando</option>
+          <option value="complejo">Complejo</option>
+          <option value="metricas">Métricas</option>
+          <option value="caja">Caja</option>
+          <option value="trayectoria">Trayectoria</option>
+        </select>
+      </div>
+      <ul id="file-list" class="file-list"></ul>
+    </aside>
+
+    <section style="display:flex;flex-direction:column;min-height:0;">
+      <div id="viewer">
+        <div id="viewer-empty">Carga un PDB / PDBQT / SDF desde la lista<br>o usa el asistente de la izquierda.</div>
+      </div>
+      <div class="toolbar">
+        <button type="button" data-style="cartoon">Cartoon</button>
+        <button type="button" data-style="stick">Sticks</button>
+        <button type="button" data-style="line">Lines</button>
+        <button type="button" data-style="sphere">Spheres</button>
+        <button type="button" id="btn-spin">Girar</button>
+        <button type="button" id="btn-surface" class="ghost">Superficie</button>
+      </div>
+      <div id="status" class="status">Listo.</div>
+    </section>
+
+    <aside class="panel-pad">
+      <h2>Ayuda contextual</h2>
+      <div id="help-box" class="help-box">Pulsa «Asistente» o elige un modo para empezar.</div>
+
+      <div class="ask-box">
+        <h3>Preguntar</h3>
+        <textarea id="ask-q" placeholder="Ej: ¿cómo comparar H1 con THC? / ¿dónde está el receptor?"></textarea>
+        <div class="row">
+          <button type="button" id="btn-ask" class="primary">Preguntar</button>
+        </div>
+        <p style="margin:0.5rem 0 0;color:var(--muted);font-size:0.72rem;">
+          {% if has_openai %}OPENAI_API_KEY detectada → /api/ask puede usar LLM.{% else %}Sin OPENAI_API_KEY: respuestas por reglas locales (robusto).{% endif %}
+        </p>
+        <div id="ask-answer" class="help-box" style="margin-top:0.6rem;display:none;"></div>
+      </div>
+
+      <h3>Notas</h3>
+      <div class="help-box" style="color:var(--muted);">
+• Solo sirve archivos bajo el repo (path traversal bloqueado).
+• Datos gitignored (results/, PDB locales) se leen en tu PC; no se suben.
+• DCD se lista pero aún no se anima.
+• SMILES sensibles no se envían al servidor externo salvo que configures OPENAI y preguntes (el prompt solo usa metadatos de paths).
+      </div>
+    </aside>
+  </main>
+
+  <script>
+    const state = {
+      scan: null,
+      mode: null,
+      models: [],
+      spin: false,
+      style: "cartoon",
+      surface: false,
+    };
+
+    const $ = (id) => document.getElementById(id);
+    const statusEl = $("status");
+    const viewerEl = $("viewer");
+    let viewer = null;
+
+    function setStatus(msg, kind) {
+      statusEl.textContent = msg;
+      statusEl.className = "status" + (kind ? " " + kind : "");
+    }
+
+    function initViewer() {
+      viewerEl.innerHTML = "";
+      const empty = document.createElement("div");
+      empty.id = "viewer-empty";
+      empty.textContent = "Carga un PDB / PDBQT / SDF desde la lista.";
+      viewerEl.appendChild(empty);
+      viewer = $3Dmol.createViewer(viewerEl, { backgroundColor: "0b1018" });
+      state.models = [];
+    }
+
+    function hideEmpty() {
+      const e = $("viewer-empty");
+      if (e) e.style.display = "none";
+    }
+
+    function fmtSize(n) {
+      if (n < 1024) return n + " B";
+      if (n < 1024 * 1024) return (n / 1024).toFixed(1) + " KB";
+      return (n / (1024 * 1024)).toFixed(1) + " MB";
+    }
+
+    function helpForMode(mode, scan) {
+      const s = scan.suggestions || {};
+      if (mode === "pose") {
+        return "Modo pose docking: se intentará cargar el mejor receptor y la mejor pose/complejo detectados. También puedes hacer clic en archivos de la lista.";
+      }
+      if (mode === "compare") {
+        const leads = (s.leads_found || []).join(", ") || "ninguno";
+        return "Modo comparar: carga poses de leads H1_02c / THCV / THC si existen. Leads vistos: " + leads + ".";
+      }
+      if (mode === "receptor") {
+        return "Modo receptor: muestra solo la proteína (cartoon). Ideal para revisar CB1/CB2 en data/targets.";
+      }
+      return "Explora la lista. Filtra por rol o nombre. Clic = cargar en el canvas. Métricas CSV/JSON abren vista previa a la derecha.";
+    }
+
+    function setSteps(items) {
+      const box = $("steps");
+      const ol = $("steps-list");
+      ol.innerHTML = "";
+      items.forEach((t) => {
+        const li = document.createElement("li");
+        li.textContent = t;
+        ol.appendChild(li);
+      });
+      box.classList.toggle("hidden", !items.length);
+    }
+
+    function renderFiles() {
+      const list = $("file-list");
+      list.innerHTML = "";
+      if (!state.scan) return;
+      const q = ($("filter-q").value || "").toLowerCase();
+      const role = $("filter-role").value;
+      const files = state.scan.files.filter((f) => {
+        if (role && f.role !== role) return false;
+        if (!q) return true;
+        const hay = (f.path + " " + f.tags.join(" ") + " " + f.role).toLowerCase();
+        return hay.includes(q);
+      });
+      $("file-count").textContent = String(files.length);
+
+      files.forEach((f) => {
+        const li = document.createElement("li");
+        if (!f.viewable && f.role !== "metricas") li.classList.add("disabled");
+        li.innerHTML =
+          `<span class="badge ${f.role}">${f.role}</span>` +
+          `<span class="badge">${f.type}</span>` +
+          (f.tags || []).map((t) => `<span class="badge">${t}</span>`).join("") +
+          `<div><strong>${f.name}</strong></div>` +
+          `<div style="color:var(--muted)">${f.path} · ${fmtSize(f.size_bytes)}</div>`;
+        li.title = f.path;
+        li.addEventListener("click", () => onFileClick(f, li));
+        list.appendChild(li);
+      });
+    }
+
+    async function onFileClick(f, li) {
+      document.querySelectorAll(".file-list li").forEach((el) => el.classList.remove("active"));
+      if (li) li.classList.add("active");
+
+      if (f.role === "metricas" || f.ext === ".csv" || f.ext === ".json") {
+        try {
+          const r = await fetch("/api/metrics?path=" + encodeURIComponent(f.path));
+          const data = await r.json();
+          if (!r.ok) throw new Error(data.error || data.detail || r.statusText);
+          const preview = data.preview_lines
+            ? data.preview_lines.join("\n")
+            : JSON.stringify(data, null, 2).slice(0, 2500);
+          $("help-box").textContent = "Métricas: " + f.path + "\n\n" + preview;
+          setStatus("Vista previa de métricas: " + f.name, "ok");
+        } catch (err) {
+          setStatus("Error métricas: " + err.message, "err");
+        }
+        return;
+      }
+
+      if (!f.viewable) {
+        setStatus("Archivo no visualizable en 3D (p. ej. DCD o demasiado grande).", "err");
+        $("help-box").textContent =
+          f.ext === ".dcd" || f.ext === ".xtc"
+            ? "Trayectoria detectada, pero la animación DCD aún no está implementada. Abre minimized.pdb o system_ready.pdb del mismo directorio."
+            : "Este archivo no se puede cargar en 3Dmol.";
+        return;
+      }
+
+      const asLigand = f.role === "ligando" || f.ext === ".sdf" || f.ext === ".mol2";
+      await loadStructure(f.path, {
+        format: formatOf(f),
+        style: asLigand ? "stick" : state.style,
+        color: asLigand ? "spectrum" : undefined,
+        append: state.mode === "compare" || state.mode === "pose",
+      });
+    }
+
+    function formatOf(f) {
+      const e = (f.ext || "").replace(".", "");
+      if (e === "pdbqt") return "pdb";
+      if (e === "mmcif") return "cif";
+      return e || "pdb";
+    }
+
+    async function loadStructure(path, opts = {}) {
+      setStatus("Cargando " + path + "…");
+      try {
+        const r = await fetch("/api/structure?path=" + encodeURIComponent(path));
+        const text = await r.text();
+        if (!r.ok) {
+          let detail = text;
+          try { detail = JSON.parse(text).error || JSON.parse(text).detail || text; } catch (_) {}
+          throw new Error(detail);
+        }
+        if (!opts.append) {
+          initViewer();
+        }
+        hideEmpty();
+        const fmt = opts.format || "pdb";
+        const model = viewer.addModel(text, fmt);
+        state.models.push({ path, model });
+
+        if (opts.style === "stick") {
+          viewer.setStyle({}, {});
+          if (opts.append) {
+            // estilo por modelo recién añadido: sticks coloreados
+            viewer.setStyle({ model: state.models.length - 1 }, { stick: { radius: 0.15, colorscheme: opts.color || "default" } });
+          } else {
+            viewer.setStyle({}, { stick: { radius: 0.15 } });
+          }
+        } else if (opts.style === "line") {
+          viewer.setStyle({}, { line: {} });
+        } else if (opts.style === "sphere") {
+          viewer.setStyle({}, { sphere: { scale: 0.3 } });
+        } else {
+          viewer.setStyle({}, { cartoon: { color: "spectrum" } });
+          // ligandos hetero como sticks si hay
+          viewer.addStyle({ hetflag: true }, { stick: { radius: 0.2, colorscheme: "greenCarbon" } });
+        }
+        viewer.zoomTo();
+        viewer.render();
+        setStatus("Cargado: " + path, "ok");
+        $("help-box").textContent =
+          "Estructura: " + path + "\nEstilo: " + (opts.style || state.style) +
+          "\nConsejo: rueda = zoom, arrastrar = rotar, clic derecho = trasladar.";
+      } catch (err) {
+        setStatus("Error al cargar: " + err.message, "err");
+        $("help-box").textContent = "No se pudo cargar:\n" + path + "\n\n" + err.message;
+      }
+    }
+
+    async function scan() {
+      setStatus("Escaneando proyecto…");
+      try {
+        const r = await fetch("/api/scan");
+        const data = await r.json();
+        if (!r.ok || data.ok === false) throw new Error(data.error || data.detail || "scan falló");
+        state.scan = data;
+        renderFiles();
+        const hint = $("empty-hint");
+        if (data.empty) {
+          hint.textContent = data.help_empty;
+          hint.classList.remove("hidden");
+        } else {
+          hint.classList.add("hidden");
+        }
+        setStatus("Escaneo OK: " + data.count + " archivos.", "ok");
+        return data;
+      } catch (err) {
+        setStatus("Error /api/scan: " + err.message, "err");
+        $("help-box").textContent =
+          "No se pudo escanear el proyecto.\n" + err.message +
+          "\n¿Está corriendo lanzar_visor.bat desde la raíz del repo?";
+        throw err;
+      }
+    }
+
+    async function applyMode(mode) {
+      state.mode = mode;
+      $("wizard").classList.add("hidden");
+      const scanData = state.scan || (await scan());
+      $("help-box").textContent = helpForMode(mode, scanData);
+      const s = scanData.suggestions || {};
+
+      if (mode === "help") {
+        setSteps([
+          "Filtra la lista por rol o nombre (H1, THCV, THC…).",
+          "Clic en un archivo viewable para verlo en 3D.",
+          "Usa la caja «Preguntar» si necesitas orientación.",
+        ]);
+        return;
+      }
+
+      if (mode === "receptor") {
+        setSteps([
+          "Se carga el receptor sugerido (o el primero disponible).",
+          "Estilo cartoon + heteroatoms en sticks.",
+          "Si no hay receptor, colócalo en data/targets/.",
+        ]);
+        initViewer();
+        if (s.best_receptor) {
+          await loadStructure(s.best_receptor.path, { format: formatOf(s.best_receptor), style: "cartoon" });
+        } else {
+          setStatus("No hay receptor sugerido.", "err");
+        }
+        return;
+      }
+
+      if (mode === "pose") {
+        setSteps([
+          "Cargar receptor (si existe).",
+          "Añadir mejor pose / complejo de ligando.",
+          "Ajusta estilo con la barra inferior.",
+        ]);
+        initViewer();
+        if (s.best_receptor) {
+          await loadStructure(s.best_receptor.path, { format: formatOf(s.best_receptor), style: "cartoon" });
+        }
+        if (s.best_pose) {
+          const isComplex = s.best_pose.role === "complejo";
+          await loadStructure(s.best_pose.path, {
+            format: formatOf(s.best_pose),
+            style: isComplex ? "cartoon" : "stick",
+            append: !isComplex && !!s.best_receptor,
+          });
+        } else if (!s.best_receptor) {
+          setStatus("Sin receptor ni pose. Revisa results/ y data/targets/.", "err");
+        }
+        return;
+      }
+
+      if (mode === "compare") {
+        setSteps([
+          "Cargar hasta 3 poses/complejos (H1_02c, THCV, THC).",
+          "Cada clic adicional en la lista se añade al canvas.",
+          "Si faltan leads, genera MD/docking con esos nombres.",
+        ]);
+        initViewer();
+        const trio = s.compare_three || [];
+        if (!trio.length) {
+          setStatus("No hay leads comparables detectados.", "err");
+          $("help-box").textContent =
+            "No encontré poses con tags H1_02c / THCV / THC. Busca en results/md/membrane/.";
+          return;
+        }
+        for (let i = 0; i < trio.length; i++) {
+          const f = trio[i];
+          await loadStructure(f.path, {
+            format: formatOf(f),
+            style: f.role === "complejo" ? "cartoon" : "stick",
+            append: i > 0 && f.role !== "complejo",
+            color: ["greenCarbon", "cyanCarbon", "magentaCarbon"][i % 3],
+          });
+        }
+      }
+    }
+
+    async function ask() {
+      const q = $("ask-q").value.trim();
+      const box = $("ask-answer");
+      box.style.display = "block";
+      box.textContent = "Pensando…";
+      try {
+        const r = await fetch("/api/ask", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question: q || "ayuda" }),
+        });
+        const data = await r.json();
+        if (!r.ok || data.ok === false) throw new Error(data.error || data.detail || "ask falló");
+        box.textContent = "[" + data.source + "]\n" + data.answer;
+      } catch (err) {
+        box.textContent = "Error: " + err.message;
+      }
+    }
+
+    // Events
+    document.querySelectorAll("#wizard [data-mode]").forEach((btn) => {
+      btn.addEventListener("click", () => applyMode(btn.getAttribute("data-mode")));
+    });
+    $("btn-wizard").addEventListener("click", () => {
+      $("wizard").classList.remove("hidden");
+      setSteps([]);
+    });
+    $("btn-rescan").addEventListener("click", () => scan().then(renderFiles));
+    $("btn-clear").addEventListener("click", () => {
+      initViewer();
+      setStatus("Canvas limpio.", "ok");
+    });
+    $("btn-ask").addEventListener("click", ask);
+    $("filter-q").addEventListener("input", renderFiles);
+    $("filter-role").addEventListener("change", renderFiles);
+
+    document.querySelectorAll(".toolbar [data-style]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (!viewer) return;
+        state.style = btn.getAttribute("data-style");
+        const map = {
+          cartoon: { cartoon: { color: "spectrum" } },
+          stick: { stick: { radius: 0.15 } },
+          line: { line: {} },
+          sphere: { sphere: { scale: 0.3 } },
+        };
+        viewer.setStyle({}, map[state.style] || map.cartoon);
+        viewer.render();
+        setStatus("Estilo: " + state.style, "ok");
+      });
+    });
+    $("btn-spin").addEventListener("click", () => {
+      if (!viewer) return;
+      state.spin = !state.spin;
+      viewer.spin(state.spin ? "y" : false);
+      setStatus(state.spin ? "Rotación ON" : "Rotación OFF", "ok");
+    });
+    $("btn-surface").addEventListener("click", () => {
+      if (!viewer) return;
+      state.surface = !state.surface;
+      if (state.surface) {
+        viewer.addSurface($3Dmol.SurfaceType.VDW, { opacity: 0.7, color: "white" });
+      } else {
+        viewer.removeAllSurfaces();
+      }
+      viewer.render();
+    });
+
+    // Boot
+    initViewer();
+    scan().then(() => {
+      $("help-box").textContent =
+        "Bienvenido. Elige qué quieres ver en el asistente, o explora la lista.\n" +
+        "Archivos indexados: " + (state.scan ? state.scan.count : 0) + ".";
+    });
+  </script>
+</body>
+</html>
