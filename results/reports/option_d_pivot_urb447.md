@@ -47,3 +47,7 @@ Tras el gate de membrana POPC 20 ns ([`md_membrane_20ns_summary.md`](md_membrane
 ## Criterio / guía
 
 Ver actualización en [`docs/criterio_exito_janus.md`](../../docs/criterio_exito_janus.md) y nota en historial [`h1_h5_design_history.md`](h1_h5_design_history.md).
+
+## Precedente literario (mapa Janus)
+
+**URB447** ancla el pivot Opción D como precedente *conceptual* (Janus limpio + periferia), **no** como el ligando de mayor afinidad CB2 del panel de referencia: AM1710 y GW405833 pasan mejor el corte nM (~Kd ≈ 8.5 nM ↔ −11 kcal/mol); el hueco **fibrosis *in vivo* con un único Janus** de esas familias sigue abierto. Mapa completo: [`docs/mapa_ligandos_janus_cb1_cb2.md`](../../docs/mapa_ligandos_janus_cb1_cb2.md).

@@ -117,6 +117,10 @@ Informe técnico hermano (mismo run): [`option_d_batch2_gate_summary.md`](option
 33. `GW405833` — dual=-10.033, gap vs THC=0.845
 34. `JANUS_D2_17` — dual=-9.641, gap vs THC=0.453
 
+## Precedente literario vs afinidad CB2 (auditoría 2026-08-10)
+
+**URB447** es el precedente *conceptual* del perfil Janus limpio (CB1 ant neutro / CB2 ago periférico), **no** el de mayor afinidad CB2 experimental entre los anclas publicadas: AM1710 (Kᵢ CB2 ≈ 6.7 nM) y GW405833 (Kᵢ ≈ 4–12 nM) pasan mejor el corte aproximado Kd ≈ 8.5 nM (−11 kcal/mol a 298 K); URB447 (IC₅₀ CB2 ≈ 41 nM) no. El hueco **Janus monomolecular × fibrosis *in vivo*** para URB447 / GW405833 / AM1710 / compuesto 14 (Qiu) permanece abierto en esa auditoría. Detalle y matices (no comparar Vina ΔG con IC₅₀/Kᵢ): [`docs/mapa_ligandos_janus_cb1_cb2.md`](../../docs/mapa_ligandos_janus_cb1_cb2.md).
+
 ## Veredicto
 
 **Batch D1 (derivados URB447 / Yin-Yang):** cribado docking CPU dual CB1/CB2 **completado** reutilizando el run `option_d_batch2` (36 ligandos docked × 2 receptores; exh=8). Gate: 34/34 PASS; 0 fail. **Lead = JANUS_D2_22** (dual=−11.277); runners-up: JANUS_D2_05 (−11.151), JANUS_D2_10 (−11.144), JANUS_D2_15 (−11.098), JANUS_D2_29 (−10.963). Semilla URB447: dual=−10.695 (PASS). **MD membrana POPC 20 ns / OpenMM GPU EN CURSO** sobre el lead (`janus_md_memb20_d2_22`; log `results/md/membrane/run_20ns_d2_22_docker.log`). Vina = afinidad/pose proxy; **no** éxito Janus funcional. Poses locales gitignored bajo `results/docking/option_d_batch2/{cb1,cb2}/`.

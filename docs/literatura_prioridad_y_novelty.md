@@ -5,7 +5,7 @@
 > **Fecha de búsqueda: 2026-08-06.**  
 > Métodos: WebSearch / WebFetch de abstracts y revisiones; Google Patents / Justia para patentes visibles.  
 > **Matiz obligatorio:** ausencia en esta búsqueda ≠ inexistencia absoluta (literatura gris, patentes no indexadas, datos industriales no publicados).  
-> Complementa (no duplica): [`literatura_fibrosis_cb1_cb2.md`](literatura_fibrosis_cb1_cb2.md) · [`quimiotipos_varinas_thcv.md`](quimiotipos_varinas_thcv.md) · [`guia_maestra_biotecnologia_quimiotipos.md`](guia_maestra_biotecnologia_quimiotipos.md).
+> Complementa (no duplica): [`literatura_fibrosis_cb1_cb2.md`](literatura_fibrosis_cb1_cb2.md) · [`quimiotipos_varinas_thcv.md`](quimiotipos_varinas_thcv.md) · [`guia_maestra_biotecnologia_quimiotipos.md`](guia_maestra_biotecnologia_quimiotipos.md) · mapa cuantitativo de precedentes URB447 / GW405833 / AM1710 / Qiu-14: [`mapa_ligandos_janus_cb1_cb2.md`](mapa_ligandos_janus_cb1_cb2.md) (2026-08-10; panel mínimo novelty + capas scaffold / S285 / estado inactivo CB1).
 
 ---
 
@@ -81,7 +81,7 @@
 - **Programa académico Makriyannis:** tesis “Development of novel dual CB1 antagonists/CB2 agonists” (AM8641 → AM12435; eficacia en modelos de adicción, no fibrosis en el abstract consultado). https://hdl.handle.net/2047/D20791814
 - **Metáfora estructural Yin-Yang:** Li et al., *Cell* 2019; https://doi.org/10.1016/j.cell.2018.12.011 — CB2 antagonista / CB1 agonista como relación opuesta; informa el diseño del perfil *inverso* que busca janusforge.
 
-**Lectura para novelty:** llamar “Janus” al perfil no aporta prioridad. Usar URB447/AM1710 como *comparadores* (como ya hace el repo) es correcto.
+**Lectura para novelty:** llamar “Janus” al perfil no aporta prioridad. Usar URB447/AM1710 como *comparadores* (como ya hace el repo) es correcto. **Puente 2026-08-10:** URB447 = precedente conceptual, no el de mayor afinidad CB2 experimental; AM1710/GW pasan mejor el corte ~8.5 nM; hueco Janus monomolecular × fibrosis *in vivo* reafirmado — ver [`mapa_ligandos_janus_cb1_cb2.md`](mapa_ligandos_janus_cb1_cb2.md).
 
 ### Eje 2 — CB1 / CB2 + fibrosis pulmonar / IPF
 
