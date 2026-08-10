@@ -64,7 +64,8 @@
 
 - **Batch D1** = alias del cribado de derivados URB447 / Yin-Yang (reutiliza run Batch 2; no se rehizo Vina).
 - Resumen público: [`option_d_batch_d1_gate_summary.md`](option_d_batch_d1_gate_summary.md)
-- **MD pausada** (no OpenMM, no membrana).
+- **Lead Opción D:** **JANUS_D2_22** (confirmado 2026-08-10).
+- **MD / GPU pesada pausada** (calor) — no 20 ns POPC OpenMM hasta decisión explícita.
 
 ## Scripts (genéricos; sin SMILES de análogos)
 

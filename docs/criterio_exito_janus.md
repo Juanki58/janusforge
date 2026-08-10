@@ -49,7 +49,9 @@ Track 1 se generó y dockeó **en local** (`scripts/generate_h1_h5_candidates.py
 
 ### Track D — scaffold sintético (activo)
 
-Norte operativo: **URB447 / Yin-Yang publicados** (misma métrica de gate proxy vs THCV/THC salvo que se documente ajuste). Resumen Batch 1: [`../results/reports/option_d_batch1_gate_summary.md`](../results/reports/option_d_batch1_gate_summary.md). Batch 2 (fase ligera docking; MD diferida): [`../results/reports/option_d_batch2_gate_summary.md`](../results/reports/option_d_batch2_gate_summary.md). Pivot: [`../results/reports/option_d_pivot_urb447.md`](../results/reports/option_d_pivot_urb447.md).
+Norte operativo: **URB447 / Yin-Yang publicados** (misma métrica de gate proxy vs THCV/THC salvo que se documente ajuste). Resumen Batch 1: [`../results/reports/option_d_batch1_gate_summary.md`](../results/reports/option_d_batch1_gate_summary.md). Batch 2 / D1 (fase ligera docking): [`../results/reports/option_d_batch2_gate_summary.md`](../results/reports/option_d_batch2_gate_summary.md), [`../results/reports/option_d_batch_d1_gate_summary.md`](../results/reports/option_d_batch_d1_gate_summary.md). Pivot: [`../results/reports/option_d_pivot_urb447.md`](../results/reports/option_d_pivot_urb447.md).
+
+**Lead Track 1 / Opción D (2026-08-10):** **JANUS_D2_22**. Cómputo alto rendimiento (MD membrana / OpenMM GPU) **pausado** hasta decisión explícita; no relanzar POPC 20 ns sin OK.
 ---
 
 ## Anti-criterios (no son éxito)
