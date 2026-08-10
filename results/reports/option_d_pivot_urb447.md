@@ -37,6 +37,12 @@ Tras el gate de membrana POPC 20 ns ([`md_membrane_20ns_summary.md`](md_membrane
 - Scripts: `scripts/generate_option_d_batch2.py`, `scripts/analyze_h1_h5_gate.py --batch option_d_batch2`
 - Siguiente (cuando se reactive): MD solo sobre top PASS priorizados — no reabrir Track 1 fitocannabinoide
 
+## Batch D1 — derivados URB447 / Yin-Yang (docking done; MD paused)
+
+- **Estado (2026-08-10):** Batch D1 = cribado de **derivados** (mismo panel/run que Batch 2). Docking CPU dual 5TGZ/6PT0 **done**; **MD pausada** (no OpenMM, no membrana).
+- Alias público: [`option_d_batch_d1_gate_summary.md`](option_d_batch_d1_gate_summary.md) — tabla filtrada rankeada por dual; sin SMILES; apunta a scores/poses `option_d_batch2` (gitignored)
+- No se rehizo Vina (36×2 docks reutilizados). Top PASS: JANUS_D2_22, JANUS_D2_05, JANUS_D2_10, JANUS_D2_15, JANUS_D2_29
+
 ## Criterio / guía
 
 Ver actualización en [`docs/criterio_exito_janus.md`](../../docs/criterio_exito_janus.md) y nota en historial [`h1_h5_design_history.md`](h1_h5_design_history.md).

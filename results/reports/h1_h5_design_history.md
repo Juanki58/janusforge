@@ -60,6 +60,12 @@
 - Resumen público (IDs + scores): [`option_d_batch2_gate_summary.md`](option_d_batch2_gate_summary.md)
 - Lista filtrada rankeada por dual lista para priorizar; MD solo si se reabre sobre top PASS.
 
+## Opción D Batch D1 (2026-08-10) — derivados; docking done; MD paused
+
+- **Batch D1** = alias del cribado de derivados URB447 / Yin-Yang (reutiliza run Batch 2; no se rehizo Vina).
+- Resumen público: [`option_d_batch_d1_gate_summary.md`](option_d_batch_d1_gate_summary.md)
+- **MD pausada** (no OpenMM, no membrana).
+
 ## Scripts (genéricos; sin SMILES de análogos)
 
 - `scripts/generate_h1_h5_candidates.py` — Batch 1
