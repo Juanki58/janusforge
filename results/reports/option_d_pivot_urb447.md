@@ -42,7 +42,7 @@ Tras el gate de membrana POPC 20 ns ([`md_membrane_20ns_summary.md`](md_membrane
 - **Estado (2026-08-10):** Batch D1 = cribado de **derivados** (mismo panel/run que Batch 2). Docking CPU dual 5TGZ/6PT0 **done**; **MD membrana 20 ns POPC EN CURSO** (OpenMM GPU; lead JANUS_D2_22).
 - Alias público: [`option_d_batch_d1_gate_summary.md`](option_d_batch_d1_gate_summary.md) — tabla filtrada rankeada por dual; sin SMILES; apunta a scores/poses `option_d_batch2` (gitignored)
 - No se rehizo Vina (36×2 docks reutilizados). Top PASS: JANUS_D2_22, JANUS_D2_05, JANUS_D2_10, JANUS_D2_15, JANUS_D2_29
-- **Lead Opción D:** **JANUS_D2_22** (confirmado). MD membrana 20 ns POPC / OpenMM CUDA **EN CURSO** (`janus_md_memb20_d2_22`; log `results/md/membrane/run_20ns_d2_22_docker.log`) — autorizado explícitamente por el usuario.
+- **Lead Opción D:** **JANUS_D2_22** (confirmado). MD membrana 20 ns POPC / OpenMM CUDA **EN CURSO** (`janus_md_memb20_d2_22`; log `results/md/membrane/run_20ns_d2_22_docker.log`) — autorizado explícitamente por el usuario. Métricas plan: RMSD TM6, dist. TM3–TM6, H-bond.
 
 ## Criterio / guía
 

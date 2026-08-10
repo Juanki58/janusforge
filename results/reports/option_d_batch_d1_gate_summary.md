@@ -119,7 +119,9 @@ Informe técnico hermano (mismo run): [`option_d_batch2_gate_summary.md`](option
 
 ## Veredicto
 
-**Batch D1 (derivados URB447 / Yin-Yang):** cribado docking CPU dual CB1/CB2 **completado** reutilizando el run `option_d_batch2` (36 ligandos docked × 2 receptores; exh=8). Gate: 34/34 PASS; 0 fail. **Lead = JANUS_D2_22** (dual=−11.277); runners-up: JANUS_D2_05 (−11.151), JANUS_D2_10 (−11.144), JANUS_D2_15 (−11.098), JANUS_D2_29 (−10.963). Semilla URB447: dual=−10.695 (PASS). **MD membrana POPC 20 ns / OpenMM GPU EN CURSO** sobre el lead (`janus_md_memb20_d2_22`). Vina = afinidad/pose proxy; **no** éxito Janus funcional. Poses locales gitignored bajo `results/docking/option_d_batch2/{cb1,cb2}/` (visor: Re-escanear).
+**Batch D1 (derivados URB447 / Yin-Yang):** cribado docking CPU dual CB1/CB2 **completado** reutilizando el run `option_d_batch2` (36 ligandos docked × 2 receptores; exh=8). Gate: 34/34 PASS; 0 fail. **Lead = JANUS_D2_22** (dual=−11.277); runners-up: JANUS_D2_05 (−11.151), JANUS_D2_10 (−11.144), JANUS_D2_15 (−11.098), JANUS_D2_29 (−10.963). Semilla URB447: dual=−10.695 (PASS). **MD membrana POPC 20 ns / OpenMM GPU EN CURSO** sobre el lead (`janus_md_memb20_d2_22`; log `results/md/membrane/run_20ns_d2_22_docker.log`). Vina = afinidad/pose proxy; **no** éxito Janus funcional. Poses locales gitignored bajo `results/docking/option_d_batch2/{cb1,cb2}/`.
+
+**Métricas planificadas** (mismo criterio que gate membrana Track 1): (1) RMSD Cα TM6 vs minimizado; (2) distancia COM Cα TM3–TM6; (3) persistencia H-bond ligando→proteína (% frames). Artefactos gitignored: `results/md/membrane/JANUS_D2_22/`.
 
 ## IP
 
