@@ -1,8 +1,11 @@
 ﻿#!/usr/bin/env python3
 """OpenMM membrane MD: CB1 inactive 5TGZ in explicit POPC + water + NaCl.
 
-Triplet panel (default --ligand all):
-  JANUS_H1_02c  vs  delta9-THCV  vs  delta9-THC (agonist control)
+Panels:
+  - Track 1 triplet (default --ligand all): JANUS_H1_02c vs delta9-THCV vs
+    delta9-THC (agonist control); dock_dir default h1_h5_batch3/cb1.
+  - Option D lead: --ligand d2_22 (JANUS_D2_22) with
+    --dock-dir results/docking/option_d_batch2/cb1.
 
 Builds an all-atom POPC bilayer around the docked complex (AmberTools
 packmol_memgen preferred; Packmol+lipid17 fallback documented), then runs
@@ -24,18 +27,20 @@ Force field
 
 Metrics
 -------
-- CÎ± RMSD of TM6 vs minimized frame
-- COM distance of CÎ± atoms TM3 vs TM6
-- Helix-axis angle TM3â€“TM6 (degrees; THC expected to open relative to inactive)
-- Phenolic H-bond persistence (% frames; ligand OH â†’ protein acceptor)
+- Cα RMSD of TM6 vs minimized frame
+- COM distance of Cα atoms TM3 vs TM6
+- Helix-axis angle TM3–TM6 (degrees; THC expected to open relative to inactive)
+- Phenolic / donor H-bond persistence (% frames; ligand O–H → protein acceptor)
 
-CLI aliases for --ligand: h1_02c, thcv, thc, all (or full ids).
+CLI aliases for --ligand: h1_02c, thcv, thc, d2_22, all (or full ids).
 
 Usage
 -----
   python scripts/run_md_openmm_membrane_lead.py --dry-run
   python scripts/run_md_openmm_membrane_lead.py --ns 20 --ligand all
   python scripts/run_md_openmm_membrane_lead.py --ligand thc --ns 0.01 --build-only
+  python scripts/run_md_openmm_membrane_lead.py --ns 20 --ligand d2_22 \\
+    --dock-dir results/docking/option_d_batch2/cb1 --platform CUDA
 """
 
 from __future__ import annotations
@@ -92,6 +97,10 @@ LIGAND_CANONICAL = {
     "thc": "delta9-THC",
     "delta9-thc": "delta9-THC",
     "delta9-THC": "delta9-THC",
+    # Option D lead (URB447 / Yin-Yang SAR); use with option_d_batch2/cb1
+    "d2_22": "JANUS_D2_22",
+    "janus_d2_22": "JANUS_D2_22",
+    "JANUS_D2_22": "JANUS_D2_22",
 }
 DEFAULT_TRIPLET = ("JANUS_H1_02c", "delta9-THCV", "delta9-THC")
 
@@ -133,7 +142,8 @@ def resolve_ligand_ids(raw: Optional[list[str]]) -> list[str]:
         if canon is None:
             raise SystemExit(
                 f"Unknown --ligand {item!r}. "
-                f"Use: h1_02c, thcv, thc, all, or full ids {DEFAULT_TRIPLET}"
+                f"Use: h1_02c, thcv, thc, d2_22, all, or full ids "
+                f"{DEFAULT_TRIPLET + ('JANUS_D2_22',)}"
             )
         if canon not in out:
             out.append(canon)
@@ -1273,7 +1283,7 @@ def parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
         "--ligand",
         action="append",
         dest="ligands",
-        help="h1_02c|thcv|thc|all or full id (repeatable). Default: all",
+        help="h1_02c|thcv|thc|d2_22|all or full id (repeatable). Default: all",
     )
     ap.add_argument("--receptor", type=Path, default=None)
     ap.add_argument("--dock-dir", type=Path, default=None)

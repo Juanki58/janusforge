@@ -142,12 +142,12 @@
 
 ## Veredicto
 
-**Resultado Batch 2 (fase ligera):** 34/34 PASS; 0 fail. Top por dual: JANUS_D2_22 (dual=-11.277, gap=2.089), JANUS_D2_05 (dual=-11.151, gap=1.963), JANUS_D2_10 (dual=-11.144, gap=1.956), JANUS_D2_15 (dual=-11.098, gap=1.909), JANUS_D2_29 (dual=-10.963, gap=1.774). Semilla URB447: dual=-10.695, gap vs THC=1.507 (PASS). MD / OpenMM **diferida** — solo docking CPU Vina. Vina = afinidad/pose proxy; **no** éxito Janus funcional.
+**Resultado Batch 2 (fase ligera):** 34/34 PASS; 0 fail. Top por dual: JANUS_D2_22 (dual=-11.277, gap=2.089), JANUS_D2_05 (dual=-11.151, gap=1.963), JANUS_D2_10 (dual=-11.144, gap=1.956), JANUS_D2_15 (dual=-11.098, gap=1.909), JANUS_D2_29 (dual=-10.963, gap=1.774). Semilla URB447: dual=-10.695, gap vs THC=1.507 (PASS). Docking CPU Vina completo; **MD membrana lead D2_22 EN CURSO** (ver D1). Vina = afinidad/pose proxy; **no** éxito Janus funcional.
 
 ## IP
 
 - CSV/SDF/PDBQT de panel: gitignored (`data/libraries/option_d*`, `results/docking/option_d*`, `results/hits/option_d*`).
 - Detalle con SMILES (local): `results/hits/option_d_batch2/gate_detail.md`.
-- Alias Batch D1 (derivados; MD pausada): [`option_d_batch_d1_gate_summary.md`](option_d_batch_d1_gate_summary.md).
+- Alias Batch D1 (derivados; MD EN CURSO): [`option_d_batch_d1_gate_summary.md`](option_d_batch_d1_gate_summary.md).
 - Pivot Track D: [`option_d_pivot_urb447.md`](option_d_pivot_urb447.md); NO-GO membrana: [`md_membrane_20ns_summary.md`](md_membrane_20ns_summary.md).
 

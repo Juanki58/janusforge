@@ -58,14 +58,14 @@
 - **Fase ligera docking done; MD diferida.** Solo Vina CPU dual 5TGZ/6PT0 (exh=8, seed=42); sin OpenMM.
 - Panel local SAR mínimo alrededor de URB447 (`JANUS_D2_*`) + refs; SMILES gitignored.
 - Resumen público (IDs + scores): [`option_d_batch2_gate_summary.md`](option_d_batch2_gate_summary.md)
-- Lista filtrada rankeada por dual lista para priorizar; MD solo si se reabre sobre top PASS.
+- Lista filtrada rankeada por dual lista para priorizar; MD membrana lead D2_22 **EN CURSO**.
 
-## Opción D Batch D1 (2026-08-10) — derivados; docking done; MD paused
+## Opción D Batch D1 (2026-08-10) — derivados; docking done; MD EN CURSO
 
 - **Batch D1** = alias del cribado de derivados URB447 / Yin-Yang (reutiliza run Batch 2; no se rehizo Vina).
 - Resumen público: [`option_d_batch_d1_gate_summary.md`](option_d_batch_d1_gate_summary.md)
 - **Lead Opción D:** **JANUS_D2_22** (confirmado 2026-08-10).
-- **MD / GPU pesada pausada** (calor) — no 20 ns POPC OpenMM hasta decisión explícita.
+- **MD membrana POPC 20 ns / OpenMM GPU EN CURSO** (`janus_md_memb20_d2_22`; log `results/md/membrane/run_20ns_d2_22_docker.log`) — autorizado explícitamente por el usuario.
 
 ## Scripts (genéricos; sin SMILES de análogos)
 
