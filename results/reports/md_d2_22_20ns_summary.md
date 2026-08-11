@@ -80,10 +80,15 @@ Contexto mapa ([`mapa_ligandos_janus_cb1_cb2.md`](../../docs/mapa_ligandos_janus
 
 ## Local artifacts (gitignored)
 
-- Log: `results/md/membrane/run_20ns_d2_22_docker.log`
+- Log: `results/md/membrane/run_20ns_d2_22_docker.log` (`EXIT_CODE=0`; container end 2026-08-11T02:34:43Z)
 - Aggregate CSV: `results/md/membrane/d2_22_5tgz_popc.csv`
 - Per ligand: `results/md/membrane/JANUS_D2_22/{production.dcd,metrics_summary.json,frame_metrics.csv,minimized.pdb,…}`
+- **Gráficas locales (ver PNG locales; no en git):**
+  - `results/md/membrane/JANUS_D2_22/tm6_ca_rmsd_vs_time.png`
+  - `results/md/membrane/JANUS_D2_22/tm3_tm6_com_vs_time.png`
+  - `results/md/membrane/JANUS_D2_22/tm3_tm6_angle_vs_time.png`
+  - `results/md/membrane/JANUS_D2_22/hbond_vs_time.png`
 
 ## Status
 
-**2026-08-11:** membrane MD 20 ns **completo** (`EXIT_CODE=0`). Métricas duras arriba. Veredicto: **no-go trinquete demostrado / go exploratorio débil**.
+**2026-08-11:** membrane MD 20 ns **completo** (`EXIT_CODE=0`). Métricas duras arriba. PNG locales generados desde `frame_metrics.csv`. Veredicto: **no-go trinquete demostrado / go exploratorio débil**.
