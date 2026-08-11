@@ -9,8 +9,9 @@
 - Scores: `results/docking/option_d_batch2/retrospective_scores.csv` (gitignored)
 - Poses: `results/docking/option_d_batch2/{cb1,cb2}/` (36+36 docked; gitignored)
 - Receptores: CB1 5TGZ / CB2 6PT0; exhaustiveness=8; seed=42
-- **Lead Opción D (confirmado 2026-08-10):** **JANUS_D2_22** (Bz_pCF3; dual=−11.277)
+- **Ex-lead docking Opción D:** **JANUS_D2_22** (Bz_pCF3; dual=−11.277) — top ranking Batch D1
 - **MD / OpenMM: COMPLETO** — POPC 20 ns GPU `EXIT_CODE=0` (`janus_md_memb20_d2_22`); informe: [`md_d2_22_20ns_summary.md`](md_d2_22_20ns_summary.md)
+- **Decisión funcional (2026-08-11):** **D2_22 descartado** (NO-GO trinquete CB1). GPU pausada. Próximo eje = plan pirazol Qiu-like ([`next_iter_pyrazole_qiu_plan.md`](next_iter_pyrazole_qiu_plan.md)), sin docking/MD ahora.
 
 Informe técnico hermano (mismo run): [`option_d_batch2_gate_summary.md`](option_d_batch2_gate_summary.md).
 
@@ -123,9 +124,9 @@ Informe técnico hermano (mismo run): [`option_d_batch2_gate_summary.md`](option
 
 ## Veredicto
 
-**Batch D1 (derivados URB447 / Yin-Yang):** cribado docking CPU dual CB1/CB2 **completado** reutilizando el run `option_d_batch2` (36 ligandos docked × 2 receptores; exh=8). Gate: 34/34 PASS; 0 fail. **Lead = JANUS_D2_22** (dual=−11.277); runners-up: JANUS_D2_05 (−11.151), JANUS_D2_10 (−11.144), JANUS_D2_15 (−11.098), JANUS_D2_29 (−10.963). Semilla URB447: dual=−10.695 (PASS). **MD membrana POPC 20 ns / OpenMM GPU EN CURSO** sobre el lead (`janus_md_memb20_d2_22`; log `results/md/membrane/run_20ns_d2_22_docker.log`). Vina = afinidad/pose proxy; **no** éxito Janus funcional. Poses locales gitignored bajo `results/docking/option_d_batch2/{cb1,cb2}/`.
+**Batch D1 (derivados URB447 / Yin-Yang):** cribado docking CPU dual CB1/CB2 **completado** reutilizando el run `option_d_batch2` (36 ligandos docked × 2 receptores; exh=8). Gate: 34/34 PASS; 0 fail. **Ex-lead docking = JANUS_D2_22** (dual=−11.277); runners-up históricos: JANUS_D2_05 (−11.151), JANUS_D2_10 (−11.144), JANUS_D2_15 (−11.098), JANUS_D2_29 (−10.963). Semilla URB447: dual=−10.695 (PASS).
 
-**Métricas planificadas** (mismo criterio que gate membrana Track 1): (1) RMSD Cα TM6 vs minimizado; (2) distancia COM Cα TM3–TM6; (3) persistencia H-bond ligando→proteína (% frames). Artefactos gitignored: `results/md/membrane/JANUS_D2_22/`.
+**MD membrana POPC 20 ns / OpenMM GPU COMPLETO** (`EXIT_CODE=0`). Métricas + análisis de falla: [`md_d2_22_20ns_summary.md`](md_d2_22_20ns_summary.md). **D2_22 descartado funcionalmente** (NO-GO trinquete CB1; COM ≈ régimen THC, no contención THCV; Vina no predijo restricción). **GPU pausada.** Próximo eje metodológico (solo plan): [`next_iter_pyrazole_qiu_plan.md`](next_iter_pyrazole_qiu_plan.md). Vina = afinidad/pose proxy; **no** éxito Janus funcional. Poses locales gitignored bajo `results/docking/option_d_batch2/{cb1,cb2}/`. Artefactos MD gitignored: `results/md/membrane/JANUS_D2_22/`.
 
 ## IP
 

@@ -55,7 +55,7 @@ Reading (geométrico, no funcional):
 
 ## Veredicto frío — ¿trinquete? ¿go / no-go vs mapa Janus?
 
-**NO-GO de trinquete Janus demostrado. GO exploratorio débil como lead Opción D que no explota el pozo inactivo a 20 ns.**
+**NO-GO de trinquete CB1. D2_22 descartado como lead funcional** (ex-lead docking únicamente). El “go exploratorio débil” previo queda **superseded** por el análisis de falla abajo.
 
 | Pregunta | Respuesta fría |
 |----------|----------------|
@@ -65,9 +65,20 @@ Reading (geométrico, no funcional):
 | ¿Prueba de perfil Janus (CB1-ant / CB2-ago) o antifibrosis? | **No** — esto es solo geometría CB1 5TGZ en POPC |
 | ¿Supera precedentes del mapa (URB447, GW405833, AM1710, Qiu-14)? | **No evaluable aquí** — el mapa es farmacología experimental; este run no mide Ki/IC₅₀ ni bifuncionalidad |
 
-Contexto mapa ([`mapa_ligandos_janus_cb1_cb2.md`](../../docs/mapa_ligandos_janus_cb1_cb2.md)): D2_22 sigue siendo el lead de docking Opción D (dual −11.277). Los precedentes documentan bifuncionalidad **experimental** en otras familias; **ninguno** de esos cuatro tiene métricas MD comparables en este repo. Por tanto este 20 ns **no** autoriza claim de “mejor que URB447/Qiu-14”, solo: ocupación Vina fuerte + trayectoria membrana sin colapso geométrico obvio.
+Contexto mapa ([`mapa_ligandos_janus_cb1_cb2.md`](../../docs/mapa_ligandos_janus_cb1_cb2.md)): D2_22 fue el top dual Vina Opción D (−11.277) y queda como *ex-lead docking*. Los precedentes documentan bifuncionalidad **experimental** en otras familias; **ninguno** de esos cuatro tiene métricas MD comparables en este repo. Este 20 ns **no** autoriza claim de “mejor que URB447/Qiu-14”; sí basta, con el matiz de 1 réplica, para **cerrar** D2_22 como eje de trinquete.
 
-**Gate operativo sugerido:** mantener D2_22 como lead computacional Opción D; **no** escalar a ensayo in vitro solo por este MD; si se insiste en trinquete, réplicas ≥3 y/o métricas de contacto farmacóforo (no solo OH proxy) antes de GO duro.
+**Gate operativo (superseded 2026-08-11):** el análisis de falla abajo **descarta D2_22 como lead funcional** (NO-GO trinquete). Ya no se mantiene como eje prioritario de cómputo.
+
+## Análisis de la falla biofísica
+
+Decisión de usuario tras auditoría de métricas (2026-08-11). Matiz obligatorio: **1 réplica × 20 ns** — priorización / evidencia en contra del trinquete, no prueba de agonismo ni de farmacología Janus.
+
+1. **Descarte D2_22 como lead funcional** — **NO-GO trinquete CB1.** El andamiaje Opción D / Bz_pCF3 no pasa el gate geométrico de contención del estado inactivo frente al panel de referencia. D2_22 queda como *ex-lead de docking* (histórico Batch D1), no como candidato a escalar.
+2. **COM TM3–TM6 12.35 Å ≈ régimen THC (12.06 Å), no contención THCV (13.07 Å).** El overlap con THC es **evidencia en contra** de un trinquete tipo contención inactiva más abierta (lectura THCV en este panel), **no** prueba de agonismo. Con una sola réplica no se clasifica eficacia; sí se niega el claim de “congela mejor que THCV / abre menos que el agonista de referencia”.
+3. **TM6 RMSD bajo = hélice estable pero “atrapada” en estado más abierto.** Media TM6 fría (1.03 Å) indica que la hélice no explota; la hipótesis operativa es que la **torsión carboxamida / Bz_pCF3 no bloquea TM6** en la geometría deseada — estabilidad ≠ contención funcional del trinquete.
+4. **Vina −11.277 no predice restricción funcional** — segunda vez tras Serie H1 (H1_02c: PASS docking → NO-GO membrana). Score dual alto ≠ trinquete CB1.
+5. **GPU liberada → pausa de cómputo pesado.** No más MD / docking masivo hasta autorización explícita de la siguiente iteración.
+6. **Siguiente eje metodológico (solo plan):** andamiaje **pirazol rígido** tipo Compuesto 14 (Qiu 2023; S173/TM6), sin margen de rotación de la carboxamida flexible. Documentado en [`next_iter_pyrazole_qiu_plan.md`](next_iter_pyrazole_qiu_plan.md) — **sin** lanzar docking ni MD ahora.
 
 ## Limitations (must read)
 
@@ -91,4 +102,5 @@ Contexto mapa ([`mapa_ligandos_janus_cb1_cb2.md`](../../docs/mapa_ligandos_janus
 
 ## Status
 
-**2026-08-11:** membrane MD 20 ns **completo** (`EXIT_CODE=0`). Métricas duras arriba. PNG locales generados desde `frame_metrics.csv`. Veredicto: **no-go trinquete demostrado / go exploratorio débil**.
+**2026-08-11:** membrane MD 20 ns **completo** (`EXIT_CODE=0`). Métricas duras arriba. PNG locales generados desde `frame_metrics.csv`.  
+**Decisión funcional:** **D2_22 descartado** como lead (NO-GO trinquete CB1). GPU en pausa. Próximo eje = plan pirazol Qiu-like ([`next_iter_pyrazole_qiu_plan.md`](next_iter_pyrazole_qiu_plan.md)), sin ejecución.

@@ -19,8 +19,11 @@
 | [literatura_fibrosis_cb1_cb2.md](literatura_fibrosis_cb1_cb2.md) | **Memoria biológica** (castellano): fibrosis / IPF, eje endocannabinoide CB1/CB2, hipótesis Janus (CB1 antagonista + CB2 agonista), precedentes, gaps. Documento vivo; el norte químico remite al quimioma. |
 | [literatura_prioridad_y_novelty.md](literatura_prioridad_y_novelty.md) | **Auditoría de novelty / prior art** (castellano, 2026-08-06): concepto Janus×fibrosis = prior art; THCV×IPF sin paper primario (ventana); NCE periférico H1–H5 = white space. Claims teóricos de uso no viables. |
 | [mapa_ligandos_janus_cb1_cb2.md](mapa_ligandos_janus_cb1_cb2.md) | **Mapa de precedentes Janus** (castellano, 2026-08-10): URB447 / GW405833 / AM1710 / compuesto 14 (Qiu); umbral ≈ −11 kcal/mol ↔ nM; fibrosis (combo AM6545+AM1241 vs hueco monomolecular); lectura Batch D1 / D2_22. |
-| [lecciones_aprendidas_track1.md](lecciones_aprendidas_track1.md) | **Lecciones Track 1** (castellano, 2026-08-11): docking/gate, SAR H1–H5, MD agua/membrana, novelty, proceso; estado D2_22 post MD POPC; sin SMILES. |
+| [lecciones_aprendidas_track1.md](lecciones_aprendidas_track1.md) | **Lecciones Track 1** (castellano, 2026-08-11): docking/gate, SAR H1–H5, MD; **D2_22 descartado** (NO-GO trinquete); GPU pausa; plan pirazol Qiu; sin SMILES. |
 | [apendice_ip_supply_botanico.md](apendice_ip_supply_botanico.md) | **Apéndice IP / supply botánico:** puerta abierta a coste cero (patentes de método, cáñamo/AEMPS, breeding IRTA–CSIC). No eleva Track 2: ejecución diaria = Track 1 in silico. |
+
+**Informes Track 1 recientes (results/reports):**  
+[`../results/reports/md_d2_22_20ns_summary.md`](../results/reports/md_d2_22_20ns_summary.md) (MD + falla biofísica) · [`../results/reports/next_iter_pyrazole_qiu_plan.md`](../results/reports/next_iter_pyrazole_qiu_plan.md) (plan pausado) · [`../results/reports/option_d_pivot_urb447.md`](../results/reports/option_d_pivot_urb447.md) · [`../results/reports/option_d_batch_d1_gate_summary.md`](../results/reports/option_d_batch_d1_gate_summary.md).
 
 **Datos operativos (mapa, no hit table masiva):**  
 [`../data/libraries/quimioma_semillas.csv`](../data/libraries/quimioma_semillas.csv) — semillas / controles / comparadores con SMILES curados (PubChem) y roles.
