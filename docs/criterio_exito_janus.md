@@ -51,7 +51,7 @@ Track 1 se generó y dockeó **en local** (`scripts/generate_h1_h5_candidates.py
 
 Norte operativo: **URB447 / Yin-Yang publicados** (misma métrica de gate proxy vs THCV/THC salvo que se documente ajuste). Resumen Batch 1: [`../results/reports/option_d_batch1_gate_summary.md`](../results/reports/option_d_batch1_gate_summary.md). Batch 2 / D1 (fase ligera docking): [`../results/reports/option_d_batch2_gate_summary.md`](../results/reports/option_d_batch2_gate_summary.md), [`../results/reports/option_d_batch_d1_gate_summary.md`](../results/reports/option_d_batch_d1_gate_summary.md). Pivot: [`../results/reports/option_d_pivot_urb447.md`](../results/reports/option_d_pivot_urb447.md).
 
-**Lead Track 1 / Opción D (2026-08-10):** **JANUS_D2_22**. MD membrana POPC 20 ns / OpenMM GPU **EN CURSO** (container `janus_md_memb20_d2_22`; log `results/md/membrane/run_20ns_d2_22_docker.log`) — autorizado explícitamente por el usuario.
+**Lead Track 1 / Opción D:** **JANUS_D2_22**. MD membrana POPC 20 ns **completo** — no-go de trinquete demostrado / go exploratorio débil ([`../results/reports/md_d2_22_20ns_summary.md`](../results/reports/md_d2_22_20ns_summary.md)). Lecciones operativas consolidadas (docking, SAR, MD, novelty, próximos pasos): [`lecciones_aprendidas_track1.md`](lecciones_aprendidas_track1.md).
 ---
 
 ## Anti-criterios (no son éxito)

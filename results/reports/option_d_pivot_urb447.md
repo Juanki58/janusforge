@@ -35,18 +35,20 @@ Tras el gate de membrana POPC 20 ns ([`md_membrane_20ns_summary.md`](md_membrane
 - Panel local SAR URB447: `data/libraries/option_d_batch2.csv` (gitignored; IDs `JANUS_D2_*` + refs URB447 / GW405833 / THCV / THC)
 - Gate proxy: [`option_d_batch2_gate_summary.md`](option_d_batch2_gate_summary.md) — lista filtrada rankeada por dual; sin SMILES públicos
 - Scripts: `scripts/generate_option_d_batch2.py`, `scripts/analyze_h1_h5_gate.py --batch option_d_batch2`
-- Siguiente: MD membrana 20 ns POPC **EN CURSO** sobre lead JANUS_D2_22 — no reabrir Track 1 fitocannabinoide
+- MD membrana 20 ns POPC sobre lead JANUS_D2_22: **completo** ([`md_d2_22_20ns_summary.md`](md_d2_22_20ns_summary.md)) — no reabrir Track 1 fitocannabinoide
 
-## Batch D1 — derivados URB447 / Yin-Yang (docking done; MD EN CURSO)
+## Batch D1 — derivados URB447 / Yin-Yang (docking done; MD completo)
 
-- **Estado (2026-08-10):** Batch D1 = cribado de **derivados** (mismo panel/run que Batch 2). Docking CPU dual 5TGZ/6PT0 **done**; **MD membrana 20 ns POPC EN CURSO** (OpenMM GPU; lead JANUS_D2_22).
+- **Estado (2026-08-11):** Batch D1 = cribado de **derivados** (mismo panel/run que Batch 2). Docking CPU dual 5TGZ/6PT0 **done**; **MD membrana 20 ns POPC completo** (OpenMM GPU; lead JANUS_D2_22; `EXIT_CODE=0`).
 - Alias público: [`option_d_batch_d1_gate_summary.md`](option_d_batch_d1_gate_summary.md) — tabla filtrada rankeada por dual; sin SMILES; apunta a scores/poses `option_d_batch2` (gitignored)
 - No se rehizo Vina (36×2 docks reutilizados). Top PASS: JANUS_D2_22, JANUS_D2_05, JANUS_D2_10, JANUS_D2_15, JANUS_D2_29
-- **Lead Opción D:** **JANUS_D2_22** (confirmado). MD membrana 20 ns POPC / OpenMM CUDA **EN CURSO** (`janus_md_memb20_d2_22`; log `results/md/membrane/run_20ns_d2_22_docker.log`) — autorizado explícitamente por el usuario. Métricas plan: RMSD TM6, dist. TM3–TM6, H-bond.
+- **Lead Opción D:** **JANUS_D2_22** (confirmado). MD: [`md_d2_22_20ns_summary.md`](md_d2_22_20ns_summary.md) — no-go trinquete / go exploratorio débil.
 
 ## Criterio / guía
 
 Ver actualización en [`docs/criterio_exito_janus.md`](../../docs/criterio_exito_janus.md) y nota en historial [`h1_h5_design_history.md`](h1_h5_design_history.md).
+
+**Lecciones consolidadas (post MD D2_22):** [`docs/lecciones_aprendidas_track1.md`](../../docs/lecciones_aprendidas_track1.md) — Vina ≠ α; gate URB447 demasiado fácil (priorizar ranking); H1_02c PASS docking / NO-GO membrana; D2_22 lead con caveat MD; no más MD ciega como sustituto de ensayo funcional.
 
 ## Precedente literario (mapa Janus)
 
