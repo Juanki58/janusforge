@@ -73,7 +73,9 @@ Aún más distante de URB447: familia **cannabilactonas**. Kᵢ ≈ **6.7 nM** (
 
 ### 3.4. Compuesto 14 (Qiu et al. 2023)
 
-Especialmente relevante para Batch D1 / Opción D: diseño deliberado de un ligando **Yin–Yang** con núcleo **pirazol**. El compuesto 14 (orto-morfolina en el brazo N1 + adamantilo en C3) presenta simultáneamente antagonismo CB1 y agonismo CB2. Proponen que la bifuncionalidad deriva de interacciones del grupo morfolino con **S173 (CB1)** y **S285 (CB2)**. Valores numéricos de Kᵢ/IC₅₀ de la tabla experimental: **no recuperados aquí** — no se inventan.
+Especialmente relevante para el **eje Qiu activo** (post descarte D2_22): diseño deliberado de un ligando **Yin–Yang** con núcleo **pirazol**. El compuesto 14 (orto-morfolina en el brazo N1 + adamantilo en C3) presenta simultáneamente antagonismo CB1 y agonismo CB2. Proponen que la bifuncionalidad deriva de interacciones del grupo morfolino con **S173 (CB1)** y **S285 (CB2)**. Valores numéricos de Kᵢ/IC₅₀ de la tabla experimental: **no recuperados aquí** — no se inventan.
+
+**SMILES / depósito:** sin CID PubChem ni documento ChEMBL fiable en la recuperación 2026-08-11. Panel local usa reconstrucción desde descriptores publicados (`QIU_14`, gitignored). Gate docking: [`../results/reports/qiu_pyrazole_batch1_gate_summary.md`](../results/reports/qiu_pyrazole_batch1_gate_summary.md).
 
 Fuente ancla: Qiu et al., *Bioorg Chem.* 2023; https://doi.org/10.1016/j.bioorg.2023.106377
 

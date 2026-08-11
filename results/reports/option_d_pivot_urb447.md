@@ -43,14 +43,21 @@ Tras el gate de membrana POPC 20 ns ([`md_membrane_20ns_summary.md`](md_membrane
 - Alias público: [`option_d_batch_d1_gate_summary.md`](option_d_batch_d1_gate_summary.md) — tabla filtrada rankeada por dual; sin SMILES; apunta a scores/poses `option_d_batch2` (gitignored)
 - No se rehizo Vina (36×2 docks reutilizados). Top PASS histórico: JANUS_D2_22, JANUS_D2_05, JANUS_D2_10, JANUS_D2_15, JANUS_D2_29
 - **JANUS_D2_22:** *ex-lead docking* (dual −11.277) — **descartado funcionalmente** (NO-GO trinquete CB1). MD + análisis: [`md_d2_22_20ns_summary.md`](md_d2_22_20ns_summary.md).
-- **Cómputo pesado:** **pausado** (GPU liberada). No más docking/MD sobre este eje sin autorización.
-- **Próximo eje (plan, no ejecución):** andamiaje **pirazol rígido Qiu-like** (Compuesto 14; S173/TM6) — [`next_iter_pyrazole_qiu_plan.md`](next_iter_pyrazole_qiu_plan.md).
+- **Cómputo pesado / MD:** **pausado** (GPU liberada). No más MD sobre este eje.
+
+## Eje Qiu pirazol (activo; docking only)
+
+Tras el descarte de D2_22, el norte operativo es el andamiaje **pirazol rígido tipo Qiu 2023 Compound 14** (orto-morfolina / S173–S285):
+
+- Plan: [`next_iter_pyrazole_qiu_plan.md`](next_iter_pyrazole_qiu_plan.md) — **activo** en fase ligera
+- Batch 1 gate: [`qiu_pyrazole_batch1_gate_summary.md`](qiu_pyrazole_batch1_gate_summary.md) — rank vs URB447 + gap vs THC > 0.80 (no solo THCV)
+- **OpenMM/MD:** sigue **pausada**
 
 ## Criterio / guía
 
 Ver actualización en [`docs/criterio_exito_janus.md`](../../docs/criterio_exito_janus.md) y nota en historial [`h1_h5_design_history.md`](h1_h5_design_history.md).
 
-**Lecciones consolidadas (post descarte D2_22):** [`docs/lecciones_aprendidas_track1.md`](../../docs/lecciones_aprendidas_track1.md) — Vina ≠ α (2ª vez: H1_02c y D2_22); gate URB447 demasiado fácil; D2_22 descartado; GPU pausa; siguiente = plan pirazol Qiu.
+**Lecciones consolidadas (post descarte D2_22 + Qiu Batch 1):** [`docs/lecciones_aprendidas_track1.md`](../../docs/lecciones_aprendidas_track1.md) — Vina ≠ α; D2_22 descartado; eje Qiu docking done / MD pausada; QIU_14 falla rank Vina (orto ≠ mejor score).
 
 ## Precedente literario (mapa Janus)
 

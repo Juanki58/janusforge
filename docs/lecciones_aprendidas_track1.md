@@ -1,7 +1,7 @@
-# Lecciones aprendidas — Track 1 (hasta MD membrana D2_22)
+# Lecciones aprendidas — Track 1 (hasta Qiu Batch 1 docking)
 
 > Castellano. Tono crítico y operativo. **Sin SMILES ni estructuras de NCE.**  
-> Corte temporal: post MD POPC 20 ns de **JANUS_D2_22** (2026-08-11).  
+> Corte temporal: post MD D2_22 + **Qiu pirazol Batch 1** docking CPU (2026-08-11).  
 > No sustituye informes de gate ni la Guía Maestra; consolida lo que el proyecto ya pagó en cómputo y diseño.
 
 ---
@@ -15,9 +15,10 @@
 1. **Cannabis-first / THCV-like:** THCV como PoC natural imperfecto → serie H1–H5 (análogos) → lead proxy **JANUS_H1_02c**.
 2. **MD membrana H1_02c:** NO-GO vs THCV en POPC 20 ns → cierre del eje fitocannabinoide como *lead de desarrollo*.
 3. **Opción D:** pivot a scaffolds sintéticos anclados en literatura (**URB447** primero; AM1710 / GW405833 / clase Qiu como comparadores), SAR Batch 2/D1 → lead docking **JANUS_D2_22**.
-4. **MD membrana D2_22:** run OK; análisis de falla → **D2_22 descartado** como lead funcional (NO-GO trinquete CB1). GPU pausada.
+4. **MD membrana D2_22:** run OK; análisis de falla → **D2_22 descartado** como lead funcional (NO-GO trinquete CB1).
+5. **Eje Qiu pirazol:** Batch 1 docking CPU dual 5TGZ/6PT0 **hecho**; **MD/OpenMM pausada**.
 
-Marco normativo: [`guia_maestra_biotecnologia_quimiotipos.md`](guia_maestra_biotecnologia_quimiotipos.md). Pivot: [`../results/reports/option_d_pivot_urb447.md`](../results/reports/option_d_pivot_urb447.md).
+Marco normativo: [`guia_maestra_biotecnologia_quimiotipos.md`](guia_maestra_biotecnologia_quimiotipos.md). Pivot: [`../results/reports/option_d_pivot_urb447.md`](../results/reports/option_d_pivot_urb447.md). Plan Qiu: [`../results/reports/next_iter_pyrazole_qiu_plan.md`](../results/reports/next_iter_pyrazole_qiu_plan.md).
 
 ---
 
@@ -27,6 +28,7 @@ Marco normativo: [`guia_maestra_biotecnologia_quimiotipos.md`](guia_maestra_biot
 |---------|-----------------|
 | **Vina ≠ agonismo/antagonismo ni α** | Score dual 5TGZ/6PT0 mide afinidad/pose proxy en conformaciones fijas. No clasifica eficacia, flip de dosis ni bifuncionalidad. Usarlo como ranking, no como veredicto farmacológico. |
 | **Gate vs THCV/THC demasiado fácil en scaffold URB447** | Batch D1: **34/34 PASS** con los umbrales heredados de H1–H5 (`dual < dual_THCV` y gap vs THC > 0.40). En esa familia el gate deja de discriminar; hay que **priorizar por ranking** (dual, ejes, SAR) y no celebrar “PASS masivo”. |
+| **Qiu Batch 1: rank vs URB447, no solo THCV** | Gate primario: `dual < URB447` y gap vs THC > 0.80. Legacy THCV-gate queda informativo. **QIU_14 (orto)** falla Vina; PASS = QIU_02/01/03 (meta/para/sin morfolina) — Vina **no** prueba S173/S285. |
 | **URB447 gana el proxy frente a fitocannabinoides** | En paneles retrospectivos, el comparador sintético empuja separación dual vs THC más que THCV solo. Eso justifica el pivot de *andamiaje*, no un claim de superioridad funcional. |
 | **H1_02c: PASS Vina, NO-GO membrana** | El lead fitocannabinoide pasó el gate duro de docking y falló el paquete geométrico en POPC. **Docking PASS no autoriza ensayo** si el siguiente gate (MD / función) falla. |
 | **D2_22: misma lección, segunda vez** | Dual Vina −11.277 (mejor del Batch D1) → MD POPC sin trinquete; COM solapa THC. **Vina no predice restricción funcional** — no repetir el ciclo “top score → MD única → sorpresa”. |
@@ -92,13 +94,15 @@ Novelty: [`literatura_prioridad_y_novelty.md`](literatura_prioridad_y_novelty.md
 
 | Ítem | Estado |
 |------|--------|
-| **JANUS_D2_22** | **Descartado** como lead funcional (NO-GO trinquete CB1). Sigue como *ex-lead docking* Batch D1 (dual −11.277). |
-| **Eje URB447 / Batch D1 flexible** | Cerrado como prioridad de trinquete; no más MD sobre D2_22 ni runners-up sin rediseño de hipótesis. |
+| **JANUS_D2_22** | **Descartado** como lead funcional (NO-GO trinquete CB1). *Ex-lead docking* Batch D1 (dual −11.277). |
+| **Eje URB447 / Batch D1 flexible** | Cerrado como prioridad de trinquete; no más MD sobre D2_22. |
+| **Eje Qiu pirazol** | **Activo (docking only).** Batch 1: rank-gate 3/11 — PASS `QIU_02`, `QIU_01`, `QIU_03`; `QIU_14` fail. |
+| **Compound 14 SMILES** | Sin CID PubChem/ChEMBL; reconstrucción local `QIU_14`; Ki/IC₅₀ no recuperados. |
 | **Eje H1–H5** | Cerrado como lead; H1_02c = contraste / ex-lead. |
-| **Cómputo pesado** | **Pausado** (GPU liberada). |
-| **Próximo eje** | Plan metodológico **pirazol rígido Qiu-like** (Compuesto 14; S173/TM6; sin margen de rotación) — **solo documentación**, sin docking/MD ahora. Ver [`../results/reports/next_iter_pyrazole_qiu_plan.md`](../results/reports/next_iter_pyrazole_qiu_plan.md). |
+| **MD / GPU** | **Pausada** (solo fase ligera CPU). |
+| **Próximos pasos** | Poses/contactos locales (sin MD); SAR dirigido a **orto** + farmacóforo; ensayo funcional — no celebrar para/meta por dual Vina. |
 
-Análisis de falla: [`../results/reports/md_d2_22_20ns_summary.md`](../results/reports/md_d2_22_20ns_summary.md) § Análisis de la falla biofísica. Criterio formal: [`criterio_exito_janus.md`](criterio_exito_janus.md).
+Gate Qiu: [`../results/reports/qiu_pyrazole_batch1_gate_summary.md`](../results/reports/qiu_pyrazole_batch1_gate_summary.md). Falla D2_22: [`../results/reports/md_d2_22_20ns_summary.md`](../results/reports/md_d2_22_20ns_summary.md). Criterio: [`criterio_exito_janus.md`](criterio_exito_janus.md).
 
 ---
 
@@ -106,11 +110,12 @@ Análisis de falla: [`../results/reports/md_d2_22_20ns_summary.md`](../results/r
 
 | Documento | Rol |
 |-----------|-----|
+| [`../results/reports/qiu_pyrazole_batch1_gate_summary.md`](../results/reports/qiu_pyrazole_batch1_gate_summary.md) | Gate Qiu Batch 1 (rank vs URB447) |
+| [`../results/reports/next_iter_pyrazole_qiu_plan.md`](../results/reports/next_iter_pyrazole_qiu_plan.md) | Plan Qiu — activo docking; MD pausada |
 | [`../results/reports/md_d2_22_20ns_summary.md`](../results/reports/md_d2_22_20ns_summary.md) | MD 20 ns POPC — D2_22 + análisis de falla / descarte |
-| [`../results/reports/next_iter_pyrazole_qiu_plan.md`](../results/reports/next_iter_pyrazole_qiu_plan.md) | Plan pausado — iteración pirazol Qiu-like |
 | [`../results/reports/md_membrane_20ns_summary.md`](../results/reports/md_membrane_20ns_summary.md) | MD 20 ns POPC — H1_02c / THCV / THC |
 | [`../results/reports/option_d_batch_d1_gate_summary.md`](../results/reports/option_d_batch_d1_gate_summary.md) | Gate Batch D1 (34/34 PASS; D2_22 = ex-lead) |
-| [`../results/reports/option_d_pivot_urb447.md`](../results/reports/option_d_pivot_urb447.md) | Decisión pivot Opción D |
+| [`../results/reports/option_d_pivot_urb447.md`](../results/reports/option_d_pivot_urb447.md) | Decisión pivot Opción D → Qiu |
 | [`mapa_ligandos_janus_cb1_cb2.md`](mapa_ligandos_janus_cb1_cb2.md) | Precedentes URB447 / GW / AM1710 / Qiu-14 |
 | [`literatura_prioridad_y_novelty.md`](literatura_prioridad_y_novelty.md) | Prior art vs white space |
 | [`mecanismo_flip_thcv_cb1.md`](mecanismo_flip_thcv_cb1.md) | Flip CB1 / Vina ≠ α |
@@ -120,4 +125,4 @@ Análisis de falla: [`../results/reports/md_d2_22_20ns_summary.md`](../results/r
 
 ---
 
-*Última actualización: 2026-08-11 — D2_22 descartado; plan pirazol Qiu pausado.*
+*Última actualización: 2026-08-11 — Qiu Batch 1 docking done; MD pausada; D2_22 descartado.*

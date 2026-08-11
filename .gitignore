@@ -53,6 +53,12 @@ data/processed/option_d*
 results/docking/option_d*
 results/hits/option_d*
 
+# --- Qiu 2023 pyrazole Yin-Yang panel (local; reconstructed + QIU_* SAR) ---
+data/libraries/qiu_pyrazole*
+data/processed/qiu_pyrazole*
+results/docking/qiu_pyrazole*
+results/hits/qiu_pyrazole*
+
 # Molecule / pose / table artifacts
 *.pdbqt
 *.pdb

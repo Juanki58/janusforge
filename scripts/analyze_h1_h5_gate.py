@@ -35,8 +35,11 @@ BATCH_LABELS = {
     "h1_h5_batch3": "Iteración 3 — refino JANUS_H1_02 (1′-Me)",
     "option_d_batch1": "Opción D — panel sintético URB447 / Yin-Yang (Batch 1)",
     "option_d_batch2": "Opción D — SAR URB447 (Batch 2, fase ligera)",
+    "qiu_pyrazole_batch1": "Qiu pirazol — Batch 1 (Compound 14 / QIU_*; docking only)",
 }
 ASPIRATION_GAP_VS_THC = 0.80
+# Qiu batch primary gate: beat URB447 dual + clear gap vs THC (not THCV-only)
+QIU_GAP_VS_THC_MIN = 0.80
 
 # Roles evaluated by the hard separation gate (not refs)
 GATE_EVAL_ROLES = frozenset(
@@ -217,6 +220,62 @@ def _option_d_batch2_verdict(eval_df: pd.DataFrame, n_pass: int, n_cand: int) ->
     )
 
 
+def _qiu_rank_flags(eval_df: pd.DataFrame) -> pd.DataFrame:
+    """Primary Qiu gate: dual better than URB447 AND gap vs THC > QIU_GAP_VS_THC_MIN."""
+    out = eval_df.copy()
+    urb = out[out["name"] == "URB447"]
+    if urb.empty or urb.iloc[0]["dual"] is None:
+        raise ValueError("qiu_pyrazole_batch1 requires URB447 in the same scores run")
+    dual_urb = float(urb.iloc[0]["dual"])
+    flags = []
+    for _, r in out.iterrows():
+        dual = r["dual"]
+        gap = r["gap_mag_vs_thc"]
+        is_cand = str(r.get("role", "")) in GATE_EVAL_ROLES
+        beat_urb = dual is not None and dual < dual_urb
+        clear_thc = gap is not None and float(gap) > QIU_GAP_VS_THC_MIN
+        flags.append(bool(is_cand and beat_urb and clear_thc))
+    out["pass_qiu_rank"] = flags
+    out.attrs["dual_urb447"] = dual_urb
+    return out
+
+
+def _qiu_pyrazole_verdict(eval_df: pd.DataFrame) -> str:
+    """Qiu batch: rank vs URB447 + gap vs THC; THCV legacy gate is secondary."""
+    ranked = _qiu_rank_flags(eval_df)
+    dual_urb = ranked.attrs["dual_urb447"]
+    cands = ranked[ranked["role"].isin(GATE_EVAL_ROLES)].sort_values("dual")
+    n_cand = len(cands)
+    n_rank = int(ranked["pass_qiu_rank"].sum())
+    n_legacy = int(ranked["pass_gate"].sum())
+    top = cands.head(5)
+    top_txt = ", ".join(
+        f"{r['name']} (dual={_fmt(r['dual'])}, ΔURB={_fmt(float(r['dual']) - dual_urb)}, "
+        f"gapTHC={_fmt(r['gap_mag_vs_thc'])})"
+        for _, r in top.iterrows()
+    )
+    q14 = ranked[ranked["name"] == "QIU_14"]
+    q14_txt = ""
+    if not q14.empty and q14.iloc[0]["dual"] is not None:
+        r = q14.iloc[0]
+        q14_txt = (
+            f" **QIU_14 (Compound 14 reconstruido):** dual={_fmt(r['dual'])}, "
+            f"vs URB447={_fmt(float(r['dual']) - dual_urb)}, "
+            f"gap vs THC={_fmt(r['gap_mag_vs_thc'])}; "
+            f"rank-gate={'PASS' if r['pass_qiu_rank'] else 'fail'} "
+            f"(legacy THCV-gate={'PASS' if r['pass_gate'] else 'fail'})."
+        )
+    return (
+        f"**Resultado Qiu Batch 1 (docking only; MD pausada):** "
+        f"rank-gate (dual < URB447={_fmt(dual_urb)} **y** gap vs THC > "
+        f"{QIU_GAP_VS_THC_MIN:.2f}): **{n_rank}/{n_cand}**. "
+        f"Legacy THCV-gate (informativo, fácil en sintéticos): {n_legacy}/{n_cand}. "
+        f"Top por dual: {top_txt}.{q14_txt} "
+        "SMILES Compound 14 = reconstrucción desde descriptores publicados "
+        "(sin CID PubChem/ChEMBL). Vina ≠ Janus funcional. **OpenMM/MD no lanzada.**"
+    )
+
+
 def _batch3_verdict(eval_df: pd.DataFrame, n_pass: int, n_cand: int) -> str:
     """Critical reading vs Batch-1 control JANUS_H1_02 and aspiration gap ~0.80."""
     by = {r["name"]: r for _, r in eval_df.iterrows()}
@@ -378,10 +437,18 @@ def write_public_summary(
     )
     exh_txt = str(exhaustiveness) if exhaustiveness is not None else "12"
     seed_txt = str(seed) if seed is not None else "42"
+    is_qiu = batch == "qiu_pyrazole_batch1"
+    ranked = _qiu_rank_flags(eval_df) if is_qiu else eval_df
+    dual_urb = ranked.attrs.get("dual_urb447") if is_qiu else None
+    n_qiu = int(ranked["pass_qiu_rank"].sum()) if is_qiu else 0
     agg_label = (
-        "ligandos evaluados (sintéticos / ex-lead)"
-        if batch.startswith("option_d")
-        else "candidatos de diseño"
+        "ligandos evaluados (Qiu / Yin-Yang / refs)"
+        if is_qiu
+        else (
+            "ligandos evaluados (sintéticos / ex-lead)"
+            if batch.startswith("option_d")
+            else "candidatos de diseño"
+        )
     )
 
     lines = [
@@ -396,41 +463,102 @@ def write_public_summary(
         f"- Scores: `{scores_rel}` (gitignored)",
         f"- Receptores: CB1 5TGZ / CB2 6PT0; exhaustiveness={exh_txt}; seed={seed_txt}",
         "",
-        "## Métrica de gate duro",
-        "",
-        "- `dual = mean(CB1_vina, CB2_vina)` (más negativo = mejor ocupación)",
-        f"- Referencias en el mismo run: dual_THCV = **{_fmt(dual_thcv)}**, "
-        f"dual_THC = **{_fmt(dual_thc)}**, gap THCV−THC = **{_fmt(thcv_thc_gap)}** kcal/mol",
-        f"- **PASS** solo si: (1) `dual < dual_THCV` y (2) `(dual_THC − dual) > {CLEAR_GAP_MIN:.2f}` "
-        f"(claramente > separación THCV–THC ≈ {THCV_THC_REF_GAP:.2f})",
-        "",
-        f"**Resultado agregado:** {n_pass}/{n_cand} {agg_label} pasaron el gate. "
-        f"Exhaustiveness={exh_txt}; seed={seed_txt}.",
-        "",
-        "## Tabla (IDs + scores; sin SMILES)",
-        "",
-        "| ID | hipótesis | SMILES válido | CB1 | CB2 | dual | vs THCV | vs THC | ¿pasa gate? |",
-        "|----|-----------|---------------|-----|-----|------|---------|--------|-------------|",
     ]
-    for _, r in eval_df.iterrows():
-        gate = "—"
-        role = str(r["role"])
-        if role in GATE_EVAL_ROLES:
-            gate = "PASS" if r["pass_gate"] else "fail"
-        elif role in {"seed", "anti_seed"}:
-            gate = "ref"
-        hyp = _hyp_label(r)
-        if role in {"seed", "anti_seed"}:
-            hyp = "REF"
-        smiles_ok = "sí" if r.get("smiles") not in (None, "", float("nan")) else "—"
-        # smiles always present in scores; design rows are valid if docked
-        if r["cb1_vina"] is not None and r["cb2_vina"] is not None:
-            smiles_ok = "sí"
-        lines.append(
-            f"| {r['name']} | {hyp} | {smiles_ok} | {_fmt(r['cb1_vina'])} | "
-            f"{_fmt(r['cb2_vina'])} | {_fmt(r['dual'])} | {_fmt(r['vs_thcv'])} | "
-            f"{_fmt(r['vs_thc'])} | {gate} |"
-        )
+    if is_qiu:
+        lines += [
+            "## Métrica de gate (primaria: rank vs URB447)",
+            "",
+            "- `dual = mean(CB1_vina, CB2_vina)` (más negativo = mejor ocupación)",
+            f"- Ancla sintética en el mismo run: dual_URB447 = **{_fmt(dual_urb)}**",
+            f"- Referencias fitocannabinoides (secundarias): dual_THCV = **{_fmt(dual_thcv)}**, "
+            f"dual_THC = **{_fmt(dual_thc)}**, gap THCV−THC = **{_fmt(thcv_thc_gap)}** kcal/mol",
+            f"- **PASS rank-gate** solo si: (1) `dual < dual_URB447` y "
+            f"(2) `(dual_THC − dual) > {QIU_GAP_VS_THC_MIN:.2f}`",
+            f"- Legacy THCV-gate (`dual < THCV` y gap vs THC > {CLEAR_GAP_MIN:.2f}): "
+            "**informativo** — demasiado fácil en scaffolds sintéticos; **no** decide este lote",
+            "- MD / OpenMM: **pausada** (solo docking CPU)",
+            "",
+            f"**Resultado agregado:** rank-gate **{n_qiu}/{n_cand}**; "
+            f"legacy THCV-gate {n_pass}/{n_cand} (no decisivo). "
+            f"Exhaustiveness={exh_txt}; seed={seed_txt}.",
+            "",
+            "## Compound 14 SMILES",
+            "",
+            "- **Estado:** reconstrucción desde descriptores publicados "
+            "(N1-2-morfolinofenilo, C3-adamantilo, C4-Me, C5-Ph); "
+            "**sin CID PubChem / depósito ChEMBL** en esta recuperación.",
+            "- Ki/IC₅₀ de la tabla experimental: **no recuperados** (no inventados).",
+            "- ID de panel: `QIU_14`. Análogos mínimos: `QIU_01`–`QIU_07`.",
+            "",
+            "## Tabla (IDs + scores; sin SMILES)",
+            "",
+            "| ID | hipótesis | SMILES válido | CB1 | CB2 | dual | vs URB447 | gap vs THC | rank-gate | legacy THCV |",
+            "|----|-----------|---------------|-----|-----|------|-----------|------------|-----------|-------------|",
+        ]
+        for _, r in ranked.iterrows():
+            role = str(r["role"])
+            hyp = _hyp_label(r)
+            if role in {"seed", "anti_seed"}:
+                hyp = "REF"
+            smiles_ok = (
+                "sí"
+                if r["cb1_vina"] is not None and r["cb2_vina"] is not None
+                else "—"
+            )
+            vs_urb = (
+                "—"
+                if r["dual"] is None or dual_urb is None
+                else _fmt(float(r["dual"]) - float(dual_urb))
+            )
+            if role in GATE_EVAL_ROLES:
+                rg = "PASS" if r["pass_qiu_rank"] else "fail"
+                lg = "PASS" if r["pass_gate"] else "fail"
+            elif role in {"seed", "anti_seed"}:
+                rg = lg = "ref"
+            else:
+                rg = lg = "—"
+            lines.append(
+                f"| {r['name']} | {hyp} | {smiles_ok} | {_fmt(r['cb1_vina'])} | "
+                f"{_fmt(r['cb2_vina'])} | {_fmt(r['dual'])} | {vs_urb} | "
+                f"{_fmt(r['gap_mag_vs_thc'])} | {rg} | {lg} |"
+            )
+    else:
+        lines += [
+            "## Métrica de gate duro",
+            "",
+            "- `dual = mean(CB1_vina, CB2_vina)` (más negativo = mejor ocupación)",
+            f"- Referencias en el mismo run: dual_THCV = **{_fmt(dual_thcv)}**, "
+            f"dual_THC = **{_fmt(dual_thc)}**, gap THCV−THC = **{_fmt(thcv_thc_gap)}** kcal/mol",
+            f"- **PASS** solo si: (1) `dual < dual_THCV` y (2) `(dual_THC − dual) > {CLEAR_GAP_MIN:.2f}` "
+            f"(claramente > separación THCV–THC ≈ {THCV_THC_REF_GAP:.2f})",
+            "",
+            f"**Resultado agregado:** {n_pass}/{n_cand} {agg_label} pasaron el gate. "
+            f"Exhaustiveness={exh_txt}; seed={seed_txt}.",
+            "",
+            "## Tabla (IDs + scores; sin SMILES)",
+            "",
+            "| ID | hipótesis | SMILES válido | CB1 | CB2 | dual | vs THCV | vs THC | ¿pasa gate? |",
+            "|----|-----------|---------------|-----|-----|------|---------|--------|-------------|",
+        ]
+        for _, r in eval_df.iterrows():
+            gate = "—"
+            role = str(r["role"])
+            if role in GATE_EVAL_ROLES:
+                gate = "PASS" if r["pass_gate"] else "fail"
+            elif role in {"seed", "anti_seed"}:
+                gate = "ref"
+            hyp = _hyp_label(r)
+            if role in {"seed", "anti_seed"}:
+                hyp = "REF"
+            smiles_ok = "sí" if r.get("smiles") not in (None, "", float("nan")) else "—"
+            # smiles always present in scores; design rows are valid if docked
+            if r["cb1_vina"] is not None and r["cb2_vina"] is not None:
+                smiles_ok = "sí"
+            lines.append(
+                f"| {r['name']} | {hyp} | {smiles_ok} | {_fmt(r['cb1_vina'])} | "
+                f"{_fmt(r['cb2_vina'])} | {_fmt(r['dual'])} | {_fmt(r['vs_thcv'])} | "
+                f"{_fmt(r['vs_thc'])} | {gate} |"
+            )
 
     # Aspiration note (Batch 3+ / Option D): flag gaps vs THC > ~0.80
     aspir = eval_df[
@@ -451,6 +579,44 @@ def write_public_summary(
             ),
             "",
         ]
+
+    # Qiu batch: ranked list by dual + rank-gate PASS
+    if is_qiu:
+        cands = ranked[ranked["role"].isin(GATE_EVAL_ROLES)].sort_values("dual")
+        pass_rank = cands[cands["pass_qiu_rank"]]
+        lines += [
+            "",
+            "## Ranking por dual (vs URB447; sin SMILES)",
+            "",
+            f"- Rank-gate PASS: **{n_qiu}** · evaluados: **{n_cand}** · "
+            f"dual_URB447={_fmt(dual_urb)} · umbral gap vs THC > {QIU_GAP_VS_THC_MIN:.2f}",
+            "",
+            "| rank | ID | hipótesis | CB1 | CB2 | dual | vs URB447 | gap vs THC | rank-gate |",
+            "|------|----|-----------|-----|-----|------|-----------|------------|-----------|",
+        ]
+        for i, (_, r) in enumerate(cands.iterrows(), start=1):
+            vs_urb = _fmt(float(r["dual"]) - float(dual_urb))
+            lines.append(
+                f"| {i} | {r['name']} | {_hyp_label(r)} | {_fmt(r['cb1_vina'])} | "
+                f"{_fmt(r['cb2_vina'])} | {_fmt(r['dual'])} | {vs_urb} | "
+                f"{_fmt(r['gap_mag_vs_thc'])} | "
+                f"{'PASS' if r['pass_qiu_rank'] else 'fail'} |"
+            )
+        lines += [
+            "",
+            "## IDs rank-gate PASS",
+            "",
+        ]
+        if n_qiu:
+            for i, (_, r) in enumerate(pass_rank.iterrows(), start=1):
+                lines.append(
+                    f"{i}. `{r['name']}` — dual={_fmt(r['dual'])}, "
+                    f"vs URB447={_fmt(float(r['dual']) - float(dual_urb))}, "
+                    f"gap vs THC={_fmt(r['gap_mag_vs_thc'])}"
+                )
+        else:
+            lines.append("_Ningún ID pasó el rank-gate vs URB447 + gap THC en este run._")
+        lines.append("")
 
     # Batch 2: ranked PASS list + fail count (public IDs only)
     if batch == "option_d_batch2":
@@ -497,6 +663,8 @@ def write_public_summary(
         lines.append(_option_d_verdict(eval_df, n_pass, n_cand))
     elif batch == "option_d_batch2":
         lines.append(_option_d_batch2_verdict(eval_df, n_pass, n_cand))
+    elif batch == "qiu_pyrazole_batch1":
+        lines.append(_qiu_pyrazole_verdict(eval_df))
     elif n_pass == 0:
         lines.append(
             "Ningún análogo supera el gate duro de separación proxy frente a THCV/THC. "
@@ -529,6 +697,16 @@ def write_public_summary(
         pivot = (
             "- Pivot Track D: [`option_d_pivot_urb447.md`](option_d_pivot_urb447.md); "
             "NO-GO membrana: [`md_membrane_20ns_summary.md`](md_membrane_20ns_summary.md)."
+        )
+    elif batch.startswith("qiu_pyrazole"):
+        ip_paths = (
+            "`data/libraries/qiu_pyrazole*`, `results/docking/qiu_pyrazole*`, "
+            "`results/hits/qiu_pyrazole*`"
+        )
+        pivot = (
+            "- Plan Qiu: [`next_iter_pyrazole_qiu_plan.md`](next_iter_pyrazole_qiu_plan.md); "
+            "D2_22 descartado: [`md_d2_22_20ns_summary.md`](md_d2_22_20ns_summary.md); "
+            "MD pausada."
         )
     else:
         ip_paths = (
@@ -590,9 +768,31 @@ def main() -> int:
         eval_df, summary, scores, batch, args.exhaustiveness, args.seed
     )
 
-    payload = {
-        "batch": batch,
-        "metric": {
+    if batch == "qiu_pyrazole_batch1":
+        ranked = _qiu_rank_flags(eval_df)
+        pass_rule = (
+            f"dual < dual_URB447 AND (dual_THC - dual) > {QIU_GAP_VS_THC_MIN} "
+            "(primary); legacy THCV-gate informational only"
+        )
+        metric = {
+            "dual": "mean(cb1_vina, cb2_vina)",
+            "pass_rule": pass_rule,
+            "dual_urb447": ranked.attrs["dual_urb447"],
+            "dual_thcv": eval_df.attrs["dual_thcv"],
+            "dual_thc": eval_df.attrs["dual_thc"],
+            "thcv_thc_gap": eval_df.attrs["thcv_thc_gap"],
+            "qiu_gap_vs_thc_min": QIU_GAP_VS_THC_MIN,
+            "legacy_clear_gap_min": CLEAR_GAP_MIN,
+            "exhaustiveness": args.exhaustiveness,
+            "seed": args.seed,
+            "md_status": "paused",
+        }
+        n_pass_primary = int(ranked["pass_qiu_rank"].sum())
+        rows_out = ranked.drop(columns=["smiles"], errors="ignore").to_dict(
+            orient="records"
+        )
+    else:
+        metric = {
             "dual": "mean(cb1_vina, cb2_vina)",
             "pass_rule": (
                 f"dual < dual_THCV AND (dual_THC - dual) > {CLEAR_GAP_MIN} "
@@ -604,12 +804,17 @@ def main() -> int:
             "clear_gap_min": CLEAR_GAP_MIN,
             "exhaustiveness": args.exhaustiveness,
             "seed": args.seed,
-        },
-        "n_pass": int(eval_df["pass_gate"].sum()),
-        "n_candidates": int(eval_df["role"].isin(GATE_EVAL_ROLES).sum()),
-        "rows": eval_df.drop(columns=["smiles"], errors="ignore").to_dict(
+        }
+        n_pass_primary = int(eval_df["pass_gate"].sum())
+        rows_out = eval_df.drop(columns=["smiles"], errors="ignore").to_dict(
             orient="records"
-        ),
+        )
+    payload = {
+        "batch": batch,
+        "metric": metric,
+        "n_pass": n_pass_primary,
+        "n_candidates": int(eval_df["role"].isin(GATE_EVAL_ROLES).sum()),
+        "rows": rows_out,
     }
     stats_json.parent.mkdir(parents=True, exist_ok=True)
     stats_json.write_text(json.dumps(payload, indent=2), encoding="utf-8")
