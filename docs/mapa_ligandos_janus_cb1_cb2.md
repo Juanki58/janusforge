@@ -4,7 +4,7 @@
 > Idioma: castellano. **Sin inventar números faltantes.**  
 > Complementa: [`literatura_prioridad_y_novelty.md`](literatura_prioridad_y_novelty.md) · [`literatura_fibrosis_cb1_cb2.md`](literatura_fibrosis_cb1_cb2.md) · [`mecanismo_flip_thcv_cb1.md`](mecanismo_flip_thcv_cb1.md) · [`quimioma_cannabico_cb1_cb2.md`](quimioma_cannabico_cb1_cb2.md) · Batch D1: [`../results/reports/option_d_batch_d1_gate_summary.md`](../results/reports/option_d_batch_d1_gate_summary.md).
 
-**Nota operativa janusforge.** **JANUS_D2_22** es el lead de docking Opción D / Batch D1 (dual Vina = −11.277). MD membrana POPC 20 ns **en curso** — no overclaim de estabilidad, función Janus ni antifibrosis.
+**Nota operativa janusforge.** **JANUS_D2_22** es el lead de docking Opción D / Batch D1 (dual Vina = −11.277). MD membrana POPC 20 ns **completo** (`EXIT_CODE=0`) — ver [`../results/reports/md_d2_22_20ns_summary.md`](../results/reports/md_d2_22_20ns_summary.md): no-go de trinquete demostrado / go exploratorio débil; no overclaim de función Janus ni antifibrosis.
 
 ---
 
@@ -118,7 +118,7 @@ Punto crítico: distinguir **similitud de binding pose** de **similitud de mecan
 
 ### Enlace a scores Batch D1 (proxy docking, no Ki)
 
-En el mismo run de gate ([`option_d_batch_d1_gate_summary.md`](../results/reports/option_d_batch_d1_gate_summary.md)): semilla URB447 dual = −10.695 (PASS); GW405833 dual = −10.033 (PASS); lead **JANUS_D2_22** dual = −11.277. Vina ≠ éxito Janus funcional; MD 20 ns en curso — ver nota al inicio.
+En el mismo run de gate ([`option_d_batch_d1_gate_summary.md`](../results/reports/option_d_batch_d1_gate_summary.md)): semilla URB447 dual = −10.695 (PASS); GW405833 dual = −10.033 (PASS); lead **JANUS_D2_22** dual = −11.277. Vina ≠ éxito Janus funcional; MD 20 ns completo — [`md_d2_22_20ns_summary.md`](../results/reports/md_d2_22_20ns_summary.md).
 
 ---
 

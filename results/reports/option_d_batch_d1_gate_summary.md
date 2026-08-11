@@ -10,7 +10,7 @@
 - Poses: `results/docking/option_d_batch2/{cb1,cb2}/` (36+36 docked; gitignored)
 - Receptores: CB1 5TGZ / CB2 6PT0; exhaustiveness=8; seed=42
 - **Lead Opción D (confirmado 2026-08-10):** **JANUS_D2_22** (Bz_pCF3; dual=−11.277)
-- **MD / OpenMM: EN CURSO** — POPC 20 ns GPU (`janus_md_memb20_d2_22`; log `results/md/membrane/run_20ns_d2_22_docker.log`) — autorizado explícitamente por el usuario
+- **MD / OpenMM: COMPLETO** — POPC 20 ns GPU `EXIT_CODE=0` (`janus_md_memb20_d2_22`); informe: [`md_d2_22_20ns_summary.md`](md_d2_22_20ns_summary.md)
 
 Informe técnico hermano (mismo run): [`option_d_batch2_gate_summary.md`](option_d_batch2_gate_summary.md).
 
