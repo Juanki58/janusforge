@@ -7,6 +7,8 @@
 > **Script:** `scripts/compare_qiu_0g_vs_d1_cb2.py` (read-only inputs; regenerates `qiu_0g_vs_d1_cb2_pose_comparison_data.json` locally)
 >
 > **Upstream:** [`qiu_0g_pose_analysis.md`](qiu_0g_pose_analysis.md), [`qiu_0f_docking_qc.md`](qiu_0f_docking_qc.md), [`option_d_batch_d1_gate_summary.md`](option_d_batch_d1_gate_summary.md)
+>
+> **Follow-on (feature geometry):** [`qiu_0g_vs_d1_pharmacophore_geometry.md`](qiu_0g_vs_d1_pharmacophore_geometry.md) — feature↔residue map for D2_20/06/22 vs Qiu 14/15/20/24 (pose-comparable ≠ same pharmacophore ≠ same pharmacology).
 
 ---
 
