@@ -1,0 +1,6213 @@
+{
+  "methods": {
+    "heavy_contact_cutoff_A": 4.0,
+    "hbond": {
+      "d_DA_max_A": 3.5,
+      "d_HA_max_A": 2.5,
+      "angle_DHA_min_deg": 120.0
+    },
+    "feature_gates": {
+      "centroid_near_A": 3.0,
+      "shell_jaccard_min": 0.25
+    },
+    "box_center_ref": [
+      98.379,
+      109.559,
+      123.801
+    ],
+    "qiu_consensus_centroid": [
+      98.749,
+      110.329,
+      124.874
+    ],
+    "score_note": "Vina REMARK scores are score-only; never experimental affinity",
+    "read_only": true
+  },
+  "inventory": {
+    "receptor": "data/targets/cb2/6PT0_rec.pdbqt",
+    "receptor_exists": true,
+    "qiu_ids": [
+      14,
+      15,
+      20,
+      24
+    ],
+    "d2_ids": [
+      "JANUS_D2_20",
+      "JANUS_D2_06",
+      "JANUS_D2_22"
+    ]
+  },
+  "compounds": {
+    "Qiu_14": {
+      "series": "Qiu",
+      "id": "Qiu_14",
+      "compound_id": 14,
+      "path": "results/docking/qiu_0f/compound_14_cb2_out.pdbqt",
+      "file_exists": true,
+      "n_poses_pdbqt": 9,
+      "pose_scores": [
+        {
+          "model": 1,
+          "vina_score": -9.919,
+          "rmsd_lb": 0.0,
+          "rmsd_ub": 0.0
+        },
+        {
+          "model": 2,
+          "vina_score": -9.789,
+          "rmsd_lb": 1.924,
+          "rmsd_ub": 2.921
+        },
+        {
+          "model": 3,
+          "vina_score": -9.451,
+          "rmsd_lb": 1.913,
+          "rmsd_ub": 3.078
+        },
+        {
+          "model": 4,
+          "vina_score": -9.287,
+          "rmsd_lb": 2.908,
+          "rmsd_ub": 7.949
+        },
+        {
+          "model": 5,
+          "vina_score": -9.031,
+          "rmsd_lb": 3.874,
+          "rmsd_ub": 5.326
+        },
+        {
+          "model": 6,
+          "vina_score": -8.907,
+          "rmsd_lb": 2.129,
+          "rmsd_ub": 4.181
+        },
+        {
+          "model": 7,
+          "vina_score": -8.787,
+          "rmsd_lb": 2.53,
+          "rmsd_ub": 8.442
+        },
+        {
+          "model": 8,
+          "vina_score": -8.742,
+          "rmsd_lb": 2.063,
+          "rmsd_ub": 4.301
+        },
+        {
+          "model": 9,
+          "vina_score": -8.529,
+          "rmsd_lb": 3.606,
+          "rmsd_ub": 5.786
+        }
+      ],
+      "comparable_pose": {
+        "rule": "lowest (most negative) REMARK VINA RESULT among written MODELs",
+        "model": 1,
+        "vina_score_kcal_mol": -9.919,
+        "score_note": "Vina REMARK number only \u2014 not experimental affinity"
+      },
+      "ligand_centroid": [
+        98.774,
+        110.334,
+        124.791
+      ],
+      "dist_to_box_center_A": 1.318,
+      "contacts": {
+        "n_contact_residues": 17,
+        "contact_residues": [
+          {
+            "residue": "LEU182",
+            "min_heavy_dist": 2.676
+          },
+          {
+            "residue": "SER90",
+            "min_heavy_dist": 2.806
+          },
+          {
+            "residue": "THR114",
+            "min_heavy_dist": 2.861
+          },
+          {
+            "residue": "ILE110",
+            "min_heavy_dist": 2.964
+          },
+          {
+            "residue": "ILE186",
+            "min_heavy_dist": 3.026
+          },
+          {
+            "residue": "PHE91",
+            "min_heavy_dist": 3.063
+          },
+          {
+            "residue": "PHE281",
+            "min_heavy_dist": 3.245
+          },
+          {
+            "residue": "PHE183",
+            "min_heavy_dist": 3.291
+          },
+          {
+            "residue": "TRP194",
+            "min_heavy_dist": 3.369
+          },
+          {
+            "residue": "SER285",
+            "min_heavy_dist": 3.375
+          },
+          {
+            "residue": "PHE87",
+            "min_heavy_dist": 3.419
+          },
+          {
+            "residue": "LEU191",
+            "min_heavy_dist": 3.455
+          },
+          {
+            "residue": "PHE94",
+            "min_heavy_dist": 3.496
+          },
+          {
+            "residue": "PRO184",
+            "min_heavy_dist": 3.613
+          },
+          {
+            "residue": "TYR190",
+            "min_heavy_dist": 3.75
+          },
+          {
+            "residue": "VAL113",
+            "min_heavy_dist": 3.794
+          },
+          {
+            "residue": "HIS95",
+            "min_heavy_dist": 3.97
+          }
+        ],
+        "principal_residues": [
+          "LEU182",
+          "SER90",
+          "THR114",
+          "ILE110",
+          "ILE186",
+          "PHE91",
+          "PHE281",
+          "PHE183",
+          "TRP194",
+          "SER285",
+          "PHE87",
+          "LEU191"
+        ],
+        "hbonds_geometry_ok": [],
+        "hydrophobic_proximity": [
+          {
+            "residue": "ILE110",
+            "n_pairs": 5,
+            "min_dist": 2.964
+          },
+          {
+            "residue": "ILE186",
+            "n_pairs": 5,
+            "min_dist": 3.026
+          },
+          {
+            "residue": "PHE91",
+            "n_pairs": 5,
+            "min_dist": 3.063
+          },
+          {
+            "residue": "THR114",
+            "n_pairs": 3,
+            "min_dist": 3.069
+          },
+          {
+            "residue": "PHE281",
+            "n_pairs": 4,
+            "min_dist": 3.245
+          },
+          {
+            "residue": "PHE183",
+            "n_pairs": 13,
+            "min_dist": 3.291
+          },
+          {
+            "residue": "TRP194",
+            "n_pairs": 7,
+            "min_dist": 3.369
+          },
+          {
+            "residue": "SER285",
+            "n_pairs": 3,
+            "min_dist": 3.375
+          },
+          {
+            "residue": "PHE87",
+            "n_pairs": 3,
+            "min_dist": 3.419
+          },
+          {
+            "residue": "LEU191",
+            "n_pairs": 2,
+            "min_dist": 3.455
+          },
+          {
+            "residue": "PHE94",
+            "n_pairs": 7,
+            "min_dist": 3.496
+          },
+          {
+            "residue": "PRO184",
+            "n_pairs": 1,
+            "min_dist": 3.613
+          },
+          {
+            "residue": "TYR190",
+            "n_pairs": 4,
+            "min_dist": 3.75
+          },
+          {
+            "residue": "LEU182",
+            "n_pairs": 1,
+            "min_dist": 3.874
+          }
+        ],
+        "cutoff_heavy_A": 4.0
+      },
+      "polar_proximity_not_hbond": [
+        {
+          "lig": "O(OA)",
+          "rec": "THR114 OG1(OA)",
+          "dist_A": 2.861
+        },
+        {
+          "lig": "O(OA)",
+          "rec": "LEU182 O(OA)",
+          "dist_A": 3.175
+        }
+      ],
+      "region_min_dist_A": {
+        "SER285": 3.375,
+        "TYR25": 5.041,
+        "THR114": 2.861,
+        "ILE110": 2.964,
+        "ILE186": 3.026
+      },
+      "region_contact_4A": {
+        "SER285": true,
+        "TYR25": false,
+        "THR114": true,
+        "ILE110": true,
+        "ILE186": true
+      },
+      "orientation": {
+        "ligand_centroid": [
+          98.774,
+          110.334,
+          124.791
+        ],
+        "dist_to_box_center": 1.318,
+        "pyrazole_centroid": [
+          99.51,
+          109.709,
+          124.171
+        ],
+        "vectors_from_pyrazole": {
+          "n1_heterocycle": {
+            "dx": 0.79,
+            "dy": 0.118,
+            "dz": 4.776,
+            "length": 4.843,
+            "centroid": [
+              100.3,
+              109.826,
+              128.947
+            ]
+          },
+          "adamantyl": {
+            "dx": -5.119,
+            "dy": 3.031,
+            "dz": -2.388,
+            "length": 6.411,
+            "centroid": [
+              94.39,
+              112.74,
+              121.783
+            ]
+          },
+          "c5_phenyl": {
+            "dx": 1.248,
+            "dy": -3.02,
+            "dz": 2.432,
+            "length": 4.073,
+            "centroid": [
+              100.757,
+              106.689,
+              126.603
+            ]
+          },
+          "n1_phenyl": {
+            "dx": 3.267,
+            "dy": 1.472,
+            "dz": 1.631,
+            "length": 3.937,
+            "centroid": [
+              102.777,
+              111.181,
+              125.801
+            ]
+          },
+          "amide": {
+            "dx": -2.05,
+            "dy": 1.146,
+            "dz": -1.9,
+            "length": 3.021,
+            "centroid": [
+              97.46,
+              110.855,
+              122.271
+            ]
+          }
+        },
+        "dominant_axis_from_pyrazole": {
+          "n1_heterocycle": "+z",
+          "adamantyl": "-x",
+          "c5_phenyl": "-y",
+          "n1_phenyl": "+x"
+        },
+        "moiety_serials": {
+          "pyrazole": [
+            4,
+            5,
+            6,
+            2,
+            3
+          ],
+          "amide": [
+            7,
+            8,
+            9
+          ],
+          "n1_heterocycle": [
+            33,
+            34,
+            36,
+            38,
+            37,
+            35
+          ],
+          "adamantyl": [
+            11,
+            14,
+            17,
+            18,
+            15,
+            19,
+            16,
+            20,
+            13,
+            12
+          ],
+          "n1_phenyl": [
+            27,
+            28,
+            30,
+            32,
+            31,
+            29
+          ],
+          "c5_phenyl": [
+            21,
+            22,
+            24,
+            26,
+            25,
+            23
+          ],
+          "c4_methyl": [
+            1
+          ]
+        },
+        "n1_sub_label": "o-morpholine",
+        "r3_label": "CONH-Ad",
+        "dist_n1het_to_adamantyl": 9.733
+      },
+      "feature_summary": {
+        "id": "Qiu_14",
+        "path": "results/docking/qiu_0f/compound_14_cb2_out.pdbqt",
+        "smiles_source": "REMARK SMILES",
+        "smiles": "Cc1c(C(=O)NC23CC4CC(CC(C4)C2)C3)nn(-c2ccccc2N2CCOCC2)c1-c1ccccc1",
+        "best_pose_model": 1,
+        "best_vina_score": -9.919,
+        "n_poses_pdbqt": 9,
+        "ligand_centroid": [
+          98.774,
+          110.334,
+          124.791
+        ],
+        "features_found": [
+          "adamantyl",
+          "amide",
+          "c4_methyl",
+          "c5_phenyl",
+          "n1_heterocycle",
+          "n1_phenyl",
+          "pyrazole"
+        ],
+        "feature_inventory": {
+          "pyrazole": {
+            "n_atoms_mapped": 5,
+            "serials": [
+              4,
+              5,
+              6,
+              2,
+              3
+            ],
+            "centroid": [
+              99.51,
+              109.709,
+              124.171
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "ILE110",
+                "min_dist": 3.37
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.477
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 5.247,
+              "TYR25": 9.606,
+              "THR114": 5.156,
+              "ILE110": 3.37,
+              "ILE186": 6.576
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": true,
+              "ILE186": false
+            }
+          },
+          "amide": {
+            "n_atoms_mapped": 3,
+            "serials": [
+              7,
+              8,
+              9
+            ],
+            "centroid": [
+              97.46,
+              110.855,
+              122.271
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "THR114",
+                "min_dist": 2.861
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.372
+              },
+              {
+                "residue": "ILE110",
+                "min_dist": 3.663
+              },
+              {
+                "residue": "VAL113",
+                "min_dist": 3.794
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 7.966,
+              "TYR25": 10.423,
+              "THR114": 2.861,
+              "ILE110": 3.663,
+              "ILE186": 5.191
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": true,
+              "ILE110": true,
+              "ILE186": false
+            }
+          },
+          "n1_heterocycle": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              33,
+              34,
+              36,
+              38,
+              37,
+              35
+            ],
+            "centroid": [
+              100.3,
+              109.826,
+              128.947
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "LEU182",
+                "min_dist": 2.676
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.517
+              },
+              {
+                "residue": "PRO184",
+                "min_dist": 3.613
+              },
+              {
+                "residue": "HIS95",
+                "min_dist": 3.97
+              },
+              {
+                "residue": "PHE94",
+                "min_dist": 3.977
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 6.943,
+              "TYR25": 5.041,
+              "THR114": 9.522,
+              "ILE110": 5.52,
+              "ILE186": 7.373
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "adamantyl": {
+            "n_atoms_mapped": 10,
+            "serials": [
+              11,
+              14,
+              17,
+              18,
+              15,
+              19,
+              16,
+              20,
+              13,
+              12
+            ],
+            "centroid": [
+              94.39,
+              112.74,
+              121.783
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "THR114",
+                "min_dist": 3.016
+              },
+              {
+                "residue": "ILE186",
+                "min_dist": 3.026
+              },
+              {
+                "residue": "ILE110",
+                "min_dist": 3.122
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.291
+              },
+              {
+                "residue": "TRP194",
+                "min_dist": 3.369
+              },
+              {
+                "residue": "LEU191",
+                "min_dist": 3.455
+              },
+              {
+                "residue": "TYR190",
+                "min_dist": 3.75
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 9.881,
+              "TYR25": 9.992,
+              "THR114": 3.016,
+              "ILE110": 3.122,
+              "ILE186": 3.026
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": true,
+              "ILE110": true,
+              "ILE186": true
+            }
+          },
+          "n1_phenyl": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              27,
+              28,
+              30,
+              32,
+              31,
+              29
+            ],
+            "centroid": [
+              102.777,
+              111.181,
+              125.801
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "SER90",
+                "min_dist": 2.806
+              },
+              {
+                "residue": "ILE110",
+                "min_dist": 2.964
+              },
+              {
+                "residue": "PHE94",
+                "min_dist": 3.496
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 7.166,
+              "TYR25": 7.472,
+              "THR114": 7.937,
+              "ILE110": 2.964,
+              "ILE186": 8.05
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": true,
+              "ILE186": false
+            }
+          },
+          "c5_phenyl": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              21,
+              22,
+              24,
+              26,
+              25,
+              23
+            ],
+            "centroid": [
+              100.757,
+              106.689,
+              126.603
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "PHE91",
+                "min_dist": 3.063
+              },
+              {
+                "residue": "PHE281",
+                "min_dist": 3.245
+              },
+              {
+                "residue": "SER285",
+                "min_dist": 3.375
+              },
+              {
+                "residue": "PHE87",
+                "min_dist": 3.419
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 3.375,
+              "TYR25": 9.102,
+              "THR114": 8.674,
+              "ILE110": 6.448,
+              "ILE186": 9.604
+            },
+            "region_contact_4A": {
+              "SER285": true,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "c4_methyl": {
+            "n_atoms_mapped": 1,
+            "serials": [
+              1
+            ],
+            "centroid": [
+              97.813,
+              107.687,
+              123.665
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "PHE183",
+                "min_dist": 3.519
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 4.992,
+              "TYR25": 11.668,
+              "THR114": 6.434,
+              "ILE110": 6.886,
+              "ILE186": 8.775
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          }
+        }
+      },
+      "scaffold_labels": {
+        "n1_sub": "o-morpholine",
+        "r3": "CONH-Ad"
+      }
+    },
+    "Qiu_15": {
+      "series": "Qiu",
+      "id": "Qiu_15",
+      "compound_id": 15,
+      "path": "results/docking/qiu_0f/compound_15_cb2_out.pdbqt",
+      "file_exists": true,
+      "n_poses_pdbqt": 8,
+      "pose_scores": [
+        {
+          "model": 1,
+          "vina_score": -11.201,
+          "rmsd_lb": 0.0,
+          "rmsd_ub": 0.0
+        },
+        {
+          "model": 2,
+          "vina_score": -11.17,
+          "rmsd_lb": 3.877,
+          "rmsd_ub": 5.344
+        },
+        {
+          "model": 3,
+          "vina_score": -10.593,
+          "rmsd_lb": 2.115,
+          "rmsd_ub": 3.503
+        },
+        {
+          "model": 4,
+          "vina_score": -10.55,
+          "rmsd_lb": 2.769,
+          "rmsd_ub": 9.106
+        },
+        {
+          "model": 5,
+          "vina_score": -10.204,
+          "rmsd_lb": 1.662,
+          "rmsd_ub": 2.974
+        },
+        {
+          "model": 6,
+          "vina_score": -10.203,
+          "rmsd_lb": 3.754,
+          "rmsd_ub": 5.399
+        },
+        {
+          "model": 7,
+          "vina_score": -9.628,
+          "rmsd_lb": 2.172,
+          "rmsd_ub": 9.043
+        },
+        {
+          "model": 8,
+          "vina_score": -9.597,
+          "rmsd_lb": 2.152,
+          "rmsd_ub": 9.038
+        }
+      ],
+      "comparable_pose": {
+        "rule": "lowest (most negative) REMARK VINA RESULT among written MODELs",
+        "model": 1,
+        "vina_score_kcal_mol": -11.201,
+        "score_note": "Vina REMARK number only \u2014 not experimental affinity"
+      },
+      "ligand_centroid": [
+        98.533,
+        110.694,
+        125.354
+      ],
+      "dist_to_box_center_A": 1.93,
+      "contacts": {
+        "n_contact_residues": 18,
+        "contact_residues": [
+          {
+            "residue": "THR114",
+            "min_heavy_dist": 2.71
+          },
+          {
+            "residue": "ILE186",
+            "min_heavy_dist": 2.978
+          },
+          {
+            "residue": "TYR25",
+            "min_heavy_dist": 3.021
+          },
+          {
+            "residue": "ILE110",
+            "min_heavy_dist": 3.038
+          },
+          {
+            "residue": "PHE87",
+            "min_heavy_dist": 3.059
+          },
+          {
+            "residue": "SER285",
+            "min_heavy_dist": 3.081
+          },
+          {
+            "residue": "PHE183",
+            "min_heavy_dist": 3.156
+          },
+          {
+            "residue": "PHE91",
+            "min_heavy_dist": 3.25
+          },
+          {
+            "residue": "PHE94",
+            "min_heavy_dist": 3.293
+          },
+          {
+            "residue": "PHE281",
+            "min_heavy_dist": 3.363
+          },
+          {
+            "residue": "TYR190",
+            "min_heavy_dist": 3.363
+          },
+          {
+            "residue": "PRO184",
+            "min_heavy_dist": 3.421
+          },
+          {
+            "residue": "TRP194",
+            "min_heavy_dist": 3.464
+          },
+          {
+            "residue": "LEU182",
+            "min_heavy_dist": 3.513
+          },
+          {
+            "residue": "LEU191",
+            "min_heavy_dist": 3.524
+          },
+          {
+            "residue": "PHE106",
+            "min_heavy_dist": 3.609
+          },
+          {
+            "residue": "HIS95",
+            "min_heavy_dist": 3.797
+          },
+          {
+            "residue": "VAL113",
+            "min_heavy_dist": 3.978
+          }
+        ],
+        "principal_residues": [
+          "THR114",
+          "ILE186",
+          "TYR25",
+          "ILE110",
+          "PHE87",
+          "SER285",
+          "PHE183",
+          "PHE91",
+          "PHE94",
+          "PHE281",
+          "TYR190",
+          "PRO184"
+        ],
+        "hbonds_geometry_ok": [],
+        "hydrophobic_proximity": [
+          {
+            "residue": "ILE186",
+            "n_pairs": 7,
+            "min_dist": 2.978
+          },
+          {
+            "residue": "ILE110",
+            "n_pairs": 5,
+            "min_dist": 3.038
+          },
+          {
+            "residue": "PHE87",
+            "n_pairs": 4,
+            "min_dist": 3.059
+          },
+          {
+            "residue": "THR114",
+            "n_pairs": 4,
+            "min_dist": 3.132
+          },
+          {
+            "residue": "PHE91",
+            "n_pairs": 4,
+            "min_dist": 3.25
+          },
+          {
+            "residue": "SER285",
+            "n_pairs": 2,
+            "min_dist": 3.287
+          },
+          {
+            "residue": "PHE94",
+            "n_pairs": 12,
+            "min_dist": 3.293
+          },
+          {
+            "residue": "TYR190",
+            "n_pairs": 4,
+            "min_dist": 3.363
+          },
+          {
+            "residue": "PHE281",
+            "n_pairs": 3,
+            "min_dist": 3.363
+          },
+          {
+            "residue": "PRO184",
+            "n_pairs": 9,
+            "min_dist": 3.421
+          },
+          {
+            "residue": "PHE183",
+            "n_pairs": 9,
+            "min_dist": 3.464
+          },
+          {
+            "residue": "TRP194",
+            "n_pairs": 8,
+            "min_dist": 3.464
+          },
+          {
+            "residue": "LEU191",
+            "n_pairs": 3,
+            "min_dist": 3.524
+          },
+          {
+            "residue": "PHE106",
+            "n_pairs": 1,
+            "min_dist": 3.609
+          },
+          {
+            "residue": "HIS95",
+            "n_pairs": 1,
+            "min_dist": 3.797
+          }
+        ],
+        "cutoff_heavy_A": 4.0
+      },
+      "polar_proximity_not_hbond": [
+        {
+          "lig": "O(OA)",
+          "rec": "THR114 OG1(OA)",
+          "dist_A": 2.71
+        },
+        {
+          "lig": "O(OA)",
+          "rec": "TYR25 O(OA)",
+          "dist_A": 3.021
+        },
+        {
+          "lig": "O(OA)",
+          "rec": "ILE110 O(OA)",
+          "dist_A": 3.389
+        }
+      ],
+      "region_min_dist_A": {
+        "SER285": 3.081,
+        "TYR25": 3.021,
+        "THR114": 2.71,
+        "ILE110": 3.038,
+        "ILE186": 2.978
+      },
+      "region_contact_4A": {
+        "SER285": true,
+        "TYR25": true,
+        "THR114": true,
+        "ILE110": true,
+        "ILE186": true
+      },
+      "orientation": {
+        "ligand_centroid": [
+          98.533,
+          110.694,
+          125.354
+        ],
+        "dist_to_box_center": 1.93,
+        "pyrazole_centroid": [
+          99.18,
+          110.152,
+          124.418
+        ],
+        "vectors_from_pyrazole": {
+          "n1_heterocycle": {
+            "dx": 1.533,
+            "dy": 0.05,
+            "dz": 6.979,
+            "length": 7.145,
+            "centroid": [
+              100.713,
+              110.202,
+              131.396
+            ]
+          },
+          "adamantyl": {
+            "dx": -4.955,
+            "dy": 2.925,
+            "dz": -2.808,
+            "length": 6.403,
+            "centroid": [
+              94.225,
+              113.078,
+              121.61
+            ]
+          },
+          "c5_phenyl": {
+            "dx": 1.595,
+            "dy": -3.281,
+            "dz": 1.772,
+            "length": 4.056,
+            "centroid": [
+              100.775,
+              106.871,
+              126.19
+            ]
+          },
+          "n1_phenyl": {
+            "dx": 2.201,
+            "dy": 1.457,
+            "dz": 2.982,
+            "length": 3.982,
+            "centroid": [
+              101.381,
+              111.609,
+              127.4
+            ]
+          },
+          "amide": {
+            "dx": -1.855,
+            "dy": 1.182,
+            "dz": -2.071,
+            "length": 3.021,
+            "centroid": [
+              97.325,
+              111.334,
+              122.347
+            ]
+          }
+        },
+        "dominant_axis_from_pyrazole": {
+          "n1_heterocycle": "+z",
+          "adamantyl": "-x",
+          "c5_phenyl": "-y",
+          "n1_phenyl": "+z"
+        },
+        "moiety_serials": {
+          "pyrazole": [
+            4,
+            5,
+            6,
+            2,
+            3
+          ],
+          "amide": [
+            7,
+            8,
+            9
+          ],
+          "n1_heterocycle": [
+            33,
+            34,
+            36,
+            38,
+            37,
+            35
+          ],
+          "adamantyl": [
+            11,
+            14,
+            17,
+            18,
+            15,
+            19,
+            16,
+            20,
+            13,
+            12
+          ],
+          "n1_phenyl": [
+            27,
+            28,
+            30,
+            32,
+            31,
+            29
+          ],
+          "c5_phenyl": [
+            21,
+            22,
+            24,
+            26,
+            25,
+            23
+          ],
+          "c4_methyl": [
+            1
+          ]
+        },
+        "n1_sub_label": "m-morpholine",
+        "r3_label": "CONH-Ad",
+        "dist_n1het_to_adamantyl": 12.088
+      },
+      "feature_summary": {
+        "id": "Qiu_15",
+        "path": "results/docking/qiu_0f/compound_15_cb2_out.pdbqt",
+        "smiles_source": "REMARK SMILES",
+        "smiles": "Cc1c(C(=O)NC23CC4CC(CC(C4)C2)C3)nn(-c2cccc(N3CCOCC3)c2)c1-c1ccccc1",
+        "best_pose_model": 1,
+        "best_vina_score": -11.201,
+        "n_poses_pdbqt": 8,
+        "ligand_centroid": [
+          98.533,
+          110.694,
+          125.354
+        ],
+        "features_found": [
+          "adamantyl",
+          "amide",
+          "c4_methyl",
+          "c5_phenyl",
+          "n1_heterocycle",
+          "n1_phenyl",
+          "pyrazole"
+        ],
+        "feature_inventory": {
+          "pyrazole": {
+            "n_atoms_mapped": 5,
+            "serials": [
+              4,
+              5,
+              6,
+              2,
+              3
+            ],
+            "centroid": [
+              99.18,
+              110.152,
+              124.418
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "PHE183",
+                "min_dist": 3.156
+              },
+              {
+                "residue": "ILE110",
+                "min_dist": 3.596
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 5.673,
+              "TYR25": 8.769,
+              "THR114": 5.075,
+              "ILE110": 3.596,
+              "ILE186": 5.781
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": true,
+              "ILE186": false
+            }
+          },
+          "amide": {
+            "n_atoms_mapped": 3,
+            "serials": [
+              7,
+              8,
+              9
+            ],
+            "centroid": [
+              97.325,
+              111.334,
+              122.347
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "THR114",
+                "min_dist": 2.71
+              },
+              {
+                "residue": "ILE110",
+                "min_dist": 3.389
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.416
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 8.418,
+              "TYR25": 10.28,
+              "THR114": 2.71,
+              "ILE110": 3.389,
+              "ILE186": 4.796
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": true,
+              "ILE110": true,
+              "ILE186": false
+            }
+          },
+          "n1_heterocycle": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              33,
+              34,
+              36,
+              38,
+              37,
+              35
+            ],
+            "centroid": [
+              100.713,
+              110.202,
+              131.396
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "TYR25",
+                "min_dist": 3.021
+              },
+              {
+                "residue": "LEU182",
+                "min_dist": 3.513
+              },
+              {
+                "residue": "PRO184",
+                "min_dist": 3.661
+              },
+              {
+                "residue": "PHE94",
+                "min_dist": 3.702
+              },
+              {
+                "residue": "HIS95",
+                "min_dist": 3.797
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 7.737,
+              "TYR25": 3.021,
+              "THR114": 11.834,
+              "ILE110": 7.217,
+              "ILE186": 9.021
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": true,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "adamantyl": {
+            "n_atoms_mapped": 10,
+            "serials": [
+              11,
+              14,
+              17,
+              18,
+              15,
+              19,
+              16,
+              20,
+              13,
+              12
+            ],
+            "centroid": [
+              94.225,
+              113.078,
+              121.61
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "ILE186",
+                "min_dist": 2.978
+              },
+              {
+                "residue": "THR114",
+                "min_dist": 3.132
+              },
+              {
+                "residue": "ILE110",
+                "min_dist": 3.182
+              },
+              {
+                "residue": "TYR190",
+                "min_dist": 3.363
+              },
+              {
+                "residue": "TRP194",
+                "min_dist": 3.464
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.508
+              },
+              {
+                "residue": "LEU191",
+                "min_dist": 3.524
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 10.266,
+              "TYR25": 10.172,
+              "THR114": 3.132,
+              "ILE110": 3.182,
+              "ILE186": 2.978
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": true,
+              "ILE110": true,
+              "ILE186": true
+            }
+          },
+          "n1_phenyl": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              27,
+              28,
+              30,
+              32,
+              31,
+              29
+            ],
+            "centroid": [
+              101.381,
+              111.609,
+              127.4
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "ILE110",
+                "min_dist": 3.038
+              },
+              {
+                "residue": "PHE94",
+                "min_dist": 3.293
+              },
+              {
+                "residue": "PRO184",
+                "min_dist": 3.421
+              },
+              {
+                "residue": "PHE106",
+                "min_dist": 3.609
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 7.607,
+              "TYR25": 5.848,
+              "THR114": 8.266,
+              "ILE110": 3.038,
+              "ILE186": 7.11
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": true,
+              "ILE186": false
+            }
+          },
+          "c5_phenyl": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              21,
+              22,
+              24,
+              26,
+              25,
+              23
+            ],
+            "centroid": [
+              100.775,
+              106.871,
+              126.19
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "PHE87",
+                "min_dist": 3.059
+              },
+              {
+                "residue": "SER285",
+                "min_dist": 3.081
+              },
+              {
+                "residue": "PHE91",
+                "min_dist": 3.25
+              },
+              {
+                "residue": "PHE281",
+                "min_dist": 3.363
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 3.081,
+              "TYR25": 9.432,
+              "THR114": 8.361,
+              "ILE110": 6.134,
+              "ILE186": 9.284
+            },
+            "region_contact_4A": {
+              "SER285": true,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "c4_methyl": {
+            "n_atoms_mapped": 1,
+            "serials": [
+              1
+            ],
+            "centroid": [
+              98.377,
+              108.057,
+              122.938
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "VAL113",
+                "min_dist": 3.978
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 5.308,
+              "TYR25": 12.003,
+              "THR114": 5.773,
+              "ILE110": 6.307,
+              "ILE186": 8.696
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          }
+        }
+      },
+      "scaffold_labels": {
+        "n1_sub": "m-morpholine",
+        "r3": "CONH-Ad"
+      }
+    },
+    "Qiu_20": {
+      "series": "Qiu",
+      "id": "Qiu_20",
+      "compound_id": 20,
+      "path": "results/docking/qiu_0f/compound_20_cb2_out.pdbqt",
+      "file_exists": true,
+      "n_poses_pdbqt": 5,
+      "pose_scores": [
+        {
+          "model": 1,
+          "vina_score": -9.986,
+          "rmsd_lb": 0.0,
+          "rmsd_ub": 0.0
+        },
+        {
+          "model": 2,
+          "vina_score": -9.048,
+          "rmsd_lb": 1.77,
+          "rmsd_ub": 4.56
+        },
+        {
+          "model": 3,
+          "vina_score": -8.546,
+          "rmsd_lb": 2.131,
+          "rmsd_ub": 4.775
+        },
+        {
+          "model": 4,
+          "vina_score": -7.927,
+          "rmsd_lb": 3.181,
+          "rmsd_ub": 7.869
+        },
+        {
+          "model": 5,
+          "vina_score": -7.363,
+          "rmsd_lb": 1.549,
+          "rmsd_ub": 2.551
+        }
+      ],
+      "comparable_pose": {
+        "rule": "lowest (most negative) REMARK VINA RESULT among written MODELs",
+        "model": 1,
+        "vina_score_kcal_mol": -9.986,
+        "score_note": "Vina REMARK number only \u2014 not experimental affinity"
+      },
+      "ligand_centroid": [
+        98.772,
+        110.394,
+        124.914
+      ],
+      "dist_to_box_center_A": 1.446,
+      "contacts": {
+        "n_contact_residues": 17,
+        "contact_residues": [
+          {
+            "residue": "LEU182",
+            "min_heavy_dist": 2.723
+          },
+          {
+            "residue": "ILE110",
+            "min_heavy_dist": 2.786
+          },
+          {
+            "residue": "SER90",
+            "min_heavy_dist": 2.792
+          },
+          {
+            "residue": "THR114",
+            "min_heavy_dist": 2.815
+          },
+          {
+            "residue": "ILE186",
+            "min_heavy_dist": 2.991
+          },
+          {
+            "residue": "PHE91",
+            "min_heavy_dist": 3.062
+          },
+          {
+            "residue": "PHE183",
+            "min_heavy_dist": 3.318
+          },
+          {
+            "residue": "PHE281",
+            "min_heavy_dist": 3.334
+          },
+          {
+            "residue": "SER285",
+            "min_heavy_dist": 3.338
+          },
+          {
+            "residue": "PHE87",
+            "min_heavy_dist": 3.339
+          },
+          {
+            "residue": "LEU191",
+            "min_heavy_dist": 3.398
+          },
+          {
+            "residue": "TRP194",
+            "min_heavy_dist": 3.416
+          },
+          {
+            "residue": "PRO184",
+            "min_heavy_dist": 3.472
+          },
+          {
+            "residue": "PHE94",
+            "min_heavy_dist": 3.483
+          },
+          {
+            "residue": "TYR190",
+            "min_heavy_dist": 3.578
+          },
+          {
+            "residue": "HIS95",
+            "min_heavy_dist": 3.932
+          },
+          {
+            "residue": "VAL113",
+            "min_heavy_dist": 3.991
+          }
+        ],
+        "principal_residues": [
+          "LEU182",
+          "ILE110",
+          "SER90",
+          "THR114",
+          "ILE186",
+          "PHE91",
+          "PHE183",
+          "PHE281",
+          "SER285",
+          "PHE87",
+          "LEU191",
+          "TRP194"
+        ],
+        "hbonds_geometry_ok": [],
+        "hydrophobic_proximity": [
+          {
+            "residue": "ILE110",
+            "n_pairs": 5,
+            "min_dist": 2.786
+          },
+          {
+            "residue": "ILE186",
+            "n_pairs": 6,
+            "min_dist": 2.991
+          },
+          {
+            "residue": "PHE91",
+            "n_pairs": 4,
+            "min_dist": 3.062
+          },
+          {
+            "residue": "THR114",
+            "n_pairs": 3,
+            "min_dist": 3.103
+          },
+          {
+            "residue": "PHE183",
+            "n_pairs": 14,
+            "min_dist": 3.318
+          },
+          {
+            "residue": "PHE281",
+            "n_pairs": 5,
+            "min_dist": 3.334
+          },
+          {
+            "residue": "PHE87",
+            "n_pairs": 3,
+            "min_dist": 3.339
+          },
+          {
+            "residue": "SER285",
+            "n_pairs": 2,
+            "min_dist": 3.379
+          },
+          {
+            "residue": "LEU191",
+            "n_pairs": 3,
+            "min_dist": 3.398
+          },
+          {
+            "residue": "TRP194",
+            "n_pairs": 8,
+            "min_dist": 3.416
+          },
+          {
+            "residue": "PRO184",
+            "n_pairs": 1,
+            "min_dist": 3.472
+          },
+          {
+            "residue": "PHE94",
+            "n_pairs": 9,
+            "min_dist": 3.483
+          },
+          {
+            "residue": "TYR190",
+            "n_pairs": 4,
+            "min_dist": 3.578
+          },
+          {
+            "residue": "LEU182",
+            "n_pairs": 1,
+            "min_dist": 3.904
+          }
+        ],
+        "cutoff_heavy_A": 4.0
+      },
+      "polar_proximity_not_hbond": [
+        {
+          "lig": "O(OA)",
+          "rec": "THR114 OG1(OA)",
+          "dist_A": 2.815
+        },
+        {
+          "lig": "N(NA)",
+          "rec": "LEU182 O(OA)",
+          "dist_A": 3.176
+        }
+      ],
+      "region_min_dist_A": {
+        "SER285": 3.338,
+        "TYR25": 4.888,
+        "THR114": 2.815,
+        "ILE110": 2.786,
+        "ILE186": 2.991
+      },
+      "region_contact_4A": {
+        "SER285": true,
+        "TYR25": false,
+        "THR114": true,
+        "ILE110": true,
+        "ILE186": true
+      },
+      "orientation": {
+        "ligand_centroid": [
+          98.772,
+          110.394,
+          124.914
+        ],
+        "dist_to_box_center": 1.446,
+        "pyrazole_centroid": [
+          99.451,
+          109.879,
+          124.204
+        ],
+        "vectors_from_pyrazole": {
+          "n1_heterocycle": {
+            "dx": 0.765,
+            "dy": -0.19,
+            "dz": 4.958,
+            "length": 5.02,
+            "centroid": [
+              100.215,
+              109.689,
+              129.161
+            ]
+          },
+          "adamantyl": {
+            "dx": -5.155,
+            "dy": 2.967,
+            "dz": -2.457,
+            "length": 6.435,
+            "centroid": [
+              94.296,
+              112.846,
+              121.747
+            ]
+          },
+          "c5_phenyl": {
+            "dx": 1.368,
+            "dy": -3.095,
+            "dz": 2.254,
+            "length": 4.066,
+            "centroid": [
+              100.818,
+              106.784,
+              126.458
+            ]
+          },
+          "n1_phenyl": {
+            "dx": 3.355,
+            "dy": 1.39,
+            "dz": 1.568,
+            "length": 3.955,
+            "centroid": [
+              102.806,
+              111.269,
+              125.771
+            ]
+          },
+          "amide": {
+            "dx": -2.08,
+            "dy": 1.168,
+            "dz": -1.877,
+            "length": 3.035,
+            "centroid": [
+              97.371,
+              111.047,
+              122.327
+            ]
+          }
+        },
+        "dominant_axis_from_pyrazole": {
+          "n1_heterocycle": "+z",
+          "adamantyl": "-x",
+          "c5_phenyl": "-y",
+          "n1_phenyl": "+x"
+        },
+        "moiety_serials": {
+          "pyrazole": [
+            11,
+            7,
+            10,
+            8,
+            9
+          ],
+          "amide": [
+            13,
+            14,
+            15
+          ],
+          "n1_heterocycle": [
+            33,
+            34,
+            36,
+            38,
+            39,
+            37,
+            35
+          ],
+          "adamantyl": [
+            17,
+            20,
+            23,
+            24,
+            21,
+            25,
+            22,
+            26,
+            19,
+            18
+          ],
+          "n1_phenyl": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "c5_phenyl": [
+            27,
+            28,
+            30,
+            32,
+            31,
+            29
+          ],
+          "c4_methyl": [
+            12
+          ]
+        },
+        "n1_sub_label": "o-Me-piperazine",
+        "r3_label": "CONH-Ad",
+        "dist_n1het_to_adamantyl": 9.999
+      },
+      "feature_summary": {
+        "id": "Qiu_20",
+        "path": "results/docking/qiu_0f/compound_20_cb2_out.pdbqt",
+        "smiles_source": "REMARK SMILES",
+        "smiles": "Cc1c(C(=O)NC23CC4CC(CC(C4)C2)C3)nn(-c2ccccc2N2CCN(C)CC2)c1-c1ccccc1",
+        "best_pose_model": 1,
+        "best_vina_score": -9.986,
+        "n_poses_pdbqt": 5,
+        "ligand_centroid": [
+          98.772,
+          110.394,
+          124.914
+        ],
+        "features_found": [
+          "adamantyl",
+          "amide",
+          "c4_methyl",
+          "c5_phenyl",
+          "n1_heterocycle",
+          "n1_phenyl",
+          "pyrazole"
+        ],
+        "feature_inventory": {
+          "pyrazole": {
+            "n_atoms_mapped": 5,
+            "serials": [
+              11,
+              7,
+              10,
+              8,
+              9
+            ],
+            "centroid": [
+              99.451,
+              109.879,
+              124.204
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "ILE110",
+                "min_dist": 3.275
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.356
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 5.414,
+              "TYR25": 9.449,
+              "THR114": 5.108,
+              "ILE110": 3.275,
+              "ILE186": 6.428
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": true,
+              "ILE186": false
+            }
+          },
+          "amide": {
+            "n_atoms_mapped": 3,
+            "serials": [
+              13,
+              14,
+              15
+            ],
+            "centroid": [
+              97.371,
+              111.047,
+              122.327
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "THR114",
+                "min_dist": 2.815
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.37
+              },
+              {
+                "residue": "ILE110",
+                "min_dist": 3.667
+              },
+              {
+                "residue": "VAL113",
+                "min_dist": 3.991
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 8.146,
+              "TYR25": 10.275,
+              "THR114": 2.815,
+              "ILE110": 3.667,
+              "ILE186": 4.917
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": true,
+              "ILE110": true,
+              "ILE186": false
+            }
+          },
+          "n1_heterocycle": {
+            "n_atoms_mapped": 7,
+            "serials": [
+              33,
+              34,
+              36,
+              38,
+              39,
+              37,
+              35
+            ],
+            "centroid": [
+              100.215,
+              109.689,
+              129.161
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "LEU182",
+                "min_dist": 2.723
+              },
+              {
+                "residue": "PRO184",
+                "min_dist": 3.472
+              },
+              {
+                "residue": "PHE281",
+                "min_dist": 3.486
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.58
+              },
+              {
+                "residue": "PHE94",
+                "min_dist": 3.82
+              },
+              {
+                "residue": "HIS95",
+                "min_dist": 3.932
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 6.498,
+              "TYR25": 4.888,
+              "THR114": 9.516,
+              "ILE110": 5.456,
+              "ILE186": 7.299
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "adamantyl": {
+            "n_atoms_mapped": 10,
+            "serials": [
+              17,
+              20,
+              23,
+              24,
+              21,
+              25,
+              22,
+              26,
+              19,
+              18
+            ],
+            "centroid": [
+              94.296,
+              112.846,
+              121.747
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "ILE186",
+                "min_dist": 2.991
+              },
+              {
+                "residue": "THR114",
+                "min_dist": 3.103
+              },
+              {
+                "residue": "ILE110",
+                "min_dist": 3.176
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.338
+              },
+              {
+                "residue": "LEU191",
+                "min_dist": 3.398
+              },
+              {
+                "residue": "TRP194",
+                "min_dist": 3.416
+              },
+              {
+                "residue": "TYR190",
+                "min_dist": 3.578
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 9.982,
+              "TYR25": 10.032,
+              "THR114": 3.103,
+              "ILE110": 3.176,
+              "ILE186": 2.991
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": true,
+              "ILE110": true,
+              "ILE186": true
+            }
+          },
+          "n1_phenyl": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "centroid": [
+              102.806,
+              111.269,
+              125.771
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "ILE110",
+                "min_dist": 2.786
+              },
+              {
+                "residue": "SER90",
+                "min_dist": 2.792
+              },
+              {
+                "residue": "PHE94",
+                "min_dist": 3.483
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 7.297,
+              "TYR25": 7.524,
+              "THR114": 7.857,
+              "ILE110": 2.786,
+              "ILE186": 7.938
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": true,
+              "ILE186": false
+            }
+          },
+          "c5_phenyl": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              27,
+              28,
+              30,
+              32,
+              31,
+              29
+            ],
+            "centroid": [
+              100.818,
+              106.784,
+              126.458
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "PHE91",
+                "min_dist": 3.062
+              },
+              {
+                "residue": "PHE281",
+                "min_dist": 3.334
+              },
+              {
+                "residue": "SER285",
+                "min_dist": 3.338
+              },
+              {
+                "residue": "PHE87",
+                "min_dist": 3.339
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 3.338,
+              "TYR25": 9.188,
+              "THR114": 8.565,
+              "ILE110": 6.294,
+              "ILE186": 9.484
+            },
+            "region_contact_4A": {
+              "SER285": true,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "c4_methyl": {
+            "n_atoms_mapped": 1,
+            "serials": [
+              12
+            ],
+            "centroid": [
+              97.742,
+              107.848,
+              123.778
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "PHE183",
+                "min_dist": 3.318
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 5.133,
+              "TYR25": 11.486,
+              "THR114": 6.402,
+              "ILE110": 6.773,
+              "ILE186": 8.589
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          }
+        }
+      },
+      "scaffold_labels": {
+        "n1_sub": "o-Me-piperazine",
+        "r3": "CONH-Ad"
+      }
+    },
+    "Qiu_24": {
+      "series": "Qiu",
+      "id": "Qiu_24",
+      "compound_id": 24,
+      "path": "results/docking/qiu_0f/compound_24_cb2_out.pdbqt",
+      "file_exists": true,
+      "n_poses_pdbqt": 9,
+      "pose_scores": [
+        {
+          "model": 1,
+          "vina_score": -11.606,
+          "rmsd_lb": 0.0,
+          "rmsd_ub": 0.0
+        },
+        {
+          "model": 2,
+          "vina_score": -11.368,
+          "rmsd_lb": 1.902,
+          "rmsd_ub": 4.274
+        },
+        {
+          "model": 3,
+          "vina_score": -11.228,
+          "rmsd_lb": 2.37,
+          "rmsd_ub": 8.594
+        },
+        {
+          "model": 4,
+          "vina_score": -10.604,
+          "rmsd_lb": 2.471,
+          "rmsd_ub": 8.17
+        },
+        {
+          "model": 5,
+          "vina_score": -10.444,
+          "rmsd_lb": 3.019,
+          "rmsd_ub": 7.913
+        },
+        {
+          "model": 6,
+          "vina_score": -9.34,
+          "rmsd_lb": 1.75,
+          "rmsd_ub": 3.625
+        },
+        {
+          "model": 7,
+          "vina_score": -9.121,
+          "rmsd_lb": 1.669,
+          "rmsd_ub": 2.971
+        },
+        {
+          "model": 8,
+          "vina_score": -8.768,
+          "rmsd_lb": 2.801,
+          "rmsd_ub": 3.833
+        },
+        {
+          "model": 9,
+          "vina_score": -8.724,
+          "rmsd_lb": 2.983,
+          "rmsd_ub": 4.676
+        }
+      ],
+      "comparable_pose": {
+        "rule": "lowest (most negative) REMARK VINA RESULT among written MODELs",
+        "model": 1,
+        "vina_score_kcal_mol": -11.606,
+        "score_note": "Vina REMARK number only \u2014 not experimental affinity"
+      },
+      "ligand_centroid": [
+        98.918,
+        109.893,
+        124.438
+      ],
+      "dist_to_box_center_A": 0.899,
+      "contacts": {
+        "n_contact_residues": 16,
+        "contact_residues": [
+          {
+            "residue": "PRO184",
+            "min_heavy_dist": 2.805
+          },
+          {
+            "residue": "LEU191",
+            "min_heavy_dist": 2.896
+          },
+          {
+            "residue": "PHE87",
+            "min_heavy_dist": 2.922
+          },
+          {
+            "residue": "THR114",
+            "min_heavy_dist": 3.035
+          },
+          {
+            "residue": "VAL113",
+            "min_heavy_dist": 3.049
+          },
+          {
+            "residue": "PHE91",
+            "min_heavy_dist": 3.061
+          },
+          {
+            "residue": "ILE186",
+            "min_heavy_dist": 3.133
+          },
+          {
+            "residue": "ILE110",
+            "min_heavy_dist": 3.216
+          },
+          {
+            "residue": "SER90",
+            "min_heavy_dist": 3.238
+          },
+          {
+            "residue": "ALA282",
+            "min_heavy_dist": 3.306
+          },
+          {
+            "residue": "SER285",
+            "min_heavy_dist": 3.354
+          },
+          {
+            "residue": "PHE183",
+            "min_heavy_dist": 3.419
+          },
+          {
+            "residue": "PHE94",
+            "min_heavy_dist": 3.535
+          },
+          {
+            "residue": "PHE281",
+            "min_heavy_dist": 3.55
+          },
+          {
+            "residue": "TRP194",
+            "min_heavy_dist": 3.585
+          },
+          {
+            "residue": "MET265",
+            "min_heavy_dist": 3.839
+          }
+        ],
+        "principal_residues": [
+          "PRO184",
+          "LEU191",
+          "PHE87",
+          "THR114",
+          "VAL113",
+          "PHE91",
+          "ILE186",
+          "ILE110",
+          "SER90",
+          "ALA282",
+          "SER285",
+          "PHE183"
+        ],
+        "hbonds_geometry_ok": [],
+        "hydrophobic_proximity": [
+          {
+            "residue": "PRO184",
+            "n_pairs": 5,
+            "min_dist": 2.805
+          },
+          {
+            "residue": "LEU191",
+            "n_pairs": 4,
+            "min_dist": 2.896
+          },
+          {
+            "residue": "PHE91",
+            "n_pairs": 5,
+            "min_dist": 3.061
+          },
+          {
+            "residue": "THR114",
+            "n_pairs": 3,
+            "min_dist": 3.096
+          },
+          {
+            "residue": "ILE186",
+            "n_pairs": 6,
+            "min_dist": 3.133
+          },
+          {
+            "residue": "ILE110",
+            "n_pairs": 4,
+            "min_dist": 3.216
+          },
+          {
+            "residue": "ALA282",
+            "n_pairs": 2,
+            "min_dist": 3.306
+          },
+          {
+            "residue": "VAL113",
+            "n_pairs": 4,
+            "min_dist": 3.327
+          },
+          {
+            "residue": "PHE183",
+            "n_pairs": 14,
+            "min_dist": 3.419
+          },
+          {
+            "residue": "PHE87",
+            "n_pairs": 3,
+            "min_dist": 3.479
+          },
+          {
+            "residue": "SER285",
+            "n_pairs": 2,
+            "min_dist": 3.505
+          },
+          {
+            "residue": "PHE94",
+            "n_pairs": 8,
+            "min_dist": 3.535
+          },
+          {
+            "residue": "PHE281",
+            "n_pairs": 4,
+            "min_dist": 3.55
+          },
+          {
+            "residue": "TRP194",
+            "n_pairs": 13,
+            "min_dist": 3.585
+          },
+          {
+            "residue": "SER90",
+            "n_pairs": 2,
+            "min_dist": 3.64
+          }
+        ],
+        "cutoff_heavy_A": 4.0
+      },
+      "polar_proximity_not_hbond": [
+        {
+          "lig": "N(N)",
+          "rec": "SER90 OG(OA)",
+          "dist_A": 3.407
+        }
+      ],
+      "region_min_dist_A": {
+        "SER285": 3.354,
+        "TYR25": 5.912,
+        "THR114": 3.035,
+        "ILE110": 3.216,
+        "ILE186": 3.133
+      },
+      "region_contact_4A": {
+        "SER285": true,
+        "TYR25": false,
+        "THR114": true,
+        "ILE110": true,
+        "ILE186": true
+      },
+      "orientation": {
+        "ligand_centroid": [
+          98.918,
+          109.893,
+          124.438
+        ],
+        "dist_to_box_center": 0.899,
+        "pyrazole_centroid": [
+          99.457,
+          109.074,
+          124.733
+        ],
+        "vectors_from_pyrazole": {
+          "n1_heterocycle": {
+            "dx": 3.502,
+            "dy": 0.119,
+            "dz": -0.894,
+            "length": 3.616,
+            "centroid": [
+              102.959,
+              109.193,
+              123.839
+            ]
+          },
+          "adamantyl": {
+            "dx": -5.22,
+            "dy": 3.158,
+            "dz": -2.724,
+            "length": 6.681,
+            "centroid": [
+              94.237,
+              112.231,
+              122.009
+            ]
+          },
+          "c5_phenyl": {
+            "dx": 1.255,
+            "dy": -2.39,
+            "dz": 3.038,
+            "length": 4.064,
+            "centroid": [
+              100.712,
+              106.684,
+              127.771
+            ]
+          },
+          "n1_phenyl": {
+            "dx": 2.18,
+            "dy": 2.322,
+            "dz": 2.364,
+            "length": 3.966,
+            "centroid": [
+              101.636,
+              111.395,
+              127.097
+            ]
+          },
+          "amide": {
+            "dx": -1.695,
+            "dy": 0.399,
+            "dz": -2.493,
+            "length": 3.041,
+            "centroid": [
+              97.762,
+              109.473,
+              122.239
+            ]
+          }
+        },
+        "dominant_axis_from_pyrazole": {
+          "n1_heterocycle": "+x",
+          "adamantyl": "-x",
+          "c5_phenyl": "+z",
+          "n1_phenyl": "+z"
+        },
+        "moiety_serials": {
+          "pyrazole": [
+            4,
+            5,
+            6,
+            2,
+            3
+          ],
+          "amide": [
+            7,
+            8,
+            9
+          ],
+          "n1_heterocycle": [
+            34,
+            35,
+            37,
+            39,
+            38,
+            36
+          ],
+          "adamantyl": [
+            12,
+            15,
+            18,
+            19,
+            16,
+            20,
+            17,
+            21,
+            14,
+            13
+          ],
+          "n1_phenyl": [
+            28,
+            29,
+            31,
+            33,
+            32,
+            30
+          ],
+          "c5_phenyl": [
+            22,
+            23,
+            25,
+            27,
+            26,
+            24
+          ],
+          "c4_methyl": [
+            1
+          ],
+          "amide_ch2": [
+            11
+          ]
+        },
+        "n1_sub_label": "o-morpholine",
+        "r3_label": "CONH-CH2-Ad",
+        "dist_n1het_to_adamantyl": 9.415,
+        "amide_ch2_centroid": [
+          95.74,
+          109.528,
+          121.642
+        ]
+      },
+      "feature_summary": {
+        "id": "Qiu_24",
+        "path": "results/docking/qiu_0f/compound_24_cb2_out.pdbqt",
+        "smiles_source": "REMARK SMILES",
+        "smiles": "Cc1c(C(=O)NCC23CC4CC(CC(C4)C2)C3)nn(-c2ccccc2N2CCOCC2)c1-c1ccccc1",
+        "best_pose_model": 1,
+        "best_vina_score": -11.606,
+        "n_poses_pdbqt": 9,
+        "ligand_centroid": [
+          98.918,
+          109.893,
+          124.438
+        ],
+        "features_found": [
+          "adamantyl",
+          "amide",
+          "amide_ch2",
+          "c4_methyl",
+          "c5_phenyl",
+          "n1_heterocycle",
+          "n1_phenyl",
+          "pyrazole"
+        ],
+        "feature_inventory": {
+          "pyrazole": {
+            "n_atoms_mapped": 5,
+            "serials": [
+              4,
+              5,
+              6,
+              2,
+              3
+            ],
+            "centroid": [
+              99.457,
+              109.074,
+              124.733
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "PHE183",
+                "min_dist": 3.548
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 4.676,
+              "TYR25": 9.172,
+              "THR114": 5.874,
+              "ILE110": 4.072,
+              "ILE186": 7.071
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "amide": {
+            "n_atoms_mapped": 3,
+            "serials": [
+              7,
+              8,
+              9
+            ],
+            "centroid": [
+              97.762,
+              109.473,
+              122.239
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "VAL113",
+                "min_dist": 3.049
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.429
+              },
+              {
+                "residue": "THR114",
+                "min_dist": 3.703
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 6.736,
+              "TYR25": 11.647,
+              "THR114": 3.703,
+              "ILE110": 4.095,
+              "ILE186": 7.33
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": true,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "n1_heterocycle": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              34,
+              35,
+              37,
+              39,
+              38,
+              36
+            ],
+            "centroid": [
+              102.959,
+              109.193,
+              123.839
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "PHE87",
+                "min_dist": 2.922
+              },
+              {
+                "residue": "ILE110",
+                "min_dist": 3.216
+              },
+              {
+                "residue": "SER90",
+                "min_dist": 3.238
+              },
+              {
+                "residue": "VAL113",
+                "min_dist": 3.327
+              },
+              {
+                "residue": "PHE91",
+                "min_dist": 3.612
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 5.886,
+              "TYR25": 9.939,
+              "THR114": 6.409,
+              "ILE110": 3.216,
+              "ILE186": 8.79
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": true,
+              "ILE186": false
+            }
+          },
+          "adamantyl": {
+            "n_atoms_mapped": 10,
+            "serials": [
+              12,
+              15,
+              18,
+              19,
+              16,
+              20,
+              17,
+              21,
+              14,
+              13
+            ],
+            "centroid": [
+              94.237,
+              112.231,
+              122.009
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "LEU191",
+                "min_dist": 2.896
+              },
+              {
+                "residue": "THR114",
+                "min_dist": 3.035
+              },
+              {
+                "residue": "ILE186",
+                "min_dist": 3.133
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.419
+              },
+              {
+                "residue": "TRP194",
+                "min_dist": 3.585
+              },
+              {
+                "residue": "ILE110",
+                "min_dist": 3.825
+              },
+              {
+                "residue": "MET265",
+                "min_dist": 3.839
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 9.547,
+              "TYR25": 10.006,
+              "THR114": 3.035,
+              "ILE110": 3.825,
+              "ILE186": 3.133
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": true,
+              "ILE110": true,
+              "ILE186": true
+            }
+          },
+          "n1_phenyl": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              28,
+              29,
+              31,
+              33,
+              32,
+              30
+            ],
+            "centroid": [
+              101.636,
+              111.395,
+              127.097
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "PRO184",
+                "min_dist": 2.805
+              },
+              {
+                "residue": "PHE94",
+                "min_dist": 3.535
+              },
+              {
+                "residue": "ILE110",
+                "min_dist": 3.79
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.893
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 7.15,
+              "TYR25": 5.912,
+              "THR114": 8.408,
+              "ILE110": 3.79,
+              "ILE186": 7.183
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": true,
+              "ILE186": false
+            }
+          },
+          "c5_phenyl": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              22,
+              23,
+              25,
+              27,
+              26,
+              24
+            ],
+            "centroid": [
+              100.712,
+              106.684,
+              127.771
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "PHE91",
+                "min_dist": 3.061
+              },
+              {
+                "residue": "ALA282",
+                "min_dist": 3.306
+              },
+              {
+                "residue": "SER285",
+                "min_dist": 3.354
+              },
+              {
+                "residue": "PHE281",
+                "min_dist": 3.55
+              },
+              {
+                "residue": "PHE87",
+                "min_dist": 3.844
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 3.354,
+              "TYR25": 7.413,
+              "THR114": 9.546,
+              "ILE110": 7.046,
+              "ILE186": 9.832
+            },
+            "region_contact_4A": {
+              "SER285": true,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "c4_methyl": {
+            "n_atoms_mapped": 1,
+            "serials": [
+              1
+            ],
+            "centroid": [
+              98.347,
+              106.662,
+              124.304
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "SER285",
+                "min_dist": 3.723
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 3.723,
+              "TYR25": 11.836,
+              "THR114": 7.675,
+              "ILE110": 7.711,
+              "ILE186": 9.831
+            },
+            "region_contact_4A": {
+              "SER285": true,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "amide_ch2": {
+            "n_atoms_mapped": 1,
+            "serials": [
+              11
+            ],
+            "centroid": [
+              95.74,
+              109.528,
+              121.642
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "THR114",
+                "min_dist": 3.843
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 8.211,
+              "TYR25": 12.647,
+              "THR114": 3.843,
+              "ILE110": 5.733,
+              "ILE186": 7.377
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": true,
+              "ILE110": false,
+              "ILE186": false
+            }
+          }
+        }
+      },
+      "scaffold_labels": {
+        "n1_sub": "o-morpholine",
+        "r3": "CONH-CH2-Ad"
+      }
+    },
+    "JANUS_D2_20": {
+      "series": "D2",
+      "id": "JANUS_D2_20",
+      "path": "results/docking/option_d_batch2/cb2/JANUS_D2_20_docked.pdbqt",
+      "file_exists": true,
+      "n_poses_pdbqt": 9,
+      "pose_scores": [
+        {
+          "model": 1,
+          "vina_score": -11.656,
+          "rmsd_lb": 0.0,
+          "rmsd_ub": 0.0
+        },
+        {
+          "model": 2,
+          "vina_score": -11.634,
+          "rmsd_lb": 2.955,
+          "rmsd_ub": 7.53
+        },
+        {
+          "model": 3,
+          "vina_score": -11.566,
+          "rmsd_lb": 3.085,
+          "rmsd_ub": 7.57
+        },
+        {
+          "model": 4,
+          "vina_score": -10.638,
+          "rmsd_lb": 1.944,
+          "rmsd_ub": 2.737
+        },
+        {
+          "model": 5,
+          "vina_score": -9.868,
+          "rmsd_lb": 1.469,
+          "rmsd_ub": 3.063
+        },
+        {
+          "model": 6,
+          "vina_score": -9.471,
+          "rmsd_lb": 2.777,
+          "rmsd_ub": 4.828
+        },
+        {
+          "model": 7,
+          "vina_score": -9.314,
+          "rmsd_lb": 2.435,
+          "rmsd_ub": 3.559
+        },
+        {
+          "model": 8,
+          "vina_score": -9.236,
+          "rmsd_lb": 3.231,
+          "rmsd_ub": 7.69
+        },
+        {
+          "model": 9,
+          "vina_score": -9.16,
+          "rmsd_lb": 2.029,
+          "rmsd_ub": 3.234
+        }
+      ],
+      "comparable_pose": {
+        "rule": "lowest (most negative) REMARK VINA RESULT among written MODELs",
+        "model": 1,
+        "vina_score_kcal_mol": -11.656,
+        "score_note": "Vina REMARK number only \u2014 not experimental affinity"
+      },
+      "ligand_centroid": [
+        99.346,
+        109.365,
+        125.055
+      ],
+      "dist_to_box_center_A": 1.595,
+      "contacts": {
+        "n_contact_residues": 16,
+        "contact_residues": [
+          {
+            "residue": "LEU182",
+            "min_heavy_dist": 3.34
+          },
+          {
+            "residue": "VAL113",
+            "min_heavy_dist": 3.366
+          },
+          {
+            "residue": "ILE186",
+            "min_heavy_dist": 3.384
+          },
+          {
+            "residue": "LEU191",
+            "min_heavy_dist": 3.391
+          },
+          {
+            "residue": "PHE91",
+            "min_heavy_dist": 3.48
+          },
+          {
+            "residue": "HIS95",
+            "min_heavy_dist": 3.504
+          },
+          {
+            "residue": "ILE110",
+            "min_heavy_dist": 3.506
+          },
+          {
+            "residue": "PHE281",
+            "min_heavy_dist": 3.51
+          },
+          {
+            "residue": "PHE94",
+            "min_heavy_dist": 3.542
+          },
+          {
+            "residue": "SER285",
+            "min_heavy_dist": 3.58
+          },
+          {
+            "residue": "SER90",
+            "min_heavy_dist": 3.595
+          },
+          {
+            "residue": "PHE183",
+            "min_heavy_dist": 3.667
+          },
+          {
+            "residue": "TRP194",
+            "min_heavy_dist": 3.847
+          },
+          {
+            "residue": "THR114",
+            "min_heavy_dist": 3.859
+          },
+          {
+            "residue": "PHE87",
+            "min_heavy_dist": 3.907
+          },
+          {
+            "residue": "TYR25",
+            "min_heavy_dist": 3.942
+          }
+        ],
+        "principal_residues": [
+          "LEU182",
+          "VAL113",
+          "ILE186",
+          "LEU191",
+          "PHE91",
+          "HIS95",
+          "ILE110",
+          "PHE281",
+          "PHE94",
+          "SER285",
+          "SER90",
+          "PHE183"
+        ],
+        "hbonds_geometry_ok": [],
+        "hydrophobic_proximity": [
+          {
+            "residue": "ILE186",
+            "n_pairs": 1,
+            "min_dist": 3.384
+          },
+          {
+            "residue": "LEU191",
+            "n_pairs": 1,
+            "min_dist": 3.391
+          },
+          {
+            "residue": "PHE91",
+            "n_pairs": 4,
+            "min_dist": 3.48
+          },
+          {
+            "residue": "PHE281",
+            "n_pairs": 5,
+            "min_dist": 3.51
+          },
+          {
+            "residue": "PHE94",
+            "n_pairs": 2,
+            "min_dist": 3.542
+          },
+          {
+            "residue": "ILE110",
+            "n_pairs": 3,
+            "min_dist": 3.647
+          },
+          {
+            "residue": "PHE183",
+            "n_pairs": 19,
+            "min_dist": 3.667
+          },
+          {
+            "residue": "VAL113",
+            "n_pairs": 3,
+            "min_dist": 3.783
+          },
+          {
+            "residue": "SER90",
+            "n_pairs": 1,
+            "min_dist": 3.8
+          },
+          {
+            "residue": "TRP194",
+            "n_pairs": 3,
+            "min_dist": 3.847
+          },
+          {
+            "residue": "PHE87",
+            "n_pairs": 1,
+            "min_dist": 3.907
+          },
+          {
+            "residue": "SER285",
+            "n_pairs": 1,
+            "min_dist": 3.981
+          }
+        ],
+        "cutoff_heavy_A": 4.0
+      },
+      "polar_proximity_not_hbond": [],
+      "region_min_dist_A": {
+        "SER285": 3.58,
+        "TYR25": 3.942,
+        "THR114": 3.859,
+        "ILE110": 3.506,
+        "ILE186": 3.384
+      },
+      "region_contact_4A": {
+        "SER285": true,
+        "TYR25": true,
+        "THR114": true,
+        "ILE110": true,
+        "ILE186": true
+      },
+      "orientation": {
+        "pyrrole_centroid": [
+          99.514,
+          108.464,
+          124.02
+        ],
+        "vectors_from_pyrrole": {
+          "benzoyl_aryl": {
+            "centroid": [
+              95.647,
+              110.976,
+              122.642
+            ],
+            "dx": -3.867,
+            "dy": 2.512,
+            "dz": -1.378,
+            "dominant_axis": "-x"
+          },
+          "n1_benzyl_aryl": {
+            "centroid": [
+              100.453,
+              108.452,
+              128.554
+            ],
+            "dx": 0.94,
+            "dy": -0.012,
+            "dz": 4.535,
+            "dominant_axis": "+z"
+          },
+          "aryl_ketone": {
+            "centroid": [
+              97.669,
+              108.678,
+              121.624
+            ],
+            "dx": -1.844,
+            "dy": 0.214,
+            "dz": -2.395,
+            "dominant_axis": "-z"
+          },
+          "c2_phenyl": {
+            "centroid": [
+              103.06,
+              109.625,
+              125.623
+            ],
+            "dx": 3.546,
+            "dy": 1.16,
+            "dz": 1.604,
+            "dominant_axis": "+x"
+          },
+          "c3_amino": {
+            "centroid": [
+              100.307,
+              110.439,
+              122.669
+            ],
+            "dx": 0.793,
+            "dy": 1.975,
+            "dz": -1.351,
+            "dominant_axis": "+y"
+          },
+          "n1_ch2": {
+            "centroid": [
+              100.135,
+              106.938,
+              126.071
+            ],
+            "dx": 0.621,
+            "dy": -1.526,
+            "dz": 2.051,
+            "dominant_axis": "+z"
+          }
+        },
+        "dominant_axis_from_pyrrole": {
+          "benzoyl_aryl": "-x",
+          "n1_benzyl_aryl": "+z",
+          "aryl_ketone": "-z",
+          "c2_phenyl": "+x",
+          "c3_amino": "+y",
+          "n1_ch2": "+z"
+        }
+      },
+      "feature_summary": {
+        "id": "JANUS_D2_20",
+        "path": "results/docking/option_d_batch2/cb2/JANUS_D2_20_docked.pdbqt",
+        "smiles_source": "REMARK SMILES",
+        "smiles": "Cc1ccc(C(=O)c2c(N)c(-c3ccccc3)n(Cc3ccc(Cl)cc3)c2C)cc1",
+        "best_pose_model": 1,
+        "best_vina_score": -11.656,
+        "n_poses_pdbqt": 9,
+        "ligand_centroid": [
+          99.346,
+          109.365,
+          125.055
+        ],
+        "features_found": [
+          "aryl_ketone",
+          "benzoyl_aryl",
+          "benzoyl_pMe",
+          "c2_phenyl",
+          "c3_amino",
+          "c5_methyl",
+          "n1_benzyl_aryl",
+          "n1_benzyl_pCl",
+          "n1_ch2",
+          "pyrrole"
+        ],
+        "feature_inventory": {
+          "pyrrole": {
+            "n_atoms_mapped": 5,
+            "serials": [
+              4,
+              3,
+              2,
+              1,
+              5
+            ],
+            "centroid": [
+              99.514,
+              108.464,
+              124.02
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "PHE183",
+                "min_dist": 3.739
+              },
+              {
+                "residue": "VAL113",
+                "min_dist": 3.783
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 4.267,
+              "TYR25": 10.474,
+              "THR114": 5.638,
+              "ILE110": 4.554,
+              "ILE186": 8.007
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "aryl_ketone": {
+            "n_atoms_mapped": 2,
+            "serials": [
+              7,
+              8
+            ],
+            "centroid": [
+              97.669,
+              108.678,
+              121.624
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "VAL113",
+                "min_dist": 3.366
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 6.644,
+              "TYR25": 12.213,
+              "THR114": 4.251,
+              "ILE110": 5.329,
+              "ILE186": 7.888
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "benzoyl_aryl": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              10,
+              11,
+              13,
+              9,
+              14,
+              12
+            ],
+            "centroid": [
+              95.647,
+              110.976,
+              122.642
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "ILE110",
+                "min_dist": 3.647
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.667
+              },
+              {
+                "residue": "TRP194",
+                "min_dist": 3.847
+              },
+              {
+                "residue": "THR114",
+                "min_dist": 3.859
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 7.845,
+              "TYR25": 10.242,
+              "THR114": 3.859,
+              "ILE110": 3.647,
+              "ILE186": 4.31
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": true,
+              "ILE110": true,
+              "ILE186": false
+            }
+          },
+          "c3_amino": {
+            "n_atoms_mapped": 1,
+            "serials": [
+              16
+            ],
+            "centroid": [
+              100.307,
+              110.439,
+              122.669
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "VAL113",
+                "min_dist": 3.448
+              },
+              {
+                "residue": "ILE110",
+                "min_dist": 3.506
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 7.291,
+              "TYR25": 11.181,
+              "THR114": 5.22,
+              "ILE110": 3.506,
+              "ILE186": 7.557
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": true,
+              "ILE186": false
+            }
+          },
+          "n1_ch2": {
+            "n_atoms_mapped": 1,
+            "serials": [
+              25
+            ],
+            "centroid": [
+              100.135,
+              106.938,
+              126.071
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "SER285",
+                "min_dist": 3.58
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 3.58,
+              "TYR25": 9.929,
+              "THR114": 9.279,
+              "ILE110": 7.303,
+              "ILE186": 10.229
+            },
+            "region_contact_4A": {
+              "SER285": true,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "n1_benzyl_aryl": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              26,
+              27,
+              29,
+              31,
+              30,
+              28
+            ],
+            "centroid": [
+              100.453,
+              108.452,
+              128.554
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "LEU182",
+                "min_dist": 3.34
+              },
+              {
+                "residue": "HIS95",
+                "min_dist": 3.504
+              },
+              {
+                "residue": "PHE281",
+                "min_dist": 3.51
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.743
+              },
+              {
+                "residue": "PHE91",
+                "min_dist": 3.95
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 4.817,
+              "TYR25": 5.637,
+              "THR114": 9.69,
+              "ILE110": 6.931,
+              "ILE186": 8.702
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "n1_benzyl_pCl": {
+            "n_atoms_mapped": 1,
+            "serials": [
+              32
+            ],
+            "centroid": [
+              100.828,
+              110.042,
+              131.208
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "TYR25",
+                "min_dist": 3.942
+              },
+              {
+                "residue": "PHE94",
+                "min_dist": 3.971
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 8.753,
+              "TYR25": 3.942,
+              "THR114": 12.972,
+              "ILE110": 8.562,
+              "ILE186": 10.109
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": true,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "c2_phenyl": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              19,
+              20,
+              22,
+              24,
+              23,
+              21
+            ],
+            "centroid": [
+              103.06,
+              109.625,
+              125.623
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "PHE91",
+                "min_dist": 3.48
+              },
+              {
+                "residue": "PHE94",
+                "min_dist": 3.542
+              },
+              {
+                "residue": "SER90",
+                "min_dist": 3.595
+              },
+              {
+                "residue": "PHE87",
+                "min_dist": 3.907
+              },
+              {
+                "residue": "ILE110",
+                "min_dist": 3.996
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 5.669,
+              "TYR25": 8.408,
+              "THR114": 8.266,
+              "ILE110": 3.996,
+              "ILE186": 8.4
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": true,
+              "ILE186": false
+            }
+          },
+          "c5_methyl": {
+            "n_atoms_mapped": 1,
+            "serials": [
+              6
+            ],
+            "centroid": [
+              97.649,
+              106.561,
+              124.34
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "PHE281",
+                "min_dist": 3.66
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.857
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 4.039,
+              "TYR25": 11.921,
+              "THR114": 7.678,
+              "ILE110": 8.123,
+              "ILE186": 9.778
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "benzoyl_pMe": {
+            "n_atoms_mapped": 1,
+            "serials": [
+              15
+            ],
+            "centroid": [
+              93.583,
+              112.973,
+              123.096
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "ILE186",
+                "min_dist": 3.384
+              },
+              {
+                "residue": "LEU191",
+                "min_dist": 3.391
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.868
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 11.707,
+              "TYR25": 10.603,
+              "THR114": 5.408,
+              "ILE110": 5.677,
+              "ILE186": 3.384
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": true
+            }
+          }
+        }
+      },
+      "conservation_vs_qiu_0g_map": {
+        "axes": [
+          {
+            "d2_feature": "pyrrole",
+            "qiu_feature": "pyrazole",
+            "label": "5-membered N-heteroaromatic core",
+            "spatial_ok_count": "4/4",
+            "status": "conserved_spatial",
+            "per_qiu": {
+              "14": {
+                "present": true,
+                "centroid_distance_A": 1.254,
+                "shell_jaccard": 0.333,
+                "spatial_ok": true
+              },
+              "15": {
+                "present": true,
+                "centroid_distance_A": 1.766,
+                "shell_jaccard": 0.333,
+                "spatial_ok": true
+              },
+              "20": {
+                "present": true,
+                "centroid_distance_A": 1.428,
+                "shell_jaccard": 0.333,
+                "spatial_ok": true
+              },
+              "24": {
+                "present": true,
+                "centroid_distance_A": 0.94,
+                "shell_jaccard": 0.5,
+                "spatial_ok": true
+              }
+            }
+          },
+          {
+            "d2_feature": "aryl_ketone",
+            "qiu_feature": "amide",
+            "label": "carbonyl linker (ketone vs CONH)",
+            "spatial_ok_count": "4/4",
+            "status": "conserved_spatial",
+            "per_qiu": {
+              "14": {
+                "present": true,
+                "centroid_distance_A": 2.281,
+                "shell_jaccard": 0.25,
+                "spatial_ok": true
+              },
+              "15": {
+                "present": true,
+                "centroid_distance_A": 2.774,
+                "shell_jaccard": 0.0,
+                "spatial_ok": true
+              },
+              "20": {
+                "present": true,
+                "centroid_distance_A": 2.489,
+                "shell_jaccard": 0.25,
+                "spatial_ok": true
+              },
+              "24": {
+                "present": true,
+                "centroid_distance_A": 1.009,
+                "shell_jaccard": 0.333,
+                "spatial_ok": true
+              }
+            }
+          },
+          {
+            "d2_feature": "benzoyl_aryl",
+            "qiu_feature": "adamantyl",
+            "label": "bulky hydrophobic from carbonyl side",
+            "spatial_ok_count": "4/4",
+            "status": "conserved_spatial",
+            "per_qiu": {
+              "14": {
+                "present": true,
+                "centroid_distance_A": 2.33,
+                "shell_jaccard": 0.571,
+                "spatial_ok": true
+              },
+              "15": {
+                "present": true,
+                "centroid_distance_A": 2.74,
+                "shell_jaccard": 0.571,
+                "spatial_ok": true
+              },
+              "20": {
+                "present": true,
+                "centroid_distance_A": 2.474,
+                "shell_jaccard": 0.571,
+                "spatial_ok": true
+              },
+              "24": {
+                "present": true,
+                "centroid_distance_A": 1.991,
+                "shell_jaccard": 0.571,
+                "spatial_ok": true
+              }
+            }
+          },
+          {
+            "d2_feature": "n1_benzyl_aryl",
+            "qiu_feature": "n1_heterocycle",
+            "label": "N-aryl / N-het extension",
+            "spatial_ok_count": "3/4",
+            "status": "conserved_spatial",
+            "per_qiu": {
+              "14": {
+                "present": true,
+                "centroid_distance_A": 1.437,
+                "shell_jaccard": 0.429,
+                "spatial_ok": true
+              },
+              "15": {
+                "present": true,
+                "centroid_distance_A": 3.348,
+                "shell_jaccard": 0.25,
+                "spatial_ok": true
+              },
+              "20": {
+                "present": true,
+                "centroid_distance_A": 1.398,
+                "shell_jaccard": 0.571,
+                "spatial_ok": true
+              },
+              "24": {
+                "present": true,
+                "centroid_distance_A": 5.391,
+                "shell_jaccard": 0.111,
+                "spatial_ok": false
+              }
+            }
+          },
+          {
+            "d2_feature": "c2_phenyl",
+            "qiu_feature": "c5_phenyl",
+            "label": "C-aryl on heteroaromatic",
+            "spatial_ok_count": "4/4",
+            "status": "conserved_spatial",
+            "per_qiu": {
+              "14": {
+                "present": true,
+                "centroid_distance_A": 3.858,
+                "shell_jaccard": 0.286,
+                "spatial_ok": true
+              },
+              "15": {
+                "present": true,
+                "centroid_distance_A": 3.623,
+                "shell_jaccard": 0.286,
+                "spatial_ok": true
+              },
+              "20": {
+                "present": true,
+                "centroid_distance_A": 3.714,
+                "shell_jaccard": 0.286,
+                "spatial_ok": true
+              },
+              "24": {
+                "present": true,
+                "centroid_distance_A": 4.333,
+                "shell_jaccard": 0.25,
+                "spatial_ok": true
+              }
+            }
+          },
+          {
+            "d2_feature": "c5_methyl",
+            "qiu_feature": "c4_methyl",
+            "label": "small alkyl on ring",
+            "spatial_ok_count": "4/4",
+            "status": "conserved_spatial",
+            "per_qiu": {
+              "14": {
+                "present": true,
+                "centroid_distance_A": 1.323,
+                "shell_jaccard": 0.5,
+                "spatial_ok": true
+              },
+              "15": {
+                "present": true,
+                "centroid_distance_A": 2.176,
+                "shell_jaccard": 0.0,
+                "spatial_ok": true
+              },
+              "20": {
+                "present": true,
+                "centroid_distance_A": 1.407,
+                "shell_jaccard": 0.5,
+                "spatial_ok": true
+              },
+              "24": {
+                "present": true,
+                "centroid_distance_A": 0.706,
+                "shell_jaccard": 0.0,
+                "spatial_ok": true
+              }
+            }
+          }
+        ],
+        "orientation_vs_ad_het": [
+          {
+            "qiu_ref": "14",
+            "benzoyl_to_adamantyl_A": 2.33,
+            "benzoyl_to_n1_heterocycle_A": 7.92,
+            "n1_benzyl_to_adamantyl_A": 10.05,
+            "n1_benzyl_to_n1_heterocycle_A": 1.437,
+            "pattern": "canonical_like"
+          },
+          {
+            "qiu_ref": "15",
+            "benzoyl_to_adamantyl_A": 2.74,
+            "benzoyl_to_n1_heterocycle_A": 10.144,
+            "n1_benzyl_to_adamantyl_A": 10.412,
+            "n1_benzyl_to_n1_heterocycle_A": 3.348,
+            "pattern": "canonical_like"
+          },
+          {
+            "qiu_ref": "20",
+            "benzoyl_to_adamantyl_A": 2.474,
+            "benzoyl_to_n1_heterocycle_A": 8.064,
+            "n1_benzyl_to_adamantyl_A": 10.176,
+            "n1_benzyl_to_n1_heterocycle_A": 1.398,
+            "pattern": "canonical_like"
+          },
+          {
+            "qiu_ref": "24",
+            "benzoyl_to_adamantyl_A": 1.991,
+            "benzoyl_to_n1_heterocycle_A": 7.621,
+            "n1_benzyl_to_adamantyl_A": 9.786,
+            "n1_benzyl_to_n1_heterocycle_A": 5.391,
+            "pattern": "canonical_like"
+          }
+        ],
+        "qiu_only_absent_on_d2": [
+          "adamantyl",
+          "amide",
+          "n1_heterocycle",
+          "amide_ch2"
+        ],
+        "gates": {
+          "centroid_near_A": 3.0,
+          "shell_jaccard_min": 0.25
+        }
+      }
+    },
+    "JANUS_D2_06": {
+      "series": "D2",
+      "id": "JANUS_D2_06",
+      "path": "results/docking/option_d_batch2/cb2/JANUS_D2_06_docked.pdbqt",
+      "file_exists": true,
+      "n_poses_pdbqt": 8,
+      "pose_scores": [
+        {
+          "model": 1,
+          "vina_score": -12.03,
+          "rmsd_lb": 0.0,
+          "rmsd_ub": 0.0
+        },
+        {
+          "model": 2,
+          "vina_score": -11.696,
+          "rmsd_lb": 2.59,
+          "rmsd_ub": 7.977
+        },
+        {
+          "model": 3,
+          "vina_score": -11.303,
+          "rmsd_lb": 2.65,
+          "rmsd_ub": 7.763
+        },
+        {
+          "model": 4,
+          "vina_score": -9.919,
+          "rmsd_lb": 1.446,
+          "rmsd_ub": 2.977
+        },
+        {
+          "model": 5,
+          "vina_score": -9.623,
+          "rmsd_lb": 2.311,
+          "rmsd_ub": 4.857
+        },
+        {
+          "model": 6,
+          "vina_score": -9.246,
+          "rmsd_lb": 1.865,
+          "rmsd_ub": 3.315
+        },
+        {
+          "model": 7,
+          "vina_score": -9.148,
+          "rmsd_lb": 1.878,
+          "rmsd_ub": 3.872
+        },
+        {
+          "model": 8,
+          "vina_score": -9.127,
+          "rmsd_lb": 3.007,
+          "rmsd_ub": 7.176
+        }
+      ],
+      "comparable_pose": {
+        "rule": "lowest (most negative) REMARK VINA RESULT among written MODELs",
+        "model": 1,
+        "vina_score_kcal_mol": -12.03,
+        "score_note": "Vina REMARK number only \u2014 not experimental affinity"
+      },
+      "ligand_centroid": [
+        99.374,
+        109.275,
+        124.924
+      ],
+      "dist_to_box_center_A": 1.527,
+      "contacts": {
+        "n_contact_residues": 16,
+        "contact_residues": [
+          {
+            "residue": "THR114",
+            "min_heavy_dist": 3.105
+          },
+          {
+            "residue": "ILE110",
+            "min_heavy_dist": 3.293
+          },
+          {
+            "residue": "SER90",
+            "min_heavy_dist": 3.404
+          },
+          {
+            "residue": "PHE281",
+            "min_heavy_dist": 3.418
+          },
+          {
+            "residue": "PHE183",
+            "min_heavy_dist": 3.507
+          },
+          {
+            "residue": "SER285",
+            "min_heavy_dist": 3.509
+          },
+          {
+            "residue": "VAL113",
+            "min_heavy_dist": 3.527
+          },
+          {
+            "residue": "HIS95",
+            "min_heavy_dist": 3.609
+          },
+          {
+            "residue": "PHE87",
+            "min_heavy_dist": 3.656
+          },
+          {
+            "residue": "PHE91",
+            "min_heavy_dist": 3.707
+          },
+          {
+            "residue": "TRP194",
+            "min_heavy_dist": 3.734
+          },
+          {
+            "residue": "LEU191",
+            "min_heavy_dist": 3.736
+          },
+          {
+            "residue": "PHE94",
+            "min_heavy_dist": 3.881
+          },
+          {
+            "residue": "LEU182",
+            "min_heavy_dist": 3.908
+          },
+          {
+            "residue": "TYR25",
+            "min_heavy_dist": 3.943
+          },
+          {
+            "residue": "ILE186",
+            "min_heavy_dist": 3.955
+          }
+        ],
+        "principal_residues": [
+          "THR114",
+          "ILE110",
+          "SER90",
+          "PHE281",
+          "PHE183",
+          "SER285",
+          "VAL113",
+          "HIS95",
+          "PHE87",
+          "PHE91",
+          "TRP194",
+          "LEU191"
+        ],
+        "hbonds_geometry_ok": [],
+        "hydrophobic_proximity": [
+          {
+            "residue": "PHE281",
+            "n_pairs": 4,
+            "min_dist": 3.418
+          },
+          {
+            "residue": "PHE183",
+            "n_pairs": 17,
+            "min_dist": 3.507
+          },
+          {
+            "residue": "ILE110",
+            "n_pairs": 2,
+            "min_dist": 3.6
+          },
+          {
+            "residue": "VAL113",
+            "n_pairs": 2,
+            "min_dist": 3.607
+          },
+          {
+            "residue": "PHE87",
+            "n_pairs": 2,
+            "min_dist": 3.656
+          },
+          {
+            "residue": "PHE91",
+            "n_pairs": 5,
+            "min_dist": 3.719
+          },
+          {
+            "residue": "TRP194",
+            "n_pairs": 3,
+            "min_dist": 3.734
+          },
+          {
+            "residue": "LEU191",
+            "n_pairs": 2,
+            "min_dist": 3.736
+          },
+          {
+            "residue": "HIS95",
+            "n_pairs": 1,
+            "min_dist": 3.926
+          },
+          {
+            "residue": "SER90",
+            "n_pairs": 3,
+            "min_dist": 3.927
+          },
+          {
+            "residue": "ILE186",
+            "n_pairs": 1,
+            "min_dist": 3.955
+          }
+        ],
+        "cutoff_heavy_A": 4.0
+      },
+      "polar_proximity_not_hbond": [
+        {
+          "lig": "O(OA)",
+          "rec": "THR114 OG1(OA)",
+          "dist_A": 3.105
+        }
+      ],
+      "region_min_dist_A": {
+        "SER285": 3.509,
+        "TYR25": 3.943,
+        "THR114": 3.105,
+        "ILE110": 3.293,
+        "ILE186": 3.955
+      },
+      "region_contact_4A": {
+        "SER285": true,
+        "TYR25": true,
+        "THR114": true,
+        "ILE110": true,
+        "ILE186": true
+      },
+      "orientation": {
+        "pyrrole_centroid": [
+          99.151,
+          108.835,
+          123.515
+        ],
+        "vectors_from_pyrrole": {
+          "benzoyl_aryl": {
+            "centroid": [
+              95.175,
+              111.355,
+              122.635
+            ],
+            "dx": -3.975,
+            "dy": 2.521,
+            "dz": -0.88,
+            "dominant_axis": "-x"
+          },
+          "n1_benzyl_aryl": {
+            "centroid": [
+              100.468,
+              107.896,
+              127.977
+            ],
+            "dx": 1.318,
+            "dy": -0.938,
+            "dz": 4.461,
+            "dominant_axis": "+z"
+          },
+          "aryl_ketone": {
+            "centroid": [
+              97.383,
+              109.527,
+              121.15
+            ],
+            "dx": -1.768,
+            "dy": 0.692,
+            "dz": -2.366,
+            "dominant_axis": "-z"
+          },
+          "c2_phenyl": {
+            "centroid": [
+              102.849,
+              109.452,
+              125.085
+            ],
+            "dx": 3.699,
+            "dy": 0.617,
+            "dz": 1.57,
+            "dominant_axis": "+x"
+          },
+          "c3_amino": {
+            "centroid": [
+              100.09,
+              110.881,
+              122.384
+            ],
+            "dx": 0.939,
+            "dy": 2.046,
+            "dz": -1.131,
+            "dominant_axis": "+y"
+          },
+          "n1_ch2": {
+            "centroid": [
+              99.696,
+              106.98,
+              125.299
+            ],
+            "dx": 0.545,
+            "dy": -1.855,
+            "dz": 1.784,
+            "dominant_axis": "-y"
+          }
+        },
+        "dominant_axis_from_pyrrole": {
+          "benzoyl_aryl": "-x",
+          "n1_benzyl_aryl": "+z",
+          "aryl_ketone": "-z",
+          "c2_phenyl": "+x",
+          "c3_amino": "+y",
+          "n1_ch2": "-y"
+        }
+      },
+      "feature_summary": {
+        "id": "JANUS_D2_06",
+        "path": "results/docking/option_d_batch2/cb2/JANUS_D2_06_docked.pdbqt",
+        "smiles_source": "REMARK SMILES",
+        "smiles": "Cc1c(C(=O)c2ccccc2)c(N)c(-c2ccccc2)n1Cc1ccc(C#N)cc1",
+        "best_pose_model": 1,
+        "best_vina_score": -12.03,
+        "n_poses_pdbqt": 8,
+        "ligand_centroid": [
+          99.374,
+          109.275,
+          124.924
+        ],
+        "features_found": [
+          "aryl_ketone",
+          "benzoyl_aryl",
+          "c2_phenyl",
+          "c3_amino",
+          "c5_methyl",
+          "n1_benzyl_aryl",
+          "n1_benzyl_pCN",
+          "n1_ch2",
+          "pyrrole"
+        ],
+        "feature_inventory": {
+          "pyrrole": {
+            "n_atoms_mapped": 5,
+            "serials": [
+              6,
+              5,
+              4,
+              3,
+              2
+            ],
+            "centroid": [
+              99.151,
+              108.835,
+              123.515
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "PHE183",
+                "min_dist": 3.57
+              },
+              {
+                "residue": "VAL113",
+                "min_dist": 3.607
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 4.63,
+              "TYR25": 10.702,
+              "THR114": 4.876,
+              "ILE110": 4.34,
+              "ILE186": 7.609
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "aryl_ketone": {
+            "n_atoms_mapped": 2,
+            "serials": [
+              7,
+              8
+            ],
+            "centroid": [
+              97.383,
+              109.527,
+              121.15
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "THR114",
+                "min_dist": 3.105
+              },
+              {
+                "residue": "VAL113",
+                "min_dist": 3.538
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 7.527,
+              "TYR25": 12.295,
+              "THR114": 3.105,
+              "ILE110": 4.42,
+              "ILE186": 7.345
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": true,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "benzoyl_aryl": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              9,
+              10,
+              12,
+              14,
+              13,
+              11
+            ],
+            "centroid": [
+              95.175,
+              111.355,
+              122.635
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "ILE110",
+                "min_dist": 3.6
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.619
+              },
+              {
+                "residue": "THR114",
+                "min_dist": 3.631
+              },
+              {
+                "residue": "TRP194",
+                "min_dist": 3.734
+              },
+              {
+                "residue": "LEU191",
+                "min_dist": 3.736
+              },
+              {
+                "residue": "ILE186",
+                "min_dist": 3.955
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 8.535,
+              "TYR25": 10.067,
+              "THR114": 3.631,
+              "ILE110": 3.6,
+              "ILE186": 3.955
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": true,
+              "ILE110": true,
+              "ILE186": true
+            }
+          },
+          "c3_amino": {
+            "n_atoms_mapped": 1,
+            "serials": [
+              24
+            ],
+            "centroid": [
+              100.09,
+              110.881,
+              122.384
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "ILE110",
+                "min_dist": 3.293
+              },
+              {
+                "residue": "VAL113",
+                "min_dist": 3.527
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 7.803,
+              "TYR25": 11.246,
+              "THR114": 4.757,
+              "ILE110": 3.293,
+              "ILE186": 7.19
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": true,
+              "ILE186": false
+            }
+          },
+          "n1_ch2": {
+            "n_atoms_mapped": 1,
+            "serials": [
+              15
+            ],
+            "centroid": [
+              99.696,
+              106.98,
+              125.299
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "SER285",
+                "min_dist": 3.509
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 3.509,
+              "TYR25": 10.67,
+              "THR114": 8.528,
+              "ILE110": 7.13,
+              "ILE186": 9.952
+            },
+            "region_contact_4A": {
+              "SER285": true,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "n1_benzyl_aryl": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              16,
+              17,
+              19,
+              21,
+              20,
+              18
+            ],
+            "centroid": [
+              100.468,
+              107.896,
+              127.977
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "PHE281",
+                "min_dist": 3.418
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.66
+              },
+              {
+                "residue": "HIS95",
+                "min_dist": 3.715
+              },
+              {
+                "residue": "PHE91",
+                "min_dist": 3.719
+              },
+              {
+                "residue": "LEU182",
+                "min_dist": 3.908
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 4.232,
+              "TYR25": 6.401,
+              "THR114": 9.435,
+              "ILE110": 6.87,
+              "ILE186": 8.822
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "n1_benzyl_pCN": {
+            "n_atoms_mapped": 2,
+            "serials": [
+              22,
+              23
+            ],
+            "centroid": [
+              101.439,
+              108.895,
+              131.1
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "HIS95",
+                "min_dist": 3.609
+              },
+              {
+                "residue": "PHE94",
+                "min_dist": 3.881
+              },
+              {
+                "residue": "TYR25",
+                "min_dist": 3.943
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 7.417,
+              "TYR25": 3.943,
+              "THR114": 12.792,
+              "ILE110": 8.625,
+              "ILE186": 10.812
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": true,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "c2_phenyl": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              27,
+              28,
+              30,
+              32,
+              31,
+              29
+            ],
+            "centroid": [
+              102.849,
+              109.452,
+              125.085
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "SER90",
+                "min_dist": 3.404
+              },
+              {
+                "residue": "PHE87",
+                "min_dist": 3.656
+              },
+              {
+                "residue": "PHE91",
+                "min_dist": 3.707
+              },
+              {
+                "residue": "ILE110",
+                "min_dist": 3.906
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 5.549,
+              "TYR25": 8.801,
+              "THR114": 7.713,
+              "ILE110": 3.906,
+              "ILE186": 8.37
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": true,
+              "ILE186": false
+            }
+          },
+          "c5_methyl": {
+            "n_atoms_mapped": 1,
+            "serials": [
+              1
+            ],
+            "centroid": [
+              97.067,
+              107.164,
+              123.78
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "PHE183",
+                "min_dist": 3.507
+              },
+              {
+                "residue": "PHE281",
+                "min_dist": 3.938
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 4.972,
+              "TYR25": 11.99,
+              "THR114": 6.825,
+              "ILE110": 7.569,
+              "ILE186": 9.142
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          }
+        }
+      },
+      "conservation_vs_qiu_0g_map": {
+        "axes": [
+          {
+            "d2_feature": "pyrrole",
+            "qiu_feature": "pyrazole",
+            "label": "5-membered N-heteroaromatic core",
+            "spatial_ok_count": "4/4",
+            "status": "conserved_spatial",
+            "per_qiu": {
+              "14": {
+                "present": true,
+                "centroid_distance_A": 1.15,
+                "shell_jaccard": 0.333,
+                "spatial_ok": true
+              },
+              "15": {
+                "present": true,
+                "centroid_distance_A": 1.597,
+                "shell_jaccard": 0.333,
+                "spatial_ok": true
+              },
+              "20": {
+                "present": true,
+                "centroid_distance_A": 1.286,
+                "shell_jaccard": 0.333,
+                "spatial_ok": true
+              },
+              "24": {
+                "present": true,
+                "centroid_distance_A": 1.278,
+                "shell_jaccard": 0.5,
+                "spatial_ok": true
+              }
+            }
+          },
+          {
+            "d2_feature": "aryl_ketone",
+            "qiu_feature": "amide",
+            "label": "carbonyl linker (ketone vs CONH)",
+            "spatial_ok_count": "4/4",
+            "status": "conserved_spatial",
+            "per_qiu": {
+              "14": {
+                "present": true,
+                "centroid_distance_A": 1.74,
+                "shell_jaccard": 0.5,
+                "spatial_ok": true
+              },
+              "15": {
+                "present": true,
+                "centroid_distance_A": 2.168,
+                "shell_jaccard": 0.25,
+                "spatial_ok": true
+              },
+              "20": {
+                "present": true,
+                "centroid_distance_A": 1.922,
+                "shell_jaccard": 0.5,
+                "spatial_ok": true
+              },
+              "24": {
+                "present": true,
+                "centroid_distance_A": 1.154,
+                "shell_jaccard": 0.667,
+                "spatial_ok": true
+              }
+            }
+          },
+          {
+            "d2_feature": "benzoyl_aryl",
+            "qiu_feature": "adamantyl",
+            "label": "bulky hydrophobic from carbonyl side",
+            "spatial_ok_count": "4/4",
+            "status": "conserved_spatial",
+            "per_qiu": {
+              "14": {
+                "present": true,
+                "centroid_distance_A": 1.806,
+                "shell_jaccard": 0.857,
+                "spatial_ok": true
+              },
+              "15": {
+                "present": true,
+                "centroid_distance_A": 2.219,
+                "shell_jaccard": 0.857,
+                "spatial_ok": true
+              },
+              "20": {
+                "present": true,
+                "centroid_distance_A": 1.945,
+                "shell_jaccard": 0.857,
+                "spatial_ok": true
+              },
+              "24": {
+                "present": true,
+                "centroid_distance_A": 1.428,
+                "shell_jaccard": 0.857,
+                "spatial_ok": true
+              }
+            }
+          },
+          {
+            "d2_feature": "n1_benzyl_aryl",
+            "qiu_feature": "n1_heterocycle",
+            "label": "N-aryl / N-het extension",
+            "spatial_ok_count": "3/4",
+            "status": "conserved_spatial",
+            "per_qiu": {
+              "14": {
+                "present": true,
+                "centroid_distance_A": 2.167,
+                "shell_jaccard": 0.429,
+                "spatial_ok": true
+              },
+              "15": {
+                "present": true,
+                "centroid_distance_A": 4.131,
+                "shell_jaccard": 0.25,
+                "spatial_ok": true
+              },
+              "20": {
+                "present": true,
+                "centroid_distance_A": 2.163,
+                "shell_jaccard": 0.571,
+                "spatial_ok": true
+              },
+              "24": {
+                "present": true,
+                "centroid_distance_A": 5.001,
+                "shell_jaccard": 0.111,
+                "spatial_ok": false
+              }
+            }
+          },
+          {
+            "d2_feature": "c2_phenyl",
+            "qiu_feature": "c5_phenyl",
+            "label": "C-aryl on heteroaromatic",
+            "spatial_ok_count": "4/4",
+            "status": "conserved_spatial",
+            "per_qiu": {
+              "14": {
+                "present": true,
+                "centroid_distance_A": 3.784,
+                "shell_jaccard": 0.333,
+                "spatial_ok": true
+              },
+              "15": {
+                "present": true,
+                "centroid_distance_A": 3.491,
+                "shell_jaccard": 0.333,
+                "spatial_ok": true
+              },
+              "20": {
+                "present": true,
+                "centroid_distance_A": 3.623,
+                "shell_jaccard": 0.333,
+                "spatial_ok": true
+              },
+              "24": {
+                "present": true,
+                "centroid_distance_A": 4.409,
+                "shell_jaccard": 0.286,
+                "spatial_ok": true
+              }
+            }
+          },
+          {
+            "d2_feature": "c5_methyl",
+            "qiu_feature": "c4_methyl",
+            "label": "small alkyl on ring",
+            "spatial_ok_count": "4/4",
+            "status": "conserved_spatial",
+            "per_qiu": {
+              "14": {
+                "present": true,
+                "centroid_distance_A": 0.918,
+                "shell_jaccard": 0.5,
+                "spatial_ok": true
+              },
+              "15": {
+                "present": true,
+                "centroid_distance_A": 1.795,
+                "shell_jaccard": 0.0,
+                "spatial_ok": true
+              },
+              "20": {
+                "present": true,
+                "centroid_distance_A": 0.961,
+                "shell_jaccard": 0.5,
+                "spatial_ok": true
+              },
+              "24": {
+                "present": true,
+                "centroid_distance_A": 1.471,
+                "shell_jaccard": 0.0,
+                "spatial_ok": true
+              }
+            }
+          }
+        ],
+        "orientation_vs_ad_het": [
+          {
+            "qiu_ref": "14",
+            "benzoyl_to_adamantyl_A": 1.806,
+            "benzoyl_to_n1_heterocycle_A": 8.273,
+            "n1_benzyl_to_adamantyl_A": 9.938,
+            "n1_benzyl_to_n1_heterocycle_A": 2.167,
+            "pattern": "canonical_like"
+          },
+          {
+            "qiu_ref": "15",
+            "benzoyl_to_adamantyl_A": 2.219,
+            "benzoyl_to_n1_heterocycle_A": 10.429,
+            "n1_benzyl_to_adamantyl_A": 10.313,
+            "n1_benzyl_to_n1_heterocycle_A": 4.131,
+            "pattern": "canonical_like"
+          },
+          {
+            "qiu_ref": "20",
+            "benzoyl_to_adamantyl_A": 1.945,
+            "benzoyl_to_n1_heterocycle_A": 8.412,
+            "n1_benzyl_to_adamantyl_A": 10.07,
+            "n1_benzyl_to_n1_heterocycle_A": 2.163,
+            "pattern": "canonical_like"
+          },
+          {
+            "qiu_ref": "24",
+            "benzoyl_to_adamantyl_A": 1.428,
+            "benzoyl_to_n1_heterocycle_A": 8.168,
+            "n1_benzyl_to_adamantyl_A": 9.656,
+            "n1_benzyl_to_n1_heterocycle_A": 5.001,
+            "pattern": "canonical_like"
+          }
+        ],
+        "qiu_only_absent_on_d2": [
+          "adamantyl",
+          "amide",
+          "n1_heterocycle",
+          "amide_ch2"
+        ],
+        "gates": {
+          "centroid_near_A": 3.0,
+          "shell_jaccard_min": 0.25
+        }
+      }
+    },
+    "JANUS_D2_22": {
+      "series": "D2",
+      "id": "JANUS_D2_22",
+      "path": "results/docking/option_d_batch2/cb2/JANUS_D2_22_docked.pdbqt",
+      "file_exists": true,
+      "n_poses_pdbqt": 9,
+      "pose_scores": [
+        {
+          "model": 1,
+          "vina_score": -12.35,
+          "rmsd_lb": 0.0,
+          "rmsd_ub": 0.0
+        },
+        {
+          "model": 2,
+          "vina_score": -11.779,
+          "rmsd_lb": 4.504,
+          "rmsd_ub": 8.213
+        },
+        {
+          "model": 3,
+          "vina_score": -11.154,
+          "rmsd_lb": 1.595,
+          "rmsd_ub": 2.475
+        },
+        {
+          "model": 4,
+          "vina_score": -10.759,
+          "rmsd_lb": 4.783,
+          "rmsd_ub": 8.511
+        },
+        {
+          "model": 5,
+          "vina_score": -10.723,
+          "rmsd_lb": 4.64,
+          "rmsd_ub": 7.85
+        },
+        {
+          "model": 6,
+          "vina_score": -10.03,
+          "rmsd_lb": 4.62,
+          "rmsd_ub": 8.175
+        },
+        {
+          "model": 7,
+          "vina_score": -9.859,
+          "rmsd_lb": 2.912,
+          "rmsd_ub": 4.683
+        },
+        {
+          "model": 8,
+          "vina_score": -9.581,
+          "rmsd_lb": 2.744,
+          "rmsd_ub": 4.719
+        },
+        {
+          "model": 9,
+          "vina_score": -9.454,
+          "rmsd_lb": 2.093,
+          "rmsd_ub": 3.788
+        }
+      ],
+      "comparable_pose": {
+        "rule": "lowest (most negative) REMARK VINA RESULT among written MODELs",
+        "model": 1,
+        "vina_score_kcal_mol": -12.35,
+        "score_note": "Vina REMARK number only \u2014 not experimental affinity"
+      },
+      "ligand_centroid": [
+        97.885,
+        108.41,
+        125.271
+      ],
+      "dist_to_box_center_A": 1.93,
+      "contacts": {
+        "n_contact_residues": 18,
+        "contact_residues": [
+          {
+            "residue": "SER285",
+            "min_heavy_dist": 2.792
+          },
+          {
+            "residue": "LEU182",
+            "min_heavy_dist": 3.019
+          },
+          {
+            "residue": "LYS278",
+            "min_heavy_dist": 3.033
+          },
+          {
+            "residue": "LEU191",
+            "min_heavy_dist": 3.168
+          },
+          {
+            "residue": "PHE281",
+            "min_heavy_dist": 3.291
+          },
+          {
+            "residue": "ILE186",
+            "min_heavy_dist": 3.403
+          },
+          {
+            "residue": "ILE110",
+            "min_heavy_dist": 3.442
+          },
+          {
+            "residue": "MET265",
+            "min_heavy_dist": 3.492
+          },
+          {
+            "residue": "VAL113",
+            "min_heavy_dist": 3.543
+          },
+          {
+            "residue": "PHE183",
+            "min_heavy_dist": 3.584
+          },
+          {
+            "residue": "PHE87",
+            "min_heavy_dist": 3.59
+          },
+          {
+            "residue": "TRP194",
+            "min_heavy_dist": 3.591
+          },
+          {
+            "residue": "VAL261",
+            "min_heavy_dist": 3.676
+          },
+          {
+            "residue": "PHE117",
+            "min_heavy_dist": 3.73
+          },
+          {
+            "residue": "THR114",
+            "min_heavy_dist": 3.745
+          },
+          {
+            "residue": "TRP258",
+            "min_heavy_dist": 3.828
+          },
+          {
+            "residue": "PHE91",
+            "min_heavy_dist": 3.832
+          },
+          {
+            "residue": "ALA282",
+            "min_heavy_dist": 3.955
+          }
+        ],
+        "principal_residues": [
+          "SER285",
+          "LEU182",
+          "LYS278",
+          "LEU191",
+          "PHE281",
+          "ILE186",
+          "ILE110",
+          "MET265",
+          "VAL113",
+          "PHE183",
+          "PHE87",
+          "TRP194"
+        ],
+        "hbonds_geometry_ok": [],
+        "hydrophobic_proximity": [
+          {
+            "residue": "ILE110",
+            "n_pairs": 3,
+            "min_dist": 3.442
+          },
+          {
+            "residue": "PHE281",
+            "n_pairs": 11,
+            "min_dist": 3.464
+          },
+          {
+            "residue": "VAL113",
+            "n_pairs": 1,
+            "min_dist": 3.543
+          },
+          {
+            "residue": "PHE183",
+            "n_pairs": 15,
+            "min_dist": 3.584
+          },
+          {
+            "residue": "TRP194",
+            "n_pairs": 4,
+            "min_dist": 3.591
+          },
+          {
+            "residue": "VAL261",
+            "n_pairs": 1,
+            "min_dist": 3.676
+          },
+          {
+            "residue": "PHE117",
+            "n_pairs": 4,
+            "min_dist": 3.73
+          },
+          {
+            "residue": "TRP258",
+            "n_pairs": 1,
+            "min_dist": 3.828
+          },
+          {
+            "residue": "LYS278",
+            "n_pairs": 1,
+            "min_dist": 3.918
+          },
+          {
+            "residue": "ALA282",
+            "n_pairs": 1,
+            "min_dist": 3.955
+          }
+        ],
+        "cutoff_heavy_A": 4.0
+      },
+      "polar_proximity_not_hbond": [
+        {
+          "lig": "N(N)",
+          "rec": "SER285 OG(OA)",
+          "dist_A": 2.792
+        }
+      ],
+      "region_min_dist_A": {
+        "SER285": 2.792,
+        "TYR25": 4.562,
+        "THR114": 3.745,
+        "ILE110": 3.442,
+        "ILE186": 3.403
+      },
+      "region_contact_4A": {
+        "SER285": true,
+        "TYR25": false,
+        "THR114": true,
+        "ILE110": true,
+        "ILE186": true
+      },
+      "orientation": {
+        "pyrrole_centroid": [
+          98.84,
+          107.878,
+          124.024
+        ],
+        "vectors_from_pyrrole": {
+          "benzoyl_aryl": {
+            "centroid": [
+              99.777,
+              107.987,
+              128.744
+            ],
+            "dx": 0.936,
+            "dy": 0.109,
+            "dz": 4.72,
+            "dominant_axis": "+z"
+          },
+          "n1_benzyl_aryl": {
+            "centroid": [
+              95.819,
+              111.111,
+              122.559
+            ],
+            "dx": -3.021,
+            "dy": 3.233,
+            "dz": -1.465,
+            "dominant_axis": "+y"
+          },
+          "aryl_ketone": {
+            "centroid": [
+              101.194,
+              107.465,
+              125.891
+            ],
+            "dx": 2.353,
+            "dy": -0.413,
+            "dz": 1.867,
+            "dominant_axis": "+x"
+          },
+          "c2_phenyl": {
+            "centroid": [
+              95.75,
+              106.142,
+              122.035
+            ],
+            "dx": -3.091,
+            "dy": -1.736,
+            "dz": -1.989,
+            "dominant_axis": "-x"
+          },
+          "c3_amino": {
+            "centroid": [
+              98.422,
+              105.646,
+              125.114
+            ],
+            "dx": -0.418,
+            "dy": -2.232,
+            "dz": 1.09,
+            "dominant_axis": "-y"
+          },
+          "n1_ch2": {
+            "centroid": [
+              98.126,
+              109.404,
+              122.005
+            ],
+            "dx": -0.714,
+            "dy": 1.526,
+            "dz": -2.019,
+            "dominant_axis": "-z"
+          }
+        },
+        "dominant_axis_from_pyrrole": {
+          "benzoyl_aryl": "+z",
+          "n1_benzyl_aryl": "+y",
+          "aryl_ketone": "+x",
+          "c2_phenyl": "-x",
+          "c3_amino": "-y",
+          "n1_ch2": "-z"
+        }
+      },
+      "feature_summary": {
+        "id": "JANUS_D2_22",
+        "path": "results/docking/option_d_batch2/cb2/JANUS_D2_22_docked.pdbqt",
+        "smiles_source": "REMARK SMILES",
+        "smiles": "Cc1c(C(=O)c2ccc(C(F)(F)F)cc2)c(N)c(-c2ccccc2)n1Cc1ccc(Cl)cc1",
+        "best_pose_model": 1,
+        "best_vina_score": -12.35,
+        "n_poses_pdbqt": 9,
+        "ligand_centroid": [
+          97.885,
+          108.41,
+          125.271
+        ],
+        "features_found": [
+          "aryl_ketone",
+          "benzoyl_aryl",
+          "benzoyl_pCF3",
+          "c2_phenyl",
+          "c3_amino",
+          "c5_methyl",
+          "n1_benzyl_aryl",
+          "n1_benzyl_pCl",
+          "n1_ch2",
+          "pyrrole"
+        ],
+        "feature_inventory": {
+          "pyrrole": {
+            "n_atoms_mapped": 5,
+            "serials": [
+              6,
+              5,
+              4,
+              3,
+              2
+            ],
+            "centroid": [
+              98.84,
+              107.878,
+              124.024
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "SER285",
+                "min_dist": 3.702
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.892
+              },
+              {
+                "residue": "PHE281",
+                "min_dist": 3.996
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 3.702,
+              "TYR25": 10.617,
+              "THR114": 5.624,
+              "ILE110": 5.214,
+              "ILE186": 8.157
+            },
+            "region_contact_4A": {
+              "SER285": true,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "aryl_ketone": {
+            "n_atoms_mapped": 2,
+            "serials": [
+              7,
+              8
+            ],
+            "centroid": [
+              101.194,
+              107.465,
+              125.891
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "PHE87",
+                "min_dist": 3.59
+              },
+              {
+                "residue": "PHE91",
+                "min_dist": 3.832
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 4.181,
+              "TYR25": 9.632,
+              "THR114": 9.05,
+              "ILE110": 6.586,
+              "ILE186": 9.84
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "benzoyl_aryl": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              9,
+              10,
+              12,
+              14,
+              13,
+              11
+            ],
+            "centroid": [
+              99.777,
+              107.987,
+              128.744
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "LEU182",
+                "min_dist": 3.111
+              },
+              {
+                "residue": "PHE281",
+                "min_dist": 3.464
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.793
+              },
+              {
+                "residue": "ALA282",
+                "min_dist": 3.955
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 4.526,
+              "TYR25": 6.247,
+              "THR114": 9.652,
+              "ILE110": 6.704,
+              "ILE186": 8.558
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "c3_amino": {
+            "n_atoms_mapped": 1,
+            "serials": [
+              27
+            ],
+            "centroid": [
+              98.422,
+              105.646,
+              125.114
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "SER285",
+                "min_dist": 2.792
+              },
+              {
+                "residue": "PHE281",
+                "min_dist": 3.494
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 2.792,
+              "TYR25": 11.771,
+              "THR114": 8.962,
+              "ILE110": 8.725,
+              "ILE186": 10.823
+            },
+            "region_contact_4A": {
+              "SER285": true,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "n1_ch2": {
+            "n_atoms_mapped": 1,
+            "serials": [
+              19
+            ],
+            "centroid": [
+              98.126,
+              109.404,
+              122.005
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "VAL113",
+                "min_dist": 3.543
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 6.92,
+              "TYR25": 12.121,
+              "THR114": 4.161,
+              "ILE110": 4.816,
+              "ILE186": 7.672
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "n1_benzyl_aryl": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              20,
+              21,
+              23,
+              25,
+              24,
+              22
+            ],
+            "centroid": [
+              95.819,
+              111.111,
+              122.559
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "ILE110",
+                "min_dist": 3.442
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.584
+              },
+              {
+                "residue": "THR114",
+                "min_dist": 3.745
+              },
+              {
+                "residue": "TRP194",
+                "min_dist": 3.872
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 7.988,
+              "TYR25": 10.062,
+              "THR114": 3.745,
+              "ILE110": 3.442,
+              "ILE186": 4.167
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": true,
+              "ILE110": true,
+              "ILE186": false
+            }
+          },
+          "n1_benzyl_pCl": {
+            "n_atoms_mapped": 1,
+            "serials": [
+              26
+            ],
+            "centroid": [
+              93.354,
+              112.922,
+              123.148
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "LEU191",
+                "min_dist": 3.168
+              },
+              {
+                "residue": "ILE186",
+                "min_dist": 3.403
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.848
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 11.79,
+              "TYR25": 10.659,
+              "THR114": 5.584,
+              "ILE110": 5.917,
+              "ILE186": 3.403
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": true
+            }
+          },
+          "c2_phenyl": {
+            "n_atoms_mapped": 6,
+            "serials": [
+              30,
+              31,
+              33,
+              35,
+              34,
+              32
+            ],
+            "centroid": [
+              95.75,
+              106.142,
+              122.035
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "MET265",
+                "min_dist": 3.492
+              },
+              {
+                "residue": "TRP194",
+                "min_dist": 3.591
+              },
+              {
+                "residue": "VAL261",
+                "min_dist": 3.676
+              },
+              {
+                "residue": "PHE117",
+                "min_dist": 3.73
+              },
+              {
+                "residue": "PHE183",
+                "min_dist": 3.796
+              },
+              {
+                "residue": "TRP258",
+                "min_dist": 3.828
+              },
+              {
+                "residue": "PHE281",
+                "min_dist": 3.999
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 5.203,
+              "TYR25": 12.924,
+              "THR114": 6.217,
+              "ILE110": 7.712,
+              "ILE186": 9.53
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          },
+          "c5_methyl": {
+            "n_atoms_mapped": 1,
+            "serials": [
+              1
+            ],
+            "centroid": [
+              100.171,
+              110.202,
+              124.116
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "ILE110",
+                "min_dist": 3.746
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 6.732,
+              "TYR25": 9.978,
+              "THR114": 6.319,
+              "ILE110": 3.746,
+              "ILE186": 7.379
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": true,
+              "ILE186": false
+            }
+          },
+          "benzoyl_pCF3": {
+            "n_atoms_mapped": 4,
+            "serials": [
+              15,
+              16,
+              17,
+              18
+            ],
+            "centroid": [
+              98.87,
+              108.394,
+              131.91
+            ],
+            "nearby_residues_4A": [
+              {
+                "residue": "LEU182",
+                "min_dist": 3.019
+              },
+              {
+                "residue": "LYS278",
+                "min_dist": 3.033
+              },
+              {
+                "residue": "PHE281",
+                "min_dist": 3.291
+              }
+            ],
+            "region_min_dist_A": {
+              "SER285": 7.617,
+              "TYR25": 4.562,
+              "THR114": 13.229,
+              "ILE110": 9.7,
+              "ILE186": 10.02
+            },
+            "region_contact_4A": {
+              "SER285": false,
+              "TYR25": false,
+              "THR114": false,
+              "ILE110": false,
+              "ILE186": false
+            }
+          }
+        }
+      },
+      "conservation_vs_qiu_0g_map": {
+        "axes": [
+          {
+            "d2_feature": "pyrrole",
+            "qiu_feature": "pyrazole",
+            "label": "5-membered N-heteroaromatic core",
+            "spatial_ok_count": "4/4",
+            "status": "conserved_spatial",
+            "per_qiu": {
+              "14": {
+                "present": true,
+                "centroid_distance_A": 1.955,
+                "shell_jaccard": 0.25,
+                "spatial_ok": true
+              },
+              "15": {
+                "present": true,
+                "centroid_distance_A": 2.333,
+                "shell_jaccard": 0.25,
+                "spatial_ok": true
+              },
+              "20": {
+                "present": true,
+                "centroid_distance_A": 2.1,
+                "shell_jaccard": 0.25,
+                "spatial_ok": true
+              },
+              "24": {
+                "present": true,
+                "centroid_distance_A": 1.521,
+                "shell_jaccard": 0.333,
+                "spatial_ok": true
+              }
+            }
+          },
+          {
+            "d2_feature": "aryl_ketone",
+            "qiu_feature": "amide",
+            "label": "carbonyl linker (ketone vs CONH)",
+            "spatial_ok_count": "0/4",
+            "status": "lost_or_weak",
+            "per_qiu": {
+              "14": {
+                "present": true,
+                "centroid_distance_A": 6.208,
+                "shell_jaccard": 0.0,
+                "spatial_ok": false
+              },
+              "15": {
+                "present": true,
+                "centroid_distance_A": 6.519,
+                "shell_jaccard": 0.0,
+                "spatial_ok": false
+              },
+              "20": {
+                "present": true,
+                "centroid_distance_A": 6.336,
+                "shell_jaccard": 0.0,
+                "spatial_ok": false
+              },
+              "24": {
+                "present": true,
+                "centroid_distance_A": 5.399,
+                "shell_jaccard": 0.0,
+                "spatial_ok": false
+              }
+            }
+          },
+          {
+            "d2_feature": "benzoyl_aryl",
+            "qiu_feature": "adamantyl",
+            "label": "bulky hydrophobic from carbonyl side",
+            "spatial_ok_count": "0/4",
+            "status": "lost_or_weak",
+            "per_qiu": {
+              "14": {
+                "present": true,
+                "centroid_distance_A": 10.003,
+                "shell_jaccard": 0.1,
+                "spatial_ok": false
+              },
+              "15": {
+                "present": true,
+                "centroid_distance_A": 10.375,
+                "shell_jaccard": 0.1,
+                "spatial_ok": false
+              },
+              "20": {
+                "present": true,
+                "centroid_distance_A": 10.13,
+                "shell_jaccard": 0.1,
+                "spatial_ok": false
+              },
+              "24": {
+                "present": true,
+                "centroid_distance_A": 9.699,
+                "shell_jaccard": 0.1,
+                "spatial_ok": false
+              }
+            }
+          },
+          {
+            "d2_feature": "n1_benzyl_aryl",
+            "qiu_feature": "n1_heterocycle",
+            "label": "N-aryl / N-het extension",
+            "spatial_ok_count": "0/4",
+            "status": "lost_or_weak",
+            "per_qiu": {
+              "14": {
+                "present": true,
+                "centroid_distance_A": 7.908,
+                "shell_jaccard": 0.125,
+                "spatial_ok": false
+              },
+              "15": {
+                "present": true,
+                "centroid_distance_A": 10.142,
+                "shell_jaccard": 0.0,
+                "spatial_ok": false
+              },
+              "20": {
+                "present": true,
+                "centroid_distance_A": 8.058,
+                "shell_jaccard": 0.111,
+                "spatial_ok": false
+              },
+              "24": {
+                "present": true,
+                "centroid_distance_A": 7.503,
+                "shell_jaccard": 0.125,
+                "spatial_ok": false
+              }
+            }
+          },
+          {
+            "d2_feature": "c2_phenyl",
+            "qiu_feature": "c5_phenyl",
+            "label": "C-aryl on heteroaromatic",
+            "spatial_ok_count": "0/4",
+            "status": "lost_or_weak",
+            "per_qiu": {
+              "14": {
+                "present": true,
+                "centroid_distance_A": 6.8,
+                "shell_jaccard": 0.1,
+                "spatial_ok": false
+              },
+              "15": {
+                "present": true,
+                "centroid_distance_A": 6.561,
+                "shell_jaccard": 0.1,
+                "spatial_ok": false
+              },
+              "20": {
+                "present": true,
+                "centroid_distance_A": 6.757,
+                "shell_jaccard": 0.1,
+                "spatial_ok": false
+              },
+              "24": {
+                "present": true,
+                "centroid_distance_A": 7.604,
+                "shell_jaccard": 0.091,
+                "spatial_ok": false
+              }
+            }
+          },
+          {
+            "d2_feature": "c5_methyl",
+            "qiu_feature": "c4_methyl",
+            "label": "small alkyl on ring",
+            "spatial_ok_count": "0/4",
+            "status": "lost_or_weak",
+            "per_qiu": {
+              "14": {
+                "present": true,
+                "centroid_distance_A": 3.477,
+                "shell_jaccard": 0.0,
+                "spatial_ok": false
+              },
+              "15": {
+                "present": true,
+                "centroid_distance_A": 3.034,
+                "shell_jaccard": 0.0,
+                "spatial_ok": false
+              },
+              "20": {
+                "present": true,
+                "centroid_distance_A": 3.399,
+                "shell_jaccard": 0.0,
+                "spatial_ok": false
+              },
+              "24": {
+                "present": true,
+                "centroid_distance_A": 3.987,
+                "shell_jaccard": 0.0,
+                "spatial_ok": false
+              }
+            }
+          }
+        ],
+        "orientation_vs_ad_het": [
+          {
+            "qiu_ref": "14",
+            "benzoyl_to_adamantyl_A": 10.003,
+            "benzoyl_to_n1_heterocycle_A": 1.923,
+            "n1_benzyl_to_adamantyl_A": 2.302,
+            "n1_benzyl_to_n1_heterocycle_A": 7.908,
+            "pattern": "feature_swap"
+          },
+          {
+            "qiu_ref": "15",
+            "benzoyl_to_adamantyl_A": 10.375,
+            "benzoyl_to_n1_heterocycle_A": 3.58,
+            "n1_benzyl_to_adamantyl_A": 2.704,
+            "n1_benzyl_to_n1_heterocycle_A": 10.142,
+            "pattern": "feature_swap"
+          },
+          {
+            "qiu_ref": "20",
+            "benzoyl_to_adamantyl_A": 10.13,
+            "benzoyl_to_n1_heterocycle_A": 1.806,
+            "n1_benzyl_to_adamantyl_A": 2.447,
+            "n1_benzyl_to_n1_heterocycle_A": 8.058,
+            "pattern": "feature_swap"
+          },
+          {
+            "qiu_ref": "24",
+            "benzoyl_to_adamantyl_A": 9.699,
+            "benzoyl_to_n1_heterocycle_A": 5.97,
+            "n1_benzyl_to_adamantyl_A": 2.015,
+            "n1_benzyl_to_n1_heterocycle_A": 7.503,
+            "pattern": "feature_swap"
+          }
+        ],
+        "qiu_only_absent_on_d2": [
+          "adamantyl",
+          "amide",
+          "n1_heterocycle",
+          "amide_ch2"
+        ],
+        "gates": {
+          "centroid_near_A": 3.0,
+          "shell_jaccard_min": 0.25
+        }
+      }
+    }
+  },
+  "cross_comparison": {
+    "pairwise": [
+      {
+        "qiu": "Qiu_14",
+        "d2": "JANUS_D2_20",
+        "centroid_delta_A": 1.156,
+        "contact_jaccard": 0.833,
+        "cloud_overlap_mean": 0.882,
+        "note": "high Jaccard cluster vs Qiu"
+      },
+      {
+        "qiu": "Qiu_14",
+        "d2": "JANUS_D2_06",
+        "centroid_delta_A": 1.224,
+        "contact_jaccard": 0.833,
+        "cloud_overlap_mean": 0.909,
+        "note": "high Jaccard cluster vs Qiu"
+      },
+      {
+        "qiu": "Qiu_14",
+        "d2": "JANUS_D2_22",
+        "centroid_delta_A": 2.173,
+        "contact_jaccard": 0.522,
+        "cloud_overlap_mean": 0.742,
+        "note": "mid overlap; feature-swap orientation"
+      },
+      {
+        "qiu": "Qiu_15",
+        "d2": "JANUS_D2_20",
+        "centroid_delta_A": 1.586,
+        "contact_jaccard": 0.789,
+        "cloud_overlap_mean": 0.701,
+        "note": "both contact TYR25 shell"
+      },
+      {
+        "qiu": "Qiu_15",
+        "d2": "JANUS_D2_06",
+        "centroid_delta_A": 1.705,
+        "contact_jaccard": 0.789,
+        "cloud_overlap_mean": 0.724,
+        "note": "both contact TYR25 shell"
+      },
+      {
+        "qiu": "Qiu_15",
+        "d2": "JANUS_D2_22",
+        "centroid_delta_A": 2.376,
+        "contact_jaccard": 0.5,
+        "cloud_overlap_mean": 0.599,
+        "note": "mid overlap; feature-swap orientation"
+      },
+      {
+        "qiu": "Qiu_20",
+        "d2": "JANUS_D2_20",
+        "centroid_delta_A": 1.187,
+        "contact_jaccard": 0.833,
+        "cloud_overlap_mean": 0.871,
+        "note": "high Jaccard cluster vs Qiu"
+      },
+      {
+        "qiu": "Qiu_20",
+        "d2": "JANUS_D2_06",
+        "centroid_delta_A": 1.271,
+        "contact_jaccard": 0.833,
+        "cloud_overlap_mean": 0.868,
+        "note": "high Jaccard cluster vs Qiu"
+      },
+      {
+        "qiu": "Qiu_20",
+        "d2": "JANUS_D2_22",
+        "centroid_delta_A": 2.202,
+        "contact_jaccard": 0.522,
+        "cloud_overlap_mean": 0.734,
+        "note": "mid overlap; feature-swap orientation"
+      },
+      {
+        "qiu": "Qiu_24",
+        "d2": "JANUS_D2_20",
+        "centroid_delta_A": 0.918,
+        "contact_jaccard": 0.684,
+        "cloud_overlap_mean": 0.835,
+        "note": "high Jaccard cluster vs Qiu"
+      },
+      {
+        "qiu": "Qiu_24",
+        "d2": "JANUS_D2_06",
+        "centroid_delta_A": 0.909,
+        "contact_jaccard": 0.684,
+        "cloud_overlap_mean": 0.858,
+        "note": "high Jaccard cluster vs Qiu"
+      },
+      {
+        "qiu": "Qiu_24",
+        "d2": "JANUS_D2_22",
+        "centroid_delta_A": 1.99,
+        "contact_jaccard": 0.619,
+        "cloud_overlap_mean": 0.664,
+        "note": "mid overlap; feature-swap orientation"
+      }
+    ],
+    "narrative_notes": [
+      {
+        "label": "Observaci\u00f3n",
+        "text": "All seven best poses sit in the same CB2 orthosteric-like box (centroids within ~1\u20132.4 \u00c5 of Qiu consensus; consistent with prior D1 comparison)."
+      },
+      {
+        "label": "Observaci\u00f3n",
+        "text": "No geometry-OK H-bonds under 0G criteria for any of the seven audited poses (polar proximities may exist)."
+      },
+      {
+        "label": "Inferencia",
+        "text": "D2_20 and D2_06 conserve more spatial axes vs Qiu Ad/amide/N1-het map; D2_22 more often shows benzoyl\u2194N1-het / benzyl\u2194Ad feature swap."
+      },
+      {
+        "label": "Observaci\u00f3n",
+        "text": "Adamantyl, CONH\u2013Ad amide, and morpholine/piperazine are Qiu-only; D2 poses use pyrrole + aryl ketone + N-benzyl chemistry."
+      },
+      {
+        "label": "Interpretaci\u00f3n",
+        "text": "Shared occupation \u2260 same pharmacophore \u2260 same pharmacology (axiom from pharmacophore geometry report)."
+      }
+    ]
+  },
+  "summary_table": [
+    {
+      "id": "Qiu_14",
+      "model": 1,
+      "vina": -9.919,
+      "region_hits": "4/5",
+      "hbonds": 0,
+      "orient_note": "Ad -x; N1-het +z; C5-Ph -y"
+    },
+    {
+      "id": "Qiu_15",
+      "model": 1,
+      "vina": -11.201,
+      "region_hits": "5/5",
+      "hbonds": 0,
+      "orient_note": "Ad -x; N1-het +z; C5-Ph -y"
+    },
+    {
+      "id": "Qiu_20",
+      "model": 1,
+      "vina": -9.986,
+      "region_hits": "4/5",
+      "hbonds": 0,
+      "orient_note": "Ad -x; N1-het +z; C5-Ph -y"
+    },
+    {
+      "id": "Qiu_24",
+      "model": 1,
+      "vina": -11.606,
+      "region_hits": "4/5",
+      "hbonds": 0,
+      "orient_note": "Ad -x; N1-het +x; C5-Ph +z"
+    },
+    {
+      "id": "JANUS_D2_20",
+      "model": 1,
+      "vina": -11.656,
+      "region_hits": "5/5",
+      "hbonds": 0,
+      "orient_note": "Bz -x; NBn +z; pattern=canonical_like"
+    },
+    {
+      "id": "JANUS_D2_06",
+      "model": 1,
+      "vina": -12.03,
+      "region_hits": "5/5",
+      "hbonds": 0,
+      "orient_note": "Bz -x; NBn +z; pattern=canonical_like"
+    },
+    {
+      "id": "JANUS_D2_22",
+      "model": 1,
+      "vina": -12.35,
+      "region_hits": "4/5",
+      "hbonds": 0,
+      "orient_note": "Bz +z; NBn +y; pattern=feature_swap"
+    }
+  ],
+  "limitations": [
+    "Static docking only (6PT0); no MD / ensemble.",
+    "Vina REMARK \u2260 experimental affinity.",
+    "Compounds 15 and 20: log had extra modes not written to PDBQT \u2014 excluded by design (0F/0G).",
+    "No geometry-OK H-bonds under stated angle criterion; polar O\u00b7\u00b7\u00b7Thr/Ser contacts are proximities.",
+    "Contact cutoff 4.0 \u00c5 and feature gates (3.0 \u00c5 / Jaccard 0.25) are heuristic.",
+    "Cross-chemotype whole-ligand RMSD omitted; cloud overlap and residue Jaccard are occupation proxies.",
+    "D1 vs Qiu ligand preparation pipelines may differ; same receptor PDBQT.",
+    "Chemotype mismatch (Ad/CONH/morpholine vs URB447 ketone/benzyl) limits chemical identity of 'conserved' features \u2014 spatial only.",
+    "D2_22 feature-swap is geometric inference; not a pharmacological mode claim."
+  ],
+  "verdict": "0H = PASS WITH OBSERVATIONS",
+  "verdict_rationale": "All 7 poses audited cleanly from written PDBQTs with consistent cutoffs. Observations retained: Qiu 15/20 log\u2194PDBQT energy_range mismatch; chemotype mismatch (Ad/CONH vs URB447); D2_22 feature-swap; no geometry-OK H-bonds under 0G criteria. These are documented limitations, not file failures."
+}
