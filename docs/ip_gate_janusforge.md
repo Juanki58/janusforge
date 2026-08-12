@@ -40,6 +40,8 @@ This file is an **internal R&D sequencing rule**. It is **not** legal advice, **
 
 **After H1/H2 PASS:** NCE design only within documented white-space hypotheses + **counsel review before disclosure / synthesis campaign**. No proprietary NCE SMILES in public docs or Cursor deliverables until authorized.
 
+**0N (optional parallel compute):** Ge et al. 2023–style CB2 LRIP function-prediction for Qiu-14 is documented at [`../results/reports/qiu_0n_ge2023_reproduction_protocol.md`](../results/reports/qiu_0n_ge2023_reproduction_protocol.md) (`READY / NOT EXECUTED`). It does **not** sit on the critical path; **CRO → wet H1-a** remains the arbiter. 0N cannot change H1-a PASS/KILL.
+
 ---
 
 ## Confidentiality policy
