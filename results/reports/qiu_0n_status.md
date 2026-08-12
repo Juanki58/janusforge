@@ -1,23 +1,33 @@
 # Qiu 0N — Status one-pager
 
-> **Governance lock:** 2026-08-12  
-> **Full protocol:** [`qiu_0n_ge2023_reproduction_protocol.md`](qiu_0n_ge2023_reproduction_protocol.md)
+> **Fidelity audit:** 2026-08-12  
+> **Benchmark protocol (parameter matrix):** [`qiu_0n_ge2023_benchmark_protocol.md`](qiu_0n_ge2023_benchmark_protocol.md)  
+> **Gap analysis / verdict:** [`qiu_0n_reproducibility_gap_analysis.md`](qiu_0n_reproducibility_gap_analysis.md)  
+> **Governance lock (hard stops):** [`qiu_0n_ge2023_reproduction_protocol.md`](qiu_0n_ge2023_reproduction_protocol.md)
 
 ## Status
 
-**`0N = READY / NOT EXECUTED (Gated)`**
+**`0N = NOT READY` (execution blocked)**
+
+Parameter audit counts: **28 VERIFICADO** · **18 NO ESPECIFICADO** · **12 REQUIERE DECISIÓN**.
+
+Main article recovered (Europe PMC OA). ACS SI (`cn3c00580_si_001.pdf` / `cn3c00580_si_002.xlsx`) **blocked** (Cloudflare 403) → signature tables / MD templates not ingested.
 
 | Field | Value |
 |-------|-------|
 | Pharmacological arbiter | **H1-a CRO** (critical path unchanged) |
 | 0N role | Optional parallel compute — **not a gate**, **not H1-a substitute** |
-| Output labels (LOCKED) | `consistente` \| `no consistente` \| `inconcluso` |
+| Output labels (LOCKED) | `consistente` \| `no consistente` \| `inconcluso`  
+| | (= CONSISTENT WITH BENCHMARK \| INCONSISTENT \| INCONCLUSIVE) |
+
+> **Note on prior wording:** `READY / NOT EXECUTED (Gated)` in the governance lock meant *protocol documented*. Execution readiness under the stricter fidelity definition is **NOT READY** until SI + critical TBDs close. Hard stops unchanged.
 
 ## Hard stops (LOCKED)
 
 1. Do **not** reinterpret docking **0F–0J** as function.
 2. **Zero** post-hoc tuning to force Qiu-14 agonist.
 3. **No** in silico pharmacological PASS / KILL / FAIL.
+4. **No MD / LRIP** until fidelity CLEARED **and** explicit auth.
 
 ## Assets checklist
 
@@ -26,8 +36,9 @@
 | [✓] | CB2 active | `data/targets/cb2/6PT0_rec.pdbqt` |
 | [✓] | Qiu-14 ligand | `results/docking/qiu_0e/compound_14_lig.pdbqt` |
 | [✓] | Seed pose 0F QC | `results/docking/qiu_0f/compound_14_cb2_out.pdbqt` MODEL 1 |
+| [✓] | Ge main PDF (OA) | `data/papers/ge_2023_acs_chem_neurosci/cn3c00580_europepmc.pdf` |
 | [!] | Membrane/MD engine | OpenMM+lipid17 pending TBD-0N-11 |
-| [X] | SI numeric tables | pending ingest TBD-0N-03 |
+| [X] | SI numeric tables / MD templates | ACS SI blocked — TBD-0N-03/04 |
 
 ## Fidelity TBD (keep TBD — do not invent)
 
@@ -42,7 +53,7 @@
 ## Next ops (document only)
 
 1. **Critical path:** send `cro_package_h1a/SEND/` RFQs.
-2. **Pre-exec 0N:** ingest Ge SI tables — **pending**.
-3. **Gate:** 115 ns MD + LRIP **BLOCKED** until explicit auth after fidelity verification.
+2. **Pre-exec 0N:** obtain ACS SI via institutional/browser access; extract tables — **pending**.
+3. **Gate:** 115 ns MD + LRIP **BLOCKED** until SI fidelity + explicit auth.
 
-**No MD executed under this lock.**
+**No MD executed under this audit.**

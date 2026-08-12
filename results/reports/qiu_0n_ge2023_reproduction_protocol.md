@@ -2,7 +2,8 @@
 
 > **Governance lock date:** 2026-08-12  
 > **Scope:** Protocol / governance only. **No MD, no docking, no MM-GBSA/PBSA, no LRIP run.**  
-> **Ligand:** Qiu compound **14** only.
+> **Ligand:** Qiu compound **14** only.  
+> **Fidelity audit (2026-08-12):** execution readiness = **NOT READY** — see [`qiu_0n_ge2023_benchmark_protocol.md`](qiu_0n_ge2023_benchmark_protocol.md) + [`qiu_0n_reproducibility_gap_analysis.md`](qiu_0n_reproducibility_gap_analysis.md). This lock’s `READY / NOT EXECUTED (Gated)` means *governance documented*; it does **not** authorize compute.
 
 ---
 
