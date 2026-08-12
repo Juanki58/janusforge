@@ -1,3 +1,5 @@
+> **Handoff operativo:** [qiu_0m_h1a_wet_handoff.md](qiu_0m_h1a_wet_handoff.md)
+
 # Qiu 0L — H1-a experimental specification (CB2-first; no wet execution)
 
 > **Status:** **SPEC CLOSED** — ready for pre-lab TBD fill; **no wet started**  
