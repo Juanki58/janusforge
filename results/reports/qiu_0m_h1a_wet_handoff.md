@@ -5,6 +5,7 @@
 > **Milestone:** wet **H1-a only** (Qiu-14, CB2-first)  
 > **Upstream (authoritative):** [qiu_0l_h1a_experimental_spec.md](qiu_0l_h1a_experimental_spec.md) · [qiu_0k_validation_plan_h1_h2.md](qiu_0k_validation_plan_h1_h2.md) · [docs/ip_gate_janusforge.md](../../docs/ip_gate_janusforge.md) · [qiu_0ip_novelty_landscape.md](qiu_0ip_novelty_landscape.md)  
 > **Identity anchor (published):** [qiu_0d_structure_verification.md](qiu_0d_structure_verification.md)  
+> **CRO collaboration package (dossier + RFQs + IP brief; no compute):** [cro_package_h1a/00_index.md](cro_package_h1a/00_index.md)  
 > **Not legal advice.** Not inventorship. Not numeric PASS invention.
 
 **Epistemic layers:**
