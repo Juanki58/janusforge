@@ -146,6 +146,7 @@ Organigrama: **0D–0J → 0K → [0IP landscape] → 0L → wet H1/H2 → (PASS
 - Protocolo: [`docs/ip_gate_janusforge.md`](../../docs/ip_gate_janusforge.md)  
 - Landscape: [`qiu_0ip_novelty_landscape.md`](qiu_0ip_novelty_landscape.md) (`LANDSCAPE DRAFT — NEEDS COUNSEL` — never clearance)  
 - **0L H1-a:** [`qiu_0l_h1a_experimental_spec.md`](qiu_0l_h1a_experimental_spec.md) — Qiu-14 = vehículo de validación publicado, **no** NCE Janusforge; **spec cerrada, wet no iniciado**
+- **0N (opcional, paralelo):** [`qiu_0n_ge2023_reproduction_protocol.md`](qiu_0n_ge2023_reproduction_protocol.md) — Ge 2023–style LRIP/función CB2 para Qiu-14; **`READY / NOT EXECUTED`**. No altera PASS/KILL de H1-a; la ruta crítica sigue siendo **CRO → H1-a**.
 
 ---
 
