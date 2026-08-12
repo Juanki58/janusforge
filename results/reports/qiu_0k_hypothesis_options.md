@@ -1,5 +1,7 @@
 # Qiu 0K — Opciones de hipótesis de validación experimental (post 0J STOP/PIVOT)
 
+> **Plan cerrado en** [`qiu_0k_validation_plan_h1_h2.md`](qiu_0k_validation_plan_h1_h2.md) (H1 primaria Qiu-14 CB2→CB1; H2 backup D2_20/06; H3 gated; D2_22 OUT; umbrales TBD; sin ensayos). Este archivo permanece como framing de opciones / H4–H5 fuera del plan cerrado.
+
 > **Alcance:** framing de hipótesis **falsables** para ensayo húmedo / siguiente ciencia.  
 > **No** protocolos detallados, **no** docking, **no** MD, **no** dual-CB1 computacional.  
 > **Fecha:** 2026-08-12  
