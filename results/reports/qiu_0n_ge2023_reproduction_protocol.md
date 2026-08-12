@@ -1,19 +1,27 @@
 # Qiu 0N — Ge et al. 2023–style CB2 function-prediction protocol (Qiu-14)
 
-> **Verdict:** `0N = READY / NOT EXECUTED`  
-> **Date:** 2026-08-12  
-> **Scope:** Protocol only. **No MD, no docking, no MM-GBSA/PBSA, no LRIP run.**  
+> **Governance lock date:** 2026-08-12  
+> **Scope:** Protocol / governance only. **No MD, no docking, no MM-GBSA/PBSA, no LRIP run.**  
 > **Ligand:** Qiu compound **14** only.
 
 ---
 
-## Frozen methodology (LOCKED)
+## Executive governance (LOCKED)
+
+| Field | Value |
+|-------|-------|
+| **Status** | `0N = READY / NOT EXECUTED (Gated)` |
+| **Doc** | `results/reports/qiu_0n_ge2023_reproduction_protocol.md` |
+| **Status one-pager** | `results/reports/qiu_0n_status.md` |
+| **Pharmacological arbiter** | **H1-a CRO** (critical path unchanged) |
+| **0N role** | Optional parallel compute track — **not a gate**, **not an H1-a substitute** |
+| **Output labels (LOCKED)** | `consistente` \| `no consistente` \| `inconcluso` |
 
 ```text
 Ge et al. 2023 approach
   → reproduce only as far as published main text + SI allow
   → apply to Qiu-14 (blind vs Ge benchmark signatures)
-  → classify 0N result as consistente / no consistente / inconcluso
+  → classify 0N result as consistente | no consistente | inconcluso
   → H1-a remains the experimental arbiter
 ```
 
@@ -23,13 +31,13 @@ Critical path for the program is unchanged: **CRO → wet H1-a**. 0N is an **opt
 
 ## Hard stops (LOCKED — non-negotiable)
 
-1. **Do NOT reinterpret docking 0F as functional evidence.**  
+1. **Do NOT reinterpret docking 0F–0J as function.**  
    Vina scores, MODEL 1 occupancy, and pose QC (0F–0J) are structural/docking artifacts only. They do **not** count as agonist/antagonist evidence under 0N or H1-a.
 
-2. **Do NOT tune/adjust the model specifically so Qiu-14 “comes out agonist”.**  
+2. **Zero post-hoc tuning to force Qiu-14 agonist.**  
    No post-hoc threshold edits, signature cherry-picking, pose re-selection, or force-field tweaks aimed at forcing agonist concordance with the Qiu literature story.
 
-3. **Do NOT convert computational concordance into a pharmacological PASS.**  
+3. **No in silico pharmacological PASS / KILL / FAIL.**  
    Even a perfect LRIP match to Ge agonist signatures is **hypothesis only** until wet H1-a. 0N never awards PASS/KILL/FAIL for H1-a.
 
 Any violation of these hard stops invalidates the 0N run for program decision-making.
@@ -54,14 +62,36 @@ Any violation of these hard stops invalidates the 0N run for program decision-ma
 
 ## Gate de ejecución (LOCKED)
 
-**Do NOT execute 0N** until a fidelity check confirms that Ge et al. parameters needed for a honest reproduction are available from the article and/or SI (or explicitly waived as non-critical with documented rationale).
+**Do NOT execute 0N** until a fidelity check confirms that Ge et al. parameters needed for an honest reproduction are available from the article and/or SI (or explicitly waived as non-critical with documented rationale).
 
 | Gate state | When |
 |------------|------|
 | **BLOCKED (current)** | Protocol ready; SI templates / signature tables not yet extracted into repo; no authorization to run MD |
 | **CLEARED to execute** | Requires separate user authorization **after** fidelity check closes critical TBDs (or marks them waived) |
 
+**115 ns MD + LRIP remains BLOCKED** until explicit authorization after fidelity verification.
+
 If critical article/SI data are missing → leave as **TBD**. **Do not invent** cutoffs, force-field knobs, residue lists, or signature vectors by inference.
+
+---
+
+## Repo assets checklist (LOCKED snapshot)
+
+| Mark | Asset | Path / note |
+|------|-------|-------------|
+| [✓] | CB2 active | `data/targets/cb2/6PT0_rec.pdbqt` |
+| [✓] | Qiu-14 ligand | `results/docking/qiu_0e/compound_14_lig.pdbqt` |
+| [✓] | Seed pose 0F QC | `results/docking/qiu_0f/compound_14_cb2_out.pdbqt` **MODEL 1** |
+| [!] | Membrane/MD engine | OpenMM + lipid17 pending **TBD-0N-11** |
+| [X] | SI numeric tables | pending ingest **TBD-0N-03** |
+
+---
+
+## Next ops (document only — do not execute)
+
+1. **Critical path:** send `results/reports/cro_package_h1a/SEND/` RFQs.
+2. **Pre-exec 0N:** ingest Ge SI tables (`cn3c00580_si_001.pdf` / `cn3c00580_si_002.xlsx`) — **pending**; not done in this governance lock; do not invent tables.
+3. **Gate:** 115 ns MD + LRIP remains **BLOCKED** until explicit auth after fidelity verification.
 
 ---
 
@@ -166,7 +196,7 @@ Pipeline stated: **docking → MD → MM-GBSA (LRIP decomposition) + MM-PBSA-WSA
 
 ---
 
-## 4. What is MISSING / TBD (do not invent)
+## 4. Fidelity TBD matrix (LOCKED IDs — keep TBD; do not fill by inference)
 
 Mark **TBD** until confirmed from SI or prior Ge/Wang methods papers — **no inference fills**.
 
@@ -174,8 +204,8 @@ Mark **TBD** until confirmed from SI or prior Ge/Wang methods papers — **no in
 |----|------|----------------|
 | TBD-0N-01 | Exact docking engine / scoring / grid / exhaustiveness for Ge derivatives | Ge defers docking details to prior work; 0F Vina ≠ automatic Ge docking |
 | TBD-0N-02 | Which PDB / model (active vs inactive CB2) for each signature arm | 0N for Qiu-14 CB2-agonist hypothesis likely needs **active** CB2; confirm Ge’s exact structures |
-| TBD-0N-03 | Numerical mean IP signature vectors (Tables S1–S4 / S7 etc.) | Needed for R / R² comparison; SI PDF not ingested into repo yet |
-| TBD-0N-04 | MD input templates / analysis scripts from SI | SI advertises “templates of the MD input file and trajectory analysis” |
+| TBD-0N-03 | Numerical mean IP signature vectors (Tables S1–S4 / S7 etc.) | Needed for R / R² comparison; SI PDF (`cn3c00580_si_001.pdf`) not ingested into repo yet |
+| TBD-0N-04 | MD input templates / analysis scripts from SI | SI advertises “templates of the MD input file and trajectory analysis” (`cn3c00580_si_001.pdf` / `cn3c00580_si_002.xlsx`) |
 | TBD-0N-05 | Exact GBSA / igb / saltcon / interior dielectric / nonpolar settings | Hawkins GB cited; full MMPBSA.py (or equivalent) knobs TBD |
 | TBD-0N-06 | Exact Delphi / PB radii, grid, dielectric for MM-PBSA-WSAS | Polar solvation reproducibility |
 | TBD-0N-07 | Exact definition of ΔE in the −10 kcal/mol agonist gate | Which end-point quantity (MM-GBSA vs MM-PBSA-WSAS term) |
@@ -184,6 +214,14 @@ Mark **TBD** until confirmed from SI or prior Ge/Wang methods papers — **no in
 | TBD-0N-10 | Full per-residue energy tables for reference agonists/antagonists | Beyond hotspot highlights |
 | TBD-0N-11 | Whether OpenMM/lipid17/GAFF2 is acceptable substitute for AMBER18/Lipid14/GAFF | Fidelity gate decision — **do not assume yes** |
 | TBD-0N-12 | Ligand RESP vs Meeko/AM1-BCC charges for Qiu-14 | Ge used RESP HF/6-31G\*; 0E used Meeko — charge path TBD for 0N |
+
+**ID map (user governance):**
+
+- TBD-0N-01/02 → docking engine/grid + active/inactive PDBs  
+- TBD-0N-03/04 → IP signature tables S1–S4/S7 + MD/GBSA input templates (SI: `cn3c00580_si_001.pdf` / `cn3c00580_si_002.xlsx`)  
+- TBD-0N-05/06 → GB/PB exact knobs  
+- TBD-0N-07/08/09 → ΔE for −10 kcal/mol gate, equilibration, replicas  
+- TBD-0N-11/12 → AMBER18/Lipid14/GAFF/RESP → OpenMM/lipid17/GAFF2/AM1-BCC substitution validation  
 
 ---
 
@@ -236,14 +274,16 @@ Mark **TBD** until confirmed from SI or prior Ge/Wang methods papers — **no in
 
 Pointers:
 
+- Status one-pager: [`qiu_0n_status.md`](qiu_0n_status.md)
 - IP gate: [`docs/ip_gate_janusforge.md`](../../docs/ip_gate_janusforge.md)
 - 0K plan: [`qiu_0k_validation_plan_h1_h2.md`](qiu_0k_validation_plan_h1_h2.md)
 - H1-a wet handoff: [`qiu_0m_h1a_wet_handoff.md`](qiu_0m_h1a_wet_handoff.md)
+- CRO SEND package: [`cro_package_h1a/SEND/`](cro_package_h1a/SEND/)
 
 ---
 
 ## 8. Verdict
 
-**`0N = READY / NOT EXECUTED`**
+**`0N = READY / NOT EXECUTED (Gated)`**
 
-Paper (PMC + ACS DOI) was accessible for bibliographic identity, system composition, AMBER/CHARMM-GUI/POPC methods, LRIP criteria, and **69% / 62%** metrics. SI numerical signature tables and MD input templates are **not yet ingested** → listed as TBD; execution remains **gated** until fidelity check. No simulation was run under this document.
+Paper (PMC + ACS DOI) was accessible for bibliographic identity, system composition, AMBER/CHARMM-GUI/POPC methods, LRIP criteria, and **69% / 62%** metrics. SI numerical signature tables and MD input templates are **not yet ingested** → listed as TBD; execution remains **gated** until fidelity check. No simulation was run under this document. Governance lock permanently records hard stops, output labels, TBD matrix, and assets checklist — **without executing MD/docking and without inventing SI parameters**.
