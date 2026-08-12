@@ -1,0 +1,562 @@
+{
+  "methods": {
+    "poses": "MODEL 1 from existing out/docked PDBQT only",
+    "receptor": "data/targets/cb2/6PT0_rec.pdbqt",
+    "no_redocking": true,
+    "viewer": "matplotlib PNG projections + 3Dmol.js HTML",
+    "hbond_policy": "Do not reinterpret non geometry-OK H-bonds from 0H as present"
+  },
+  "compounds": {
+    "Qiu_14": {
+      "path": "results/docking/qiu_0f/compound_14_cb2_out.pdbqt",
+      "model": 1,
+      "vina_remark": -9.919,
+      "pose_note": "MODEL 1 is lowest Vina REMARK among written models",
+      "centroid": [
+        98.774,
+        110.334,
+        124.791
+      ],
+      "feature_centroids": {
+        "pyrazole": [
+          99.51,
+          109.709,
+          124.171
+        ],
+        "amide": [
+          97.46,
+          110.855,
+          122.271
+        ],
+        "n1_heterocycle": [
+          100.3,
+          109.826,
+          128.947
+        ],
+        "adamantyl": [
+          94.39,
+          112.74,
+          121.783
+        ],
+        "n1_phenyl": [
+          102.777,
+          111.181,
+          125.801
+        ],
+        "c5_phenyl": [
+          100.757,
+          106.689,
+          126.603
+        ],
+        "c4_methyl": [
+          97.813,
+          107.687,
+          123.665
+        ]
+      },
+      "dominant_axes_from_core": {
+        "amide": "-x",
+        "n1_heterocycle": "+z",
+        "adamantyl": "-x",
+        "n1_phenyl": "+x",
+        "c5_phenyl": "-y",
+        "c4_methyl": "-y"
+      },
+      "tyr25_min_heavy_A": 5.041,
+      "tyr25_contact_le_4": false,
+      "region_min_dists_A": {
+        "SER285": 3.375,
+        "TYR25": 5.041,
+        "THR114": 2.861,
+        "ILE110": 2.964,
+        "ILE186": 3.026
+      },
+      "h0_hbonds_geometry_ok": 0,
+      "png": "results/reports/qiu_0j_visual_qc/qiu_14_model1.png",
+      "html": "results/reports/qiu_0j_visual_qc/qiu_14_model1.html"
+    },
+    "Qiu_15": {
+      "path": "results/docking/qiu_0f/compound_15_cb2_out.pdbqt",
+      "model": 1,
+      "vina_remark": -11.201,
+      "pose_note": "MODEL 1 is lowest Vina REMARK among written models",
+      "centroid": [
+        98.533,
+        110.694,
+        125.354
+      ],
+      "feature_centroids": {
+        "pyrazole": [
+          99.18,
+          110.152,
+          124.418
+        ],
+        "amide": [
+          97.325,
+          111.334,
+          122.347
+        ],
+        "n1_heterocycle": [
+          100.713,
+          110.202,
+          131.396
+        ],
+        "adamantyl": [
+          94.225,
+          113.078,
+          121.61
+        ],
+        "n1_phenyl": [
+          101.381,
+          111.609,
+          127.4
+        ],
+        "c5_phenyl": [
+          100.775,
+          106.871,
+          126.19
+        ],
+        "c4_methyl": [
+          98.377,
+          108.057,
+          122.938
+        ]
+      },
+      "dominant_axes_from_core": {
+        "amide": "-z",
+        "n1_heterocycle": "+z",
+        "adamantyl": "-x",
+        "n1_phenyl": "+z",
+        "c5_phenyl": "-y",
+        "c4_methyl": "-y"
+      },
+      "tyr25_min_heavy_A": 3.021,
+      "tyr25_contact_le_4": true,
+      "region_min_dists_A": {
+        "SER285": 3.081,
+        "TYR25": 3.021,
+        "THR114": 2.71,
+        "ILE110": 3.038,
+        "ILE186": 2.978
+      },
+      "h0_hbonds_geometry_ok": 0,
+      "png": "results/reports/qiu_0j_visual_qc/qiu_15_model1.png",
+      "html": "results/reports/qiu_0j_visual_qc/qiu_15_model1.html"
+    },
+    "Qiu_20": {
+      "path": "results/docking/qiu_0f/compound_20_cb2_out.pdbqt",
+      "model": 1,
+      "vina_remark": -9.986,
+      "pose_note": "MODEL 1 is lowest Vina REMARK among written models",
+      "centroid": [
+        98.772,
+        110.394,
+        124.914
+      ],
+      "feature_centroids": {
+        "pyrazole": [
+          99.451,
+          109.879,
+          124.204
+        ],
+        "amide": [
+          97.371,
+          111.047,
+          122.327
+        ],
+        "n1_heterocycle": [
+          100.215,
+          109.689,
+          129.161
+        ],
+        "adamantyl": [
+          94.296,
+          112.846,
+          121.747
+        ],
+        "n1_phenyl": [
+          102.806,
+          111.269,
+          125.771
+        ],
+        "c5_phenyl": [
+          100.818,
+          106.784,
+          126.458
+        ],
+        "c4_methyl": [
+          97.742,
+          107.848,
+          123.778
+        ]
+      },
+      "dominant_axes_from_core": {
+        "amide": "-x",
+        "n1_heterocycle": "+z",
+        "adamantyl": "-x",
+        "n1_phenyl": "+x",
+        "c5_phenyl": "-y",
+        "c4_methyl": "-y"
+      },
+      "tyr25_min_heavy_A": 4.888,
+      "tyr25_contact_le_4": false,
+      "region_min_dists_A": {
+        "SER285": 3.338,
+        "TYR25": 4.888,
+        "THR114": 2.815,
+        "ILE110": 2.786,
+        "ILE186": 2.991
+      },
+      "h0_hbonds_geometry_ok": 0,
+      "png": "results/reports/qiu_0j_visual_qc/qiu_20_model1.png",
+      "html": "results/reports/qiu_0j_visual_qc/qiu_20_model1.html"
+    },
+    "Qiu_24": {
+      "path": "results/docking/qiu_0f/compound_24_cb2_out.pdbqt",
+      "model": 1,
+      "vina_remark": -11.606,
+      "pose_note": "MODEL 1 is lowest Vina REMARK among written models",
+      "centroid": [
+        98.918,
+        109.893,
+        124.438
+      ],
+      "feature_centroids": {
+        "pyrazole": [
+          99.457,
+          109.074,
+          124.733
+        ],
+        "amide": [
+          97.762,
+          109.473,
+          122.239
+        ],
+        "n1_heterocycle": [
+          102.959,
+          109.193,
+          123.839
+        ],
+        "adamantyl": [
+          94.237,
+          112.231,
+          122.009
+        ],
+        "n1_phenyl": [
+          101.636,
+          111.395,
+          127.097
+        ],
+        "c5_phenyl": [
+          100.712,
+          106.684,
+          127.771
+        ],
+        "c4_methyl": [
+          98.347,
+          106.662,
+          124.304
+        ],
+        "amide_ch2": [
+          95.74,
+          109.528,
+          121.642
+        ]
+      },
+      "dominant_axes_from_core": {
+        "amide": "-z",
+        "n1_heterocycle": "+x",
+        "adamantyl": "-x",
+        "n1_phenyl": "+z",
+        "c5_phenyl": "+z",
+        "c4_methyl": "-y",
+        "amide_ch2": "-x"
+      },
+      "tyr25_min_heavy_A": 5.912,
+      "tyr25_contact_le_4": false,
+      "region_min_dists_A": {
+        "SER285": 3.354,
+        "TYR25": 5.912,
+        "THR114": 3.035,
+        "ILE110": 3.216,
+        "ILE186": 3.133
+      },
+      "h0_hbonds_geometry_ok": 0,
+      "png": "results/reports/qiu_0j_visual_qc/qiu_24_model1.png",
+      "html": "results/reports/qiu_0j_visual_qc/qiu_24_model1.html"
+    },
+    "JANUS_D2_20": {
+      "path": "results/docking/option_d_batch2/cb2/JANUS_D2_20_docked.pdbqt",
+      "model": 1,
+      "vina_remark": -11.656,
+      "pose_note": "MODEL 1 is lowest Vina REMARK among written models",
+      "centroid": [
+        99.346,
+        109.365,
+        125.055
+      ],
+      "feature_centroids": {
+        "pyrrole": [
+          99.514,
+          108.464,
+          124.02
+        ],
+        "aryl_ketone": [
+          97.669,
+          108.678,
+          121.624
+        ],
+        "benzoyl_aryl": [
+          95.647,
+          110.976,
+          122.642
+        ],
+        "c3_amino": [
+          100.307,
+          110.439,
+          122.669
+        ],
+        "n1_ch2": [
+          100.135,
+          106.938,
+          126.071
+        ],
+        "n1_benzyl_aryl": [
+          100.453,
+          108.452,
+          128.554
+        ],
+        "n1_benzyl_pCl": [
+          100.828,
+          110.042,
+          131.208
+        ],
+        "c2_phenyl": [
+          103.06,
+          109.625,
+          125.623
+        ],
+        "c5_methyl": [
+          97.649,
+          106.561,
+          124.34
+        ],
+        "benzoyl_pMe": [
+          93.583,
+          112.973,
+          123.096
+        ]
+      },
+      "dominant_axes_from_core": {
+        "aryl_ketone": "-z",
+        "benzoyl_aryl": "-x",
+        "c3_amino": "+y",
+        "n1_ch2": "+z",
+        "n1_benzyl_aryl": "+z",
+        "n1_benzyl_pCl": "+z",
+        "c2_phenyl": "+x",
+        "c5_methyl": "-y",
+        "benzoyl_pMe": "-x"
+      },
+      "tyr25_min_heavy_A": 3.942,
+      "tyr25_contact_le_4": true,
+      "region_min_dists_A": {
+        "SER285": 3.58,
+        "TYR25": 3.942,
+        "THR114": 3.859,
+        "ILE110": 3.506,
+        "ILE186": 3.384
+      },
+      "h0_hbonds_geometry_ok": 0,
+      "png": "results/reports/qiu_0j_visual_qc/janus_d2_20_model1.png",
+      "html": "results/reports/qiu_0j_visual_qc/janus_d2_20_model1.html"
+    },
+    "JANUS_D2_06": {
+      "path": "results/docking/option_d_batch2/cb2/JANUS_D2_06_docked.pdbqt",
+      "model": 1,
+      "vina_remark": -12.03,
+      "pose_note": "MODEL 1 is lowest Vina REMARK among written models",
+      "centroid": [
+        99.374,
+        109.275,
+        124.924
+      ],
+      "feature_centroids": {
+        "pyrrole": [
+          99.151,
+          108.835,
+          123.515
+        ],
+        "aryl_ketone": [
+          97.383,
+          109.527,
+          121.15
+        ],
+        "benzoyl_aryl": [
+          95.175,
+          111.355,
+          122.635
+        ],
+        "c3_amino": [
+          100.09,
+          110.881,
+          122.384
+        ],
+        "n1_ch2": [
+          99.696,
+          106.98,
+          125.299
+        ],
+        "n1_benzyl_aryl": [
+          100.468,
+          107.896,
+          127.977
+        ],
+        "n1_benzyl_pCN": [
+          101.439,
+          108.895,
+          131.1
+        ],
+        "c2_phenyl": [
+          102.849,
+          109.452,
+          125.085
+        ],
+        "c5_methyl": [
+          97.067,
+          107.164,
+          123.78
+        ]
+      },
+      "dominant_axes_from_core": {
+        "aryl_ketone": "-z",
+        "benzoyl_aryl": "-x",
+        "c3_amino": "+y",
+        "n1_ch2": "-y",
+        "n1_benzyl_aryl": "+z",
+        "n1_benzyl_pCN": "+z",
+        "c2_phenyl": "+x",
+        "c5_methyl": "-x"
+      },
+      "tyr25_min_heavy_A": 3.943,
+      "tyr25_contact_le_4": true,
+      "region_min_dists_A": {
+        "SER285": 3.509,
+        "TYR25": 3.943,
+        "THR114": 3.105,
+        "ILE110": 3.293,
+        "ILE186": 3.955
+      },
+      "h0_hbonds_geometry_ok": 0,
+      "png": "results/reports/qiu_0j_visual_qc/janus_d2_06_model1.png",
+      "html": "results/reports/qiu_0j_visual_qc/janus_d2_06_model1.html"
+    },
+    "JANUS_D2_22": {
+      "path": "results/docking/option_d_batch2/cb2/JANUS_D2_22_docked.pdbqt",
+      "model": 1,
+      "vina_remark": -12.35,
+      "pose_note": "MODEL 1 is lowest Vina REMARK among written models",
+      "centroid": [
+        97.885,
+        108.41,
+        125.271
+      ],
+      "feature_centroids": {
+        "pyrrole": [
+          98.84,
+          107.878,
+          124.024
+        ],
+        "aryl_ketone": [
+          101.194,
+          107.465,
+          125.891
+        ],
+        "benzoyl_aryl": [
+          99.777,
+          107.987,
+          128.744
+        ],
+        "c3_amino": [
+          98.422,
+          105.646,
+          125.114
+        ],
+        "n1_ch2": [
+          98.126,
+          109.404,
+          122.005
+        ],
+        "n1_benzyl_aryl": [
+          95.819,
+          111.111,
+          122.559
+        ],
+        "n1_benzyl_pCl": [
+          93.354,
+          112.922,
+          123.148
+        ],
+        "c2_phenyl": [
+          95.75,
+          106.142,
+          122.035
+        ],
+        "c5_methyl": [
+          100.171,
+          110.202,
+          124.116
+        ],
+        "benzoyl_pCF3": [
+          98.87,
+          108.394,
+          131.91
+        ]
+      },
+      "dominant_axes_from_core": {
+        "aryl_ketone": "+x",
+        "benzoyl_aryl": "+z",
+        "c3_amino": "-y",
+        "n1_ch2": "-z",
+        "n1_benzyl_aryl": "+y",
+        "n1_benzyl_pCl": "-x",
+        "c2_phenyl": "-x",
+        "c5_methyl": "+y",
+        "benzoyl_pCF3": "+z"
+      },
+      "tyr25_min_heavy_A": 4.562,
+      "tyr25_contact_le_4": false,
+      "region_min_dists_A": {
+        "SER285": 2.792,
+        "TYR25": 4.562,
+        "THR114": 3.745,
+        "ILE110": 3.442,
+        "ILE186": 3.403
+      },
+      "h0_hbonds_geometry_ok": 0,
+      "png": "results/reports/qiu_0j_visual_qc/janus_d2_22_model1.png",
+      "html": "results/reports/qiu_0j_visual_qc/janus_d2_22_model1.html"
+    }
+  },
+  "artifacts": [
+    "results/reports/qiu_0j_visual_qc/qiu_14_model1.png",
+    "results/reports/qiu_0j_visual_qc/qiu_14_model1.html",
+    "results/reports/qiu_0j_visual_qc/qiu_15_model1.png",
+    "results/reports/qiu_0j_visual_qc/qiu_15_model1.html",
+    "results/reports/qiu_0j_visual_qc/qiu_20_model1.png",
+    "results/reports/qiu_0j_visual_qc/qiu_20_model1.html",
+    "results/reports/qiu_0j_visual_qc/qiu_24_model1.png",
+    "results/reports/qiu_0j_visual_qc/qiu_24_model1.html",
+    "results/reports/qiu_0j_visual_qc/janus_d2_20_model1.png",
+    "results/reports/qiu_0j_visual_qc/janus_d2_20_model1.html",
+    "results/reports/qiu_0j_visual_qc/janus_d2_06_model1.png",
+    "results/reports/qiu_0j_visual_qc/janus_d2_06_model1.html",
+    "results/reports/qiu_0j_visual_qc/janus_d2_22_model1.png",
+    "results/reports/qiu_0j_visual_qc/janus_d2_22_model1.html",
+    "results/reports/qiu_0j_visual_qc/overlay_qiu_14_20_xz.png",
+    "results/reports/qiu_0j_visual_qc/overlay_qiu_14_15_20_24_xz.png",
+    "results/reports/qiu_0j_visual_qc/overlay_d2_canonical_vs_qiu14_xz.png",
+    "results/reports/qiu_0j_visual_qc/overlay_d2_22_feature_swap_xz.png",
+    "results/reports/qiu_0j_visual_qc/index.html"
+  ]
+}
