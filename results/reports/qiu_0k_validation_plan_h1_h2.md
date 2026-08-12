@@ -5,7 +5,9 @@
 > **Fecha:** 2026-08-12  
 > **Base de opciones:** [`qiu_0k_hypothesis_options.md`](qiu_0k_hypothesis_options.md)  
 > **Evidencia computacional (solo geometría/QC):** [`qiu_0i_evidence_matrix.md`](qiu_0i_evidence_matrix.md) · [`qiu_0j_visual_qc.md`](qiu_0j_visual_qc.md) · 0D–0H / farmacóforo / comparación D1  
-> **Literatura / mapa:** [`docs/mapa_ligandos_janus_cb1_cb2.md`](../../docs/mapa_ligandos_janus_cb1_cb2.md) (claims PUBLISHED citados con cuidado; Ki/IC₅₀ Qiu **no recuperados** en repo)
+> **Literatura / mapa:** [`docs/mapa_ligandos_janus_cb1_cb2.md`](../../docs/mapa_ligandos_janus_cb1_cb2.md) (claims PUBLISHED citados con cuidado; Ki/IC₅₀ Qiu **no recuperados** en repo)  
+> **IP gate (pre-NCE / pre-divulgación):** [`docs/ip_gate_janusforge.md`](../../docs/ip_gate_janusforge.md) · landscape [`qiu_0ip_novelty_landscape.md`](qiu_0ip_novelty_landscape.md) — **not legal advice**; **no** diseño NCE propietario hasta 🛑 IP REVIEW.  
+> **0L H1-a spec:** [`qiu_0l_h1a_experimental_spec.md`](qiu_0l_h1a_experimental_spec.md) — **SPEC CLOSED**; wet no iniciado; umbrales aún TBD.
 
 **Capas epistémicas (obligatorias en cada fila/sección):**
 
@@ -137,6 +139,16 @@ Los siguientes **no** constituyen PASS, ni KILL, ni ranking farmacológico para 
 
 ---
 
-## 8. Cierre
+## 8. IP gate + 0L (no altera H1/H2 science lock)
 
-Plan de validación **cerrado**: H1 (Qiu-14, CB2→CB1) → H2 (D2_20/06, CB2-first) → H3 solo si ambos PASS; D2_22 fuera; umbrales **TBD** (18); ningún ensayo ejecutado aquí; ningún PASS computacional.
+Organigrama: **0D–0J → 0K → [0IP landscape] → 0L → wet H1/H2 → (PASS) → NCE solo en hipótesis blue-ocean → 🛑 IP REVIEW (counsel) → filing → síntesis propia.**
+
+- Protocolo: [`docs/ip_gate_janusforge.md`](../../docs/ip_gate_janusforge.md)  
+- Landscape: [`qiu_0ip_novelty_landscape.md`](qiu_0ip_novelty_landscape.md) (`LANDSCAPE DRAFT — NEEDS COUNSEL` — never clearance)  
+- **0L H1-a:** [`qiu_0l_h1a_experimental_spec.md`](qiu_0l_h1a_experimental_spec.md) — Qiu-14 = vehículo de validación publicado, **no** NCE Janusforge; **spec cerrada, wet no iniciado**
+
+---
+
+## 9. Cierre
+
+Plan de validación **cerrado**: H1 (Qiu-14, CB2→CB1) → H2 (D2_20/06, CB2-first) → H3 solo si ambos PASS; D2_22 fuera; umbrales **TBD** (18); ningún ensayo ejecutado aquí; ningún PASS computacional. IP gate obligatorio antes de NCE propietario / divulgación pública.
