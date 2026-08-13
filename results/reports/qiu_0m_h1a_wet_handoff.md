@@ -1,8 +1,8 @@
 # Qiu 0M — H1-a wet handoff / ready-to-run package
 
-> **Verdict:** **`0M = BLOCKED`** — operational package complete; **WET NOT EXECUTED**; first wet run hard-stopped until pre-study TBDs filled (see §7).  
-> **Date:** 2026-08-12  
-> **Milestone:** wet **H1-a only** (Qiu-14, CB2-first)  
+> **Verdict:** **`0M = RESERVE`** (Option **A**) — operational package complete; **WET NOT EXECUTED**; critical path suspended while Option **B** `0Q-SMRF = ACTIVE` (`qiu_0q_smrf_matrix.md`). Pre-study TBDs (§7) still block any future wet start.  
+> **Date:** 2026-08-12 (status refresh 2026-08-13)  
+> **Milestone:** wet **H1-a only** (Qiu-14, CB2-first) — **on reserve**, not active critical path  
 > **Upstream (authoritative):** [qiu_0l_h1a_experimental_spec.md](qiu_0l_h1a_experimental_spec.md) · [qiu_0k_validation_plan_h1_h2.md](qiu_0k_validation_plan_h1_h2.md) · [docs/ip_gate_janusforge.md](../../docs/ip_gate_janusforge.md) · [qiu_0ip_novelty_landscape.md](qiu_0ip_novelty_landscape.md)  
 > **Identity anchor (published):** [qiu_0d_structure_verification.md](qiu_0d_structure_verification.md)  
 > **CRO collaboration package (dossier + RFQs + IP brief; no compute):** [cro_package_h1a/00_index.md](cro_package_h1a/00_index.md)  
@@ -263,6 +263,6 @@ Organigram reminder: wet H1/H2 → (PASS) → NCE only in documented blue-ocean 
 
 ## 10. Cierre / verdict
 
-**`0M = BLOCKED`** — handoff package is complete and ready for ops fill-in, but **critical TBDs (§7)** mean H1-a is **not ready to run** until the pre-study gate is closed and PI authorizes execution.
+**`0M = RESERVE`** (Option A) — handoff package remains complete for ops fill-in, but is **not** the active critical path. Option B **`0Q-SMRF = ACTIVE`**. **Critical TBDs (§7)** still mean H1-a is **not ready to run** until the pre-study gate is closed and PI authorizes execution.
 
-When §7 is fully checked and signed: update this header to **`0M = HANDOFF READY`** (still: wet not executed until lab/CRO runs).
+When SMRF closes and PI re-prioritizes wet: restore Option A; when §7 is fully checked and signed: update to **`0M = HANDOFF READY`** (still: wet not executed until lab/CRO runs).
