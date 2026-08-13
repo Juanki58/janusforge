@@ -300,6 +300,7 @@ Prior membrane go/no-go rules in Track-1 plans applied to **different ligands/qu
 ## Pointers
 
 - Status: [`qiu_0n_status.md`](qiu_0n_status.md)  
+- **Prep blockers closure (stack / 6PT0 / TM / cost):** [`qiu_0n_prep_blockers_closure.md`](qiu_0n_prep_blockers_closure.md) → execution verdict **`0N = BLOCKED`** (waivers + Docker/CUDA ops)  
 - Ge parameter audit (NOT READY for LRIP): [`qiu_0n_ge2023_benchmark_protocol.md`](qiu_0n_ge2023_benchmark_protocol.md)  
 - Gap analysis: [`qiu_0n_reproducibility_gap_analysis.md`](qiu_0n_reproducibility_gap_analysis.md)  
 - Governance / hard stops: [`qiu_0n_ge2023_reproduction_protocol.md`](qiu_0n_ge2023_reproduction_protocol.md)  
