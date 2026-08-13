@@ -1,0 +1,11 @@
+Pregunta,Evidencia,Fuente_primaria,Estado
+"¿Qiu-14 está realmente sintetizado?","Sí. Cpd 14 = ortho-morpholinyl + 1-adamantyl pyrazole; Scheme S1 + HPLC/NMR final-ligand sections; no X-ray of 14 in Fig S2","DOI 10.1016/j.bioorg.2023.106377 SI (mmc1); image15_ocr.txt","VERIFICADO (synth); PARCIAL (NMR text)"
+"¿Tiene actividad CB2 experimental?","cAMP assay CB2 agonist (Fig S5A; CP55,940 control); no public Ki/EC50","DOI 10.1016/j.bioorg.2023.106377 SI Fig S5","PARCIAL (assay VERIFICADO; numbers BLOQUEADO/NOT FOUND)"
+"¿Tiene actividad CB1 experimental?","cAMP assay CB1 antagonist (Fig S5B; rimonabant control); no public Ki/IC50","DOI 10.1016/j.bioorg.2023.106377 SI Fig S5","PARCIAL (assay VERIFICADO; numbers BLOQUEADO/NOT FOUND)"
+"¿Es realmente Janus CB1/CB2?","Yes per Qiu Yin-Yang claim; Fig S5 dual cAMP for cpd 14; not in vivo/fibrosis","DOI 10.1016/j.bioorg.2023.106377 abstract + SI Fig S5","VERIFICADO (functional claim); in vivo NOT FOUND"
+"¿Qué otros ligandos CB2 se parecen estructuralmente?","SI compares AM1710, URB447, GW405833; URB447 mixed CB1-ant/CB2-ago; GW405833 & AM1710 CB2 agonists","Qiu SI Fig S8; DOI 10.1016/j.bmcl.2008.12.059; 10.1016/j.neuropharm.2004.12.008; 10.1021/jm070441u","VERIFICADO"
+"¿Hay complejos CB2–ligando experimentales?","5ZTY AM10257 2.8A; 6PT0 WIN55,212-2 3.2A; 6KPC AM12033-class 3.2A; 8GUR/8GUS CP/HU; no Qiu-14 complex","PDB 5ZTY/6PT0/6KPC/8GUR/8GUS + Cell/Nat Commun DOIs","VERIFICADO"
+"¿Qué interacciones están demostradas experimentalmente?","S173/S285 for Qiu-14 = docking/MD hypothesis only; NOT FOUND experimentally for Qiu-14","Qiu abstract; contrast Li 2019 DOI 10.1016/j.cell.2018.12.011","NOT FOUND (for Qiu-14)"
+"¿Nuestra hipótesis Janus ya está publicada?","Yin-Yang dual pharma YES (Qiu 2023; URB447 2009). Qiu-14-for-fibrosis NOT FOUND. Mixed CB1-ant/CB2-ago for fibrosis claimed in WO2022026478 (other chemotypes)","Qiu DOI; URB447 DOI; WO2022026478; PubMed fibrosis search","PARCIAL"
+"¿Está protegida por patente (Qiu-14 / familia)?","NOT FOUND Qiu-14 composition (Google Patents probes); Makriyannis WO2022026478 inventory only","Google Patents 2026-08-13; WO2022026478; US20230234928","NOT FOUND"
+"¿Qué queda sin responder?","Numeric potencies paywalled; S173/S285 unproven for 14; no in vivo/fibrosis for 14; CN filings unconfirmed","—","hueco real"
