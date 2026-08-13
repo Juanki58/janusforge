@@ -1,268 +1,250 @@
-# Qiu 0P — Auditoría exhaustiva del estado del arte (ahorrar gasto)
+# Qiu 0P — Auditoría del estado del arte (pasada exhaustiva documental)
 
-> **Fecha:** 2026-08-13  
-> **Modo:** investigación + auditoría **solo**. **Prohibido** en este paso: docking nuevo, MD, NCE, síntesis, PDBQT, ensayos, campañas SAR.  
-> **Mentalidad:** no buscar “0P PASS para continuar”; buscar qué **no** hace falta pagar.  
-> **CSV paisaje:** [`qiu_0p_compound_landscape.csv`](qiu_0p_compound_landscape.csv)  
-> **Contexto repo:** 0D–0J, 0K/0L/0IP/0N, mapa_ligandos, literatura_fibrosis, ip_gate, guia_maestra, cro_package_h1a.
+> **Fecha:** 2026-08-13 (deep retrieval pass)  
+> **Modo:** investigación + auditoría **solo**. **Prohibido:** docking nuevo, MD, NCE, síntesis, PDBQT, ensayos, campañas SAR.  
+> **Mentalidad:** ahorrar gasto; no inventar potencias.  
+> **CSV:** [`qiu_0p_compound_landscape.csv`](qiu_0p_compound_landscape.csv)  
+> **Exhaustiveness:** [`qiu_0p_exhaustiveness_check.md`](qiu_0p_exhaustiveness_check.md)  
+> **ACCESS:** [`data/papers/qiu_2023_bioorg/ACCESS_LOG.md`](../../data/papers/qiu_2023_bioorg/ACCESS_LOG.md)
 
-**Capas epistémicas usadas en todo el documento:**
+**Capas:** PUBLICADO · REPO · INFERENCIA · NOT FOUND · **BLOCKED** (vía intentada, recurso inaccesible)
 
-| Capa | Significado |
-|------|-------------|
-| **PUBLICADO** | Paper / SI / patente / DB con texto recuperado |
-| **REPO** | Ya documentado en janusforge (0D–0N, docs) |
-| **INFERENCIA** | Lectura estratégica; **no** es dato experimental nuevo |
-| **NOT FOUND** | Ausencia en esta búsqueda — **no** inventar |
+| Sección | Status |
+|---------|--------|
+| §1 Qiu deep dive (identidad + SI + DBs + ACCESS) | **DONE** retrieval / **BLOCKED** numeric tables |
+| §2 Chemotype landscape | **DONE** |
+| §3 Compute → wet | **DONE** |
+| §4 MD precedents | **DONE** |
+| §5 Compound table/CSV | **DONE** (gaps honestos) |
+| §6 Patents inventory | **DONE** (≠ FTO) |
+| §7 Fibrosis ladder | **DONE** |
+| §8 Skip-map | **DONE** |
+| §9 Post-2023 citations + author follow-up | **DONE** |
+| §10 DECISIÓN + 5 preguntas | **DONE** (re-answered) |
 
 ---
 
-## Resumen ejecutivo (ahorro)
+## Resumen ejecutivo (ahorro) — post exhaustivo
 
-1. **Qiu-14 ya tiene claim funcional publicado** (agonista CB2 + antagonista CB1 por **cAMP**, SI Fig. S5; controles CP55940 / rimonabant). Eso **no** es “desconocido”.  
-2. **Lo que falta y justifica duda de dinero:** (a) **números** Ki/IC₅₀/EC₅₀ **no** están en PubChem / ChEMBL / BindingDB / texto abierto; (b) **cero** reproducción independiente del compuesto 14; (c) **cero** fibrosis / in vivo / celular antifibrótica con Qiu-14.  
-3. **H1-a como descubrimiento de “¿es agonista CB2?”** → **reproducción cualitativa** → **no justificar gasto** solo para redescubrir el signo.  
-4. **H1-a como ancla operativa Janus en el panel CRO de janusforge** → incertidumbre **real pero estrecha**; alternativa más barata: controles comerciales (CP55,940 / JWH133 + antagonista CB1) + aceptar Qiu como motivación literaria.  
-5. **MD / 0N / más docking no sustituyen H1-a** y **no** cierran potencia ni fibrosis; Ge LRIP ~62–70% success y está **BLOCKED** en repo.  
-6. **Acción más barata que más reduce incertidumbre documental:** recuperar PDF Qiu + tablas de potencia (**TBD-18**). Luego decidir si aún hace falta material Qiu-14.
+1. **PDF Qiu principal sigue BLOCKED** tras Unpaywall (closed), EuropePMC (no PDF), CORE (0), SSRN (403), Wayback (sin fulltext), SciDirect shell, ResearchGate sin PDF usable. Sci-Hub **no** usado (sin precedente en repo).  
+2. **SI local sí se parseó por completo:** Fig. S5 Yin-Yang cualitativo de **14**; Fig. S11–S13 curvas HTRF de la serie; Scheme S1 identidades; Tables S1–S2 = **solo MM-GBSA** (cómputo). **Cero** Ki/IC₅₀/EC₅₀/nM en texto SI.  
+3. **PubChem / ChEMBL / BindingDB:** exact InChIKey/SMILES de **14/15/20/24** → **CONFIRMED NOT FOUND**.  
+4. **Citas:** exactamente **1** (Chen 2025 péptido) — cite only. **Follow-up autores 2026:** Azo23 photoswitch — chemotipo distinto; **no** reutiliza 14/15/20/24.  
+5. **Patentes:** WO2022026478 / US20230234928 claim themes verificados en HTML Google Patents; Compound 1 Ki CB1 **1 nM** / CB2 **>1000 nM**; patente composición Qiu-14 **NOT FOUND**.  
+6. **H1-a discovery SKIP se mantiene** — la farmacología cuantitativa **no** se recuperó; el signo cualitativo **sí** basta para no pagar “descubrimiento”. Ancla operativa sigue **CONDICIONAL**.
 
 ---
 
 ## 1. Qiu-14 — deep dive
 
-### 1.1 Identidad / nombres / estructuras
+### 1.1 Identidad / nombres / estructuras — **DONE**
 
 | Campo | Valor | Estado |
 |-------|-------|--------|
 | Paper | Qiu et al., *Bioorg. Chem.* **133**, 106377 (2023) | PUBLICADO |
 | DOI / PMID | https://doi.org/10.1016/j.bioorg.2023.106377 · PMID 36731294 | PUBLICADO |
-| Preprint SSRN | abstract_id=4276225 (2022-11) | PUBLICADO abstract |
-| Autores / afiliación | Yanli Qiu et al.; ShanghaiTech / SHUTCM; corr. Zhao / Yang / Tao / Suwen Zhao | PUBLICADO |
-| Nombre de programa | “Yin-Yang ligand”; compuesto **14** (lead) | PUBLICADO |
-| Alt names | Qiu-14 / compound 14 / QIU_14 (repo) | REPO |
-| Chemotype | 1H-pirazol-3-carboxamida; **N1** = 2-morfolinofenilo; **C3** = CONH–(1-adamantilo); **C4** = Me; **C5** = Ph | PUBLICADO + REPO 0D |
-| SMILES / InChI / InChIKey | Ver `data/libraries/qiu_0d_structures.csv` — InChIKey `QQXQVTJJXRACOB-UHFFFAOYSA-N` | REPO 0D YES |
-| Formula / MW | C₃₁H₃₆N₄O₂ / 496.66 | REPO 0D |
-| PubChem CID | **NOT FOUND** (PUG InChIKey → 404) | NOT FOUND |
-| ChEMBL / BindingDB | **NOT FOUND** para InChIKey / SMILES Qiu | NOT FOUND |
-| Vecinos 15 / 20 / 24 | meta-morph; o-Me-piperazine; CH₂-Ad linker | REPO 0D YES |
+| Preprint SSRN | abstract_id=4276225 (2022-11) — full PDF **BLOCKED** (403/Cloudflare) | PUBLICADO abstract |
+| Autores | Yanli Qiu et al.; corr. Yang / Zhao / Tao (ShanghaiTech / SHUTCM) | PUBLICADO |
+| Chemotype 14 | N1=2-morpholinophenyl; C3=CONH-1-Ad; C4=Me; C5=Ph | PUBLICADO + Scheme S1 OCR |
+| SMILES / InChIKey | `QQXQVTJJXRACOB-UHFFFAOYSA-N` | REPO 0D YES |
+| PubChem CID | **CONFIRMED NOT FOUND** (PUGREST.NotFound) | NOT FOUND |
+| ChEMBL | `total_count: 0` exact InChIKey | NOT FOUND |
+| BindingDB | SMILES search endpoints 404 / no hit | NOT FOUND |
+| Vecinos 15 / 20 / 24 | meta-morph; o-Me-piperazine; CH₂-Ad | Scheme S1 OCR YES |
 
-**SI (mmc1, cache local):** Scheme S1 numera 14/15/16 (o/m/p-morfolina), 20 (piperazina), 24 (CH₂-Ad); Fig. S5 = cAMP CB2 ago + CB1 ant de **14**; Fig. S6 docking regio o/m/p en CB1 5TGZ; Fig. S11–S13 paneles farmacológicos de la serie; Fig. S14 MM-GBSA vs actividad (correlación aproximada).
+### 1.2 Binding / funcional — **PARTIAL / BLOCKED numbers**
 
-### 1.2 Binding / funcional / celular / in vivo
+| Endpoint | Hallazgo | Estado |
+|----------|----------|--------|
+| Ki / IC₅₀ / EC₅₀ tabulados (main PDF) | Tablas t1–t4 = stubs 189 B; Unpaywall closed | **BLOCKED** |
+| Ki / IC₅₀ / EC₅₀ en SI texto | 0 hits en mmc1 deep extract | **NOT FOUND** (ausentes en SI prose) |
+| EC₅₀ figure-estimated desde OCR HTRF | Ejes log[Cpd] sin anotaciones nM | **NOT FOUND** (no inventar) |
+| Funcional CB2 ago / CB1 ant de **14** | SI Fig. S5 cAMP/HTRF; controles CP55940 / rimonabant; 3×triplicado | PUBLICADO cualitativo |
+| SAR neighbors en paneles | 15/20/24 aparecen en Fig. S11–S13 OCR (curvas) | PUBLICADO cualitativo |
+| MM-GBSA (compute) | 14 CB2(6PT0) **−95.436**; 15 CB1 **−63.823** / CB2(5ZTY) **−104.222**; 20 CB1 **−77.848**; 24 CB1 **−57.177** | PUBLICADO compute ≠ wet |
+| Cellular fibrosis / in vivo Qiu-14 | — | **NOT FOUND** |
 
-| Endpoint | Hallazgo | Capa |
-|----------|----------|------|
-| Binding radioligando (Ki) | Tablas numéricas **no recuperadas** en texto abierto / DBs | NOT FOUND (números) |
-| Funcional CB2 | **Agonismo** por ensayo **cAMP**; control **CP55940**; 3 exp. × triplicado (SI Fig. S5A) | PUBLICADO cualitativo |
-| Funcional CB1 | **Antagonismo** por cAMP; control **rimonabant** (SI Fig. S5B) | PUBLICADO cualitativo |
-| Selectividad numérica | **NOT FOUND** abierta | NOT FOUND |
-| Cellular (fibrosis / inmuno propio) | **NOT FOUND** para Qiu-14 | NOT FOUND |
-| In vivo | **NOT FOUND** para Qiu-14 | NOT FOUND |
-| Mecanismo propuesto | H-bond morfolina–**S173** (CB1) / **S285** (CB2); docking + MD ~100 ns (figuras paper/SI) | PUBLICADO (hipótesis computacional) |
+**Assay conditions (from SI captions only):** cAMP assay; HTRF ratio 665/620 in SI figures; mean ± SEM; three independent experiments in triplicate. Radioligand Ki method details remain in **BLOCKED** main text.
 
-### 1.3 Patentes / citas / follow-up
+### 1.3 Patentes / citas / follow-up — **DONE** (esta pasada)
 
 | Tema | Hallazgo |
 |------|----------|
-| Patente de composición Qiu-14 dedicada | **NOT FOUND** en esta pasada (Google Patents / nombres autores) — **≠** prueba de inexistencia (CN posible) |
-| Citing post-2023 | OpenAlex / EuropePMC **citedByCount = 1**: *A novel CB2 agonist peptide with bone-promoting activity*, *Bioorg. Chem.* 2025, DOI https://doi.org/10.1016/j.bioorg.2025.108770 (PMID 40714479) — **péptido**, **no** reutiliza 14/15/20/24 |
-| Reproducción independiente de Qiu-14 | **NOT FOUND** |
+| Patente composición Qiu-14 | **NOT FOUND** (Google Patents / author name search) — ≠ inexistencia CN |
+| Citing post-2023 | **1:** Chen et al. *Bioorg. Chem.* 2025 DOI https://doi.org/10.1016/j.bioorg.2025.108770 — péptido CB2 óseo; **cite only** |
+| Author follow-up | Qiu/Zhao/Tao et al. 2026 *Eur. J. Med. Chem.* DOI https://doi.org/10.1016/j.ejmech.2026.118883 — **Azo23** photoswitch (CB1 ago / CB2 ant cis); **≠** compounds 14/15/20/24 |
+| Réplica independiente de Qiu-14 | **NOT FOUND** |
 
-### 1.4 ¿H1-a es mera reproducción o incertidumbre real?
+### 1.4 ¿H1-a reproducción o incertidumbre? — **DONE**
 
-| Pregunta | Respuesta honesta |
-|----------|-------------------|
-| ¿Existe evidencia publicada CB2-ago / CB1-ant para el **14**? | **Sí** (un laboratorio; cAMP; SI). |
-| ¿Está calibrada en DBs públicas con números? | **No**. |
-| ¿Hay réplica independiente? | **No**. |
-| ¿H1-a “descubrir el signo CB2” aporta conocimiento nuevo al mundo? | **Poco** — es reproducción cualitativa. |
-| ¿H1-a aporta valor a *janusforge* como ancla de panel? | Solo si el programa **insiste** en Qiu-14 como control Janus operativo; si no, **controles comerciales** bastan y ahorran síntesis + ensayo del 14. |
+| Pregunta | Respuesta |
+|----------|-----------|
+| ¿Evidencia publicada CB2-ago / CB1-ant para **14**? | **Sí** (un lab; cAMP/HTRF; SI) |
+| ¿Números en DBs / open text? | **No** — exhaustive confirms |
+| ¿Réplica independiente? | **No** |
+| ¿H1-a “descubrir signo” aporta conocimiento nuevo? | **Poco** — reproducción cualitativa |
+| ¿Ancla panel janusforge? | Solo si PI exige Yin-Yang monomolecular; si no → controles comerciales |
 
-**Veredicto §1:** la evidencia publicada **basta para no pagar un ensayo de descubrimiento**; **no** basta sola como ancla cuantitativa del programa ni como prueba antifibrótica. La incertidumbre que **sí** queda (potencia exacta, transferabilidad de ensayo, réplica) se reduce primero con **PDF/tablas** (barato), no con MD.
-
----
-
-## 2. Paisaje de quimiotipos
-
-| Familia | Ejemplos | Relación con hipótesis Janus | Saturación |
-|---------|----------|------------------------------|------------|
-| **Pirazol-3-carboxamida Yin-Yang** | Qiu 14/15/20/24 | Diseño racional CB1-ant/CB2-ago; switch N1-o-morfolina | Una campaña 2023; poco citado |
-| **Pirazol CB1 clásico** | Rimonabant / AM6538 | CB1-only histórico; template de Qiu | Muy saturado (Sanofi US5624941 etc.) |
-| **Pirazol CB2 ant** | AM10257 | Adamantilo en C3; control Qiu | Estructura cristalina CB2 |
-| **Pirrol Janus** | URB447 | Precedente Janus periférico más cercano conceptualmente a D2 | Pequeña clase |
-| **Indol / oxazinoindol** | GW405833 | Janus-like; morfolinoetilo | Clase conocida |
-| **Cannabilactona** | AM1710 | Janus-like; lejos de pirazol | Clase conocida |
-| **CB2 selectivos (agonistas)** | JWH133, Ge thiazolidinedionas, benzoxazinas, etc. | Responden brazo CB2; **no** Janus | Saturado en agonistas CB2 |
-| **Markush fibrosis CB1/CB2** | WO2022026478 / US20230234928 | Claims mixtos + fibrosis; exemplares no = Qiu-14 | Presión IP (counsel) |
-| **Fitocannabinoide imperfecto** | THCV | Janus natural con flip CB1 | Prior art farmacológico |
-
-**Respuesta a la hipótesis Janus:** el *concepto* CB1↓+CB2↑ está **ocupado**; el hueco sigue siendo **NCE + datos de fibrosis** (pulmón/hígado/riñón), no “inventar Yin-Yang”. Qiu-14 responde la hipótesis **farmacológica de receptor**, **no** la antifibrótica.
+**Veredicto §1:** retrieval exhaustivo **cerró** la duda de “¿acaso los números están abiertos en SI/DBs?” → **No están.** La duda restante es solo **PDF institucional**.
 
 ---
 
-## 3. Precedentes compute → experimento (CB2 / cannabinoides)
+## 2. Paisaje de quimiotipos — **DONE**
 
-| Estudio | Método | Predicción | Ensayo | Tasa / límite |
-|---------|--------|------------|--------|---------------|
-| **Ge et al. 2023** ACS Chem Neurosci https://doi.org/10.1021/acschemneuro.3c00580 | LRIP + docking + MD + MM-PBSA-WSAS | Agonista vs antagonista CB2 | Ca²⁺ CHO-CB1/CB2 | Overall ~**69%**; CB2-selective ago ~**62%**; campaña derivados claim ~**70%** |
-| **Ji/Wang 2020** ACS Chem Neurosci https://doi.org/10.1021/acschemneuro.9b00696 | Docking + MD + MM-PBSA | Afinidad/selectividad CB1/CB2 | Correlación con datos publicados | R² ~0.60 (mejor que score docking solo ~0.37) — **no** predice función Janus |
-| **Qiu 2023** | Docking + MD + MM-GBSA | Hipótesis S173/S285 | cAMP serie pirazol | Correlación MM-GBSA–actividad **aproximada** (SI Fig. S14); función Yin-Yang **ensayada**, no sustituida por cómputo |
-| **Dhopeshwarkar 2017** | Farmacología experimental (poca CADD) | — | Binding + función | Gold-standard Janus relectura — sin claim de “MD = PASS” |
+| Familia | Ejemplos | Relación Janus | Saturación |
+|---------|----------|----------------|------------|
+| Pirazol Yin-Yang Qiu | 14/15/20/24 | Switch o-morpholine | Una campaña 2023; 1 cita; follow-up photoswitch distinto |
+| Pirazol CB1 clásico | Rimonabant / AM6538 | Template Qiu | Muy saturado |
+| Pirazol CB2 ant | AM10257 | Control Qiu | Cristal CB2 |
+| Pirrol Janus | URB447 | Precedente conceptual D2 | Pequeña clase |
+| Indol / oxazinoindol | GW405833 | Janus-like | Conocida |
+| Cannabilactona | AM1710 | Janus-like | Conocida |
+| Markush fibrosis | WO2022026478 | Claims mixtos + fibrosis | Presión IP |
+| Photoswitch opposite CB | Azo23 (2026) | Concepto opposite-control | Nueva línea autores Qiu/Tao |
+| Fitocannabinoide | THCV | Janus imperfecto | Prior art |
 
-**Límite duro:** incluso los mejores protocolos CB2 dejan **~30–40%** de error funcional. **No** hay precedente creíble de “MD/LRIP reemplaza ensayo H1-a” para un ancla de programa.
-
----
-
-## 4. Precedentes MD / HPC en CB2 — ¿más simulación reemplaza H1-a?
-
-| Trabajo | Qué hizo | ¿Predijo agonismo/antagonismo/selectividad validada? |
-|---------|----------|-----------------------------------------------------|
-| Qiu 2023 | MD ~100 ns; ocupación H-bond Ser | Hipótesis mecánica **post-hoc** alineada con cAMP ya medido |
-| Ge 2023 | MD 115 ns + LRIP | Función predicha con error no trivial → **siempre** wet |
-| Hua/Xie et al. | Homología + MD 50 ns + mutación | Residuos hotspot; no Janus |
-| Lipid entry CB2 (2022) JCIM https://doi.org/10.1021/acs.jcim.2c00865 | MD + mutación A282F | Entrada por membrana validada experimentalmente — **no** sustituye EC₅₀ de Qiu-14 |
-| PNAS 2024 entropy CB2 https://doi.org/10.1073/pnas.2401091121 | cryo-EM + metadynamics + mutación | Selectividad por entropía; diseño de ligandos **otros** — no Qiu |
-
-**Repo 0N:** Ge LRIP **NOT READY** (SI ACS bloqueada); scoped MD **BLOCKED** (prep/GPU). Governance: 0N **no** es gate farmacológico.
-
-**Respuesta clave:** **No.** Más simulación **no** reemplaza H1-a ni el conocimiento de potencia. Como mucho, MD ortogonal podría hablar de **estabilidad de pose** (ya parcialmente hecha por Qiu). Gastar HPC antes de wet = **mala asignación** frente a recuperar PDF o un ensayo barato dirigido.
+**Hueco:** NCE + datos fibrosis — no “inventar Yin-Yang”.
 
 ---
 
-## 5. Tabla amplia de ligandos
+## 3. Precedentes compute → experimento — **DONE**
 
-Ver CSV completo: [`qiu_0p_compound_landscape.csv`](qiu_0p_compound_landscape.csv).
+| Estudio | Método | Ensayo | Tasa / límite |
+|---------|--------|--------|---------------|
+| Ge 2023 | LRIP + docking + MD | Ca²⁺ CHO | ~62–70% success function |
+| Ji/Wang 2020 | Docking + MD + MM-PBSA | Correlación literatura | R² ~0.60 |
+| Qiu 2023 | Docking + MD + MM-GBSA | cAMP serie | Función ensayada; MM-GBSA correlación aproximada (Fig. S14) |
+| Dhopeshwarkar 2017 | Experimental | Binding + función | Gold-standard Janus relectura |
 
-Regla aplicada: **NOT FOUND** cuando faltan números; **nunca** inventar Ki/EC₅₀ de Qiu.
-
----
-
-## 6. Patentes (ciencia ≠ patente ≠ inferencia; **no** es FTO)
-
-| Familia / doc | Fecha / solicitante | Relación | Saturación vs hueco |
-|---------------|---------------------|----------|---------------------|
-| **WO2022026478A1** / **US20230234928A1** | ~2020 priority; Makriyannis / Vemuri; MAKScientific | Pyrazoles + claims CB1-ant/CB2-ago + fibrosis hígado/**pulmón**/riñón; ejemplo Compound 1 = CB1 Ki 1 nM, CB2 >1000 nM | Claims de uso/clase **ocupados**; exemplificación ≠ Qiu-14 |
-| **US5624941** (Sanofi) | 1990s | Diarylpirazol CB1 (rimonabant lineage) | Muy saturado |
-| Pyrazole CB modulators (BMS EP1670460, UConn JP2005507875, RTI US9133128, etc.) | 2000s–2010s | Markush pirazol / morpholine / adamantyl aparecen en claim language amplio | Espacio genérico ocupado |
-| Adamantyl CB2 agonists (p.ej. US9090615 class) | — | Adamantilo como motivo CB2 | Motivo común |
-| **Patente composición Qiu-14** | — | **NOT FOUND** esta pasada | Hueco documental (counsel CN/PCT) |
-
-**Separación:** (ciencia) Qiu publicó Yin-Yang pirazol · (patente) Makriyannis claims fibrosis dual · (inferencia) Qiu-14 **no** es NCE janusforge; es vehículo de validación / prior art científico.
+**Límite:** ~30–40% error funcional tipico → **MD no reemplaza H1-a**.
 
 ---
 
-## 7. Fibrosis & CB2 (escalera; **no** asumir Qiu-14)
+## 4. MD / HPC — **DONE**
 
-| Nivel | Evidencia | ¿Incluye Qiu-14? |
-|-------|-----------|------------------|
-| Receptor | CB1↑ profibrótico (IPF Cinar 2017 https://doi.org/10.1172/jci.insight.92281); CB2 protector en revisiones https://doi.org/10.1002/prp2.1219 | No |
-| Ligando (brazo único) | JWH133 bleomicina pulmonar https://doi.org/10.1186/s12890-023-02747-3; CB1 ant periféricos (AM6545 etc.) | No |
-| Ligando Janus monomolecular en fibrosis | URB447 / GW / AM1710 / **Qiu-14**: **NOT FOUND** en auditorías del repo | **No** |
-| Combo CB1-ant + CB2-ago | AM6545 + AM1241 > mono en nefropatía diabética experimental | No (dos fármacos) |
-| Clínico | MRI-1867 = CB1/iNOS (no CB2 ago) | No |
-
-**Lectura:** la escalera biológica **soporta la hipótesis de programa**, **no** valida el compuesto 14.
+Qiu ya hizo MD ~100 ns (H-bond Ser occupancy). Ge LRIP **NOT READY** en repo; 0N **BLOCKED**. Más simulación **no** cierra potencia ni fibrosis → **NO JUSTIFICADO** ahora.
 
 ---
 
-## 8. Qué se puede saltar (0D…H2)
+## 5. Tabla de ligandos — **DONE**
 
-| Ítem | ¿Equivalente publicado? | ¿Reproducción? | ¿Incertidumbre genuina? | ¿Más inversión? |
-|------|-------------------------|----------------|-------------------------|-----------------|
-| **0D** estructuras | Sí (figuras/SI) | Ya hecha REPO PASS | Baja | **NO GASTAR** más |
-| **Qiu structures 15/20/24** | Identidad sí; farmaco números no | Identidad hecha | Potencia relativa abierta | **NO** síntesis/ensayo salvo SAR futuro |
-| **0E PDBQT** | N/A publicado | Hecho REPO | Baja (QC) | **NO** regenerar |
-| **0F docking** | Qiu hizo docking propio | Hecho REPO | Vina≠afinidad | **NO** redocking |
-| **0G pose** | Parcial vs figuras Qiu | Hecho REPO | Pose≠función | **NO** |
-| **0H / 0J** | N/A | Hecho REPO | Observaciones log↔PDBQT | **NO** más QC visual de pago |
-| **0N MD/LRIP** | Qiu MD + Ge precedente | Ge **NOT READY**; scoped **BLOCKED** | No cierra H1-a | **NO JUSTIFICADO** ahora |
-| **H1-a** CB2 funcional Qiu-14 | **Sí cualitativo** (cAMP) | Sería reproducción del signo | Potencia + panel propio | Ver DECISIÓN: **skip discovery**; optional solo si ancla Janus |
-| **H1-b** CB1 | **Sí cualitativo** | Reproducción del signo | Misma lógica | Condicionado a H1-a; no primero |
-| **H2** D2_20/06 | **NOT FOUND** farmaco | No | Alta si se insiste en D2 | **No** sintetizar/ensayar hasta decisión de eje; docking overlap **no** autoriza |
+Ver CSV. Regla: potencias Qiu = **NOT FOUND**; MM-GBSA etiquetado como compute; Azo23 añadido.
 
 ---
 
-## 9. Evidencia post-Qiu 2023
+## 6. Patentes (inventario; **no FTO**) — **DONE**
 
-| Tipo | Hallazgo |
-|------|----------|
-| Citas OpenAlex/EuropePMC | **1** (2025 péptido CB2 óseo) |
-| Papers que ensayan 14/15/20/24 | **NOT FOUND** |
-| Reproducciones / contradicciones del Yin-Yang pirazol Qiu | **NOT FOUND** |
-| Misma familia follow-up SAR de autores | **NOT FOUND** en esta pasada |
+| Familia / doc | Hallazgo verificado esta pasada | Links |
+|---------------|----------------------------------|-------|
+| **WO2022026478A1** | Title: novel compounds for fibrosis/inflammatory conditions; inventors Makriyannis / Vemuri; scaffolds incl. **pyrazoles**; language for **CB1 ant / CB2 ago mixed properties**; fibrosis liver/**lung**/kidney/prostate; morpholine/thiomorpholine/adamantyl in definition language | https://patents.google.com/patent/WO2022026478A1 |
+| **US20230234928A1** | Counterpart; Compound 1: CB1 Ki **1 nM**, CB2 Ki **>1000 nM**; CB1 Kis “0.1 nM to <100 nM” range language; lung fibrosis / NASH figures; COVID ARDS claim language | https://patents.google.com/patent/US20230234928A1 |
+| Sanofi US5624941 | Rimonabant-class diarylpyrazole | https://patents.google.com/patent/US5624941 |
+| Makriyannis earlier pyrazole families | US7393842, US7119108, US8084467, US8410097 (UConn) — CB pyrazole space | FreePatentsOnline / Google Patents |
+| Pyrazole + adamantyl carboxamide + morpholinophenyl CB overlapping Qiu-14 | **NOT FOUND** as dedicated composition matching Qiu-14 | searches this pass |
+| Patent citing Qiu 2023 / composition Qiu-14 | **NOT FOUND** | this pass |
+| Espacenet family walk | **BLOCKED** (HTTP 403 scraper) | — |
 
-**Explícito:** tras Qiu 2023 **no** hay cadena experimental independiente que fortalezca Qiu-14. El campo **no** ha “cerrado” el compuesto por uso comunitario.
+**Separación:** ciencia Qiu ≠ patente Makriyannis ≠ FTO. Counsel para claim chart.
 
 ---
 
-## 10. DECISIÓN 0P
+## 7. Fibrosis & CB2 — **DONE**
+
+Escalera receptor → ligando → combo → clínico **soporta hipótesis de programa**; **ningún** nivel valida Qiu-14 en fibrosis (**NOT FOUND**).
+
+---
+
+## 8. Skip-map (0D…H2) — **DONE**
+
+| Ítem | ¿Más inversión? |
+|------|-----------------|
+| 0D–0J compute chain | **NO GASTAR** |
+| 0N MD/LRIP | **NO JUSTIFICADO** |
+| H1-a discovery signo Qiu-14 | **SKIP** |
+| H1-a ancla Yin-Yang operativa | **CONDICIONAL** (PI) |
+| H2 D2_20/06 | **NO** ahora |
+| TBD-18 institutional PDF | **BARATO Y ÚTIL** (única vía restante para números) |
+| Controles comerciales CB2/CB1 | **BARATO Y ÚTIL** si se abre panel |
+
+---
+
+## 9. Evidencia post-Qiu 2023 — **DONE**
+
+| Fuente | Citing / follow-up | ¿Usa 14/15/20/24? |
+|--------|--------------------|-------------------|
+| OpenAlex `cites:W4317627134` | Chen et al. 2025 DOI 10.1016/j.bioorg.2025.108770 | **No** (péptido) |
+| EuropePMC citations PMID 36731294 | mismo Chen 2025 | **No** |
+| Semantic Scholar | citations empty / count 0 (lag) | — |
+| Crossref filter `references:` | API 400 this pass | — |
+| Author works Tao/Zhao 2023–2026 | **Azo23** DOI 10.1016/j.ejmech.2026.118883 | **No** (azo photoswitch) |
+
+**Explícito:** campo **no** adoptó Qiu-14 experimentalmente; follow-up de autores pivota a photopharmacology, no a SAR del 14.
+
+---
+
+## 10. DECISIÓN 0P (re-answered con evidencia nueva)
 
 ### Tabla de clasificación
 
-| Paso / gasto | Código | Justificación breve |
-|--------------|--------|---------------------|
-| Identidad 0D Qiu 14/15/20/24 | 🟢 YA RESUELTO / NO GASTAR | PASS 4/4 |
-| PDBQT / docking / pose QC 0E–0J | 🟢 YA RESUELTO / NO GASTAR | Cadena hecha; Vina≠farmacología |
-| Recuperar PDF Qiu + tablas Ki/EC₅₀ (TBD-18) | 🟢 BARATO Y ÚTIL | Única pieza documental que falta; guia dosis si hay wet |
-| Controles comerciales CB2/CB1 en cualquier panel futuro | 🟢 BARATO Y ÚTIL | Sustituyen “descubrir” Qiu-14 como ago/ant |
-| H1-a como descubrimiento CB2-ago de Qiu-14 | 🔴 NO JUSTIFICADO | Ya publicado (cAMP) |
-| H1-a como ancla Janus operativa en CRO | 🟡 INCERTIDUMBRE REAL | Solo si el programa **exige** Yin-Yang monomolecular como control; si no, skip |
-| H1-b | 🟡 / 🔴 | No antes de decidir H1-a; descubrimiento CB1-ant = reproducción |
-| H2 D2_20/06 (síntesis + ensayo) | 🔴 NO JUSTIFICADO **ahora** | Sin farmaco publicada; depende de estrategia post-ancla |
-| 0N / MD / LRIP / FEP / más docking | 🔴 NO JUSTIFICADO | No reemplaza wet; Ge blocked; Qiu ya MD |
-| Fibrosis / in vivo Qiu-14 | 🟠 INFORMACIÓN INSUFICIENTE | No gastar hasta ancla receptor clara **y** decisión de indicación |
-| Patente FTO formal | 🟠 INFORMACIÓN INSUFICIENTE | Landscape 0IP; **counsel**, no más cómputo |
+| Paso / gasto | Código | Justificación |
+|--------------|--------|---------------|
+| 0D–0J | 🟢 NO GASTAR | Hecho |
+| Recuperar PDF institucional Qiu (TBD-18) | 🟢 BARATO Y ÚTIL | **Única** vía restante para Ki/EC₅₀ |
+| Controles comerciales | 🟢 BARATO Y ÚTIL | Sustituyen discovery del 14 |
+| H1-a discovery CB2-ago Qiu-14 | 🔴 NO JUSTIFICADO | Signo PUBLICADO; números no cambian eso |
+| H1-a ancla Yin-Yang CRO | 🟡 CONDICIONAL | Sin números, ancla cuantitativa débil; solo si PI insiste |
+| H1-b / H2 / 0N | 🔴 / 🟡 | Sin cambio: no primero |
+| Fibrosis Qiu-14 / FTO formal | 🟠 INSUFICIENTE | Counsel / decisión de indicación |
 
-### Cinco preguntas
+### Cinco preguntas (NEW evidence)
 
 1. **¿Qué sabemos de verdad de Qiu-14?**  
-   Chemotipo 2D verificado; Yin-Yang **funcional cualitativo** (cAMP) en un paper+SI; hipótesis S173/S285 por docking/MD; **sin** números abiertos, **sin** réplica, **sin** fibrosis, **sin** CID/ChEMBL.
+   Identidad 2D YES; Yin-Yang **cualitativo** cAMP/HTRF YES (SI Fig. S5); MM-GBSA compute YES; **Ki/IC₅₀/EC₅₀ STILL NOT FOUND** tras exhaustive public retrieval; sin réplica; sin fibrosis; sin CID/ChEMBL.
 
 2. **¿Qué hay de CB2/CB1 para este chemotipo?**  
-   El **orto-morfolina + adamantil-carboxamida** es el switch Yin-Yang **según Qiu**; meta/para y otros N1 son SAR de la misma campaña con números **no recuperados**. No hay landscape experimental externo del mismo exacto chemotype.
+   Solo la campaña Qiu 2023 (+ curvas SI de vecinos). DBs públicas vacías. Follow-up 2026 de autores es **otro** chemotipo (Azo23).
 
-3. **¿Qué demostraron otros experimentalmente?**  
-   Janus: URB447, GW405833, AM1710. CB2 fibrosis: JWH133 etc. Combo CB1-ant+CB2-ago: AM6545+AM1241. Compute→wet CB2: Ge ~62–70%. **Nadie** demostró antifibrosis con Qiu-14.
+3. **¿Qué demostraron otros?**  
+   Janus refs (URB447/GW/AM1710); fibrosis CB2 (JWH133 etc.); combo AM6545+AM1241; Ge compute→wet ~62–70%. **Nadie** wet-reprodujo Qiu-14 ni lo usó en fibrosis. Una sola cita (péptido).
 
-4. **¿Qué trabajo nuestro se elimina por ya publicado?**  
-   Redescubrir el **signo** CB2-ago/CB1-ant de Qiu-14; rehacer docking/MD de mecanismo S173/S285; más QC de poses; Ge-style LRIP como sustituto de ensayo.
+4. **¿Qué trabajo se elimina por ya publicado?**  
+   Redescubrir signo CB2-ago/CB1-ant; rehacer docking/MD S173/S285; más QC poses; 0N como sustituto de ensayo.
 
-5. **¿Experimento/análisis de menor coste que más reduce incertidumbre?**  
-   **(1)** Recuperar PDF/tablas Qiu (**barato**). **(2)** Si el norte es validar el *panel* (no el 14): un ensayo CB2 con **agonista comercial** + antagonista CB1 comercial. **(3)** H1-a Qiu-14 solo si se necesita explícitamente el ancla Yin-Yang monomolecular para H2/H3. **No** más docking. **No** 0N primero.
+5. **¿Menor coste que más reduce incertidumbre?**  
+   **(1)** Acceso institucional al PDF Qiu + extracto literal de tablas. **(2)** Si el norte es el *panel*, no el 14: ensayo con agonista CB2 + antagonista CB1 **comerciales**. **(3)** H1-a Qiu-14 solo si ancla Yin-Yang monomolecular es requisito de programa. **No** docking. **No** 0N primero.
 
-### Recomendación explícita H1-a
+### Recomendación H1-a (¿cambia con números?)
 
-| Rol de H1-a | Recomendación 0P |
-|-------------|------------------|
-| Descubrimiento / “¿Qiu-14 activa CB2?” | **SKIP** — ya PUBLICADO |
-| Ancla Yin-Yang operativa janusforge | **CONDICIONAL** — solo si PI mantiene Qiu-14 como control del programa; si no, **SKIP** y usar refs comerciales |
-| Antes de cualquier H1-a de pago | **Hacer TBD-18 (PDF)** y cotizar síntesis solo si se confirma la necesidad del ancla |
+| Rol | Recomendación | ¿Cambió tras exhaustivo? |
+|-----|---------------|--------------------------|
+| Discovery “¿activa CB2?” | **SKIP** | **No** — números siguen ausentes; signo cualitativo intacto |
+| Ancla operativa Janus | **CONDICIONAL / prefer SKIP** si no hay exigencia PI | **Ligeramente más fuerte el skip ancla** — sin potencias no hay guía de dosis/concentración CRO |
+| Next | Institutional PDF (TBD-18) o panel con refs comerciales | PDF sigue siendo el único documental pendiente |
 
-**Preferencia 0P (ahorro):** **SKIP H1-a discovery**; **no** ejecutar 0N; **no** H2 aún; **sí** recuperar literatura numérica; reservar wet barato a controles comerciales si se abre cualquier panel.
+**Preferencia 0P:** SKIP H1-a discovery; **no** 0N; **no** H2 aún; sí PDF institucional si se quiere calibrar; wet barato = controles comerciales.
 
 ---
 
-## Fuentes ancla (no exhaustivo)
+## Fuentes ancla
 
-1. Qiu et al. 2023 — https://doi.org/10.1016/j.bioorg.2023.106377 · PMID 36731294 · SI mmc1 (repo `data/papers/`)  
-2. LoVerme URB447 — https://doi.org/10.1016/j.bmcl.2008.12.059  
-3. Dhopeshwarkar Janus — https://doi.org/10.1124/jpet.116.236539  
-4. Ge LRIP — https://doi.org/10.1021/acschemneuro.3c00580  
-5. Cinar IPF CB1 — https://doi.org/10.1172/jci.insight.92281  
-6. JWH133 fibrosis pulmonar — https://doi.org/10.1186/s12890-023-02747-3  
-7. WO2022026478A1 / US20230234928A1  
-8. Citing Qiu — https://doi.org/10.1016/j.bioorg.2025.108770  
-9. Repo: `qiu_0d`…`qiu_0n`, `qiu_0ip`, `mapa_ligandos_janus_cb1_cb2.md`, `literatura_fibrosis_cb1_cb2.md`, `literatura_prioridad_y_novelty.md`
+1. Qiu 2023 — DOI 10.1016/j.bioorg.2023.106377 · SI mmc1 · ACCESS_LOG  
+2. Chen 2025 citing — DOI 10.1016/j.bioorg.2025.108770  
+3. Qiu/Tao 2026 Azo23 — DOI 10.1016/j.ejmech.2026.118883  
+4. WO2022026478A1 / US20230234928A1 (Google Patents extracts)  
+5. Ge 2023 — DOI 10.1021/acschemneuro.3c00580  
+6. URB447 / Dhopeshwarkar / Cinar / JWH133 fibrosis (ver first-pass sources)  
+7. Repo 0D–0N, 0IP, fibrosis docs  
 
 ---
 
 ## Cierre
 
 ```text
-0P = AUDIT COMPLETE — SAVE-MONEY ORIENTED
-NO NEW COMPUTE
-H1-a DISCOVERY = SKIP
-0N / MORE DOCKING = DO NOT FUND NOW
-NEXT CHEAPEST = RECOVER QIU PDF TABLES (TBD-18)
+0P EXHAUSTIVE PUBLIC/LOCAL RETRIEVAL = COMPLETE
+MAIN PDF TABLES = STILL BLOCKED
+NUMERIC Ki/IC50/EC50 QIU-14/15/20/24 = NOT FOUND (CONFIRMED)
+H1-a DISCOVERY = SKIP (UNCHANGED)
+H1-a ANCHOR = CONDITIONAL / PREFER SKIP WITHOUT POTENCIES
+0N / MORE DOCKING = DO NOT FUND
+NEXT CHEAPEST DOCUMENTARY = INSTITUTIONAL PDF (TBD-18)
 ```

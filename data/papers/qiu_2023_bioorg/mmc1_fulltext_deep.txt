@@ -1,0 +1,392 @@
+
+Development of Pyrazole Core-Based Yin-Yang Ligand for Cannabinoid Receptors
+Table of Contents
+Supplemental Tables and Figures
+Figure S1
+The 1H NMR Spectra of compound 10 and iso-10.
+Figure S2
+The crystal structures of selected ligands.
+Figure S3
+The crystal structure and the conformational energy analysis of compound 10.
+Figure S4
+The conformational energy of compound 14.
+Figure S5
+Pharmacological evaluation of compound 14.
+Figure S6
+The docking studies of the ortho/meta/para-substituents of morpholine within inactivate CB1.
+Figure S7
+The docking studies of selected compounds within CB1 (PDB: 5TGZ).
+Figure S8
+The docking pose of AM1710, URB447, GW405833 to CB1 and CB2.
+Figure S9
+The docking studies of selected compounds within inactivated CB2 (PDB: 5ZTY).
+Figure S10
+The docking studies of selected compounds within activated CB2 (PDB: 6PT0).
+Figure S11
+Pharmacological evaluation of all compounds for CB1 antagonist. 
+Figure S12
+Pharmacological evaluation of all compounds for CB2 antagonist. 
+Figure S13
+Pharmacological evaluation of all compounds for CB2 agonist. 
+Table S1
+MM-GBSA computation for tested compounds to CB1.
+Table S2
+MM-GBSA computation for tested compounds to CB2.
+Figure S14
+An approximate linear correlation between activities and MM-GBSA relative binding affinity for CB1 and CB2.
+Scheme S1
+Synthesis of pyrazole core-based ligands.
+NMR Spectra of Final Ligands
+HPLC Spectra of Final Ligands
+Supplemental Tables and Figures
+Figure S1. The comparison of 1H NMR Spectra of compound 10 and iso-10.
+Figure S2. The crystal structures of selected compounds. Structures are depicted as ball-stick model for compound 5 (A), 6 (B), 8 (C), 9 (D), 12(E) and 13 (F).
+Figure S3. The crystal structure of compound 10. (A) The structure was depicted as ball-stick model. (B) The conformational analysis of compound 10. The total energy as a function of the torsion angle θ (N2-N13-C19-C18) was calculated at the HF/6-31G(d) level using the program GAUSSIAN 09. 
+Figure S4. The conformational analysis of compound 14. The total energy as a function of the torsion angle θ (N9-N8-C26-C23) was calculated at the HF/6-31G(d) level using the program GAUSSIAN 09. 
+Figure S5. Pharmacological evaluation of the compound 14 as agonist for CB2 (A) and as antagonist for CB1 (B) as determined by the cAMP assay. CP55940 and Rimonabant were served as controls for CB2 agonist and CB1 antagonist, respectively. Data are presented as mean ± SEM of three independent experiments performed in triplicate.
+Figure S6. The docking studies of the ortho/meta/para-substituents of morpholine (compound 14, 15, 16) within inactiv CB1 (PDB: 5TGZ). the ortho-substituents (14), meta-substituents (15) and para-substituents (16) were colored in white, cyan and pink, respectively. The meta/para-substituents may be at the inappropriate positions that resulted in collisions with residues at pockets, as showed in red dashed.
+Figure S7. The docking studies of selected compounds within CB1 (PDB: 5TGZ). Compound 6 (A), 10 (B), iso-10 (C), 20 (D), 21 (E) and 22 (F) were colored in yellow and AM6538 in pink.
+Figure S8. The docking pose of AM1710, URB447, GW405833 to CB1 and CB2. The docking pose of AM1710 (A), URB447 (C), GW405833 (E) in CB1 (PDB: 5TGZ) and the docking pose of AM1710 (B), URB447 (D), GW(F) in CB2 (PDB: 6PT0). The residues located in the binding pose were in white stick. AM6538 and WIN 55,212-2 as the reference were cyan stick. AM1710, URB447 and GW405833 were displayed in yellow stick. 
+Figure S9. The docking studies of selected compounds within inactivated CB2 (PDB: 5ZTY). Compound 5 (A), 6 (B), 7 (C), 8 (D), 9 (E) and 10 (F) were colored in orange and AM10257 in cyan. 
+Figure S10. The docking studies of selected compounds within activated CB2 (PDB: 6PT0). Compound 11 (A) and 23 (B) were colored in blue and pink, respectively. WIN55212-2 were colored in green.
+Figure S11. Pharmacological evaluation of all compound for CB1 antagonist as determined by the cAMP assay. Rimonabant was served as controls for CB1 antagonist.
+Figure S12. Pharmacological evaluation of all compound for CB2 antagonist as determined by the cAMP assay. AM10257 was served as controls for CB2 antagonist.
+Figure S13. Pharmacological evaluation of all compound for CB2 agonist as determined by the cAMP assay. CP55940 was served as controls for CB2 agonist.
+Table S1. MM-GBSA computation for tested compounds to CB1 (PDB: 5TGZ)
+compounds
+MM-GBSA dG Bind
+MM-GBSA dG Bind Coulomb
+MM-GBSA dG Bind Covalent
+MM-GBSA dG Bind Hbond
+MM-GBSA dG Bind Lipo
+MM-GBSA dG Bind Packing
+MM-GBSA dG Bind SelfCont
+MM-GBSA dG Bind Solv_GB
+MM-GBSA dG Bind vdW
+5
+-76.727 
+-5.637 
+12.712 
+-0.020 
+-41.225 
+-1.288 
+0.000 
+23.937 
+-65.206 
+6
+-76.720
+-0.057
+9.880
+0.213
+-41.788
+-2.337
+0.000
+20.855
+-63.485
+7
+-72.537 
+5.446 
+-10.562 
+1.743 
+-38.605 
+-5.225 
+0.269 
+-3.914 
+-21.689 
+9
+-63.300 
+52.250 
+-12.683 
+1.956 
+-40.754 
+-4.034 
+0.802 
+-19.557 
+-41.279 
+10
+-90.493 
+-11.801 
+9.878 
+-0.168 
+-40.419 
+-2.261 
+0.000 
+20.998 
+-66.720 
+15
+-63.823 
+-3.590 
+15.181 
+0.691 
+-48.311 
+-3.052 
+-0.050 
+30.159 
+-54.850 
+17
+-48.881 
+22.233 
+22.977 
+1.443 
+-48.350 
+-3.737 
+-0.085 
+7.439 
+-50.802 
+20
+-77.848 
+-64.885 
+24.872 
+-3.345 
+-43.436 
+-6.561 
+0.647 
+60.069 
+-45.208 
+22
+-94.183 
+54.907 
+5.280 
+-0.860 
+-49.206 
+-7.517 
+-0.884 
+-44.967 
+-50.935 
+23
+-88.426 
+1.467 
+21.539 
+-0.652 
+-48.934 
+-2.324 
+0.044 
+5.819 
+-65.385 
+24
+-57.177 
+-8.659 
+26.835 
+0.128 
+-45.773 
+-2.748 
+0.003 
+29.154 
+-56.117 
+27
+-77.154 
+-13.106 
+9.069 
+0.481 
+-46.214 
+-4.510 
+0.000 
+29.573 
+-52.446 
+28
+-65.745 
+-5.019 
+20.378 
+-0.093 
+-45.851 
+-4.468 
+0.002 
+20.560 
+-51.255 
+29
+-78.283 
+-8.783 
+11.187 
+-0.083 
+-41.747 
+-3.401 
+0.000 
+23.344 
+-58.801 
+compounds
+MM-GBSA dG Bind
+MM-GBSA dG Bind Coulomb
+MM-GBSA dG Bind Covalent
+MM-GBSA dG Bind Hbond
+MM-GBSA dG Bind Lipo
+MM-GBSA dG Bind Packing
+MM-GBSA dG Bind SelfCont
+MM-GBSA dG Bind Solv_GB
+MM-GBSA dG Bind vdW
+CB2
+(5ZTY)
+5
+-80.211 
+-4.938 
+9.196 
+0.028 
+-46.696 
+-6.370 
+0.000 
+24.206 
+-55.637 
+6
+-79.446 
+-1.986 
+7.589 
+0.109 
+-48.127 
+-6.797 
+0.000 
+25.046 
+-55.282 
+7
+-86.768 
+0.769 
+8.242 
+0.137 
+-50.182 
+-8.682 
+0.000 
+23.451 
+-60.503 
+8
+-91.591 
+-4.006 
+4.306 
+0.097 
+-49.505 
+-6.439 
+0.000 
+26.803 
+-62.847 
+9
+-78.008 
+-3.518 
+11.666 
+0.448 
+-50.468 
+-6.479 
+0.000 
+18.677 
+-48.334 
+12
+-107.271 
+-5.912 
+11.379 
+0.093 
+-63.027 
+-8.816 
+0.000 
+27.236 
+-68.223 
+15
+-104.222 
+-7.090 
+9.733 
+0.056 
+-56.976 
+-6.190 
+0.000 
+28.415 
+-72.170 
+CB2
+(6PT0)
+11
+-85.050
+-1.361
+9.662
+0.125
+-58.608
+-7.624
+0.000
+23.677
+-50.921
+14
+-95.436
+-14.340
+10.805
+-0.005
+-51.793
+-7.475
+0.000
+26.594
+-59.223
+23
+-91.393
+-5.679
+11.765
+0.551
+-58.722
+-8.333
+-5.31E-05
+20.346
+-51.320
+ Table S2. MM-GBSA computation for tested compounds to CB2 
+Figure S14. An approximate linear correlation between activities and MM-GBSA relative binding affinity for CB1 (A) and CB2 (B).
+Scheme S1. Synthesis of pyrazole core-based ligands.
+Reagents and conditions: (a) LiHMDS, diethyl oxalate, diethyl ether, -78 ℃→ r.t., overnight; (b) (1) NaNO2, HCl; (2) SnCl2, HCl/H2O, 0 ℃→rt, overnight; (c) 1, EtOH, r.t., overnight; (d) KOH, MeOH/H2O, r.t., 2h; (e) HATU, DIPEA, DMF, 50 °C, 4 h.
+NMR Spectra of Final Ligands 
+17208577025500
+13903475365300
+18986570358000
+8631173816300
+95291299720
+10350576771500
+9525073660000
+7351368067100
+10799969312700
+9373670787900
+10116068008500
+10033067935300
+136330745050
+11444772263000
+9969570231000
+15240087630000
+11537569215000
+8054766030300
+6644468072000
+10081869410400
+12192066689600
+9383470265200
+13589066074200
+13564665927700
+14346172292300
+10179568897500
+3-18130810535940
+8362575482000
+HPLC Spectra of Final Ligands
+5:
+6:
+7:
+8:
+9:
+10: 
+10-iso:
+11:
+ 
+12:
+ 
+13:
+ 
+14:
+15:
+ 
+16:
+17:
+18:
+ 
+19:
+ 
+20:
+21:
+22:
+23:
+ 
+24:
+ 
+25:
+ 
+26:
+ 
+27:
+ 
+28：
+29：
+30：
+            
