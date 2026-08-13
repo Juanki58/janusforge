@@ -1,0 +1,114 @@
+39: Kiran Vemuri
+65: Assignors: MAKRIYANNIS, ALEXANDROS, VEMURI, KIRAN
+230: is concerned with such compounds having a range of useful applications including use of certain neutral antagonists, inverse-agonists, compounds with mixed properties including CB1 antagonist/CB2 agonist properties, and allosteric properties to treat medical conditions with no or substantially reduced incidence of side-effects.
+232: are concerned with new and improved compounds acting as neutral antagonists, inverse-agonists, compounds with mixed properties including CB1 antagonist/CB2 agonist properties, and allosteric properties selective for the CB1 and/or the CB2 receptors and use of these new and improved analogs as peripherally acting or centrally acting compounds, preferentially.
+234: are concerned with imidazoles, triazoles, thiazoles, oxazoles, pyrazoles and dihydropyrazoles containing the 4-( ⁇ 2 -azaneyl)thiomorpholine 1,1-dioxide group or the 4 ⁇ 2 -thiomorpholine 1,1-dioxide group.
+246: have been characterized: CB1, a central receptor found in the mammalian brain and a number of other sites in peripheral tissues; and CB2, a peripheral receptor found principally in cells related to the immune system.
+247: CB1 receptor
+428: includes monocyclic, bicyclic, tricyclic, tetracyclic and polycyclic rings, for example norbornyl, adamantyl and related terpenes.
+436: refers to the general formula —N-(alkyl) 2 . Unless otherwise specifically limited di-alkylamino includes cyclic amine compounds such as piperidine and morpholine.
+474: is a saturated or unsaturated ring structure having about 3 to about 8 ring members independently selected from carbon atoms and one or more heteroatoms, including oxygen, nitrogen and/or sulfur; for example, piperidine, morpholine, piperazine, pyrrolidine, thiomorpholine, 1,1-dioxothiomorpholine and their derivatives.
+506: include adamantine, bicyclooctane, norbornane and bicyclononanes.
+530: show selectivity for the CB1 cannabinoid receptor.
+531: inventive CB1 selective analogs
+532: are able to interact with the CB1 cannabinoid receptors present in the CNS as well as the periphery without affecting the CB2 receptors to the same degree. Therefore, still another aspect of the invention is use of at least one of the inventive compounds to preferentially interact with a CB1 cannabinoid receptors present either in the CNS or the periphery.
+534: is use of at least one of the inventive compounds to interact with both CB1 and CB2 cannabinoid receptors present either in the CNS or the periphery.
+540: is a graph showing competition binding data with hCB1-HEK292 cells (Compound 1);
+542: is a graph showing in vivo CB1 antagonism (hypothermia) data in male CD1 mice (Compound 1);
+544: show the effects of Compound 1 and rimonabant treatment on lung fibrosis development in a Non-alcoholic steatohepatitis (NASH) mouse model (anti-NASH/fibrotic activity);
+548: show the effects of Compound 1 in reversing fibrosis in a diabetic high-fat diet mouse Non-alcoholic steatohepatitis (NASH) model
+550: shows the effects of Compound 1 and rimonabant treatment on survival in a Non-alcoholic steatohepatitis (NASH) mouse model.
+556: have pharmacological properties when administered in therapeutically effective amounts individually or in combination for providing a physiological response useful to treat fibrosis of the liver, lung or kidney, prostatic fibrosis and related inflammatory conditions including lower urinary tract symptoms, and benign prostatic hyperplasia.
+566: provides for a method for reducing unwanted side-effects (one or more of nausea, dizziness, diarrhea, and anxiety) typically associated with administration of SR141716A (AccompliaTM/Rimonabant) or other CB1 antagonists to certain individuals.
+570: can involve reducing the amount of SR141716A (AccompliaTM/Rimonabant) or other CB1 antagonists administered to the individual.
+576: could dually act as a CB1 antagonist as well as 11 ⁇ -hydroxy steroid dehydrogenase-1 inhibitor.
+578: could act dually as a CB1 antagonist as well as a nitric oxide donor or a nitric oxide synthase inhibitor.
+621: a compound acting on the CB1 receptors located in the periphery
+623: a compound acting on the CB1 receptors located centrally
+627: the CB1 cannabinoid receptor binding affinities (Ki) for some of the compounds disclosed in the invention
+628: range between 0.1 nM and less than 100 nM.
+629: CB1 cannabinoid receptor binding affinity (Ki) for compound 1
+630: is 1 nM and the CB2 cannabinoid receptor binding affinity (Ki) is greater than 1000 nM.
+631: the CB1 selectivity for some of the compounds
+666: is one of two or more species of the same element. Each isotope of an element will have the same number of protons in its nucleus, the same atomic number and the same position in the Periodic Table. However, each isotope of that element will have a different number of neutrons in its nucleus and therefore a different mass than other isotopes of that species.
+670: has an atomic mass corresponding most closely with the atomic mass shown for that element in the Periodic Table.
+672: has an atomic mass that is further removed from the atomic mass shown for that element in the Periodic Table than the natural isotope.
+720: may be chronic kidney disease including diabetic nephropathy
+722: can be relate to fibrosis of the lung, liver or kidney.
+724: can be a condition related to the liver, lung, kidney or prostrate.
+734: was performed on a Biotage Isolera Spektra system with UV collections at 254 and 280 nm using Luknova flash columns preloaded with normal phase silica gel (50 ⁇ m). All moisture sensitive reactions were performed under an atmosphere of high-purity argon while using oven-dried glassware.
+736: were characterized using a combination of 1H NMR and LC/MS techniques.
+770: (CB1 source) are obtained from Pel-Freeze Biologicals (Rogers, Ak.) and stored at ⁇ 80° C. until use. Membranes are prepared according to the method described in Brain Res 1981, 226, (1-2), 107-18 and adapted as previously reported in J Med Chem 1994, 37, (23), 3867-70 and Life Sci 1995, 56, (23-24), 1957-62; each herein incorporated by reference in its entirety.
+785: Pharmacological intervention using Compound 1
+787: a compound of claim 1
+860: (VEGFR2) in the 4H system modeling Th2 vascular inflammation is a cell surface tyrosine kinase receptor for VEGFA and is involved in angiogenesis, endothelial cell proliferation and vascular permeability.
+908: is an immunomodulatory lipid mediator involved in muscle contractility, inflammatory pain and kidney function.
+1448: are used to treat a disease or condition by immunomodulation wherein the said compound acts on one or more of the biological targets selected from CB2, sIL-10, CD40, M-CSF, CD40, sIL-17A, sIgG or sIL-17F.
+1450: are used to treat a disease or condition by immunomodulation wherein the said compound decreases pro-inflammatory cytokines and acts on one or more of the biological targets selected from CB2, TNF ⁇ , VCAM-1, MCP-1, IL-6, IL-31, IL-17, IL-12, IL-1 ⁇ , IL-1 ⁇ , I-TAC or MIG.
+1500: Chemical Kinetics & Catalysis
+1555: thiomorpholine
+1559: thiomorpholine
+6172: (X)Y, NM
+6188: is H, alkyl, NM
+7244: . Unless otherwise specifically limited di-alkylamino includes cyclic amine compounds such as piperidine and morpholine.
+7315: Another aspect of the invention is use of at least one of the inventive compounds to interact with both CB1 and CB2 cannabinoid receptors present either in the CNS or the periphery.
+7322: is a graph showing competition binding data with hCB1-HEK292 cells (Compound 1);
+7325: is a graph showing in vivo CB1 antagonism (hypothermia) data in male CD1 mice (Compound 1);
+7352: In one embodiment, less than five compounds of the disclosure, preferably one or two of same is used in combination with less than five of the known CB1 antagonists, preferably one or two of same.
+7368: A compound acting on the CB1 receptors located in the periphery could be behave either as a neutral antagonist, an inverse agonist or a partial antagonist.
+7369: A compound acting on the CB1 receptors located centrally, could behave as a neutral antagonist, an inverse agonist or a partial antagonist.
+7371: The CB1 cannabinoid receptor binding affinities (Ki) for some of the compounds disclosed in the invention range between 0.1 nM and less than 100 nM. For example, CB1 cannabinoid receptor binding affinity (Ki) for
+7373: 1 is 1 nM and the CB2 cannabinoid receptor binding affinity (Ki) is greater than 1000 nM. The CB1 selectivity for some of the compounds range from 5 to greater than 5000.
+7469: In a particular embodiment, the renal disease may be chronic kidney disease including diabetic nephropathy In a particular embodiment, the “inflammatory condition” can be relate to fibrosis of the lung, liver or kidney.
+7470: In a particular embodiment, fibrosis can be a condition related to the liver, lung, kidney or prostrate.
+7477: All reagents and solvents used for chemical synthesis were purchased from Sigma-Aldrich, TCI Chemicals, Fisher Scientific, Acros or Alfa Aesar. The palladium catalysts were purchased from Sigma-Aldrich or TCI Chemicals. 1H NMR (500 MHz) was recorded on a Varian Inova spectrometer. Chemical shifts (δ) are reported in parts per million and are referenced to CDCl
+7506: 1-(4-(4-cyanobut-1-yn-1-yl)phenyl)-2-(2,4-dichlorophenyl)-N-(1,1-dioxidothiomorpholino)-5-methyl-1H-imidazole-4-carboxamide (compound 1)
+7534: 1-(4-(4-cyanobut-1-yn-1-yl)phenyl)-2-(2,4-dichlorophenyl)-N-(1,1-dioxidothiomorpholino)-5-methyl-1H-imidazole-4-carboxamide (compound 1)
+7537: H NMR (500 MHz, CDCl
+7546: Benzyl thiomorpholine-4-carboxylate-d8
+7547: To a solution of thiomorpholine-2,2,3,3,5,5,6,6-d8 (2 g) prepared as in WO2008070619, taken in 1 N NaOH (11.6 mL) was added benzyl chloroformate (1.66 mL) under ice water cooling and the mixture was stirred at ambient temperature for 2 hours. The solution was neutralized with 1 N HCl and extracted with EtOAc twice. The combined organic layer was washed with water and brine, dried over MgSO
+7549: and evaporated in vacuo. The residue was purified by silica gel column chromatography to give benzyl thiomorpholine-4-carboxylate-d8 as a colorless Solid (4.8 g).
+7551: Benzyl thiomorpholine-4-carboxylate-2,2,3,3,5,5,6,6-
+7558: Thiomorpholine
+7560: To a solution of benzyl thiomorpholine-4-carboxylate-2,2,3,3,5,5,6,6-
+7566: thiomorpholine
+7601: Frozen rat brains (CB1 source) are obtained from Pel-Freeze Biologicals (Rogers, Ak.) and stored at −80° C. until use. Membranes are prepared according to the method described in
+7610: The compound was tested for its ability to bind to CB1 and CB2 receptors using rat brain or HEK293 cell membranes expressing hCB2 and mCB2 membrane preparations, respectively, as described in
+7620: of the ligand (Prizm by GraphPad Software, Inc.) and the Ki values are calculated from the IC
+7626: 1 toward CB1 is shown in
+7629: (Ki˜1 nM).
+7635: 15 min later (time point zero), immediately after which the CB1 R antagonist was administered. Δ
+7644: 1 to antagonize the hypothermic effects induced by 30 mg/kg of the CB1 agonist Δ
+7730: thiomorpholine
+7735: thiomorpholine
+7739: thiomorpholine
+7742: thiomorpholine
+7745: thiomorpholine
+7748: thiomorpholine
+7771: CB2 Cannabinoid 2 receptor
+7793: Vascular endothelial growth factor receptor 2 (VEGFR2) in the 4H system modeling Th2 vascular inflammation is a cell surface tyrosine kinase receptor for VEGFA and is involved in angiogenesis, endothelial cell proliferation and vascular permeability.
+7938: In some embodiments, the compounds disclosed in the invention are used to treat a disease or condition by immunomodulation wherein the said compound acts on one or more of the biological targets selected from CB2, sIL-10, CD40, M-CSF, CD40, sIL-17A, sIgG or sIL-17F.
+7939: In some embodiments, the compounds disclosed in the invention are used to treat a disease or condition by immunomodulation wherein the said compound decreases pro-inflammatory cytokines and acts on one or more of the biological targets selected from CB2, TNFα, VCAM-1, MCP-1, IL-6, IL-31, IL-17, IL-12, IL-1α, IL-1β, I-TAC or MIG.
+12553: (X)Y, NM
+12569: is selected from the group consisting of H, alkyl, NM
+13613: claim 1
+13617: claim 35
+13621: claim 35
+13625: claim 10
+13629: claim 11
+13633: claim 35
+13634: , wherein the compound is used to treat an inflammatory condition related to kidney disease selected from diabetic nephropathy, renal fibrosis and cancer.
+13637: claim 35
+13641: claim 14
+13649: claim 1
+13660: claim 1
+13669: claim 1
+13678: claim 1
+13693: claim 1
+13708: claim 1
+13764: claim 1
+13765: to treat, prevent or reverse an inflammatory condition related to liver, lung, kidney or prostrate disease in an individual or animal in need of treatment.
+13768: claim 1
+13769: to treat, prevent or reverse an fibrosis of the liver, lung, kidney or prostrate disease in an individual or animal in need of treatment.
+13915: CB1 receptor antagonists and uses thereof
+14139: ASSIGNMENT OF ASSIGNORS INTEREST;ASSIGNORS:MAKRIYANNIS, ALEXANDROS;VEMURI, KIRAN;SIGNING DATES FROM 20210918 TO 20211003;REEL/FRAME:062522/0087
