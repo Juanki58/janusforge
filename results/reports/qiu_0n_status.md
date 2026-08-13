@@ -2,6 +2,7 @@
 
 > **Fidelity audit:** 2026-08-12  
 > **Scoped MD protocol (structural):** 2026-08-13 — [`qiu_0n_md_protocol_ready.md`](qiu_0n_md_protocol_ready.md)  
+> **Prep blockers closure (stack / 6PT0 / TM / cost):** 2026-08-13 — [`qiu_0n_prep_blockers_closure.md`](qiu_0n_prep_blockers_closure.md) → **`0N = BLOCKED`** (exec)  
 > **Benchmark protocol (parameter matrix):** [`qiu_0n_ge2023_benchmark_protocol.md`](qiu_0n_ge2023_benchmark_protocol.md)  
 > **Gap analysis / Ge LRIP verdict:** [`qiu_0n_reproducibility_gap_analysis.md`](qiu_0n_reproducibility_gap_analysis.md)  
 > **Governance lock (hard stops):** [`qiu_0n_ge2023_reproduction_protocol.md`](qiu_0n_ge2023_reproduction_protocol.md)
@@ -11,7 +12,7 @@
 | Track | Status |
 |-------|--------|
 | **Full Ge LRIP reproduction** (SI signatures, R/R², ΔE, MM-PBSA-WSAS) | **`NOT READY`** (execution blocked) — unchanged |
-| **Scoped orthogonal MD stability protocol** (structural coherence only) | **`READY / NOT EXECUTED`** — see [`qiu_0n_md_protocol_ready.md`](qiu_0n_md_protocol_ready.md) |
+| **Scoped orthogonal MD stability protocol** (structural coherence only) | Design **`READY / NOT EXECUTED`**; **execute `BLOCKED`** — [`qiu_0n_prep_blockers_closure.md`](qiu_0n_prep_blockers_closure.md) |
 
 Parameter audit counts (Ge track): **28 VERIFICADO** · **18 NO ESPECIFICADO** · **12 REQUIERE DECISIÓN**.
 
@@ -43,7 +44,8 @@ Main article recovered (Europe PMC OA). ACS SI (`cn3c00580_si_001.pdf` / `cn3c00
 | [✓] | Seed pose 0F QC | `results/docking/qiu_0f/compound_14_cb2_out.pdbqt` MODEL 1 |
 | [✓] | Ge main PDF (OA) | `data/papers/ge_2023_acs_chem_neurosci/cn3c00580_europepmc.pdf` |
 | [✓] | Scoped MD protocol | `results/reports/qiu_0n_md_protocol_ready.md` |
-| [!] | Membrane/MD engine | OpenMM+lipid17 pending TBD-0N-11 |
+| [✓] | Prep blockers closure | `results/reports/qiu_0n_prep_blockers_closure.md` |
+| [!] | Membrane/MD engine | OpenMM+lipid17 pending TBD-0N-11 waiver + Docker/CUDA |
 | [X] | SI numeric tables / MD templates | ACS SI blocked — TBD-0N-03/04 |
 
 ## Fidelity TBD (keep TBD — do not invent)
@@ -61,7 +63,7 @@ Main article recovered (Europe PMC OA). ACS SI (`cn3c00580_si_001.pdf` / `cn3c00
 
 1. **Critical path:** send `cro_package_h1a/SEND/` RFQs.
 2. **Pre-exec Ge LRIP:** obtain ACS SI via institutional/browser access; extract tables — **pending**.
-3. **Scoped MD:** protocol READY; **do not execute** until explicit GPU/auth + stack waivers (see MD protocol GO/NO-GO).
+3. **Scoped MD:** protocol READY as design; prep blockers audited → **`0N = BLOCKED`** for execute ([`qiu_0n_prep_blockers_closure.md`](qiu_0n_prep_blockers_closure.md)); **do not execute** until waivers + Docker/CUDA restore + GPU auth (prefer H1-a RFQs).
 4. **Gate:** 115 ns MD + LRIP **BLOCKED** for Ge track until SI fidelity + explicit auth.
 
 **No MD executed under these audits.**
