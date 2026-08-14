@@ -96,24 +96,23 @@ Scores Vina CB2 observados (ejemplos; **solo computacionales**): Qiu-14 ≈ −9
 | **0K** | Plan H1/H2 **cerrado** (CB2-first; umbrales numéricos TBD) |
 | **0IP** | Landscape novelty **borrador — necesita counsel** (no clearance) |
 | **0L** | Spec experimental H1-a **cerrada**; wet no iniciado |
-| **0M** | Handoff wet **BLOCKED** hasta TBDs pre-estudio |
-| **Paquete CRO H1-a** | Índice + carpeta `SEND/` lista para RFQs comparables |
+| **0M** | Option **A** = **`RESERVE`** (handoff packaged; wet not critical path; TBDs still block start) |
+| **0Q-SMRF** | Option **B** = **`ACTIVE`** — historical molecular-switch matrix (verified data only) |
+| **0Q audit** | Independent destroy-hypothesis = **D NO-GO** docking-NCE (context; ≠ SMRF) |
+| **Paquete CRO H1-a** | Índice + carpeta `SEND/` lista para RFQs comparables (on reserve with 0M) |
 | **0N** | Cómputo opcional estilo Ge 2023: **`NOT READY`** (congelado; no ruta crítica) |
 
 ### 3.4 Organigrama vigente
 
 ```text
-0D–0J (cómputo / QC)
-  → 0K (plan H1/H2)
-  → 0IP (landscape)
-  → 0L (spec H1-a)
-  → 0M / CRO → WET H1-a  ← RUTA CRÍTICA ACTUAL
-  → (PASS) H1-b → H2 → (PASS) H3 gated
-  → NCE solo en hipótesis blue-ocean documentadas
-  → 🛑 IP GATE / revisión con counsel
-  → síntesis & ensayos de NCE propia
+0D–0J (cómputo / QC) — frozen; no new docking/NCE
+  → 0K / 0IP / 0L (specs packaged)
+  → 0M / CRO H1-a  ← Option A RESERVE
+  → 0Q-SMRF (historical switch audit)  ← Option B ACTIVE / RUTA CRÍTICA ACTUAL
+  → (after SMRF) decide tool-Janus wet vs keep reserve
+  → NCE / docking: NO-GO per 0Q D (unless new PI charter)
 
-0N (paralelo opcional) — NOT READY; no sustituye H1-a
+0N (paralelo opcional) — NOT READY; no sustituye SMRF ni H1-a
 ```
 
 ---
@@ -196,7 +195,8 @@ Detalle: `qiu_0k_validation_plan_h1_h2.md`, `qiu_0l_h1a_experimental_spec.md`.
 |------|--------|------------|
 | Cómputo 0D–0J | **Cerrado** (PASS WITH OBSERVATIONS) | STOP/PIVOT: no más docking/MD/SAR como siguiente paso |
 | Spec H1-a (0L) | **Cerrada** | Lista para rellenar TBD pre-lab |
-| Handoff wet (0M) | **`BLOCKED`** | Paquete listo; wet no arranca |
+| Handoff wet (0M) | **`RESERVE`** (Option A) | Paquete listo; wet no es ruta crítica |
+| 0Q-SMRF | **`ACTIVE`** (Option B) | `qiu_0q_smrf_matrix.md` + pairs CSV |
 | Paquete CRO | **Listo para envío** (`cro_package_h1a/SEND/`) | RFQ síntesis Qiu-14 + ensayo CB2 + nota NDA/IP |
 | Material Qiu-14 | **TBD-11** | Compra / síntesis contrato / autores — pendiente |
 | Criterio PASS H1-a | **TBD-05** | Debe firmarlo el PI **antes** del primer run |
