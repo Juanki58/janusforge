@@ -165,7 +165,8 @@
         <h2>¿Qué quieres ver?</h2>
         <p>Elige un modo. El visor escaneará <code>results/docking</code>, <code>results/md</code> y <code>data/targets</code>.</p>
         <div class="wizard-options">
-          <button type="button" class="primary" data-mode="pose">Pose docking (receptor + ligando)</button>
+          <button type="button" class="primary" data-mode="option_d">Lead Option D · JANUS_D2_22 + 5TGZ</button>
+          <button type="button" data-mode="pose">Pose docking (receptor + ligando)</button>
           <button type="button" data-mode="compare">Comparar 3 ligandos (H1 / THCV / THC)</button>
           <button type="button" data-mode="receptor">Receptor solo</button>
           <button type="button" data-mode="help">Solo ayuda / explorar lista</button>
@@ -279,6 +280,9 @@
 
     function helpForMode(mode, scan) {
       const s = scan.suggestions || {};
+      if (mode === "option_d") {
+        return "Lead Option D: carga receptor CB1 (5TGZ) + pose docked JANUS_D2_22. Filtra por D2_22 si quieres explorar CB2 u otras poses.";
+      }
       if (mode === "pose") {
         return "Modo pose docking: se intentará cargar el mejor receptor y la mejor pose/complejo detectados. También puedes hacer clic en archivos de la lista.";
       }
@@ -321,9 +325,14 @@
       files.forEach((f) => {
         const li = document.createElement("li");
         if (!f.viewable && f.role !== "metricas") li.classList.add("disabled");
+        const leadBadge =
+          (f.tags || []).includes("D2_22")
+            ? `<span class="badge" style="background:#3a3020;color:#f0c98a">Lead Option D</span>`
+            : "";
         li.innerHTML =
           `<span class="badge ${f.role}">${f.role}</span>` +
           `<span class="badge">${f.type}</span>` +
+          leadBadge +
           (f.tags || []).map((t) => `<span class="badge">${t}</span>`).join("") +
           `<div><strong>${f.name}</strong></div>` +
           `<div style="color:var(--muted)">${f.path} · ${fmtSize(f.size_bytes)}</div>`;
@@ -460,10 +469,38 @@
 
       if (mode === "help") {
         setSteps([
-          "Filtra la lista por rol o nombre (H1, THCV, THC…).",
+          "Filtra la lista por rol o nombre (H1, THCV, THC, D2_22…).",
           "Clic en un archivo viewable para verlo en 3D.",
           "Usa la caja «Preguntar» si necesitas orientación.",
         ]);
+        return;
+      }
+
+      if (mode === "option_d") {
+        setSteps([
+          "Receptor CB1 (5TGZ) si está disponible.",
+          "Pose docked JANUS_D2_22 (Option D lead).",
+          "Filtra «D2_22» para CB2 u otras poses.",
+        ]);
+        $("filter-q").value = "D2_22";
+        renderFiles();
+        initViewer();
+        const rec = s.option_d_receptor || s.best_receptor;
+        const pose = s.option_d_pose;
+        if (rec) {
+          await loadStructure(rec.path, { format: formatOf(rec), style: "cartoon" });
+        }
+        if (pose) {
+          await loadStructure(pose.path, {
+            format: formatOf(pose),
+            style: "stick",
+            append: !!rec,
+            color: "spectrum",
+          });
+          setStatus("Lead Option D: " + pose.name + (rec ? " + " + rec.name : ""), "ok");
+        } else {
+          setStatus("No encontré pose JANUS_D2_22. Filtra D2_22 y carga manualmente.", "err");
+        }
         return;
       }
 

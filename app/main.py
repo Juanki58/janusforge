@@ -88,6 +88,8 @@ ROLE_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
 
 LEAD_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     ("H1_02c", re.compile(r"(h1[_\-]?02c|janus_h1_02c)", re.I)),
+    ("D2_22", re.compile(r"(janus_d2_22|d2[_\-]?22)", re.I)),
+    ("Option_D", re.compile(r"(option_d|janus_d2_)", re.I)),
     ("THCV", re.compile(r"(thcv|delta9-thcv|δ9-thcv)", re.I)),
     ("THC", re.compile(r"(delta9-thc|δ9-thc|\bthc\b)", re.I)),
     ("CB1", re.compile(r"(cb1|5tgz)", re.I)),
@@ -114,10 +116,14 @@ def classify_file(path: Path) -> dict[str, Any]:
 
     role = "desconocido"
     haystack = f"{rel} {name} {parent}"
-    for label, pat in ROLE_PATTERNS:
-        if pat.search(haystack):
-            role = label
-            break
+    # Poses Vina *_docked.pdbqt viven bajo results/docking/ — no son "metricas"
+    if "_docked" in stem.lower() and ext == ".pdbqt":
+        role = "ligando"
+    else:
+        for label, pat in ROLE_PATTERNS:
+            if pat.search(haystack):
+                role = label
+                break
 
     if role == "desconocido":
         if ext in METRICS_EXTS:
@@ -136,7 +142,9 @@ def classify_file(path: Path) -> dict[str, Any]:
 
     # Preferencia visual: poses SDF y complejos listos primero
     priority = 50
-    if role == "ligando" and ext == ".sdf":
+    if "D2_22" in tags and role == "ligando":
+        priority = 8  # Lead Option D
+    elif role == "ligando" and ext == ".sdf":
         priority = 10
     elif role == "complejo" and "system_ready" in name.lower():
         priority = 15
@@ -242,11 +250,35 @@ def _build_suggestions(files: list[dict[str, Any]]) -> dict[str, Any]:
         if candidates:
             compare_leads.append(candidates[0])
 
+    # Lead Option D (JANUS_D2_22): prefer CB1 docked pose
+    d2_candidates = [
+        f
+        for f in by_tag.get("D2_22", [])
+        if f["role"] == "ligando"
+        and f["viewable"]
+        and ("_docked" in f["name"].lower() or f["ext"] in (".sdf", ".pdbqt"))
+    ]
+    d2_cb1 = [f for f in d2_candidates if "CB1" in f["tags"] and "_docked" in f["name"].lower()]
+    option_d_pose = (d2_cb1 or d2_candidates or [None])[0]
+    option_d_receptor = next(
+        (f for f in receptors if "5TGZ" in f["name"].upper() or "CB1" in f["tags"]),
+        receptors[0] if receptors else None,
+    )
+
     return {
         "best_receptor": receptors[0] if receptors else None,
         "best_pose": (ligands + complexes)[0] if (ligands or complexes) else None,
         "compare_three": compare_leads if len(compare_leads) >= 2 else compare_leads,
-        "leads_found": sorted({t for f in files for t in f["tags"] if t in ("H1_02c", "THCV", "THC")}),
+        "leads_found": sorted(
+            {
+                t
+                for f in files
+                for t in f["tags"]
+                if t in ("H1_02c", "THCV", "THC", "D2_22", "Option_D")
+            }
+        ),
+        "option_d_pose": option_d_pose,
+        "option_d_receptor": option_d_receptor,
     }
 
 
