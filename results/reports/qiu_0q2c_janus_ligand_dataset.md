@@ -34,7 +34,7 @@
 | Janus **UNKNOWN** | **4** (Qiu-15/16/20/24) |
 | Janus **OFF** / opposite / mono | **11** |
 | Assay **ANCHOR** tools | **5** (CP55,940, WIN55,212-2, SR144528, AM630, SR141716A/rimonabant) |
-| SAR-eligible pairs/families (usable + partial) | **7** (see § SAR) |
+| SAR-eligible pairs/families (usable + partial) | **6** (see § SAR) |
 
 ---
 
@@ -116,7 +116,7 @@ Pairs/families where **structural neighbors** + **dual functional data** could s
 | SAR-HU | **ago-3 ↔ (R)-1 / (R)-3** | ± C(2′) phenyl | Multi-assay CB2 ago↔inv | **not usable** (for Janus) | Class-A mono-CB2 flip; no CB1-ant arm |
 | SAR-OPP | **AM10257 alone / vs Janus pyrazoles** | Pyrazole with Ad amide | Opposite dual typed | **not usable** (for Janus) | Teaches **opposite** dual (CB2 inv + CB1 ago) |
 
-**Summary:** **1 usable** family (Vasiljevik 19↔27/30), **5 partial** (V35 pairs, URB emergence, Qiu series, weak URB 8a/3c), **3 not usable for Janus** (MRI, HU/ago-3, AM10257/AM1714). Counting distinct pair/family rows scored usable+partial = **7**.
+**Summary:** **1 usable** family (Vasiljevik 19↔27/30), **5 partial** (V35↔27, V35↔30, URB 5b→447, URB 8a/3c, Qiu series), **4 not usable for Janus** (AM1714, MRI, HU/ago-3, AM10257). Counting distinct pair/family rows scored usable+partial = **6**.
 
 ---
 
