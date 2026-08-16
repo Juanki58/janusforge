@@ -76,6 +76,7 @@ results/hits/qiu_pyrazole*
 # Allow markdown reports under results/reports/
 !results/reports/
 !results/reports/*.md
+!results/reports/qiu_0q_smrf_pairs.csv
 
 # Large downloads / binaries
 *.gz
