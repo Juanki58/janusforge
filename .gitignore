@@ -90,3 +90,6 @@ tools/*.exe
 # Logs / checkpoints
 *.log
 **/_checkpoint.csv
+
+# Ephemeral scratch under reports
+results/reports/_tmp_*
