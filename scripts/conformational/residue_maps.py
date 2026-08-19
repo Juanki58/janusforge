@@ -36,6 +36,7 @@ class MicroswitchMap:
     trp648: int
     phe_ecl2: int
     ser739: int
+    ser658: int = 0  # CB2 Ser268^6.58 (vestibular node)
 
 
 MICROSWITCHS: dict[str, MicroswitchMap] = {
@@ -46,6 +47,7 @@ MICROSWITCHS: dict[str, MicroswitchMap] = {
         trp648=258,
         phe_ecl2=183,
         ser739=285,
+        ser658=268,
     ),
     "cb1": MicroswitchMap(
         receptor="cb1",
@@ -54,6 +56,7 @@ MICROSWITCHS: dict[str, MicroswitchMap] = {
         trp648=356,
         phe_ecl2=268,
         ser739=383,
+        ser658=0,
     ),
 }
 
@@ -97,6 +100,15 @@ STRUCTURES: tuple[StructureSpec, ...] = (
         status="VERIFIED",
         state_label="inactive_antagonist_am10257",
         ligand_resname="9JU",
+    ),
+    StructureSpec(
+        pdb_id="8GUR",
+        receptor="cb2",
+        chain="R",
+        source_pdb="data/targets/cb2_multistate/8GUR_clean.pdb",
+        status="VERIFIED",
+        state_label="active_agonist_cp55940_gi",
+        ligand_resname="9GF",
     ),
     StructureSpec(
         pdb_id="5TGZ",

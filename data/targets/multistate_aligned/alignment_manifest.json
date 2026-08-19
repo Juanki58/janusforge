@@ -45,6 +45,19 @@
       "ligand_resname": "9JU"
     },
     {
+      "pdb_id": "8GUR",
+      "receptor": "cb2",
+      "chain": "R",
+      "reference": "6PT0",
+      "source_pdb": "data/targets/cb2_multistate/8GUR_clean.pdb",
+      "aligned_pdb": "data/targets/multistate_aligned/8GUR_aligned.pdb",
+      "tm_ca_pairs": 178,
+      "rmsd_before_A": 68.713,
+      "rmsd_after_A": 3.511,
+      "state_label": "active_agonist_cp55940_gi",
+      "ligand_resname": "9GF"
+    },
+    {
       "pdb_id": "5TGZ",
       "receptor": "cb1",
       "chain": "A",
@@ -81,6 +94,7 @@
     "5TGZ_ligand": "AM6538 (CCD ZDG) \u2014 antagonist/inactive CB1; not Taranabant",
     "5XRA_ligand": "AM11542 (CCD 8D3) \u2014 agonist/active CB1 (verified RCSB COMPND)",
     "5ZTY_ligand": "AM10257 (CCD 9JU) \u2014 inactive antagonist CB2 (not Gi-active)",
+    "8GUR_ligand": "CP55,940 (CCD 9GF) \u2014 agonist CB2\u2013G cryo-EM (Li et al. 2023); chain R",
     "6KPG": "Not used \u2014 5XRA selected as verified CB1 active crystal",
     "5VEU": "BLOCKED \u2014 CYP3A5"
   }

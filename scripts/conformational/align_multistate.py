@@ -32,17 +32,25 @@ MANIFEST = OUT_DIR / "alignment_manifest.json"
 
 REF_BY_RECEPTOR = {"cb2": "6PT0", "cb1": "5TGZ"}
 
+# Chains for CB2 monomer isolation (human receptor only; no Gi/scFv/ligand).
+CB2_MONOMER_CHAINS = {
+    "6PT0": "R",
+    "6KPF": "R",
+    "8GUR": "R",
+    "5ZTY": "A",
+}
+
 
 def _ensure_source(spec) -> Path:
     src = ROOT / spec.source_pdb
     if src.exists():
         return src
-    if spec.pdb_id == "5XRA":
-        raw = ROOT / "data/targets/cb1/5XRA.pdb"
-        download_pdb("5XRA", raw)
-        clean_protein_pdb(raw.read_text(encoding="utf-8"), src, chains=["A"])
-        return src
-    raise FileNotFoundError(f"Missing source PDB for {spec.pdb_id}: {src}")
+    subdir = "cb1" if spec.receptor == "cb1" else "cb2_multistate"
+    raw = ROOT / f"data/targets/{subdir}/{spec.pdb_id}.pdb"
+    download_pdb(spec.pdb_id, raw)
+    chains = [spec.chain] if spec.chain else None
+    clean_protein_pdb(raw.read_text(encoding="utf-8"), src, chains=chains)
+    return src
 
 
 def _matched_ca(
@@ -153,6 +161,7 @@ def run_alignment() -> dict:
             "5TGZ_ligand": "AM6538 (CCD ZDG) — antagonist/inactive CB1; not Taranabant",
             "5XRA_ligand": "AM11542 (CCD 8D3) — agonist/active CB1 (verified RCSB COMPND)",
             "5ZTY_ligand": "AM10257 (CCD 9JU) — inactive antagonist CB2 (not Gi-active)",
+            "8GUR_ligand": "CP55,940 (CCD 9GF) — agonist CB2–G cryo-EM (Li et al. 2023); chain R",
             "6KPG": "Not used — 5XRA selected as verified CB1 active crystal",
             "5VEU": "BLOCKED — CYP3A5",
         },
