@@ -1,0 +1,87 @@
+{
+  "method": "Kabsch superposition on shared TM1\u2013TM7 C\u03b1 (GPCRdb spans)",
+  "references": {
+    "cb2": "6PT0",
+    "cb1": "5TGZ"
+  },
+  "aligned_structures": [
+    {
+      "pdb_id": "6PT0",
+      "receptor": "cb2",
+      "chain": "R",
+      "reference": "6PT0",
+      "source_pdb": "data/targets/cb2_multistate/6PT0_clean.pdb",
+      "aligned_pdb": "data/targets/multistate_aligned/6PT0_aligned.pdb",
+      "tm_ca_pairs": 178,
+      "rmsd_before_A": 0.0,
+      "rmsd_after_A": 0.0,
+      "state_label": "active_agonist_win_gi",
+      "ligand_resname": "WI5"
+    },
+    {
+      "pdb_id": "6KPF",
+      "receptor": "cb2",
+      "chain": "R",
+      "reference": "6PT0",
+      "source_pdb": "data/targets/cb2_multistate/6KPF_clean.pdb",
+      "aligned_pdb": "data/targets/multistate_aligned/6KPF_aligned.pdb",
+      "tm_ca_pairs": 178,
+      "rmsd_before_A": 40.51,
+      "rmsd_after_A": 22.406,
+      "state_label": "active_agonist_cryoem",
+      "ligand_resname": "E3R"
+    },
+    {
+      "pdb_id": "5ZTY",
+      "receptor": "cb2",
+      "chain": "A",
+      "reference": "6PT0",
+      "source_pdb": "data/targets/cb2_multistate/5ZTY_clean.pdb",
+      "aligned_pdb": "data/targets/multistate_aligned/5ZTY_aligned.pdb",
+      "tm_ca_pairs": 178,
+      "rmsd_before_A": 208.271,
+      "rmsd_after_A": 15.202,
+      "state_label": "inactive_antagonist_am10257",
+      "ligand_resname": "9JU"
+    },
+    {
+      "pdb_id": "5TGZ",
+      "receptor": "cb1",
+      "chain": "A",
+      "reference": "5TGZ",
+      "source_pdb": "data/targets/cb1/5TGZ_clean.pdb",
+      "aligned_pdb": "data/targets/multistate_aligned/5TGZ_aligned.pdb",
+      "tm_ca_pairs": 171,
+      "rmsd_before_A": 0.0,
+      "rmsd_after_A": 0.0,
+      "state_label": "inactive_antagonist_am6538",
+      "ligand_resname": "ZDG"
+    },
+    {
+      "pdb_id": "5XRA",
+      "receptor": "cb1",
+      "chain": "A",
+      "reference": "5TGZ",
+      "source_pdb": "data/targets/cb1/5XRA_clean.pdb",
+      "aligned_pdb": "data/targets/multistate_aligned/5XRA_aligned.pdb",
+      "tm_ca_pairs": 139,
+      "rmsd_before_A": 205.194,
+      "rmsd_after_A": 29.692,
+      "state_label": "active_agonist_am11542",
+      "ligand_resname": "8D3"
+    }
+  ],
+  "blocked": [
+    {
+      "pdb_id": "5VEU",
+      "block_reason": "PDB 5VEU is CYP3A5, not CB2 \u2014 excluded from Level-0."
+    }
+  ],
+  "level0_notes": {
+    "5TGZ_ligand": "AM6538 (CCD ZDG) \u2014 antagonist/inactive CB1; not Taranabant",
+    "5XRA_ligand": "AM11542 (CCD 8D3) \u2014 agonist/active CB1 (verified RCSB COMPND)",
+    "5ZTY_ligand": "AM10257 (CCD 9JU) \u2014 inactive antagonist CB2 (not Gi-active)",
+    "6KPG": "Not used \u2014 5XRA selected as verified CB1 active crystal",
+    "5VEU": "BLOCKED \u2014 CYP3A5"
+  }
+}
