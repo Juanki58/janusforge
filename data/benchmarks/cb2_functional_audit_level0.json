@@ -1,0 +1,224 @@
+{
+  "schema_version": "H0_v1",
+  "generated_utc": "2026-08-19T12:30:00+00:00",
+  "branch": "feat/fase-h-conformational-functional-correlation",
+  "governance": {
+    "PHASE_H0": "FUNCTIONAL_AUDIT_LEVEL0",
+    "CONTRACT_v1.0": "FROZEN",
+    "DE_NOVO_GENERATION": "STOP",
+    "THRESHOLD_MODIFICATION": "STOP",
+    "functional_assignment_rule": "Gi pathway only (cAMP inhibition or [35S]GTPgammaS) on hCB2, normalized to explicit reference agonist; no beta-arrestin or ERK",
+    "first_class_statuses": [
+      "TOTAL",
+      "PARTIAL",
+      "INVERSE",
+      "PROTEAN_OR_SYSTEM_DEPENDENT",
+      "INDETERMINATE"
+    ],
+    "cautelas": {
+      "AM630": "PROTEAN_OR_SYSTEM_DEPENDENT — do not auto-assign INVERSE; constitutive state and protocol dependent",
+      "HU308_HU433_pair": "Paired mechanistic probes — different binding orientations / affinity vs Gi efficacy dissociation; do not force identical functional class",
+      "THCV": "Do not artificially place as ordinal intermediate; incompatible across canonical Gi assays in unified panel",
+      "SR144528": "Inverse in CP55940-activated assays; historical literature also labels antagonist — both noted"
+    }
+  },
+  "h0_gate_summary": {
+    "comparable_gi_data_exists": true,
+    "rationale": "Soethoudt et al. 2017 (Nat Commun; DOI 10.1038/ncomms13958) provides a unified hCB2 CHO panel with explicit CP55940 normalization in both cAMP (Suppl. Table 4) and GTPgammaS (Suppl. Table 3). Hanus 1999 adds independent HU-308 cAMP on hCB2 CHO. Ordinal tiers are assay-dependent: cAMP lacks a clean PARTIAL tier; GTPgammaS supports TOTAL / PARTIAL / INVERSE separation among five compounds. HU-433 lacks comparable hCB2 Gi row with CP55940 reference in recovered primaries.",
+    "best_comparable_assay_for_ordinal": "GTPgammaS",
+    "ordinal_eligible_compound_ids": [
+      "CP-55,940",
+      "HU-308",
+      "WIN55,212-2",
+      "JWH-133",
+      "SR144528"
+    ],
+    "excluded_from_ordinal": {
+      "AM630": "PROTEAN_OR_SYSTEM_DEPENDENT",
+      "Delta9-THCV": "INDETERMINATE — assay-incompatible across canonical Gi panel",
+      "HU-433": "INDETERMINATE — no comparable hCB2 Gi row with explicit CP55940 reference in recovered primaries"
+    }
+  },
+  "entries": [
+    {
+      "compound_id": "CP-55,940",
+      "target_species": "hCB2",
+      "expression_system": "CHO",
+      "assay_type": "cAMP_inhibition",
+      "reference_agonist": "CP55,940",
+      "relative_emax_percent": 98,
+      "functional_class_assigned": "TOTAL",
+      "reported_notes": "Soethoudt 2017 Suppl. Table 4: Emax 98±1% vs 10 µM CP55940 (self-reference normalization). CHO hCB2 Nano-TRF cAMP. Consistent full agonist across cAMP and GTPgammaS in same study.",
+      "primary_doi_or_pmid": "10.1038/ncomms13958",
+      "comparability_level": "LEVEL_0_HIGH"
+    },
+    {
+      "compound_id": "CP-55,940",
+      "target_species": "hCB2",
+      "expression_system": "CHO",
+      "assay_type": "GTPgammaS",
+      "reference_agonist": "CP55,940",
+      "relative_emax_percent": 95,
+      "functional_class_assigned": "TOTAL",
+      "reported_notes": "Soethoudt 2017 Suppl. Table 3: Emax 95±4% vs 10 µM CP55940. Narrative: potent full agonist at hCB2R in GTPgammaS assay.",
+      "primary_doi_or_pmid": "10.1038/ncomms13958",
+      "comparability_level": "LEVEL_0_HIGH"
+    },
+    {
+      "compound_id": "WIN55,212-2",
+      "target_species": "hCB2",
+      "expression_system": "CHO",
+      "assay_type": "cAMP_inhibition",
+      "reference_agonist": "CP55,940",
+      "relative_emax_percent": 98,
+      "functional_class_assigned": "PROTEAN_OR_SYSTEM_DEPENDENT",
+      "reported_notes": "Soethoudt 2017 Suppl. Table 4: cAMP Emax 98±1% (full vs CP55940). Same study Suppl. Table 3: GTPgammaS Emax 49±7% (partial). Assay-dependent efficacy — not a single universal Gi class.",
+      "primary_doi_or_pmid": "10.1038/ncomms13958",
+      "comparability_level": "LEVEL_0_HIGH"
+    },
+    {
+      "compound_id": "WIN55,212-2",
+      "target_species": "hCB2",
+      "expression_system": "CHO",
+      "assay_type": "GTPgammaS",
+      "reference_agonist": "CP55,940",
+      "relative_emax_percent": 49,
+      "functional_class_assigned": "PARTIAL",
+      "reported_notes": "Soethoudt 2017 Suppl. Table 3: Emax 49±7% vs CP55940; narrative labels WIN55212-2 as partial agonist in GTPgammaS at hCB2. cAMP row in same study shows 98±1% — cross-assay discordance documented.",
+      "primary_doi_or_pmid": "10.1038/ncomms13958",
+      "comparability_level": "LEVEL_0_HIGH"
+    },
+    {
+      "compound_id": "JWH-133",
+      "target_species": "hCB2",
+      "expression_system": "CHO",
+      "assay_type": "cAMP_inhibition",
+      "reference_agonist": "CP55,940",
+      "relative_emax_percent": 98,
+      "functional_class_assigned": "PROTEAN_OR_SYSTEM_DEPENDENT",
+      "reported_notes": "Soethoudt 2017 Suppl. Table 4: cAMP Emax 98±1% vs CP55940 (full). Suppl. Table 3 GTPgammaS: Emax 61±15% (partial). Highly CB2-selective in both assays; efficacy tier assay-dependent.",
+      "primary_doi_or_pmid": "10.1038/ncomms13958",
+      "comparability_level": "LEVEL_0_HIGH"
+    },
+    {
+      "compound_id": "JWH-133",
+      "target_species": "hCB2",
+      "expression_system": "CHO",
+      "assay_type": "GTPgammaS",
+      "reference_agonist": "CP55,940",
+      "relative_emax_percent": 61,
+      "functional_class_assigned": "PARTIAL",
+      "reported_notes": "Soethoudt 2017 Suppl. Table 3: Emax 61±15% vs CP55940 at hCB2. mCB2 full agonist (103±7%) in same table — species/context dependence noted.",
+      "primary_doi_or_pmid": "10.1038/ncomms13958",
+      "comparability_level": "LEVEL_0_HIGH"
+    },
+    {
+      "compound_id": "HU-308",
+      "target_species": "hCB2",
+      "expression_system": "CHO",
+      "assay_type": "cAMP_inhibition",
+      "reference_agonist": "CP55,940",
+      "relative_emax_percent": 98,
+      "functional_class_assigned": "TOTAL",
+      "reported_notes": "Soethoudt 2017 Suppl. Table 4: Emax 98±1% vs CP55940. Independent primary Hanus 1999 (PNAS; 10.1073/pnas.96.25.14228): forskolin-stimulated cAMP inhibition EC50 5.57 nM, Emax 108.6±8.4% (n=5) on hCB2 CHO — CP=100 normalization not atomic in Hanus Results.",
+      "primary_doi_or_pmid": "10.1038/ncomms13958",
+      "comparability_level": "LEVEL_0_MODERATE"
+    },
+    {
+      "compound_id": "HU-308",
+      "target_species": "hCB2",
+      "expression_system": "CHO",
+      "assay_type": "cAMP_inhibition",
+      "reference_agonist": "CP55,940",
+      "relative_emax_percent": 108.6,
+      "functional_class_assigned": "TOTAL",
+      "reported_notes": "Hanuš 1999 direct primary (10.1073/pnas.96.25.14228): hCB2 CHO stable transfection, forskolin cAMP inhibition Emax 108.6±8.4% (n=5). Reference agonist for percent normalization not explicitly stated as CP55940 in Results — separate row from Soethoudt cross-study row.",
+      "primary_doi_or_pmid": "10.1073/pnas.96.25.14228",
+      "comparability_level": "LEVEL_0_MODERATE"
+    },
+    {
+      "compound_id": "HU-308",
+      "target_species": "hCB2",
+      "expression_system": "CHO",
+      "assay_type": "GTPgammaS",
+      "reference_agonist": "CP55,940",
+      "relative_emax_percent": 97,
+      "functional_class_assigned": "TOTAL",
+      "reported_notes": "Soethoudt 2017 Suppl. Table 3: Emax 97±12% vs CP55940; narrative: CP55940 and HU308 behaved as potent full agonists at hCB2R in GTPgammaS.",
+      "primary_doi_or_pmid": "10.1038/ncomms13958",
+      "comparability_level": "LEVEL_0_HIGH"
+    },
+    {
+      "compound_id": "HU-433",
+      "target_species": "hCB2",
+      "expression_system": "Native",
+      "assay_type": "cAMP_inhibition",
+      "reference_agonist": "CP55,940",
+      "relative_emax_percent": null,
+      "functional_class_assigned": "INDETERMINATE",
+      "reported_notes": "HU-308 enantiomer / paired mechanistic probe (Hanus 2015 PNAS 10.1073/pnas.1503395112; patent US20110269842A1). Binding Ki 12.2 nM vs HU-308 22.7 nM; authors report higher biological potency despite lower CP55940 displacement and GTPgammaS differences — proposed distinct binding conformations. No recovered hCB2 cAMP/GTPgammaS row with explicit CP55940 Emax% in project primaries — do not invent numbers or force class identical to HU-308.",
+      "primary_doi_or_pmid": "10.1073/pnas.1503395112",
+      "comparability_level": "INDETERMINATE"
+    },
+    {
+      "compound_id": "Delta9-THCV",
+      "target_species": "hCB2",
+      "expression_system": "CHO",
+      "assay_type": "GTPgammaS",
+      "reference_agonist": "CP55,940",
+      "relative_emax_percent": null,
+      "functional_class_assigned": "INDETERMINATE",
+      "reported_notes": "Not in Soethoudt unified hCB2 panel. Soethoudt reports Delta9-THC (not THCV) GTPgammaS hCB2 Emax 21±3% — do not substitute for THCV. Pertwee 2008 (10.1038/sj.bjp.0707442) describes diverse CB2 pharmacology of plant cannabinoids including THCV but without a single comparable hCB2 Gi Emax% row normalized to CP55940 in recovered tables. Cross-system reviews note partial/CB1-antagonist context — incompatible for forced ordinal intermediate placement.",
+      "primary_doi_or_pmid": "10.1038/sj.bjp.0707442",
+      "comparability_level": "INDETERMINATE"
+    },
+    {
+      "compound_id": "SR144528",
+      "target_species": "hCB2",
+      "expression_system": "CHO",
+      "assay_type": "cAMP_inhibition",
+      "reference_agonist": "CP55,940",
+      "relative_emax_percent": -151,
+      "functional_class_assigned": "INVERSE",
+      "reported_notes": "Soethoudt 2017 Suppl. Table 4: Emax -151±10% vs CP55940 EC80 background (negative = inverse agonism). Historical literature also classifies SR144528 as CB2 antagonist / inverse agonist in constitutively active hCB2 systems — both descriptors noted.",
+      "primary_doi_or_pmid": "10.1038/ncomms13958",
+      "comparability_level": "LEVEL_0_HIGH"
+    },
+    {
+      "compound_id": "SR144528",
+      "target_species": "hCB2",
+      "expression_system": "CHO",
+      "assay_type": "GTPgammaS",
+      "reference_agonist": "CP55,940",
+      "relative_emax_percent": -29,
+      "functional_class_assigned": "INVERSE",
+      "reported_notes": "Soethoudt 2017 Suppl. Table 3: Emax -29±2% vs CP55940 (negative values = inverse agonism per table footnote). Antagonist label retained in historical CB2 literature.",
+      "primary_doi_or_pmid": "10.1038/ncomms13958",
+      "comparability_level": "LEVEL_0_HIGH"
+    },
+    {
+      "compound_id": "AM630",
+      "target_species": "hCB2",
+      "expression_system": "CHO",
+      "assay_type": "cAMP_inhibition",
+      "reference_agonist": "CP55,940",
+      "relative_emax_percent": -152,
+      "functional_class_assigned": "PROTEAN_OR_SYSTEM_DEPENDENT",
+      "reported_notes": "Soethoudt 2017 Suppl. Table 4: Emax -152±13% in CP55940 EC80 cAMP assay (inverse-like numeric sign). Literature and in vivo contexts show CB2 antagonist, neutral antagonist, or inverse agonist behavior depending on constitutive receptor activity and species (cf. Hanus 2017 note on AM-630 vs selective inverse agonists). Do NOT auto-assign universal INVERSE — protocol and basal activity dependent.",
+      "primary_doi_or_pmid": "10.1038/ncomms13958",
+      "comparability_level": "LEVEL_0_MODERATE"
+    },
+    {
+      "compound_id": "AM630",
+      "target_species": "hCB2",
+      "expression_system": "CHO",
+      "assay_type": "GTPgammaS",
+      "reference_agonist": "CP55,940",
+      "relative_emax_percent": -22,
+      "functional_class_assigned": "PROTEAN_OR_SYSTEM_DEPENDENT",
+      "reported_notes": "Soethoudt 2017 Suppl. Table 3: Emax -22±2% at hCB2 vs CP55940. CB1 row near neutral (-1±1%). Functional sign assay- and receptor-state dependent — PROTEAN_OR_SYSTEM_DEPENDENT per PI governance.",
+      "primary_doi_or_pmid": "10.1038/ncomms13958",
+      "comparability_level": "LEVEL_0_MODERATE"
+    }
+  ]
+}
