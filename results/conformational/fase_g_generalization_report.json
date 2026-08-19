@@ -1,0 +1,380 @@
+{
+  "governance": {
+    "PHASE_G": "COMPLETE",
+    "CONTRACT_v1.0": "FROZEN",
+    "DE_NOVO_GENERATION": "STOP",
+    "THRESHOLD_MODIFICATION": "STOP",
+    "ALLOSTERIC_FRAMEWORK": "HYPOTHESIS_PENDING_CALIBRATION",
+    "EXPLORATORY_DELTA_CUTOFF": "documented_as_exploratory_only"
+  },
+  "generated_utc": "2026-08-19T10:11:47.000802+00:00",
+  "branch": "feat/fase-g-conformational-validation",
+  "level0": {
+    "passed": true,
+    "pdb_id": "8GUR",
+    "resolution_A": 2.84,
+    "receptor": "CB2",
+    "chain": "R",
+    "ligand": "CP55,940 (9GF)",
+    "state": "active_agonist_cp55940_gi",
+    "notes": []
+  },
+  "input_hashes": {
+    "6PT0": "a4d771c33c9ed6516681cc21111927b42b55948a46dd57bae3d89ad7a6627e69",
+    "6KPF": "9571f908350f4696db3787e805b96ba134bcd1bfd34816827ed8548bf2c93a38",
+    "8GUR": "061728813de171059cbd614887f56c2ea6590ab091ca3d264a17e229d57fb5b9",
+    "5ZTY": "edd210116cb1614a0956b0d926c5f563f773fbd13f024ea186d5bacc8919aae5"
+  },
+  "normalization": {
+    "fit_ids": [
+      "6PT0",
+      "6KPF",
+      "5ZTY"
+    ],
+    "mean": [
+      13.469999999999999,
+      14.030066666666665,
+      97.72703333333334,
+      -95.85090000000001,
+      -67.42960000000001,
+      15.8257,
+      53.5687
+    ],
+    "std": [
+      2.266561608839845,
+      0.13854246841873333,
+      11.97314319225416,
+      28.58546700930388,
+      41.544090263718616,
+      11.573817323885265,
+      7.059368950550751
+    ],
+    "feature_names": [
+      "tm3_tm6_ic_distance_A",
+      "tm3_tm5_centroid_displacement_A",
+      "trp258_chi1_deg",
+      "trp258_chi2_deg",
+      "ser268_chi1_deg",
+      "phe183_ecl2_ca_displacement_A",
+      "phe183_aromatic_tilt_deg"
+    ]
+  },
+  "active_centroid_from": [
+    "6PT0",
+    "6KPF"
+  ],
+  "cb2_state_distance": {
+    "raw": {
+      "6PT0": 50.0552,
+      "6KPF": 50.0552,
+      "8GUR": 37.0292,
+      "5ZTY": 73.6374
+    },
+    "normalized": {
+      "6PT0": 2.3019,
+      "6KPF": 2.3019,
+      "8GUR": 2.3205,
+      "5ZTY": 3.9501
+    },
+    "feature_names": [
+      "tm3_tm6_ic_distance_A",
+      "tm3_tm5_centroid_displacement_A",
+      "trp258_chi1_deg",
+      "trp258_chi2_deg",
+      "ser268_chi1_deg",
+      "phe183_ecl2_ca_displacement_A",
+      "phe183_aromatic_tilt_deg"
+    ]
+  },
+  "metrics_by_pdb": {
+    "6PT0": {
+      "pdb_id": "6PT0",
+      "receptor": "cb2",
+      "state_label": "active_agonist_win_gi",
+      "features": {
+        "tm3_tm6_ic_distance_A": 15.3343,
+        "tm3_tm5_centroid_displacement_A": 14.1979,
+        "trp258_chi1_deg": 105.2525,
+        "trp258_chi2_deg": -87.928,
+        "ser268_chi1_deg": -37.0916,
+        "phe183_ecl2_ca_displacement_A": 0.0,
+        "phe183_aromatic_tilt_deg": 59.0214
+      },
+      "feature_vector": [
+        15.3343,
+        14.1979,
+        105.2525,
+        -87.928,
+        -37.0916,
+        0.0,
+        59.0214
+      ]
+    },
+    "6KPF": {
+      "pdb_id": "6KPF",
+      "receptor": "cb2",
+      "state_label": "active_agonist_cryoem",
+      "features": {
+        "tm3_tm6_ic_distance_A": 14.796,
+        "tm3_tm5_centroid_displacement_A": 14.0337,
+        "trp258_chi1_deg": 80.8281,
+        "trp258_chi2_deg": -65.4814,
+        "ser268_chi1_deg": -126.1712,
+        "phe183_ecl2_ca_displacement_A": 27.3566,
+        "phe183_aromatic_tilt_deg": 43.5999
+      },
+      "feature_vector": [
+        14.796,
+        14.0337,
+        80.8281,
+        -65.4814,
+        -126.1712,
+        27.3566,
+        43.5999
+      ]
+    },
+    "8GUR": {
+      "pdb_id": "8GUR",
+      "receptor": "cb2",
+      "state_label": "active_agonist_cp55940_gi",
+      "features": {
+        "tm3_tm6_ic_distance_A": 14.4229,
+        "tm3_tm5_centroid_displacement_A": 13.9035,
+        "trp258_chi1_deg": 95.3914,
+        "trp258_chi2_deg": -68.1782,
+        "ser268_chi1_deg": -115.2557,
+        "phe183_ecl2_ca_displacement_A": 4.4421,
+        "phe183_aromatic_tilt_deg": 60.0615
+      },
+      "feature_vector": [
+        14.4229,
+        13.9035,
+        95.3914,
+        -68.1782,
+        -115.2557,
+        4.4421,
+        60.0615
+      ]
+    },
+    "5ZTY": {
+      "pdb_id": "5ZTY",
+      "receptor": "cb2",
+      "state_label": "inactive_antagonist_am10257",
+      "features": {
+        "tm3_tm6_ic_distance_A": 10.2797,
+        "tm3_tm5_centroid_displacement_A": 13.8586,
+        "trp258_chi1_deg": 107.1005,
+        "trp258_chi2_deg": -134.1433,
+        "ser268_chi1_deg": -39.026,
+        "phe183_ecl2_ca_displacement_A": 20.1205,
+        "phe183_aromatic_tilt_deg": 58.0848
+      },
+      "feature_vector": [
+        10.2797,
+        13.8586,
+        107.1005,
+        -134.1433,
+        -39.026,
+        20.1205,
+        58.0848
+      ]
+    }
+  },
+  "exploratory_delta_vs_6PT0": {
+    "6PT0": {
+      "tm3_tm6_ic_distance_A": 0.0,
+      "tm3_tm5_centroid_displacement_A": 0.0,
+      "trp258_chi1_deg": 0.0,
+      "trp258_chi2_deg": 0.0,
+      "ser268_chi1_deg": 0.0,
+      "phe183_ecl2_ca_displacement_A": 0.0,
+      "phe183_aromatic_tilt_deg": 0.0
+    },
+    "6KPF": {
+      "tm3_tm6_ic_distance_A": -0.5383,
+      "tm3_tm5_centroid_displacement_A": -0.1642,
+      "trp258_chi1_deg": -24.4244,
+      "trp258_chi2_deg": 22.4466,
+      "ser268_chi1_deg": -89.0796,
+      "phe183_ecl2_ca_displacement_A": 27.3566,
+      "phe183_aromatic_tilt_deg": -15.4215
+    },
+    "8GUR": {
+      "tm3_tm6_ic_distance_A": -0.9114,
+      "tm3_tm5_centroid_displacement_A": -0.2944,
+      "trp258_chi1_deg": -9.8611,
+      "trp258_chi2_deg": 19.7498,
+      "ser268_chi1_deg": -78.1641,
+      "phe183_ecl2_ca_displacement_A": 4.4421,
+      "phe183_aromatic_tilt_deg": 1.0401
+    },
+    "5ZTY": {
+      "tm3_tm6_ic_distance_A": -5.0546,
+      "tm3_tm5_centroid_displacement_A": -0.3393,
+      "trp258_chi1_deg": 1.848,
+      "trp258_chi2_deg": -46.2153,
+      "ser268_chi1_deg": -1.9344,
+      "phe183_ecl2_ca_displacement_A": 20.1205,
+      "phe183_aromatic_tilt_deg": -0.9366
+    }
+  },
+  "exploratory_delta_cutoff_A": 2.0,
+  "exploratory_note": "\u0394 \u2265 2.0 \u00c5 (or any numeric cutoff) is EXPLORATORY only; not used as confirmatory validation evidence.",
+  "q1_oos_verdict": "GENERALIZES",
+  "q1_oos_rationale": "8GUR (2.321) clusters with active refs (mean 2.302, max 2.302) and separates from 5ZTY (3.950); \u0394(blind\u2192inactive)=1.630 norm units.",
+  "q2_loo": {
+    "reference": "6PT0",
+    "blind": [
+      "6KPF",
+      "8GUR"
+    ],
+    "negative": "5ZTY",
+    "distances_normalized": {
+      "6KPF": 4.6039,
+      "8GUR": 3.089,
+      "5ZTY": 4.0805
+    },
+    "normalization": "reuse OOS fit (6PT0, 6KPF, 5ZTY); centroid 6PT0 only",
+    "verdict": "PARTIAL",
+    "rationale": "Trend preserved (blind 3.089 < inactive 4.080) but margin vs 6KPF (4.604) not robust under LOO."
+  },
+  "q3_thcv": {
+    "available": true,
+    "source": "C:\\Users\\juanc\\projects\\janusforge\\results\\docking\\thcv_seed\\thcv_seed_evaluation.json",
+    "cb2": {
+      "docked_receptor_state": "6PT0 (active agonist)",
+      "affinity_kcal_mol": -9.857,
+      "microswitch_distances_A": {
+        "Phe117(3.32)": 3.7,
+        "Trp258(6.48)": 5.91,
+        "Ser285(7.39)": 4.04
+      },
+      "interpretation": "Sonda mecan\u00edstica ONLY \u2014 pose docked contra 6PT0 activo; NO prueba funcional agonista/antagonista/modulador."
+    },
+    "cb1": {
+      "docked_receptor_state": "5TGZ (inactive antagonist-bound)",
+      "affinity_kcal_mol": -8.964,
+      "microswitch_distances_A": {
+        "Phe200(3.36)": 6.95,
+        "Trp356(6.48)": 3.72
+      },
+      "interpretation": "Espacio CB1 separado \u2014 docked contra 5TGZ inactivo; NO comparable num\u00e9ricamente a distancias CB2."
+    },
+    "epistemology": "Q3 observation only; not mixed with CB2 OOS distances."
+  },
+  "cb1_cross_reference": {
+    "note": "Separate normalized CB1 coordinate space \u2014 NOT comparable to CB2 distances.",
+    "active_reference": "5XRA",
+    "inactive": "5TGZ",
+    "feature_names": [
+      "tm3_tm6_ic_distance_A",
+      "tm3_tm5_centroid_displacement_A",
+      "trp258_chi1_deg",
+      "trp258_chi2_deg",
+      "phe183_ecl2_ca_displacement_A",
+      "phe183_aromatic_tilt_deg"
+    ],
+    "distances_normalized": {
+      "5TGZ": 4.899,
+      "5XRA": 0.0
+    },
+    "metrics": {
+      "5TGZ": {
+        "pdb_id": "5TGZ",
+        "receptor": "cb1",
+        "state_label": "inactive_antagonist_am6538",
+        "features": {
+          "tm3_tm6_ic_distance_A": 11.9506,
+          "tm3_tm5_centroid_displacement_A": 19.0533,
+          "trp258_chi1_deg": 96.2948,
+          "trp258_chi2_deg": -90.7693,
+          "phe183_ecl2_ca_displacement_A": 0.0,
+          "phe183_aromatic_tilt_deg": 23.369
+        },
+        "feature_vector": [
+          11.9506,
+          19.0533,
+          96.2948,
+          -90.7693,
+          0.0,
+          23.369
+        ]
+      },
+      "5XRA": {
+        "pdb_id": "5XRA",
+        "receptor": "cb1",
+        "state_label": "active_agonist_am11542",
+        "features": {
+          "tm3_tm6_ic_distance_A": 15.4697,
+          "tm3_tm5_centroid_displacement_A": 17.1351,
+          "trp258_chi1_deg": 112.8836,
+          "trp258_chi2_deg": -69.986,
+          "phe183_ecl2_ca_displacement_A": 28.4665,
+          "phe183_aromatic_tilt_deg": 78.6494
+        },
+        "feature_vector": [
+          15.4697,
+          17.1351,
+          112.8836,
+          -69.986,
+          28.4665,
+          78.6494
+        ]
+      }
+    }
+  },
+  "alignment_manifest_excerpt": [
+    {
+      "pdb_id": "6PT0",
+      "receptor": "cb2",
+      "chain": "R",
+      "reference": "6PT0",
+      "source_pdb": "data/targets/cb2_multistate/6PT0_clean.pdb",
+      "aligned_pdb": "data/targets/multistate_aligned/6PT0_aligned.pdb",
+      "tm_ca_pairs": 178,
+      "rmsd_before_A": 0.0,
+      "rmsd_after_A": 0.0,
+      "state_label": "active_agonist_win_gi",
+      "ligand_resname": "WI5"
+    },
+    {
+      "pdb_id": "6KPF",
+      "receptor": "cb2",
+      "chain": "R",
+      "reference": "6PT0",
+      "source_pdb": "data/targets/cb2_multistate/6KPF_clean.pdb",
+      "aligned_pdb": "data/targets/multistate_aligned/6KPF_aligned.pdb",
+      "tm_ca_pairs": 178,
+      "rmsd_before_A": 40.51,
+      "rmsd_after_A": 22.406,
+      "state_label": "active_agonist_cryoem",
+      "ligand_resname": "E3R"
+    },
+    {
+      "pdb_id": "5ZTY",
+      "receptor": "cb2",
+      "chain": "A",
+      "reference": "6PT0",
+      "source_pdb": "data/targets/cb2_multistate/5ZTY_clean.pdb",
+      "aligned_pdb": "data/targets/multistate_aligned/5ZTY_aligned.pdb",
+      "tm_ca_pairs": 178,
+      "rmsd_before_A": 208.271,
+      "rmsd_after_A": 15.202,
+      "state_label": "inactive_antagonist_am10257",
+      "ligand_resname": "9JU"
+    },
+    {
+      "pdb_id": "8GUR",
+      "receptor": "cb2",
+      "chain": "R",
+      "reference": "6PT0",
+      "source_pdb": "data/targets/cb2_multistate/8GUR_clean.pdb",
+      "aligned_pdb": "data/targets/multistate_aligned/8GUR_aligned.pdb",
+      "tm_ca_pairs": 178,
+      "rmsd_before_A": 68.713,
+      "rmsd_after_A": 3.511,
+      "state_label": "active_agonist_cp55940_gi",
+      "ligand_resname": "9GF"
+    }
+  ]
+}
