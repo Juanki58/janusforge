@@ -194,8 +194,12 @@ def prepare_receptor_pdbqt(
         out_basename.with_suffix(".pdbqt"),
     ]
     existing = next((c for c in candidates if c.exists()), None)
-    if existing:
-        return existing
+    if existing and clean_pdb.exists():
+        if clean_pdb.stat().st_mtime <= existing.stat().st_mtime:
+            return existing
+        for c in candidates:
+            if c.exists():
+                c.unlink()
 
     mk = resolve_mk_prepare_receptor()
     cmd = [

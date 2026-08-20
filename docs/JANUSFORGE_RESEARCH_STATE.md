@@ -1,10 +1,40 @@
 # JANUSFORGE — RESEARCH STATE
 
 **Tipo:** bitácora maestra / mapa de navegación (no informe científico)  
-**Fecha:** 2026-08-17  
-**Autoridad:** `results/reports/JANUSFORGE_RECOVERED_RESEARCH_STATE.md` · `results/reports/JANUS_DECISION_LEDGER_v1.0.md` · `results/reports/JANUSFORGE_SUPERSESSION_AUDIT_v1.0.md`  
-**HEAD al inventariar (authority):** `c43c0b7` — *Add 0Q SMRF and 0Q.1 scientific audit*  
-**Prohibiciones de este doc:** sin nueva investigación; sin resolver CONFLICTOs por inferencia; sin docking/MD/NCE.
+**Fecha:** 2026-08-20  
+**Última sync PI:** 2026-08-20 — HALT cómputo nuevo + sync gobernanza congelada  
+**Autoridad:** `results/reports/JANUSFORGE_RECOVERED_RESEARCH_STATE.md` · `results/reports/JANUS_DECISION_LEDGER_v1.0.md` · `results/reports/JANUSFORGE_SUPERSESSION_AUDIT_v1.0.md` · `docs/switch_hypothesis_allosteric_reformulation.md`  
+**HEAD al inventariar (authority 0Q):** `c43c0b7` — *Add 0Q SMRF and 0Q.1 scientific audit*  
+**Rama sync (2026-08-20):** `feat/micronetwork-falsification-test` @ `4bacec0` (+ working tree sync)  
+**Prohibiciones de este doc:** sin nueva investigación; sin resolver CONFLICTOs por inferencia; sin docking/MD/NCE de_novo; **HALT** de campañas nuevas de docking/generación en background.
+
+---
+
+
+## 0. CURRENT frozen governance (sync 2026-08-20)
+
+**Estado operativo:** trabajo científico de fondo **HALTED** (no arrancar docking/generación nueva). Solo sync documental / gobernanza.
+
+| Parámetro | Estado | Fuente |
+|-----------|--------|--------|
+| **`CONTRACT_v1.0`** | **FROZEN** | `docs/switch_hypothesis_allosteric_reformulation.md`; `configs/thcv_design_constraints.yaml` |
+| **`DE_NOVO_GENERATION`** | **STOP** | Idem; ledger SWITCH-HYPOTHESIS-REFORM |
+| **`THRESHOLD_MODIFICATION`** | **STOP** | Idem |
+| **`THCV_ORTHOSTERIC_DESIGN`** | **PAUSED** (no descartado) | Idem |
+| **`RETROSPECTIVE_AUDIT_PHASES_A_E`** | **CLOSED_AND_ARCHIVED** | Fases A–E en `results/docking/`; archive pause intended |
+| **`SWITCH_HYPOTHESIS`** | **OPEN_REFORMULATED** (alostérico / multiestado) | Ledger §6; `switch_hypothesis_allosteric_reformulation.md` |
+| **`ALLOSTERIC_FRAMEWORK`** | **HYPOTHESIS_PENDING_CALIBRATION** (≠ TRUE) | `epistemic_balance_calibration_2026-08-19.md` |
+| **`CALIBRATION_MULTI_STATE`** | **CLOSED** (2026-08-19) | `docs/cb2_multistate_calibration_synthesis.md` |
+
+### Fases conformacionales recientes (cerradas / veredicto)
+
+| Fase | Veredicto | Nota | Fuente |
+|------|-----------|------|--------|
+| **G** (generalización 8GUR) | **GENERALIZES** (Q1); Q2 PARTIAL | Separación activo/inactivo OOS; LOO no robusto | `results/conformational/fase_g_generalization_report.md` |
+| **H** (ordinal funcional H0/H1) | **INDETERMINATE** (capa ordinal / gaps Gi) | THCV y HU-433 sin fila Gi comparable forzada; AM630 = PROTEAN | `results/conformational/fase_h_ordinal_functional_report.md` |
+| **Micronetwork** HU-308 vs HU-433 | **INDETERMINATE** | Plasticidad de estado: **6PT0 = IDENTICAL_LOCAL_MODES**; **6KPF = DISTINCT_LOCAL_MODES** | `results/conformational/micronetwork_modes_report.md` |
+
+**Implicación:** no promover DISTINCT como ley del par enantiomérico; discrepancia 6PT0/6KPF = plasticidad / INDETERMINATE. No reabrir de_novo ni retune Contract.
 
 ---
 
@@ -82,6 +112,14 @@ Fuentes: `README.md`; `docs/guia_maestra_biotecnologia_quimiotipos.md`; commit `
 | 0Q.1 | **EXPAND** | Solo literatura/claim-split | `results/reports/qiu_0q1_final_cursor_vs_gemini.md` | `c43c0b7` |
 | 0M | **RESERVE** (CURRENT) | Wet H1-a no critical path; **BLOCKED** (`db46e9a`) = HISTORICAL | `qiu_0q_smrf_matrix.md` (+ handoff `@ origin/master`) | `c43c0b7` / master |
 | Round1 calibration | **STOP** | GOLD=0; no cómputo/candidatos nuevos *en ese pipeline* | `results/reports/ROUND1.9_MASTER_EVIDENCE_STATE.md` | untracked |
+| Contract v1.0 | **FROZEN** | Umbrales/reglas inalterados | `switch_hypothesis_allosteric_reformulation.md` | sync 2026-08-20 |
+| de_novo / threshold mod | **STOP** | Sin moléculas nuevas ni retune | Idem; ledger SWITCH-HYPOTHESIS-REFORM | sync 2026-08-20 |
+| THCV ortostérico | **PAUSED** | No descartado; no campaña ortostérica nueva | Idem | sync 2026-08-20 |
+| Fases A–E retrospectivas | **CLOSED_AND_ARCHIVED** | Archive pause intended | `results/docking/*fase*` / external audit | sync 2026-08-20 |
+| Fase G | **GENERALIZES** (cerrada) | OOS 8GUR | `fase_g_generalization_report.md` | post-G / rama micronet |
+| Fase H | **INDETERMINATE** (cerrada) | Ordinal / gaps funcionales | `fase_h_ordinal_functional_report.md` | `72b6e69` |
+| Micronetwork HU-308/433 | **INDETERMINATE** (cerrada) | 6PT0 identical / 6KPF distinct | `micronetwork_modes_report.md` | `4bacec0` |
+| Background compute | **HALT** | No docking/generación nueva hasta orden PI | Orden PI 2026-08-20 | sync |
 
 ---
 
@@ -150,7 +188,9 @@ Pregunta **abierta y documentada** (sin inventar dirección nueva):
 
 ## 12. Next actions
 
-Solo lo respaldado por docs actuales:
+**HALT (2026-08-20):** no iniciar docking/generación/MD nuevas. Archive pause de A–E intended. Reanudar solo con orden PI explícita.
+
+Solo lo respaldado por docs actuales (documental / gobernanza):
 
 ### A. Documentary recovery (Round1 scope)
 - Anclar PDF/tablas Valenzano; Tables 1–2 Khanolkar; potencias OA Qiu — `ROUND1.9_MASTER_EVIDENCE_STATE.md`; Recovered State §12  
@@ -182,6 +222,10 @@ Solo lo respaldado por docs actuales:
 | 2026-08-15/16 | **EXPAND** 0Q.1 | A-pairs | `qiu_0q1_final_cursor_vs_gemini.md` | `c43c0b7` |
 | 2026-08-16/17 | GOLD=0; Round1 **STOP** | Calibration | `ROUND1.9_MASTER_EVIDENCE_STATE.md` | untracked |
 | 2026-08-17 | Soft-drug: fenotipo **NO INTEGRABLE**; ADME **CONDICIONAL** | Integration (dimensiones distintas) | `AUDIT_CONTROLLED_DEACTIVATION_INTEGRATION_v1.0.md` | untracked |
+| 2026-08-19 | Contract **FROZEN**; de_novo **STOP**; THCV ortostérico **PAUSED**; switch **OPEN_REFORMULATED** | Gobernanza metodológica | `switch_hypothesis_allosteric_reformulation.md`; ledger §6 | sync 2026-08-20 |
+| 2026-08-19 | Fase G **GENERALIZES**; Fase H **INDETERMINATE** | Conformacional / ordinal | `fase_g_*`; `fase_h_*` | `72b6e69` / reports |
+| 2026-08-20 | Micronetwork **INDETERMINATE** (6PT0 identical / 6KPF distinct) | HU-308 vs HU-433 | `micronetwork_modes_report.md` | `4bacec0` |
+| 2026-08-20 | **HALT** docking/generación nueva; sync bitácora | Gobernanza PI | este archivo | sync commit |
 
 ---
 
@@ -201,6 +245,10 @@ Solo lo respaldado por docs actuales:
 | Round1 STOP; GOLD=0; REVIEW=9 | `results/reports/ROUND1.9_MASTER_EVIDENCE_STATE.md` | untracked | CURRENT *scope Round1* |
 | Soft-drug fenotipo **NO INTEGRABLE**; ADME **CONDICIONAL** | `results/reports/AUDIT_CONTROLLED_DEACTIVATION_INTEGRATION_v1.0.md` | untracked | CURRENT (dimensiones distintas) |
 | Inventario / ledger / supersesión | `JANUSFORGE_RECOVERED_RESEARCH_STATE.md`; `JANUS_DECISION_LEDGER_v1.0.md`; `JANUSFORGE_SUPERSESSION_AUDIT_v1.0.md` | reports/ | Mapas de autoridad |
+| Contract FROZEN; de_novo STOP; switch reform | `docs/switch_hypothesis_allosteric_reformulation.md`; ledger §6 | sync 2026-08-20 | CURRENT (gobernanza) |
+| Fase G GENERALIZES | `results/conformational/fase_g_generalization_report.md` | post-G | CURRENT (cerrada) |
+| Fase H INDETERMINATE | `results/conformational/fase_h_ordinal_functional_report.md` | `72b6e69` | CURRENT (cerrada) |
+| Micronetwork INDETERMINATE (plasticidad 6PT0/6KPF) | `results/conformational/micronetwork_modes_report.md` | `4bacec0` | CURRENT (cerrada) |
 
 ---
 
@@ -252,6 +300,10 @@ Solo lo respaldado por docs actuales:
 9. Soft-drug: **ADME = CONDICIONAL** ≠ **fenotipo / integración científica = NO INTEGRABLE** (dimensiones distintas; ADME no reabre path Janus fenotípico).
 10. SMRF/0Q.1 **no** reabren docking/NCE/MD.
 11. **0M:** **BLOCKED** (`db46e9a`) = HISTORICAL; **RESERVE** (SMRF / `origin/master`) = CURRENT operacional.
+
+12. **`CONTRACT_v1.0` = FROZEN**; **`DE_NOVO_GENERATION` = STOP**; **`THRESHOLD_MODIFICATION` = STOP** — vigentes hasta orden PI.
+13. Fases G/H/micronetwork cerradas con veredictos documentados; **no** reinterpretar INDETERMINATE como FAIL/PASS por inferencia.
+14. **HALT** de campañas compute nuevas (docking/generación) mientras rige la orden PI de pausa (2026-08-20).
 
 ---
 

@@ -1,0 +1,22 @@
+{
+  "center_x": 98.379,
+  "center_y": 109.559,
+  "center_z": 123.801,
+  "size_x": 20.0,
+  "size_y": 20.0,
+  "size_z": 20.0,
+  "source": "co-crystallized_ligand_centroid",
+  "ligand_resname": "WI5",
+  "ligand_chain": "R",
+  "ligand_resseq": 401,
+  "ligand_natoms": 32,
+  "ligand_pdb": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb2\\6PT0_ligand.pdb",
+  "receptor_pdbqt": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb2\\cb2_6pt0_clean.pdbqt",
+  "receptor_pdbqt_legacy": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb2\\6PT0_rec.pdbqt",
+  "clean_pdb": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb2\\6PT0_clean.pdb",
+  "pdb_id": "6PT0",
+  "chains_kept": [
+    "R"
+  ],
+  "grid_config": "configs/grid_cb2_6pt0.txt"
+}

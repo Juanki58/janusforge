@@ -1,0 +1,22 @@
+{
+  "center_x": 10.524,
+  "center_y": 1.258,
+  "center_z": -45.17,
+  "size_x": 20.0,
+  "size_y": 20.0,
+  "size_z": 20.0,
+  "source": "co-crystallized_ligand_centroid",
+  "ligand_resname": "E3R",
+  "ligand_chain": "A",
+  "ligand_resseq": 1201,
+  "ligand_natoms": 29,
+  "ligand_pdb": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb2\\6KPC_ligand.pdb",
+  "receptor_pdbqt": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb2\\cb2_6kpc_clean.pdbqt",
+  "receptor_pdbqt_legacy": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb2\\6KPC_rec.pdbqt",
+  "clean_pdb": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb2\\6KPC_clean.pdb",
+  "pdb_id": "6KPC",
+  "chains_kept": [
+    "A"
+  ],
+  "grid_config": "configs/grid_cb2_6kpc.txt"
+}

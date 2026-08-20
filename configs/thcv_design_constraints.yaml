@@ -1,0 +1,23 @@
+# THCV_DESIGN_CONSTRAINTS v1.0 — machine-readable (thresholds frozen)
+version: "1.0"
+
+admet:
+  tpsa_min_A2: 70.0
+
+cb1_filter:
+  c3_clearance_min_A: 0.8
+  c9_c11_volume_delta_max_A: 1.0
+  clash_min_heavy_distance_A: 2.5
+
+cb2_filter:
+  c3_occupancy_envelope_A: 2.5
+  ser285_max_A: 3.5
+  pose_persistence_centroid_max_A: 2.0
+
+cb2_tunnel_residues:
+  - {resseq: 110, resname: ILE, atoms: [CG1, CG2, CD1, CB]}
+  - {resseq: 186, resname: ILE, atoms: [CG1, CG2, CD1, CB]}
+  - {resseq: 114, resname: THR, atoms: [OG1, CB, CG2]}
+
+global:
+  pass_requires: [cb1_filter, cb2_filter, admet_tpsa]

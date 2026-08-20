@@ -156,4 +156,18 @@ From the ledger only (no winner by inference):
 
 ---
 
+### 6. SWITCH-HYPOTHESIS-REFORM — OPEN / alostérico (2026-08-19)
+
+| Campo | Valor |
+|-------|--------|
+| **ID** | SWITCH-HYPOTHESIS-REFORM |
+| **Path** | `docs/switch_hypothesis_allosteric_reformulation.md` |
+| **Fecha** | 2026-08-19 |
+| **Decisión** | Reformulación metodológica: `THCV_ORTHOSTERIC_DESIGN` **PAUSED** (no descartado); `RETROSPECTIVE_AUDIT_PHASES_A_D` **CLOSED_AND_ARCHIVED**; `SWITCH_HYPOTHESIS` **OPEN_REFORMULATED**; pregunta rectora alostérica registrada; `DE_NOVO_GENERATION` / `THRESHOLD_MODIFICATION` **STOP**; Contract v1.0 **FROZEN**. |
+| **Evidencia citada** | Bloque A–D (`external_audit_four_quadrants.md`); THCV seed/mapping; SMRF/0Q.1 (continuidad literaria). |
+| **Estado actual** | **OPEN_HYPOTHESIS** — sin criterios de diseño ni moléculas nuevas. |
+| **¿Superseded?** | **NOT SUPERSEDED** — complementa (no revoca) 0Q D NO-GO del path compute ortostérico. |
+
+---
+
 *Fin ledger `JANUS_DECISION_LEDGER_v1.0.md`.*
