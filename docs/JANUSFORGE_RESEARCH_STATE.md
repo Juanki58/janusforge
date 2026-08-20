@@ -6,6 +6,7 @@
 **Autoridad:** `results/reports/JANUSFORGE_RECOVERED_RESEARCH_STATE.md` · `results/reports/JANUS_DECISION_LEDGER_v1.0.md` · `results/reports/JANUSFORGE_SUPERSESSION_AUDIT_v1.0.md` · `docs/switch_hypothesis_allosteric_reformulation.md`  
 **HEAD al inventariar (authority 0Q):** `c43c0b7` — *Add 0Q SMRF and 0Q.1 scientific audit*  
 **Rama sync (2026-08-20):** `feat/micronetwork-falsification-test` @ `4bacec0` (+ working tree sync)  
+**Estado consolidado:** `RESEARCH_CONSOLIDATED_AT_FRONTIER` — síntesis PI en [`docs/cb2_mechanistic_frontier_synthesis.md`](cb2_mechanistic_frontier_synthesis.md)  
 **Prohibiciones de este doc:** sin nueva investigación; sin resolver CONFLICTOs por inferencia; sin docking/MD/NCE de_novo; **HALT** de campañas nuevas de docking/generación en background.
 
 ---
@@ -13,7 +14,7 @@
 
 ## 0. CURRENT frozen governance (sync 2026-08-20)
 
-**Estado operativo:** trabajo científico de fondo **HALTED** (no arrancar docking/generación nueva). Solo sync documental / gobernanza.
+**Estado operativo:** `RESEARCH_CONSOLIDATED_AT_FRONTIER` — trabajo científico de fondo **HALTED** (no arrancar docking/generación nueva). Solo sync documental / gobernanza. Ver [`cb2_mechanistic_frontier_synthesis.md`](cb2_mechanistic_frontier_synthesis.md).
 
 | Parámetro | Estado | Fuente |
 |-----------|--------|--------|
