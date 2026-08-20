@@ -3,7 +3,7 @@
 **Fecha:** 2026-08-21  
 **Rama:** `feat/cb2-hubs-functional-topology-test`  
 **Tipo:** **DOCUMENTATION ONLY** — reposo científico; **no** compute, **no** docking, **no** de novo, **no** nueva fase, **no** push  
-**Anclas de linaje (preservar):** `cfb2a51` (dual-test limpio → topología-only) · `c2869b0` (jerarquía ambiental A/B/C + `Q_membrana` parked)  
+**Anclas de linaje (preservar):** `cfb2a51` (dual-test limpio → topología-only) · `c2869b0` (jerarquía ambiental A/B/C + `Q_membrana` parked) · `2a1193c` (reposo científico / frontera)  
 **Bitácora extendida:** [`docs/JANUSFORGE_RESEARCH_STATE.md`](docs/JANUSFORGE_RESEARCH_STATE.md)  
 **Puntero síntesis:** [`docs/cb2_mechanistic_frontier_synthesis.md`](docs/cb2_mechanistic_frontier_synthesis.md) (este archivo es la autoridad de freeze)
 
@@ -14,6 +14,39 @@
 The project ends with a more realistic **working hypothesis**: CB2 activity appears to emerge from the interaction among ligand, conformational landscape, and membrane environment, but the **quantitative contribution of each component is not yet resolved**.
 
 **Prohibido afirmar:** que el “modelo final” **demuestra** un sistema tripartito definitivo, o que se **resolvió** la termodinámica de CB2. Ligando / paisaje / membrana son ejes de una **hipótesis multivariable**, no un veredicto cuantitativo cerrado.
+
+**TRIPARTITE** = **working hypothesis / framing only** — **NOT** a demonstrated final model; quantitative weights still unresolved (lenguaje preservado desde `2a1193c`).
+
+---
+
+## Mapa de convergencia comunitaria (consolidado — 4 bloques)
+
+**Alcance:** registro de **convergencia internacional de preguntas** en la literatura CB2 — **no** colaboraciones del proyecto. Grupos nombrados (Selent / IMIM–UPF, Bouvier, Veprintsev, Sykes, y afines) = **contexto de campo** etiquetado **[SUPPORTED_INTERPRETATION]** (“el campo trabaja preguntas emparentadas”) o **[HIPÓTESIS_ABIERTA]** cuando el vínculo mecánico al repo no está cerrado. Claims científicos abajo citan solo papers ya en repo con DOI.
+
+### 1. Redes alostéricas y sesgo funcional
+
+**[LITERATURA_PRIMARIA]** Morales-Pastor et al. (2025): ~360 mutantes, MD, acoplamiento Gαi2 / β-arr1; LigACN **distribuida** (muchos puntos de entrada, no un switch único). DOI [10.1038/s41467-025-60003-0](https://doi.org/10.1038/s41467-025-60003-0); PMID [40500255](https://pubmed.ncbi.nlm.nih.gov/40500255/). Coherente con el cierre propio **`STATIC_LIGACN = CORE_TOPOLOGICAL_ONLY`** (Test B negativo ≠ “la red no existe”).
+
+### 2. Complejo cuaternario y acoplamiento
+
+**Tema de literatura (IDs primarios pendientes si no están en repo):** interfaz TM3 / TM5 / TM6–Gαi; apertura coordinada con TM5 intracelular. **[HIPÓTESIS_ABIERTA]** / tema a anclar con DOI primario — **no** inventar citas de “crosslinking de complejo cuaternario” sin ID verificado en `RESEARCH_STATE` / síntesis. Paisaje multi-estado CB1/CB2 ya anclado: **[LITERATURA_PRIMARIA]** Dutta & Shukla (2023), DOI [10.1038/s42003-023-04868-1](https://doi.org/10.1038/s42003-023-04868-1).
+
+### 3. Biofísica de membrana / liposomas reconstituidos
+
+**[LITERATURA_PRIMARIA]** Estabilización por PS / lípidos aniónicos y pliegue funcional en sistemas reconstituidos — Kimura et al. (2012), DOI [10.1074/jbc.M111.268425](https://doi.org/10.1074/jbc.M111.268425); Vukoti et al. (2012), DOI [10.1371/journal.pone.0046290](https://doi.org/10.1371/journal.pone.0046290). **[HIPÓTESIS_ABIERTA]** Acoplamiento electrostático con H8 (p.ej. Arg302^8.46 como hub estático del repo) — plausible como tema de campo; **no** demostrado por Test B ni por `Q_membrana` (parked).
+
+### 4. Colesterol y vía lipídica
+
+**[LITERATURA_PRIMARIA]** Colesterol / MRI-2646: modulación de equilibrio basal y clase de eficacia — Yeliseev et al. (2021), DOI [10.1038/s41598-021-83245-6](https://doi.org/10.1038/s41598-021-83245-6). **Tema de literatura (ID primario pendiente si no verificado aquí):** entrada lateral de ligando lipídico por corredor TM6–TM7. Encaja Nivel B (`MEMBRANE_MILIEU = FUTURE_HYPOTHESIS`); **no** en pipeline.
+
+### Significado para el repositorio
+
+| Lectura | Estado |
+|---------|--------|
+| Fin de búsqueda ciega (de novo / filtros empíricos de docking) | **`DOCKING_CAMPAIGNS` / `DE_NOVO_GENERATION` / `OPEN_ENDED_SEARCHES` = STOP** |
+| Interpretación `CORE_TOPOLOGICAL_ONLY` | Autopista estática TM7–H8 / base TM2 = **flujo mecánico basal candidato**; selección fina de vía requiere dinámica temporal + acoplamiento de membrana — **[SUPPORTED_INTERPRETATION]**, **no** demostrado por Test B |
+| Economía de recursos | Entrada futura = **reanálisis de datos públicos** (no campaña ciega nueva) |
+| Proveniencia | **`DATA_PROVENANCE_AUDIT: PARTIAL` — SI/endpoints registered; traj/MSM download not completed** (GPCRmd 1540 / Box = `ENLACE_REGISTRADO`; Sink T from Methods; MOESM2 recovered) |
 
 ---
 
@@ -36,7 +69,7 @@ LINE_PAUSE                = TRUE
 
 **Aliases / legado (compatibilidad con cierres previos):** `ORTOSTERIC_THCV_DESIGN = PAUSED` · `CORE_TOPOLOGICAL_ONLY = CLOSED` · `CB2_Gi_NETWORK_CANDIDATE = NOT_ESTABLISHED` · `DOCKING = STOP` · `COMPUTATION = PAUSED`.
 
-Preservados sin reabrir: **Niveles A/B/C**, **`Q_membrana` = PARKED**, linaje **`cfb2a51` / `c2869b0`**.
+Preservados sin reabrir: **Niveles A/B/C**, **`Q_membrana` = PARKED**, pregunta de reactivación `ligand+receptor+membrane → P(metastable states)` archivada, linaje **`cfb2a51` / `c2869b0` / `2a1193c`**.
 
 ---
 
@@ -136,11 +169,26 @@ No sobreclaim: *“La red no tiene relación con Gαi2.”* sigue siendo demasia
 ## Gobernanza vigente
 
 ```yaml
-# Frontera epistemológica — hipótesis de trabajo, no modelo final (2026-08-21)
+# Freeze YAML — frontera definida y archivada (2026-08-21); honestidad epistemológica
+STAGE: FRONTIER_DEFINED_AND_ARCHIVED
+EMPIRICAL_FOUNDATION:
+  MACRO_STATE_RECOGNITION: VALIDATED  # Phase G / 8GUR
+  LOCAL_MICRO_NETWORK: STATE_DEPENDENT  # HU-308/HU-433
+  STATIC_LIGACN_TOPOLOGY: CORE_TOPOLOGICAL_ONLY  # cfb2a51
+  DATA_PROVENANCE_AUDIT: PARTIAL  # SI/endpoints registered; traj/MSM download not completed
+THEORETICAL_MODEL:
+  FRAMEWORK: TRIPARTITE_WORKING_HYPOTHESIS  # NOT demonstrated model
+  NOTE: ligand × conformational ensemble × lipid bilayer; weights unresolved
+  KEY_MODULATORS_CANDIDATE: [Allosteric Network, Cholesterol, Anionic Phospholipids]
+PIPELINE_LOCKS:
+  DOCKING_CAMPAIGNS: STOP
+  DE_NOVO_GENERATION: STOP
+  OPEN_ENDED_SEARCHES: STOP
+  COMPUTATION_ACTIVE: NONE
 RESEARCH_STATUS: FROZEN_AT_EPISTEMOLOGICAL_BOUNDARY
+# Flags exactos preservados (autoridad — no relajar)
 DE_NOVO_GENERATION: STOP
 DOCKING_EXECUTION: STOP
-COMPUTATION_ACTIVE: NONE
 ORTHOSTERIC_DESIGN: PAUSED
 MACRO_COORDINATE: VALIDATED_OUT_OF_SAMPLE
 FUNCTIONAL_EFFICACY: INDETERMINATE
@@ -169,16 +217,20 @@ STATIC_GRAPH_ANALYSIS: CLOSED
 DUAL_VALIDATION_HUBS: CLOSED
 SINK_SET_T: EXTRACTED  # Arg131(3x50), Asp240(6x30), Ser303(8x47), Ser69(2x39)
 CB1_COMPARISON: BLOCKED
-DATA_PROVENANCE: PARTIAL  # SI/SD1–3 local; traj/Box = ENLACE_REGISTRADO
+DATA_PROVENANCE: PARTIAL  # SI/endpoints registered; traj/MSM download not completed (GPCRmd 1540 / Box = ENLACE_REGISTRADO; MOESM2 recovered; Sink T from Methods)
+DATA_PROVENANCE_AUDIT: PARTIAL  # same honesty line — NOT fully RESOLVED for trajectories
 TECHNICAL_SEARCH_TRAJ: STOP
 ACTIVE_ACTION: LINE_PAUSE  # true pause — no compute
 DUAL_TEST_COMMIT: cfb2a51  # preserve clean negative / topology-only result
 ABC_HIERARCHY_COMMIT: c2869b0  # A/B/C + Q_membrana parked
+FREEZE_COMMIT: 2a1193c  # reposo científico / frontera (pre-mapa)
 Q_MEMBRANA: PARKED  # DO NOT RUN
 NIVEL_A_CANONICAL: ACTIVE_BASELINE
 NIVEL_B_CHOLESTEROL_LIPIDS: FUTURE_PRIORITY_HYPOTHESIS  # no active compute
 NIVEL_C_SECONDARY_MODULATORS: ARCHIVED_NOT_JUSTIFIED
 WORKING_HYPOTHESIS: LIGAND_x_LANDSCAPE_x_MEMBRANE  # weights unresolved; not a final tripartite model
+REACTIVATION_QUESTION: ligand+receptor+membrane -> P(metastable states)  # archived; DO NOT RUN as docking score hunt
+ARCHIVED_NEXT_CALCULATION: PARKED  # DO NOT RUN — see section below; no traj download, no MD, no analysis now
 ```
 
 **Cortafuegos de gobernanza (formal):**
@@ -200,10 +252,10 @@ NEW_VARIABLES_IN_PIPELINE = NONE
 Q_MEMBRANA = PARKED
 ```
 
-**Estado del repositorio (reposo científico):** congelado en frontera epistemológica — **hipótesis de trabajo** multivariable, **no** modelo tripartito demostrado; anclas `cfb2a51` / `c2869b0`; variables nuevas en pipeline = **cero**.
+**Estado del repositorio (reposo científico):** `STAGE: FRONTIER_DEFINED_AND_ARCHIVED` — congelado en frontera epistemológica — **TRIPARTITE_WORKING_HYPOTHESIS** (no modelo demostrado); `DATA_PROVENANCE_AUDIT: PARTIAL`; anclas `cfb2a51` / `c2869b0` / `2a1193c`; variables nuevas en pipeline = **cero**.
 
 **[OBSERVACIÓN_PROPIA]** Diseño químico / de_novo / docking / nueva búsqueda de hubs / **nueva fase** **STOP** (`NEW_PHASE = DO_NOT_OPEN`). `LINE_PAUSE = TRUE`. `COMPUTATION_ACTIVE = NONE`.  
-**[INTERNAL_REANALYSIS]** Dual validation (`cfb2a51`) → **`CORE_TOPOLOGICAL_ONLY`**. Topología ≠ necesidad causal Gi. Prohibido: “switch”, “núcleo universal probado”, `CORE_FOUND`, `CB2_Gi_NETWORK_CANDIDATE`, “termodinamica CB2 resuelta”, “modelo tripartito final demostrado”.
+**[INTERNAL_REANALYSIS]** Dual validation (`cfb2a51`) → **`CORE_TOPOLOGICAL_ONLY`**. Topología ≠ necesidad causal Gi. Prohibido: “switch”, “núcleo universal probado”, `CORE_FOUND`, `CB2_Gi_NETWORK_CANDIDATE`, “termodinamica CB2 resuelta”, “modelo tripartito final demostrado”, “GPCRmd traj / Box MSM fully recovered”.
 ---
 
 ## Jerarquía ambiental A/B/C (cortafuegos PI — DOCUMENTATION ONLY)
@@ -446,45 +498,66 @@ LITERATURA / DATOS PÚBLICOS
 | `Q_membrana` | **PARKED** (DO NOT RUN) |
 | Hipótesis de trabajo (ligando × paisaje × membrana) | **Abierta** — pesos **no** resueltos; **no** modelo tripartito final |
 | Pregunta reactivación `P(metastable states)` | **Archivada** — medir distribución, no docking score |
+| `ARCHIVED_NEXT_CALCULATION` (núcleo dinámico CB2→Gi) | **PARKED** — documentado abajo; **NOT NOW** |
+| `DATA_PROVENANCE_AUDIT` | **PARTIAL** — SI/endpoints; traj/MSM **not** fully recovered |
 
 ---
 
-## Índice — síntesis consolidada (`docs/synthesis/`)
+## ARCHIVED_NEXT_CALCULATION — núcleo dinámico CB2→Gi (PI — PARKED / NOT NOW)
 
-| Documento | Contenido |
-|-----------|-----------|
-| [`docs/synthesis/CB2_STRUCTURE_ATLAS.md`](docs/synthesis/CB2_STRUCTURE_ATLAS.md) | Atlas PDB: 5ZTY, 6PT0, 6KPF, 8GUS/UR/UQ/UT, 12IY/IZ/JA, 8X3L, 9U7L; Level-0; Phase F/G |
-| [`docs/synthesis/HU308_HU433_PARADOX.md`](docs/synthesis/HU308_HU433_PARADOX.md) | Par enantiomérico; 8GUS experimental; Soethoudt/Hanuš; micronetwork INDETERMINATE; **contradicciones abiertas** |
-| [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md) | ACN/LigACN (Morales-Pastor 2025); MSM (Dutta & Shukla 2023); Trp258 no switch único; frontera MD |
-| [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md) | Protocolo dinámico (histórico); `CB2_MINIMAL_GI_CORE = NOT_FOUND`; cruzar topología×dinámica parked |
-| [`results/network_core/static_ligacn_topology_report.md`](results/network_core/static_ligacn_topology_report.md) | Topología estática LigACN→T (**CLOSED**; `STATIC_BOTTLENECKS = SUPPORTED`) |
-| [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) | Dual A/B (**CLOSED**, `cfb2a51`) → **`CORE_TOPOLOGICAL_ONLY`** |
-| [`docs/synthesis/DOCKING_LIMITS_AND_GOVERNANCE.md`](docs/synthesis/DOCKING_LIMITS_AND_GOVERNANCE.md) | Límites estáticos; Rachman 2026; INDETERMINATE; gobernanza completa |
+**Estado:** **`PARKED`**. Documentación de viabilidad y recomendación PI. **`COMPUTATION_ACTIVE = NONE`**. **`NEW_PHASE = DO_NOT_OPEN`**. **`RESEARCH_STATUS = FROZEN_AT_EPISTEMOLOGICAL_BOUNDARY`**.  
+**Prohibido ahora:** descargar trayectorias, correr MD, docking, de novo, análisis de red dinámica, push.
 
----
+### Distinción: “calcularlo” ≠ inventar desde cero
 
-## Índice — artefactos conformacionales
+Reconstruir / reanalizar un **núcleo dinámico CB2→Gi** a partir de **datos publicados** es técnicamente viable — **no** equivale a inventar energías absolutas ni moléculas *de novo*.
 
-| Artefacto | Ruta |
-|-----------|------|
-| Phase F report + matrix | `results/conformational/fase_f_conformational_fingerprint.md`, `cb2_state_distance_matrix.json` |
-| Phase G report | `results/conformational/fase_g_generalization_report.md` |
-| Phase H report | `results/conformational/fase_h_ordinal_functional_report.md` |
-| Micronetwork report | `results/conformational/micronetwork_modes_report.md` |
-| Micronetwork falsification | `results/conformational/micronetwork_falsification_report.md` |
+| Fuente | Escala / objeto | DOI |
+|--------|-----------------|-----|
+| **[LITERATURA_PRIMARIA]** Dutta & Shukla (2023) | ~700 μs MSM / VAMPnets; ~6 estados metaestables cada CB1/CB2 | [10.1038/s42003-023-04868-1](https://doi.org/10.1038/s42003-023-04868-1) |
+| **[LITERATURA_PRIMARIA]** Morales-Pastor et al. (2025) | WT CB2 ~2 μs acumulados; LigACN ortostérico→intracelular; mutagénesis / Gαi2 | [10.1038/s41467-025-60003-0](https://doi.org/10.1038/s41467-025-60003-0) |
 
----
+**Pregunta abierta concreta (archivada):** ¿cuál es el **conjunto mínimo dinámico de nodos** necesario para comunicación Gαi, con arquitectura CB1 distinta?
 
-## Índice — documentos de gobernanza relacionados
+### Niveles de dificultad (solo registro)
 
-| Documento | Ruta |
-|-----------|------|
-| Bitácora maestra (extendida) | `docs/JANUSFORGE_RESEARCH_STATE.md` |
-| Síntesis frontera metodológica | `docs/cb2_mechanistic_frontier_synthesis.md` |
-| Balance epistemológico | `docs/epistemic_balance_calibration_2026-08-19.md` |
-| Reformulación switch | `docs/switch_hypothesis_allosteric_reformulation.md` |
-| Mapa alostérico (HIPÓTESIS) | `docs/cb2_allosteric_switch_map.md` |
-| Calibración multistate | `docs/cb2_multistate_calibration_synthesis.md` |
+| # | Nivel | Viabilidad |
+|---|-------|------------|
+| 1 | Reproducir lo publicado | Relativamente factible |
+| 2 | Núcleo mínimo propio (borrado de nodos, caminos más cortos, centralidad dinámica, persistencia temporal, robustez) | Factible con cuidado |
+| 3 | Causalidad funcional | Mucho más duro — requiere dinámica conjunta + mutagénesis / Gαi (datos Morales-Pastor existen) |
+
+### Regla crítica (gobernanza)
+
+**No** correr ~700 μs MD propios como primer paso. Si se descongela: **análisis a posteriori** de trayectorias originales **si** se recuperan (`DATA_PROVENANCE_AUDIT` sigue **PARTIAL**; GPCRmd 1540 / Box = `ENLACE_REGISTRADO`). MD nuevo **solo** si el análisis publicado **no** puede responder la pregunta.
+
+### Membrana también calculable más tarde
+
+Colesterol cambia farmacología CB2; MD con/sin ~40% colesterol (~2 μs) — **[LITERATURA_PRIMARIA]** Yeliseev et al., DOI [10.1038/s41598-021-83245-6](https://doi.org/10.1038/s41598-021-83245-6). **`Q_membrana` / `MEMBRANE_MILIEU` = FUTURE** — no ahora.
+
+### Tabla de viabilidad (registro)
+
+| Objetivo | Semáforo |
+|----------|----------|
+| Reproducir dinámica publicada | 🟢 |
+| Reconstruir red dinámica | 🟢 |
+| Núcleo mínimo | 🟢 / 🟡 |
+| vs CB1 | 🟡 |
+| Vincular mutagénesis Gαi | 🟡 |
+| Probar causalidad farmacológica | 🔴 — no solo cálculo |
+| Colesterol + dinámica | 🟡 — más costoso |
+
+### Cálculo NEXT recomendado SI se descongela (NOT NOW)
+
+1. ¿Sobreviven los **seis hubs estáticos** cuando la red pasa a ser **dinámica**?
+2. ¿Los nodos supervivientes quedan **más cercanos** a mutaciones que alteran Gαi2?
+
+| Resultado | Lectura |
+|-----------|---------|
+| **Ambos sí** | Evidencia más fuerte para un **candidato de subred dinámica** (nombre: **nunca** “switch”; meta precisa = subred dinámica robusta reconocimiento de ligando → salida Gαi en CB2). `CB2_Gi_NETWORK_CANDIDATE` **solo** si dual criteria + revisión humana. |
+| **No** | Confirma que **`CORE_TOPOLOGICAL_ONLY`** era propiedad del grafo agregado, no mecanismo dinámico — también es una respuesta clara. |
+
+**Naming lock:** no “switch”; `CB2_Gi_NETWORK_CANDIDATE = NOT_ESTABLISHED` hasta criterios duales post-revisión.
 
 ---
 
@@ -493,22 +566,24 @@ LITERATURA / DATOS PÚBLICOS
 **[OBSERVACIÓN_PROPIA]**
 
 1. **`RESEARCH_STATUS = FROZEN_AT_EPISTEMOLOGICAL_BOUNDARY`.** Hipótesis de trabajo multivariable; **no** modelo tripartito demostrado; **no** termodinámica CB2 resuelta.
-2. Trayectoria: THCV/ortostérico → Contract restrictivo → paisaje → Phase G → microestados → Phase H IND → LigACN estático → `CORE_TOPOLOGICAL_ONLY` → literatura + membrana → hipótesis multivariable.
-3. Explicitamente NO: switch único; hubs estáticos controlan Gαi2; `CB2_Gi_NETWORK_CANDIDATE`; TPSA ≡ periferia; lípido solo explica variabilidad; estrategia química usable lista.
+2. Trayectoria: THCV/ortostérico → Contract restrictivo → paisaje → Phase G → microestados → Phase H IND → LigACN estático → `CORE_TOPOLOGICAL_ONLY` → literatura + membrana → hipótesis multivariable → mapa de convergencia + `ARCHIVED_NEXT_CALCULATION` parked.
+3. Explicitamente NO: switch único; hubs estáticos controlan Gαi2; `CB2_Gi_NETWORK_CANDIDATE`; TPSA ≡ periferia; lípido solo explica variabilidad; estrategia química usable lista; traj GPCRmd/Box “fully recovered”.
 4. A/B/C preservada (`c2869b0`); `Q_membrana` parked; `MEMBRANE_MILIEU = FUTURE_HYPOTHESIS`.
 5. Reactivación archivada: `ligand+receptor+membrane → P(metastable states)` — medir cambios de distribución, no “mejor pose”.
-6. **`LINE_PAUSE = TRUE`.** **`NEW_PHASE = DO_NOT_OPEN`.** **`COMPUTATION_ACTIVE = NONE`.** Sin docking, de novo, push, ni compute.
+6. **`ARCHIVED_NEXT_CALCULATION = PARKED`** — ver sección arriba; **no** ejecutar.
+7. **`LINE_PAUSE = TRUE`.** **`NEW_PHASE = DO_NOT_OPEN`.** **`COMPUTATION_ACTIVE = NONE`.** Sin docking, de novo, push, MD, ni download de traj.
 
 ---
 
 ## Lectura recomendada al reanudar sesión
 
-1. **Este archivo** (`RESEARCH_STATE.md`) — hipótesis de trabajo + flags + NO demostrado + pregunta de reactivación
+1. **Este archivo** (`RESEARCH_STATE.md`) — hipótesis de trabajo + flags + mapa de convergencia + `ARCHIVED_NEXT_CALCULATION` + NO demostrado
 2. [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) — ancla `cfb2a51`
 3. [`results/network_core/static_ligacn_topology_report.md`](results/network_core/static_ligacn_topology_report.md)
 4. [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md) — Morales-Pastor / Dutta–Shukla / Trp258
 5. [`docs/synthesis/HU308_HU433_PARADOX.md`](docs/synthesis/HU308_HU433_PARADOX.md) — Smoum / Ganzoni; contradicciones abiertas
+6. [`results/network_core/provenance_recovery_log.md`](results/network_core/provenance_recovery_log.md) — PARTIAL; traj = ENLACE_REGISTRADO
 
 ---
 
-*Fin RESEARCH_STATE.md. 2026-08-21 — FROZEN_AT_EPISTEMOLOGICAL_BOUNDARY: working hypothesis (ligand × landscape × membrane; weights unresolved); NOT a final tripartite model; NOT resolved CB2 thermodynamics; CORE_TOPOLOGICAL_ONLY; LINE_PAUSE=TRUE; NEW_PHASE=DO_NOT_OPEN; COMPUTATION_ACTIVE=NONE; linaje cfb2a51 / c2869b0; no compute / no nueva fase.*
+*Fin RESEARCH_STATE.md. 2026-08-21 — STAGE FRONTIER_DEFINED_AND_ARCHIVED; FROZEN_AT_EPISTEMOLOGICAL_BOUNDARY; TRIPARTITE_WORKING_HYPOTHESIS (weights unresolved; NOT demonstrated model); DATA_PROVENANCE_AUDIT PARTIAL (traj not recovered); CORE_TOPOLOGICAL_ONLY; ARCHIVED_NEXT_CALCULATION PARKED; LINE_PAUSE=TRUE; NEW_PHASE=DO_NOT_OPEN; COMPUTATION_ACTIVE=NONE; linaje cfb2a51 / c2869b0 / 2a1193c; documentation only — no compute / no MD / no nueva fase.*
