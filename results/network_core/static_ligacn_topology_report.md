@@ -16,7 +16,7 @@ MODO: READ_ONLY / PUBLIC_DATA_REANALYSIS
 report_field: STATIC_TOPOLOGICAL_BOTTLENECKS
 ```
 
-**Interpretation limit:** ONLY topological properties of the aggregated published network — **not** causal necessity for Gi, **not** dynamic minimal core, **not** a switch.
+**Interpretation limit:** ONLY topological properties of the aggregated published network — **not** causal necessity for Gi, **not** dynamic minimal core, **not** a switch. Static hubs ≠ automatic microswitches; this deliverable is a **candidate signal-transmission architecture** (epistemic level 3 — RED DE COMUNICACIÓN), not a functional claim about Gαi2 (level 4 frontier). See [`RESEARCH_STATE.md`](../../RESEARCH_STATE.md) § *Separación en cuatro niveles*.
 
 ---
 
@@ -208,6 +208,6 @@ Trajectories/MSM: **not recovered this run** — GPCRmd/1540 and Box `jzooa0o27z
 
 ## 7. Future work (not now)
 
-When trajectories exist: compare dynamic communication network vs this static map (do static bottlenecks survive dynamically?). Dynamic causal core remains `BLOCKED_PENDING_DYNAMIC_VALIDATION`.
+**Parked frontier experiment (DO NOT RUN):** ¿Los hubs topológicos estáticos se conservan en dinámica y, además, están enriquecidos en posiciones cuya perturbación altera preferentemente el acoplamiento Gαi2? — registered in [`RESEARCH_STATE.md`](../../RESEARCH_STATE.md) (nivel 4 FUNCIÓN). Not docking, not a chemical library, not Contract retune. Dynamic causal core remains `BLOCKED_PENDING_DYNAMIC_VALIDATION`.
 
 **STOP.** No docking. No de novo. Human review next.
