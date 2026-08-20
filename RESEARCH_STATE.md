@@ -1,8 +1,8 @@
 # RESEARCH STATE — Janusforge CB₂ (congelación analítica)
 
 **Fecha:** 2026-08-20  
-**Rama:** `task/data-provenance-recovery-attempt` (desde `feat/cb2-minimal-gi-core-reanalysis` @ `c9bc287`)  
-**Tipo:** Recuperación de proveniencia de datos públicos — **en curso**  
+**Rama:** `task/static-ligacn-topology` (desde `task/data-provenance-recovery-attempt` @ `db82f64`)  
+**Tipo:** Reanálisis topológico estático LigACN (agregado) — **CLOSED**; núcleo dinámico sigue bloqueado  
 **Bitácora extendida:** [`docs/JANUSFORGE_RESEARCH_STATE.md`](docs/JANUSFORGE_RESEARCH_STATE.md)
 
 ### Leyenda epistemológica
@@ -27,17 +27,39 @@ CONTRACT_v1.0: ARCHIVED_HISTORICAL
 NEW_DOCKING: STOP
 NEW_CHEMISTRY: STOP
 MODO: READ_ONLY / PUBLIC_DATA_REANALYSIS
-DATA_PROVENANCE: RECOVERY_IN_PROGRESS
+STATIC_GRAPH_ANALYSIS: CLOSED
 SINK_SET_T: EXTRACTED  # Arg131(3x50), Asp240(6x30), Ser303(8x47), Ser69(2x39)
-CB2_MINIMAL_GI_CORE: BLOCKED_PENDING_PROVENANCE
-CB1_COMPARISON: BLOCKED_PENDING_PROVENANCE
-ACTIVE_ACTION: DATA_PROVENANCE_RECOVERY
+CB2_MINIMAL_GI_CORE: BLOCKED_PENDING_DYNAMIC_VALIDATION
+CB1_COMPARISON: BLOCKED
+DATA_PROVENANCE: PARTIAL  # SI/SD1–3 local; traj/Box = ENLACE_REGISTRADO
+TECHNICAL_SEARCH_TRAJ: STOPPED_NO_NEW_CYCLE
+ACTIVE_ACTION: HUMAN_REVIEW
 # Explicit: NOT Fase I
-RESEARCH_STATUS: PROVENANCE_RECOVERY_IN_PROGRESS
+RESEARCH_STATUS: STATIC_TOPOLOGY_CLOSED__DYNAMIC_CORE_BLOCKED
 ```
 
 **[OBSERVACIÓN_PROPIA]** Diseño químico / de_novo / docking / Phase I **STOP**.  
-**[INTERNAL_REANALYSIS]** Proveniencia: MOESM2 PDF recuperado; Sink Set T extraído de Methods; endpoints GPCRmd/Box/GitHub registrados (`ENLACE_REGISTRADO`). Núcleo mínimo **aún no re-ejecutado**. Ver `results/network_core/provenance_recovery_log.md`.
+**[INTERNAL_REANALYSIS]** Topología estática LigACN→T cerrada (`STATIC_TOPOLOGICAL_BOTTLENECKS`). Esto **no** valida un núcleo causal dinámico CB2→Gi.
+
+---
+
+## Entregable cerrado — topología estática
+
+**Informe lead:** [`results/network_core/static_ligacn_topology_report.md`](results/network_core/static_ligacn_topology_report.md)  
+**Métricas:** [`results/network_core/static_ligacn_topology_metrics.json`](results/network_core/static_ligacn_topology_metrics.json)  
+**Veredicto:** [`results/network_core/static_topological_verdict.json`](results/network_core/static_topological_verdict.json)  
+**Script:** [`scripts/network/analyze_static_ligacn_topology.py`](scripts/network/analyze_static_ligacn_topology.py)
+
+| Campo | Valor |
+|-------|--------|
+| `STATIC_TOPOLOGICAL_BOTTLENECKS` | **`TOPOLOGICAL_HUBS_IDENTIFIED`** |
+| Source Set S (verificado) | `8D0:1`, `SER:285`, `PHE:87` |
+| AUSENTE (no sustituidos) | `TRP:258`, `PHE:183` (fuera de WT_degeneracy; sí hay columnas `*-LIG` en SD2 Inactive) |
+| Sink Set T | ARG:131, ASP:240, SER:303, SER:69 (4/4 reachable) |
+| Hubs enriquecidos (no-S/T) | ALA:83, ALA:79, ASN:291, ASN:295, LEU:287, ARG:302 |
+| Límite | Solo propiedades de la red agregada publicada — **no** causalidad Gi |
+
+**Futuro (no ahora):** si existen trayectorias, comparar red dinámica vs este mapa estático (“¿sobreviven los bottlenecks?”).
 
 ---
 
@@ -45,15 +67,16 @@ RESEARCH_STATUS: PROVENANCE_RECOVERY_IN_PROGRESS
 
 **[HIPÓTESIS_ABIERTA]** El programa **no** concluye un «switch»; pregunta si existe un **mecanismo mínimo** demostrable con datos públicos.
 
-**Pregunta frontera (única):**
+**Pregunta frontera (dinámica — aún abierta / bloqueada):**
 
 > ¿Existe un núcleo mínimo de la red conformacional de CB2 que sea necesario para el acoplamiento a Gαi y cuya arquitectura sea diferente en CB1?
 
-**Protocolo:** [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md)  
-**Informe (recovery-first):** [`results/network_core/cb2_minimal_gi_core_report.md`](results/network_core/cb2_minimal_gi_core_report.md)  
+**Estado:** `CB2_MINIMAL_GI_CORE = BLOCKED_PENDING_DYNAMIC_VALIDATION` (requiere validación dinámica; el mapa estático **no** responde esta pregunta).
+
+**Protocolo (histórico / dinámico):** [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md)  
+**Informe previo (core dinámico INDETERMINATE):** [`results/network_core/cb2_minimal_gi_core_report.md`](results/network_core/cb2_minimal_gi_core_report.md)  
 **Auditoría:** [`results/network_core/data_audit.md`](results/network_core/data_audit.md)  
-**Proveniencia (2026-08-20):** [`results/network_core/provenance_recovery_log.md`](results/network_core/provenance_recovery_log.md)  
-Veredictos previos: **`INDETERMINATE`** (reanalysis @ c9bc287). Estado actual de core/CB1: **`BLOCKED_PENDING_PROVENANCE`**.
+**Proveniencia:** [`results/network_core/provenance_recovery_log.md`](results/network_core/provenance_recovery_log.md)
 
 ---
 
@@ -62,45 +85,37 @@ Veredictos previos: **`INDETERMINATE`** (reanalysis @ c9bc287). Estado actual de
 ```
 LITERATURA / DATOS PÚBLICOS
         │
-        ├── CB2 ACN + Gαi2       ✓ (endpoints + SI parcial)
-        ├── CB2 MSM              ✓ (Box ID registrado)
-        ├── CB1 MSM              ✓ (lit)
-        └── datos mutacionales   ✓ (Supp Data 1–3 local)
+        ├── CB2 LigACN SD1–3 local ✓
+        ├── Sink Set T EXTRACTED ✓
+        └── traj GPCRmd / Box MSM = ENLACE only
                   │
                   ▼
-        PROVENANCE RECOVERY
-        (MOESM2 ✓ | Sink T ✓ |
-         traj/Box = ENLACE)
+        STATIC LigACN TOPOLOGY  →  CLOSED
+        (STATIC_TOPOLOGICAL_BOTTLENECKS =
+         TOPOLOGICAL_HUBS_IDENTIFIED)
                   │
                   ▼
-        PREGUNTA ABIERTA
-        "¿Existe un núcleo mínimo CB2→Gi diferencial de CB1?"
+        DYNAMIC MINIMAL Gi CORE
+        BLOCKED_PENDING_DYNAMIC_VALIDATION
                   │
                   ▼
-             REANÁLISIS
-             BLOQUEADO
-             (pending traj/Box)
-                  │
-                  ▼
-                 STOP (no docking / no de novo)
+                 STOP (human review; no docking / no de novo)
 ```
-
-**[OBSERVACIÓN_PROPIA]** «✓» = disponibilidad / hallazgo **publicado** verificado. **No** significa que Janusforge haya descargado trayectorias GPCRmd/Box ni computado un núcleo mínimo.
 
 ---
 
 ## Registro provisional — tabla de resultados (literatura / abierto)
 
-**[LITERATURA_PRIMARIA]** / **[HIPÓTESIS_ABIERTA]** — **no** son «resultado propio» de un núcleo computado en este repo.
+**[LITERATURA_PRIMARIA]** / **[HIPÓTESIS_ABIERTA]** / **[INTERNAL_REANALYSIS]**
 
 | Pregunta | Estado |
 |----------|--------|
 | ¿Hay una red CB2→efector intracelular? | 🟢 Establecido por literatura (ACN/LigACN; Morales-Pastor 2025, DOI [10.1038/s41467-025-60003-0](https://doi.org/10.1038/s41467-025-60003-0); PMID 40500255) |
-| ¿Nodos asociados a preferencia Gαi2 tienen mayor conectividad/proximidad a alta transmisión? | 🟢 Establecido por literatura (mismo) |
-| ¿La red está concentrada en Trp258/Ser285? | 🔴 No; es distribuida (LigACN vía TM7, TM2/3/6, motivos conservados) |
-| ¿TM7 participa especialmente en ruta agonismo/Gi? | 🟢 Apoyado fuertemente (Morales-Pastor 2025; Dutta & Shukla 2023, DOI [10.1038/s42003-023-04868-1](https://doi.org/10.1038/s42003-023-04868-1)) |
-| ¿CB2 posee una única coordenada conformacional suficiente para Gi? | 🔴 No demostrado / probablemente insuficiente (seis estados metaestables; Phase G≠suficiencia funcional) |
-| ¿Existe un núcleo mínimo CB2-Gi funcionalmente diferente de CB1? | ⚪ **`BLOCKED_PENDING_PROVENANCE`** (Sink T EXTRACTED; traj/Box aún ENLACE_REGISTRADO) — ver `results/network_core/` |
+| ¿Qué hubs/bottlenecks topológicos tiene LigACN WT estático hacia Sink T? | 🟢 **`TOPOLOGICAL_HUBS_IDENTIFIED`** — ver `static_ligacn_topology_report.md` (**no** causal) |
+| ¿La red está concentrada en Trp258/Ser285? | 🔴 No como “único switch”; Trp258 **AUSENTE** del grafo WT_degeneracy; Ser285 es miembro de S (contacto ligando verificado) |
+| ¿TM7 participa especialmente en ruta agonismo/Gi? | 🟢 Apoyado (literatura + hubs ASN:291/295, LEU:287, ARG:302 en mapa estático) |
+| ¿CB2 posee una única coordenada conformacional suficiente para Gi? | 🔴 No demostrado |
+| ¿Existe un núcleo mínimo CB2-Gi funcionalmente diferente de CB1? | ⚪ **`BLOCKED_PENDING_DYNAMIC_VALIDATION`** |
 
 ---
 
@@ -110,7 +125,8 @@ LITERATURA / DATOS PÚBLICOS
 |-------|---------|---------|-----------------|
 | **1 — Macro** | TM3–TM6; separación activo/inactivo | 🟢 **DEMOSTRADO** | **[OBSERVACIÓN_PROPIA]** Phase G: 8GUR (2.32) ≈ 6KPF (2.30) ≪ 5ZTY (3.95); veredicto **GENERALIZES** |
 | **2 — Micro-red** | Trp258/Ser285/Phe183; par HU-308/HU-433 | 🟡 **LÍMITE ESTÁTICO** | **[OBSERVACIÓN_PROPIA]** Micronetwork **INDETERMINATE** (6PT0 identical / 6KPF distinct); Phase H **INDETERMINATE** |
-| **3 — Dinámica / red** | ACN, LigACN, MSM, núcleo mínimo | 🔴 **FRONTERA** | **[LITERATURA_PRIMARIA]** ACN distribuida (Morales-Pastor 2025); MSM 6 estados (Dutta & Shukla 2023); **[HIPÓTESIS_ABIERTA]** núcleo mínimo diferencial CB2 vs CB1 **no resuelto** |
+| **3a — Topología estática LigACN** | S→T paths / hubs en matriz publicada | 🟢 **CLOSED** | **[INTERNAL_REANALYSIS]** `TOPOLOGICAL_HUBS_IDENTIFIED` (agregado; no causal) |
+| **3b — Dinámica / núcleo mínimo** | traj, MSM, causal core CB2 vs CB1 | 🔴 **BLOQUEADO** | **[HIPÓTESIS_ABIERTA]** `BLOCKED_PENDING_DYNAMIC_VALIDATION` |
 
 ---
 
@@ -161,8 +177,9 @@ LITERATURA / DATOS PÚBLICOS
 | de_novo / threshold / docking / diseño ortostérico | **STOP** / **PAUSED** |
 | Fase I | **NO ABIERTA** — no usar ese nombre para el reanálisis |
 | SMRF / 0Q.1 literatura | Documental; no reabre compute (ver bitácora extendida) |
-| Proveniencia de datos | **RECOVERY_IN_PROGRESS** — MOESM2 + Sink T; traj/Box ENLACE |
-| Núcleo mínimo | **BLOCKED_PENDING_PROVENANCE** — protocolo pre-registrado; **no computado** |
+| Proveniencia de datos | **PARTIAL** — SD1–3 + MOESM2 + Sink T local; traj/Box ENLACE_REGISTRADO |
+| Topología estática LigACN | **CLOSED** — `STATIC_TOPOLOGICAL_BOTTLENECKS = TOPOLOGICAL_HUBS_IDENTIFIED` |
+| Núcleo mínimo dinámico CB2→Gi | **BLOCKED_PENDING_DYNAMIC_VALIDATION** — el mapa estático **no** lo responde |
 
 ---
 
@@ -173,7 +190,8 @@ LITERATURA / DATOS PÚBLICOS
 | [`docs/synthesis/CB2_STRUCTURE_ATLAS.md`](docs/synthesis/CB2_STRUCTURE_ATLAS.md) | Atlas PDB: 5ZTY, 6PT0, 6KPF, 8GUS/UR/UQ/UT, 12IY/IZ/JA, 8X3L, 9U7L; Level-0; Phase F/G |
 | [`docs/synthesis/HU308_HU433_PARADOX.md`](docs/synthesis/HU308_HU433_PARADOX.md) | Par enantiomérico; 8GUS experimental; Soethoudt/Hanuš; micronetwork INDETERMINATE; **contradicciones abiertas** |
 | [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md) | ACN/LigACN (Morales-Pastor 2025); MSM (Dutta & Shukla 2023); Trp258 no switch único; frontera MD |
-| [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md) | Protocolo cerrado READ-ONLY; outcomes CORE_FOUND / NETWORK_DISTRIBUTED / INDETERMINATE |
+| [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md) | Protocolo dinámico (histórico); core sigue `BLOCKED_PENDING_DYNAMIC_VALIDATION` |
+| [`results/network_core/static_ligacn_topology_report.md`](results/network_core/static_ligacn_topology_report.md) | Topología estática LigACN→T (**CLOSED**) |
 | [`docs/synthesis/DOCKING_LIMITS_AND_GOVERNANCE.md`](docs/synthesis/DOCKING_LIMITS_AND_GOVERNANCE.md) | Límites estáticos; Rachman 2026; INDETERMINATE; gobernanza completa |
 
 ---
@@ -203,25 +221,25 @@ LITERATURA / DATOS PÚBLICOS
 
 ---
 
-## Próximo paso — protocolo luego STOP (NO Fase I)
+## Próximo paso — STOP para revisión humana
 
-**[HIPÓTESIS_ABIERTA]**
+**[OBSERVACIÓN_PROPIA]**
 
-1. Completar recuperación local de traj GPCRmd/1540 y/o Box MSM si el PI autoriza descarga grande.
-2. Seguir [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md) con Sink Set T ya EXTRACTED.
-3. Asignar exactamente uno de: `CORE_FOUND` | `NETWORK_DISTRIBUTED` | `INDETERMINATE`.
-4. **STOP** de nuevo. Sin diseño químico, sin retune Contract v1.0, sin «Fase I».
+1. Topología estática **CLOSED** — ver `static_ligacn_topology_report.md`.
+2. `CB2_MINIMAL_GI_CORE = BLOCKED_PENDING_DYNAMIC_VALIDATION` — no abrir nuevo ciclo de recovery traj/MSM salvo autorización PI explícita futura.
+3. Futuro (no ahora): si hay trayectorias, comparar red dinámica vs bottlenecks estáticos.
+4. **STOP.** Sin docking, sin de novo, sin «Fase I», sin retune Contract v1.0.
 
 ---
 
 ## Lectura recomendada al reanudar sesión
 
 1. **Este archivo** (`RESEARCH_STATE.md`)
-2. [`results/network_core/provenance_recovery_log.md`](results/network_core/provenance_recovery_log.md)
-3. [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md)
+2. [`results/network_core/static_ligacn_topology_report.md`](results/network_core/static_ligacn_topology_report.md)
+3. [`results/network_core/provenance_recovery_log.md`](results/network_core/provenance_recovery_log.md)
 4. [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md)
 5. [`docs/synthesis/HU308_HU433_PARADOX.md`](docs/synthesis/HU308_HU433_PARADOX.md) — contradicciones abiertas
 
 ---
 
-*Fin RESEARCH_STATE.md. Proveniencia 2026-08-20 — documentación + assets externos; objeto = núcleo mínimo (bloqueado pending traj/Box).*
+*Fin RESEARCH_STATE.md. 2026-08-20 — static topology CLOSED; dynamic Gi core BLOCKED_PENDING_DYNAMIC_VALIDATION.*

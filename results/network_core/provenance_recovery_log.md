@@ -62,4 +62,25 @@ Documented in `data/external/morales_pastor_2025/moesm2_download_log.txt`.
 - No de novo / new chemistry  
 - No push  
 
-Downstream core reanalysis remains blocked until traj/Box objects are actually fetched if required by protocol; Sink Set T is no longer the missing piece.
+---
+
+## 2026-08-20 — Static LigACN topology (PI override)
+
+**Branch:** `task/static-ligacn-topology`  
+**Action:** Static topological reanalysis of published WT LigACN → Sink Set T using local SD1–SD3 only.  
+**Did not:** claim dynamic minimal Gi core; auto-expand S with AUSENTE pocket residues; start new traj/MSM recovery cycle.
+
+| Artifact | Path |
+|----------|------|
+| Report | `results/network_core/static_ligacn_topology_report.md` |
+| Metrics | `results/network_core/static_ligacn_topology_metrics.json` |
+| Verdict | `results/network_core/static_topological_verdict.json` |
+| Script | `scripts/network/analyze_static_ligacn_topology.py` |
+
+**S (final, verified):** `8D0:1`, `SER:285` (`285-LIG` Inactive), `PHE:87` (`87-LIG` Inactive).  
+**AUSENTE (logged, not substituted):** `TRP:258`, `PHE:183` (absent from WT_degeneracy; LIG columns exist in SD2 Inactive).  
+**T:** ARG:131, ASP:240, SER:303, SER:69 — 4/4 paths from ligand.  
+**Verdict:** `STATIC_TOPOLOGICAL_BOTTLENECKS = TOPOLOGICAL_HUBS_IDENTIFIED`  
+**Governance:** `STATIC_GRAPH_ANALYSIS=CLOSED`; `CB2_MINIMAL_GI_CORE=BLOCKED_PENDING_DYNAMIC_VALIDATION`; `CB1_COMPARISON=BLOCKED`.  
+**Traj one-liner:** GPCRmd/1540 and Box deposit remain ENLACE_REGISTRADO only (no new hunt).
+
