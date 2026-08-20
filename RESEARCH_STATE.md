@@ -5,7 +5,8 @@
 **Tipo:** **DOCUMENTATION ONLY** — prep de roadmap; **no** compute de traj, **no** docking, **no** de novo, **no** MD nuevo  
 **Objetivo primario:** **caracterizar el mecanismo de control conformacional de CB2** (switch local, red distribuida, o arquitectura estado-dependiente — cualquiera es resultado válido). **No** es objetivo principal “encontrar el switch.”  
 **Anclas de linaje (preservar):** `cfb2a51` (dual-test limpio → topología-only) · `c2869b0` (jerarquía ambiental A/B/C + `Q_membrana` parked) · `2a1193c` (reposo científico / frontera)  
-**Roadmap P1–P6:** [`docs/synthesis/CB2_RESEARCH_ROADMAP.md`](docs/synthesis/CB2_RESEARCH_ROADMAP.md)  
+**Roadmap P1–P6 (contrato científico):** [`docs/synthesis/RESEARCH_ROADMAP.md`](docs/synthesis/RESEARCH_ROADMAP.md) · alias [`docs/synthesis/CB2_RESEARCH_ROADMAP.md`](docs/synthesis/CB2_RESEARCH_ROADMAP.md)  
+**Pipeline seco / self-test:** `python scripts/network_core/dynamic_pipeline.py --self-test` (andamiaje `b91b57c`; no sustituye traj)  
 **Bitácora extendida:** [`docs/JANUSFORGE_RESEARCH_STATE.md`](docs/JANUSFORGE_RESEARCH_STATE.md)  
 **Puntero síntesis:** [`docs/cb2_mechanistic_frontier_synthesis.md`](docs/cb2_mechanistic_frontier_synthesis.md) (este archivo es la autoridad de freeze / flags)
 
@@ -21,7 +22,7 @@ Working hypothesis (framing): CB2 activity appears to emerge from the interactio
 
 **TRIPARTITE** = **working hypothesis / framing only** — **NOT** a demonstrated final model; quantitative weights still unresolved (lenguaje preservado desde `2a1193c`).
 
-**No es búsqueda circular:** el siguiente paso informativo está ordenado en P1–P6 (`CB2_RESEARCH_ROADMAP.md`). El cómputo de trayectorias permanece bloqueado por datos, no por falta de pregunta.
+**No es búsqueda circular:** el siguiente paso informativo está ordenado en P1–P6 ([`RESEARCH_ROADMAP.md`](docs/synthesis/RESEARCH_ROADMAP.md)). El cómputo de trayectorias permanece bloqueado por datos, no por falta de pregunta. Andamiaje técnico: self-test del pipeline seco (`dynamic_pipeline.py --self-test`, tip `b91b57c`).
 
 ---
 
@@ -245,7 +246,8 @@ WORKING_HYPOTHESIS: LIGAND_x_LANDSCAPE_x_MEMBRANE  # weights unresolved; not a f
 REACTIVATION_QUESTION: ligand+receptor+membrane -> P(metastable states)  # archived; DO NOT RUN as docking score hunt
 ARCHIVED_NEXT_CALCULATION: PARKED  # DO NOT RUN — see P1–P3; no traj download, no MD, no analysis now
 DYNAMIC_REANALYSIS: BLOCKED_PENDING_TRAJECTORIES  # not circular; blocked on data; two networks; no W=-ln(p); no a priori >50%
-ROADMAP: docs/synthesis/CB2_RESEARCH_ROADMAP.md  # P1–P6 informational value order
+ROADMAP: docs/synthesis/RESEARCH_ROADMAP.md  # P1–P6 scientific contract + decision tree; alias CB2_RESEARCH_ROADMAP.md
+DRY_PIPELINE_SELFTEST: scripts/network_core/dynamic_pipeline.py --self-test  # b91b57c; scaffolding only
 ```
 
 **Cortafuegos de gobernanza (formal):**
@@ -306,7 +308,7 @@ Separar ejes **A (interno / ligando→red)** y **B (entorno / lípidos→equilib
 
 Si se reanuda más adelante: empezar por **Nivel B** (colesterol / composición lipídica), **no** por temperatura/oxidación/pH. Sin MD de colesterol, sin docking, sin de novo, sin nueva fase hasta decisión conjunta explícita. Orden informativo: solo tras P1–P3 (arquitectura dinámica/Gi).
 
-**Cross-link:** informe hubs [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) (ancla `cfb2a51`) · roadmap [`docs/synthesis/CB2_RESEARCH_ROADMAP.md`](docs/synthesis/CB2_RESEARCH_ROADMAP.md).
+**Cross-link:** informe hubs [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) (ancla `cfb2a51`) · roadmap [`docs/synthesis/RESEARCH_ROADMAP.md`](docs/synthesis/RESEARCH_ROADMAP.md).
 ---
 
 ## Entregable cerrado — dual validation hubs (A/B)
@@ -427,17 +429,24 @@ LITERATURA / DATOS PÚBLICOS
 
 ---
 
-## Roadmap P1–P6 (valor informativo — no fases a completar)
+## Roadmap P1–P6 (contrato científico — árbol de decisión)
 
-**Autoridad detallada:** [`docs/synthesis/CB2_RESEARCH_ROADMAP.md`](docs/synthesis/CB2_RESEARCH_ROADMAP.md)
+**Autoridad detallada:** [`docs/synthesis/RESEARCH_ROADMAP.md`](docs/synthesis/RESEARCH_ROADMAP.md)  
+**Estado:** `ROADMAP_ACTIVE_PREP` · freeze docking/de novo/traj preservado · self-test seco listo (`dynamic_pipeline.py --self-test`, `b91b57c`)
 
 ```
-P1. Do static hubs survive dynamically?
-P2. Do routes change across microstates?
-P3. Are dynamic routes related to Gi?
-P4. Does CB1 use a different architecture?
-P5. Does lipid environment modify that architecture?   (= Q_membrana)
-P6. Is there a chemical intervention that can shift it?
+P1 hubs survive dynamically?
+  NO → close hubs hypothesis
+  YES → P2 architecture changes across microstates?
+         NO → approximately stable network
+         YES → P3 changes relate to Gαi2?
+                NO → architecture without demonstrated functional link
+                YES → P4 CB1 different?
+                       NO → weak conformational selectivity basis
+                       YES → P5 membrane modifies?
+                              NO → Level A sufficient
+                              YES → P6 chemical perturbation can shift?
+                                    (P6 does not exist until P1–P5 survive)
 ```
 
 Cada respuesta abre/cierra **una sola puerta**. `DYNAMIC_REANALYSIS` / cómputo de traj = **BLOCKED_PENDING_TRAJECTORIES** / **PAUSED** hasta datos — no es búsqueda circular.
@@ -675,7 +684,8 @@ python scripts/network_core/dynamic_pipeline.py --self-test --status
 | [`docs/synthesis/CB2_STRUCTURE_ATLAS.md`](docs/synthesis/CB2_STRUCTURE_ATLAS.md) | Atlas PDB: 5ZTY, 6PT0, 6KPF, 8GUS/UR/UQ/UT, 12IY/IZ/JA, 8X3L, 9U7L; Level-0; Phase F/G |
 | [`docs/synthesis/HU308_HU433_PARADOX.md`](docs/synthesis/HU308_HU433_PARADOX.md) | Par enantiomérico; 8GUS experimental; Soethoudt/Hanuš; micronetwork INDETERMINATE; **contradicciones abiertas** |
 | [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md) | ACN/LigACN (Morales-Pastor 2025); MSM (Dutta & Shukla 2023); Trp258 no switch único; frontera MD |
-| [`docs/synthesis/CB2_RESEARCH_ROADMAP.md`](docs/synthesis/CB2_RESEARCH_ROADMAP.md) | Roadmap P1–P6 por valor informativo (una puerta por pregunta) |
+| [`docs/synthesis/RESEARCH_ROADMAP.md`](docs/synthesis/RESEARCH_ROADMAP.md) | **Contrato científico** P1–P6 + árbol de decisión; P6 solo tras P1–P5 |
+| [`docs/synthesis/CB2_RESEARCH_ROADMAP.md`](docs/synthesis/CB2_RESEARCH_ROADMAP.md) | Alias / redirect → `RESEARCH_ROADMAP.md` |
 | [`docs/synthesis/DYNAMIC_REANALYSIS_PROTOCOL.md`](docs/synthesis/DYNAMIC_REANALYSIS_PROTOCOL.md) | **Pre-registro técnico data-blind** P1–P3: dos redes; null degree-matched; self-tests sintéticos; `BLOCKED_PENDING_TRAJECTORIES` |
 | [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md) | Protocolo estático histórico + puntero al dinámico; `CB2_MINIMAL_GI_CORE = NOT_FOUND` |
 | [`results/network_core/static_ligacn_topology_report.md`](results/network_core/static_ligacn_topology_report.md) | Topología estática LigACN→T (**CLOSED**; `STATIC_BOTTLENECKS = SUPPORTED`) |

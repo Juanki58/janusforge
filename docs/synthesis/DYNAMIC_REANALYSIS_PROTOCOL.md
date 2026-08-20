@@ -6,7 +6,7 @@
 **Estado:** Metodología **congelada antes** de ver trayectorias reales. Valor máximo del pre-registro = data-blind.  
 **Ancla:** `RESEARCH_STATE.md` → `ARCHIVED_NEXT_CALCULATION` / `DYNAMIC_REANALYSIS` (`17c8a28` + andamiaje).  
 **Histórico estático:** [`MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](MINIMAL_CORE_REANALYSIS_PROTOCOL.md).  
-**Roadmap:** [`CB2_RESEARCH_ROADMAP.md`](CB2_RESEARCH_ROADMAP.md) P1–P3.
+**Roadmap (contrato científico):** [`RESEARCH_ROADMAP.md`](RESEARCH_ROADMAP.md) P1–P3 · alias [`CB2_RESEARCH_ROADMAP.md`](CB2_RESEARCH_ROADMAP.md).
 
 ### Gobernanza
 
