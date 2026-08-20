@@ -1,8 +1,10 @@
 # Dual validation — static hubs × functional enrichment
 
+> **PI closure (2026-08-21):** Combined verdict **`CORE_TOPOLOGICAL_ONLY`** locked. Six hubs = real static bottlenecks; PrefCoup_Gαi2 set enrichment **not** supported. Not a switch / not `CB2_Gi_NETWORK_CANDIDATE`. Dual-test ancla **`cfb2a51`** preserved. `LINE_PAUSE = TRUE` — no re-run.
+
 **Run UTC:** `2026-08-20T19:26:38Z`
 **Branch:** `feat/cb2-hubs-functional-topology-test`
-**Mode:** `CLOSED_DUAL_VALIDATION` / READ_ONLY_DATA
+**Mode:** `CLOSED_DUAL_VALIDATION` / READ_ONLY_DATA / `LINE_PAUSE`
 **Literature (PRIMARY):** Morales-Pastor et al., *Nat Commun* (2025), DOI [10.1038/s41467-025-60003-0](https://doi.org/10.1038/s41467-025-60003-0)
 
 ## Governance locks
@@ -10,8 +12,16 @@
 ```yaml
 mode: CLOSED_DUAL_VALIDATION
 MODO: READ_ONLY_DATA
-DE_NOVO_GENERATION: STOP
+LINE_PAUSE: TRUE
+DUAL_HUB_TEST: CLOSED
+STATIC_BOTTLENECKS: SUPPORTED
+FUNCTIONAL_Gi_ENRICHMENT: NOT_SUPPORTED
+CB2_Gi_NETWORK_CANDIDATE: NOT_ESTABLISHED
+CB2_MINIMAL_GI_CORE: NOT_FOUND
+DE_NOVO: STOP
 DOCKING: STOP
+NEW_HUB_SEARCH: STOP
+DE_NOVO_GENERATION: STOP
 NEW_DOCKING: STOP
 NEW_CHEMISTRY: STOP
 NEW_SEARCH: STOP
@@ -19,6 +29,7 @@ CONTRACT_v1.0: ARCHIVED_HISTORICAL
 TECHNICAL_SEARCH_TRAJ: STOP
 hub_list: FIXED_A_PRIORI_NO_RETUNE
 literature_doi: 10.1038/s41467-025-60003-0
+dual_test_commit: cfb2a51
 ```
 
 ## Fixed hub set (a priori)
@@ -125,8 +136,12 @@ Expression filter: exclude surface expression **<25.0% WT**.
 
 Interpretation (exact): CORE_TOPOLOGICAL_ONLY → network architecture without sufficient functional evidence
 
+Plain meaning: important roads ≠ proven controllers of the PrefCoup_Gαi2 decision. Physical architecture ≠ functional output.
+
+**Hypothesis eliminated (Test B):** “The six static hubs are the functional core of Gαi2 bias.” Do **not** overclaim “the network has no relation to Gαi2” (other hubs / dynamics / combinations / redundancy / metric mismatch still possible).
+
 Limit: Topology ≠ causal Gi necessity unless B supports; even CORE_CANDIDATE_SUPPORTED is a network candidate pending human review — not a switch.
 
-Forbidden language in this deliverable: switch / núcleo universal probado / CORE_FOUND.
+Forbidden language in this deliverable: switch / núcleo universal probado / CORE_FOUND / CB2_Gi_NETWORK_CANDIDATE (not established).
 
-**TOTAL STOP** — joint human review. No next phase.
+**`LINE_PAUSE = TRUE`** — preserve `cfb2a51` as clean negative / topology-only result. No re-run, no next phase, no crossing topology×dynamics unless jointly decided later.

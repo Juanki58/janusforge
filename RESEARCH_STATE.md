@@ -1,9 +1,24 @@
 # RESEARCH STATE — Janusforge CB₂ (congelación analítica)
 
-**Fecha:** 2026-08-20  
-**Rama:** `feat/cb2-hubs-functional-topology-test` (desde `task/static-ligacn-topology` @ `5365ab4`)  
-**Tipo:** Dual validation CLOSED (topología × PrefCoup) + topología estática LigACN **CLOSED**; núcleo dinámico / función Gαi2 sigue bloqueado  
+**Fecha:** 2026-08-21  
+**Rama:** `feat/cb2-hubs-functional-topology-test`  
+**Ancla dual-test (preservar):** `cfb2a51` — resultado limpio negativo / topología-only (no reescribir ni re-correr)  
+**Tipo:** PI closure — línea hubs **`CORE_TOPOLOGICAL_ONLY`** + **pausa real** (`LINE_PAUSE = TRUE`)  
 **Bitácora extendida:** [`docs/JANUSFORGE_RESEARCH_STATE.md`](docs/JANUSFORGE_RESEARCH_STATE.md)
+
+### Veredicto PI (LOCKED)
+
+**`CORE_TOPOLOGICAL_ONLY`** — no `CB2_Gi_NETWORK_CANDIDATE`, no “switch”.
+
+Lectura llana: los seis hubs son cuellos de botella topológicos reales en el mapa estático; el enriquecimiento celular PrefCoup_Gαi2 para ese *set* **no** está soportado. Carreteras importantes ≠ controladores demostrados de la decisión funcional que importa.
+
+**Arquitectura física ≠ salida funcional.**
+
+### Hipótesis eliminada (Test B)
+
+❌ *“Los seis hubs estáticos son el núcleo funcional del sesgo Gαi2.”* — **eliminada** por Test B (`FUNCTIONAL_ENRICHMENT_NOT_SUPPORTED`).
+
+No sobreclaim: *“La red no tiene relación con Gαi2.”* sigue siendo demasiado fuerte (otros hubs / dinámica / combinaciones / redundancia / mismatch de métrica siguen posibles).
 
 ### Leyenda epistemológica
 
@@ -20,30 +35,38 @@
 ## Gobernanza vigente
 
 ```yaml
-DE_NOVO_GENERATION: STOP
+# PI closure — línea hubs (2026-08-21)
+STATIC_BOTTLENECKS: SUPPORTED
+FUNCTIONAL_Gi_ENRICHMENT: NOT_SUPPORTED
+CB2_Gi_NETWORK_CANDIDATE: NOT_ESTABLISHED
+CB2_MINIMAL_GI_CORE: NOT_FOUND
+DUAL_HUB_TEST: CLOSED
+LINE_PAUSE: TRUE
+DE_NOVO: STOP
 DOCKING: STOP
+NEW_HUB_SEARCH: STOP
+# aliases / legado
+DE_NOVO_GENERATION: STOP
 NEW_DOCKING: STOP
 NEW_CHEMISTRY: STOP
 NEW_SEARCH: STOP
 CONTRACT_v1.0: ARCHIVED_HISTORICAL
 THRESHOLD_MODIFICATION: STOP
 ORTHOSTERIC_DESIGN: PAUSED
-MODO: CLOSED_DUAL_VALIDATION / READ_ONLY_DATA
+MODO: LINE_PAUSE / READ_ONLY_DATA
 STATIC_GRAPH_ANALYSIS: CLOSED
 DUAL_VALIDATION_HUBS: CLOSED
 SINK_SET_T: EXTRACTED  # Arg131(3x50), Asp240(6x30), Ser303(8x47), Ser69(2x39)
-CB2_MINIMAL_GI_CORE: BLOCKED_PENDING_DYNAMIC_VALIDATION
 CB1_COMPARISON: BLOCKED
 DATA_PROVENANCE: PARTIAL  # SI/SD1–3 local; traj/Box = ENLACE_REGISTRADO
 TECHNICAL_SEARCH_TRAJ: STOP
-ACTIVE_ACTION: HUMAN_REVIEW_JOINT  # TOTAL STOP after dual validation
-# Explicit: NOT Fase I; no CB2_Gi_NETWORK_CANDIDATE (requires CORE_CANDIDATE_SUPPORTED)
-RESEARCH_STATUS: DUAL_VALIDATION_CLOSED__CORE_TOPOLOGICAL_ONLY
+ACTIVE_ACTION: LINE_PAUSE  # true pause — no compute
+RESEARCH_STATUS: CORE_TOPOLOGICAL_ONLY__LINE_PAUSE
+DUAL_TEST_COMMIT: cfb2a51  # preserve clean negative / topology-only result
 ```
 
-**[OBSERVACIÓN_PROPIA]** Diseño químico / de_novo / docking / Phase I **STOP**.  
-**[INTERNAL_REANALYSIS]** Dual validation de 6 hubs fijos → **`CORE_TOPOLOGICAL_ONLY`** (arquitectura de red sin evidencia funcional PrefCoup suficiente). Topología ≠ necesidad causal Gi. Prohibido: “switch”, “núcleo universal probado”, `CORE_FOUND`.
-
+**[OBSERVACIÓN_PROPIA]** Diseño químico / de_novo / docking / nueva búsqueda de hubs / Phase I **STOP**. `LINE_PAUSE = TRUE`.  
+**[INTERNAL_REANALYSIS]** Dual validation (`cfb2a51`) → **`CORE_TOPOLOGICAL_ONLY`**. Topología ≠ necesidad causal Gi. Prohibido: “switch”, “núcleo universal probado”, `CORE_FOUND`, `CB2_Gi_NETWORK_CANDIDATE`.
 ---
 
 ## Entregable cerrado — dual validation hubs (A/B)
@@ -60,9 +83,13 @@ RESEARCH_STATUS: DUAL_VALIDATION_CLOSED__CORE_TOPOLOGICAL_ONLY
 | Test B | **`FUNCTIONAL_ENRICHMENT_NOT_SUPPORTED`** — Fisher PrefCoup_Gi p≈0.23 (membership ≠ atribución estadística; mutaciones listadas por separado) |
 | Test C | Skipped (requiere A∧B) |
 | Combined | **`CORE_TOPOLOGICAL_ONLY`** — network architecture without sufficient functional evidence |
-| Formal name | *not assigned* (`CB2_Gi_NETWORK_CANDIDATE` only if `CORE_CANDIDATE_SUPPORTED`) |
+| Formal name | *not assigned* (`CB2_Gi_NETWORK_CANDIDATE = NOT_ESTABLISHED`) |
+| Ancla commit | **`cfb2a51`** — preservar; no re-correr |
+| Gobernanza post-cierre | `LINE_PAUSE = TRUE` · `DUAL_HUB_TEST = CLOSED` · `CB2_MINIMAL_GI_CORE = NOT_FOUND` |
 
 **Safeguard B:** position membership (p.ej. N291A, R302A ∈ PrefCoup_Gi tras filtro expr.) ≠ sesgo estadísticamente atribuible al *set* vs background.
+
+**Hipótesis eliminada:** “Los seis hubs estáticos son el núcleo funcional del sesgo Gαi2.” — no sobreclaim “la red no tiene relación con Gαi2.”
 
 ---
 
@@ -82,41 +109,41 @@ RESEARCH_STATUS: DUAL_VALIDATION_CLOSED__CORE_TOPOLOGICAL_ONLY
 | Hubs enriquecidos (no-S/T) | ALA:83, ALA:79, ASN:291, ASN:295, LEU:287, ARG:302 |
 | Límite | Solo propiedades de la red agregada publicada — **no** causalidad Gi; arquitectura candidata ≠ switch |
 
-**Futuro parked (no ahora):** conservación dinámica de hubs + enriquecimiento en posiciones que alteran preferentemente Gαi2 — ver § *Separación en cuatro niveles*.
+**Futuro parked (no ahora):** cruzar topología con dinámica — solo decisión conjunta posterior. Frontera actual = **`CORE_TOPOLOGICAL_ONLY`**.
 
 ---
 
 ## Separación en cuatro niveles (directiva PI — cierre epistemológico)
 
-**Naming:** no decir «switch found». El programa pasó de buscar un *switch* único a identificar una **arquitectura candidata de transmisión de señal**. Hubs estáticos ≠ microswitches automáticos.
+**Naming:** no decir «switch found». Hubs estáticos ≠ microswitches / controladores Gi demostrados.
 
 | # | Nivel | Dominio | Pregunta | Estatus |
 |---|-------|---------|----------|---------|
-| 1 | **ESTADO GLOBAL** | TM3–TM6 | ¿Puede CB2 adoptar la conformación activa? | 🟢 **Sí** — generalización OOS (Phase G) |
-| 2 | **MICROESTADO** | Trp258 / Ser285 / ECL2 | ¿Cómo modifica cada ligando esa conformación? | 🟡 Dependiente del estado; sin pose rígida universal (micronetwork) |
-| 3 | **RED DE COMUNICACIÓN** | TM7 / TM2 / NPxxY / H8 | ¿Hacia dónde se propaga la perturbación? | 🟢 Hubs topológicos estáticos identificables (`STATIC_TOPOLOGICAL_BOTTLENECKS` = `TOPOLOGICAL_HUBS_IDENTIFIED`: ALA79, ALA83, LEU287, ASN291, ASN295, ARG302). S verificado **sin** forzar TRP258/PHE183 (**AUSENTE**) |
-| 4 | **FUNCIÓN** | Gαi2; CB1 vs CB2 | ¿Controlan realmente esos hubs a Gαi2 y de forma distinta en CB1? | ⚪ Dual A/B: **B NOT_SUPPORTED** (PrefCoup Fisher n.s.) — frontera real permanece; veredicto conjunto **`CORE_TOPOLOGICAL_ONLY`** |
+| 1 | **MACROCONFORMACIÓN** | TM3–TM6 | ¿Reconoce estados activos? | 🟢 **Sí** — generalización OOS (Phase G) |
+| 2 | **MICRO-RED LOCAL** | Trp258 / Ser285 / ECL2 | ¿Cómo modifica cada ligando esa conformación? | 🟡 Dependiente del estado; sin pose rígida universal (micronetwork) |
+| 3 | **TOPOLOGÍA ESTÁTICA** | TM7 / TM2 / NPxxY / H8 | ¿Hay bottlenecks reales en el mapa estático? | 🟢 **Sí** — `STATIC_BOTTLENECKS = SUPPORTED` (ALA79, ALA83, LEU287, ASN291, ASN295, ARG302). S verificado **sin** forzar TRP258/PHE183 (**AUSENTE**) |
+| 4 | **FUNCIÓN Gαi2** | PrefCoup / sesgo Gi | ¿Muestran estos hubs enriquecimiento PrefCoup demostrado? | 🔴 **No** — `FUNCTIONAL_Gi_ENRICHMENT = NOT_SUPPORTED` (Test B). Veredicto conjunto **`CORE_TOPOLOGICAL_ONLY`** |
 
-**[HIPÓTESIS_ABIERTA]** Nivel 4 permanece abierto: bottleneck topológico estático (A SUPPORTED) **no** implica enriquecimiento PrefCoup del set (B NOT_SUPPORTED). CB1 sigue `BLOCKED`.
+**Arquitectura física ≠ salida funcional.** Nivel 3 🟢 no eleva nivel 4.
 
-### Dual validation (CLOSED — 2026-08-20)
+### Dual validation (CLOSED — ancla `cfb2a51`)
 
 Hubs fijos × knockout degree-matched (A) × SD1 PrefCoup Fisher (B) → **`CORE_TOPOLOGICAL_ONLY`**.  
-Deliverable: `results/network_core/hubs_dual_validation_report.md`. **TOTAL STOP** — joint human review.
+Deliverable: `results/network_core/hubs_dual_validation_report.md`.  
+**`DUAL_HUB_TEST = CLOSED`** · **`LINE_PAUSE = TRUE`** — pausa real; sin compute.
 
-### Experimento frontera dinámica (parked — NO EJECUTAR)
+### Parked (NO EJECUTAR)
 
-> ¿Los hubs topológicos estáticos se conservan en dinámica?
+Cruzar topología con dinámica — solo si se decide conjuntamente más adelante. Aceptar **`CORE_TOPOLOGICAL_ONLY`** como frontera del modelo actual por ahora.
 
-**No es:** otro docking, librería química, ni retune de Contract.
+**No es:** otro docking, librería química, retune de Contract, ni nueva búsqueda de hubs.
 
-**Estado gobernanza:** `CB2_MINIMAL_GI_CORE = BLOCKED_PENDING_DYNAMIC_VALIDATION` · `CB1_COMPARISON = BLOCKED` · `DUAL_VALIDATION_HUBS = CLOSED`
+**Estado gobernanza:** `CB2_MINIMAL_GI_CORE = NOT_FOUND` · `CB2_Gi_NETWORK_CANDIDATE = NOT_ESTABLISHED` · `CB1_COMPARISON = BLOCKED` · `DUAL_HUB_TEST = CLOSED`
 
 **Protocolo (histórico / dinámico):** [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md)  
 **Informe previo (core dinámico INDETERMINATE):** [`results/network_core/cb2_minimal_gi_core_report.md`](results/network_core/cb2_minimal_gi_core_report.md)  
 **Auditoría:** [`results/network_core/data_audit.md`](results/network_core/data_audit.md)  
 **Proveniencia:** [`results/network_core/provenance_recovery_log.md`](results/network_core/provenance_recovery_log.md)
-
 ---
 
 ## Diagrama de estado
@@ -131,20 +158,20 @@ LITERATURA / DATOS PÚBLICOS
         └── traj GPCRmd / Box MSM = ENLACE only
                   │
                   ▼
-        3 RED DE COMUNICACIÓN (estática)
-        STATIC LigACN TOPOLOGY  →  CLOSED
-        DUAL VALIDATION A/B     →  CLOSED
+        3 TOPOLOGÍA ESTÁTICA
+        STATIC_BOTTLENECKS = SUPPORTED
+        DUAL_HUB_TEST = CLOSED (cfb2a51)
         verdict: CORE_TOPOLOGICAL_ONLY
-        (A bottleneck SUPPORTED; B PrefCoup NOT)
-        ≠ switch; no CB2_Gi_NETWORK_CANDIDATE
+        ≠ switch; CB2_Gi_NETWORK_CANDIDATE = NOT_ESTABLISHED
                   │
                   ▼
-        4 FUNCIÓN (Gαi2 / CB1) — FRONTERA
-        DYNAMIC MINIMAL Gi CORE
-        BLOCKED_PENDING_DYNAMIC_VALIDATION
+        4 FUNCIÓN Gαi2
+        FUNCTIONAL_Gi_ENRICHMENT = NOT_SUPPORTED
+        CB2_MINIMAL_GI_CORE = NOT_FOUND
+        (hipótesis “6 hubs = núcleo funcional Gi bias” ELIMINADA)
                   │
                   ▼
-                 TOTAL STOP (joint human review)
+                 LINE_PAUSE = TRUE (pausa real; no compute)
 ```
 
 ---
@@ -162,8 +189,9 @@ LITERATURA / DATOS PÚBLICOS
 | ¿CB2 posee una única coordenada conformacional suficiente para Gi? | 🔴 No demostrado |
 | ¿Los 6 hubs son bottleneck topológico degree-matched? | 🟢 **A SUPPORTED** (`TOPOLOGICAL_BOTTLENECK_SUPPORTED`, p≈0.001) — ver dual validation |
 | ¿El set está enriquecido en PrefCoup_Gαi2 (Fisher, expr≥25%)? | 🔴 **B NOT_SUPPORTED** (p≈0.23) — membership parcial ≠ atribución estadística |
-| ¿Candidate conjunto topología∧función? | 🔴 **`CORE_TOPOLOGICAL_ONLY`** — no `CB2_Gi_NETWORK_CANDIDATE` |
-| ¿Los hubs estáticos controlan Gαi2 y difieren en CB1? | ⚪ **Frontera real** — `BLOCKED_PENDING_DYNAMIC_VALIDATION` |
+| ¿Candidate conjunto topología∧función? | 🔴 **`CORE_TOPOLOGICAL_ONLY`** — `CB2_Gi_NETWORK_CANDIDATE = NOT_ESTABLISHED` |
+| ¿Los 6 hubs son el núcleo funcional del sesgo Gαi2? | 🔴 **ELIMINADA** (Test B) — no sobreclaim “la red no tiene relación con Gαi2” |
+| ¿Núcleo mínimo Gi encontrado? | 🔴 **`CB2_MINIMAL_GI_CORE = NOT_FOUND`** |
 
 ---
 
@@ -171,11 +199,10 @@ LITERATURA / DATOS PÚBLICOS
 
 | Nivel | Dominio | Estatus | Evidencia clave |
 |-------|---------|---------|-----------------|
-| **1 — ESTADO GLOBAL** | TM3–TM6 | 🟢 **Sí (OOS)** | **[OBSERVACIÓN_PROPIA]** Phase G: 8GUR (2.32) ≈ 6KPF (2.30) ≪ 5ZTY (3.95); veredicto **GENERALIZES** |
-| **2 — MICROESTADO** | Trp258 / Ser285 / ECL2 | 🟡 **Estado-dependiente** | **[OBSERVACIÓN_PROPIA]** Micronetwork **INDETERMINATE** (6PT0 identical / 6KPF distinct); sin pose rígida universal; Phase H **INDETERMINATE** |
-| **3 — RED DE COMUNICACIÓN** | TM7 / TM2 / NPxxY / H8 | 🟢 **Hubs estáticos ID** | **[INTERNAL_REANALYSIS]** `TOPOLOGICAL_HUBS_IDENTIFIED` (ALA79, ALA83, LEU287, ASN291, ASN295, ARG302); S sin forzar TRP258/PHE183; **≠** microswitches |
-| **4 — FUNCIÓN** | Gαi2; diferencia CB1 | ⚪ **Frontera** | **[HIPÓTESIS_ABIERTA]** No demostrado; `BLOCKED_PENDING_DYNAMIC_VALIDATION` / `CB1_COMPARISON = BLOCKED` |
-
+| **1 — MACROCONFORMACIÓN** | TM3–TM6 | 🟢 **Sí (OOS)** | **[OBSERVACIÓN_PROPIA]** Phase G: 8GUR (2.32) ≈ 6KPF (2.30) ≪ 5ZTY (3.95); veredicto **GENERALIZES** |
+| **2 — MICRO-RED LOCAL** | Trp258 / Ser285 / ECL2 | 🟡 **Estado-dependiente** | **[OBSERVACIÓN_PROPIA]** Micronetwork **INDETERMINATE** (6PT0 identical / 6KPF distinct); sin pose rígida universal; Phase H **INDETERMINATE** |
+| **3 — TOPOLOGÍA ESTÁTICA** | TM7 / TM2 / NPxxY / H8 | 🟢 **Bottlenecks reales** | **[INTERNAL_REANALYSIS]** `STATIC_BOTTLENECKS = SUPPORTED` (ALA79, ALA83, LEU287, ASN291, ASN295, ARG302); S sin forzar TRP258/PHE183 |
+| **4 — FUNCIÓN Gαi2** | PrefCoup / sesgo Gi | 🔴 **No demostrado** | **[INTERNAL_REANALYSIS]** `FUNCTIONAL_Gi_ENRICHMENT = NOT_SUPPORTED`; hipótesis “6 hubs = núcleo funcional Gi bias” **eliminada**; `CB2_MINIMAL_GI_CORE = NOT_FOUND` |
 ---
 
 ## Contradicciones abiertas (registro maestro)
@@ -226,8 +253,12 @@ LITERATURA / DATOS PÚBLICOS
 | Fase I | **NO ABIERTA** — no usar ese nombre para el reanálisis |
 | SMRF / 0Q.1 literatura | Documental; no reabre compute (ver bitácora extendida) |
 | Proveniencia de datos | **PARTIAL** — SD1–3 + MOESM2 + Sink T local; traj/Box ENLACE_REGISTRADO |
-| Topología estática LigACN | **CLOSED** — `STATIC_TOPOLOGICAL_BOTTLENECKS = TOPOLOGICAL_HUBS_IDENTIFIED` |
-| Núcleo mínimo dinámico CB2→Gi | **BLOCKED_PENDING_DYNAMIC_VALIDATION** — el mapa estático **no** lo responde |
+| Topología estática LigACN | **CLOSED** — `STATIC_BOTTLENECKS = SUPPORTED` |
+| Dual hub test (A/B) | **CLOSED** — ancla `cfb2a51`; veredicto **`CORE_TOPOLOGICAL_ONLY`** |
+| Función PrefCoup del set de 6 hubs | **NOT_SUPPORTED** — hipótesis núcleo funcional Gi bias **eliminada** |
+| `CB2_Gi_NETWORK_CANDIDATE` | **NOT_ESTABLISHED** |
+| `CB2_MINIMAL_GI_CORE` | **NOT_FOUND** |
+| Línea hubs | **`LINE_PAUSE = TRUE`** — pausa real; cruzar topología×dinámica parked |
 
 ---
 
@@ -238,8 +269,9 @@ LITERATURA / DATOS PÚBLICOS
 | [`docs/synthesis/CB2_STRUCTURE_ATLAS.md`](docs/synthesis/CB2_STRUCTURE_ATLAS.md) | Atlas PDB: 5ZTY, 6PT0, 6KPF, 8GUS/UR/UQ/UT, 12IY/IZ/JA, 8X3L, 9U7L; Level-0; Phase F/G |
 | [`docs/synthesis/HU308_HU433_PARADOX.md`](docs/synthesis/HU308_HU433_PARADOX.md) | Par enantiomérico; 8GUS experimental; Soethoudt/Hanuš; micronetwork INDETERMINATE; **contradicciones abiertas** |
 | [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md) | ACN/LigACN (Morales-Pastor 2025); MSM (Dutta & Shukla 2023); Trp258 no switch único; frontera MD |
-| [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md) | Protocolo dinámico (histórico); core sigue `BLOCKED_PENDING_DYNAMIC_VALIDATION` |
-| [`results/network_core/static_ligacn_topology_report.md`](results/network_core/static_ligacn_topology_report.md) | Topología estática LigACN→T (**CLOSED**) |
+| [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md) | Protocolo dinámico (histórico); `CB2_MINIMAL_GI_CORE = NOT_FOUND`; cruzar topología×dinámica parked |
+| [`results/network_core/static_ligacn_topology_report.md`](results/network_core/static_ligacn_topology_report.md) | Topología estática LigACN→T (**CLOSED**; `STATIC_BOTTLENECKS = SUPPORTED`) |
+| [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) | Dual A/B (**CLOSED**, `cfb2a51`) → **`CORE_TOPOLOGICAL_ONLY`** |
 | [`docs/synthesis/DOCKING_LIMITS_AND_GOVERNANCE.md`](docs/synthesis/DOCKING_LIMITS_AND_GOVERNANCE.md) | Límites estáticos; Rachman 2026; INDETERMINATE; gobernanza completa |
 
 ---
@@ -269,25 +301,26 @@ LITERATURA / DATOS PÚBLICOS
 
 ---
 
-## Próximo paso — STOP para revisión humana
+## Próximo paso — LINE_PAUSE (pausa real)
 
 **[OBSERVACIÓN_PROPIA]**
 
-1. Cuatro niveles registrados — niveles 1–3 con estatus; nivel 4 = frontera Gαi2 / CB1 (**no** ejecutada).
-2. Topología estática **CLOSED** — arquitectura candidata de transmisión de señal; hubs ≠ microswitches. Ver `static_ligacn_topology_report.md`.
-3. Experimento frontera **parked** (conservación dinámica + enriquecimiento Gαi2) — `CB2_MINIMAL_GI_CORE = BLOCKED_PENDING_DYNAMIC_VALIDATION`; sin recovery traj/MSM salvo autorización PI.
-4. **STOP.** Sin docking, sin de novo, sin librería química, sin «Fase I», sin retune Contract v1.0.
+1. Veredicto locked: **`CORE_TOPOLOGICAL_ONLY`** (ancla `cfb2a51`). Arquitectura física ≠ salida funcional.
+2. Cuatro niveles: (1) macro 🟢 (2) micro-red 🟡 (3) topología estática 🟢 (4) función Gαi2 🔴.
+3. Hipótesis “6 hubs = núcleo funcional del sesgo Gαi2” **eliminada**; no sobreclaim “la red no tiene relación con Gαi2”.
+4. Cruzar topología × dinámica = **parked** (solo decisión conjunta futura). Frontera del modelo actual = `CORE_TOPOLOGICAL_ONLY`.
+5. **`LINE_PAUSE = TRUE`.** Sin docking, de novo, hub hunting, traj recovery, push, ni compute.
 
 ---
 
 ## Lectura recomendada al reanudar sesión
 
-1. **Este archivo** (`RESEARCH_STATE.md`) — sección *Separación en cuatro niveles*
-2. [`results/network_core/static_ligacn_topology_report.md`](results/network_core/static_ligacn_topology_report.md)
-3. [`results/network_core/provenance_recovery_log.md`](results/network_core/provenance_recovery_log.md)
+1. **Este archivo** (`RESEARCH_STATE.md`) — veredicto PI + gobernanza + cuatro niveles
+2. [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) — ancla `cfb2a51`
+3. [`results/network_core/static_ligacn_topology_report.md`](results/network_core/static_ligacn_topology_report.md)
 4. [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md)
 5. [`docs/synthesis/HU308_HU433_PARADOX.md`](docs/synthesis/HU308_HU433_PARADOX.md) — contradicciones abiertas
 
 ---
 
-*Fin RESEARCH_STATE.md. 2026-08-20 — cierre epistemológico (cuatro niveles); static topology CLOSED; función Gαi2 = frontera; dynamic Gi core BLOCKED_PENDING_DYNAMIC_VALIDATION.*
+*Fin RESEARCH_STATE.md. 2026-08-21 — PI closure: CORE_TOPOLOGICAL_ONLY; LINE_PAUSE=TRUE; cfb2a51 preservado; no compute.*
