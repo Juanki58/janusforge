@@ -1,0 +1,15 @@
+{
+  "status": "NOT_COMPUTED",
+  "candidate_core": null,
+  "FINAL_CORE_CLAIM": null,
+  "blocker": "Intracellular sink residue list (T) unrecovered; Supp Data 4 (MOESM6) blocked (403); GPCRmd trajectories not local. Per protocol, do not invent T or optimize core size post hoc.",
+  "governance": {
+    "DE_NOVO_GENERATION": "STOP",
+    "THRESHOLD_MODIFICATION": "STOP",
+    "ORTHOSTERIC_DESIGN": "PAUSED",
+    "CONTRACT_v1.0": "ARCHIVED_HISTORICAL",
+    "NEW_DOCKING": "STOP",
+    "NEW_CHEMISTRY": "STOP",
+    "MODO": "READ_ONLY / PUBLIC_DATA_REANALYSIS"
+  }
+}

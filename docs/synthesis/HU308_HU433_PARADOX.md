@@ -115,7 +115,7 @@
 |------|------------------------|--------|
 | **HU-433** | **[LITERATURA_PRIMARIA]** Smoum 2015 (DOI [10.1073/pnas.1503395112](https://doi.org/10.1073/pnas.1503395112); PMID 26124120): Ki radioligando **menor** (12.2 nM) pero potencia biológica **mayor** en modelos óseos/inflamatorios vs HU-308; GTPγS Emax/afinidad **subordinada** a HU-308 en el mismo estudio; orientaciones distintas propuestas por modelado molecular. **[OBSERVACIÓN_PROPIA]** Phase H: HU-433 sin fila Gi comparable CP55940-normalized en Soethoudt 2017; micronetwork INDETERMINATE cross-state. | **ABIERTA** |
 | **AM630** | **[LITERATURA_PRIMARIA]** Soethoudt 2017 (DOI [10.1038/ncomms13958](https://doi.org/10.1038/ncomms13958); PMID 28045051): cAMP Emax **−152 ± 13%** (inverse-like) vs GTPγS Emax **−22 ± 2%** (casi neutral) en hCB2. Literatura histórica alterna entre antagonista CB2, antagonista neutral e inverse agonist según actividad basal y especie. **[OBSERVACIÓN_PROPIA]** Phase H: clasificación `PROTEAN_OR_SYSTEM_DEPENDENT` — no asignar INVERSE universal. | **ABIERTA** |
-| **Trp258^6.48** | **[LITERATURA_PRIMARIA]** Ganzoni 2026 (DOI [10.1039/D6SC00062B](https://doi.org/10.1039/D6SC00062B)): modificaciones ligando en posición única modulan continuo funcional vía toggle switch Trp258^6.48 (agonismo parcial → inverse parcial). **[OBSERVACIÓN_PROPIA]** Micronetwork: veredicto **INDETERMINATE** — 6PT0 **enmascara** divergencia HU-308/HU-433 (`IDENTICAL_LOCAL_MODES`); 6KPF **detecta** (`DISTINCT_LOCAL_MODES`). | **ABIERTA** |
+| **Trp258^6.48** | **[LITERATURA_PRIMARIA]** Ganzoni 2026 (DOI [10.1039/D6SC00062B](https://doi.org/10.1039/D6SC00062B)): continuo funcional vía Trp258^6.48. **[LITERATURA_PRIMARIA]** Morales-Pastor 2025 (DOI [10.1038/s41467-025-60003-0](https://doi.org/10.1038/s41467-025-60003-0); PMID 40500255): LigACN **distribuida**, **no** reducida a Trp258. **[OBSERVACIÓN_PROPIA]** Micronetwork **INDETERMINATE** — 6PT0 enmascara / 6KPF detecta. Tensiones coexisten; **no** armonizar. | **ABIERTA** |
 | **WIN 55,212-2** | **[LITERATURA_PRIMARIA]** Soethoudt 2017: cAMP Emax **98 ± 1%** (full agonist) vs GTPγS Emax **49 ± 7%** (partial agonist) en hCB2 — misma molécula, ensayo distinto. | **ABIERTA** |
 | **Docking → función** | **[LITERATURA_PRIMARIA]** Rachman 2026 (DOI [10.1021/acs.jmedchem.6c00835](https://doi.org/10.1021/acs.jmedchem.6c00835); PMID 42397716): docking contra estados activos **e inactivos** no sesga de forma fiable hacia agonistas vs inverse agonistas. **[OBSERVACIÓN_PROPIA]** Phase E: lit-activos HU-433/O-1966 → Q4 FAIL bajo Contract v1.0; Phase H INDETERMINATE. | **ABIERTA** |
 | **8GUS vs 6PT0** | **[LITERATURA_PRIMARIA]** 8GUS = pose experimental HU-308 + Gi (PDB **8GUS**). **[OBSERVACIÓN_PROPIA]** Docking 6PT0 colapsa HU-308/HU-433 al mismo centroide (1.7646 norm) con contactos microswitch divergentes. | **ABIERTA** |
@@ -128,8 +128,9 @@
 
 1. **[OBSERVACIÓN_PROPIA]** **No** reclamar que HU-433 es «mejor agonista» por Ki superior.
 2. **[OBSERVACIÓN_PROPIA]** **No** usar docking 6PT0 como predictor determinista de tier Gi.
-3. **[HIPÓTESIS_ABIERTA]** Próximo paso **solo encuadrado** (no ejecutar): ensayo Gi comparable HU-433 con normalización CP55,940 **o** MD μs con muestreo Trp258 — requiere orden PI explícita post-congelación.
-4. Ver límites metodológicos en [`DOCKING_LIMITS_AND_GOVERNANCE.md`](DOCKING_LIMITS_AND_GOVERNANCE.md).
+3. **[LITERATURA_PRIMARIA]** Trp258^6.48 **no** es switch único de la ACN (Morales-Pastor 2025, DOI [10.1038/s41467-025-60003-0](https://doi.org/10.1038/s41467-025-60003-0); PMID 40500255) — **sin** cerrar la fila Trp258 de §7 (**ABIERTA**).
+4. **[HIPÓTESIS_ABIERTA]** Objeto actual del programa = pregunta de **núcleo mínimo** CB2→Gαi vs CB1 ([`MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](MINIMAL_CORE_REANALYSIS_PROTOCOL.md); [`RESEARCH_STATE.md`](../../RESEARCH_STATE.md)) — **no** Fase I, **no** diseño químico.
+5. Ver límites metodológicos en [`DOCKING_LIMITS_AND_GOVERNANCE.md`](DOCKING_LIMITS_AND_GOVERNANCE.md).
 
 ---
 

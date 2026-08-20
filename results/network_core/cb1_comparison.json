@@ -1,0 +1,15 @@
+{
+  "CB1_COMPARISON": "INDETERMINATE",
+  "status": "NOT_COMPUTED",
+  "reason": "CB2 analysis closed as INDETERMINATE before architectural CB1 test. No CB1 LigACN/degeneracy graph equivalent recovered from Dutta & Shukla public GitHub tree / Box (Box not downloaded). Li 2023 is cryo-EM only.",
+  "dutta_shukla_doi": "10.1038/s42003-023-04868-1",
+  "governance": {
+    "DE_NOVO_GENERATION": "STOP",
+    "THRESHOLD_MODIFICATION": "STOP",
+    "ORTHOSTERIC_DESIGN": "PAUSED",
+    "CONTRACT_v1.0": "ARCHIVED_HISTORICAL",
+    "NEW_DOCKING": "STOP",
+    "NEW_CHEMISTRY": "STOP",
+    "MODO": "READ_ONLY / PUBLIC_DATA_REANALYSIS"
+  }
+}

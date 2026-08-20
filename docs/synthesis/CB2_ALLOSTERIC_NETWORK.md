@@ -28,31 +28,43 @@ DE_NOVO_GENERATION: STOP
 
 ---
 
-## 2. ACN — Morales-Pastor *et al.* 2025
+## 2. ACN / LigACN — Morales-Pastor *et al.* 2025
 
-**[LITERATURA_PRIMARIA]** **Referencia verificada:** Morales-Pastor, A. *et al.* «Multiple intramolecular triggers converge to preferential G protein coupling in the CB2R.» *Nature Communications* **16**, 5265 (2025). DOI [10.1038/s41467-025-60003-0](https://doi.org/10.1038/s41467-025-60003-0); PMID 40500255.
+**[LITERATURA_PRIMARIA]** **Referencia verificada:** Morales-Pastor, A. *et al.* «Multiple intramolecular triggers converge to preferential G protein coupling in the CB2R.» *Nature Communications* **16**, 5265 (2025). DOI [10.1038/s41467-025-60003-0](https://doi.org/10.1038/s41467-025-60003-0); PMID 40500255; PDB **6KPC**, **5ZTY**, **6KPF**.
+
+**[LITERATURA_PRIMARIA]** Datos públicos declarados: SI + Supplementary Data 1–4; MD en GPCRmd [dynadb/publications/1540](https://gpcrmd.org/dynadb/publications/1540/); código [GPCRmd/prefcoup_cb2r](https://github.com/GPCRmd/prefcoup_cb2r). Disponibilidad publicada ≠ descarga/cómputo local en Janusforge.
 
 ### Hallazgos centrales (literatura externa)
 
 **[LITERATURA_PRIMARIA]**
 
 - Mutagénesis sistemática (**360 mutaciones puntuales**) + perfilado **Gαi2** y **β-arrestin1** + simulaciones MD.
-- La **ACN (allosteric communication network)** transmite información del ligando al sitio intracelular; mutaciones perturbadoras convergen en motivos conservados:
+- Define **LigACN** (ligand-stabilized communication network): 100 caminos más cortos bolsillo ortostérico → sinks intracelulares; transmisión = degeneracy en esos caminos.
+- La **ACN** completa transmite información del ligando al sitio intracelular; mutaciones perturbadoras convergen en motivos conservados:
   - **DRY** (TM3)
   - **Sitio de unión de sodio**
   - **CWxP** (TM6)
   - **NPxxY** (TM7)
   - **PIF** (Pro-interrupt, TM5)
-- Pérdida de reclutamiento β-arrestin1 con **acoplamiento preferencial Gαi2** en subconjuntos mutacionales (`PrefCoupGαi2`).
-- Simulaciones MD iniciadas desde estado inactivo **5ZTY** (PDB **5ZTY**); análisis de contactos en ventanas μs agregadas por mutante.
+- Mutantes **PrefCoup Gαi2** más cercanos a aristas de alta transmisión y con mayor conectividad vs mutantes que conservan Gαi2 + β-arrestin1 (comparación reportada en el paper).
+- Panel MD: **34** mutantes (**14** PrefCoup Gαi2, **20** Coup Gαi2_βarr1) + WT; **~2.6 μs/mutante** desde **5ZTY**.
+- LigACN **no** se reduce a **Trp258^6.48**: comunicación fuerte vía **TM7** (superior/inferior), inferiores de **TM2/TM3/TM6**, y motivos conservados bolsillo → interfaz intracelular.
+
+### Corrección vs hipótesis previa de «switch único»
+
+**[LITERATURA_PRIMARIA]** Trp258 puede ser un nodo importante (también Ganzoni 2026, DOI [10.1039/D6SC00062B](https://doi.org/10.1039/D6SC00062B)), pero la evidencia publicada de LigACN **no** soporta un conmutador único en Trp258.
+
+**[HIPÓTESIS_ABIERTA]** Pregunta frontera del programa: núcleo mínimo diferencial CB2→Gαi vs CB1 — ver [`MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](MINIMAL_CORE_REANALYSIS_PROTOCOL.md). Outcomes: `CORE_FOUND` | `NETWORK_DISTRIBUTED` | `INDETERMINATE`. **No computado** aquí.
 
 ### Implicación para Janusforge (Nivel 2–3)
 
-**[HIPÓTESIS_ABIERTA]** La eficacia funcional y el sesgo de vía **no** son función escalar de distancia ortostérica estática. La ACN integra perturbaciones distribuidas — coherente con veredictos **INDETERMINATE** de Phase H y micronetwork en este repo, pero **no** demostrado como ley operativa en Janusforge.
+**[OBSERVACIÓN_PROPIA]** Phase G = **GENERALIZES**; Phase H = **INDETERMINATE**; micronetwork = **INDETERMINATE** — macro válida, no suficiente.
+
+**[HIPÓTESIS_ABIERTA]** La eficacia funcional y el sesgo de vía **no** son función escalar de distancia ortostérica estática. La ACN integra perturbaciones distribuidas — coherente con esos INDETERMINATE, pero **no** demostrado como ley operativa en Janusforge.
 
 ---
 
-## 3. Trp258^6.48 — toggle switch y continuo funcional
+## 3. Trp258^6.48 — nodo importante, no switch único
 
 **[LITERATURA_PRIMARIA]** **Referencia verificada:** Ganzoni, R. L. Z. *et al.* «Single-position ligand modifications tune CB₂R activity by targeting the toggle switch.» *Chemical Science* (2026). DOI [10.1039/D6SC00062B](https://doi.org/10.1039/D6SC00062B).
 
@@ -60,13 +72,15 @@ DE_NOVO_GENERATION: STOP
 
 **[LITERATURA_PRIMARIA]**
 
-- Derivados del scaffold **HU-308** con modificaciones en **una sola posición** acceden a un **continuo funcional** vía modulación de **Trp258^6.48** (toggle switch de CB2R):
+- Derivados del scaffold **HU-308** con modificaciones en **una sola posición** acceden a un **continuo funcional** vía modulación de **Trp258^6.48**:
   - agonismo total
   - agonismo parcial
   - antagonismo neutral
   - inverse agonismo parcial
 - Ligandos de baja eficacia muestran comportamiento **protean** según ensayo — subraya dependencia de contexto.
 - Compuesto (S)-1 (derivado CF₃): perfil sesgado; MD sugiere contacto cercano con Trp258^6.48.
+
+**[LITERATURA_PRIMARIA]** Esto **no** contradice la ACN distribuida de Morales-Pastor 2025: Trp258 puede modular eficacia localmente **sin** ser el único nodo necesario de la red hacia Gαi. La contradicción del par HU-308/HU-433 permanece **ABIERTA** — no armonizar post hoc ([`HU308_HU433_PARADOX.md`](HU308_HU433_PARADOX.md) §7).
 
 ### Puente con micronetwork Janusforge
 
@@ -77,7 +91,21 @@ DE_NOVO_GENERATION: STOP
 | 6PT0 | 1.32 Å | 0° (ambos) |
 | 6KPF | 0.32 Å | 33.14° (ambos) |
 
-**[OBSERVACIÓN_PROPIA]** La plasticidad de Trp258 entre estados receptor (6PT0 vs 6KPF) explica por qué el stack estático no unifica el par enantiomérico — ver [`HU308_HU433_PARADOX.md`](HU308_HU433_PARADOX.md) §Contradicciones abiertas (Trp258^6.48 = **ABIERTA**).
+**[OBSERVACIÓN_PROPIA]** La plasticidad de Trp258 entre estados receptor (6PT0 vs 6KPF) explica por qué el stack estático no unifica el par enantiomérico — veredicto micronetwork **INDETERMINATE**; fila Trp258 = **ABIERTA**.
+
+---
+
+## 3b. Paisaje MSM — Dutta & Shukla 2023 (refuerzo)
+
+**[LITERATURA_PRIMARIA]** Dutta, S. & Shukla, D. *Commun Biol* **6**, 485 (2023). DOI [10.1038/s42003-023-04868-1](https://doi.org/10.1038/s42003-023-04868-1); PMC **PMC10163236**. Código: [ShuklaGroup/Cannabinoid_activation](https://github.com/ShuklaGroup/Cannabinoid_activation.git). MSM/features/trayectorias: depósito Box citado en Data availability del paper.
+
+**[LITERATURA_PRIMARIA]**
+
+- En CB2, **W6.48** se mueve principalmente por **rotación**; TM5/TM6/TM7 intracelulares participan en la transición activa.
+- VAMPnets: **seis estados metaestables** para CB2 — no una sola transición binaria.
+- La rotación del toggle tiene efecto mínimo reportado sobre movimientos intracelulares en ese análisis.
+
+> Distinto de **Li *et al.* 2023** (DOI [10.1038/s41467-023-37112-9](https://doi.org/10.1038/s41467-023-37112-9); PMID 36922494) — cryo-EM **8GUS/8GUR/…**, no el MSM.
 
 ---
 
@@ -176,11 +204,13 @@ DE_NOVO_GENERATION: STOP
 
 | Documento | Rol |
 |-----------|-----|
+| [`MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](MINIMAL_CORE_REANALYSIS_PROTOCOL.md) | Protocolo cerrado READ-ONLY; pregunta núcleo mínimo CB2 vs CB1 |
 | [`cb2_allosteric_switch_map.md`](../cb2_allosteric_switch_map.md) | Mapa rutas A/B/C — **HIPÓTESIS** |
-| [`switch_hypothesis_allosteric_reformulation.md`](../switch_hypothesis_allosteric_reformulation.md) | Pregunta motriz alostérica |
+| [`switch_hypothesis_allosteric_reformulation.md`](../switch_hypothesis_allosteric_reformulation.md) | Pregunta motriz alostérica (histórico; objeto actual = núcleo mínimo) |
 | [`cb2_mechanistic_frontier_synthesis.md`](../cb2_mechanistic_frontier_synthesis.md) | Cadena tres capas macro/micro/dinámica |
 | [`CB2_STRUCTURE_ATLAS.md`](CB2_STRUCTURE_ATLAS.md) | Plantillas PDB |
 | [`DOCKING_LIMITS_AND_GOVERNANCE.md`](DOCKING_LIMITS_AND_GOVERNANCE.md) | Límites estáticos + gobernanza |
+| [`../../RESEARCH_STATE.md`](../../RESEARCH_STATE.md) | Estado frontera + gobernanza YAML |
 
 ---
 

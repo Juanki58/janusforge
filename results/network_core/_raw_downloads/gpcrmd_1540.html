@@ -1,0 +1,3184 @@
+<head>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load("visualization", "1", {
+      packages: ["corechart"],
+      "language": "en"
+    });
+  </script>
+  <script>
+    document.domain = document.domain;
+  </script>
+  <!-- Cookie Consent by TermsFeed https://www.TermsFeed.com -->
+<script type="text/javascript" src="//www.termsfeed.com/public/cookie-consent/4.1.0/cookie-consent.js" charset="UTF-8"></script>
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({"notice_banner_type":"interstitial","consent_type":"express","palette":"light","language":"en","page_load_consent_levels":["strictly-necessary"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_privacy_policy_url":"https://www.gpcrmd.org/privacy-policy/"});
+});
+</script>
+
+<!-- Google Analytics -->
+
+<!-- Google tag (gtag.js) -->
+<script type="text/plain" data-cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=G-K48MYFDMQW"></script>
+<script type="text/plain" data-cookie-consent="tracking">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K48MYFDMQW');
+</script>
+
+<!-- end of Google Analytics-->
+
+<noscript>Free cookie consent management tool by <a href="https://www.termsfeed.com/">TermsFeed</a></noscript>
+<!-- End Cookie Consent by TermsFeed https://www.TermsFeed.com -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+        name="description"
+        content="GPCRmd is an online platform with web-based visualization 
+        capabilities and a comprehensive analysis toolbox that allows visualizing, 
+        inspecting, and analysing GPCR molecular dynamics.">
+  <title>GPCRmd</title>
+  <link rel="shortcut icon" type="image/png" href="/static/home/logo/gpcrmd/main.png">
+  <!-- Bootstrap -->
+  <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="/static/home/js/jquery.js"></script>
+  <!-- jQueryUI -->
+  <link rel="stylesheet" href="/static/home/css/jquery-ui.min.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="/static/home/css/jquery-ui.theme.min.css" type="text/css" media="all" />
+  <script src="/static/home/js/jquery-ui.min.js"></script>
+  <!-- Change JQueryUI plugin names to fix name collision with Bootstrap.-->
+  <script>
+    $.widget.bridge('uitooltip', $.ui.tooltip);
+    $.widget.bridge('uibutton', $.ui.button);
+  </script>
+  <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Custom styles -->
+  <link href="/static/home/css/style.css" rel="stylesheet">
+  <style>
+    input[type='file'] {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    @media (max-width: 1050px) {
+      .navbar-header {
+        float: none;
+      }
+
+      .navbar-left,
+      .navbar-right {
+        float: none !important;
+      }
+
+      .navbar-toggle {
+        display: block;
+      }
+
+      .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      }
+
+      .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+      }
+
+      .navbar-collapse.collapse {
+        display: none !important;
+      }
+
+      .navbar-nav {
+        float: none !important;
+        margin-top: 7.5px;
+      }
+
+      .navbar-nav>li {
+        float: none;
+      }
+
+      .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .collapse.in {
+        display: block !important;
+      }
+    }
+
+
+    nav .dropdown-menu {
+      background-color: #222222;
+    }
+
+    nav a {
+      color: #bfbfbf !important;
+    }
+
+    nav a:hover {
+      color: white !important;
+      background-color: #222222 !important;
+    }
+
+    nav li.active a {
+      color: white !important;
+      /* background-color: black !important; */
+    }
+
+    nav li.active a:hover {
+      color: white !important;
+      /* background-color: black !important; */
+    }
+
+    nav li.is_title {
+      padding: 3px 20px;
+      color: #595959;
+    }
+  </style>
+  <!-- Additional CSS -->
+  
+  <style>
+    .container{
+    width: 90%;
+    }
+    .dataTables_wrapper .myfilter .dataTables_filter{
+        float:left;
+        font-size:16px;
+        margin:10px 0;
+    }
+    .dataTables_wrapper .mylength .dataTables_length{
+        float:right;
+        font-size:16px;
+        margin:10px 0;
+    }
+
+    #table_id_wrapper {
+        top:100px;
+    }
+
+    .active {
+        font-weight: bold;
+    }
+
+    .dt-buttons button{
+        background-color: white;
+        color: #171010;
+        border: 2px solid #BF3C1F;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 4px;
+        padding: 6px 12px;
+    }
+
+    .dt-buttons button:hover{
+        background-color: #171010;
+    }
+
+    .dt-buttons button:hover span{
+        color: white;
+    }
+
+    /* Style for the loading overlay */
+    #loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        z-index: 1000;
+        display: none; /* Hidden by default */
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /* Style for the spinner */
+    .spinner {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border-top-color: #BF3C1F;;
+        animation: spin 1s ease-in-out infinite;
+        margin-bottom: 20px; /* Space between spinner and cancel button */
+    }
+
+    /* Animation for the spinner */
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Style for the cancel button */
+    #cancel-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #BF3C1F;;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #cancel-button:disabled {
+        background-color: #a9a9a9;
+        cursor: not-allowed;
+    }
+    #cancel-button:hover:enabled {
+        background-color: #c0392b;
+    }
+
+  </style>
+  
+
+  
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+  
+</head>
+
+<body id="parentbody">
+  
+    
+
+<!-- Fixed navbar -->
+<nav id="topmenu" class="topMenu navbar-fixed-top" role="navigation" style="height:100px">
+  <div class="container-fluid" style="margin:8px 40px" >
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+
+      </button>
+
+      <a href="/home/" class="navbar-brand" alt="GPCRmd" style="padding:0px 0px; margin-left: 23px;"><img id="logo" src="/static/home/logo/gpcrmd/main.png" class="main-logo" style="float:left;margin-right:5px; height: 81px;" alt="GPCRmd logo"></a>
+    </div>
+    
+      <div id="maintenanceAlert" class="alert alert-warning alert-dismissible show" role="alert"  style="padding:5px 30px 5px 10px;margin:0 20px;position:absolute;z-index:10; width: 40%;">
+        <i class="glyphicon glyphicon-warning-sign warnicon"></i>
+        [ALERT] This is a notice to alert you that we will be conducting a maintenance. Down time is scheduled as follows: 10am (GMT+2) Monday, August 24th, 2026 - 6pm (GMT+2) Friday, August 28th, 2026. 
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="maintdismissAlert()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> 
+      
+    
+
+    
+
+    <div id="navbar" class="navbar-collapse collapse">
+      <!-- top menu: Tools     Simulations     Submissions   Cite us   More-->
+<ul class="nav navbar-nav navbar-right">
+  <!-- Log in -->
+  <li id="Submission_li">
+    <a class="menuItem" href="/accounts/login/">Log in</a>
+  </li>
+
+  <!-- Register -->
+  <li id="register">
+    <a class="menuItem" href="/accounts/register/">Register</a>
+  </li>
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+    <!-- Search -->
+    <li id="search">
+      <a class="menuItem" href="/dynadb/search/">Search</a>
+    </li>
+
+  <!-- Simulations -->
+  <li class="dropdown" id="simulations">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Simulations
+    <span id="caret-white" class="caret"></span></a>
+    <ul class="dropdown-menu" data-pointto="simulations">
+      <li><a href="/gpcrtree/">Family tree</a></li>
+      <li id="datasets"><a href="/dynadb/datasets/">GPCRmd simulations</a></li>   
+      <li><a id="statistics" class="toolsLink" onclick="go_to_stats()"></span> Statistics</a></li>
+    </ul>
+  </li>
+
+  <!-- Cite us -->
+  <li>
+    <a class="menuItem" href="https://gpcrmd-docs.readthedocs.io/en/latest/citing-gpcrmd.html" target="_blank">Cite us</a>
+  </li>
+
+    <!-- More -->
+    <li class="dropdown" id="about">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
+      <span id="caret-white" class="caret"></span></a>
+      <ul class="dropdown-menu" data-pointto="about"> 
+        <li id="document"><a href="https://gpcrmd-docs.readthedocs.io/en/latest/" target="_blank">Documentation</a></li>
+        <li id="contact"><a href="/contact/">Contact</a></li>
+        <li id="news"><a href="/news/">News</a></li>    
+        <li id="community"><a href="/community/">About us</a></li>            
+        <li><a href="/covid19/" target="_blank">Response to COVID-19</a></li>
+        <li id="faqs"><a href="https://gpcrmd-docs.readthedocs.io/en/latest/faqs.html" target="_blank">FAQs</a></li>        
+      </ul>
+    </li>     
+</ul>
+
+
+<!-- Make active the selected button in navbar -->
+<script>
+    function activate_option(id){
+      document.getElementById(id).classList += " active";
+    }
+    var path_list = location.pathname.split("/");
+    switch (path_list[1]){
+      // Tools
+      case "view":
+        activate_option("Analysis_li");
+        break;
+      case "contmaps":
+        activate_option("Analysis_li");
+        break;
+      // Simulations (search and dataset in dynadb)
+      case "gpcrtree":
+        activate_option("simulations");
+        break;
+      // Submission  (references in dynadb)   
+      case "accounts":
+        activate_option("Submission_li");
+        break;
+      // More
+      case "contact":
+        activate_option("about");
+        break;
+      case "community":
+        activate_option("about");
+        break; 
+      case "news":
+        activate_option("about");
+        break;      
+      
+      case "dynadb":
+        switch (path_list[2]){
+          case "references":
+            activate_option("Submission_li");
+            break
+          case "search":
+          activate_option("simulations");
+          break
+        case "publications":
+            activate_option("simulations");
+            break
+          case "datasets":
+            activate_option("simulations");
+            break
+          default:
+          activate_option("Submission_li");
+        }
+
+    }
+
+</script>
+
+<!-- Go to tools section with the menu button -->
+<script>
+  function go_to_tools() {
+    window.location = "/#md_tools";
+    var path_list = window.location.href.split("/");
+    var myTool=path_list.at(-1)//select the last element of the url
+    if (myTool == '#md_tools') {
+      const element = document.getElementById("subtitle");
+      var pos = element.offsetTop;
+      var offset = document.documentElement.scrollHeight * 0.04;
+      window.scrollTo(0, pos + offset);
+    }
+  }
+</script>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+<script>
+  function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+  
+    // `item` is an object which contains the original value
+    // as well as the time when it's supposed to expire
+    const item = {
+      value: value,
+      expiry: now.getTime() + ttl,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  }
+
+  function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+    // if the item doesn't exist, return null
+    if (!itemStr) {
+      return null
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+    // compare the expiry time of the item with the current time
+    if (now.getTime() > item.expiry) {
+      // If the item is expired, delete the item from storage
+      // and return null
+      localStorage.removeItem(key)
+      return null
+    }
+    return item.value
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+      getWithExpiry("maintalertDismissed");
+      // Check if the alert has already been dismissed
+      if (localStorage.getItem("maintalertDismissed")) {
+        document.getElementById("maintenanceAlert").classList.remove("show");
+        document.getElementById("maintenanceAlert").style.display = "none";
+      }
+      
+      getWithExpiry("notialertDismissed");
+      if (localStorage.getItem("notialertDismissed")) {
+        document.getElementById("noticeAlert").classList.remove("show");
+        document.getElementById("noticeAlert").style.display = "none";
+      }
+  });
+
+  function maintdismissAlert() {
+      // Hide the alert and store the dismissal in localStorage
+      const expirationDuration = 1000 * 60 * 60 * 12; // 12 hours
+      document.getElementById("maintenanceAlert").classList.remove("show");
+      document.getElementById("maintenanceAlert").style.display = "none";
+      setWithExpiry("maintalertDismissed", "true", expirationDuration);
+  }
+
+  function notidismissAlert() {
+    const expirationDuration = 1000 * 60 * 60 * 12; // 12 hours
+    // Hide the alert and store the dismissal in localStorage
+    document.getElementById("noticeAlert").classList.remove("show");
+    document.getElementById("noticeAlert").style.display = "none";
+    setWithExpiry("notialertDismissed", "true", expirationDuration);
+}
+</script>
+  
+
+  <div class="container" id="content" style="height:auto;padding:0px">
+
+    <div class="alert alert-warning alert-dismissible" id='update_warning'
+      style="padding:5px 30px 5px 10px;margin:0 20px;position:absolute;z-index:10; display: none !important;">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+      <span class="glyphicon glyphicon-warning-sign"></span> Due to a recent server update, this page will be slow for
+      the next 1-2 hours. We apologize for any inconvenience this may cause.
+    </div>
+
+    
+<div class="row regForm">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="regPanel panel panel-primary">
+      <div class="panel-body">
+        <h2 class="panel-heading">Publications</h2>
+      </div>
+    </div>
+
+    <div class="panel panel-primary">
+
+      <div class="panel-body" style="overflow:auto">
+
+        <div style="margin:40px">
+          <p>
+           
+            Adrian Morales-Pastor1,13, Tamara Miljuš 2,3,4,5,6,13, Miguel Dieguez-Eceolaza 1 ,  Tomasz Maciej Stępniewski1,7, Vicente Ledesma1  , Franziska M. Heydenreich 8 ,  Tilman Flock2  , Bianca Plouffe6,9, Christian Le Gouill 6  , Jean Duchaine6 , David A. Sykes 4,10,11, Colin Nicholson4,10, Eline J. Koers4,10, Wolfgang Guba12, Arne C. Rufer 12, Uwe Grether 12, Michel Bouvier 6 , Dmitry B. Veprintsev 2,3,4,10 &amp; Jana Selent 1. None. <span style="font-weight:bold;">Multiple intramolecular triggers converge to preferential G protein coupling in the CB2R</span>.
+            None. doi: 10.1038/s41467-025-60003-0.
+             
+           
+          </p> <hr style="margin:40px 0">
+        </div>
+        <!-- Loading spinner -->
+        <div id="loading-overlay">
+          <div class="spinner"></div>
+          <br>
+          <button id="cancel-button" onclick="cancelLoading()">Cancel</button>
+        </div>
+        <div id = "colmenu" class="col-md-12" style="background: white;">
+          <p>Show columns: </p>
+          <a class="searchCols textlink toggle-vis " data-column="1">Dynamic id</a> - 
+          <a class="searchCols textlink toggle-vis active" data-column="2">Entry</a> -
+          <a class="searchCols textlink toggle-vis active" data-column="3">Model name</a> - 
+          <a class="searchCols textlink toggle-vis " data-column="4">Uniprot entry name</a> - 
+          <a class="searchCols textlink toggle-vis active" data-column="5">Uniprot id</a> - 
+          <a class="searchCols textlink toggle-vis " data-column="6">Family</a> - 
+          <a class="searchCols textlink toggle-vis " data-column="7">Class</a> - 
+          <a class="searchCols textlink toggle-vis active" data-column="8">PDB id</a> -
+          <a class="searchCols textlink toggle-vis active" data-column="9">State</a> - 
+          <a class="searchCols textlink toggle-vis " data-column="10">Species</a> -
+          <a class="searchCols textlink toggle-vis " data-column="11">Model type</a> -
+          <a class="searchCols textlink toggle-vis " data-column="12">Source type</a> -
+          <a class="searchCols textlink toggle-vis " data-column="13">Ligand(s)</a> -
+          <a class="searchCols textlink toggle-vis " data-column="14">Num. of atoms</a> -
+          <a class="searchCols textlink toggle-vis " data-column="15">Membrane composition</a> -
+          <a class="searchCols textlink toggle-vis " data-column="16">Simulation time</a> -
+          <a class="searchCols textlink toggle-vis " data-column="17">Software</a> -
+          <a class="searchCols textlink toggle-vis " data-column="18">Force field</a> -
+          <a class="searchCols textlink toggle-vis " data-column="19">Submitted by</a> 
+        </div>
+        
+        <div style="padding:20px">
+          <table id="table_id" class="display" style="font-size: 13px;width:100%">
+            <thead>
+              <tr>
+                <th> </th>
+                <th>Dynamic id</th>
+                <th>Entry</th>
+                <th>Model name</th>
+                <th>Uniprot entry name</th>
+                <th>Uniprot ID</th>
+                <th>Family</th>
+                <th>Class</th>
+                <th>PDB ID</th>
+                <th>State</th>
+                <th>Species</th>
+                <th>Model type</th>
+                <th>Source type</th>
+                <th>Ligand(s)</th>
+                <th>Num. of atoms</th>
+                <th>Membrane composition</th>
+                <th><span data-toggle="tooltip" title="Accumulated simulation time (µs)">Accum. sim. time (µs)</th>
+                <th>Software</th>
+                <th>Force field</th>
+                <th>Submitted by</th>
+                <th> </th>
+              </tr>
+            </thead>
+            <tbody>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2212/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2212
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2356/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (L119A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (L119A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52625</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2212/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2213/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2213
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2357/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (V121A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (V121A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52613</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2213/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2214/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2214
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2358/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (P176A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (P176A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52615</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2214/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2215/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2215
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2359/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (P178A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (P178A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52615</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2215/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2216/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2216
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2360/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (L185A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (L185A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52610</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2216/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2217/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2217
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2361/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (S203A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (S203A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52618</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2217/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2218/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2218
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2362/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (V52A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (V52A) structure bound to the agonist AM12033 ...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52613</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2218/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2219/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2219
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2363/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (L76A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (L76A) structure bound to the agonist AM12033 ...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52610</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2219/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2220/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2220
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2364/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (K109A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (K109A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52606</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2220/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2221/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2221
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2365/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (K33A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (K33A) structure bound to the agonist AM12033 ...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52606</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2221/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2223/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2223
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2366/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (S61A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (S61A) structure bound to the agonist AM12033 ...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52618</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2223/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2224/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2224
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2367/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (F117A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (F117A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52609</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2224/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2225/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2225
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2368/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (L125A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (L125A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52610</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2225/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2226/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2226
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2369/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (V159A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (V159A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52613</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2226/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2126/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2126
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2302/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="Cannabinoid receptor 2 active structure bound to the agonist AM12033">Cannabinoid receptor 2 active structure bound to the agoni...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Electron microscopy (CryoEM)</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52619</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.00</td>
+                  <td class="software">Acemd 3</td>
+                  <td class="forcefield">Charmm 36m</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2126/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2227/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2227
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2370/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (S165A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (S165A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52618</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2227/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2228/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2228
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2371/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (A199V) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (A199V) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52625</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2228/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2229/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2229
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2372/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (I205A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (I205A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52610</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2229/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2230/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2230
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2373/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (L251A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (L251A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52610</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2230/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2231/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2231
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2374/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (A282V) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (A282V) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52625</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2231/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2232/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2232
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2375/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (S292A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (S292A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52618</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2232/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2233/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2233
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2376/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (V297A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (V297A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52613</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2233/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2234/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2234
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2377/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (C313A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (C313A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52618</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2234/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2235/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2235
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2378/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (A77V) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (A77V) structure bound to the agonist AM12033 ...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52625</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2235/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2236/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2236
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2379/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (S112A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (S112A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52618</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2236/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2237/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2237
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2380/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (V152A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (V152A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52613</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2237/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2238/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2238
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2381/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (H217A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (H217A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52612</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2238/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2239/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2239
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2382/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (S285A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (S285A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52618</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2239/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2240/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2240
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2383/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (N291A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (N291A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52615</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2240/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2241/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2241
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2384/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (M293A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (M293A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52612</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2241/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2242/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2242
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2385/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (R302A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (R302A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52604</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2242/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2243/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2243
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2386/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (K319A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (K319A) structure bound to the agonist AM12033...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52606</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2243/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2244/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2244
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2387/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (S47A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (S47A) structure bound to the agonist AM12033 ...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52618</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2244/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2245/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2245
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2388/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (L49A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (L49A) structure bound to the agonist AM12033 ...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52610</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2245/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+             <tr class="searchTable">
+                  <td class="links">
+                      
+                     <a id="/view/2246/" onclick="startLoading(this)" class="submitBtn btn btn-default" role="button">View</a>
+                      
+                  </td>
+                  <td>
+                      2246
+                  </td>
+                  <td class="receptor">
+                      
+                          <a  class='searchLink' title="Check receptor info" href="/dynadb/protein/id/2389/">Cannabinoid receptor 2</a>
+                      
+                  </td>
+                  <td class="modelname">
+                    <span data-toggle="tooltip" title="CB2R mutant (F91A) structure bound to the agonist AM12033 (6KPF) ">CB2R mutant (F91A) structure bound to the agonist AM12033 ...<span>
+                  </td>
+                  <td class="uniprotentryname">
+                      
+                          cnr2_human
+                      
+                  </td>
+                  <td class="uniprotid">
+                      
+                          <a class='searchLink' title="Go to Uniprot page"  target="_blank" href="https://www.uniprot.org/uniprot/P34972" alt="Go to Uniprot page">P34972</a>
+                      
+                  </td>
+                  <td  class="family">Cannabinoid receptors</td>
+                  <td  class="gpcrclass">A</td>
+                  
+                    <td  class="pdbid">6KPF</td>
+                  
+                 <td class="state">Active</td>
+                  <td  class="species"><i>Homo sapiens</i></td>
+                  <td class="modeltype">Complex</td>
+                  <td class="sourcetype">Docking</td>
+                  <td class="ligands">
+                      
+                          
+                              
+                                  <a  class='searchLink' title="Check ligand info" href="/dynadb/molecule/id/5353/"><span data-toggle="tooltip" title="7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-6a,7,8,9,10,10a-hexahydro-6h-benzo[c]chromen-3-yl]-7-methyloctanenitrile">7-[(6ar,9r,10ar)-1-hydroxy-9-(hydroxymethyl)-6,6-dimethyl-...<span></a>
+                              
+                          
+                      
+                  </td>
+                  <td class="numofatoms">52609</td>
+                  <td class="membranecomposition">
+                      
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5391/">POPG</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5152/">POPC</a>
+                          
+                              <a  class='searchLink' href="/dynadb/molecule/id/5166/">CHL1</a>
+                          
+                      
+                  </td>
+                  <td class="simtime">2.39</td>
+                  <td class="software"> ACEMD3  GPUGRID</td>
+                  <td class="forcefield"> CHARMM  c36 Jul 2021</td>
+                  <td class="author">Miguel Dieguez, IMIM</td>
+                  <td class="links">
+                      
+                     <a id="/dynadb/dynamics/id/2246/" onclick="startLoading(this)"  class="submitBtn btn btn-default" role="button">Report</a>
+                      
+                  </td>
+              </tr>
+              
+          </tbody>
+        </table>
+        </div>
+        
+
+      </div>  
+
+    </div> 
+  </div>
+</div> 
+
+
+
+
+    <!-- Footer -->
+    <div class="row main_section foot_section" id="partners_section" style="margin-left: 0px;margin-right: 0px;">
+
+      <!-- Parters -->
+      <div class="col-md-4" style="padding:20px 30px 0 30px;margin-bottom: 20px;text-align: center">
+        <h4 class="footTitle">PARTNER SERVERS</h4>
+        <p class="footA"><a class="footA" href="https://www.gpcrdb.org/" target="_blank">GPCRdb</a></p>
+        <p class="footA"><a class="footA" href="http://open.gpcr-modsim.org/" target="_blank">GPCR-ModSim</a></p>
+        <p class="footA"><a class="footA" href="https://gpcrm.biomodellab.eu/" target="_blank">GPCRM</a></p>
+        <p class="footA"><a class="footA" href="http://nmrlipids.blogspot.com/" target="_blank">NMRlipids</a></p>
+        <p class="footA"><a class="footA" href="http://lmc.uab.cat/homolwat/" target="_blank">HomolWat</a></p>
+        <p class="footA"><a class="footA" href="https://mmcg.grs.kfa-juelich.de/links" target="_blank">Hybrid MM/CG Webserver</a></p>
+      </div>
+
+      <!-- Useful links -->
+      <div class="col-md-4" style="padding:20px 30px 0 30px;margin-bottom: 20px;text-align: center">
+        <h4 class="footTitle">CONTACT & LINKS</h4>
+        <p class="footA shortfoot"><a class="footA" href=https://twitter.com/GPCRmd><img class="footlogo" src="/static/home/images/footer/twitter-logo.png" alt="GPCRmd twitter"></a></p>
+        <p class="footA shortfoot"><a class="footA" href="mailto:info@gpcrmd.org"><img  class="footlogo" src="/static/home/images/footer/mail.png" alt="GPCRmd email"></a></p>
+        <p class="footA shortfoot"><a class="footA" href="https://gpcrmd-docs.readthedocs.io/en/latest/" target="_blank">Documentation</a></p>
+        <p class="footA"><a class="footA" href="https://gpcrmd-docs.readthedocs.io/en/latest/citing-gpcrmd.html" target="_blank">Cite us</a></p>
+        <p class="footA"><a class="footA" href="https://www.gpcrmd.org/cookies-policy/" target="_blank">Cookies policy</a></p>
+        <p class="footA"><a class="footA" href="https://www.gpcrmd.org/privacy-policy/" target="_blank">Privacy policy</a></p>
+        <p class="footA"><a class="footA" href="https://www.gpcrmd.org/legal-notice/" target="_blank">Legal notice</a></p>
+
+        
+        
+
+      </div>
+
+      <!-- Supported by -->
+      <div class="col-md-4" style="padding:20px 30px;margin-bottom: 20px;text-align: center;overflow: hidden">
+        <h4 class="footTitle">SUPPORTED BY</h4>
+        <p class="footA shortfoot"><a class="footA" href="https://www.cost.eu/actions/CA18133/">ERNEST</a> (COST Action CA18133)</p>
+        <center>
+          <div class="row">
+            <img class="img-responsive" src="/static/home/images/news/ERNESTlogo.png"
+              style="height:50px;display:block;" alt="ERNEST logo">
+          </div>
+        </center>
+        <p class="footA shortfoot"><a class="footA" href="https://www.cost.eu/actions/CM1207/">GLISTEN</a> (COST Action CM1207)
+        </p>
+        <center>
+          <div class="row">
+            <img class="img-responsive" src="/static/home/images/footer/glisten-modified.png"
+              style="height:47px;display:block" alt="GLISTEN logo">
+          </div>
+        </center>
+        <p class="footA shortfoot"><a class="footA" href="https://www.gpcrforum.org/">GPCRForum</a> 
+        </p>
+        
+        
+      </div>
+      
+
+    </div>
+  </div>
+
+  <script>
+    
+    $(document).ready(function () {
+      $("#logo_select").change(function (event) {
+        logo_num = parseInt($(this).val());
+        logo_img = $("#logo");
+        switch (logo_num) {
+          case 1:
+            logo_img.attr('src', '/static/home/logo/gpcrmd/main.png');
+            logo_img.css('width', '75');
+            break;
+          case 2:
+            logo_img.attr('src', '/static/home/logo/gpcrmd/main2.png');
+            logo_img.css('width', '73');
+            break;
+          case 3:
+            logo_img.attr('src', '/static/home/logo/gpcrmd/main3.png');
+            logo_img.css('width', '76');
+            break;
+          default:
+            logo_img.attr('src', '/static/home/logo/gpcrmd/main.png');
+            logo_img.css('width', '75');
+            $(this).val(1);
+        }
+      });
+
+      // Change text of cookie (remove ads autoadverstiment )
+      if (document.getElementById('cc-nb-text')) {
+        document.getElementById('cc-nb-text').innerText = "We use cookies and other tracking technologies to improve your browsing experience on our website, to analyze our website traffic, and to understand where our visitors are coming from.";
+      } 
+
+      if (document.getElementById('title_targeting')) {
+        document.getElementById('title_targeting').style.display = "none"
+      }
+      
+      //Check if load-of-all-systems-after-update is ongoing. If so show warning
+      $.ajax({
+        url: '/updating/',
+        success: function (visible) {
+          var container = $("#update_warning")
+          if (visible == 'True') {
+            container.show();
+          } else {
+            container.hide()
+          }
+        },
+        timeout: 600000
+      });
+
+      //Bootstrap tooltips
+      $('[data-toggle="tooltip"]').tooltip();
+
+    });
+  </script>
+  <!-- Include custom ajax functions -->
+  
+
+<!-- From base.html -->
+<script src="/static/home/js/jquery.js"></script>
+<!-- jQueryUI -->
+<link rel="stylesheet" href="/static/home/css/jquery-ui.min.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/static/home/css/jquery-ui.theme.min.css" type="text/css" media="all" />
+<script src="/static/home/js/jquery-ui.min.js"></script>
+<!-- Change JQueryUI plugin names to fix name collision with Bootstrap.-->
+<script>
+  $.widget.bridge('uitooltip', $.ui.tooltip);
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- END From base.html -->
+
+
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css"><!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/plug-ins/1.10.20/features/pageResize/dataTables.pageResize.min.js">-->
+<link rel="stylesheet" type="text/css" src="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+
+<script type="text/javascript" src="/static/dynadb/searchtable.js"></script>
+
+<script>
+  let isCanceled = false; // Track if the user clicked "Cancel"
+  let loadingTimeout; // Variable to hold the timeout ID
+
+  // Check sessionStorage on page load to see if loading overlay should display
+  window.addEventListener("load", () => {
+      if (sessionStorage.getItem("loading") === "false") {
+          document.getElementById("loading-overlay").style.display = "none";
+      }
+  });
+
+  function startLoading(button) {
+      isCanceled = false;
+      var simPath = button.getAttribute('id');
+      document.getElementById("loading-overlay").style.display = "flex";
+      document.getElementById("cancel-button").disabled = false; // Enable cancel button
+      sessionStorage.setItem("loading", "true"); // Set loading state to true
+
+      // Clear any existing timeout before setting a new one
+      if (loadingTimeout) {
+          clearTimeout(loadingTimeout);
+      }
+
+      // Simulate a delay for loading
+      loadingTimeout = setTimeout(() => {
+          if (!isCanceled) {
+              document.getElementById("cancel-button").disabled = true; // Disable cancel button
+              sessionStorage.setItem("loading", "false"); // Reset loading state to prevent spinner on back
+              // Proceed to next page or perform action
+              window.top.location.href = simPath; // Replace with your target URL
+          }
+      }, 3000); // 3-second delay
+  }
+
+  function cancelLoading() {
+      isCanceled = true;
+      document.getElementById("loading-overlay").style.display = "none";
+      sessionStorage.setItem("loading", "false"); // Ensure loading state is reset
+      clearTimeout(loadingTimeout); // Clear the timeout when canceling
+  }
+
+  // Reset loading state when navigating back to this page
+  window.addEventListener("pageshow", (event) => {
+      if (event.persisted) {
+          sessionStorage.setItem("loading", "false");
+          document.getElementById("loading-overlay").style.display = "none";
+      }
+  });
+
+  $('.dropdown-toggle').on('click', function(e) {
+    var $el = $(this).next('.dropdown-menu');
+    var isVisible = $el.is(':visible');
+    
+    // Ocultar todos los menús y cerrar el 'open' en otros dropdowns
+    $('.dropdown-menu').slideUp('400').removeClass('open');
+    
+    // Si el menú no estaba visible, abrirlo
+    if (!isVisible) {
+        $el.stop(true, true).slideDown('400').addClass('open');
+    }
+    
+    e.stopPropagation();
+});
+
+</script>
+
+</body>
+
+</html>
