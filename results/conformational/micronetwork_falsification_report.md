@@ -104,6 +104,19 @@ del descriptor.
 4. Re-ejecutar este script (detectará poses automáticamente)
 5. Verificación cruzada: repetir contra 6KPF
 
+## Resolución posterior — docking dirigido HU-308/HU-433
+
+Tras el veredicto INDETERMINATE inicial, se completó docking Vina dirigido
+(exhaustiveness=16, seed=42) contra 6PT0 y 6KPF. Ver:
+
+- [`micronetwork_modes_report.md`](micronetwork_modes_report.md)
+- [`micronetwork_modes_report.json`](micronetwork_modes_report.json)
+
+**Veredicto modos locales:** `INDETERMINATE` — discrepancia entre estados
+(6PT0=IDENTICAL_LOCAL_MODES, 6KPF=DISTINCT_LOCAL_MODES); plasticidad conformacional.
+
 ## Scripts
 
 - `scripts/conformational/test_micronetwork_falsification.py`
+- `scripts/conformational/test_micronetwork_modes.py`
+- `scripts/run_micronetwork_directed_dock.py`
