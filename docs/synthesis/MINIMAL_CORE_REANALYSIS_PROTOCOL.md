@@ -152,4 +152,17 @@ Contradicciones abiertas HU-433 / AM630 / Trp258 permanecen **ABIERTA** — no a
 
 ---
 
-*Fin pre-registro. Cualquier cómputo de red posterior a esta fecha debe citar este archivo como locked.*
+## 9. Corrección epistemológica (2026-08-21) — reanálisis dinámico futuro
+
+**Estado:** `DYNAMIC_REANALYSIS = FUTURE / BLOCKED_PENDING_TRAJECTORIES`. Este archivo sigue siendo el pre-registro **histórico** del reanálisis estático/público cerrado (`CB2_MINIMAL_GI_CORE = NOT_FOUND`). El protocolo **dinámico aparcado** vive en `RESEARCH_STATE.md` → `ARCHIVED_NEXT_CALCULATION`.
+
+**Correcciones (no ejecutar ahora):**
+
+1. **No** usar `W_ij = -ln(p_ij)` como representación universal — persistencia de contacto ≠ comunicación conformacional.
+2. Mantener **dos** redes: `W_contact = f(p_ij)` (persistencia) y `W_info = f(correlation / MI / TE)` (comunicación); preguntar si los hubs estáticos aparecen en **ambas**.
+3. **No** imponer umbral a priori “>50% del flujo”; medir fracción / distribución / réplicas, luego vs null.
+4. Pregunta primaria: ¿comunicación restringida a subred persistente, o redistribución dinámica entre rutas? Cadena MACROSTATE → microestados → red dinámica → rutas alternativas → Gαi / β-arrestin. Sin asunción de core/switch.
+
+---
+
+*Fin pre-registro. Cualquier cómputo de red posterior a esta fecha debe citar este archivo como locked (histórico) y la corrección §9 / `RESEARCH_STATE.md` ARCHIVED_NEXT_CALCULATION para el framing dinámico.*

@@ -231,6 +231,7 @@ NIVEL_C_SECONDARY_MODULATORS: ARCHIVED_NOT_JUSTIFIED
 WORKING_HYPOTHESIS: LIGAND_x_LANDSCAPE_x_MEMBRANE  # weights unresolved; not a final tripartite model
 REACTIVATION_QUESTION: ligand+receptor+membrane -> P(metastable states)  # archived; DO NOT RUN as docking score hunt
 ARCHIVED_NEXT_CALCULATION: PARKED  # DO NOT RUN — see section below; no traj download, no MD, no analysis now
+DYNAMIC_REANALYSIS: FUTURE / BLOCKED_PENDING_TRAJECTORIES  # parked protocol; two networks; no W=-ln(p); no a priori >50%
 ```
 
 **Cortafuegos de gobernanza (formal):**
@@ -250,6 +251,7 @@ NEW_PHASE = DO_NOT_OPEN
 LINE_PAUSE = TRUE
 NEW_VARIABLES_IN_PIPELINE = NONE
 Q_MEMBRANA = PARKED
+DYNAMIC_REANALYSIS = FUTURE / BLOCKED_PENDING_TRAJECTORIES
 ```
 
 **Estado del repositorio (reposo científico):** `STAGE: FRONTIER_DEFINED_AND_ARCHIVED` — congelado en frontera epistemológica — **TRIPARTITE_WORKING_HYPOTHESIS** (no modelo demostrado); `DATA_PROVENANCE_AUDIT: PARTIAL`; anclas `cfb2a51` / `c2869b0` / `2a1193c`; variables nuevas en pipeline = **cero**.
@@ -499,14 +501,30 @@ LITERATURA / DATOS PÚBLICOS
 | Hipótesis de trabajo (ligando × paisaje × membrana) | **Abierta** — pesos **no** resueltos; **no** modelo tripartito final |
 | Pregunta reactivación `P(metastable states)` | **Archivada** — medir distribución, no docking score |
 | `ARCHIVED_NEXT_CALCULATION` (núcleo dinámico CB2→Gi) | **PARKED** — documentado abajo; **NOT NOW** |
+| `DYNAMIC_REANALYSIS` | **FUTURE / BLOCKED_PENDING_TRAJECTORIES** — dos redes; sin `W=-ln(p)` universal; sin umbral a priori >50% |
 | `DATA_PROVENANCE_AUDIT` | **PARTIAL** — SI/endpoints; traj/MSM **not** fully recovered |
 
 ---
 
 ## ARCHIVED_NEXT_CALCULATION — núcleo dinámico CB2→Gi (PI — PARKED / NOT NOW)
 
-**Estado:** **`PARKED`**. Documentación de viabilidad y recomendación PI. **`COMPUTATION_ACTIVE = NONE`**. **`NEW_PHASE = DO_NOT_OPEN`**. **`RESEARCH_STATUS = FROZEN_AT_EPISTEMOLOGICAL_BOUNDARY`**.  
-**Prohibido ahora:** descargar trayectorias, correr MD, docking, de novo, análisis de red dinámica, push.
+**Estado:** **`PARKED`**. Documentación de viabilidad y protocolo epistemológico corregido. **`COMPUTATION_ACTIVE = NONE`**. **`NEW_PHASE = DO_NOT_OPEN`**. **`RESEARCH_STATUS = FROZEN_AT_EPISTEMOLOGICAL_BOUNDARY`**.  
+**Prohibido ahora:** descargar trayectorias, correr MD, docking, de novo, análisis de red dinámica.
+
+### Roadmap flags (formal)
+
+```
+DYNAMIC_REANALYSIS = FUTURE / BLOCKED_PENDING_TRAJECTORIES
+PRIMARY:   do static hubs persist as dynamic nodes?
+SECONDARY: does communication change across metastable states?
+TERTIARY:  do dynamic nodes show functional enrichment?
+NO_ASSUMPTION: no switch, no core, no prefabricated survival threshold
+CURRENT:
+  COMPUTATION = PAUSED
+  DOCKING = STOP
+  DE_NOVO = STOP
+  RESEARCH_STATUS = FROZEN_AT_EPISTEMOLOGICAL_BOUNDARY
+```
 
 ### Distinción: “calcularlo” ≠ inventar desde cero
 
@@ -517,14 +535,51 @@ Reconstruir / reanalizar un **núcleo dinámico CB2→Gi** a partir de **datos p
 | **[LITERATURA_PRIMARIA]** Dutta & Shukla (2023) | ~700 μs MSM / VAMPnets; ~6 estados metaestables cada CB1/CB2 | [10.1038/s42003-023-04868-1](https://doi.org/10.1038/s42003-023-04868-1) |
 | **[LITERATURA_PRIMARIA]** Morales-Pastor et al. (2025) | WT CB2 ~2 μs acumulados; LigACN ortostérico→intracelular; mutagénesis / Gαi2 | [10.1038/s41467-025-60003-0](https://doi.org/10.1038/s41467-025-60003-0) |
 
-**Pregunta abierta concreta (archivada):** ¿cuál es el **conjunto mínimo dinámico de nodos** necesario para comunicación Gαi, con arquitectura CB1 distinta?
+### Corrección epistemológica (protocolo dinámico aparcado)
+
+**No** fijar `W_ij = -ln(p_ij)` como representación universal de red dinámica. Persistencia de contacto ≠ comunicación conformacional:
+
+- `p_ij` = cuánto tiempo existe un contacto
+- correlación / mutual information / transfer entropy ≈ cuán relacionadas están las mociones
+
+Un contacto muy persistente puede ser estructuralmente estable y transmitir poca información de perturbación.
+
+**Dos redes dinámicas separadas (mantener ambas):**
+
+```
+TRAJECTORIES
+   │
+   ├──► PERSISTENCE NETWORK
+   │      W_contact = f(p_ij)
+   │
+   └──► COMMUNICATION NETWORK
+          W_info = f(correlation / mutual information)
+```
+
+Solo entonces preguntar si los seis hubs estáticos aparecen en **ambas**.
+
+**Sin criterio a priori >50% de supervivencia.** **No** imponer “los seis deben retener >50% del flujo”. Medir primero: fracción de flujo, distribución por microestado, estabilidad entre réplicas; luego comparar seis hubs vs null apropiado. Descubrir: supervivencia real / estado-específica / rutas sustituidas / redundancia profunda.
+
+### Pregunta primaria (framing científico)
+
+**No:** “¿dónde está el switch?”  
+**Sí:** “¿Está la comunicación alostérica de CB2 restringida a una subred persistente, o se redistribuye dinámicamente entre múltiples rutas?”
+
+Cadena: **MACROSTATE → microestados → red dinámica → rutas alternativas → Gαi / β-arrestin**.  
+**Sin** asunción a priori de que exista un core.
+
+| Prioridad | Pregunta |
+|-----------|----------|
+| **PRIMARY** | ¿Persisten los hubs estáticos como nodos dinámicos (en **ambas** redes)? |
+| **SECONDARY** | ¿Cambia la comunicación entre estados metaestables? |
+| **TERTIARY** | ¿Los nodos dinámicos muestran enriquecimiento funcional (Gαi / β-arr)? |
 
 ### Niveles de dificultad (solo registro)
 
 | # | Nivel | Viabilidad |
 |---|-------|------------|
 | 1 | Reproducir lo publicado | Relativamente factible |
-| 2 | Núcleo mínimo propio (borrado de nodos, caminos más cortos, centralidad dinámica, persistencia temporal, robustez) | Factible con cuidado |
+| 2 | Dos redes propias (persistencia + comunicación; caminos, centralidad, robustez; **sin** umbral prefabricado) | Factible con cuidado |
 | 3 | Causalidad funcional | Mucho más duro — requiere dinámica conjunta + mutagénesis / Gαi (datos Morales-Pastor existen) |
 
 ### Regla crítica (gobernanza)
@@ -540,8 +595,8 @@ Colesterol cambia farmacología CB2; MD con/sin ~40% colesterol (~2 μs) — **[
 | Objetivo | Semáforo |
 |----------|----------|
 | Reproducir dinámica publicada | 🟢 |
-| Reconstruir red dinámica | 🟢 |
-| Núcleo mínimo | 🟢 / 🟡 |
+| Reconstruir **dos** redes dinámicas (persistencia + comunicación) | 🟢 |
+| Comparar hubs estáticos vs ambas redes (sin umbral a priori) | 🟢 / 🟡 |
 | vs CB1 | 🟡 |
 | Vincular mutagénesis Gαi | 🟡 |
 | Probar causalidad farmacológica | 🔴 — no solo cálculo |
@@ -549,16 +604,18 @@ Colesterol cambia farmacología CB2; MD con/sin ~40% colesterol (~2 μs) — **[
 
 ### Cálculo NEXT recomendado SI se descongela (NOT NOW)
 
-1. ¿Sobreviven los **seis hubs estáticos** cuando la red pasa a ser **dinámica**?
-2. ¿Los nodos supervivientes quedan **más cercanos** a mutaciones que alteran Gαi2?
+1. Construir **ambas** redes (persistencia y comunicación); **no** colapsar a `W = -ln(p)`.
+2. ¿Aparecen los **seis hubs estáticos** en **ambas** redes? Medir flujo / distribución / réplicas — **sin** umbral >50% prefabricado.
+3. ¿Cambia la comunicación entre microestados / metaestables (redistribución vs subred fija)?
+4. ¿Los nodos dinámicos se enriquecen hacia mutaciones / lectura Gαi2 / β-arrestin?
 
 | Resultado | Lectura |
 |-----------|---------|
-| **Ambos sí** | Evidencia más fuerte para un **candidato de subred dinámica** (nombre: **nunca** “switch”; meta precisa = subred dinámica robusta reconocimiento de ligando → salida Gαi en CB2). `CB2_Gi_NETWORK_CANDIDATE` **solo** si dual criteria + revisión humana. |
-| **No** | Confirma que **`CORE_TOPOLOGICAL_ONLY`** era propiedad del grafo agregado, no mecanismo dinámico — también es una respuesta clara. |
+| Hubs en **ambas** redes + estabilidad entre estados | Evidencia más fuerte para **subred persistente** (nombre: **nunca** “switch”). `CB2_Gi_NETWORK_CANDIDATE` **solo** si dual criteria + revisión humana. |
+| Persistencia ≠ comunicación, o rutas sustituidas / estado-específicas | Comunicación **redistribuida** — `CORE_TOPOLOGICAL_ONLY` era propiedad del grafo agregado, no mecanismo dinámico fijo. También es respuesta clara. |
+| Null / réplicas no separan seis hubs | Sin core prefabricado; no inventar supervivencia. |
 
-**Naming lock:** no “switch”; `CB2_Gi_NETWORK_CANDIDATE = NOT_ESTABLISHED` hasta criterios duales post-revisión.
-
+**Naming lock:** no “switch”; no “core” a priori; `CB2_Gi_NETWORK_CANDIDATE = NOT_ESTABLISHED` hasta criterios duales post-revisión.
 ---
 
 ## Índice — síntesis consolidada (`docs/synthesis/`)
@@ -568,7 +625,7 @@ Colesterol cambia farmacología CB2; MD con/sin ~40% colesterol (~2 μs) — **[
 | [`docs/synthesis/CB2_STRUCTURE_ATLAS.md`](docs/synthesis/CB2_STRUCTURE_ATLAS.md) | Atlas PDB: 5ZTY, 6PT0, 6KPF, 8GUS/UR/UQ/UT, 12IY/IZ/JA, 8X3L, 9U7L; Level-0; Phase F/G |
 | [`docs/synthesis/HU308_HU433_PARADOX.md`](docs/synthesis/HU308_HU433_PARADOX.md) | Par enantiomérico; 8GUS experimental; Soethoudt/Hanuš; micronetwork INDETERMINATE; **contradicciones abiertas** |
 | [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md) | ACN/LigACN (Morales-Pastor 2025); MSM (Dutta & Shukla 2023); Trp258 no switch único; frontera MD |
-| [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md) | Protocolo dinámico (histórico); `CB2_MINIMAL_GI_CORE = NOT_FOUND`; cruzar topología×dinámica parked |
+| [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md) | Protocolo dinámico (histórico + corrección: dos redes; sin `W=-ln(p)`; sin umbral >50%); `CB2_MINIMAL_GI_CORE = NOT_FOUND` |
 | [`results/network_core/static_ligacn_topology_report.md`](results/network_core/static_ligacn_topology_report.md) | Topología estática LigACN→T (**CLOSED**; `STATIC_BOTTLENECKS = SUPPORTED`) |
 | [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) | Dual A/B (**CLOSED**, `cfb2a51`) → **`CORE_TOPOLOGICAL_ONLY`** |
 | [`docs/synthesis/DOCKING_LIMITS_AND_GOVERNANCE.md`](docs/synthesis/DOCKING_LIMITS_AND_GOVERNANCE.md) | Límites estáticos; Rachman 2026; INDETERMINATE; gobernanza completa |
@@ -609,8 +666,8 @@ Colesterol cambia farmacología CB2; MD con/sin ~40% colesterol (~2 μs) — **[
 3. Explicitamente NO: switch único; hubs estáticos controlan Gαi2; `CB2_Gi_NETWORK_CANDIDATE`; TPSA ≡ periferia; lípido solo explica variabilidad; estrategia química usable lista; traj GPCRmd/Box “fully recovered”.
 4. A/B/C preservada (`c2869b0`); `Q_membrana` parked; `MEMBRANE_MILIEU = FUTURE_HYPOTHESIS`.
 5. Reactivación archivada: `ligand+receptor+membrane → P(metastable states)` — medir cambios de distribución, no “mejor pose”.
-6. **`ARCHIVED_NEXT_CALCULATION = PARKED`** — ver sección arriba; **no** ejecutar.
-7. **`LINE_PAUSE = TRUE`.** **`NEW_PHASE = DO_NOT_OPEN`.** **`COMPUTATION_ACTIVE = NONE`.** Sin docking, de novo, push, MD, ni download de traj.
+6. **`ARCHIVED_NEXT_CALCULATION = PARKED`** / **`DYNAMIC_REANALYSIS = FUTURE / BLOCKED_PENDING_TRAJECTORIES`** — ver sección arriba; **no** ejecutar; dos redes; sin umbral >50% a priori.
+7. **`LINE_PAUSE = TRUE`.** **`NEW_PHASE = DO_NOT_OPEN`.** **`COMPUTATION_ACTIVE = NONE`.** Sin docking, de novo, MD, ni download de traj.
 
 ---
 
@@ -625,4 +682,4 @@ Colesterol cambia farmacología CB2; MD con/sin ~40% colesterol (~2 μs) — **[
 
 ---
 
-*Fin RESEARCH_STATE.md. 2026-08-21 — STAGE FRONTIER_DEFINED_AND_ARCHIVED; FROZEN_AT_EPISTEMOLOGICAL_BOUNDARY; TRIPARTITE_WORKING_HYPOTHESIS (weights unresolved; NOT demonstrated model); DATA_PROVENANCE_AUDIT PARTIAL (traj not recovered); CORE_TOPOLOGICAL_ONLY; ARCHIVED_NEXT_CALCULATION PARKED; LINE_PAUSE=TRUE; NEW_PHASE=DO_NOT_OPEN; COMPUTATION_ACTIVE=NONE; linaje cfb2a51 / c2869b0 / 2a1193c; documentation only — no compute / no MD / no nueva fase.*
+*Fin RESEARCH_STATE.md. 2026-08-21 — STAGE FRONTIER_DEFINED_AND_ARCHIVED; FROZEN_AT_EPISTEMOLOGICAL_BOUNDARY; TRIPARTITE_WORKING_HYPOTHESIS (weights unresolved; NOT demonstrated model); DATA_PROVENANCE_AUDIT PARTIAL (traj not recovered); CORE_TOPOLOGICAL_ONLY; ARCHIVED_NEXT_CALCULATION PARKED; DYNAMIC_REANALYSIS = FUTURE/BLOCKED_PENDING_TRAJECTORIES (two networks; no W=-ln(p); no a priori >50%); LINE_PAUSE=TRUE; NEW_PHASE=DO_NOT_OPEN; COMPUTATION_ACTIVE=NONE; linaje cfb2a51 / c2869b0 / 2a1193c; documentation only — no compute / no MD / no nueva fase.*
