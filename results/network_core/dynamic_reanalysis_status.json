@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-20T23:19:15Z",
+  "status": "BLOCKED_PENDING_TRAJECTORIES",
+  "verdict": "INDETERMINATE",
+  "blocked": true,
+  "governance": {
+    "mode": "COMPUTATIONAL_PREREGISTRATION",
+    "DYNAMIC_REANALYSIS": "BLOCKED_PENDING_TRAJECTORIES",
+    "TRAJ_DOWNLOAD": "STOP",
+    "NEW_MD": "STOP",
+    "protocol": "docs/synthesis/DYNAMIC_REANALYSIS_PROTOCOL.md"
+  },
+  "pipeline_stages": [
+    "trajectories",
+    "normalize_select_frames",
+    "persistence_net",
+    "communication_net",
+    "microstates_msm",
+    "centrality_paths_robustness",
+    "mutagenesis_cross",
+    "cb1_comparison",
+    "optional_membrane_module"
+  ],
+  "p1_null_preregistered": {
+    "name": "exact_in_out_degree_multiset_match",
+    "n_null": 200,
+    "alpha": 0.05,
+    "primary_metric": "pct_disconn",
+    "tail": "upper",
+    "reproducibility": {
+      "min_replicas": 2,
+      "min_states_if_msm": 2,
+      "hub_rank_spearman_min": 0.7,
+      "note": "If reproducibility gate fails -> INDETERMINATE, not retune alpha"
+    },
+    "forbidden": [
+      "universal_W=-ln(p)",
+      "a_priori_flow_gt_50pct",
+      "post_hoc_hub_list",
+      "call_result_switch"
+    ]
+  },
+  "hubs_fixed_a_priori": [
+    {
+      "label": "ALA:79",
+      "short": "ALA79",
+      "bw": "2.49"
+    },
+    {
+      "label": "ALA:83",
+      "short": "ALA83",
+      "bw": "2.53"
+    },
+    {
+      "label": "LEU:287",
+      "short": "LEU287",
+      "bw": "7.41"
+    },
+    {
+      "label": "ASN:291",
+      "short": "ASN291",
+      "bw": "7.45"
+    },
+    {
+      "label": "ASN:295",
+      "short": "ASN295",
+      "bw": "7.49"
+    },
+    {
+      "label": "ARG:302",
+      "short": "ARG302",
+      "bw": "8.46"
+    }
+  ],
+  "S_set": [
+    "8D0:1",
+    "SER:285",
+    "PHE:87"
+  ],
+  "T_set": [
+    "ARG:131",
+    "ASP:240",
+    "SER:303",
+    "SER:69"
+  ],
+  "networks_required": {
+    "persistence": "W_contact = f(p_ij)",
+    "communication": "W_info = f(correlation / MI)",
+    "do_not_use_universal": "W = -ln(p)"
+  },
+  "path_check": {
+    "all_ready": false,
+    "paths": {
+      "morales_pastor_2025_trajectories": {
+        "path": "data/external/morales_pastor_2025/trajectories",
+        "directory_exists": false,
+        "has_manifest": false,
+        "has_traj_like_files": false,
+        "ready": false
+      },
+      "dutta_shukla_2023_msm": {
+        "path": "data/external/dutta_shukla_2023/msm",
+        "directory_exists": false,
+        "has_manifest": false,
+        "has_traj_like_files": false,
+        "ready": false
+      }
+    }
+  },
+  "optional_deps": {
+    "MDAnalysis": false,
+    "PyEMMA": false,
+    "networkx": true,
+    "numpy": true
+  },
+  "artifacts": {
+    "status_json": "results/network_core/dynamic_reanalysis_status.json",
+    "selftest_json": "results/network_core/dynamic_pipeline_selftest.json",
+    "protocol": "docs/synthesis/DYNAMIC_REANALYSIS_PROTOCOL.md"
+  }
+}

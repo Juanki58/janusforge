@@ -1,21 +1,27 @@
-# RESEARCH STATE — Janusforge CB₂ (congelación científica / frontera epistemológica)
+# RESEARCH STATE — Janusforge CB₂ (roadmap prep / frontera epistemológica)
 
 **Fecha:** 2026-08-21  
 **Rama:** `feat/cb2-hubs-functional-topology-test`  
-**Tipo:** **DOCUMENTATION ONLY** — reposo científico; **no** compute, **no** docking, **no** de novo, **no** nueva fase, **no** push  
+**Tipo:** **DOCUMENTATION ONLY** — prep de roadmap; **no** compute de traj, **no** docking, **no** de novo, **no** MD nuevo  
+**Objetivo primario:** **caracterizar el mecanismo de control conformacional de CB2** (switch local, red distribuida, o arquitectura estado-dependiente — cualquiera es resultado válido). **No** es objetivo principal “encontrar el switch.”  
 **Anclas de linaje (preservar):** `cfb2a51` (dual-test limpio → topología-only) · `c2869b0` (jerarquía ambiental A/B/C + `Q_membrana` parked) · `2a1193c` (reposo científico / frontera)  
+**Roadmap P1–P6:** [`docs/synthesis/CB2_RESEARCH_ROADMAP.md`](docs/synthesis/CB2_RESEARCH_ROADMAP.md)  
 **Bitácora extendida:** [`docs/JANUSFORGE_RESEARCH_STATE.md`](docs/JANUSFORGE_RESEARCH_STATE.md)  
-**Puntero síntesis:** [`docs/cb2_mechanistic_frontier_synthesis.md`](docs/cb2_mechanistic_frontier_synthesis.md) (este archivo es la autoridad de freeze)
+**Puntero síntesis:** [`docs/cb2_mechanistic_frontier_synthesis.md`](docs/cb2_mechanistic_frontier_synthesis.md) (este archivo es la autoridad de freeze / flags)
 
 ---
 
 ## Hipótesis de trabajo (redacción exacta — no modelo final)
 
-The project ends with a more realistic **working hypothesis**: CB2 activity appears to emerge from the interaction among ligand, conformational landscape, and membrane environment, but the **quantitative contribution of each component is not yet resolved**.
+**Objetivo primario (desplazamiento):** caracterizar el **mecanismo de control conformacional** de CB2. Si resulta un switch, bien; si resulta una red distribuida, también bien. Dejar de buscar “el switch” como meta principal.
+
+Working hypothesis (framing): CB2 activity appears to emerge from the interaction among ligand, conformational landscape, and membrane environment, but the **quantitative contribution of each component is not yet resolved**.
 
 **Prohibido afirmar:** que el “modelo final” **demuestra** un sistema tripartito definitivo, o que se **resolvió** la termodinámica de CB2. Ligando / paisaje / membrana son ejes de una **hipótesis multivariable**, no un veredicto cuantitativo cerrado.
 
 **TRIPARTITE** = **working hypothesis / framing only** — **NOT** a demonstrated final model; quantitative weights still unresolved (lenguaje preservado desde `2a1193c`).
+
+**No es búsqueda circular:** el siguiente paso informativo está ordenado en P1–P6 (`CB2_RESEARCH_ROADMAP.md`). El cómputo de trayectorias permanece bloqueado por datos, no por falta de pregunta.
 
 ---
 
@@ -53,10 +59,12 @@ The project ends with a more realistic **working hypothesis**: CB2 activity appe
 ## Flags de freeze (exactos — autoridad)
 
 ```
-RESEARCH_STATUS           = FROZEN_AT_EPISTEMOLOGICAL_BOUNDARY
+RESEARCH_STATUS           = ROADMAP_ACTIVE_PREP
+DYNAMIC_REANALYSIS        = BLOCKED_PENDING_TRAJECTORIES
 DE_NOVO_GENERATION        = STOP
 DOCKING_EXECUTION         = STOP
 COMPUTATION_ACTIVE        = NONE
+COMPUTATION               = PAUSED
 ORTHOSTERIC_DESIGN        = PAUSED
 MACRO_COORDINATE          = VALIDATED_OUT_OF_SAMPLE
 FUNCTIONAL_EFFICACY       = INDETERMINATE
@@ -65,11 +73,14 @@ STATIC_LIGACN             = CORE_TOPOLOGICAL_ONLY
 MEMBRANE_MILIEU           = FUTURE_HYPOTHESIS
 NEW_PHASE                 = DO_NOT_OPEN
 LINE_PAUSE                = TRUE
+PRIMARY_OBJECTIVE         = CHARACTERIZE_CB2_CONFORMATIONAL_CONTROL
 ```
 
-**Aliases / legado (compatibilidad con cierres previos):** `ORTOSTERIC_THCV_DESIGN = PAUSED` · `CORE_TOPOLOGICAL_ONLY = CLOSED` · `CB2_Gi_NETWORK_CANDIDATE = NOT_ESTABLISHED` · `DOCKING = STOP` · `COMPUTATION = PAUSED`.
+**Aliases / legado (compatibilidad con cierres previos):** `ORTOSTERIC_THCV_DESIGN = PAUSED` · `CORE_TOPOLOGICAL_ONLY = CLOSED` · `CB2_Gi_NETWORK_CANDIDATE = NOT_ESTABLISHED` · `DOCKING = STOP` · `COMPUTATION = PAUSED` · `FROZEN_AT_EPISTEMOLOGICAL_BOUNDARY` (legado de `2a1193c`; sustituido operativamente por `ROADMAP_ACTIVE_PREP`).
 
-Preservados sin reabrir: **Niveles A/B/C**, **`Q_membrana` = PARKED**, pregunta de reactivación `ligand+receptor+membrane → P(metastable states)` archivada, linaje **`cfb2a51` / `c2869b0` / `2a1193c`**.
+Preservados sin reabrir: **`STATIC_LIGACN = CORE_TOPOLOGICAL_ONLY`**, locks **docking / de novo**, **Niveles A/B/C**, **`Q_membrana` = P5 (PARKED)**, pregunta de reactivación `ligand+receptor+membrane → P(metastable states)` archivada, linaje **`cfb2a51` / `c2869b0` / `2a1193c`**.
+
+**Lectura de estado:** no búsqueda circular; **`ROADMAP_ACTIVE_PREP`** mientras `DYNAMIC_REANALYSIS = BLOCKED_PENDING_TRAJECTORIES` y el cómputo de análisis de traj sigue pausado hasta datos.
 
 ---
 
@@ -169,8 +180,9 @@ No sobreclaim: *“La red no tiene relación con Gαi2.”* sigue siendo demasia
 ## Gobernanza vigente
 
 ```yaml
-# Freeze YAML — frontera definida y archivada (2026-08-21); honestidad epistemológica
-STAGE: FRONTIER_DEFINED_AND_ARCHIVED
+# Freeze YAML — roadmap prep (2026-08-21); honestidad epistemológica
+STAGE: ROADMAP_ACTIVE_PREP
+PRIMARY_OBJECTIVE: CHARACTERIZE_CB2_CONFORMATIONAL_CONTROL  # not "find the switch"
 EMPIRICAL_FOUNDATION:
   MACRO_STATE_RECOGNITION: VALIDATED  # Phase G / 8GUR
   LOCAL_MICRO_NETWORK: STATE_DEPENDENT  # HU-308/HU-433
@@ -185,8 +197,8 @@ PIPELINE_LOCKS:
   DE_NOVO_GENERATION: STOP
   OPEN_ENDED_SEARCHES: STOP
   COMPUTATION_ACTIVE: NONE
-RESEARCH_STATUS: FROZEN_AT_EPISTEMOLOGICAL_BOUNDARY
-# Flags exactos preservados (autoridad — no relajar)
+RESEARCH_STATUS: ROADMAP_ACTIVE_PREP
+# Flags exactos preservados (autoridad — no relajar locks docking/de novo)
 DE_NOVO_GENERATION: STOP
 DOCKING_EXECUTION: STOP
 ORTHOSTERIC_DESIGN: PAUSED
@@ -202,7 +214,8 @@ ORTOSTERIC_THCV_DESIGN: PAUSED
 CORE_TOPOLOGICAL_ONLY: CLOSED
 CB2_Gi_NETWORK_CANDIDATE: NOT_ESTABLISHED
 DOCKING: STOP
-COMPUTATION: PAUSED
+COMPUTATION: PAUSED  # traj analysis paused until data
+FROZEN_AT_EPISTEMOLOGICAL_BOUNDARY: LEGACY_ALIAS  # superseded operatively by ROADMAP_ACTIVE_PREP
 # Detalle operativo
 STATIC_BOTTLENECKS: SUPPORTED
 FUNCTIONAL_Gi_ENRICHMENT: NOT_SUPPORTED
@@ -212,35 +225,38 @@ NEW_HUB_SEARCH: STOP
 NEW_VARIABLES_IN_PIPELINE: NONE
 CONTRACT_v1.0: ARCHIVED_HISTORICAL
 THRESHOLD_MODIFICATION: STOP
-MODO: LINE_PAUSE / READ_ONLY_DATA / DOCUMENTATION_ONLY
+MODO: ROADMAP_ACTIVE_PREP / READ_ONLY_DATA / DOCUMENTATION_ONLY
 STATIC_GRAPH_ANALYSIS: CLOSED
 DUAL_VALIDATION_HUBS: CLOSED
 SINK_SET_T: EXTRACTED  # Arg131(3x50), Asp240(6x30), Ser303(8x47), Ser69(2x39)
-CB1_COMPARISON: BLOCKED
+CB1_COMPARISON: BLOCKED  # roadmap P4
 DATA_PROVENANCE: PARTIAL  # SI/endpoints registered; traj/MSM download not completed (GPCRmd 1540 / Box = ENLACE_REGISTRADO; MOESM2 recovered; Sink T from Methods)
 DATA_PROVENANCE_AUDIT: PARTIAL  # same honesty line — NOT fully RESOLVED for trajectories
 TECHNICAL_SEARCH_TRAJ: STOP
-ACTIVE_ACTION: LINE_PAUSE  # true pause — no compute
+ACTIVE_ACTION: ROADMAP_ACTIVE_PREP  # docs/org only; no traj compute
 DUAL_TEST_COMMIT: cfb2a51  # preserve clean negative / topology-only result
 ABC_HIERARCHY_COMMIT: c2869b0  # A/B/C + Q_membrana parked
 FREEZE_COMMIT: 2a1193c  # reposo científico / frontera (pre-mapa)
-Q_MEMBRANA: PARKED  # DO NOT RUN
+Q_MEMBRANA: PARKED  # = roadmap P5; DO NOT RUN
 NIVEL_A_CANONICAL: ACTIVE_BASELINE
-NIVEL_B_CHOLESTEROL_LIPIDS: FUTURE_PRIORITY_HYPOTHESIS  # no active compute
+NIVEL_B_CHOLESTEROL_LIPIDS: FUTURE_PRIORITY_HYPOTHESIS  # no active compute; = P5
 NIVEL_C_SECONDARY_MODULATORS: ARCHIVED_NOT_JUSTIFIED
 WORKING_HYPOTHESIS: LIGAND_x_LANDSCAPE_x_MEMBRANE  # weights unresolved; not a final tripartite model
 REACTIVATION_QUESTION: ligand+receptor+membrane -> P(metastable states)  # archived; DO NOT RUN as docking score hunt
-ARCHIVED_NEXT_CALCULATION: PARKED  # DO NOT RUN — see section below; no traj download, no MD, no analysis now
-DYNAMIC_REANALYSIS: FUTURE / BLOCKED_PENDING_TRAJECTORIES  # parked protocol; two networks; no W=-ln(p); no a priori >50%
+ARCHIVED_NEXT_CALCULATION: PARKED  # DO NOT RUN — see P1–P3; no traj download, no MD, no analysis now
+DYNAMIC_REANALYSIS: BLOCKED_PENDING_TRAJECTORIES  # not circular; blocked on data; two networks; no W=-ln(p); no a priori >50%
+ROADMAP: docs/synthesis/CB2_RESEARCH_ROADMAP.md  # P1–P6 informational value order
 ```
 
 **Cortafuegos de gobernanza (formal):**
 
 ```
-RESEARCH_STATUS = FROZEN_AT_EPISTEMOLOGICAL_BOUNDARY
+RESEARCH_STATUS = ROADMAP_ACTIVE_PREP
+DYNAMIC_REANALYSIS = BLOCKED_PENDING_TRAJECTORIES
 DE_NOVO_GENERATION = STOP
 DOCKING_EXECUTION = STOP
 COMPUTATION_ACTIVE = NONE
+COMPUTATION = PAUSED
 ORTHOSTERIC_DESIGN = PAUSED
 MACRO_COORDINATE = VALIDATED_OUT_OF_SAMPLE
 FUNCTIONAL_EFFICACY = INDETERMINATE
@@ -250,14 +266,14 @@ MEMBRANE_MILIEU = FUTURE_HYPOTHESIS
 NEW_PHASE = DO_NOT_OPEN
 LINE_PAUSE = TRUE
 NEW_VARIABLES_IN_PIPELINE = NONE
-Q_MEMBRANA = PARKED
-DYNAMIC_REANALYSIS = FUTURE / BLOCKED_PENDING_TRAJECTORIES
+Q_MEMBRANA = PARKED  # = P5
+PRIMARY_OBJECTIVE = CHARACTERIZE_CB2_CONFORMATIONAL_CONTROL
 ```
 
-**Estado del repositorio (reposo científico):** `STAGE: FRONTIER_DEFINED_AND_ARCHIVED` — congelado en frontera epistemológica — **TRIPARTITE_WORKING_HYPOTHESIS** (no modelo demostrado); `DATA_PROVENANCE_AUDIT: PARTIAL`; anclas `cfb2a51` / `c2869b0` / `2a1193c`; variables nuevas en pipeline = **cero**.
+**Estado del repositorio:** `STAGE: ROADMAP_ACTIVE_PREP` — prep documental ordenada por P1–P6; **no** búsqueda circular; cómputo de traj **pausado hasta datos** (`DYNAMIC_REANALYSIS = BLOCKED_PENDING_TRAJECTORIES`); **TRIPARTITE_WORKING_HYPOTHESIS** (no modelo demostrado); `DATA_PROVENANCE_AUDIT: PARTIAL`; anclas `cfb2a51` / `c2869b0` / `2a1193c`; variables nuevas en pipeline = **cero**.
 
-**[OBSERVACIÓN_PROPIA]** Diseño químico / de_novo / docking / nueva búsqueda de hubs / **nueva fase** **STOP** (`NEW_PHASE = DO_NOT_OPEN`). `LINE_PAUSE = TRUE`. `COMPUTATION_ACTIVE = NONE`.  
-**[INTERNAL_REANALYSIS]** Dual validation (`cfb2a51`) → **`CORE_TOPOLOGICAL_ONLY`**. Topología ≠ necesidad causal Gi. Prohibido: “switch”, “núcleo universal probado”, `CORE_FOUND`, `CB2_Gi_NETWORK_CANDIDATE`, “termodinamica CB2 resuelta”, “modelo tripartito final demostrado”, “GPCRmd traj / Box MSM fully recovered”.
+**[OBSERVACIÓN_PROPIA]** Diseño químico / de_novo / docking / nueva búsqueda de hubs / **nueva fase** **STOP** (`NEW_PHASE = DO_NOT_OPEN`). `LINE_PAUSE = TRUE`. `COMPUTATION_ACTIVE = NONE`. Objetivo = mecanismo de control conformacional, **no** “find the switch.”  
+**[INTERNAL_REANALYSIS]** Dual validation (`cfb2a51`) → **`CORE_TOPOLOGICAL_ONLY`**. Topología ≠ necesidad causal Gi. Prohibido: “switch” como meta, “núcleo universal probado”, `CORE_FOUND`, `CB2_Gi_NETWORK_CANDIDATE`, “termodinamica CB2 resuelta”, “modelo tripartito final demostrado”, “GPCRmd traj / Box MSM fully recovered”.
 ---
 
 ## Jerarquía ambiental A/B/C (cortafuegos PI — DOCUMENTATION ONLY)
@@ -284,13 +300,13 @@ Separar ejes **A (interno / ligando→red)** y **B (entorno / lípidos→equilib
 
 **Nivel C — not yet justified for central mechanism.** Temperatura fisiológica como modulador fino, oxidación/redox, pH local y otros mods: pueden afectar actividad/estabilidad físicamente, pero **no** son un “switch” fisiológico del mecanismo central. **Archivado / no justificado** — no diluir el foco.
 
-### Pregunta aparcada (formal — DO NOT RUN)
+### Pregunta aparcada (formal — DO NOT RUN) = **roadmap P5**
 
-**`Q_membrana`:** ¿Constituyen los hubs del eje TM7–H8 y base de TM2 propiedades intrínsecas del receptor o su conectividad está gobernada por microdominios de colesterol y lípidos aniónicos?
+**`Q_membrana` (P5):** ¿Constituyen los hubs del eje TM7–H8 y base de TM2 propiedades intrínsecas del receptor o su conectividad está gobernada por microdominios de colesterol y lípidos aniónicos?
 
-Si se reanuda más adelante: empezar por **Nivel B** (colesterol / composición lipídica), **no** por temperatura/oxidación/pH. Sin MD de colesterol, sin docking, sin de novo, sin nueva fase hasta decisión conjunta explícita.
+Si se reanuda más adelante: empezar por **Nivel B** (colesterol / composición lipídica), **no** por temperatura/oxidación/pH. Sin MD de colesterol, sin docking, sin de novo, sin nueva fase hasta decisión conjunta explícita. Orden informativo: solo tras P1–P3 (arquitectura dinámica/Gi).
 
-**Cross-link:** informe hubs [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) (ancla `cfb2a51`).
+**Cross-link:** informe hubs [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) (ancla `cfb2a51`) · roadmap [`docs/synthesis/CB2_RESEARCH_ROADMAP.md`](docs/synthesis/CB2_RESEARCH_ROADMAP.md).
 ---
 
 ## Entregable cerrado — dual validation hubs (A/B)
@@ -359,7 +375,7 @@ Deliverable: `results/network_core/hubs_dual_validation_report.md`.
 ### Parked (NO EJECUTAR)
 
 1. Cruzar topología con dinámica — solo si se decide conjuntamente más adelante. Aceptar **`CORE_TOPOLOGICAL_ONLY`** como frontera del modelo actual por ahora.
-2. **`Q_membrana`** (Nivel B futuro): hubs TM7–H8 / base TM2 — ¿intrínsecos o gobernados por microdominios de colesterol / lípidos aniónicos? Si se reanuda: empezar por colesterol/composición lipídica, **no** temperatura/oxidación/pH.
+2. **`Q_membrana`** (**roadmap P5** / Nivel B futuro): hubs TM7–H8 / base TM2 — ¿intrínsecos o gobernados por microdominios de colesterol / lípidos aniónicos? Si se reanuda: empezar por colesterol/composición lipídica, **no** temperatura/oxidación/pH. Orden: tras P1–P3.
 
 **No es:** otro docking, librería química, retune de Contract, nueva búsqueda de hubs, MD de colesterol, ni nueva fase.
 
@@ -396,19 +412,37 @@ LITERATURA / DATOS PÚBLICOS
         (hipótesis “6 hubs = núcleo funcional Gi bias” ELIMINADA)
                   │
                   ▼
-                 LINE_PAUSE = TRUE (pausa real; no compute)
-                 RESEARCH_STATUS = FROZEN_AT_EPISTEMOLOGICAL_BOUNDARY
+                 LINE_PAUSE = TRUE (pausa compute; prep roadmap OK)
+                 RESEARCH_STATUS = ROADMAP_ACTIVE_PREP
+                 DYNAMIC_REANALYSIS = BLOCKED_PENDING_TRAJECTORIES
                  NEW_PHASE = DO_NOT_OPEN
                  COMPUTATION_ACTIVE = NONE
                  NEW_VARIABLES_IN_PIPELINE = NONE
-                 A/B/C firewall · Q_membrana PARKED
+                 A/B/C firewall · Q_membrana = P5 PARKED
                  MEMBRANE_MILIEU = FUTURE_HYPOTHESIS
+                 PRIMARY_OBJECTIVE = CHARACTERIZE_CB2_CONFORMATIONAL_CONTROL
                  working hyp. (weights unresolved)
-                 linaje: cfb2a51 → c2869b0
+                 linaje: cfb2a51 → c2869b0 → roadmap P1–P6
 ```
 
 ---
 
+## Roadmap P1–P6 (valor informativo — no fases a completar)
+
+**Autoridad detallada:** [`docs/synthesis/CB2_RESEARCH_ROADMAP.md`](docs/synthesis/CB2_RESEARCH_ROADMAP.md)
+
+```
+P1. Do static hubs survive dynamically?
+P2. Do routes change across microstates?
+P3. Are dynamic routes related to Gi?
+P4. Does CB1 use a different architecture?
+P5. Does lipid environment modify that architecture?   (= Q_membrana)
+P6. Is there a chemical intervention that can shift it?
+```
+
+Cada respuesta abre/cierra **una sola puerta**. `DYNAMIC_REANALYSIS` / cómputo de traj = **BLOCKED_PENDING_TRAJECTORIES** / **PAUSED** hasta datos — no es búsqueda circular.
+
+---
 ## Registro provisional — tabla de resultados (literatura / abierto)
 
 **[LITERATURA_PRIMARIA]** / **[HIPÓTESIS_ABIERTA]** / **[INTERNAL_REANALYSIS]**
@@ -616,6 +650,22 @@ Colesterol cambia farmacología CB2; MD con/sin ~40% colesterol (~2 μs) — **[
 | Null / réplicas no separan seis hubs | Sin core prefabricado; no inventar supervivencia. |
 
 **Naming lock:** no “switch”; no “core” a priori; `CB2_Gi_NETWORK_CANDIDATE = NOT_ESTABLISHED` hasta criterios duales post-revisión.
+
+### Andamiaje técnico (pre-registro — NO traj real)
+
+| Artefacto | Ruta |
+|-----------|------|
+| Protocolo congelado | [`docs/synthesis/DYNAMIC_REANALYSIS_PROTOCOL.md`](docs/synthesis/DYNAMIC_REANALYSIS_PROTOCOL.md) |
+| Pipeline seco + null P1 + self-tests | [`scripts/network_core/dynamic_pipeline.py`](scripts/network_core/dynamic_pipeline.py) |
+| Gate status | [`scripts/network_core/prepare_dynamic_reanalysis.py`](scripts/network_core/prepare_dynamic_reanalysis.py) |
+| Entry P1 | [`scripts/network_core/run_dynamic_hub_persistence.py`](scripts/network_core/run_dynamic_hub_persistence.py) |
+| Status JSON | `results/network_core/dynamic_reanalysis_status.json` |
+| Self-test JSON | `results/network_core/dynamic_pipeline_selftest.json` |
+
+```bash
+python scripts/network_core/dynamic_pipeline.py --self-test --status
+```
+
 ---
 
 ## Índice — síntesis consolidada (`docs/synthesis/`)
@@ -625,7 +675,9 @@ Colesterol cambia farmacología CB2; MD con/sin ~40% colesterol (~2 μs) — **[
 | [`docs/synthesis/CB2_STRUCTURE_ATLAS.md`](docs/synthesis/CB2_STRUCTURE_ATLAS.md) | Atlas PDB: 5ZTY, 6PT0, 6KPF, 8GUS/UR/UQ/UT, 12IY/IZ/JA, 8X3L, 9U7L; Level-0; Phase F/G |
 | [`docs/synthesis/HU308_HU433_PARADOX.md`](docs/synthesis/HU308_HU433_PARADOX.md) | Par enantiomérico; 8GUS experimental; Soethoudt/Hanuš; micronetwork INDETERMINATE; **contradicciones abiertas** |
 | [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md) | ACN/LigACN (Morales-Pastor 2025); MSM (Dutta & Shukla 2023); Trp258 no switch único; frontera MD |
-| [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md) | Protocolo dinámico (histórico + corrección: dos redes; sin `W=-ln(p)`; sin umbral >50%); `CB2_MINIMAL_GI_CORE = NOT_FOUND` |
+| [`docs/synthesis/CB2_RESEARCH_ROADMAP.md`](docs/synthesis/CB2_RESEARCH_ROADMAP.md) | Roadmap P1–P6 por valor informativo (una puerta por pregunta) |
+| [`docs/synthesis/DYNAMIC_REANALYSIS_PROTOCOL.md`](docs/synthesis/DYNAMIC_REANALYSIS_PROTOCOL.md) | **Pre-registro técnico data-blind** P1–P3: dos redes; null degree-matched; self-tests sintéticos; `BLOCKED_PENDING_TRAJECTORIES` |
+| [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md) | Protocolo estático histórico + puntero al dinámico; `CB2_MINIMAL_GI_CORE = NOT_FOUND` |
 | [`results/network_core/static_ligacn_topology_report.md`](results/network_core/static_ligacn_topology_report.md) | Topología estática LigACN→T (**CLOSED**; `STATIC_BOTTLENECKS = SUPPORTED`) |
 | [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) | Dual A/B (**CLOSED**, `cfb2a51`) → **`CORE_TOPOLOGICAL_ONLY`** |
 | [`docs/synthesis/DOCKING_LIMITS_AND_GOVERNANCE.md`](docs/synthesis/DOCKING_LIMITS_AND_GOVERNANCE.md) | Límites estáticos; Rachman 2026; INDETERMINATE; gobernanza completa |

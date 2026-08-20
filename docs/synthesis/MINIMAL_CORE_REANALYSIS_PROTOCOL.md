@@ -154,7 +154,9 @@ Contradicciones abiertas HU-433 / AM630 / Trp258 permanecen **ABIERTA** — no a
 
 ## 9. Corrección epistemológica (2026-08-21) — reanálisis dinámico futuro
 
-**Estado:** `DYNAMIC_REANALYSIS = FUTURE / BLOCKED_PENDING_TRAJECTORIES`. Este archivo sigue siendo el pre-registro **histórico** del reanálisis estático/público cerrado (`CB2_MINIMAL_GI_CORE = NOT_FOUND`). El protocolo **dinámico aparcado** vive en `RESEARCH_STATE.md` → `ARCHIVED_NEXT_CALCULATION`.
+**Estado:** `DYNAMIC_REANALYSIS = FUTURE / BLOCKED_PENDING_TRAJECTORIES`. Este archivo sigue siendo el pre-registro **histórico** del reanálisis estático/público cerrado (`CB2_MINIMAL_GI_CORE = NOT_FOUND`).
+
+**Protocolo dinámico (canónico):** [`DYNAMIC_REANALYSIS_PROTOCOL.md`](DYNAMIC_REANALYSIS_PROTOCOL.md) — dos redes (`W_contact`, `W_info`); sin `W=-ln(p)` universal; sin umbral a priori >50%; hubs fijos; outcomes P1–P3; andamiaje CLI fail-closed. Framing también en `RESEARCH_STATE.md` → `ARCHIVED_NEXT_CALCULATION`.
 
 **Correcciones (no ejecutar ahora):**
 
@@ -165,4 +167,4 @@ Contradicciones abiertas HU-433 / AM630 / Trp258 permanecen **ABIERTA** — no a
 
 ---
 
-*Fin pre-registro. Cualquier cómputo de red posterior a esta fecha debe citar este archivo como locked (histórico) y la corrección §9 / `RESEARCH_STATE.md` ARCHIVED_NEXT_CALCULATION para el framing dinámico.*
+*Fin pre-registro. Cualquier cómputo de red posterior a esta fecha debe citar este archivo como locked (histórico) y [`DYNAMIC_REANALYSIS_PROTOCOL.md`](DYNAMIC_REANALYSIS_PROTOCOL.md) / `RESEARCH_STATE.md` ARCHIVED_NEXT_CALCULATION para el framing dinámico.*
