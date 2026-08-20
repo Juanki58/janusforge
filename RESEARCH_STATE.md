@@ -561,6 +561,45 @@ Colesterol cambia farmacología CB2; MD con/sin ~40% colesterol (~2 μs) — **[
 
 ---
 
+## Índice — síntesis consolidada (`docs/synthesis/`)
+
+| Documento | Contenido |
+|-----------|-----------|
+| [`docs/synthesis/CB2_STRUCTURE_ATLAS.md`](docs/synthesis/CB2_STRUCTURE_ATLAS.md) | Atlas PDB: 5ZTY, 6PT0, 6KPF, 8GUS/UR/UQ/UT, 12IY/IZ/JA, 8X3L, 9U7L; Level-0; Phase F/G |
+| [`docs/synthesis/HU308_HU433_PARADOX.md`](docs/synthesis/HU308_HU433_PARADOX.md) | Par enantiomérico; 8GUS experimental; Soethoudt/Hanuš; micronetwork INDETERMINATE; **contradicciones abiertas** |
+| [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md) | ACN/LigACN (Morales-Pastor 2025); MSM (Dutta & Shukla 2023); Trp258 no switch único; frontera MD |
+| [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md) | Protocolo dinámico (histórico); `CB2_MINIMAL_GI_CORE = NOT_FOUND`; cruzar topología×dinámica parked |
+| [`results/network_core/static_ligacn_topology_report.md`](results/network_core/static_ligacn_topology_report.md) | Topología estática LigACN→T (**CLOSED**; `STATIC_BOTTLENECKS = SUPPORTED`) |
+| [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) | Dual A/B (**CLOSED**, `cfb2a51`) → **`CORE_TOPOLOGICAL_ONLY`** |
+| [`docs/synthesis/DOCKING_LIMITS_AND_GOVERNANCE.md`](docs/synthesis/DOCKING_LIMITS_AND_GOVERNANCE.md) | Límites estáticos; Rachman 2026; INDETERMINATE; gobernanza completa |
+
+---
+
+## Índice — artefactos conformacionales
+
+| Artefacto | Ruta |
+|-----------|------|
+| Phase F report + matrix | `results/conformational/fase_f_conformational_fingerprint.md`, `cb2_state_distance_matrix.json` |
+| Phase G report | `results/conformational/fase_g_generalization_report.md` |
+| Phase H report | `results/conformational/fase_h_ordinal_functional_report.md` |
+| Micronetwork report | `results/conformational/micronetwork_modes_report.md` |
+| Micronetwork falsification | `results/conformational/micronetwork_falsification_report.md` |
+
+---
+
+## Índice — documentos de gobernanza relacionados
+
+| Documento | Ruta |
+|-----------|------|
+| Bitácora maestra (extendida) | `docs/JANUSFORGE_RESEARCH_STATE.md` |
+| Síntesis frontera metodológica | `docs/cb2_mechanistic_frontier_synthesis.md` |
+| Balance epistemológico | `docs/epistemic_balance_calibration_2026-08-19.md` |
+| Reformulación switch | `docs/switch_hypothesis_allosteric_reformulation.md` |
+| Mapa alostérico (HIPÓTESIS) | `docs/cb2_allosteric_switch_map.md` |
+| Calibración multistate | `docs/cb2_multistate_calibration_synthesis.md` |
+
+---
+
 ## Próximo paso — LINE_PAUSE (frontera epistemológica)
 
 **[OBSERVACIÓN_PROPIA]**
