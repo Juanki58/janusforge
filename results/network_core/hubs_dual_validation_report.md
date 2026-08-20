@@ -18,9 +18,12 @@ STATIC_BOTTLENECKS: SUPPORTED
 FUNCTIONAL_Gi_ENRICHMENT: NOT_SUPPORTED
 CB2_Gi_NETWORK_CANDIDATE: NOT_ESTABLISHED
 CB2_MINIMAL_GI_CORE: NOT_FOUND
+CORE_TOPOLOGICAL_ONLY: LOCKED
+COMPUTATION: PAUSED
 DE_NOVO: STOP
 DOCKING: STOP
 NEW_HUB_SEARCH: STOP
+NEW_VARIABLES_IN_PIPELINE: NONE
 DE_NOVO_GENERATION: STOP
 NEW_DOCKING: STOP
 NEW_CHEMISTRY: STOP
@@ -30,6 +33,7 @@ TECHNICAL_SEARCH_TRAJ: STOP
 hub_list: FIXED_A_PRIORI_NO_RETUNE
 literature_doi: 10.1038/s41467-025-60003-0
 dual_test_commit: cfb2a51
+Q_MEMBRANA: PARKED
 ```
 
 ## Fixed hub set (a priori)
@@ -145,3 +149,9 @@ Limit: Topology ≠ causal Gi necessity unless B supports; even CORE_CANDIDATE_S
 Forbidden language in this deliverable: switch / núcleo universal probado / CORE_FOUND / CB2_Gi_NETWORK_CANDIDATE (not established).
 
 **`LINE_PAUSE = TRUE`** — preserve `cfb2a51` as clean negative / topology-only result. No re-run, no next phase, no crossing topology×dynamics unless jointly decided later.
+
+---
+
+## Cross-link — jerarquía ambiental A/B/C (docs only)
+
+See [`RESEARCH_STATE.md`](../../RESEARCH_STATE.md) § *Jerarquía ambiental A/B/C*. Framing: energy landscape (protein + ligand + membrane), not a CB2 “switch.” **Nivel A** = current model line. **Nivel B** (cholesterol / anionic lipids) = future priority hypothesis — literature e.g. MRI-2646 Yeliseev 2021 DOI [10.1038/s41598-021-83245-6](https://doi.org/10.1038/s41598-021-83245-6) PMID 33580091. **Nivel C** (T / redox / pH) = archived. **`Q_membrana` PARKED** (DO NOT RUN). `NEW_VARIABLES_IN_PIPELINE = NONE`.

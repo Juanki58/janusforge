@@ -3,7 +3,7 @@
 **Fecha:** 2026-08-21  
 **Rama:** `feat/cb2-hubs-functional-topology-test`  
 **Ancla dual-test (preservar):** `cfb2a51` — resultado limpio negativo / topología-only (no reescribir ni re-correr)  
-**Tipo:** PI closure — línea hubs **`CORE_TOPOLOGICAL_ONLY`** + **pausa real** (`LINE_PAUSE = TRUE`)  
+**Tipo:** PI closure — línea hubs **`CORE_TOPOLOGICAL_ONLY`** + **pausa real** (`LINE_PAUSE = TRUE`) + cortafuegos jerárquico A/B/C (docs only)  
 **Bitácora extendida:** [`docs/JANUSFORGE_RESEARCH_STATE.md`](docs/JANUSFORGE_RESEARCH_STATE.md)
 
 ### Veredicto PI (LOCKED)
@@ -13,6 +13,8 @@
 Lectura llana: los seis hubs son cuellos de botella topológicos reales en el mapa estático; el enriquecimiento celular PrefCoup_Gαi2 para ese *set* **no** está soportado. Carreteras importantes ≠ controladores demostrados de la decisión funcional que importa.
 
 **Arquitectura física ≠ salida funcional.**
+
+**Framing (no experimento nuevo):** no “un switch CB2”, sino **un paisaje energético de CB2 cuyo comportamiento emerge de proteína + ligando + membrana**. Evitar dispersión: no colesterol→temperatura→oxidación→pH→fosforilación→todo.
 
 ### Hipótesis eliminada (Test B)
 
@@ -36,15 +38,18 @@ No sobreclaim: *“La red no tiene relación con Gαi2.”* sigue siendo demasia
 
 ```yaml
 # PI closure — línea hubs (2026-08-21)
+CORE_TOPOLOGICAL_ONLY: LOCKED
 STATIC_BOTTLENECKS: SUPPORTED
 FUNCTIONAL_Gi_ENRICHMENT: NOT_SUPPORTED
 CB2_Gi_NETWORK_CANDIDATE: NOT_ESTABLISHED
 CB2_MINIMAL_GI_CORE: NOT_FOUND
 DUAL_HUB_TEST: CLOSED
 LINE_PAUSE: TRUE
+COMPUTATION: PAUSED
 DE_NOVO: STOP
 DOCKING: STOP
 NEW_HUB_SEARCH: STOP
+NEW_VARIABLES_IN_PIPELINE: NONE
 # aliases / legado
 DE_NOVO_GENERATION: STOP
 NEW_DOCKING: STOP
@@ -63,10 +68,59 @@ TECHNICAL_SEARCH_TRAJ: STOP
 ACTIVE_ACTION: LINE_PAUSE  # true pause — no compute
 RESEARCH_STATUS: CORE_TOPOLOGICAL_ONLY__LINE_PAUSE
 DUAL_TEST_COMMIT: cfb2a51  # preserve clean negative / topology-only result
+Q_MEMBRANA: PARKED  # DO NOT RUN
+NIVEL_B_CHOLESTEROL_LIPIDS: FUTURE_PRIORITY_HYPOTHESIS  # no active compute
+NIVEL_C_SECONDARY_MODULATORS: ARCHIVED_NOT_JUSTIFIED
 ```
+
+**Cortafuegos de gobernanza (formal):**
+
+```
+CORE_TOPOLOGICAL_ONLY locked
+STATIC_BOTTLENECKS = SUPPORTED
+FUNCTIONAL_Gi_ENRICHMENT = NOT_SUPPORTED
+CB2_Gi_NETWORK_CANDIDATE = NOT_ESTABLISHED
+LINE_PAUSE = TRUE
+NEW_VARIABLES_IN_PIPELINE = NONE
+DE_NOVO / DOCKING = STOP
+COMPUTATION = PAUSED
+```
+
+**Estado del repositorio (reposo):** resultado consolidado **`CORE_TOPOLOGICAL_ONLY`** (ancla `cfb2a51`); variables añadidas al pipeline = **cero**; equilibrio metodológico = claro lo demostrado, frontera matemática precisa de lo que el modelo actual no alcanza, jerarquía A/B/C para no diluir el foco.
 
 **[OBSERVACIÓN_PROPIA]** Diseño químico / de_novo / docking / nueva búsqueda de hubs / Phase I **STOP**. `LINE_PAUSE = TRUE`.  
 **[INTERNAL_REANALYSIS]** Dual validation (`cfb2a51`) → **`CORE_TOPOLOGICAL_ONLY`**. Topología ≠ necesidad causal Gi. Prohibido: “switch”, “núcleo universal probado”, `CORE_FOUND`, `CB2_Gi_NETWORK_CANDIDATE`.
+---
+
+## Jerarquía ambiental A/B/C (cortafuegos PI — DOCUMENTATION ONLY)
+
+**No se abre fase. No se añade variable al pipeline.** La frontera cerrada sigue siendo **`CORE_TOPOLOGICAL_ONLY`**. `LINE_PAUSE = TRUE` preservado.
+
+| Nivel | Alcance | Evidencia | Estado en el proyecto |
+|-------|---------|-----------|------------------------|
+| **Nivel A: Núcleo Canónico** | Receptor + Ligando + Conformación | PDB structures, deep mutagenesis, LigACN WT | **Activo / Línea Base** (`CORE_TOPOLOGICAL_ONLY`) |
+| **Nivel B: Entorno Directo** | Colesterol + composición lipídica (PS / aniónicos) | Modulación de actividad basal y cambio de clase farmacológica (p.ej. MRI-2646; efecto alostérico hacia regiones intracelulares / reclutamiento G; interfaz H8) | **Hipótesis Prioritaria Futura** (sin computación activa) |
+| **Nivel C: Moduladores Secundarios** | Temperatura, Redox/Oxidación, pH local | Efectos bifísicos generales de estabilidad/cinética | **Archivado / No Justificado** (evitar dilución) |
+
+### Lectura por nivel
+
+**Nivel A — mandatory for current model.** Receptor + ligando + conformación son suficientes para el modelo actual (evidencia PDB / mutagénesis / LigACN). **[OBSERVACIÓN_PROPIA]** / **[INTERNAL_REANALYSIS]** — línea base locked.
+
+**Nivel B — environmental with direct CB2 evidence.** Puede entrar en un *modelo futuro* porque experimentos muestran que la farmacología puede cambiar; **no** está en el pipeline ahora.
+
+- **[LITERATURA_PRIMARIA]** MRI-2646: agonista parcial en membranas **sin** colesterol → antagonista neutro / agonista inverso parcial **con** colesterol; el colesterol eleva la actividad basal y puede ejercer efecto alostérico sobre regiones intracelulares que afectan el reclutamiento de G-proteína — Yeliseev et al., *Sci Rep* (2021), DOI [10.1038/s41598-021-83245-6](https://doi.org/10.1038/s41598-021-83245-6), PMID [33580091](https://pubmed.ncbi.nlm.nih.gov/33580091/).
+- **[LITERATURA_PRIMARIA]** Composición lipídica (CHS / PS aniónicos) estabiliza el pliegue funcional de CB2 y modula la eficiencia de activación de G — Vukoti et al., *PLoS One* (2012), DOI [10.1371/journal.pone.0046290](https://doi.org/10.1371/journal.pone.0046290), PMID [23056277](https://pubmed.ncbi.nlm.nih.gov/23056277/); Kimura et al., *J Biol Chem* (2012), DOI [10.1074/jbc.M111.268425](https://doi.org/10.1074/jbc.M111.268425), PMID [22134924](https://pubmed.ncbi.nlm.nih.gov/22134924/).
+- **[HIPÓTESIS_ABIERTA]** Que los hubs estáticos del repo (TM7–H8 / base TM2) dependan de microdominios de colesterol/lípidos aniónicos — **no** demostrado aquí; ver `Q_membrana` (parked).
+
+**Nivel C — not yet justified for central mechanism.** Temperatura fisiológica como modulador fino, oxidación/redox, pH local y otros mods: pueden afectar actividad/estabilidad físicamente, pero **no** son un “switch” fisiológico del mecanismo central. **Archivado / no justificado** — no diluir el foco.
+
+### Pregunta aparcada (formal — DO NOT RUN)
+
+**`Q_membrana`:** ¿Constituyen los hubs del eje TM7–H8 y base de TM2 propiedades intrínsecas del receptor o su conectividad está gobernada por microdominios de colesterol y lípidos aniónicos?
+
+Si se reanuda más adelante: empezar por **Nivel B** (colesterol / composición lipídica), **no** por temperatura/oxidación/pH. Sin MD de colesterol, sin docking, sin de novo, sin nueva fase hasta decisión conjunta explícita.
+
+**Cross-link:** informe hubs [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) (ancla `cfb2a51`).
 ---
 
 ## Entregable cerrado — dual validation hubs (A/B)
@@ -134,11 +188,12 @@ Deliverable: `results/network_core/hubs_dual_validation_report.md`.
 
 ### Parked (NO EJECUTAR)
 
-Cruzar topología con dinámica — solo si se decide conjuntamente más adelante. Aceptar **`CORE_TOPOLOGICAL_ONLY`** como frontera del modelo actual por ahora.
+1. Cruzar topología con dinámica — solo si se decide conjuntamente más adelante. Aceptar **`CORE_TOPOLOGICAL_ONLY`** como frontera del modelo actual por ahora.
+2. **`Q_membrana`** (Nivel B futuro): hubs TM7–H8 / base TM2 — ¿intrínsecos o gobernados por microdominios de colesterol / lípidos aniónicos? Si se reanuda: empezar por colesterol/composición lipídica, **no** temperatura/oxidación/pH.
 
-**No es:** otro docking, librería química, retune de Contract, ni nueva búsqueda de hubs.
+**No es:** otro docking, librería química, retune de Contract, nueva búsqueda de hubs, MD de colesterol, ni nueva fase.
 
-**Estado gobernanza:** `CB2_MINIMAL_GI_CORE = NOT_FOUND` · `CB2_Gi_NETWORK_CANDIDATE = NOT_ESTABLISHED` · `CB1_COMPARISON = BLOCKED` · `DUAL_HUB_TEST = CLOSED`
+**Estado gobernanza:** `CB2_MINIMAL_GI_CORE = NOT_FOUND` · `CB2_Gi_NETWORK_CANDIDATE = NOT_ESTABLISHED` · `CB1_COMPARISON = BLOCKED` · `DUAL_HUB_TEST = CLOSED` · `NEW_VARIABLES_IN_PIPELINE = NONE` · `Q_MEMBRANA = PARKED`
 
 **Protocolo (histórico / dinámico):** [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md)  
 **Informe previo (core dinámico INDETERMINATE):** [`results/network_core/cb2_minimal_gi_core_report.md`](results/network_core/cb2_minimal_gi_core_report.md)  
@@ -172,6 +227,8 @@ LITERATURA / DATOS PÚBLICOS
                   │
                   ▼
                  LINE_PAUSE = TRUE (pausa real; no compute)
+                 NEW_VARIABLES_IN_PIPELINE = NONE
+                 A/B/C firewall · Q_membrana PARKED
 ```
 
 ---
@@ -192,6 +249,9 @@ LITERATURA / DATOS PÚBLICOS
 | ¿Candidate conjunto topología∧función? | 🔴 **`CORE_TOPOLOGICAL_ONLY`** — `CB2_Gi_NETWORK_CANDIDATE = NOT_ESTABLISHED` |
 | ¿Los 6 hubs son el núcleo funcional del sesgo Gαi2? | 🔴 **ELIMINADA** (Test B) — no sobreclaim “la red no tiene relación con Gαi2” |
 | ¿Núcleo mínimo Gi encontrado? | 🔴 **`CB2_MINIMAL_GI_CORE = NOT_FOUND`** |
+| ¿Colesterol / lípidos aniónicos cambian farmacología CB2? | 🟢 **[LITERATURA_PRIMARIA]** Sí (MRI-2646 / basal / PS–CHS) — Yeliseev 2021 DOI [10.1038/s41598-021-83245-6](https://doi.org/10.1038/s41598-021-83245-6); Kimura 2012 DOI [10.1074/jbc.M111.268425](https://doi.org/10.1074/jbc.M111.268425); Vukoti 2012 DOI [10.1371/journal.pone.0046290](https://doi.org/10.1371/journal.pone.0046290) — **Nivel B, no en pipeline** |
+| ¿Hubs TM7–H8 / TM2 intrínsecos vs entorno lipídico? (`Q_membrana`) | ⏸ **PARKED** — **[HIPÓTESIS_ABIERTA]**; DO NOT RUN; si se reanuda → Nivel B primero |
+| ¿Temperatura / redox / pH como switch central? | 🔴 **Nivel C archivado** — no justificado para mecanismo central |
 
 ---
 
@@ -259,6 +319,9 @@ LITERATURA / DATOS PÚBLICOS
 | `CB2_Gi_NETWORK_CANDIDATE` | **NOT_ESTABLISHED** |
 | `CB2_MINIMAL_GI_CORE` | **NOT_FOUND** |
 | Línea hubs | **`LINE_PAUSE = TRUE`** — pausa real; cruzar topología×dinámica parked |
+| Variables nuevas en pipeline | **NONE** |
+| Jerarquía A/B/C | **Documentada** — A = línea base; B = hipótesis prioritaria futura; C = archivado |
+| `Q_membrana` | **PARKED** (DO NOT RUN) |
 
 ---
 
@@ -306,16 +369,17 @@ LITERATURA / DATOS PÚBLICOS
 **[OBSERVACIÓN_PROPIA]**
 
 1. Veredicto locked: **`CORE_TOPOLOGICAL_ONLY`** (ancla `cfb2a51`). Arquitectura física ≠ salida funcional.
-2. Cuatro niveles: (1) macro 🟢 (2) micro-red 🟡 (3) topología estática 🟢 (4) función Gαi2 🔴.
-3. Hipótesis “6 hubs = núcleo funcional del sesgo Gαi2” **eliminada**; no sobreclaim “la red no tiene relación con Gαi2”.
-4. Cruzar topología × dinámica = **parked** (solo decisión conjunta futura). Frontera del modelo actual = `CORE_TOPOLOGICAL_ONLY`.
-5. **`LINE_PAUSE = TRUE`.** Sin docking, de novo, hub hunting, traj recovery, push, ni compute.
+2. Cuatro niveles epistémicos: (1) macro 🟢 (2) micro-red 🟡 (3) topología estática 🟢 (4) función Gαi2 🔴.
+3. Cortafuegos ambiental A/B/C: A = núcleo canónico activo; B = colesterol/lípidos (futuro, sin compute); C = archivado.
+4. Hipótesis “6 hubs = núcleo funcional del sesgo Gαi2” **eliminada**; no sobreclaim “la red no tiene relación con Gαi2”.
+5. Parked: topología × dinámica; **`Q_membrana`**. Frontera del modelo actual = `CORE_TOPOLOGICAL_ONLY`.
+6. **`LINE_PAUSE = TRUE`.** `NEW_VARIABLES_IN_PIPELINE = NONE`. Sin docking, de novo, hub hunting, traj recovery, MD colesterol, push, ni compute.
 
 ---
 
 ## Lectura recomendada al reanudar sesión
 
-1. **Este archivo** (`RESEARCH_STATE.md`) — veredicto PI + gobernanza + cuatro niveles
+1. **Este archivo** (`RESEARCH_STATE.md`) — veredicto PI + gobernanza + A/B/C + `Q_membrana`
 2. [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) — ancla `cfb2a51`
 3. [`results/network_core/static_ligacn_topology_report.md`](results/network_core/static_ligacn_topology_report.md)
 4. [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md)
@@ -323,4 +387,4 @@ LITERATURA / DATOS PÚBLICOS
 
 ---
 
-*Fin RESEARCH_STATE.md. 2026-08-21 — PI closure: CORE_TOPOLOGICAL_ONLY; LINE_PAUSE=TRUE; cfb2a51 preservado; no compute.*
+*Fin RESEARCH_STATE.md. 2026-08-21 — PI closure: CORE_TOPOLOGICAL_ONLY; LINE_PAUSE=TRUE; A/B/C firewall; Q_membrana PARKED; cfb2a51 preservado; NEW_VARIABLES_IN_PIPELINE=NONE; no compute.*
