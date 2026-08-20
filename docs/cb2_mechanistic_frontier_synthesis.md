@@ -1,9 +1,11 @@
 # SÍNTESIS DE FRONTERA METODOLÓGICA — CB₂
 
-**ESTADO:** `RESEARCH_CONSOLIDATED_AT_FRONTIER`  
-**Fecha:** 2026-08-20  
+**ESTADO:** `RESEARCH_CONSOLIDATED_AT_FRONTIER` → ver freeze autoritativo en raíz  
+**Fecha:** 2026-08-20 (síntesis); **lectura final / congelación científica:** 2026-08-21  
 **Modo:** Documental / READ-ONLY — **sin docking, sin de_novo, sin modificación de umbrales; pipelines computacionales PAUSADOS**  
 **Audiencia:** PI y colaboradores que citen el estado consolidado del programa Janusforge
+
+> **Autoridad de freeze (2026-08-21):** [`RESEARCH_STATE.md`](../RESEARCH_STATE.md) — **`RESEARCH_STATUS = FROZEN_AT_EPISTEMOLOGICAL_BOUNDARY`**. Hipótesis de trabajo (ligando × paisaje × membrana; pesos **no** resueltos) — **no** modelo tripartito final ni termodinámica CB2 resuelta. Flags: `LINE_PAUSE = TRUE`, `NEW_PHASE = DO_NOT_OPEN`, `COMPUTATION_ACTIVE = NONE`, `STATIC_LIGACN = CORE_TOPOLOGICAL_ONLY`, `MEMBRANE_MILIEU = FUTURE_HYPOTHESIS`. Este documento permanece como síntesis de frontera metodológica previa; **no** autoriza compute ni nueva fase.
 
 ---
 
