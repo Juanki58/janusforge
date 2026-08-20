@@ -1,0 +1,49 @@
+{
+  "access_date_utc": "2026-08-20T13:00:00Z",
+  "branch": "task/data-provenance-recovery-attempt",
+  "governance": {
+    "DATA_PROVENANCE": "RECOVERY_IN_PROGRESS",
+    "DE_NOVO_GENERATION": "STOP",
+    "NEW_DOCKING": "STOP",
+    "NEW_CHEMISTRY": "STOP",
+    "CONTRACT_v1.0": "ARCHIVED_HISTORICAL"
+  },
+  "morales_pastor_2025": {
+    "doi": "10.1038/s41467-025-60003-0",
+    "pmid": "40500255",
+    "pmc": "PMC12159191",
+    "gpcrmd_publication": "https://gpcrmd.org/dynadb/publications/1540/",
+    "github_code_networks": "https://github.com/GPCRmd/prefcoup_cb2r",
+    "zenodo": "10.5281/zenodo.15270434",
+    "official_si_inventory_from_moesm2": [
+      "Supplementary Information (SI figures/tables; MOESM1)",
+      "Supplementary Data 1",
+      "Supplementary Data 2",
+      "Supplementary Data 3",
+      "Supplementary Data 4"
+    ],
+    "moesm6_status": "STRICKEN — not an official SI inventory name in MOESM2 Description of Additional Supplementary Files. Prior chase of 41467_2025_60003_MOESM6_ESM.xlsx dismissed. Supplementary Data 4 (BRET) is the official fourth data file.",
+    "moesm2": {
+      "file": "data/external/morales_pastor_2025/41467_2025_60003_MOESM2_ESM.pdf",
+      "sha256": "2937da830d9a7e46c1509512e54e99908f0dd60e2650ee8bfe58d6bed58f1f08",
+      "bytes": 34257,
+      "url_recovered": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-025-60003-0/MediaObjects/41467_2025_60003_MOESM2_ESM.pdf",
+      "content": "Description of Additional Supplementary Files (Supp Data 1–4 only; no Sink Set T residues)"
+    }
+  },
+  "dutta_shukla_2023": {
+    "doi": "10.1038/s42003-023-04868-1",
+    "pmc": "PMC10163236",
+    "box_msm_features_traj_id": "jzooa0o27z1w9ha0h6va3i51ir7l38j4",
+    "box_url_official": "https://uofi.box.com/s/jzooa0o27z1w9ha0h6va3i51ir7l38j4",
+    "box_probe_note": "Official Comm Biol Data availability URL; HTTP 404 from this environment on 2026-08-20; ID retained as ENLACE_REGISTRADO",
+    "github_code": "https://github.com/ShuklaGroup/Cannabinoid_activation",
+    "note": "MSM/features/traj deposit Box ID registered; full download deferred (large). Li 2023 is cryo-EM only — excluded."
+  },
+  "endpoint_probe_summary": {
+    "gpcrmd_1540": "HTTP 200 (ENLACE_REGISTRADO; traj binaries not downloaded)",
+    "github_GPCRmd_prefcoup_cb2r": "HTTP 200",
+    "github_ShuklaGroup_Cannabinoid_activation": "HTTP 200",
+    "box_id": "registered; URL host variants may 404 depending on Box tenant — ID retained as official deposit key"
+  }
+}

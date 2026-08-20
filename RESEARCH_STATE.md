@@ -1,8 +1,8 @@
 # RESEARCH STATE — Janusforge CB₂ (congelación analítica)
 
 **Fecha:** 2026-08-20  
-**Rama:** `feat/cb2-minimal-gi-core-reanalysis`  
-**Tipo:** Reanálisis READ-ONLY de datos públicos (núcleo mínimo CB2→Gαi) — **cerrado**  
+**Rama:** `task/data-provenance-recovery-attempt` (desde `feat/cb2-minimal-gi-core-reanalysis` @ `c9bc287`)  
+**Tipo:** Recuperación de proveniencia de datos públicos — **en curso**  
 **Bitácora extendida:** [`docs/JANUSFORGE_RESEARCH_STATE.md`](docs/JANUSFORGE_RESEARCH_STATE.md)
 
 ### Leyenda epistemológica
@@ -27,13 +27,17 @@ CONTRACT_v1.0: ARCHIVED_HISTORICAL
 NEW_DOCKING: STOP
 NEW_CHEMISTRY: STOP
 MODO: READ_ONLY / PUBLIC_DATA_REANALYSIS
-ACTIVE_ACTION: MINIMAL_CORE_REANALYSIS_COMPLETE_STOP
+DATA_PROVENANCE: RECOVERY_IN_PROGRESS
+SINK_SET_T: EXTRACTED  # Arg131(3x50), Asp240(6x30), Ser303(8x47), Ser69(2x39)
+CB2_MINIMAL_GI_CORE: BLOCKED_PENDING_PROVENANCE
+CB1_COMPARISON: BLOCKED_PENDING_PROVENANCE
+ACTIVE_ACTION: DATA_PROVENANCE_RECOVERY
 # Explicit: NOT Fase I
-RESEARCH_STATUS: MINIMAL_CORE_REANALYSIS_INDETERMINATE
+RESEARCH_STATUS: PROVENANCE_RECOVERY_IN_PROGRESS
 ```
 
 **[OBSERVACIÓN_PROPIA]** Diseño químico / de_novo / docking / Phase I **STOP**.  
-**[INTERNAL_REANALYSIS]** Reanálisis de red ejecutado bajo protocolo cerrado → **`FINAL_VERDICT=INDETERMINATE`** (recuperación incompleta). Ver `results/network_core/`. **DETENER EJECUCIÓN.**
+**[INTERNAL_REANALYSIS]** Proveniencia: MOESM2 PDF recuperado; Sink Set T extraído de Methods; endpoints GPCRmd/Box/GitHub registrados (`ENLACE_REGISTRADO`). Núcleo mínimo **aún no re-ejecutado**. Ver `results/network_core/provenance_recovery_log.md`.
 
 ---
 
@@ -48,8 +52,8 @@ RESEARCH_STATUS: MINIMAL_CORE_REANALYSIS_INDETERMINATE
 **Protocolo:** [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md)  
 **Informe (recovery-first):** [`results/network_core/cb2_minimal_gi_core_report.md`](results/network_core/cb2_minimal_gi_core_report.md)  
 **Auditoría:** [`results/network_core/data_audit.md`](results/network_core/data_audit.md)  
-Veredictos: **`CORE_FOUND`** | **`NETWORK_DISTRIBUTED`** | **`CB2_SPECIFIC_CORE`** | **`INDETERMINATE`** — asignado: **`INDETERMINATE`**.  
-CB1_COMPARISON: **`INDETERMINATE`**.
+**Proveniencia (2026-08-20):** [`results/network_core/provenance_recovery_log.md`](results/network_core/provenance_recovery_log.md)  
+Veredictos previos: **`INDETERMINATE`** (reanalysis @ c9bc287). Estado actual de core/CB1: **`BLOCKED_PENDING_PROVENANCE`**.
 
 ---
 
@@ -58,10 +62,15 @@ CB1_COMPARISON: **`INDETERMINATE`**.
 ```
 LITERATURA / DATOS PÚBLICOS
         │
-        ├── CB2 ACN + Gαi2       ✓
-        ├── CB2 MSM              ✓
-        ├── CB1 MSM              ✓
-        └── datos mutacionales   ✓
+        ├── CB2 ACN + Gαi2       ✓ (endpoints + SI parcial)
+        ├── CB2 MSM              ✓ (Box ID registrado)
+        ├── CB1 MSM              ✓ (lit)
+        └── datos mutacionales   ✓ (Supp Data 1–3 local)
+                  │
+                  ▼
+        PROVENANCE RECOVERY
+        (MOESM2 ✓ | Sink T ✓ |
+         traj/Box = ENLACE)
                   │
                   ▼
         PREGUNTA ABIERTA
@@ -69,15 +78,14 @@ LITERATURA / DATOS PÚBLICOS
                   │
                   ▼
              REANÁLISIS
-             READ-ONLY
-             (protocolo cerrado;
-              NOT Fase I)
+             BLOQUEADO
+             (pending traj/Box)
                   │
                   ▼
-                 STOP
+                 STOP (no docking / no de novo)
 ```
 
-**[OBSERVACIÓN_PROPIA]** «✓» = disponibilidad / hallazgo **publicado** verificado en literatura (DOI/PMID/PDB/depósitos). **No** significa que Janusforge haya descargado trayectorias ni computado un núcleo mínimo.
+**[OBSERVACIÓN_PROPIA]** «✓» = disponibilidad / hallazgo **publicado** verificado. **No** significa que Janusforge haya descargado trayectorias GPCRmd/Box ni computado un núcleo mínimo.
 
 ---
 
@@ -92,7 +100,7 @@ LITERATURA / DATOS PÚBLICOS
 | ¿La red está concentrada en Trp258/Ser285? | 🔴 No; es distribuida (LigACN vía TM7, TM2/3/6, motivos conservados) |
 | ¿TM7 participa especialmente en ruta agonismo/Gi? | 🟢 Apoyado fuertemente (Morales-Pastor 2025; Dutta & Shukla 2023, DOI [10.1038/s42003-023-04868-1](https://doi.org/10.1038/s42003-023-04868-1)) |
 | ¿CB2 posee una única coordenada conformacional suficiente para Gi? | 🔴 No demostrado / probablemente insuficiente (seis estados metaestables; Phase G≠suficiencia funcional) |
-| ¿Existe un núcleo mínimo CB2-Gi funcionalmente diferente de CB1? | ⚪ **`INDETERMINATE`** en reanálisis interno (recovery incompleta: sinks T, traj, Supp Data 4, grafo CB1) — ver `results/network_core/` |
+| ¿Existe un núcleo mínimo CB2-Gi funcionalmente diferente de CB1? | ⚪ **`BLOCKED_PENDING_PROVENANCE`** (Sink T EXTRACTED; traj/Box aún ENLACE_REGISTRADO) — ver `results/network_core/` |
 
 ---
 
@@ -153,7 +161,8 @@ LITERATURA / DATOS PÚBLICOS
 | de_novo / threshold / docking / diseño ortostérico | **STOP** / **PAUSED** |
 | Fase I | **NO ABIERTA** — no usar ese nombre para el reanálisis |
 | SMRF / 0Q.1 literatura | Documental; no reabre compute (ver bitácora extendida) |
-| Núcleo mínimo | **PREGUNTA ABIERTA** — protocolo pre-registrado; **no computado** |
+| Proveniencia de datos | **RECOVERY_IN_PROGRESS** — MOESM2 + Sink T; traj/Box ENLACE |
+| Núcleo mínimo | **BLOCKED_PENDING_PROVENANCE** — protocolo pre-registrado; **no computado** |
 
 ---
 
@@ -198,20 +207,21 @@ LITERATURA / DATOS PÚBLICOS
 
 **[HIPÓTESIS_ABIERTA]**
 
-1. Seguir [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md) si el PI autoriza reanálisis READ-ONLY sobre datos públicos.
-2. Asignar exactamente uno de: `CORE_FOUND` | `NETWORK_DISTRIBUTED` | `INDETERMINATE`.
-3. **STOP** de nuevo. Sin diseño químico, sin retune Contract v1.0, sin «Fase I».
+1. Completar recuperación local de traj GPCRmd/1540 y/o Box MSM si el PI autoriza descarga grande.
+2. Seguir [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md) con Sink Set T ya EXTRACTED.
+3. Asignar exactamente uno de: `CORE_FOUND` | `NETWORK_DISTRIBUTED` | `INDETERMINATE`.
+4. **STOP** de nuevo. Sin diseño químico, sin retune Contract v1.0, sin «Fase I».
 
 ---
 
 ## Lectura recomendada al reanudar sesión
 
 1. **Este archivo** (`RESEARCH_STATE.md`)
-2. [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md)
-3. [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md)
-4. [`docs/synthesis/HU308_HU433_PARADOX.md`](docs/synthesis/HU308_HU433_PARADOX.md) — contradicciones abiertas
-5. [`docs/synthesis/DOCKING_LIMITS_AND_GOVERNANCE.md`](docs/synthesis/DOCKING_LIMITS_AND_GOVERNANCE.md)
+2. [`results/network_core/provenance_recovery_log.md`](results/network_core/provenance_recovery_log.md)
+3. [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md)
+4. [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md)
+5. [`docs/synthesis/HU308_HU433_PARADOX.md`](docs/synthesis/HU308_HU433_PARADOX.md) — contradicciones abiertas
 
 ---
 
-*Fin RESEARCH_STATE.md. Congelación analítica 2026-08-20 — documentación únicamente; objeto = núcleo mínimo (pregunta abierta).*
+*Fin RESEARCH_STATE.md. Proveniencia 2026-08-20 — documentación + assets externos; objeto = núcleo mínimo (bloqueado pending traj/Box).*

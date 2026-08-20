@@ -2,14 +2,17 @@
   "status": "NOT_COMPUTED",
   "candidate_core": null,
   "FINAL_CORE_CLAIM": null,
-  "blocker": "Intracellular sink residue list (T) unrecovered; Supp Data 4 (MOESM6) blocked (403); GPCRmd trajectories not local. Per protocol, do not invent T or optimize core size post hoc.",
+  "sink_set_T": ["Arg131(3x50)", "Asp240(6x30)", "Ser303(8x47)", "Ser69(2x39)"],
+  "blocker": "Sink Set T EXTRACTED. Remaining: GPCRmd traj binaries and Box MSM deposit are ENLACE_REGISTRADO only (not local). Supplementary Data 4 bytes not local. MOESM6 chase STRICKEN. Per protocol, do not invent edges or optimize core size post hoc.",
   "governance": {
+    "DATA_PROVENANCE": "RECOVERY_IN_PROGRESS",
     "DE_NOVO_GENERATION": "STOP",
     "THRESHOLD_MODIFICATION": "STOP",
     "ORTHOSTERIC_DESIGN": "PAUSED",
     "CONTRACT_v1.0": "ARCHIVED_HISTORICAL",
     "NEW_DOCKING": "STOP",
     "NEW_CHEMISTRY": "STOP",
+    "CB2_MINIMAL_GI_CORE": "BLOCKED_PENDING_PROVENANCE",
     "MODO": "READ_ONLY / PUBLIC_DATA_REANALYSIS"
   }
 }

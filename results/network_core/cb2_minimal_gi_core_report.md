@@ -28,6 +28,7 @@ See `data_audit.md` / `data_audit.json` for full checksums. Headline:
 | File | Bytes | SHA256 (prefix) | Maps to |
 |------|------:|-----------------|--------|
 | `41467_2025_60003_MOESM1_ESM.pdf` | 4 670 882 | `4ec13634…` | SI PDF |
+| `41467_2025_60003_MOESM2_ESM.pdf` | 34 257 | `2937da83…` | Description of Additional Supplementary Files (Supp Data 1–4) |
 | `41467_2025_60003_MOESM3_ESM.xlsx` | 56 748 | `f296cb13…` | Supp Data 1 |
 | `41467_2025_60003_MOESM4_ESM.xlsx` | 5 133 984 | `04a7d0c0…` | Supp Data 2 contacts |
 | `41467_2025_60003_MOESM5_ESM.xlsx` | 970 304 | `ff53ec7b…` | Supp Data 3 degeneracy |
@@ -38,16 +39,18 @@ See `data_audit.md` / `data_audit.json` for full checksums. Headline:
 ### Provenance
 
 - **[PRIMARY_LITERATURE]** Morales-Pastor 2025 DOI `10.1038/s41467-025-60003-0`, PMID `40500255`; GPCRmd/1540; GitHub `GPCRmd/prefcoup_cb2r`.
-- **[PRIMARY_LITERATURE]** Dutta & Shukla 2023 DOI `10.1038/s42003-023-04868-1` (MSM/VAMPnets; **not** Li 2023).
-- Access date UTC: `2026-08-20T12:15:33Z`.
-- Article↔file match: PMC anchors `#MOESM3`→Supp Data 1, `#MOESM5`→Supp Data 3, `#MOESM6`→Supp Data 4 (blocked).
+- **[PRIMARY_LITERATURE]** Dutta & Shukla 2023 DOI `10.1038/s42003-023-04868-1` (MSM/VAMPnets; **not** Li 2023); Box ID `jzooa0o27z1w9ha0h6va3i51ir7l38j4`.
+- Access date UTC: `2026-08-20T12:15:33Z`; provenance recovery update same day.
+- Official SI inventory (MOESM2): **SI + Supplementary Data 1–4 only**. Prior **MOESM6** chase **STRICKEN**.
+- Sink Set T: **EXTRACTED** — Arg131(3×50), Asp240(6×30), Ser303(8×47), Ser69(2×39) from Methods.
+- See `provenance_recovery_log.md`.
 
 ### Reproduced vs not
 
-- **Reproduced (partial):** load Supp Data 1–3; confirm WT LigACN degeneracy object (100×100, 117 positive edges); ligand node `8D0:1` with neighbors SER:285, PHE:87; descriptive centrality on published matrix.
-- **Not reproduced:** trajectory-level ACN rebuild; Supp Data 4 (403); MOESM2 (403); exact sink list T; CB1 comparable LigACN; Box MSM deposit.
+- **Reproduced (partial):** load Supp Data 1–3; MOESM2 PDF; Sink Set T from Methods; confirm WT LigACN degeneracy object (100×100, 117 positive edges); ligand node `8D0:1` with neighbors SER:285, PHE:87; descriptive centrality on published matrix.
+- **Not reproduced:** trajectory-level ACN rebuild; local Supp Data 4 bytes; CB1 comparable LigACN; Box MSM / GPCRmd traj binaries (ENLACE_REGISTRADO only).
 
-**[INDETERMINATE]** Without T and without traj-level replication, a minimal-core claim would be over-claiming.
+**[INDETERMINATE]** Sink Set T recovered; without traj-level replication a minimal-core claim would still be over-claiming → `BLOCKED_PENDING_PROVENANCE`.
 
 ---
 
@@ -81,7 +84,7 @@ T: **unrecovered** → LOO / core search **NOT_EXECUTED**.
 
 ## 7. Node-removal results
 
-**[INDETERMINATE]** Not executed (blocker: sink set T).
+**[INDETERMINATE]** Not executed (blocker: traj/Box not local; Sink Set T now EXTRACTED).
 
 ## 8. Candidate core
 
@@ -97,7 +100,7 @@ Not applicable beyond confirming 36 degeneracy sheets exist on disk; replica-lev
 
 ## 11. Limitations
 
-Incomplete SI (403), no local trajectories, sink list missing, Zenodo zip too small to replace author private `data/` trees, Box MSM not downloaded.
+MOESM2 recovered; Sink Set T EXTRACTED; MOESM6 chase stricken. Remaining: no local GPCRmd traj / Box MSM binaries; Supp Data 4 bytes not local; Zenodo zip too small to replace author private `data/` trees.
 
 ## 12. Literature conflicts (preserved open)
 
@@ -107,6 +110,6 @@ Incomplete SI (403), no local trajectories, sink list missing, Zenodo zip too sm
 
 **`FINAL_VERDICT = INDETERMINATE`**
 
-Reason: essential elements for the pre-registered connectivity-break core test are missing (sink set T; traj replication; Supp Data 4; CB1 graph). Descriptive inspection of the published WT LigACN object is consistent with a **non-singleton** transmission network **[SUPPORTED_INTERPRETATION / PRIMARY_LITERATURE]** but is **not** sufficient under locked rules to assign `NETWORK_DISTRIBUTED` or `CORE_FOUND`.
+Reason: Sink Set T is EXTRACTED, but traj replication / Box MSM / CB1 graph remain unavailable locally (`BLOCKED_PENDING_PROVENANCE`). Descriptive inspection of the published WT LigACN object is consistent with a **non-singleton** transmission network **[SUPPORTED_INTERPRETATION / PRIMARY_LITERATURE]** but is **not** sufficient under locked rules to assign `NETWORK_DISTRIBUTED` or `CORE_FOUND`.
 
 **STOP.** No Phase I. No molecule suggestions. Human scientific review next.

@@ -1,8 +1,8 @@
 # Data audit — CB2 minimal Gi-core reanalysis
 
-**Access date (UTC):** 2026-08-20T12:15:33Z  
-**Branch:** `feat/cb2-minimal-gi-core-reanalysis`  
-**Mode:** READ_ONLY / PUBLIC_DATA_REANALYSIS
+**Access date (UTC):** 2026-08-20T12:15:33Z (recovery update same day)  
+**Branch:** `task/data-provenance-recovery-attempt`  
+**Mode:** READ_ONLY / PUBLIC_DATA_REANALYSIS | DATA_PROVENANCE=RECOVERY_IN_PROGRESS
 
 ## Governance
 
@@ -46,27 +46,37 @@ MODO: READ_ONLY / PUBLIC_DATA_REANALYSIS
 - `github_contents.json` — 19617 bytes — sha256 `f2c62d1f92e8e9374bf3769b1b3836d15ca9c2907b0571f80946f89387d35c8f` — GitHub API listing GPCRmd/prefcoup_cb2r. Confirms notebooks-only public tree (no trajectory blobs).
 - `shukla_tree.json` — 30585 bytes — sha256 `2e9e80e48c758a814432c0c47ccf6c1c983c7794aa95f32443c6b99d62e1d822` — GitHub tree ShuklaGroup/Cannabinoid_activation. Figure/code + Initial_Coordinates PDBs listed; MSM feature objects/traj deposit not fully local.
 
-## 3. Not recovered / blocked
+## 3. Provenance recovery update (2026-08-20)
 
-- **41467_2025_60003_MOESM2_ESM.xlsx**: Springer ESM returned HTTP 403 Forbidden in this environment.
-- **41467_2025_60003_MOESM6_ESM.xlsx**: Required for full mutant-response audit; blocked.
-- **GPCRmd trajectories (dynadb/publications/1540)**: Landing HTML present; xtc/dcd/topology binaries not fetched. Notebooks require local simulations/.
-- **Dutta & Shukla Box MSM/trajectory deposit**: Box URL cited in paper Data availability; not downloaded. GitHub has figure scripts/coords, not full MSM objects for ACN-comparable graph.
-- **Exact intracellular sink residue list for LigACN path termini**: Not extractable from recovered SI PDF binary text hunt; not present as a dedicated table in recovered xlsx. Blocks pre-registered S↔T core search.
+See `provenance_recovery_log.md` and `data/external/`.
 
-## 4. What could vs could not be reproduced
+- **41467_2025_60003_MOESM2_ESM.pdf**: **RECUPERADO** via Springer ESM (`sha256 2937da83…`; 34257 bytes). Content = Description of Additional Supplementary Files → **SI + Supplementary Data 1–4 only**. Prior chase of MOESM2 as `.xlsx` was incorrect.
+- **MOESM6**: **STRICKEN** — not an official SI inventory name in MOESM2. Do not treat `MOESM6_ESM.xlsx` as a recovery target. Supplementary Data 4 (BRET) remains the official fourth data file (not yet locally recovered in this pass).
+- **Sink Set T**: **EXTRACTED** from article Methods (Arg131^3.50, Asp240^6.30, Ser303^8.47, Ser69^2.39). Not present in MOESM2 text.
+- **GPCRmd trajectories (dynadb/publications/1540)**: **ENLACE_REGISTRADO** — landing HTTP 200; xtc/dcd/topology binaries not fetched.
+- **GPCRmd/prefcoup_cb2r**: **ENLACE_REGISTRADO** (code/networks).
+- **Dutta & Shukla Box** `jzooa0o27z1w9ha0h6va3i51ir7l38j4` (`https://uofi.box.com/s/jzooa0o27z1w9ha0h6va3i51ir7l38j4`): **ENLACE_REGISTRADO** — full deposit deferred; probe from this env returned 404.
+- **ShuklaGroup/Cannabinoid_activation**: **ENLACE_REGISTRADO**.
 
-**Could (partial):** load published Supp Data 1–3 tables; build descriptive graph stats from WT degeneracy (Supp Data 3); confirm PrefCoup/Coup counts and ligand node `8D0:1`.
+## 4. Still not locally recovered (honest)
 
-**Could not:** recompute ACN from trajectories; recover Supp Data 4; recover exact intracellular sink list T; obtain CB1 LigACN-equivalent; download Box MSM deposit.
+- GPCRmd trajectory binaries (publication/1540)
+- Box MSM/feature/trajectory deposit (large)
+- Supplementary Data 4 file bytes (BRET scores) — named in MOESM2 inventory; not downloaded in this recovery pass
 
-## 5. Software
+## 5. What could vs could not be reproduced
+
+**Could (partial):** load published Supp Data 1–3 tables; build descriptive graph stats from WT degeneracy (Supp Data 3); confirm PrefCoup/Coup counts and ligand node `8D0:1`; recover MOESM2 PDF; extract Sink Set T from Methods.
+
+**Could not (yet):** recompute ACN from trajectories; obtain local Supp Data 4 bytes; obtain CB1 LigACN-equivalent; download Box MSM deposit / GPCRmd traj binaries.
+
+## 6. Software
 
 - Python 3.14.6
 - pandas 3.0.5
 - networkx 3.6.1
 - platform Windows-11-10.0.26200-SP0
 
-## 6. Audit conclusion
+## 7. Audit conclusion
 
-Recovery is **incomplete** relative to the pre-registered minimal-core procedure. Downstream core verdict must remain **INDETERMINATE** unless blockers are cleared without post-hoc rule changes.
+Recovery is **in progress** (`DATA_PROVENANCE=RECOVERY_IN_PROGRESS`). Sink Set T is no longer blocking. Trajectories / Box remain **ENLACE_REGISTRADO** only. Minimal-core execution stays **BLOCKED_PENDING_PROVENANCE** until required binaries are local; no docking / de novo.

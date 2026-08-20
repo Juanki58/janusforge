@@ -1,0 +1,15 @@
+Description of Additional Supplementary Files 
+ 
+ 
+File name: Supplementary Data 1 
+Description: Characterization of alanine/valine mutants of the CB2R including expression 
+levels, Emax, and pEC50 for Gαi2 and βarr1 and classified coupling profile. 
+ 
+File name: Supplementary Data 2 
+Description: Contact frequencies of each simulated mutant per replicate. 
+ 
+File name: Supplementary Data 3 
+Description: Transmission information computed as degeneracy for 35 simulated mutants. 
+  
+File name: Supplementary Data 4 
+Description: BRET response scores of the simulated mutants. 

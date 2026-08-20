@@ -31,9 +31,33 @@
       "doi": "10.1038/s42003-023-04868-1",
       "pmc": "PMC10163236",
       "github": "https://github.com/ShuklaGroup/Cannabinoid_activation",
-      "note": "MSM/VAMPnets source. Li 2023 is cryo-EM only — not this dataset.",
+      "box_id": "jzooa0o27z1w9ha0h6va3i51ir7l38j4",
+      "box_url": "https://uofi.box.com/s/jzooa0o27z1w9ha0h6va3i51ir7l38j4",
+      "note": "MSM/VAMPnets source. Li 2023 is cryo-EM only — not this dataset. Box ID registered; full download deferred.",
       "article_match_confirmed": true
     }
+  },
+  "provenance_recovery_2026_08_20": {
+    "DATA_PROVENANCE": "RECOVERY_IN_PROGRESS",
+    "moesm2_pdf": {
+      "file": "data/external/morales_pastor_2025/41467_2025_60003_MOESM2_ESM.pdf",
+      "sha256": "2937da830d9a7e46c1509512e54e99908f0dd60e2650ee8bfe58d6bed58f1f08",
+      "bytes": 34257,
+      "status": "RECUPERADO",
+      "content": "Description of Additional Supplementary Files — Supp Data 1–4 only"
+    },
+    "moesm6": "STRICKEN — not in official MOESM2 inventory",
+    "sink_set_T": {
+      "status": "EXTRACTED",
+      "residues": ["Arg131(3x50)", "Asp240(6x30)", "Ser303(8x47)", "Ser69(2x39)"],
+      "source": "article Methods (PMC12159191); not in MOESM2"
+    },
+    "enlace_registrado": [
+      "https://gpcrmd.org/dynadb/publications/1540/",
+      "https://github.com/GPCRmd/prefcoup_cb2r",
+      "https://uofi.box.com/s/jzooa0o27z1w9ha0h6va3i51ir7l38j4",
+      "https://github.com/ShuklaGroup/Cannabinoid_activation"
+    ]
   },
   "recovered_files": [
     {
@@ -152,33 +176,26 @@
   ],
   "blocked_or_missing": [
     {
-      "file": "41467_2025_60003_MOESM2_ESM.xlsx",
-      "role": "Likely additional SI workbook (403)",
-      "recovered": false,
-      "http_status": 403,
-      "notes": "Springer ESM returned HTTP 403 Forbidden in this environment."
-    },
-    {
-      "file": "41467_2025_60003_MOESM6_ESM.xlsx",
-      "role": "Supplementary Data 4 (PMC #MOESM6) BRET scores simulated mutants",
-      "recovered": false,
-      "http_status": 403,
-      "notes": "Required for full mutant-response audit; blocked."
-    },
-    {
       "resource": "GPCRmd trajectories (dynadb/publications/1540)",
+      "status": "ENLACE_REGISTRADO",
       "recovered": false,
-      "notes": "Landing HTML present; xtc/dcd/topology binaries not fetched. Notebooks require local simulations/."
+      "notes": "Official endpoint registered; trajectory binaries not downloaded in this pass."
     },
     {
       "resource": "Dutta & Shukla Box MSM/trajectory deposit",
+      "box_id": "jzooa0o27z1w9ha0h6va3i51ir7l38j4",
+      "status": "ENLACE_REGISTRADO",
       "recovered": false,
-      "notes": "Box URL cited in paper Data availability; not downloaded. GitHub has figure scripts/coords, not full MSM objects for ACN-comparable graph."
+      "notes": "Official Box ID registered (uofi.box.com); full deposit deferred. Probe HTTP 404 from this environment."
     },
     {
-      "resource": "Exact intracellular sink residue list for LigACN path termini",
+      "resource": "Supplementary Data 4 (BRET scores)",
+      "status": "NOT_LOCAL",
       "recovered": false,
-      "notes": "Not extractable from recovered SI PDF binary text hunt; not present as a dedicated table in recovered xlsx. Blocks pre-registered S↔T core search."
+      "notes": "Named in MOESM2 official inventory. Prior MOESM6.xlsx chase STRICKEN. File bytes not fetched in this pass."
+    },
+    {
+      "note": "MOESM6 STRICKEN from recovery targets — not in official MOESM2 SI inventory (Supp Data 1–4 only)."
     }
   ],
   "reproducibility": {
@@ -186,13 +203,13 @@
       "Supp Data 1 mutagenesis/coupling table (MOESM3)",
       "Supp Data 2 contact frequency tables (MOESM4)",
       "Supp Data 3 degeneracy/transmission matrices (MOESM5)",
+      "MOESM2 Description of Additional Supplementary Files (PDF)",
+      "Sink Set T from article Methods",
       "Author notebooks (code logic, not full data pipeline inputs)"
     ],
     "not_reproduced": [
       "MD trajectory contact recomputation from GPCRmd binaries",
-      "Supp Data 4 (MOESM6) BRET scores",
-      "MOESM2 workbook (403)",
-      "Exact sink-node list for orthosteric↔intracellular path termini",
+      "Supplementary Data 4 BRET scores (local file)",
       "CB1 LigACN-equivalent graph for architectural comparison",
       "Dutta & Shukla full MSM/VAMPnet analysis objects from Box"
     ]

@@ -29,12 +29,15 @@
       "doi": "10.1038/s42003-023-04868-1",
       "pmc": "PMC10163236",
       "github": "https://github.com/ShuklaGroup/Cannabinoid_activation",
-      "note": "MSM/VAMPnets source. Li 2023 is cryo-EM only — not this dataset.",
+      "box_id": "jzooa0o27z1w9ha0h6va3i51ir7l38j4",
+      "box_url": "https://uofi.box.com/s/jzooa0o27z1w9ha0h6va3i51ir7l38j4",
+      "note": "MSM/VAMPnets source. Li 2023 is cryo-EM only — not this dataset. Box ID ENLACE_REGISTRADO.",
       "article_match_confirmed": true
     }
   },
   "recovered_sha256": {
     "41467_2025_60003_MOESM1_ESM.pdf": "4ec13634862838f8f1c10431f67f904350844e266715f16dc546db3ef22060b7",
+    "41467_2025_60003_MOESM2_ESM.pdf": "2937da830d9a7e46c1509512e54e99908f0dd60e2650ee8bfe58d6bed58f1f08",
     "41467_2025_60003_MOESM3_ESM.xlsx": "f296cb131c22d32de9985fe54fb17422f72385aed2b0596e8ed180f07b7e2a7a",
     "41467_2025_60003_MOESM4_ESM.xlsx": "04a7d0c084e97bf40fa2637e996258e527d4b422b257a172623c13f289ad929c",
     "41467_2025_60003_MOESM5_ESM.xlsx": "ff53ec7bf227e0d2c3e5ced9fb81e2e56e61fb5d6ec373c1e3f2c574e77c09b9",
@@ -50,37 +53,31 @@
   },
   "blocked": [
     {
-      "file": "41467_2025_60003_MOESM2_ESM.xlsx",
-      "role": "Likely additional SI workbook (403)",
-      "recovered": false,
-      "http_status": 403,
-      "notes": "Springer ESM returned HTTP 403 Forbidden in this environment."
-    },
-    {
-      "file": "41467_2025_60003_MOESM6_ESM.xlsx",
-      "role": "Supplementary Data 4 (PMC #MOESM6) BRET scores simulated mutants",
-      "recovered": false,
-      "http_status": 403,
-      "notes": "Required for full mutant-response audit; blocked."
-    },
-    {
       "resource": "GPCRmd trajectories (dynadb/publications/1540)",
+      "status": "ENLACE_REGISTRADO",
       "recovered": false,
-      "notes": "Landing HTML present; xtc/dcd/topology binaries not fetched. Notebooks require local simulations/."
+      "notes": "Official endpoint registered; binaries not fetched."
     },
     {
       "resource": "Dutta & Shukla Box MSM/trajectory deposit",
+      "box_id": "jzooa0o27z1w9ha0h6va3i51ir7l38j4",
+      "status": "ENLACE_REGISTRADO",
       "recovered": false,
-      "notes": "Box URL cited in paper Data availability; not downloaded. GitHub has figure scripts/coords, not full MSM objects for ACN-comparable graph."
+      "notes": "Official Box ID registered; full deposit deferred."
     },
     {
-      "resource": "Exact intracellular sink residue list for LigACN path termini",
-      "recovered": false,
-      "notes": "Not extractable from recovered SI PDF binary text hunt; not present as a dedicated table in recovered xlsx. Blocks pre-registered S↔T core search."
+      "note": "MOESM6 STRICKEN — not in official MOESM2 inventory (Supp Data 1–4 only)."
     }
   ],
+  "sink_set_T": {
+    "status": "EXTRACTED",
+    "residues": ["Arg131(3x50)", "Asp240(6x30)", "Ser303(8x47)", "Ser69(2x39)"],
+    "source": "Morales-Pastor 2025 Methods (PMC12159191)"
+  },
+  "DATA_PROVENANCE": "RECOVERY_IN_PROGRESS",
+  "CB2_MINIMAL_GI_CORE": "BLOCKED_PENDING_PROVENANCE",
+  "CB1_COMPARISON": "BLOCKED_PENDING_PROVENANCE",
   "FINAL_VERDICT": "INDETERMINATE",
-  "CB1_COMPARISON": "INDETERMINATE",
   "no_docking": true,
   "no_new_chemistry": true,
   "no_push": true
