@@ -69,6 +69,13 @@ Eso **no** significa que CB2 sea definitivamente una red distribuida bajo todas 
 
 **Al reabrir:** se sabe exactamente qué pregunta contestar y qué resultados **no** deben reinterpretarse (Phase G GENERALIZES; HU-308/433 INDETERMINATE; static `CORE_TOPOLOGICAL_ONLY`; P1 `NOT_SUPPORTED` / `SIX_HUBS_DYNAMIC_SKELETON = REFUTED_UNDER_GPCRMD_WT`).
 
+### Postura epistémica (lock)
+
+**Ya no buscamos desesperadamente “qué nos falta.”**  
+**Determinamos qué fenómeno sigue sin resolver y qué experimento mínimo puede discriminar entre explicaciones rivales.**
+
+Tras `P1_NOT_SUPPORTED`, las rivales A–D siguen abiertas — distribuida / estado-dependiente / rutas ≠ static LigACN / lipídico-modulada — **sin rescate post hoc**. El siguiente experimento (bajo puertas P1–P6) debe **discriminar entre ellas**, no inventar hubs nuevos. Freeze locks intactos (`POST_HOC_EXCUSES = FORBIDDEN`; `COMPUTATION = PAUSED`; P2–P4 BLOCKED; P5 HYPOTHESIS_READY / no execution).
+
 ---
 
 ## Hipótesis de trabajo (redacción exacta — no modelo final)

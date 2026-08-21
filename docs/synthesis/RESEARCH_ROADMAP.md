@@ -238,7 +238,7 @@ Proyecto congelado en una **frontera epistemológica**, **NO** porque el mecanis
 
 **Rigurosa:** NOT “A switch does not exist.” YES: “There is still insufficient evidence to reduce CB2 functional control to a unique switch or to a small persistent static skeleton.”
 
-**Gates futuros:** P2 needs MSM (objeto = **transiciones**, no hubs permanentes); P4 needs comparable CB1; P5 membrane/cholesterol independent (not P1 rescue; pregunta = rutas dinámicas); P6 only after earlier gates yield a solid enough mechanism. **Cortafuegos:** no modelar todas las capas de interacción a la vez. Al reabrir: no reinterpretar Phase G / HU INDETERMINATE / CORE_TOPOLOGICAL_ONLY / P1_NOT_SUPPORTED.
+**Gates futuros:** P2 needs MSM (objeto = **transiciones**, no hubs permanentes); P4 needs comparable CB1; P5 membrane/cholesterol independent (not P1 rescue; pregunta = rutas dinámicas); P6 only after earlier gates yield a solid enough mechanism. **Cortafuegos:** no modelar todas las capas de interacción a la vez. Al reabrir: no reinterpretar Phase G / HU INDETERMINATE / CORE_TOPOLOGICAL_ONLY / P1_NOT_SUPPORTED. **Postura:** no “qué falta” — fenómeno no resuelto → experimento mínimo que discrimine rivales A–D (no nuevos hubs; no post-hoc rescue).
 
 ---
 
