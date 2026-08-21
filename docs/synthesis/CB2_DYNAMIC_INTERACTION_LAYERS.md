@@ -143,6 +143,7 @@ Mapear **dinámica de rutas entre estados** — conexiones que **aparecen, desap
 |-----------|-----|
 | [`RESEARCH_STATE.md`](../../RESEARCH_STATE.md) | Freeze / flags |
 | [`RESEARCH_ROADMAP.md`](RESEARCH_ROADMAP.md) | Gates P1–P6 + giro P2 |
+| [`CB2_DYNAMIC_LAYERS_LITERATURE_SURVEY.md`](CB2_DYNAMIC_LAYERS_LITERATURE_SURVEY.md) | Encuesta bibliográfica independiente (soporte / cualificación / contradicción) |
 | [`CB2_ALLOSTERIC_NETWORK.md`](CB2_ALLOSTERIC_NETWORK.md) | ACN / Trp258 / MSM |
 | [`HU308_HU433_PARADOX.md`](HU308_HU433_PARADOX.md) | Continuo / protean / contradicciones abiertas |
 | [`DYNAMIC_REANALYSIS_PROTOCOL.md`](DYNAMIC_REANALYSIS_PROTOCOL.md) | Pre-registro técnico (aún hubs-framed; objeto P2 evoluciona arriba) |

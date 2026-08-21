@@ -819,6 +819,7 @@ python scripts/network_core/dynamic_pipeline.py --self-test --status
 | [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md) | ACN/LigACN (Morales-Pastor 2025); MSM (Dutta & Shukla 2023); Trp258 no switch único; frontera MD |
 | [`docs/synthesis/RESEARCH_ROADMAP.md`](docs/synthesis/RESEARCH_ROADMAP.md) | **Contrato científico** P1–P6 + árbol de decisión; P6 solo tras P1–P5 |
 | [`docs/synthesis/CB2_DYNAMIC_INTERACTION_LAYERS.md`](docs/synthesis/CB2_DYNAMIC_INTERACTION_LAYERS.md) | **Mapa multicapa** + giro P2 a transiciones; cortafuegos (no todas las capas a la vez) |
+| [`docs/synthesis/CB2_DYNAMIC_LAYERS_LITERATURE_SURVEY.md`](docs/synthesis/CB2_DYNAMIC_LAYERS_LITERATURE_SURVEY.md) | Encuesta bibliográfica capas dinámicas (soporte / cualificación / contradicción; DOI/PMID) |
 | [`docs/synthesis/CB2_RESEARCH_ROADMAP.md`](docs/synthesis/CB2_RESEARCH_ROADMAP.md) | Alias / redirect → `RESEARCH_ROADMAP.md` |
 | [`docs/synthesis/DYNAMIC_REANALYSIS_PROTOCOL.md`](docs/synthesis/DYNAMIC_REANALYSIS_PROTOCOL.md) | **Pre-registro técnico data-blind** P1–P3: dos redes; null degree-matched; self-tests sintéticos; `BLOCKED_PENDING_TRAJECTORIES` |
 | [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md) | Protocolo estático histórico + puntero al dinámico; `CB2_MINIMAL_GI_CORE = NOT_FOUND` |
@@ -874,8 +875,9 @@ python scripts/network_core/dynamic_pipeline.py --self-test --status
 3. [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) — ancla `cfb2a51`
 4. [`docs/synthesis/RESEARCH_ROADMAP.md`](docs/synthesis/RESEARCH_ROADMAP.md) — contrato P1–P6
 5. [`docs/synthesis/CB2_DYNAMIC_INTERACTION_LAYERS.md`](docs/synthesis/CB2_DYNAMIC_INTERACTION_LAYERS.md) — mapa multicapa + giro P2→transiciones
-6. [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md) — Morales-Pastor / Dutta–Shukla / Trp258
-7. [`docs/synthesis/HU308_HU433_PARADOX.md`](docs/synthesis/HU308_HU433_PARADOX.md) — Smoum / Ganzoni; contradicciones abiertas
+6. [`docs/synthesis/CB2_DYNAMIC_LAYERS_LITERATURE_SURVEY.md`](docs/synthesis/CB2_DYNAMIC_LAYERS_LITERATURE_SURVEY.md) — encuesta bibliográfica (capas / P1 / qué no sigue)
+7. [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md) — Morales-Pastor / Dutta–Shukla / Trp258
+8. [`docs/synthesis/HU308_HU433_PARADOX.md`](docs/synthesis/HU308_HU433_PARADOX.md) — Smoum / Ganzoni; contradicciones abiertas
 
 ---
 
