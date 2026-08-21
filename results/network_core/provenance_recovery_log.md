@@ -13,10 +13,10 @@
 | `41467_2025_60003_MOESM2_ESM_extract.txt` | Text extract of MOESM2 (pypdf) | `b13e60dbb5b06ef409ee105321135c22b0e8828aff73ad5e719ebd880477787d` | **RECUPERADO** |
 | `sink_set_T_from_methods.txt` | Morales-Pastor 2025 Methods (PMC12159191 / PMID 40500255); MOESM2 is inventory-only | `c0d5c0230911b06971ad9b0483bb1b9d45f308b4e3f8e730b5c7405444f78bfd` | **RECUPERADO** |
 | `data/external/endpoints/official_endpoints.json` | Registry of confirmed official endpoints | `8a49434c4a2f4cddcdf7c27ee174d936d1216fabebf5ae384741b6745c060f54` | **RECUPERADO** |
-| GPCRmd publication/1540 (MD traj) | https://gpcrmd.org/dynadb/publications/1540/ | n/a (landing; binaries deferred) | **ENLACE_REGISTRADO** |
-| GPCRmd/prefcoup_cb2r (code/networks) | https://github.com/GPCRmd/prefcoup_cb2r | n/a (remote repo) | **ENLACE_REGISTRADO** |
-| Box MSM/features/traj `jzooa0o27z1w9ha0h6va3i51ir7l38j4` | https://uofi.box.com/s/jzooa0o27z1w9ha0h6va3i51ir7l38j4 (Comm Biol Data availability) | n/a (full deposit deferred; HTTP 404 from this env on probe) | **ENLACE_REGISTRADO** |
-| ShuklaGroup/Cannabinoid_activation | https://github.com/ShuklaGroup/Cannabinoid_activation | n/a (remote repo) | **ENLACE_REGISTRADO** |
+| GPCRmd publication/1540 (MD traj) | https://gpcrmd.org/dynadb/publications/1540/ → files via `/dynadb/files/Dynamics/dyn2417/` | see `trajectories/MANIFEST.json` | **RECUPERADO** (WT dyn2126; 2026-08-21) |
+| GPCRmd/prefcoup_cb2r (code/networks) | Zenodo 15270434 + https://github.com/GPCRmd/prefcoup_cb2r | `e1c6d0308aeef7bd52cd986a8fb7bca940162d895c0e0857dfbde55b6682e061` (zip) | **RECUPERADO** (code only) |
+| Box MSM/features/traj `jzooa0o27z1w9ha0h6va3i51ir7l38j4` | https://uofi.box.com/s/jzooa0o27z1w9ha0h6va3i51ir7l38j4 | n/a | **BLOQUEADO** HTTP 404 (one-shot) |
+| ShuklaGroup/Cannabinoid_activation | https://github.com/ShuklaGroup/Cannabinoid_activation | n/a (remote; no MSM traj binaries) | **ENLACE_REGISTRADO** (code/figures only) |
 
 **Stricken:** any chase of `41467_2025_60003_MOESM6_ESM.*` as a permanent blocker. Official SI inventory in MOESM2 is **SI + Supplementary Data 1â€“4 only**.
 
@@ -83,4 +83,23 @@ Documented in `data/external/morales_pastor_2025/moesm2_download_log.txt`.
 **Verdict:** `STATIC_TOPOLOGICAL_BOTTLENECKS = TOPOLOGICAL_HUBS_IDENTIFIED`  
 **Governance:** `STATIC_GRAPH_ANALYSIS=CLOSED`; `CB2_MINIMAL_GI_CORE=BLOCKED_PENDING_DYNAMIC_VALIDATION`; `CB1_COMPARISON=BLOCKED`.  
 **Traj one-liner:** GPCRmd/1540 and Box deposit remain ENLACE_REGISTRADO only (no new hunt).
+
+---
+
+## 2026-08-21 — One-shot traj recovery (GPCRmd/1540 + Dutta–Shukla Box)
+
+**Branch:** `feat/cb2-hubs-functional-topology-test`  
+**Campaign:** directed download only (official endpoints + paper/repo mirrors once). No docking / de novo / P1.  
+**Full log:** `results/network_core/traj_recovery_attempt.md`
+
+| Recurso | Resultado | SHA256 / error |
+|---------|-----------|----------------|
+| GPCRmd dyn2126 WT (pdb+psf+5×xtc via `/dynadb/files/Dynamics/dyn2417/`) | **RECUPERADO** → `data/external/morales_pastor_2025/trajectories/` | see `MANIFEST.json` |
+| Zenodo 15270434 `prefcoup_cb2r` zip | **RECUPERADO** (code only, 4513 B) | `e1c6d0308aeef7bd52cd986a8fb7bca940162d895c0e0857dfbde55b6682e061` |
+| Box `jzooa0o27z1w9ha0h6va3i51ir7l38j4` + README CB2 Box mirrors | **BLOQUEADO** HTTP 404 | no local MSM binaries |
+| GPCRmd login/API bulk zip | **BLOQUEADO** login **500**; REST api paths **404** | WT files via direct HTML links OK |
+| Author-request contingency (Morales-Pastor) | **REGISTERED** — agent did **not** email | — |
+
+**Path gate:** Morales traj `ready=true`; Dutta MSM `ready=false` → status remains **`BLOCKED_PENDING_TRAJECTORIES`**.  
+**`RECOVERY_ATTEMPT = DONE`**. P1 = **no** until dual-path gate satisfied.
 

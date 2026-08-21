@@ -53,7 +53,7 @@ Working hypothesis (framing): CB2 activity appears to emerge from the interactio
 | Fin de búsqueda ciega (de novo / filtros empíricos de docking) | **`DOCKING_CAMPAIGNS` / `DE_NOVO_GENERATION` / `OPEN_ENDED_SEARCHES` = STOP** |
 | Interpretación `CORE_TOPOLOGICAL_ONLY` | Autopista estática TM7–H8 / base TM2 = **flujo mecánico basal candidato**; selección fina de vía requiere dinámica temporal + acoplamiento de membrana — **[SUPPORTED_INTERPRETATION]**, **no** demostrado por Test B |
 | Economía de recursos | Entrada futura = **reanálisis de datos públicos** (no campaña ciega nueva) |
-| Proveniencia | **`DATA_PROVENANCE_AUDIT: PARTIAL` — SI/endpoints registered; traj/MSM download not completed** (GPCRmd 1540 / Box = `ENLACE_REGISTRADO`; Sink T from Methods; MOESM2 recovered) |
+| Proveniencia | **`DATA_PROVENANCE_AUDIT: PARTIAL` — GPCRmd/1540 WT traj recovered locally; Dutta–Shukla Box MSM still HTTP 404** (`RECOVERY_ATTEMPT=DONE`; Sink T from Methods; MOESM2 recovered) |
 
 ---
 
@@ -231,10 +231,11 @@ STATIC_GRAPH_ANALYSIS: CLOSED
 DUAL_VALIDATION_HUBS: CLOSED
 SINK_SET_T: EXTRACTED  # Arg131(3x50), Asp240(6x30), Ser303(8x47), Ser69(2x39)
 CB1_COMPARISON: BLOCKED  # roadmap P4
-DATA_PROVENANCE: PARTIAL  # SI/endpoints registered; traj/MSM download not completed (GPCRmd 1540 / Box = ENLACE_REGISTRADO; MOESM2 recovered; Sink T from Methods)
-DATA_PROVENANCE_AUDIT: PARTIAL  # same honesty line — NOT fully RESOLVED for trajectories
-TECHNICAL_SEARCH_TRAJ: STOP
-ACTIVE_ACTION: ROADMAP_ACTIVE_PREP  # docs/org only; no traj compute
+DATA_PROVENANCE: PARTIAL  # GPCRmd/1540 WT traj local (MANIFEST+xtc); Dutta–Shukla Box MSM HTTP 404; MOESM2+Sink T OK
+DATA_PROVENANCE_AUDIT: PARTIAL  # NOT fully RESOLVED — dual-path gate still fails on MSM
+RECOVERY_ATTEMPT: DONE  # one-shot 2026-08-21; log results/network_core/traj_recovery_attempt.md
+TECHNICAL_SEARCH_TRAJ: STOP  # one-shot closed; no infinite hunt
+ACTIVE_ACTION: ROADMAP_ACTIVE_PREP  # docs/org only; no traj compute until P1 unblocked
 DUAL_TEST_COMMIT: cfb2a51  # preserve clean negative / topology-only result
 ABC_HIERARCHY_COMMIT: c2869b0  # A/B/C + Q_membrana parked
 FREEZE_COMMIT: 2a1193c  # reposo científico / frontera (pre-mapa)
@@ -244,10 +245,12 @@ NIVEL_B_CHOLESTEROL_LIPIDS: FUTURE_PRIORITY_HYPOTHESIS  # no active compute; = P
 NIVEL_C_SECONDARY_MODULATORS: ARCHIVED_NOT_JUSTIFIED
 WORKING_HYPOTHESIS: LIGAND_x_LANDSCAPE_x_MEMBRANE  # weights unresolved; not a final tripartite model
 REACTIVATION_QUESTION: ligand+receptor+membrane -> P(metastable states)  # archived; DO NOT RUN as docking score hunt
-ARCHIVED_NEXT_CALCULATION: PARKED  # DO NOT RUN — see P1–P3; no traj download, no MD, no analysis now
-DYNAMIC_REANALYSIS: BLOCKED_PENDING_TRAJECTORIES  # not circular; blocked on data; two networks; no W=-ln(p); no a priori >50%
+ARCHIVED_NEXT_CALCULATION: PARKED  # DO NOT RUN — see P1–P3; no MD; P1 only if dual paths ready
+DYNAMIC_REANALYSIS: BLOCKED_PENDING_TRAJECTORIES  # Morales ready; Dutta MSM missing; no W=-ln(p); no a priori >50%
+NEXT: P1_ONLY_IF_FILES_PRESENT  # currently NO — wait for Dutta MSM or PI gate change
 ROADMAP: docs/synthesis/RESEARCH_ROADMAP.md  # P1–P6 scientific contract + decision tree; alias CB2_RESEARCH_ROADMAP.md
 DRY_PIPELINE_SELFTEST: scripts/network_core/dynamic_pipeline.py --self-test  # b91b57c; scaffolding only
+AUTHOR_REQUEST_CONTINGENCY_MORALES: REGISTERED_DO_NOT_EMAIL
 ```
 
 **Cortafuegos de gobernanza (formal):**

@@ -1,13 +1,28 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-08-20T23:19:15Z",
+  "generated_utc": "2026-08-21T07:04:08Z",
   "status": "BLOCKED_PENDING_TRAJECTORIES",
   "verdict": "INDETERMINATE",
   "blocked": true,
+  "recovery_attempt": {
+    "flag": "DONE",
+    "date_utc": "2026-08-21",
+    "campaign": "one_shot_gpcrmd1540_dutta_box",
+    "toward_READY_FOR_P1": "PARTIAL — Morales traj local; Dutta MSM missing",
+    "P1_can_start": false,
+    "log": "results/network_core/traj_recovery_attempt.md",
+    "blockers": [
+      "Box shared link jzooa0o27z1w9ha0h6va3i51ir7l38j4 HTTP 404 (all host variants)",
+      "ShuklaGroup README CB2 Box mirrors HTTP 404",
+      "dutta_shukla_2023/msm path not ready"
+    ],
+    "contingency_author_request_morales_pastor": "REGISTERED_DO_NOT_EMAIL"
+  },
   "governance": {
     "mode": "COMPUTATIONAL_PREREGISTRATION",
     "DYNAMIC_REANALYSIS": "BLOCKED_PENDING_TRAJECTORIES",
     "TRAJ_DOWNLOAD": "STOP",
+    "RECOVERY_ATTEMPT": "DONE",
     "NEW_MD": "STOP",
     "protocol": "docs/synthesis/DYNAMIC_REANALYSIS_PROTOCOL.md"
   },
@@ -94,14 +109,14 @@
     "paths": {
       "morales_pastor_2025_trajectories": {
         "path": "data/external/morales_pastor_2025/trajectories",
-        "directory_exists": false,
-        "has_manifest": false,
-        "has_traj_like_files": false,
-        "ready": false
+        "directory_exists": true,
+        "has_manifest": true,
+        "has_traj_like_files": true,
+        "ready": true
       },
       "dutta_shukla_2023_msm": {
         "path": "data/external/dutta_shukla_2023/msm",
-        "directory_exists": false,
+        "directory_exists": true,
         "has_manifest": false,
         "has_traj_like_files": false,
         "ready": false
