@@ -20,7 +20,7 @@
 | HU-308 / HU-433 | **INDETERMINATE** — no universal static local mode |
 | Static topology | **CORE_TOPOLOGICAL_ONLY** — clear aggregate hubs, no Gi enrichment |
 | P1 dynamic | **NOT_SUPPORTED** — six hubs not persistent dynamic skeleton (GPCRmd/1540 WT) |
-| P2 | **BLOCKED** — Dutta/Shukla MSM missing; **next reopen = model contrast A/B/C** (not hub hunt) |
+| P2 | **DRY FROZEN** — own MSM on 5 WT GPCRmd (Morales); real exec **BLOCKED** pending human green light; Dutta = external comparison only (not template) |
 | P3 | **BLOCKED** |
 | P4 | **BLOCKED** — comparable CB1 missing |
 | P5 | **HYPOTHESIS_READY** — rutas dinámicas entre estados (0% vs 40% chol); **NO execution** |
@@ -41,7 +41,8 @@ COMPUTATION                   = PAUSED
 P5_EXECUTION                  = BLOCKED_PENDING_DECISION
 SIX_HUBS_DYNAMIC_SKELETON     = REFUTED_UNDER_GPCRMD_WT
 DECISION_RULE                 = DISCRIMINATION_ONLY
-P2_OBJECT                     = MODEL_CONTRAST_ABC
+P2_OBJECT                     = OWN_MSM_GPCRMD_WT_THEN_ABC
+DUTTA_SHUKLA                  = EXTERNAL_COMPARISON_ONLY_NOT_TEMPLATE
 ```
 
 ---
@@ -66,33 +67,37 @@ PRIMARY_OBJECTIVE = CHARACTERIZE_CB2_CONFORMATIONAL_CONTROL
 P1  ¿Los hubs sobreviven dinámicamente?
     │
     ├─ NO  → cerrar hipótesis de hubs (como núcleo dinámico)
-    │         next reopen P2 = contraste A/B/C (no hub hunt; still needs MSM)
+    │         next reopen P2 = own MSM on 5 WT GPCRmd → Stage0 → A/B/C
     │
     └─ YES → P2
-              ¿Qué modelo de comunicación encaja (A/B/C)?
+              5 WT GPCRmd → tICA/MSM → ¿convergente?
               │
-              ├─ A  → red relativamente estable (cambia intensidad)
+              ├─ NO  → INSUFFICIENT_SAMPLING → STOP (no inventar A/B/C)
               │
-              ├─ B  → rutas distintas dominan por estado → P3
-              │         ¿Los cambios se relacionan con Gαi2?
-              │         │
-              │         ├─ NO  → arquitectura sin vínculo funcional demostrado
-              │         │
-              │         └─ YES → P4
-              │                   ¿CB1 es distinto?
-              │                   │
-              │                   ├─ NO  → base débil de selectividad conformacional
-              │                   │
-              │                   └─ YES → P5
-              │                             ¿La membrana modifica?
-              │                             │
-              │                             ├─ NO  → Nivel A suficiente
-              │                             │
-              │                             └─ YES → P6
-              │                                       ¿Puede una perturbación química desplazar?
-              │                                       (solo si P1–P5 sobrevivieron)
-              │
-              └─ C  → altamente distribuida sin rutas dominantes
+              └─ YES → ¿Qué arquitectura encaja (A/B/C)?
+                        │
+                        ├─ A  → red relativamente estable (cambia intensidad)
+                        │
+                        ├─ B  → rutas distintas dominan por estado → P3
+                        │         ¿Los cambios se relacionan con Gαi2?
+                        │         │
+                        │         ├─ NO  → arquitectura sin vínculo funcional demostrado
+                        │         │
+                        │         └─ YES → P4
+                        │                   ¿CB1 es distinto?
+                        │                   │
+                        │                   ├─ NO  → base débil de selectividad conformacional
+                        │                   │
+                        │                   └─ YES → P5
+                        │                             ¿La membrana modifica?
+                        │                             │
+                        │                             ├─ NO  → Nivel A suficiente
+                        │                             │
+                        │                             └─ YES → P6
+                        │                                       ¿Puede una perturbación química desplazar?
+                        │                                       (solo si P1–P5 sobrevivieron)
+                        │
+                        └─ C  → altamente distribuida sin rutas dominantes
 ```
 
 **Regla dura:** no saltar puertas; no abrir P6 compute (docking / de novo / diseño) mientras P1–P5 no estén resueltas en el sentido del árbol. **`DECISION_RULE = DISCRIMINATION_ONLY`**.
@@ -150,27 +155,31 @@ Hubs fijos a priori: ALA79(2.49), ALA83(2.53), LEU287(7.41), ASN291(7.45), ASN29
 **Resultado P1 (2026-08-21, GPCRmd only):** **`P1_NOT_SUPPORTED`**. Channels A/B kept separate. Neither channel exceeded pre-registered null with reproducibility.  
 **Lectura estricta:** P1 **no** refuta causalidad biológica de hubs en sentido absoluto. P1 **sí** refuta que esos seis hubs constituyan un **esqueleto dinámico persistente bajo GPCRmd/1540 WT**. **Prohibido:** post hoc “faltaba colesterol”; salto hubs-failed → red plenamente distribuida. Deja abiertas A–D (distributed / state-dependent / routes ≠ static LigACN / lipid-dependent routes). P1 does **not** answer Gi / CB1 / MSM / membrane / chemical switch. **P2 not opened.**
 
-### P2 — Contraste de modelos A/B/C (no hub hunt) **BLOCKED** (Dutta/Shukla MSM missing)
+### P2 — Own MSM (5 WT GPCRmd) → A/B/C (no hub hunt) **DRY FROZEN** / real **BLOCKED**
 
-**Next reopen = P2 as model contrast** — no caza de hubs nuevos. Cuando se reabra (solo con MSM), P2 **discrimina**:
+**Reformulación PI:** P2 construye un **MSM propio** sobre las **5 trayectorias WT GPCRmd Morales-Pastor** — **independiente** del MSM Dutta & Shukla. Dutta = **comparación externa posterior únicamente** (no plantilla; K≠6 no es error automático).
+
+Pre-registro: [`P2_STATE_ROUTE_PREGISTRATION.md`](P2_STATE_ROUTE_PREGISTRATION.md) · dry: `scripts/network_core/p2_dry_pipeline.py`.
+
+**Dos etapas obligatorias:**
+
+1. ¿MSM interpretable / convergente (gap, bootstrap, LOO)? → si **no**: `INSUFFICIENT_SAMPLING` → **STOP**
+2. Solo si **sí** → arquitectura entre metaestables:
 
 | Modelo | Claim |
 |--------|--------|
-| **A** | Red de comunicación **relativamente estable** que cambia sobre todo en **intensidad** |
-| **B** | **Rutas distintas dominan** en estados distintos |
+| **A** | Rutas dominantes **invariantes** (>80% overlap); cambia sobre todo **intensidad** |
+| **B** | **Rutas distintas** dominan por estado |
 | **C** | Comunicación **altamente distribuida** sin rutas dominantes |
-
-**Pregunta discriminante:** ¿Qué patrón de comunicación entre microestados / metaestables es compatible con los datos — A, B, o C?
-
-**Legado / evolución post-P1:** el objeto dejó de ser “¿qué residuo está siempre en el centro?” y pasó por mapear transiciones; el framing operativo al reopen es **contraste A/B/C** bajo la regla de discriminación (no interés por sí solo). Ver [`CB2_DYNAMIC_INTERACTION_LAYERS.md`](CB2_DYNAMIC_INTERACTION_LAYERS.md).
 
 | Lectura | Siguiente |
 |---------|-----------|
-| **A** (estable + intensidad) | red aproximadamente estable; P3 opcional / lit. |
-| **B** (rutas estado-dominantes) | abrir P3 (cambios a interpretar funcionalmente) |
-| **C** (altamente distribuida) | sin core prefabricado usable; no inventar hubs |
+| **A** | P3 opcional / lit. |
+| **B** | abrir P3 (cambios a interpretar funcionalmente) |
+| **C** | sin core prefabricado; no inventar hubs |
+| `INSUFFICIENT_SAMPLING` | pausa — **no** abrir P5 como sustituto |
 
-No elegir a priori. **`P2` sigue BLOCKED** pending MSM — esto **no** abre cómputo. Ancla postura: `bb7b57a`.
+**Estado ahora:** dry synthetic **frozen**; real MSM **not started** (await human green light). Ancla: `bb7b57a`.
 
 ### P3 — ¿Los cambios se relacionan con Gαi2? **BLOCKED**
 
@@ -234,8 +243,8 @@ Dual validation cfb2a51
         ▼
 P1     DONE → P1_NOT_SUPPORTED / SIX_HUBS_DYNAMIC_SKELETON=REFUTED_UNDER_GPCRMD_WT
        (strict: not absolute biological-causality refute; A–D still open)
-P2     BLOCKED (Dutta/Shukla MSM missing — do NOT invent states from Morales)
-       next reopen → MODEL_CONTRAST_ABC (A=stable intensity; B=state-dominant routes; C=highly distributed; NOT hub hunt)
+P2     DRY FROZEN / real BLOCKED (own MSM on 5 WT GPCRmd; Dutta ≠ template)
+       Stage0 → INSUFFICIENT_SAMPLING|interpretable → ESCENARIO_A/B/C (NOT hub hunt)
 P3     BLOCKED
 P4     BLOCKED (comparable CB1 missing)
 P5     HYPOTHESIS_READY (0% vs 40% chol; refined = dynamic routes between states) — NO execution
@@ -256,7 +265,7 @@ Proyecto congelado en una **frontera epistemológica**, **NO** porque el mecanis
 
 **Regla de decisión (lock):** no correr preguntas por ser interesantes; solo si **discriminan** entre ≥2 hipótesis plausibles.
 
-**Gates futuros:** P2 needs MSM — **contraste de modelos A/B/C** (not hub hunt); P4 needs comparable CB1; P5 membrane/cholesterol independent (not P1 rescue; pregunta = rutas dinámicas); P6 only after earlier gates yield a solid enough mechanism. **Cortafuegos:** no modelar todas las capas de interacción a la vez. Al reabrir: no reinterpretar Phase G / HU INDETERMINATE / CORE_TOPOLOGICAL_ONLY / P1_NOT_SUPPORTED. **Postura (`bb7b57a`):** no “qué falta” — fenómeno no resuelto → experimento mínimo discriminante.
+**Gates futuros:** P2 = own MSM on 5 WT GPCRmd → Stage0 → A/B/C (Dutta external only); P4 needs comparable CB1; P5 membrane/cholesterol independent (not P1 rescue); P6 only after earlier gates yield a solid enough mechanism. **Cortafuegos:** no modelar todas las capas a la vez. Al reabrir: no reinterpretar Phase G / HU INDETERMINATE / CORE_TOPOLOGICAL_ONLY / P1_NOT_SUPPORTED. **Postura (`bb7b57a`):** fenómeno no resuelto → experimento mínimo discriminante.
 
 ---
 
@@ -267,7 +276,8 @@ Proyecto congelado en una **frontera epistemológica**, **NO** porque el mecanis
 | [RESEARCH_STATE.md](../../RESEARCH_STATE.md) | Flags / freeze (POST_P1_BOUNDARY_FROZEN) |
 | [CB2_DYNAMIC_INTERACTION_LAYERS.md](CB2_DYNAMIC_INTERACTION_LAYERS.md) | Mapa multicapa + giro a transiciones |
 | [DYNAMIC_REANALYSIS_PROTOCOL.md](DYNAMIC_REANALYSIS_PROTOCOL.md) | Pre-registro P1–P3 + P1_NULL |
-| [CB2_ALLOSTERIC_NETWORK.md](CB2_ALLOSTERIC_NETWORK.md) | Morales-Pastor, Dutta–Shukla, Trp258 |
+| [P2_STATE_ROUTE_PREGISTRATION.md](P2_STATE_ROUTE_PREGISTRATION.md) | P2 own MSM GPCRmd + Stage0 + A/B/C |
+| [CB2_ALLOSTERIC_NETWORK.md](CB2_ALLOSTERIC_NETWORK.md) | Morales-Pastor, Dutta–Shukla (lit.), Trp258 |
 | [HU308_HU433_PARADOX.md](HU308_HU433_PARADOX.md) | Smoum / Ganzoni; microestados |
 | [DOCKING_LIMITS_AND_GOVERNANCE.md](DOCKING_LIMITS_AND_GOVERNANCE.md) | Por qué P6 ≠ docking score |
 | Dual validation report | Ancla cfb2a51 — entrada estática a P1/P3 |
@@ -277,11 +287,11 @@ Proyecto congelado en una **frontera epistemológica**, **NO** porque el mecanis
 
 ## Próximo paso
 
-1. **Frontera congelada** — docs only; COMPUTATION = PAUSED.  
-2. **P2–P4 remain BLOCKED** (MSM / CB1). Next reopen P2 = **model contrast A/B/C** (not hub hunt). **`DECISION_RULE = DISCRIMINATION_ONLY`**. Ancla `bb7b57a`. No auto-P2.  
-3. **P5** stays **HYPOTHESIS_READY** — rutas dinámicas entre estados; **P5_EXECUTION = BLOCKED_PENDING_DECISION**; independent of P1 (does not rescue it).  
-4. **No** docking / de novo / MD / threshold retuning / post-hoc cholesterol excuse / Gαi2 reinterpretation / modelar todas las capas a la vez.
+1. **P2 dry frozen** — synthetic pipeline only; **no** real GPCRmd MSM until human green light.  
+2. **P2 real** = own MSM on 5 WT GPCRmd → Stage0 → A/B/C; Dutta ≠ template. P3/P4 still gated. **`DECISION_RULE = DISCRIMINATION_ONLY`**.  
+3. **P5** stays **HYPOTHESIS_READY** — **P5_EXECUTION = BLOCKED_PENDING_DECISION**; independent of P1; not a substitute for failed Stage0.  
+4. **No** docking / de novo / MD nuevo / hub hunt / post-hoc cholesterol excuse.
 
 ---
 
-*Fin RESEARCH_ROADMAP.md — contrato científico: mapa causal por falsificación sucesiva; DECISION_RULE=DISCRIMINATION_ONLY; P2 → contraste A/B/C (still BLOCKED); postura bb7b57a; frontera epistemológica post-P1 — sin mecanismo resuelto; sin compute.*
+*Fin RESEARCH_ROADMAP.md — P2 = own MSM GPCRmd → Stage0 → A/B/C; Dutta external only; dry frozen; sin real MSM aún.*

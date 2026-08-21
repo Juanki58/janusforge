@@ -29,7 +29,7 @@ Evita expansión infinita del proyecto. Interés ≠ umbral de reopen. Postura a
 | HU-308 / HU-433 | **INDETERMINATE** — no universal static local mode |
 | Static topology | **CORE_TOPOLOGICAL_ONLY** — clear aggregate hubs, no Gi enrichment |
 | P1 dynamic | **NOT_SUPPORTED** — six hubs **not** a persistent dynamic skeleton under analyzed traj (GPCRmd/1540 WT) |
-| P2 | **BLOCKED** — Dutta/Shukla MSM missing; **next reopen = model contrast A/B/C** (not hub hunt) |
+| P2 | **DRY FROZEN** — own MSM on 5 WT GPCRmd Morales; real exec **BLOCKED** pending human green light; Dutta = external comparison only (not template) |
 | P3 | **BLOCKED** |
 | P4 | **BLOCKED** — comparable CB1 missing |
 | P5 | **HYPOTHESIS_READY** — 0% vs 40% cholesterol design candidate; **NO execution** |
@@ -49,15 +49,18 @@ Nivel B = **future priority hypothesis**, prep conceptual only. Ancla lit.: Yeli
 
 **Mapa multicapa (docs only):** [`docs/synthesis/CB2_DYNAMIC_INTERACTION_LAYERS.md`](docs/synthesis/CB2_DYNAMIC_INTERACTION_LAYERS.md) — capas ligando↔microswitch↔hélices↔red↔efector↔membrana↔heterómero↔iones/agua↔tiempo; **no** modelar todas a la vez.
 
-**Next reopen = P2 as model contrast (not hub hunt) — docs only; still BLOCKED:** cuando se reabra, P2 **discrimina** entre tres modelos plausibles (no caza de hubs nuevos):
+**Next reopen = P2 own MSM on 5 WT GPCRmd → Stage0 → A/B/C (not hub hunt) — dry frozen; real BLOCKED:**
 
 | Modelo | Claim |
 |--------|--------|
-| **A** | Red de comunicación **relativamente estable** que cambia sobre todo en **intensidad** |
-| **B** | **Rutas distintas dominan** en estados distintos |
+| **A** | Rutas dominantes invariantes (>80% overlap); cambia sobre todo **intensidad** |
+| **B** | **Rutas distintas** dominan en estados distintos |
 | **C** | Comunicación **altamente distribuida** sin rutas dominantes |
 
-Sigue **`P2 = BLOCKED`** pending Dutta–Shukla MSM. Ancla de postura: `bb7b57a`.
+**Stage 0 first:** if MSM not convergent → `INSUFFICIENT_SAMPLING` → STOP (no A/B/C story).  
+**Dutta & Shukla:** external comparison later only — **not** fitting template (K≠6 ≠ automatic error).  
+Pre-registro: [`docs/synthesis/P2_STATE_ROUTE_PREGISTRATION.md`](docs/synthesis/P2_STATE_ROUTE_PREGISTRATION.md) · dry: `scripts/network_core/p2_dry_pipeline.py`.  
+Ancla de postura: `bb7b57a`.
 
 ---
 
@@ -77,7 +80,7 @@ Eso **no** significa que CB2 sea definitivamente una red distribuida bajo todas 
 
 | Gate | Estado | Requisito / lectura |
 |------|--------|---------------------|
-| P2 **model contrast A/B/C** | **BLOCKED** | needs missing MSM (Dutta/Shukla); **not** hub hunt — discriminate stable-intensity (A) vs state-route (B) vs highly distributed (C) |
+| P2 **own MSM GPCRmd → A/B/C** | **DRY FROZEN** / real **BLOCKED** | 5 WT Morales trajs; Stage0 convergence; Dutta ≠ template |
 | P3 Gi link | **BLOCKED** | gated on P2 |
 | P4 CB1 | **BLOCKED** | needs comparable set |
 | P5 membrane/cholesterol | **HYPOTHESIS_READY** | independent; **not** rescue of P1; pregunta refinada = rutas dinámicas entre estados; no execution |
@@ -321,7 +324,10 @@ PIPELINE_LOCKS:
 RESEARCH_STATUS: POST_P1_BOUNDARY_FROZEN
 DYNAMIC_REANALYSIS: P1_DONE_FROZEN
 P1_VERDICT: P1_NOT_SUPPORTED
-P2: BLOCKED  # Dutta/Shukla MSM missing; next reopen = model contrast A/B/C (not hub hunt)
+P2: DRY_FROZEN  # own MSM on 5 WT GPCRmd; real BLOCKED pending human green light; Dutta ≠ template
+P2_OBJECT: OWN_MSM_GPCRMD_WT_THEN_ABC
+DUTTA_SHUKLA: EXTERNAL_COMPARISON_ONLY_NOT_TEMPLATE
+
 P3: BLOCKED
 P4: BLOCKED  # comparable CB1 missing
 P5: HYPOTHESIS_READY  # 0% vs 40% cholesterol design candidate; NO execution
@@ -378,10 +384,12 @@ WORKING_HYPOTHESIS: LIGAND_x_LANDSCAPE_x_MEMBRANE  # weights unresolved; not a f
 REACTIVATION_QUESTION: ligand+receptor+membrane -> P(metastable states)  # archived; DO NOT RUN as docking score hunt
 P5_QUESTION: Does lipid composition change CB2 conformational-state distribution and communication network?
 P5_QUESTION_REFINED: Does cholesterol change the dynamic routes CB2 uses to transit between states?
-P2_OBJECT: MODEL_CONTRAST_ABC  # A=stable intensity; B=state-dominant routes; C=highly distributed; NOT hub hunt; still BLOCKED pending MSM
+P2_OBJECT: OWN_MSM_GPCRMD_WT_THEN_ABC  # Stage0 then A/B/C; NOT hub hunt; Dutta ≠ template
+DUTTA_SHUKLA: EXTERNAL_COMPARISON_ONLY_NOT_TEMPLATE
 P2_MODEL_A: STABLE_NETWORK_CHANGING_INTENSITY
 P2_MODEL_B: DIFFERENT_ROUTES_DOMINATE_BY_STATE
 P2_MODEL_C: HIGHLY_DISTRIBUTED_NO_DOMINANT_ROUTES
+P2_DRY_PIPELINE: scripts/network_core/p2_dry_pipeline.py
 DYNAMIC_INTERACTION_LAYERS: docs/synthesis/CB2_DYNAMIC_INTERACTION_LAYERS.md  # docs only; do not model all layers at once
 HETEROMER_LAYER: FUTURE_NIVEL_C_ADJACENT  # A2A–CB2 lit registered; NOT in pipeline
 ARCHIVED_NEXT_CALCULATION: PARKED
@@ -399,7 +407,7 @@ RESEARCH_STATUS = POST_P1_BOUNDARY_FROZEN
 DYNAMIC_REANALYSIS = P1_DONE_FROZEN
 P1_VERDICT = P1_NOT_SUPPORTED
 SIX_HUBS_DYNAMIC_SKELETON = REFUTED_UNDER_GPCRMD_WT
-P2 = BLOCKED
+P2 = DRY_FROZEN  # real MSM BLOCKED pending human green light; own GPCRmd MSM
 P3 = BLOCKED
 P4 = BLOCKED
 P5 = HYPOTHESIS_READY
@@ -635,7 +643,7 @@ Cada respuesta abre/cierra **una sola puerta**. Cómputo = **PAUSED**; P5 execut
 | ¿Colesterol / lípidos aniónicos cambian farmacología CB2? | 🟢 **[LITERATURA_PRIMARIA]** Sí (MRI-2646 / basal / PS–CHS) — Yeliseev 2021 DOI [10.1038/s41598-021-83245-6](https://doi.org/10.1038/s41598-021-83245-6); Kimura 2012 DOI [10.1074/jbc.M111.268425](https://doi.org/10.1074/jbc.M111.268425); Vukoti 2012 DOI [10.1371/journal.pone.0046290](https://doi.org/10.1371/journal.pone.0046290) — **Nivel B, no en pipeline** |
 | ¿Composición lipídica cambia estados + red de comunicación CB2? (P5) | ⏸ **`HYPOTHESIS_READY`** — **[HIPÓTESIS_ABIERTA]**; design candidate 0% vs 40% chol; **`P5_EXECUTION = BLOCKED_PENDING_DECISION`**; independiente de P1 |
 | ¿Colesterol cambia **rutas dinámicas** entre estados? (P5 refinada) | ⏸ **`HYPOTHESIS_READY`** — framing preferido; no execution |
-| ¿P2 = contraste de modelos A/B/C (no hub hunt)? | ⏸ **Registrado** — A estable-intensidad / B rutas por estado / C altamente distribuida; **`P2 = BLOCKED`** (MSM); regla = discriminación |
+| ¿P2 = own MSM GPCRmd → Stage0 → A/B/C (no hub hunt)? | ⏸ **DRY FROZEN** — real BLOCKED pending green light; Dutta ≠ template; regla = discriminación |
 | ¿Heterómero A2A–CB2 como perturbación alostérica no-ligando-CB2? | ⏸ **Nivel-C-adjacent / futura** — **[LITERATURA_PRIMARIA]** DOI [10.1111/bph.16502](https://doi.org/10.1111/bph.16502) (PMID 39044481); 2025 DOI [10.1016/j.bcp.2025.117280](https://doi.org/10.1016/j.bcp.2025.117280) — **no** pipeline |
 | ¿Hubs TM7–H8 / TM2 intrínsecos vs entorno lipídico? (`Q_membrana` legacy) | ⏸ **PARKED / subsumed under P5** — no execution |
 | ¿Temperatura / redox / pH como switch central? | 🔴 **Nivel C archivado** — no justificado para mecanismo central |
