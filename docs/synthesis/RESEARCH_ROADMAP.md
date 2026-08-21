@@ -20,10 +20,16 @@
 | HU-308 / HU-433 | **INDETERMINATE** — no universal static local mode |
 | Static topology | **CORE_TOPOLOGICAL_ONLY** — clear aggregate hubs, no Gi enrichment |
 | P1 dynamic | **NOT_SUPPORTED** — six hubs not persistent dynamic skeleton (GPCRmd/1540 WT) |
-| P2 | **BLOCKED** — Dutta/Shukla MSM missing; objeto → **transiciones** (docs only) |
+| P2 | **BLOCKED** — Dutta/Shukla MSM missing; **next reopen = model contrast A/B/C** (not hub hunt) |
 | P3 | **BLOCKED** |
 | P4 | **BLOCKED** — comparable CB1 missing |
 | P5 | **HYPOTHESIS_READY** — rutas dinámicas entre estados (0% vs 40% chol); **NO execution** |
+
+### Regla de decisión (lock — anti-expansión)
+
+**Do not run a question because it is interesting; run it when it produces clear discrimination between two (or more) plausible hypotheses.**
+
+Postura anclada en `bb7b57a` (menos open search, más discriminating questions). Evita expansión infinita. Freeze intacto.
 
 ### Locks
 
@@ -34,6 +40,8 @@ DOCKING                       = STOP
 COMPUTATION                   = PAUSED
 P5_EXECUTION                  = BLOCKED_PENDING_DECISION
 SIX_HUBS_DYNAMIC_SKELETON     = REFUTED_UNDER_GPCRMD_WT
+DECISION_RULE                 = DISCRIMINATION_ONLY
+P2_OBJECT                     = MODEL_CONTRAST_ABC
 ```
 
 ---
@@ -58,49 +66,51 @@ PRIMARY_OBJECTIVE = CHARACTERIZE_CB2_CONFORMATIONAL_CONTROL
 P1  ¿Los hubs sobreviven dinámicamente?
     │
     ├─ NO  → cerrar hipótesis de hubs (como núcleo dinámico)
+    │         next reopen P2 = contraste A/B/C (no hub hunt; still needs MSM)
     │
     └─ YES → P2
-              ¿La arquitectura cambia entre microestados?
+              ¿Qué modelo de comunicación encaja (A/B/C)?
               │
-              ├─ NO  → red aproximadamente estable
-              │         (candidato a subred fija; P3 opcional / lit.)
+              ├─ A  → red relativamente estable (cambia intensidad)
               │
-              └─ YES → P3
-                        ¿Los cambios se relacionan con Gαi2?
-                        │
-                        ├─ NO  → arquitectura sin vínculo funcional demostrado
-                        │
-                        └─ YES → P4
-                                  ¿CB1 es distinto?
-                                  │
-                                  ├─ NO  → base débil de selectividad conformacional
-                                  │
-                                  └─ YES → P5
-                                            ¿La membrana modifica?
-                                            │
-                                            ├─ NO  → Nivel A suficiente
-                                            │
-                                            └─ YES → P6
-                                                      ¿Puede una perturbación química desplazar?
-                                                      (solo si P1–P5 sobrevivieron)
+              ├─ B  → rutas distintas dominan por estado → P3
+              │         ¿Los cambios se relacionan con Gαi2?
+              │         │
+              │         ├─ NO  → arquitectura sin vínculo funcional demostrado
+              │         │
+              │         └─ YES → P4
+              │                   ¿CB1 es distinto?
+              │                   │
+              │                   ├─ NO  → base débil de selectividad conformacional
+              │                   │
+              │                   └─ YES → P5
+              │                             ¿La membrana modifica?
+              │                             │
+              │                             ├─ NO  → Nivel A suficiente
+              │                             │
+              │                             └─ YES → P6
+              │                                       ¿Puede una perturbación química desplazar?
+              │                                       (solo si P1–P5 sobrevivieron)
+              │
+              └─ C  → altamente distribuida sin rutas dominantes
 ```
 
-**Regla dura:** no saltar puertas; no abrir P6 compute (docking / de novo / diseño) mientras P1–P5 no estén resueltas en el sentido del árbol.
+**Regla dura:** no saltar puertas; no abrir P6 compute (docking / de novo / diseño) mientras P1–P5 no estén resueltas en el sentido del árbol. **`DECISION_RULE = DISCRIMINATION_ONLY`**.
 
 ---
 
-## Cuatro historias P1/P2 (no elegir a priori)
+## Cuatro historias P1/P2 (mapa → contraste A/B/C)
 
-Cualquiera es resultado científico válido. **No** se prefiere “persistent” sobre las demás.
+Cualquiera es resultado científico válido. **No** se prefiere “persistent” a priori. Al reopen de P2, estas historias se colapsan al **contraste de modelos A/B/C**:
 
-| Historia | Lectura breve |
-|----------|----------------|
-| **Persistent** | Hubs / rutas estables en ambas redes y entre estados → subred aproximadamente fija |
-| **Persistent + plastic** | Núcleo persistente con rutas que se redistribuyen → control + plasticidad |
-| **Highly distributed** | Null no separa / flujo no concentrado → sin core prefabricado usable |
-| **State-specific** | Supervivencia o rutas solo en algunos microestados / metaestables |
+| Historia (legado) | Modelo P2 | Lectura breve |
+|-------------------|-----------|----------------|
+| **Persistent** | **A** | Red relativamente estable; cambios sobre todo de intensidad |
+| **Persistent + plastic** | **A/B frontera** | Núcleo estable con plasticidad de rutas — discriminar vs A puro / B |
+| **State-specific** | **B** | Rutas distintas dominan en estados distintos |
+| **Highly distributed** | **C** | Sin rutas dominantes / null no concentra flujo |
 
-Estas historias se discriminan con el protocolo dinámico (dos redes; outcomes pre-registrados), no con narrativa post hoc.
+Discriminación con protocolo dinámico + MSM (cuando exista); **no** narrativa post hoc; **no** hub hunt.
 
 ---
 
@@ -140,23 +150,29 @@ Hubs fijos a priori: ALA79(2.49), ALA83(2.53), LEU287(7.41), ASN291(7.45), ASN29
 **Resultado P1 (2026-08-21, GPCRmd only):** **`P1_NOT_SUPPORTED`**. Channels A/B kept separate. Neither channel exceeded pre-registered null with reproducibility.  
 **Lectura estricta:** P1 **no** refuta causalidad biológica de hubs en sentido absoluto. P1 **sí** refuta que esos seis hubs constituyan un **esqueleto dinámico persistente bajo GPCRmd/1540 WT**. **Prohibido:** post hoc “faltaba colesterol”; salto hubs-failed → red plenamente distribuida. Deja abiertas A–D (distributed / state-dependent / routes ≠ static LigACN / lipid-dependent routes). P1 does **not** answer Gi / CB1 / MSM / membrane / chemical switch. **P2 not opened.**
 
-### P2 — ¿La arquitectura cambia entre microestados / transiciones? **BLOCKED** (Dutta/Shukla MSM missing)
+### P2 — Contraste de modelos A/B/C (no hub hunt) **BLOCKED** (Dutta/Shukla MSM missing)
 
-**Pregunta (legado):** ¿La comunicación es una subred fija o se redistribuye entre metaestables / microestados?
+**Next reopen = P2 as model contrast** — no caza de hubs nuevos. Cuando se reabra (solo con MSM), P2 **discrimina**:
 
-**Objeto evolucionado post-P1 (registro conceptual — no ejecución):** tras el fallo del esqueleto permanente de seis hubs, el objeto de P2 pasa de **hubs** a **transiciones**.
+| Modelo | Claim |
+|--------|--------|
+| **A** | Red de comunicación **relativamente estable** que cambia sobre todo en **intensidad** |
+| **B** | **Rutas distintas dominan** en estados distintos |
+| **C** | Comunicación **altamente distribuida** sin rutas dominantes |
 
-| No | Sí |
-|----|-----|
-| “¿Qué residuo está siempre en el centro?” | “¿Qué interacciones cambian de forma sistemática al pasar de un estado a otro?” |
-| Buscar core permanente | Mapear rutas: conexiones que **aparecen, desaparecen o cambian de fuerza** en una transición funcional |
+**Pregunta discriminante:** ¿Qué patrón de comunicación entre microestados / metaestables es compatible con los datos — A, B, o C?
 
-**Después (más tarde):** qué parte controla el ligando vs la membrana (enlace a P5 refinada). Ver [`CB2_DYNAMIC_INTERACTION_LAYERS.md`](CB2_DYNAMIC_INTERACTION_LAYERS.md).
+**Legado / evolución post-P1:** el objeto dejó de ser “¿qué residuo está siempre en el centro?” y pasó por mapear transiciones; el framing operativo al reopen es **contraste A/B/C** bajo la regla de discriminación (no interés por sí solo). Ver [`CB2_DYNAMIC_INTERACTION_LAYERS.md`](CB2_DYNAMIC_INTERACTION_LAYERS.md).
 
-**Si NO (arquitectura estable entre estados):** red aproximadamente estable.  
-**Si YES:** abrir P3 (cambios a interpretar funcionalmente).
+| Lectura | Siguiente |
+|---------|-----------|
+| **A** (estable + intensidad) | red aproximadamente estable; P3 opcional / lit. |
+| **B** (rutas estado-dominantes) | abrir P3 (cambios a interpretar funcionalmente) |
+| **C** (altamente distribuida) | sin core prefabricado usable; no inventar hubs |
 
-No elegir a priori entre las cuatro historias de arriba. **`P2` sigue BLOCKED** pending MSM — esto **no** abre cómputo.
+No elegir a priori. **`P2` sigue BLOCKED** pending MSM — esto **no** abre cómputo. Ancla postura: `bb7b57a`.
+
+### P3 — ¿Los cambios se relacionan con Gαi2? **BLOCKED**
 
 ### P3 — ¿Los cambios se relacionan con Gαi2? **BLOCKED**
 
@@ -219,14 +235,14 @@ Dual validation cfb2a51
 P1     DONE → P1_NOT_SUPPORTED / SIX_HUBS_DYNAMIC_SKELETON=REFUTED_UNDER_GPCRMD_WT
        (strict: not absolute biological-causality refute; A–D still open)
 P2     BLOCKED (Dutta/Shukla MSM missing — do NOT invent states from Morales)
-       object → TRANSITIONS (route dynamics between states; not permanent hub core)
+       next reopen → MODEL_CONTRAST_ABC (A=stable intensity; B=state-dominant routes; C=highly distributed; NOT hub hunt)
 P3     BLOCKED
 P4     BLOCKED (comparable CB1 missing)
 P5     HYPOTHESIS_READY (0% vs 40% chol; refined = dynamic routes between states) — NO execution
 P6     no abierto (docking/de novo STOP)
 ```
 
-Anclas: cfb2a51 · c2869b0 · 2a1193c · tip técnico pipeline seco `b91b57c` · P1 real `31a881c` / p1_dynamic_hub_validation.
+Anclas: cfb2a51 · c2869b0 · 2a1193c · tip técnico pipeline seco `b91b57c` · P1 real `31a881c` / p1_dynamic_hub_validation · postura `bb7b57a`.
 
 ---
 
@@ -238,7 +254,9 @@ Proyecto congelado en una **frontera epistemológica**, **NO** porque el mecanis
 
 **Rigurosa:** NOT “A switch does not exist.” YES: “There is still insufficient evidence to reduce CB2 functional control to a unique switch or to a small persistent static skeleton.”
 
-**Gates futuros:** P2 needs MSM (objeto = **transiciones**, no hubs permanentes); P4 needs comparable CB1; P5 membrane/cholesterol independent (not P1 rescue; pregunta = rutas dinámicas); P6 only after earlier gates yield a solid enough mechanism. **Cortafuegos:** no modelar todas las capas de interacción a la vez. Al reabrir: no reinterpretar Phase G / HU INDETERMINATE / CORE_TOPOLOGICAL_ONLY / P1_NOT_SUPPORTED. **Postura:** no “qué falta” — fenómeno no resuelto → experimento mínimo que discrimine rivales A–D (no nuevos hubs; no post-hoc rescue).
+**Regla de decisión (lock):** no correr preguntas por ser interesantes; solo si **discriminan** entre ≥2 hipótesis plausibles.
+
+**Gates futuros:** P2 needs MSM — **contraste de modelos A/B/C** (not hub hunt); P4 needs comparable CB1; P5 membrane/cholesterol independent (not P1 rescue; pregunta = rutas dinámicas); P6 only after earlier gates yield a solid enough mechanism. **Cortafuegos:** no modelar todas las capas de interacción a la vez. Al reabrir: no reinterpretar Phase G / HU INDETERMINATE / CORE_TOPOLOGICAL_ONLY / P1_NOT_SUPPORTED. **Postura (`bb7b57a`):** no “qué falta” — fenómeno no resuelto → experimento mínimo discriminante.
 
 ---
 
@@ -260,10 +278,10 @@ Proyecto congelado en una **frontera epistemológica**, **NO** porque el mecanis
 ## Próximo paso
 
 1. **Frontera congelada** — docs only; COMPUTATION = PAUSED.  
-2. **P2–P4 remain BLOCKED** (MSM / CB1). Objeto P2 = transiciones (registrado). No auto-P2.  
+2. **P2–P4 remain BLOCKED** (MSM / CB1). Next reopen P2 = **model contrast A/B/C** (not hub hunt). **`DECISION_RULE = DISCRIMINATION_ONLY`**. Ancla `bb7b57a`. No auto-P2.  
 3. **P5** stays **HYPOTHESIS_READY** — rutas dinámicas entre estados; **P5_EXECUTION = BLOCKED_PENDING_DECISION**; independent of P1 (does not rescue it).  
 4. **No** docking / de novo / MD / threshold retuning / post-hoc cholesterol excuse / Gαi2 reinterpretation / modelar todas las capas a la vez.
 
 ---
 
-*Fin RESEARCH_ROADMAP.md — contrato científico: mapa causal por falsificación sucesiva; capas dinámicas registradas; giro P2→transiciones; frontera epistemológica post-P1 — sin mecanismo resuelto; sin compute.*
+*Fin RESEARCH_ROADMAP.md — contrato científico: mapa causal por falsificación sucesiva; DECISION_RULE=DISCRIMINATION_ONLY; P2 → contraste A/B/C (still BLOCKED); postura bb7b57a; frontera epistemológica post-P1 — sin mecanismo resuelto; sin compute.*
