@@ -2,8 +2,9 @@
 
 **Fecha:** 2026-08-21  
 **Rama:** `feat/cb2-hubs-functional-topology-test`  
-**Tipo:** **DOCUMENTATION ONLY** — contrato científico congelado post-P1; sin docking, sin de novo, sin P5 execution, sin MD nuevo  
-**Autoridad de freeze / flags:** [`RESEARCH_STATE.md`](../../RESEARCH_STATE.md) (`RESEARCH_STATUS = POST_P1_BOUNDARY_FROZEN`)  
+**Tipo:** **DOCUMENTATION ONLY** — acta de cierre P2 + congelación profunda; **`REPOSITORY = SEALED`**; sin compute, sin redes A/B/C, sin docking, sin de novo, sin P5 execution, sin MD/MSM nuevo  
+**Autoridad de freeze / flags:** [`RESEARCH_STATE.md`](../../RESEARCH_STATE.md) (`RESEARCH_STATUS = DEEP_PAUSE_SEALED`)  
+**P2 evidence:** [`results/msm_model/p2_msm_convergence_report.md`](../../results/msm_model/p2_msm_convergence_report.md) · [`implied_timescales.png`](../../results/msm_model/implied_timescales.png) · commit **`2dcff23`** / `p2_msm_builder.py`  
 **Pre-registro técnico P1:** [`DYNAMIC_REANALYSIS_PROTOCOL.md`](DYNAMIC_REANALYSIS_PROTOCOL.md) · `P1_NULL` en [`scripts/network_core/dynamic_pipeline.py`](../../scripts/network_core/dynamic_pipeline.py)  
 **P1 deliverable:** [`results/network_core/p1_dynamic_hub_validation.md`](../../results/network_core/p1_dynamic_hub_validation.md) (tip `31a881c`)  
 **Self-test seco (andamiaje):** `python scripts/network_core/dynamic_pipeline.py --self-test` (tip técnico `b91b57c`)  
@@ -12,24 +13,55 @@
 
 ---
 
-## Estado consolidado (freeze)
+## ACTA DE CIERRE EXPERIMENTAL: COMPUERTA P2 (FASE 1)
+
+**Verdict:** **`INSUFFICIENT_SAMPLING`**.  
+**Physical justification:** Five WT trajs + 1995 aggregated frames lack statistical evidence for a convergent MSM; without that validation, reliable separation of the underlying metastable landscape is impossible.  
+**Epistemology:** Do not claim transitions are non-Markovian as biological absolute; do not claim we know distributed vs stable vs state-dependent. Honest “we do not know” is the valuable result. Gates prevented fabricating a biological story on a sampling artifact.
+
+### Definitive YAML freeze (21 Aug 2026)
+
+```yaml
+P1_STATIC_HUBS           : CLOSED (NOT_SUPPORTED)
+P2_MSM_TRANSITIONS       : CLOSED (INSUFFICIENT_SAMPLING)
+P2_NETWORK_A_B_C         : ABORTED
+P3_GALPHA_I2             : BLOCKED
+P4_CB1_COMPARISON        : BLOCKED
+P5_MEMBRANE              : HYPOTHESIS_READY  # independent; NOT substitute for P2
+P6_CHEMICAL_PERTURBATION : BLOCKED
+DE_NOVO_GENERATION       : STOP
+DOCKING                  : STOP
+COMPUTATION              : PAUSED
+POST_HOC_EXCUSES         : FORBIDDEN
+DEEP_PAUSE               : TRUE
+REPOSITORY               : SEALED
+```
+
+**Next conversation = strategic resource allocation only:** massive adaptive sampling for P2 **OR** redesign independent membrane (P5) in silico — **NOT** “what script today?”
+
+---
+
+## Estado consolidado (freeze post-P2 — SEALED)
 
 | Item | Status |
 |------|--------|
 | Phase G | **GENERALIZES** — macro coordinate OOS structural signal |
 | HU-308 / HU-433 | **INDETERMINATE** — no universal static local mode |
 | Static topology | **CORE_TOPOLOGICAL_ONLY** — clear aggregate hubs, no Gi enrichment |
-| P1 dynamic | **NOT_SUPPORTED** — six hubs not persistent dynamic skeleton (GPCRmd/1540 WT) |
-| P2 | **`READY_FOR_EXECUTION`** — dry frozen at `aaeec78`; **NOT executed**; gate = convergencia → A/B/C; Dutta 6 states do not condition analysis |
-| P3 | **BLOCKED** — until landscape known |
-| P4 | **BLOCKED** — until landscape known; comparable CB1 missing |
-| P5 | **HYPOTHESIS_READY** — rutas dinámicas entre estados (0% vs 40% chol); **NO execution** |
+| P1 dynamic | **CLOSED (NOT_SUPPORTED)** — six hubs not persistent dynamic skeleton (GPCRmd/1540 WT) |
+| P2 MSM transitions | **CLOSED (INSUFFICIENT_SAMPLING)** — @ `2dcff23`; ITS NON_CONVERGENT |
+| P2 network A/B/C | **ABORTED** — no convergent MSM → no A/B/C |
+| P3 | **BLOCKED** |
+| P4 | **BLOCKED** |
+| P5 | **HYPOTHESIS_READY** — independent; **NOT** substitute for P2; **NO execution** |
+| P6 | **BLOCKED** |
+| Repository | **SEALED** · **`DEEP_PAUSE = TRUE`** |
 
 ### Regla de decisión (lock — anti-expansión)
 
 **Do not run a question because it is interesting; run it when it produces clear discrimination between two (or more) plausible hypotheses.**
 
-Postura anclada en `bb7b57a` (menos open search, más discriminating questions). Evita expansión infinita. Freeze intacto.
+Postura anclada en `bb7b57a`. Evita expansión infinita. **`DEEP_PAUSE = TRUE`** · **`REPOSITORY = SEALED`**.
 
 ### Locks
 
@@ -38,12 +70,14 @@ POST_HOC_EXCUSES              = FORBIDDEN
 DE_NOVO_GENERATION            = STOP
 DOCKING                       = STOP
 COMPUTATION                   = PAUSED
+DEEP_PAUSE                    = TRUE
+REPOSITORY                    = SEALED
 P5_EXECUTION                  = BLOCKED_PENDING_DECISION
 SIX_HUBS_DYNAMIC_SKELETON     = REFUTED_UNDER_GPCRMD_WT
 DECISION_RULE                 = DISCRIMINATION_ONLY
-P2_OBJECT                     = OWN_MSM_GPCRMD_WT_THEN_ABC
-P2                            = READY_FOR_EXECUTION  # dry frozen at aaeec78; NOT executed
-DUTTA_SHUKLA                  = EXTERNAL_COMPARISON_ONLY_NOT_TEMPLATE  # 6 states do not condition analysis
+P2_MSM_TRANSITIONS            = CLOSED (INSUFFICIENT_SAMPLING)
+P2_NETWORK_A_B_C              = ABORTED
+DUTTA_SHUKLA                  = EXTERNAL_COMPARISON_ONLY_NOT_TEMPLATE
 ```
 
 ---
@@ -67,42 +101,18 @@ PRIMARY_OBJECTIVE = CHARACTERIZE_CB2_CONFORMATIONAL_CONTROL
 ```
 P1  ¿Los hubs sobreviven dinámicamente?
     │
-    ├─ NO  → cerrar hipótesis de hubs (como núcleo dinámico)
-    │         P2 = READY_FOR_EXECUTION (dry @ aaeec78; NOT executed)
+    ├─ NO  → cerrar hipótesis de hubs (como núcleo dinámico)  ✓ taken
     │
     └─ YES → (historical; not taken)
-P2  Gate structure (locked):
+P2  Gate structure (executed @ 2dcff23):
     1. Own MSM converges?
-       NO  → P2_INSUFFICIENT_SAMPLING → STOP
+       NO  → P2_INSUFFICIENT_SAMPLING → STOP  ✓ taken
        YES → 2
-    2. Architecture:
-       A RED_ESTABLE | B RUTAS_POR_ESTADO | C DISTRIBUIDA
-                        │
-                        ├─ A RED_ESTABLE → red relativamente estable (cambia intensidad)
-                        │
-                        ├─ B RUTAS_POR_ESTADO → P3 (blocked until landscape known)
-                        │         ¿Los cambios se relacionan con Gαi2?
-                        │         │
-                        │         ├─ NO  → arquitectura sin vínculo funcional demostrado
-                        │         │
-                        │         └─ YES → P4 (blocked until landscape known)
-                        │                   ¿CB1 es distinto?
-                        │                   │
-                        │                   ├─ NO  → base débil de selectividad conformacional
-                        │                   │
-                        │                   └─ YES → P5 (independent membrane line)
-                        │                             ¿La membrana modifica?
-                        │                             │
-                        │                             ├─ NO  → Nivel A suficiente
-                        │                             │
-                        │                             └─ YES → P6 (far)
-                        │                                       ¿Puede una perturbación química desplazar?
-                        │                                       (solo si P1–P5 sobrevivieron)
-                        │
-                        └─ C DISTRIBUIDA → altamente distribuida sin rutas dominantes
+    2. Architecture A/B/C → ABORTED (no convergent MSM; NOT DECIDED)
+P3–P6  BLOCKED / P5 HYPOTHESIS_READY only (independent; not P2 substitute)
 ```
 
-**Regla dura:** no saltar puertas; no abrir P6 compute (docking / de novo / diseño) mientras P1–P5 no estén resueltas en el sentido del árbol. **First real result to review = convergence**, not preferred biological story. **`DECISION_RULE = DISCRIMINATION_ONLY`**.
+**Regla dura:** no saltar puertas; no fabricar biología sobre artefacto de sampling. Gates worked. **`DECISION_RULE = DISCRIMINATION_ONLY`**. **Next = strategic resource allocation only.**
 
 ---
 
@@ -137,7 +147,7 @@ Los hubs estáticos deben **vencer un null estructura-compatible pre-definido** 
 
 **Prohibido en P1:** `W = -ln(p)` universal; umbral a priori “>50% del flujo”; retuning de α / lista de hubs tras ver traj; llamar al resultado “switch”.
 
-**Estado ahora:** **P1 COMPLETE** (`P1_NOT_SUPPORTED`) on GPCRmd/1540 WT only — artifacts `results/network_core/p1_dynamic_hub_validation.{json,md}`; CLI `scripts/network_core/p1_dynamic_hub_validation.py`. **`SIX_HUBS_DYNAMIC_SKELETON = REFUTED_UNDER_GPCRMD_WT`**. **`P2 = READY_FOR_EXECUTION`** (dry frozen at `aaeec78`; **NOT executed**). **P3/P4 BLOCKED** until landscape known. **P5 = HYPOTHESIS_READY**, **`P5_EXECUTION = BLOCKED_PENDING_DECISION`**. No auto-run MSM; no P5 compute.
+**Estado ahora:** **P1 COMPLETE** (`P1_NOT_SUPPORTED`) on GPCRmd/1540 WT only. **`SIX_HUBS_DYNAMIC_SKELETON = REFUTED_UNDER_GPCRMD_WT`**. **`P2_MSM_TRANSITIONS = CLOSED (INSUFFICIENT_SAMPLING)`** @ `2dcff23`. **`P2_NETWORK_A_B_C = ABORTED`**. **P3/P4/P6 BLOCKED**. **P5 = HYPOTHESIS_READY**, **`P5_EXECUTION = BLOCKED_PENDING_DECISION`**. **`DEEP_PAUSE = TRUE`** · **`REPOSITORY = SEALED`**. No compute.
 
 ---
 
@@ -155,76 +165,44 @@ Los hubs estáticos deben **vencer un null estructura-compatible pre-definido** 
 Hubs fijos a priori: ALA79(2.49), ALA83(2.53), LEU287(7.41), ASN291(7.45), ASN295(7.49), ARG302(8.46).
 
 **Resultado P1 (2026-08-21, GPCRmd only):** **`P1_NOT_SUPPORTED`**. Channels A/B kept separate. Neither channel exceeded pre-registered null with reproducibility.  
-**Lectura estricta:** P1 **no** refuta causalidad biológica de hubs en sentido absoluto. P1 **sí** refuta que esos seis hubs constituyan un **esqueleto dinámico persistente bajo GPCRmd/1540 WT**. **Prohibido:** post hoc “faltaba colesterol”; salto hubs-failed → red plenamente distribuida. Deja abiertas A–D (distributed / state-dependent / routes ≠ static LigACN / lipid-dependent routes). P1 does **not** answer Gi / CB1 / MSM / membrane / chemical switch. Hub hypothesis **CLOSED**; **`P2 = READY_FOR_EXECUTION`** (not executed).
+**Lectura estricta:** P1 **no** refuta causalidad biológica de hubs en sentido absoluto. P1 **sí** refuta que esos seis hubs constituyan un **esqueleto dinámico persistente bajo GPCRmd/1540 WT**. **Prohibido:** post hoc “faltaba colesterol”; salto hubs-failed → red plenamente distribuida. Deja abiertas A–D (distributed / state-dependent / routes ≠ static LigACN / lipid-dependent routes). Hub hypothesis **CLOSED**.
 
-### P2 — Own MSM (5 WT GPCRmd) → convergencia → A/B/C (no hub hunt) **`READY_FOR_EXECUTION`**
+### P2 — Own MSM (5 WT GPCRmd) → convergencia → A/B/C **`CLOSED (INSUFFICIENT_SAMPLING)`**
 
-**Reformulación PI:** P2 construye un **MSM propio** sobre las **5 trayectorias WT GPCRmd Morales-Pastor** — **independiente** del MSM Dutta & Shukla. Dutta = **comparación externa posterior únicamente** (**6 states do not condition analysis**; K≠6 no es error automático).
+**Reformulación PI:** P2 construyó un **MSM propio** sobre las **5 trayectorias WT GPCRmd Morales-Pastor** — **independiente** del MSM Dutta & Shukla. Dutta = **comparación externa posterior únicamente**.
 
-Pre-registro: [`P2_STATE_ROUTE_PREGISTRATION.md`](P2_STATE_ROUTE_PREGISTRATION.md) · dry: `scripts/network_core/p2_dry_pipeline.py` (frozen at `aaeec78`).
+Pre-registro: [`P2_STATE_ROUTE_PREGISTRATION.md`](P2_STATE_ROUTE_PREGISTRATION.md) · dry: `scripts/network_core/p2_dry_pipeline.py` (frozen at `aaeec78`) · MSM: `scripts/network_core/p2_msm_builder.py` @ **`2dcff23`**.
 
-**Gate structure (locked):**
+**Gate 1 result (2026-08-21):** ITS **`NON_CONVERGENT`**. Five trajs + **1995** aggregated frames do **not** provide enough evidence for a convergent MSM that would allow A/B/C network analysis between states → **`P2_INSUFFICIENT_SAMPLING`** → **STOP**. **`P2_NETWORK_A_B_C = ABORTED`**.
 
-```
-1. Own MSM converges?  NO → P2_INSUFFICIENT_SAMPLING → STOP
-                       YES → 2
-2. Architecture: A RED_ESTABLE | B RUTAS_POR_ESTADO | C DISTRIBUIDA
-```
+**Epistemology locks:** Do **not** claim non-convergent ITS proves transitions are non-Markovian as biological absolute. Do **not** claim the 2 macrostates are “almost certainly noise.” Do **not** decide among A/B/C — architecture **NOT DECIDED**. Honest we-do-not-know. Gates worked.
 
-**First real result to review = convergence**, not a preferred biological story.
-
-| Modelo | Label | Claim |
+| Modelo | Label | Status |
 |--------|--------|--------|
-| **A** | **RED_ESTABLE** | Rutas dominantes **invariantes** (>80% overlap); cambia sobre todo **intensidad** |
-| **B** | **RUTAS_POR_ESTADO** | **Rutas distintas** dominan por estado |
-| **C** | **DISTRIBUIDA** | Comunicación **altamente distribuida** sin rutas dominantes |
+| **A** | **RED_ESTABLE** | **NOT DECIDED** (aborted) |
+| **B** | **RUTAS_POR_ESTADO** | **NOT DECIDED** (aborted) |
+| **C** | **DISTRIBUIDA** | **NOT DECIDED** (aborted) |
+| `P2_INSUFFICIENT_SAMPLING` | Gate 1 stop | **TAKEN** — **no** abrir P5 como sustituto |
 
-| Lectura | Siguiente |
-|---------|-----------|
-| **A RED_ESTABLE** | P3 opcional / lit. |
-| **B RUTAS_POR_ESTADO** | abrir P3 (cambios a interpretar funcionalmente) — blocked until landscape known |
-| **C DISTRIBUIDA** | sin core prefabricado; no inventar hubs |
-| `P2_INSUFFICIENT_SAMPLING` | pausa — **no** abrir P5 como sustituto |
+**Evidence:** [`p2_msm_convergence_report.md`](../../results/msm_model/p2_msm_convergence_report.md) · [`implied_timescales.png`](../../results/msm_model/implied_timescales.png) · commit **`2dcff23`**.
 
-**Estado ahora:** **`READY_FOR_EXECUTION`** — dry synthetic frozen at `aaeec78`; real MSM **NOT EXECUTED**. Ancla: `bb7b57a`.
+### P3 — ¿Los cambios se relacionan con Gαi2? **BLOCKED**
 
-### P3 — ¿Los cambios se relacionan con Gαi2? **BLOCKED** (until landscape known)
-**Pregunta:** ¿Nodos/rutas dinámicas se enriquecen hacia lectura Gαi2 (y/o β-arr), sin afirmar switch?
+### P4 — ¿CB1 es distinto? **BLOCKED**
 
-**Si NO:** arquitectura física sin vínculo funcional demostrado (extiende Test B al régimen dinámico).  
-**Si YES:** abrir P4.
+### P5 — ¿La membrana modifica? **HYPOTHESIS_READY** (NO execution; independent; **NOT** substitute for P2)
 
-`CB2_Gi_NETWORK_CANDIDATE = NOT_ESTABLISHED` hasta evidencia dinámica + revisión humana (nunca automática).
+**Pregunta (independiente; no rescata P1/P2):** ¿La composición lipídica cambia la distribución de estados conformacionales y la red de comunicación de CB2?
 
-### P4 — ¿CB1 es distinto? **BLOCKED** (until landscape known; comparable CB1 missing)
+**Pregunta refinada (preferida):** ¿El colesterol cambia las **rutas dinámicas** que CB2 usa para transitar entre estados?
 
-**Pregunta:** ¿El control conformacional CB2 es específico de receptor o compartido con CB1?
+Design candidate (conceptual): **0% vs ~40% colesterol**. Ancla lit.: Yeliseev et al. (2021) MRI-2646, DOI [10.1038/s41598-021-83245-6](https://doi.org/10.1038/s41598-021-83245-6).
 
-**Si NO:** base débil de selectividad conformacional CB2-vs-CB1.  
-**Si YES:** abrir P5.
+Gobernanza: **`P5 = HYPOTHESIS_READY`** · **`P5_EXECUTION = BLOCKED_PENDING_DECISION`**. **`POST_HOC_EXCUSES = FORBIDDEN`**.
 
-`CB1_COMPARISON = BLOCKED` hasta desbloqueo explícito + datos.
+### P6 — ¿Puede una perturbación química desplazar? **BLOCKED**
 
-### P5 — ¿La membrana modifica? **HYPOTHESIS_READY** (NO execution)
-
-**Pregunta (independiente; no rescata P1):** ¿La composición lipídica cambia la distribución de estados conformacionales y la red de comunicación de CB2?
-
-**Pregunta refinada (preferida):** ¿El colesterol cambia las **rutas dinámicas** que CB2 usa para transitar entre estados?  
-(No meramente “¿cambia la actividad?” — eso ya tiene ancla lit.)
-
-Design candidate (conceptual): **0% vs ~40% colesterol**. Ancla lit.: Yeliseev et al. (2021) MRI-2646, DOI [10.1038/s41598-021-83245-6](https://doi.org/10.1038/s41598-021-83245-6), PMID [33580091](https://pubmed.ncbi.nlm.nih.gov/33580091/).
-
-**Si NO:** Nivel A suficiente.  
-**Si YES:** abrir P6 (química en contexto de membrana).
-
-Gobernanza: Nivel A = `ACTIVE_BASELINE`; Nivel B = `FUTURE_PRIORITY_HYPOTHESIS` (prep conceptual only); Nivel C archivado; heterómero A2A–CB2 = **Nivel-C-adjacent / futura** (DOI [10.1111/bph.16502](https://doi.org/10.1111/bph.16502); 2025 DOI [10.1016/j.bcp.2025.117280](https://doi.org/10.1016/j.bcp.2025.117280)) — **no** pipeline; **`P5 = HYPOTHESIS_READY`** · **`P5_EXECUTION = BLOCKED_PENDING_DECISION`**. **`POST_HOC_EXCUSES = FORBIDDEN`** — no usar colesterol como excusa de P1.
-
-### P6 — ¿Puede una perturbación química desplazar?
-
-**Pregunta:** ¿Qué intervención química mueve la red / equilibrio hacia un estado funcional concreto **en un contexto ya caracterizado**?
-
-**P6 no existe hasta que P1–P5 sobrevivan.**  
-No es “mejor pose” ni campaña de docking/de novo. `DOCKING` / `DE_NOVO` = **STOP**.
+**P6 no existe hasta que P1–P5 sobrevivan.** `DOCKING` / `DE_NOVO` = **STOP**.
 
 ---
 
@@ -246,31 +224,25 @@ Dual validation cfb2a51
         │
         ▼
 P1     DONE → P1_NOT_SUPPORTED / SIX_HUBS_DYNAMIC_SKELETON=REFUTED_UNDER_GPCRMD_WT
-       (hub hypothesis CLOSED; A–D still open as rival architectures)
-P2     READY_FOR_EXECUTION (dry frozen at aaeec78; NOT executed)
-       Gate1 convergencia → P2_INSUFFICIENT_SAMPLING | Gate2 A RED_ESTABLE / B RUTAS_POR_ESTADO / C DISTRIBUIDA
-       Dutta 6 states do not condition analysis; first review = convergence
-P3     BLOCKED until landscape known
-P4     BLOCKED until landscape known (comparable CB1 missing)
-P5     HYPOTHESIS_READY — independent membrane line (0% vs 40% chol; dynamic routes) — NO execution
-P6     FAR (docking/de novo STOP)
+P2     CLOSED (INSUFFICIENT_SAMPLING) @ 2dcff23 — A/B/C ABORTED; architecture NOT DECIDED
+P3     BLOCKED
+P4     BLOCKED
+P5     HYPOTHESIS_READY — independent membrane line — NO execution; NOT substitute for P2
+P6     BLOCKED (docking/de novo STOP)
+REPOSITORY SEALED · DEEP_PAUSE = TRUE · COMPUTATION = PAUSED
 ```
 
-Anclas: cfb2a51 · c2869b0 · 2a1193c · tip técnico pipeline seco `b91b57c` · P1 real `31a881c` / p1_dynamic_hub_validation · postura `bb7b57a` · P2 dry `aaeec78`.
+Anclas: cfb2a51 · c2869b0 · 2a1193c · tip técnico pipeline seco `b91b57c` · P1 real `31a881c` · postura `bb7b57a` · P2 dry `aaeec78` · **P2 MSM `2dcff23`**.
 
 ---
 
 ## Conclusión PI (frontera epistemológica)
 
-Proyecto congelado en una **frontera epistemológica**, **NO** porque el mecanismo esté resuelto.
+Proyecto en **`DEEP_PAUSE` / `REPOSITORY = SEALED`**, **NO** porque el mecanismo esté resuelto.
 
-**Sin overreach:** The simple model that a few static hubs constitute the CB2→Gi mechanism is **not supported** by the analyzed data. That does **not** mean CB2 is definitively a distributed network under all conditions — it means **that concrete explanation did not survive the dynamic test**.
+**Sin overreach:** The simple model that a few static hubs constitute the CB2→Gi mechanism is **not supported**. Five trajs + 1995 frames do **not** support a convergent MSM for A/B/C. That does **not** mean CB2 is definitively a distributed network — architecture A/B/C remains **NOT DECIDED**. Honest we-do-not-know.
 
-**Rigurosa:** NOT “A switch does not exist.” YES: “There is still insufficient evidence to reduce CB2 functional control to a unique switch or to a small persistent static skeleton.”
-
-**Regla de decisión (lock):** no correr preguntas por ser interesantes; solo si **discriminan** entre ≥2 hipótesis plausibles.
-
-**Gates:** **`P2 = READY_FOR_EXECUTION`** (dry @ `aaeec78`; **NOT executed**) = own MSM → convergencia → A/B/C (Dutta external only); P3/P4 blocked until landscape known; P5 membrane/cholesterol independent (not P1 rescue); P6 far. **Cortafuegos:** no modelar todas las capas a la vez. Al ejecutar: no reinterpretar Phase G / HU INDETERMINATE / CORE_TOPOLOGICAL_ONLY / P1_NOT_SUPPORTED. **First result to review = convergence.** **Postura (`bb7b57a`):** fenómeno no resuelto → experimento mínimo discriminante.
+**Gates:** P1 CLOSED (NOT_SUPPORTED); **P2 CLOSED (INSUFFICIENT_SAMPLING)** · A/B/C **ABORTED**; P3/P4/P6 BLOCKED; P5 HYPOTHESIS_READY (independent; not substitute). **Next = strategic resource allocation only** (sampling for P2 OR independent P5) — not “what script today?”
 
 ---
 
@@ -278,7 +250,9 @@ Proyecto congelado en una **frontera epistemológica**, **NO** porque el mecanis
 
 | Documento | Rol |
 |-----------|-----|
-| [RESEARCH_STATE.md](../../RESEARCH_STATE.md) | Flags / freeze (POST_P1_BOUNDARY_FROZEN; P2 READY_FOR_EXECUTION) |
+| [RESEARCH_STATE.md](../../RESEARCH_STATE.md) | Flags / freeze (`DEEP_PAUSE_SEALED`; acta P2) |
+| [p2_msm_convergence_report.md](../../results/msm_model/p2_msm_convergence_report.md) | **P2 Gate 1 evidence** (`2dcff23`) |
+| [implied_timescales.png](../../results/msm_model/implied_timescales.png) | ITS NON_CONVERGENT plot |
 | [CB2_DYNAMIC_INTERACTION_LAYERS.md](CB2_DYNAMIC_INTERACTION_LAYERS.md) | Mapa multicapa + giro a transiciones |
 | [DYNAMIC_REANALYSIS_PROTOCOL.md](DYNAMIC_REANALYSIS_PROTOCOL.md) | Pre-registro P1–P3 + P1_NULL |
 | [P2_STATE_ROUTE_PREGISTRATION.md](P2_STATE_ROUTE_PREGISTRATION.md) | P2 own MSM GPCRmd + gate convergencia → A/B/C |
@@ -286,17 +260,18 @@ Proyecto congelado en una **frontera epistemológica**, **NO** porque el mecanis
 | [HU308_HU433_PARADOX.md](HU308_HU433_PARADOX.md) | Smoum / Ganzoni; microestados |
 | [DOCKING_LIMITS_AND_GOVERNANCE.md](DOCKING_LIMITS_AND_GOVERNANCE.md) | Por qué P6 ≠ docking score |
 | Dual validation report | Ancla cfb2a51 — entrada estática a P1/P3 |
-| [results/network_core/p1_dynamic_hub_validation.md](../../results/network_core/p1_dynamic_hub_validation.md) | **P1 verdict** (GPCRmd only) |
+| [p1_dynamic_hub_validation.md](../../results/network_core/p1_dynamic_hub_validation.md) | **P1 verdict** (GPCRmd only) |
 
 ---
 
 ## Próximo paso
 
-1. **`P2 = READY_FOR_EXECUTION`** — dry frozen at `aaeec78`; **real MSM NOT EXECUTED** this docs-only turn.  
-2. When executed: own MSM on 5 WT GPCRmd → Gate1 convergencia → Gate2 A RED_ESTABLE / B RUTAS_POR_ESTADO / C DISTRIBUIDA; Dutta ≠ template. P3/P4 still gated on landscape. **`DECISION_RULE = DISCRIMINATION_ONLY`**.  
-3. **P5** stays **HYPOTHESIS_READY** (independent membrane line) — **P5_EXECUTION = BLOCKED_PENDING_DECISION**; not a substitute for failed Gate1.  
-4. **No** docking / de novo / MD nuevo / hub hunt / post-hoc cholesterol excuse.
+1. **`REPOSITORY = SEALED`** · **`DEEP_PAUSE = TRUE`** · **`COMPUTATION = PAUSED`** — no compute this turn.  
+2. **P2 closed:** `INSUFFICIENT_SAMPLING` @ `2dcff23`; A/B/C **ABORTED**; architecture **NOT DECIDED**.  
+3. **Human decision only:** invest in sampling required by P2 **OR** open independent membrane (P5) redesign — **NOT** “what script today?”  
+4. **P5** stays **HYPOTHESIS_READY** — not a substitute for failed Gate 1.  
+5. **No** docking / de novo / MD nuevo / hub hunt / network A/B/C / post-hoc excuses.
 
 ---
 
-*Fin RESEARCH_ROADMAP.md — P2 = READY_FOR_EXECUTION (dry @ aaeec78; NOT executed); convergencia antes de A/B/C; Dutta 6 states do not condition analysis.*
+*Fin RESEARCH_ROADMAP.md — ACTA P2: CLOSED (INSUFFICIENT_SAMPLING) @ 2dcff23; A/B/C ABORTED; DEEP_PAUSE SEALED; next = strategic resource allocation only.*
