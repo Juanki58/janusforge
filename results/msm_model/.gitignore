@@ -1,0 +1,2 @@
+# Regenerable featurization cache (large); rebuild via p2_msm_builder.py
+features_tm_ca_pairwise.npz
