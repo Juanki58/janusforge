@@ -7,6 +7,7 @@
 **Pre-registro técnico P1:** [`DYNAMIC_REANALYSIS_PROTOCOL.md`](DYNAMIC_REANALYSIS_PROTOCOL.md) · `P1_NULL` en [`scripts/network_core/dynamic_pipeline.py`](../../scripts/network_core/dynamic_pipeline.py)  
 **P1 deliverable:** [`results/network_core/p1_dynamic_hub_validation.md`](../../results/network_core/p1_dynamic_hub_validation.md) (tip `31a881c`)  
 **Self-test seco (andamiaje):** `python scripts/network_core/dynamic_pipeline.py --self-test` (tip técnico `b91b57c`)  
+**Mapa multicapa (docs only):** [`CB2_DYNAMIC_INTERACTION_LAYERS.md`](CB2_DYNAMIC_INTERACTION_LAYERS.md)  
 **Alias legado:** [`CB2_RESEARCH_ROADMAP.md`](CB2_RESEARCH_ROADMAP.md) → redirige aquí (evitar duplicación)
 
 ---
@@ -19,10 +20,10 @@
 | HU-308 / HU-433 | **INDETERMINATE** — no universal static local mode |
 | Static topology | **CORE_TOPOLOGICAL_ONLY** — clear aggregate hubs, no Gi enrichment |
 | P1 dynamic | **NOT_SUPPORTED** — six hubs not persistent dynamic skeleton (GPCRmd/1540 WT) |
-| P2 | **BLOCKED** — Dutta/Shukla MSM missing |
+| P2 | **BLOCKED** — Dutta/Shukla MSM missing; objeto → **transiciones** (docs only) |
 | P3 | **BLOCKED** |
 | P4 | **BLOCKED** — comparable CB1 missing |
-| P5 | **HYPOTHESIS_READY** — 0% vs 40% cholesterol design candidate; **NO execution** |
+| P5 | **HYPOTHESIS_READY** — rutas dinámicas entre estados (0% vs 40% chol); **NO execution** |
 
 ### Locks
 
@@ -139,14 +140,23 @@ Hubs fijos a priori: ALA79(2.49), ALA83(2.53), LEU287(7.41), ASN291(7.45), ASN29
 **Resultado P1 (2026-08-21, GPCRmd only):** **`P1_NOT_SUPPORTED`**. Channels A/B kept separate. Neither channel exceeded pre-registered null with reproducibility.  
 **Lectura estricta:** P1 **no** refuta causalidad biológica de hubs en sentido absoluto. P1 **sí** refuta que esos seis hubs constituyan un **esqueleto dinámico persistente bajo GPCRmd/1540 WT**. **Prohibido:** post hoc “faltaba colesterol”; salto hubs-failed → red plenamente distribuida. Deja abiertas A–D (distributed / state-dependent / routes ≠ static LigACN / lipid-dependent routes). P1 does **not** answer Gi / CB1 / MSM / membrane / chemical switch. **P2 not opened.**
 
-### P2 — ¿La arquitectura cambia entre microestados? **BLOCKED** (Dutta/Shukla MSM missing)
+### P2 — ¿La arquitectura cambia entre microestados / transiciones? **BLOCKED** (Dutta/Shukla MSM missing)
 
-**Pregunta:** ¿La comunicación es una subred fija o se redistribuye entre metaestables / microestados?
+**Pregunta (legado):** ¿La comunicación es una subred fija o se redistribuye entre metaestables / microestados?
 
-**Si NO:** red aproximadamente estable.  
+**Objeto evolucionado post-P1 (registro conceptual — no ejecución):** tras el fallo del esqueleto permanente de seis hubs, el objeto de P2 pasa de **hubs** a **transiciones**.
+
+| No | Sí |
+|----|-----|
+| “¿Qué residuo está siempre en el centro?” | “¿Qué interacciones cambian de forma sistemática al pasar de un estado a otro?” |
+| Buscar core permanente | Mapear rutas: conexiones que **aparecen, desaparecen o cambian de fuerza** en una transición funcional |
+
+**Después (más tarde):** qué parte controla el ligando vs la membrana (enlace a P5 refinada). Ver [`CB2_DYNAMIC_INTERACTION_LAYERS.md`](CB2_DYNAMIC_INTERACTION_LAYERS.md).
+
+**Si NO (arquitectura estable entre estados):** red aproximadamente estable.  
 **Si YES:** abrir P3 (cambios a interpretar funcionalmente).
 
-No elegir a priori entre las cuatro historias de arriba.
+No elegir a priori entre las cuatro historias de arriba. **`P2` sigue BLOCKED** pending MSM — esto **no** abre cómputo.
 
 ### P3 — ¿Los cambios se relacionan con Gαi2? **BLOCKED**
 
@@ -170,12 +180,15 @@ No elegir a priori entre las cuatro historias de arriba.
 
 **Pregunta (independiente; no rescata P1):** ¿La composición lipídica cambia la distribución de estados conformacionales y la red de comunicación de CB2?
 
-Design candidate (conceptual): **0% vs ~40% colesterol**. Ancla lit.: Yeliseev et al. (2021) MRI-2646, DOI [10.1038/s41598-021-83245-6](https://doi.org/10.1038/s41598-021-83245-6).
+**Pregunta refinada (preferida):** ¿El colesterol cambia las **rutas dinámicas** que CB2 usa para transitar entre estados?  
+(No meramente “¿cambia la actividad?” — eso ya tiene ancla lit.)
+
+Design candidate (conceptual): **0% vs ~40% colesterol**. Ancla lit.: Yeliseev et al. (2021) MRI-2646, DOI [10.1038/s41598-021-83245-6](https://doi.org/10.1038/s41598-021-83245-6), PMID [33580091](https://pubmed.ncbi.nlm.nih.gov/33580091/).
 
 **Si NO:** Nivel A suficiente.  
 **Si YES:** abrir P6 (química en contexto de membrana).
 
-Gobernanza: Nivel A = `ACTIVE_BASELINE`; Nivel B = `FUTURE_PRIORITY_HYPOTHESIS` (prep conceptual only); Nivel C archivado; **`P5 = HYPOTHESIS_READY`** · **`P5_EXECUTION = BLOCKED_PENDING_DECISION`**. **`POST_HOC_EXCUSES = FORBIDDEN`** — no usar colesterol como excusa de P1.
+Gobernanza: Nivel A = `ACTIVE_BASELINE`; Nivel B = `FUTURE_PRIORITY_HYPOTHESIS` (prep conceptual only); Nivel C archivado; heterómero A2A–CB2 = **Nivel-C-adjacent / futura** (DOI [10.1111/bph.16502](https://doi.org/10.1111/bph.16502); 2025 DOI [10.1016/j.bcp.2025.117280](https://doi.org/10.1016/j.bcp.2025.117280)) — **no** pipeline; **`P5 = HYPOTHESIS_READY`** · **`P5_EXECUTION = BLOCKED_PENDING_DECISION`**. **`POST_HOC_EXCUSES = FORBIDDEN`** — no usar colesterol como excusa de P1.
 
 ### P6 — ¿Puede una perturbación química desplazar?
 
@@ -206,13 +219,14 @@ Dual validation cfb2a51
 P1     DONE → P1_NOT_SUPPORTED / SIX_HUBS_DYNAMIC_SKELETON=REFUTED_UNDER_GPCRMD_WT
        (strict: not absolute biological-causality refute; A–D still open)
 P2     BLOCKED (Dutta/Shukla MSM missing — do NOT invent states from Morales)
+       object → TRANSITIONS (route dynamics between states; not permanent hub core)
 P3     BLOCKED
 P4     BLOCKED (comparable CB1 missing)
-P5     HYPOTHESIS_READY (0% vs 40% chol; Yeliseev MRI-2646) — NO execution
+P5     HYPOTHESIS_READY (0% vs 40% chol; refined = dynamic routes between states) — NO execution
 P6     no abierto (docking/de novo STOP)
-`
+```
 
-Anclas: cfb2a51 · c2869b0 · 2a1193c · tip técnico pipeline seco 91b57c · P1 real 31a881c / p1_dynamic_hub_validation.
+Anclas: cfb2a51 · c2869b0 · 2a1193c · tip técnico pipeline seco `b91b57c` · P1 real `31a881c` / p1_dynamic_hub_validation.
 
 ---
 
@@ -224,7 +238,7 @@ Proyecto congelado en una **frontera epistemológica**, **NO** porque el mecanis
 
 **Rigurosa:** NOT “A switch does not exist.” YES: “There is still insufficient evidence to reduce CB2 functional control to a unique switch or to a small persistent static skeleton.”
 
-**Gates futuros:** P2 needs MSM; P4 needs comparable CB1; P5 membrane/cholesterol independent (not P1 rescue); P6 only after earlier gates yield a solid enough mechanism. Al reabrir: no reinterpretar Phase G / HU INDETERMINATE / CORE_TOPOLOGICAL_ONLY / P1_NOT_SUPPORTED.
+**Gates futuros:** P2 needs MSM (objeto = **transiciones**, no hubs permanentes); P4 needs comparable CB1; P5 membrane/cholesterol independent (not P1 rescue; pregunta = rutas dinámicas); P6 only after earlier gates yield a solid enough mechanism. **Cortafuegos:** no modelar todas las capas de interacción a la vez. Al reabrir: no reinterpretar Phase G / HU INDETERMINATE / CORE_TOPOLOGICAL_ONLY / P1_NOT_SUPPORTED.
 
 ---
 
@@ -233,23 +247,23 @@ Proyecto congelado en una **frontera epistemológica**, **NO** porque el mecanis
 | Documento | Rol |
 |-----------|-----|
 | [RESEARCH_STATE.md](../../RESEARCH_STATE.md) | Flags / freeze (POST_P1_BOUNDARY_FROZEN) |
+| [CB2_DYNAMIC_INTERACTION_LAYERS.md](CB2_DYNAMIC_INTERACTION_LAYERS.md) | Mapa multicapa + giro a transiciones |
 | [DYNAMIC_REANALYSIS_PROTOCOL.md](DYNAMIC_REANALYSIS_PROTOCOL.md) | Pre-registro P1–P3 + P1_NULL |
 | [CB2_ALLOSTERIC_NETWORK.md](CB2_ALLOSTERIC_NETWORK.md) | Morales-Pastor, Dutta–Shukla, Trp258 |
 | [HU308_HU433_PARADOX.md](HU308_HU433_PARADOX.md) | Smoum / Ganzoni; microestados |
 | [DOCKING_LIMITS_AND_GOVERNANCE.md](DOCKING_LIMITS_AND_GOVERNANCE.md) | Por qué P6 ≠ docking score |
 | Dual validation report | Ancla cfb2a51 — entrada estática a P1/P3 |
-| 
-esults/network_core/p1_dynamic_hub_validation.md | **P1 verdict** (GPCRmd only) |
+| [results/network_core/p1_dynamic_hub_validation.md](../../results/network_core/p1_dynamic_hub_validation.md) | **P1 verdict** (GPCRmd only) |
 
 ---
 
 ## Próximo paso
 
 1. **Frontera congelada** — docs only; COMPUTATION = PAUSED.  
-2. **P2–P4 remain BLOCKED** (MSM / CB1). No auto-P2.  
-3. **P5** stays **HYPOTHESIS_READY** — conceptual prep only; **P5_EXECUTION = BLOCKED_PENDING_DECISION**; independent of P1 (does not rescue it).  
-4. **No** docking / de novo / MD / threshold retuning / post-hoc cholesterol excuse / Gαi2 reinterpretation.
+2. **P2–P4 remain BLOCKED** (MSM / CB1). Objeto P2 = transiciones (registrado). No auto-P2.  
+3. **P5** stays **HYPOTHESIS_READY** — rutas dinámicas entre estados; **P5_EXECUTION = BLOCKED_PENDING_DECISION**; independent of P1 (does not rescue it).  
+4. **No** docking / de novo / MD / threshold retuning / post-hoc cholesterol excuse / Gαi2 reinterpretation / modelar todas las capas a la vez.
 
 ---
 
-*Fin RESEARCH_ROADMAP.md — contrato científico: mapa causal por falsificación sucesiva; frontera epistemológica post-P1 — sin mecanismo resuelto.*
+*Fin RESEARCH_ROADMAP.md — contrato científico: mapa causal por falsificación sucesiva; capas dinámicas registradas; giro P2→transiciones; frontera epistemológica post-P1 — sin mecanismo resuelto; sin compute.*
