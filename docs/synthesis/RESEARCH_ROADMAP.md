@@ -92,7 +92,7 @@ Los hubs estáticos deben **vencer un null estructura-compatible pre-definido** 
 
 **Prohibido en P1:** `W = -ln(p)` universal; umbral a priori “>50% del flujo”; retuning de α / lista de hubs tras ver traj; llamar al resultado “switch”.
 
-**Estado ahora:** `DYNAMIC_REANALYSIS = BLOCKED_PENDING_TRAJECTORIES` — el self-test sintético valida el andamiaje; **no** sustituye traj reales.
+**Estado ahora:** **P1 COMPLETE** (`P1_NOT_SUPPORTED`) on GPCRmd/1540 WT only — artifacts `results/network_core/p1_dynamic_hub_validation.{json,md}`; CLI `scripts/network_core/p1_dynamic_hub_validation.py`. **P2–P6 BLOCKED** (Dutta–Shukla MSM data debt). STOP for joint review — no auto-P2.
 
 ---
 
@@ -109,7 +109,9 @@ Los hubs estáticos deben **vencer un null estructura-compatible pre-definido** 
 
 Hubs fijos a priori: ALA79(2.49), ALA83(2.53), LEU287(7.41), ASN291(7.45), ASN295(7.49), ARG302(8.46).
 
-### P2 — ¿La arquitectura cambia entre microestados?
+**Resultado P1 (2026-08-21, GPCRmd only):** **`P1_NOT_SUPPORTED`**. Channels A/B kept separate. Neither channel exceeded pre-registered null with reproducibility. Suggested story (non-forced): **distributed**. P1 does **not** answer Gi / CB1 / MSM / membrane / chemical switch. **P2 not opened.**
+
+### P2 — ¿La arquitectura cambia entre microestados? **BLOCKED** (MSM debt)
 
 **Pregunta:** ¿La comunicación es una subred fija o se redistribuye entre metaestables / microestados?
 
@@ -171,13 +173,14 @@ Dual validation cfb2a51
   → CORE_TOPOLOGICAL_ONLY ──► cierra “6 hubs = switch Gi”
         │
         ▼
-P1–P3  BLOCKED_PENDING_TRAJECTORIES   (null + self-test listos)
+P1     DONE → P1_NOT_SUPPORTED (GPCRmd/1540 WT; A⊥B)
+P2–P3  BLOCKED (Dutta–Shukla MSM missing — do NOT invent states from Morales)
 P4     BLOCKED
 P5     Q_membrana PARKED = Nivel B
 P6     no abierto (docking/de novo STOP)
 ```
 
-Anclas: `cfb2a51` · `c2869b0` · `2a1193c` · tip técnico pipeline seco `b91b57c`.
+Anclas: `cfb2a51` · `c2869b0` · `2a1193c` · tip técnico pipeline seco `b91b57c` · P1 real `p1_dynamic_hub_validation`.
 
 ---
 
@@ -191,15 +194,16 @@ Anclas: `cfb2a51` · `c2869b0` · `2a1193c` · tip técnico pipeline seco `b91b5
 | [`HU308_HU433_PARADOX.md`](HU308_HU433_PARADOX.md) | Smoum / Ganzoni; microestados |
 | [`DOCKING_LIMITS_AND_GOVERNANCE.md`](DOCKING_LIMITS_AND_GOVERNANCE.md) | Por qué P6 ≠ docking score |
 | Dual validation report | Ancla `cfb2a51` — entrada estática a P1/P3 |
+| `results/network_core/p1_dynamic_hub_validation.md` | **P1 verdict** (GPCRmd only) |
 
 ---
 
-## Próximo paso (prep only)
+## Próximo paso
 
-1. Mantener **`ROADMAP_ACTIVE_PREP`**.  
-2. **No** descongelar `DYNAMIC_REANALYSIS` hasta traj recuperables.  
-3. **No** abrir P5/P6 compute; **no** docking / de novo / MD.  
-4. Al reanudar: **P1 primero** (gate null + repro), una puerta del árbol a la vez.
+1. **Joint review of P1** (`P1_NOT_SUPPORTED`) — STOP; no auto-P2.  
+2. **P2–P6 remain BLOCKED** until Dutta–Shukla MSM (explicit data debt).  
+3. **No** docking / de novo / MD nuevo / threshold retuning / Gαi2 reinterpretation.  
+4. Author email = parallel contingency only (do not send for P1).
 
 ---
 

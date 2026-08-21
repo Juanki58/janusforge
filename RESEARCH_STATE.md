@@ -61,7 +61,9 @@ Working hypothesis (framing): CB2 activity appears to emerge from the interactio
 
 ```
 RESEARCH_STATUS           = ROADMAP_ACTIVE_PREP
-DYNAMIC_REANALYSIS        = BLOCKED_PENDING_TRAJECTORIES
+DYNAMIC_REANALYSIS        = P1_DONE_AWAITING_JOINT_REVIEW
+P1_VERDICT                = P1_NOT_SUPPORTED
+P2_P6                     = BLOCKED
 DE_NOVO_GENERATION        = STOP
 DOCKING_EXECUTION         = STOP
 COMPUTATION_ACTIVE        = NONE
@@ -81,7 +83,7 @@ PRIMARY_OBJECTIVE         = CHARACTERIZE_CB2_CONFORMATIONAL_CONTROL
 
 Preservados sin reabrir: **`STATIC_LIGACN = CORE_TOPOLOGICAL_ONLY`**, locks **docking / de novo**, **Niveles A/B/C**, **`Q_membrana` = P5 (PARKED)**, pregunta de reactivación `ligand+receptor+membrane → P(metastable states)` archivada, linaje **`cfb2a51` / `c2869b0` / `2a1193c`**.
 
-**Lectura de estado:** no búsqueda circular; **`ROADMAP_ACTIVE_PREP`** mientras `DYNAMIC_REANALYSIS = BLOCKED_PENDING_TRAJECTORIES` y el cómputo de análisis de traj sigue pausado hasta datos.
+**Lectura de estado:** **P1 ejecutado** (GPCRmd/1540 WT only) → **`P1_NOT_SUPPORTED`** — ver `results/network_core/p1_dynamic_hub_validation.md`. **P2–P6 BLOCKED** (deuda MSM Dutta–Shukla; **no** inventar metaestables desde traj Morales). STOP para revisión conjunta — sin auto-P2. Author email = contingencia paralela, no requerida para P1.
 
 ---
 
@@ -245,8 +247,8 @@ NIVEL_B_CHOLESTEROL_LIPIDS: FUTURE_PRIORITY_HYPOTHESIS  # no active compute; = P
 NIVEL_C_SECONDARY_MODULATORS: ARCHIVED_NOT_JUSTIFIED
 WORKING_HYPOTHESIS: LIGAND_x_LANDSCAPE_x_MEMBRANE  # weights unresolved; not a final tripartite model
 REACTIVATION_QUESTION: ligand+receptor+membrane -> P(metastable states)  # archived; DO NOT RUN as docking score hunt
-ARCHIVED_NEXT_CALCULATION: PARKED  # DO NOT RUN — see P1–P3; no MD; P1 only if dual paths ready
-DYNAMIC_REANALYSIS: BLOCKED_PENDING_TRAJECTORIES  # Morales ready; Dutta MSM missing; no W=-ln(p); no a priori >50%
+ARCHIVED_NEXT_CALCULATION: PARKED  # P1 executed on GPCRmd; P2+ need MSM — STOP for joint review
+DYNAMIC_REANALYSIS: P1_DONE_AWAITING_JOINT_REVIEW  # P1_NOT_SUPPORTED; P2–P6 BLOCKED (MSM debt)
 NEXT: P1_ONLY_IF_FILES_PRESENT  # currently NO — wait for Dutta MSM or PI gate change
 ROADMAP: docs/synthesis/RESEARCH_ROADMAP.md  # P1–P6 scientific contract + decision tree; alias CB2_RESEARCH_ROADMAP.md
 DRY_PIPELINE_SELFTEST: scripts/network_core/dynamic_pipeline.py --self-test  # b91b57c; scaffolding only

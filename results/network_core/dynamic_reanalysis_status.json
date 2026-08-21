@@ -1,60 +1,28 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-08-21T07:04:08Z",
-  "status": "BLOCKED_PENDING_TRAJECTORIES",
-  "verdict": "INDETERMINATE",
-  "blocked": true,
-  "recovery_attempt": {
-    "flag": "DONE",
-    "date_utc": "2026-08-21",
-    "campaign": "one_shot_gpcrmd1540_dutta_box",
-    "toward_READY_FOR_P1": "PARTIAL — Morales traj local; Dutta MSM missing",
-    "P1_can_start": false,
-    "log": "results/network_core/traj_recovery_attempt.md",
-    "blockers": [
-      "Box shared link jzooa0o27z1w9ha0h6va3i51ir7l38j4 HTTP 404 (all host variants)",
-      "ShuklaGroup README CB2 Box mirrors HTTP 404",
-      "dutta_shukla_2023/msm path not ready"
-    ],
-    "contingency_author_request_morales_pastor": "REGISTERED_DO_NOT_EMAIL"
-  },
-  "governance": {
-    "mode": "COMPUTATIONAL_PREREGISTRATION",
-    "DYNAMIC_REANALYSIS": "BLOCKED_PENDING_TRAJECTORIES",
-    "TRAJ_DOWNLOAD": "STOP",
-    "RECOVERY_ATTEMPT": "DONE",
-    "NEW_MD": "STOP",
-    "protocol": "docs/synthesis/DYNAMIC_REANALYSIS_PROTOCOL.md"
-  },
-  "pipeline_stages": [
-    "trajectories",
-    "normalize_select_frames",
-    "persistence_net",
-    "communication_net",
-    "microstates_msm",
-    "centrality_paths_robustness",
-    "mutagenesis_cross",
-    "cb1_comparison",
-    "optional_membrane_module"
-  ],
-  "p1_null_preregistered": {
-    "name": "exact_in_out_degree_multiset_match",
-    "n_null": 200,
-    "alpha": 0.05,
-    "primary_metric": "pct_disconn",
-    "tail": "upper",
-    "reproducibility": {
-      "min_replicas": 2,
-      "min_states_if_msm": 2,
-      "hub_rank_spearman_min": 0.7,
-      "note": "If reproducibility gate fails -> INDETERMINATE, not retune alpha"
+  "generated_utc": "2026-08-21T09:11:52Z",
+  "status": "P1_COMPLETE_STOP",
+  "verdict": "P1_NOT_SUPPORTED",
+  "blocked": false,
+  "P1": {
+    "complete": true,
+    "verdict": "P1_NOT_SUPPORTED",
+    "artifacts": {
+      "json": "results/network_core/p1_dynamic_hub_validation.json",
+      "md": "results/network_core/p1_dynamic_hub_validation.md"
     },
-    "forbidden": [
-      "universal_W=-ln(p)",
-      "a_priori_flow_gt_50pct",
-      "post_hoc_hub_list",
-      "call_result_switch"
-    ]
+    "channels_separate": true
+  },
+  "P2_P6": "BLOCKED",
+  "MSM_data_debt": "Dutta-Shukla MSM still missing \u2014 do NOT invent metastable states from Morales trajs",
+  "governance": {
+    "mode": "P1_EXECUTED_GPCRmd_ONLY",
+    "DYNAMIC_REANALYSIS": "P1_DONE_AWAITING_JOINT_REVIEW",
+    "NEW_MD": "STOP",
+    "DOCKING": "STOP",
+    "DE_NOVO": "STOP",
+    "protocol": "docs/synthesis/DYNAMIC_REANALYSIS_PROTOCOL.md",
+    "author_email_contingency": "REGISTERED_DO_NOT_EMAIL"
   },
   "hubs_fixed_a_priori": [
     {
@@ -88,50 +56,39 @@
       "bw": "8.46"
     }
   ],
-  "S_set": [
-    "8D0:1",
-    "SER:285",
-    "PHE:87"
-  ],
-  "T_set": [
-    "ARG:131",
-    "ASP:240",
-    "SER:303",
-    "SER:69"
-  ],
+  "p1_null_preregistered": {
+    "name": "exact_in_out_degree_multiset_match",
+    "n_null": 200,
+    "alpha": 0.05,
+    "primary_metric": "pct_disconn",
+    "tail": "upper",
+    "reproducibility": {
+      "min_replicas": 2,
+      "min_states_if_msm": 2,
+      "hub_rank_spearman_min": 0.7,
+      "note": "If reproducibility gate fails -> INDETERMINATE, not retune alpha"
+    },
+    "forbidden": [
+      "universal_W=-ln(p)",
+      "a_priori_flow_gt_50pct",
+      "post_hoc_hub_list",
+      "call_result_switch"
+    ],
+    "n_null_real_run": 1000
+  },
   "networks_required": {
-    "persistence": "W_contact = f(p_ij)",
-    "communication": "W_info = f(correlation / MI)",
-    "do_not_use_universal": "W = -ln(p)"
+    "persistence": "W_contact = f(p_ij) \u2014 SEPARATE",
+    "communication": "W_info = f(DCC_Ca) \u2014 SEPARATE",
+    "do_not_use_universal": "W = -ln(p)",
+    "combined_score": false
   },
   "path_check": {
-    "all_ready": false,
-    "paths": {
-      "morales_pastor_2025_trajectories": {
-        "path": "data/external/morales_pastor_2025/trajectories",
-        "directory_exists": true,
-        "has_manifest": true,
-        "has_traj_like_files": true,
-        "ready": true
-      },
-      "dutta_shukla_2023_msm": {
-        "path": "data/external/dutta_shukla_2023/msm",
-        "directory_exists": true,
-        "has_manifest": false,
-        "has_traj_like_files": false,
-        "ready": false
-      }
-    }
-  },
-  "optional_deps": {
-    "MDAnalysis": false,
-    "PyEMMA": false,
-    "networkx": true,
-    "numpy": true
+    "morales_gpcrmd_1540": true,
+    "dutta_shukla_msm": false
   },
   "artifacts": {
-    "status_json": "results/network_core/dynamic_reanalysis_status.json",
-    "selftest_json": "results/network_core/dynamic_pipeline_selftest.json",
-    "protocol": "docs/synthesis/DYNAMIC_REANALYSIS_PROTOCOL.md"
+    "p1_json": "results/network_core/p1_dynamic_hub_validation.json",
+    "p1_md": "results/network_core/p1_dynamic_hub_validation.md",
+    "status_json": "results/network_core/dynamic_reanalysis_status.json"
   }
 }
