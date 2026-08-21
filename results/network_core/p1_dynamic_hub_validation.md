@@ -2,14 +2,32 @@
 
 **Generated (UTC):** `2026-08-21T09:11:52Z`
 **Verdict:** `P1_NOT_SUPPORTED`
+**Freeze flag:** `SIX_HUBS_DYNAMIC_SKELETON = REFUTED_UNDER_GPCRMD_WT`
 **Note:** no signal above null in either channel; communication hub-rank Spearman also below pre-registered gate
-**Suggested story (non-forced):** `distributed` — One of persistent / persistent+plastic / distributed / state-specific only if supported; else null. state-specific requires MSM (P2 BLOCKED).
+
+## Freeze note (docs consolidation — language lock)
+
+P1 does **not** refute biological causality of hubs in an absolute sense.  
+P1 **does** refute the concrete hypothesis that these six static hubs constitute a **persistent dynamic skeleton under the analyzed trajectories** (GPCRmd/1540 WT).
+
+**Without overreach:** The simple model that a few static hubs constitute the CB2→Gi mechanism is **not supported** by the analyzed data. That does **not** mean CB2 is definitively a distributed network under all conditions — it means **that concrete explanation did not survive the dynamic test**.
+
+**Rigorous final conclusion:** NOT “A switch does not exist.” YES: “There is still insufficient evidence to reduce CB2 functional control to a unique switch or to a small persistent static skeleton.”
+
+Do **not** say “P1 failed because cholesterol was missing” (post hoc forbidden).  
+Do **not** jump: hubs failed → network is fully distributed. Strict reading: the six static hubs do not form a detectable persistent dynamic subnet under this analysis. Leaves open A–D (distributed / state-dependent / routes ≠ static LigACN / lipid-dependent routes).
+
+Project frozen at an **epistemological frontier**, **not** because the mechanism is solved. Future gates remain delimited (P2 MSM / P4 CB1 / P5 membrane independent / P6 only after solid mechanism). When reopened: do not reinterpret Phase G, HU INDETERMINATE, `CORE_TOPOLOGICAL_ONLY`, or this P1 verdict.
+
+P5 (lipid composition → conformational-state distribution + communication network; 0% vs 40% cholesterol design candidate; Yeliseev MRI-2646 DOI [10.1038/s41598-021-83245-6](https://doi.org/10.1038/s41598-021-83245-6)) is **independent** and does **not** rescue P1. **`P5_EXECUTION = BLOCKED_PENDING_DECISION`.**
+
+Authority: [`RESEARCH_STATE.md`](../../RESEARCH_STATE.md) · [`docs/synthesis/RESEARCH_ROADMAP.md`](../../docs/synthesis/RESEARCH_ROADMAP.md).
 
 ## Scope / governance
 
 - 5 WT GPCRmd/1540 replicas + psf/pdb; frozen six hubs.
 - Channels **A** (persistence) and **B** (communication) kept **separate**.
-- P2–P6 **BLOCKED**. No Dutta MSM, CB1, docking, de novo, Gαi2 reinterpretation.
+- P2–P4 **BLOCKED**. P5 **HYPOTHESIS_READY** / no execution. No Dutta MSM, CB1, docking, de novo, Gαi2 reinterpretation.
 - Positive P1 = reproducible signal above background — **not** proof hubs are 100% permanent.
 
 ## Inputs (SHA256 of 5 trajs)
@@ -100,12 +118,14 @@
 
 ## P1 does NOT answer
 
+- Absolute biological causality of hubs
+- Whether the network is fully distributed (A–D remain open)
 - Gi control
 - CB2-specificity
 - MSM state changes
-- membrane
+- membrane / cholesterol rescue of P1
 - chemical switch
 
 ---
 
-*End P1 report. STOP — no P2.*
+*End P1 report. STOP — no P2; no P5 compute.*
