@@ -1,16 +1,34 @@
 # RESEARCH STATE — Janusforge CB₂ (repositorio sellado — DEEP_PAUSE)
 
-**Fecha:** 2026-08-21  
+**Fecha:** 2026-09-09 (satellite X8/X1); acta P2 2026-08-21  
 **Rama:** `feat/cb2-hubs-functional-topology-test`  
-**Tipo:** **DOCUMENTATION ONLY** — acta de cierre P2 + congelación profunda; **`REPOSITORY = SEALED`**; **no** compute, **no** redes A/B/C, **no** P5 execution, **no** docking, **no** de novo, **no** MD/MSM nuevo  
+**Tipo:** **DEEP_PAUSE** con **excepción acotada** (2026-09-09): solo experimentos satélite **X8** + **X1** sobre datos GPCRmd WT existentes. **`P2_MSM_TRANSITIONS` sigue CLOSED (INSUFFICIENT_SAMPLING)**; **A/B/C no reabiertos**; **no** P5 / docking / de novo / hub hunt / rescate post hoc de P1.  
 **Objetivo primario:** **caracterizar el mecanismo de control conformacional de CB2** (switch local, red distribuida, o arquitectura estado-dependiente — cualquiera es resultado válido). **No** es objetivo principal “encontrar el switch.”  
 **Anclas de linaje (preservar):** `cfb2a51` (dual-test limpio → topología-only) · `c2869b0` (jerarquía ambiental A/B/C + `Q_membrana` parked) · `2a1193c` (reposo científico / frontera) · `31a881c` (P1 GPCRmd) · **`bb7b57a`** (postura epistémica) · `aaeec78` (P2 dry) · **`2dcff23`** (P2 MSM convergencia / ITS)  
 **Roadmap P1–P6 (contrato científico):** [`docs/synthesis/RESEARCH_ROADMAP.md`](docs/synthesis/RESEARCH_ROADMAP.md) · alias [`docs/synthesis/CB2_RESEARCH_ROADMAP.md`](docs/synthesis/CB2_RESEARCH_ROADMAP.md)  
 **P1 deliverable:** [`results/network_core/p1_dynamic_hub_validation.md`](results/network_core/p1_dynamic_hub_validation.md)  
 **P2 evidence:** [`results/msm_model/p2_msm_convergence_report.md`](results/msm_model/p2_msm_convergence_report.md) · [`results/msm_model/implied_timescales.png`](results/msm_model/implied_timescales.png) · builder `scripts/network_core/p2_msm_builder.py` @ **`2dcff23`**  
+**Satellite discrimination (2026-09-09):** [`docs/synthesis/EXPERIMENT_X8_REDUCED_FEATURIZATION.md`](docs/synthesis/EXPERIMENT_X8_REDUCED_FEATURIZATION.md) · [`docs/synthesis/EXPERIMENT_X1_MEAN_VS_VARIANCE.md`](docs/synthesis/EXPERIMENT_X1_MEAN_VS_VARIANCE.md)  
 **Pipeline seco / self-test:** `python scripts/network_core/dynamic_pipeline.py --self-test` (andamiaje `b91b57c`; no sustituye traj)  
 **Bitácora extendida:** [`docs/JANUSFORGE_RESEARCH_STATE.md`](docs/JANUSFORGE_RESEARCH_STATE.md)  
 **Puntero síntesis:** [`docs/cb2_mechanistic_frontier_synthesis.md`](docs/cb2_mechanistic_frontier_synthesis.md) (este archivo es la autoridad de freeze / flags)
+
+---
+
+## SATELLITE DISCRIMINATION — X8 / X1 (2026-09-09)
+
+**Authorization:** deep pause lifted **only** for these two closed experiments on existing GPCRmd WT data.
+
+| Exp | Question | Verdict | Evidence |
+|-----|----------|---------|----------|
+| **X8** | Same 1995 frames: does reduced featurization (24 Cα pairs) improve ITS vs high-D baseline? | **`X8_SAMPLING_LIMITED`** | [`results/msm_model/x8_reduced_featurization_report.md`](results/msm_model/x8_reduced_featurization_report.md) |
+| **X1** | Do high **variance** contacts enrich LigACN/hub-nbhd more than high **mean**? | **`X1_MEAN_ALIGNS_STATIC`** | [`results/network_core/x1_mean_vs_variance_report.md`](results/network_core/x1_mean_vs_variance_report.md) |
+
+**X8 key numbers:** ITS still `NON_CONVERGENT` (rel_change≈0.67); connected states stay 25/lag (better than baseline collapse) but **fails** pre-registered material-improvement flattening clause → sampling, not representation, remains the Gate-1 bottleneck under locked criteria.
+
+**X1 key numbers:** top-200 mean ∩ hub-nbhd = **25** (p≈0.001 vs null); top-200 variance ∩ hub-nbhd = **0** (p=1.0). Descriptive only — not a new switch / not P1 rescue.
+
+**Locks unchanged:** `P2_MSM_TRANSITIONS = CLOSED (INSUFFICIENT_SAMPLING)` · `P2_NETWORK_A_B_C = ABORTED` · architecture A/B/C **NOT DECIDED** · no cholesterol post-hoc of P1.
 
 ---
 
@@ -63,6 +81,8 @@ Evita expansión infinita del proyecto. Interés ≠ umbral de reopen. Postura a
 | Static topology | **CORE_TOPOLOGICAL_ONLY** — clear aggregate hubs, no Gi enrichment |
 | P1 dynamic | **CLOSED (NOT_SUPPORTED)** — six hubs **not** a persistent dynamic skeleton under analyzed traj (GPCRmd/1540 WT) |
 | P2 MSM transitions | **CLOSED (INSUFFICIENT_SAMPLING)** — ITS non-convergent; 5 trajs + 1995 frames insufficient for convergent MSM |
+| X8 reduced feat. | **`X8_SAMPLING_LIMITED`** — satellite; ITS still NON_CONVERGENT under 24-D set (does **not** reopen P2) |
+| X1 mean vs var | **`X1_MEAN_ALIGNS_STATIC`** — satellite; mean ranks enrich hub-nbhd, variance does not |
 | P2 network A/B/C | **ABORTED** — no network analysis without convergent MSM |
 | P3 | **BLOCKED** |
 | P4 | **BLOCKED** |

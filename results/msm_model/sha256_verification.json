@@ -10,7 +10,7 @@
       "expected_sha256": "fce9db151fbf5f7f0ed2b235ff0fd5d962dd8da91fe97afa34f675ab8e2f02e1",
       "sha_ok": true,
       "status": "OK",
-      "sha_reused_from_cache": false
+      "sha_reused_from_cache": true
     },
     {
       "path": "gpcrmd_dyn2126/24307_trj_2126.xtc",
@@ -20,7 +20,7 @@
       "expected_sha256": "1fe13c425c67dd1325208af71131b34fdc3407b868f8c2489930c3d81e53e134",
       "sha_ok": true,
       "status": "OK",
-      "sha_reused_from_cache": false
+      "sha_reused_from_cache": true
     },
     {
       "path": "gpcrmd_dyn2126/24308_trj_2126.xtc",
@@ -30,7 +30,7 @@
       "expected_sha256": "6fef31e2ae0e10eac4590be5b9e205a5b29e3b96d4ee64cc0227dd39c3628be4",
       "sha_ok": true,
       "status": "OK",
-      "sha_reused_from_cache": false
+      "sha_reused_from_cache": true
     },
     {
       "path": "gpcrmd_dyn2126/24309_trj_2126.xtc",
@@ -40,7 +40,7 @@
       "expected_sha256": "598ca435644396c1e2503d94d5b75e2469307effe1790a68cc490971b44eadd2",
       "sha_ok": true,
       "status": "OK",
-      "sha_reused_from_cache": false
+      "sha_reused_from_cache": true
     },
     {
       "path": "gpcrmd_dyn2126/24310_trj_2126.xtc",
@@ -50,7 +50,7 @@
       "expected_sha256": "fec3d8115a3a0d47bc45de20fd15baee5d21c0c46d3599e3970b9c4d08953f3d",
       "sha_ok": true,
       "status": "OK",
-      "sha_reused_from_cache": false
+      "sha_reused_from_cache": true
     },
     {
       "path": "gpcrmd_dyn2126/24311_trj_2126.xtc",
@@ -60,7 +60,7 @@
       "expected_sha256": "467c225dea6cca37e94fd7e7521d406446c32fecf34f46e7d98b303290efa99b",
       "sha_ok": true,
       "status": "OK",
-      "sha_reused_from_cache": false
+      "sha_reused_from_cache": true
     },
     {
       "path": "gpcrmd_dyn2126/tmp_dyn_0_2417.pdb",
@@ -70,7 +70,7 @@
       "expected_sha256": "a6468f3e0a93547b71a0a300b8ad1e9d664d30b62b4789dfcf53728033436350",
       "sha_ok": true,
       "status": "OK",
-      "sha_reused_from_cache": false
+      "sha_reused_from_cache": true
     }
   ]
 }
