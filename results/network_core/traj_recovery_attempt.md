@@ -91,3 +91,39 @@ Paper states additional data may be available on request from authors if not in 
 4. **Author-request contingency** for Morales-Pastor extras: registered, **not** executed.
 
 `RECOVERY_ATTEMPT = DONE` (one-shot closed).
+
+---
+
+## 5. Re-probe 2026-09-10 — Dutta–Shukla Box (listing live; download blocked)
+
+**Outcome:** listing restored; **no MSM binaries recovered**.
+
+| Check | Result |
+|-------|--------|
+| Share page GET (follow redirects) | **200** → `uofi.app.box.com`; folder `activation_paper_github` |
+| `Final_MSM` folder `/folder/199808326395` | **200**; 4 files (CB1/CB2 `*_state_prob.pkl`, `*_msm_feature_final_clustering.pkl`) |
+| Download `CB2_state_prob.pkl` (`rm=box_download_shared_file`) | **403** HTML: *“The user hosting this content is out of bandwidth.”* (`error_message_bandwidth`) |
+| cursor-ide-browser MCP | Tab create works briefly; navigate/lock fail (“No browser tab available” / view not found) — UI download not possible in-agent |
+
+**Local still empty of binaries:** `data/external/dutta_shukla_2023/msm/` (updated `BLOCKED_README.md` only).  
+**Fallback:** human email (draft in `docs/synthesis/DATA_REQUEST_DUTTA_SHUKLA_MSM.md`) — ask authors to restore Box bandwidth or send `Final_MSM` CB2 objects. Manual browser download likely hits the same bandwidth gate.
+
+---
+
+## 6. Mirror sweep 2026-09-10 — exhaustive negative (no working download)
+
+**Outcome:** data deposit **exists and is listable**; **still undownloadable**.
+
+| Class | Tried | Result |
+|-------|-------|--------|
+| Official Box + 10 README Box IDs (MSM/features/traj) | GET listing | **200** |
+| Same shares file download (`box_download_shared_file`) | CB2 `state_prob` / clustering / bootstrap msm pkl / tiny PDB | **403** `error_message_bandwidth` |
+| Nature HTML + PMC | Data availability | **only** `jzooa0o27z1w9ha0h6va3i51ir7l38j4` |
+| Nature SI MOESM1/2 | PDF GET | **200** (text/reporting only; no MSM bytes; no extra URLs in SI PDF strings) |
+| Wayback CDX / snapshot | official Box | **301 redirect snapshots only** (2023-05-06); no file archive |
+| Zenodo / OSF / Figshare | API search | no Commun Biol 2023 MSM deposit |
+| Dryad | one hit | **wrong paper** (NPS/TRAM) |
+| IDB / IDEALS | from this host | **403**; IDB-6705697 ≠ this paper |
+| GitHub ShuklaGroup `Cannabinoid_activation` (+ `Dutta_Shukla_Cannabinoid_2023a`, EndoCannabinoid_2025) | trees/releases | code/figures only; other papers’ Box links |
+
+Full endpoint table: `data/external/dutta_shukla_2023/msm/BLOCKED_README.md`.
