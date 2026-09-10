@@ -70,6 +70,10 @@ results/hits/qiu_pyrazole*
 *.tsv
 *.xlsx
 
+# Dutta & Shukla 2023 Main_Figure_6 representative CB2 state PDBs (provenance)
+!data/external/dutta_shukla_2023/main_figure_6/
+!data/external/dutta_shukla_2023/main_figure_6/*.pdb
+
 # Small curated seed library (operational chemome map; not a mass hit table)
 !data/libraries/quimioma_semillas.csv
 
