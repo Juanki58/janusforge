@@ -1,17 +1,42 @@
 # RESEARCH STATE — Janusforge CB₂ (repositorio sellado — DEEP_PAUSE)
 
-**Fecha:** 2026-09-09 (satellite X8/X1); acta P2 2026-08-21  
+**Fecha:** 2026-09-10 (external Dutta Final_MSM); satellite X8/X1 2026-09-09; acta P2 2026-08-21  
 **Rama:** `feat/cb2-hubs-functional-topology-test`  
-**Tipo:** **DEEP_PAUSE** con **excepción acotada** (2026-09-09): solo experimentos satélite **X8** + **X1** sobre datos GPCRmd WT existentes. **`P2_MSM_TRANSITIONS` sigue CLOSED (INSUFFICIENT_SAMPLING)**; **A/B/C no reabiertos**; **no** P5 / docking / de novo / hub hunt / rescate post hoc de P1.  
+**Tipo:** **DEEP_PAUSE** con excepciones acotadas: (2026-09-09) satélites **X8**/**X1** sobre GPCRmd WT; (2026-09-10) **`EXTERNAL_COMPARISON`** cinética sobre pickles Dutta Final_MSM (PI authorized). **`P2_MSM_TRANSITIONS` sigue CLOSED (INSUFFICIENT_SAMPLING)**; arquitectura estructural A/B/C **NOT DECIDED**; **no** P5 / docking / de novo / hub hunt / rescate post hoc de P1.  
 **Objetivo primario:** **caracterizar el mecanismo de control conformacional de CB2** (switch local, red distribuida, o arquitectura estado-dependiente — cualquiera es resultado válido). **No** es objetivo principal “encontrar el switch.”  
 **Anclas de linaje (preservar):** `cfb2a51` (dual-test limpio → topología-only) · `c2869b0` (jerarquía ambiental A/B/C + `Q_membrana` parked) · `2a1193c` (reposo científico / frontera) · `31a881c` (P1 GPCRmd) · **`bb7b57a`** (postura epistémica) · `aaeec78` (P2 dry) · **`2dcff23`** (P2 MSM convergencia / ITS)  
 **Roadmap P1–P6 (contrato científico):** [`docs/synthesis/RESEARCH_ROADMAP.md`](docs/synthesis/RESEARCH_ROADMAP.md) · alias [`docs/synthesis/CB2_RESEARCH_ROADMAP.md`](docs/synthesis/CB2_RESEARCH_ROADMAP.md)  
 **P1 deliverable:** [`results/network_core/p1_dynamic_hub_validation.md`](results/network_core/p1_dynamic_hub_validation.md)  
 **P2 evidence:** [`results/msm_model/p2_msm_convergence_report.md`](results/msm_model/p2_msm_convergence_report.md) · [`results/msm_model/implied_timescales.png`](results/msm_model/implied_timescales.png) · builder `scripts/network_core/p2_msm_builder.py` @ **`2dcff23`**  
 **Satellite discrimination (2026-09-09):** [`docs/synthesis/EXPERIMENT_X8_REDUCED_FEATURIZATION.md`](docs/synthesis/EXPERIMENT_X8_REDUCED_FEATURIZATION.md) · [`docs/synthesis/EXPERIMENT_X1_MEAN_VS_VARIANCE.md`](docs/synthesis/EXPERIMENT_X1_MEAN_VS_VARIANCE.md)  
+**External Dutta MSM (2026-09-10):** [`docs/synthesis/EXPERIMENT_EXTERNAL_DUTTA_MSM.md`](docs/synthesis/EXPERIMENT_EXTERNAL_DUTTA_MSM.md) · [`results/network_core/external_dutta_msm_compare.md`](results/network_core/external_dutta_msm_compare.md)  
 **Pipeline seco / self-test:** `python scripts/network_core/dynamic_pipeline.py --self-test` (andamiaje `b91b57c`; no sustituye traj)  
 **Bitácora extendida:** [`docs/JANUSFORGE_RESEARCH_STATE.md`](docs/JANUSFORGE_RESEARCH_STATE.md)  
 **Puntero síntesis:** [`docs/cb2_mechanistic_frontier_synthesis.md`](docs/cb2_mechanistic_frontier_synthesis.md) (este archivo es la autoridad de freeze / flags)
+
+---
+
+## EXTERNAL COMPARISON — Dutta & Shukla 2023 Final_MSM (2026-09-10)
+
+**Authorization:** PI authorized kinetic-only comparison of recovered Box `Final_MSM` pickles. **Not** a reopen of our P2 Gate-1.
+
+| Item | Status |
+|------|--------|
+| Data | `data/external/dutta_shukla_2023/msm/` — CB1/CB2 `*_state_prob.pkl` + `*_msm_feature_final_clustering.pkl` (`MANIFEST.json` SHA OK; `FINAL_MSM_COMPLETE`) |
+| Trajectories | **Still missing** — no coords → no LigACN / communication nets per metastable state |
+| Pre-reg | [`docs/synthesis/EXPERIMENT_EXTERNAL_DUTTA_MSM.md`](docs/synthesis/EXPERIMENT_EXTERNAL_DUTTA_MSM.md) |
+| Runner | `scripts/network_core/external_dutta_msm_compare.py` |
+| Report | [`results/network_core/external_dutta_msm_compare.md`](results/network_core/external_dutta_msm_compare.md) · `.json` |
+
+**Verdicts:**
+
+| Label | Value |
+|-------|--------|
+| Kinetics CB1 vs CB2 | **`EXT_KINETICS_CB1_CB2_DISTINCT`** (L1(π)≈1.09, boot p=0; populations anti-aligned Spearman ρ≈−0.26) |
+| Soft kinetic pattern (lag=1 counts) | **`EXT_KINETIC_PATTERN_A`** — caveat: lag-1 metastable labels are near-diagonal sticky; pattern mainly reflects stickiness, not structural networks |
+| Structural A/B/C | **`EXT_STRUCTURAL_ABC = INDETERMINATE_NO_TRAJECTORIES`** |
+
+**Locks unchanged:** `P2_MSM_TRANSITIONS = CLOSED (INSUFFICIENT_SAMPLING)` · `P2_NETWORK_A_B_C = ABORTED` · structural architecture A/B/C **NOT DECIDED** · Dutta K=6 **not** a fitting template for our GPCRmd MSM.
 
 ---
 
@@ -83,6 +108,7 @@ Evita expansión infinita del proyecto. Interés ≠ umbral de reopen. Postura a
 | P2 MSM transitions | **CLOSED (INSUFFICIENT_SAMPLING)** — ITS non-convergent; 5 trajs + 1995 frames insufficient for convergent MSM |
 | X8 reduced feat. | **`X8_SAMPLING_LIMITED`** — satellite; ITS still NON_CONVERGENT under 24-D set (does **not** reopen P2) |
 | X1 mean vs var | **`X1_MEAN_ALIGNS_STATIC`** — satellite; mean ranks enrich hub-nbhd, variance does not |
+| External Dutta Final_MSM | **`EXT_KINETICS_CB1_CB2_DISTINCT`** — populations/dwells differ; structural A/B/C **`INDETERMINATE_NO_TRAJECTORIES`** |
 | P2 network A/B/C | **ABORTED** — no network analysis without convergent MSM |
 | P3 | **BLOCKED** |
 | P4 | **BLOCKED** |
@@ -121,7 +147,7 @@ Safe conclusion only: five trajs + 1995 aggregated frames do **not** provide eno
 | **B** | **RUTAS_POR_ESTADO** | **Rutas distintas** dominan en estados distintos | **NOT DECIDED** (aborted) |
 | **C** | **DISTRIBUIDA** | Comunicación **altamente distribuida** sin rutas dominantes | **NOT DECIDED** (aborted) |
 
-**Dutta & Shukla:** external comparison later only — **6 states do not condition analysis** (K≠6 ≠ automatic error).  
+**Dutta & Shukla:** Final_MSM pickles recovered; external kinetic comparison **executed** (`EXT_KINETICS_CB1_CB2_DISTINCT`); structural A/B/C still **`INDETERMINATE_NO_TRAJECTORIES`**; **6 states do not condition** our GPCRmd MSM (K≠6 ≠ automatic error).  
 P1 closed hub hypothesis; P2 Gate 1 closed insufficient sampling; P2 A/B/C **ABORTED**; P3/P4/P6 **BLOCKED**; P5 independent membrane line (**HYPOTHESIS_READY**, not P2 substitute).  
 Pre-registro: [`docs/synthesis/P2_STATE_ROUTE_PREGISTRATION.md`](docs/synthesis/P2_STATE_ROUTE_PREGISTRATION.md) · dry: `scripts/network_core/p2_dry_pipeline.py` · MSM: `scripts/network_core/p2_msm_builder.py` @ **`2dcff23`**.  
 Ancla de postura: `bb7b57a`.
@@ -204,7 +230,7 @@ Working hypothesis (framing): CB2 activity appears to emerge from the interactio
 | Fin de búsqueda ciega (de novo / filtros empíricos de docking) | **`DOCKING_CAMPAIGNS` / `DE_NOVO_GENERATION` / `OPEN_ENDED_SEARCHES` = STOP** |
 | Interpretación `CORE_TOPOLOGICAL_ONLY` | Autopista estática TM7–H8 / base TM2 = **flujo mecánico basal candidato**; selección fina de vía requiere dinámica temporal + acoplamiento de membrana — **[SUPPORTED_INTERPRETATION]**, **no** demostrado por Test B |
 | Economía de recursos | Entrada futura = **reanálisis de datos públicos** (no campaña ciega nueva) |
-| Proveniencia | **`DATA_PROVENANCE_AUDIT: PARTIAL` — GPCRmd/1540 WT traj recovered locally; Dutta–Shukla Box MSM still HTTP 404** (`RECOVERY_ATTEMPT=DONE`; Sink T from Methods; MOESM2 recovered) |
+| Proveniencia | **`DATA_PROVENANCE_AUDIT: PARTIAL`** — GPCRmd/1540 WT traj local; Dutta–Shukla **Final_MSM pickles recovered** (2026-09-10); **trajectories still missing** |
 
 ---
 
@@ -384,7 +410,8 @@ EMPIRICAL_FOUNDATION:
   STATIC_LIGACN_TOPOLOGY: CORE_TOPOLOGICAL_ONLY  # cfb2a51 — aggregate hubs, no Gi enrichment
   P1_DYNAMIC_HUBS: NOT_SUPPORTED  # six hubs ≠ persistent dynamic skeleton under GPCRmd/1540 WT
   P2_MSM_CONVERGENCE: INSUFFICIENT_SAMPLING  # 2dcff23; ITS NON_CONVERGENT; 5 trajs + 1995 frames
-  DATA_PROVENANCE_AUDIT: PARTIAL  # GPCRmd/1540 WT local; Dutta–Shukla Box MSM still missing
+  DATA_PROVENANCE_AUDIT: PARTIAL  # GPCRmd/1540 WT local; Dutta Final_MSM pickles recovered 2026-09-10; trajs still missing
+  EXTERNAL_DUTTA_MSM_KINETICS: EXT_KINETICS_CB1_CB2_DISTINCT  # 2026-09-10; structural ABC INDETERMINATE_NO_TRAJECTORIES
 THEORETICAL_MODEL:
   FRAMEWORK: TRIPARTITE_WORKING_HYPOTHESIS  # NOT demonstrated model
   NOTE: ligand × conformational ensemble × lipid bilayer; weights unresolved
@@ -410,7 +437,7 @@ P2_NETWORK_A_B_C: ABORTED
 P2_OBJECT: OWN_MSM_GPCRMD_WT_THEN_ABC
 P2_GATE_1: CONVERGENCE_FAILED  # NO → P2_INSUFFICIENT_SAMPLING → STOP (taken @ 2dcff23)
 P2_GATE_2: ABORTED  # A/B/C not run without convergent MSM
-DUTTA_SHUKLA: EXTERNAL_COMPARISON_ONLY_NOT_TEMPLATE  # 6 states do not condition analysis
+DUTTA_SHUKLA: EXTERNAL_COMPARISON_EXECUTED_KINETICS_ONLY  # Final_MSM recovered; NOT template; structural ABC still INDETERMINATE_NO_TRAJECTORIES
 
 P3_GALPHA_I2: BLOCKED
 P4_CB1_COMPARISON: BLOCKED
