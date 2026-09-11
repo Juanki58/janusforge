@@ -87,9 +87,17 @@ results/hits/qiu_pyrazole*
 *.zip
 *.tar
 *.7z
+*.nc
+*.xtc
+*.dcd
+*.trr
 tools/vina.exe
 tools/vina
 tools/*.exe
+
+# Box probe HTML error stubs (keep JSON/README only)
+data/external/**/_probe/*.bin
+data/external/**/_probe/*.html
 
 # Logs / checkpoints
 *.log

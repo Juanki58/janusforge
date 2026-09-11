@@ -5,7 +5,7 @@
 - Code: https://github.com/ShuklaGroup/Cannabinoid_activation
 - MSM / features / trajectories Box ID: `jzooa0o27z1w9ha0h6va3i51ir7l38j4`
 
-**Estado:** `FINAL_MSM_COMPLETE` — cuarteto Box `Final_MSM` (CB1/CB2 `*_state_prob.pkl` + `*_msm_feature_final_clustering.pkl`) recuperado por **descarga de usuario en navegador** (2026-09-10). Scripts Box pueden seguir en 403 bandwidth. **Trayectorias** aún no descargadas. Ver `msm/BLOCKED_README.md` + `msm/MANIFEST.json`. Listo para comparación externa opcional cuando el PI autorice (P2 real no depende de esto).
+**Estado:** `FINAL_MSM_COMPLETE` — cuarteto Box `Final_MSM` (CB1/CB2 `*_state_prob.pkl` + `*_msm_feature_final_clustering.pkl`) recuperado por **descarga de usuario en navegador** (2026-09-10). Scripts Box pueden seguir en 403 bandwidth. **Trayectorias CB2_APO:** intento 2026-09-11 (PI autorizado) — listado OK, descarga **403 bandwidth**; **0 bytes**. Ver `trajectories/CB2_APO/INGEST_README.md`. MSM: `msm/BLOCKED_README.md` + `msm/MANIFEST.json`. Listo para comparación externa opcional cuando el PI autorice (P2 real no depende de esto).
 
 **Probe 2026-09-10 — folder `173210122715`:** es **`Main_Figure_7`** (~492 KB, 72 archivos; docking/volumen/scripts Fig. 7; **no** PDBs estructurales ni trayectorias). Descarga automatizada **403 bandwidth**. Inventario: `main_figure_7/BLOCKED_README.md`.
 

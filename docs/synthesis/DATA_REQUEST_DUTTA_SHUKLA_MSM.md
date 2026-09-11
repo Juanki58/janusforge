@@ -1,8 +1,8 @@
 # Data request — Dutta & Shukla 2023 MSM (DRAFT)
 
-**Status:** `FINAL_MSM_RECOVERED` — email draft **obsolete for Final_MSM**; keep only if trajs / bandwidth restore still needed  
+**Status:** `FINAL_MSM_RECOVERED` — traj ingest **blocked** 2026-09-11 (CB2_APO scripted download **HTTP 403** `error_message_bandwidth`); email draft still relevant **only for trajectories / bandwidth restore**  
 **Action:** draft only — **do NOT email** from automation  
-**Date:** 2026-08-21 (updated 2026-09-10)  
+**Date:** 2026-08-21 (updated 2026-09-11)  
 **Branch:** `feat/cb2-hubs-functional-topology-test`  
 **P2 role (reformulated):** Dutta & Shukla is **NOT** required to run P2. Real P2 uses **own MSM** on 5 WT GPCRmd Morales-Pastor trajs. Final_MSM pickles are **READY for optional external comparison when PI authorizes** (never a fitting template; different K is allowed).
 
@@ -21,10 +21,11 @@
 | Reprobe 2026-09-10 | Listing **HTTP 200** (`Final_MSM`: `CB2_state_prob.pkl` ~64 MB, `CB2_msm_feature_final_clustering.pkl` ~11 MB, CB1 twins). File download **HTTP 403** — Box body: *“The user hosting this content is out of bandwidth.”* (`error_message_bandwidth`). cursor-ide-browser MCP could not keep a tab for UI download. Manual browser likely same gate. Email remains fallback. Details: `data/external/dutta_shukla_2023/msm/BLOCKED_README.md` |
 | Mirror sweep 2026-09-10 | All README Box IDs (`iw1wlcdg…`, `xoiuicdp…`, `ix0hhvbw…`, `vyakobq2…`, 6 traj shares) list **200**, downloads **403 bandwidth** (even tiny PDBs). Nature/PMC Data availability = **only** official Box; SI MOESM1/2 = PDFs only. Wayback = 301s only. Zenodo/OSF/Figshare/IDB/IDEALS/RG: no 2023 MSM mirror (Dryad hit = other NPS paper; IDB-6705697 = 2026 endo). GitHub code-only. |
 | User browser recovery 2026-09-10 | Full `Final_MSM` quartet copied to `data/external/dutta_shukla_2023/msm/` (sizes match Box listing). Scripted downloads may still 403. **Trajectories not downloaded.** Provenance: `msm/BLOCKED_README.md`, `msm/MANIFEST.json`. |
+| CB2_APO ingest attempt 2026-09-11 | PI authorized scripted download. Disk ~1518 GB free. Listing **200** (`CB2_APO`, ~249 pages, mostly `*.nc`). Tiny-file GETs (`list` 201 B, `mv_short_file` 121 B) → **403 bandwidth**. **0 traj bytes.** Stopped (no retry thrash). Note: `trajectories/CB2_APO/INGEST_README.md`. |
 
-**Need (remaining):** optional **trajectories** only if frame-level reanalysis of authors’ MD is required; Final_MSM state/clustering objects are already local.
+**Need (remaining):** optional **trajectories** only if frame-level reanalysis of authors’ MD is required; Final_MSM state/clustering objects are already local. **Blocked on Box host bandwidth** until restore / mirror / author copy.
 
-**Local landing path:** `data/external/dutta_shukla_2023/msm/` + `MANIFEST.json`
+**Local landing path:** `data/external/dutta_shukla_2023/msm/` + `MANIFEST.json` · traj attempt: `trajectories/CB2_APO/` (empty of binaries)
 
 ---
 
@@ -37,7 +38,7 @@ Dear Dr. Dutta and Dr. Shukla,
 
 We are independently reanalyzing published CB1/CB2 conformational dynamics and would like to reproduce the metastable-state (MSM) analysis reported in your *Communications Biology* paper (DOI [10.1038/s42003-023-04868-1](https://doi.org/10.1038/s42003-023-04868-1)).
 
-The GitHub repository [ShuklaGroup/Cannabinoid_activation](https://github.com/ShuklaGroup/Cannabinoid_activation) is available. The Box deposit cited in the Data availability statement (`https://uofi.box.com/s/jzooa0o27z1w9ha0h6va3i51ir7l38j4`) is again listable (folder `Final_MSM` with `CB2_state_prob.pkl` / clustering pickles), but downloads return HTTP 403 with Box’s message that the hosting account is **out of bandwidth**. We are therefore writing to request a bandwidth restore, an alternate mirror, or a direct copy of the **MSM objects** (prefer `Final_MSM` CB2 pickles over full trajectory dumps) used for the CB1/CB2 metastable-state analysis.
+The GitHub repository [ShuklaGroup/Cannabinoid_activation](https://github.com/ShuklaGroup/Cannabinoid_activation) is available. The Box deposit cited in the Data availability statement (`https://uofi.box.com/s/jzooa0o27z1w9ha0h6va3i51ir7l38j4`) is listable, and we already hold the `Final_MSM` pickles locally. Trajectory share `CB2_APO` (`https://uofi.box.com/s/xl7tpf345rt8tikjaidfa8rm7gy2wrpj`) also lists successfully, but downloads still return HTTP 403 with Box’s message that the hosting account is **out of bandwidth** (confirmed 2026-09-11 even for ~100-byte helper files). We are therefore writing to request a bandwidth restore, an alternate mirror, or a direct copy of the **CB2 apo trajectories** (Amber NetCDF `*.nc` strips under `CB2_APO`) for frame-level reanalysis aligned to your published MSM labels.
 
 We would use these materials only for academic reanalysis of state-dependent communication routes (no redistribution beyond our research group without your permission). Happy to cite the paper and acknowledge any guidance on preferred file formats.
 
@@ -59,7 +60,7 @@ INFINITE_PUBLIC_SEARCH: STOP
 EXTERNAL_COMPARISON: READY_WHEN_PI_AUTHORIZES
 P2_REAL_MSM_COMPUTE: NOT_GATED_BY_DUTTA (own Morales-Pastor MSM)
 P5_EXECUTION: NOT_OPENED_BY_THIS_REQUEST
-TRAJECTORIES: NOT_DOWNLOADED
+TRAJECTORIES: BLOCKED_403_BANDWIDTH (CB2_APO probe 2026-09-11; 0 bytes)
 ```
 
-*Fin — Final_MSM on disk; email only if trajs / alternate mirror still wanted.*
+*Fin — Final_MSM on disk; trajs still need bandwidth restore / author mirror / email.*
