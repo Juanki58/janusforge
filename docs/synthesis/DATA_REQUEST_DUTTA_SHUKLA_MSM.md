@@ -1,6 +1,7 @@
 # Data request — Dutta & Shukla 2023 MSM (DRAFT)
 
-**Status:** `FINAL_MSM_RECOVERED` — traj ingest **blocked** 2026-09-11 (CB2_APO scripted download **HTTP 403** `error_message_bandwidth`); email draft still relevant **only for trajectories / bandwidth restore**  
+**Status:** `FINAL_MSM_RECOVERED` — CB2_APO traj ingest **PARTIAL** 2026-09-11 (scripted GET **403 bandwidth**; **1** `.nc` recovered via PI browser → `trajectories/CB2_APO/`); email draft still relevant for full traj set / bandwidth restore  
+
 **Action:** draft only — **do NOT email** from automation  
 **Date:** 2026-08-21 (updated 2026-09-11)  
 **Branch:** `feat/cb2-hubs-functional-topology-test`  
@@ -21,11 +22,11 @@
 | Reprobe 2026-09-10 | Listing **HTTP 200** (`Final_MSM`: `CB2_state_prob.pkl` ~64 MB, `CB2_msm_feature_final_clustering.pkl` ~11 MB, CB1 twins). File download **HTTP 403** — Box body: *“The user hosting this content is out of bandwidth.”* (`error_message_bandwidth`). cursor-ide-browser MCP could not keep a tab for UI download. Manual browser likely same gate. Email remains fallback. Details: `data/external/dutta_shukla_2023/msm/BLOCKED_README.md` |
 | Mirror sweep 2026-09-10 | All README Box IDs (`iw1wlcdg…`, `xoiuicdp…`, `ix0hhvbw…`, `vyakobq2…`, 6 traj shares) list **200**, downloads **403 bandwidth** (even tiny PDBs). Nature/PMC Data availability = **only** official Box; SI MOESM1/2 = PDFs only. Wayback = 301s only. Zenodo/OSF/Figshare/IDB/IDEALS/RG: no 2023 MSM mirror (Dryad hit = other NPS paper; IDB-6705697 = 2026 endo). GitHub code-only. |
 | User browser recovery 2026-09-10 | Full `Final_MSM` quartet copied to `data/external/dutta_shukla_2023/msm/` (sizes match Box listing). Scripted downloads may still 403. **Trajectories not downloaded.** Provenance: `msm/BLOCKED_README.md`, `msm/MANIFEST.json`. |
-| CB2_APO ingest attempt 2026-09-11 | PI authorized scripted download. Disk ~1518 GB free. Listing **200** (`CB2_APO`, ~249 pages, mostly `*.nc`). Tiny-file GETs (`list` 201 B, `mv_short_file` 121 B) → **403 bandwidth**. **0 traj bytes.** Stopped (no retry thrash). Note: `trajectories/CB2_APO/INGEST_README.md`. |
+| CB2_APO ingest attempt 2026-09-11 | PI authorized scripted download. Disk ~1518 GB free. Listing **200** (`CB2_APO`, ~249 pages, mostly `*.nc`). Tiny-file GETs → **403 bandwidth**. Later: **browser download worked** for `CB2-APO_inactive_pr_9_frame_99-strip.nc` (32.9 MB; smoke-open **600 frames × 4566 atoms**, Amber/cpptraj; topology still missing). Note: `trajectories/CB2_APO/INGEST_README.md`. |
 
-**Need (remaining):** optional **trajectories** only if frame-level reanalysis of authors’ MD is required; Final_MSM state/clustering objects are already local. **Blocked on Box host bandwidth** until restore / mirror / author copy.
+**Need (remaining):** optional **trajectories** only if frame-level reanalysis of authors’ MD is required; Final_MSM state/clustering objects are already local. Full CB2_APO set still needs **browser batch** (or bandwidth restore / mirror / author copy) — one file is not enough.
 
-**Local landing path:** `data/external/dutta_shukla_2023/msm/` + `MANIFEST.json` · traj attempt: `trajectories/CB2_APO/` (empty of binaries)
+**Local landing path:** `data/external/dutta_shukla_2023/msm/` + `MANIFEST.json` · traj: `trajectories/CB2_APO/` (1 gitignored `.nc` + README)
 
 ---
 
