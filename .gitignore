@@ -111,6 +111,9 @@ data/external/_tmp_esmdynamic/
 data/external/**/_probe/*.bin
 data/external/**/_probe/*.html
 
+# CB2_APO own-MSM stratified extract + feature cache (do not commit)
+data/external/**/_cache_own_msm/
+
 # Logs / checkpoints
 *.log
 **/_checkpoint.csv

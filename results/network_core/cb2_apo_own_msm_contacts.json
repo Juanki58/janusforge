@@ -1,0 +1,15 @@
+{
+  "generated_utc": "2026-09-12T14:39:23Z",
+  "aborted": true,
+  "reason": "EXT_OWN_MSM_NON_CONVERGENT",
+  "verdicts": {
+    "EXT_OWN_MSM_STAGE0": "EXT_OWN_MSM_NON_CONVERGENT",
+    "ITS_VERDICT": "NON_CONVERGENT",
+    "CK_SOFT": "CK_SOFT_PASS",
+    "ALLOW_CONTACTS": "NO",
+    "P2_STATUS_UNCHANGED": "CLOSED_INSUFFICIENT_SAMPLING",
+    "DUTTA_STATES": "NOT_ALIGNED_OWN_STATES_ONLY",
+    "EXT_OWN_MSM_CONTACTS": "ABORTED"
+  },
+  "note": "Contacts aborted \u2014 no fabricated A/B/C architecture"
+}
