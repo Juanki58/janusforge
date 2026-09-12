@@ -88,6 +88,8 @@ results/hits/qiu_pyrazole*
 *.tar
 *.7z
 *.nc
+*.prmtop
+*.parm7
 *.xtc
 *.dcd
 *.trr

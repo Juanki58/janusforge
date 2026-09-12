@@ -1,8 +1,7 @@
-# CB2_APO trajectory ingest — PARTIAL (2 pilots via browser)
+# CB2_APO trajectory ingest — ZIP LOCAL + TOPOLOGY
 
-**Date:** 2026-09-11  
-**Status:** `PARTIAL_BROWSER_OK` — **2** Amber NetCDF pilots on disk (`inactive` + `active`); scripted Box GET still **403 bandwidth**  
-**PI auth:** explicit (“te doy permiso para hacerlo tu”); automated downloads blocked by **host account bandwidth**; **manual browser download succeeded** for both pilots (path still works).
+**Date:** 2026-09-12 (update); pilots 2026-09-11  
+**Status:** `ZIP_LOCAL_TOPOLOGY_OK` — full **CB2_APO.zip** on disk under `trajectories/`; **prmtop extracted**; 2 Amber NetCDF pilots still present. Do **not** clean Temp for this zip (already moved out).
 
 ## Source
 
@@ -14,95 +13,87 @@
 | Parent deposit | official paper Box `jzooa0o27z1w9ha0h6va3i51ir7l38j4` |
 | Landing path | `data/external/dutta_shukla_2023/trajectories/CB2_APO/` |
 
-## Disk / listing (OK)
+## Full zip (MOVED 2026-09-12) — confirmed
+
+| Item | Value |
+|------|--------|
+| Previous Temp path | `C:\Users\juanc\AppData\Local\Temp\CB2_APO.zip` (**gone** — moved, not copied) |
+| **Current zip path** | `data/external/dutta_shukla_2023/trajectories/CB2_APO.zip` |
+| Absolute | `C:\Users\juanc\projects\janusforge\data\external\dutta_shukla_2023\trajectories\CB2_APO.zip` |
+| Size | **152 769 973 351** bytes (~**142.28 GB**) |
+| Zip entries | **4974** (1× `prmtop` + **4971**× `.nc` + helpers) |
+| `.nc` by state label | inactive **2598**; active **2373** |
+| Move method | `Move-Item` same volume (instant rename); Temp no longer holds the zip |
+| Free disk after move (C:) | ~**1375 GB** |
+| git | `*.zip` gitignored — **do not commit** |
+
+**Temp cleanup:** zip already removed from Temp by the move. Do not delete the destination zip until analysis / backup policy is decided.
+
+## Topology (EXTRACTED — priority)
+
+| Item | Value |
+|------|--------|
+| Path inside zip | `CB2_APO/CB2-APO_inactive_pr_1-strip.prmtop` |
+| Landed | `CB2-APO_inactive_pr_1-strip.prmtop` (flat under this folder) |
+| Size | **1 989 174** bytes (~1.9 MiB) |
+| Extract scope | **prmtop only** — full 142 GB of `.nc` **not** bulk-extracted |
+| Optional stratified `.nc` sample | **skipped** (optional; pilots already on disk) |
+| git | `*.prmtop` / `*.parm7` gitignored — **do not commit** |
+
+## Disk / listing (historical Box listing OK)
 
 | Check | Result |
 |-------|--------|
-| Free disk (C:) | ~**1518 GB** free — enough for full ~153 GB share |
 | Listing HTTP | **200** (live 2026-09-11) |
-| Pages | **249** (~20 items/page → ~**4975** files, matches prior estimate) |
-| Page-1 types | mostly Amber NetCDF `*.nc` (~22–33 MB each); tiny helpers `list` (201 B), `mv_short_file` (121 B) |
-| Example traj names | `CB2-APO_inactive_pr_9_frame_99-strip.nc`; `CB2-APO_active_pr_10_frame_28-strip.nc` (~32.9 MB each) |
-| **Page 4** (2026-09-11) | **20** files, all `*.nc`, all `CB2-APO_inactive_pr_9_frame_{25–43}-strip.nc` (~20–33 MB; page sum ~**645 MB**). **No** `prmtop`/`pdb` on this page. Listing: `_probe/page4_listing.json`. Scripted GET of smallest page-4 `.nc` → **403 bandwidth** (stop). |
-| State map (spot-check) | Early pages (~1–20): mostly `inactive`. Mix `active`+`inactive` from ~p.50 onward; late pages (~240–249): mostly `active`. No `I1`/`I2`/`I3`/`I4` filenames in sampled pages. Topology not seen on sampled pages. |
+| Pages | **249** (~20 items/page → ~**4975** files; zip confirms **4974** entries) |
+| Page-1 types | mostly Amber NetCDF `*.nc` (~22–33 MB each); tiny helpers `list`, `mv_short_file` |
+| Example traj names | `CB2-APO_inactive_pr_9_frame_99-strip.nc`; `CB2-APO_active_pr_10_frame_28-strip.nc` |
+| State map (spot-check) | Early pages mostly `inactive`; mix from ~p.50; late pages mostly `active` |
 
-## Download probe (scripted FAILED — stop thrash)
+## Download probe (scripted FAILED — historical)
 
-Tried scripted GET via prior Box pattern  
-`…/index.php?rm=box_download_shared_file&shared_name=…&file_id=f_…`  
-on the **two smallest** files only:
+Scripted Box GET → **HTTP 403** `error_message_bandwidth`. Evidence under `_probe/`. **No longer blocking** for full archive: zip is local.
 
-| File | Box file id | Expected | Result |
-|------|-------------|----------:|--------|
-| `mv_short_file` | `1046788274875` | 121 B | **HTTP 403** `error_message_bandwidth` |
-| `list` | `1046785195564` | 201 B | **HTTP 403** `error_message_bandwidth` |
-
-Box body: *“The user hosting this content is out of bandwidth.”*  
-Evidence: `_probe/probe_results.json` (+ HTML error stubs under `_probe/`).
-
-**No scripted pilot set. No batch download started.**
-
-## Browser recovery (WORKED — 2026-09-11)
-
-Same pattern as Final_MSM: **listing / scripted GET 403**, but **PI browser download** delivered usable files. **Browser → Temp → copy here still works** (second pilot confirmed).
+## Browser recovery pilots (2026-09-11) — still on disk
 
 | Item | inactive pilot | active pilot |
 |------|----------------|--------------|
-| Temp source | `c:\Users\juanc\AppData\Local\Temp\CB2-APO_inactive_pr_9_frame_99-strip.nc` | `c:\Users\juanc\AppData\Local\Temp\CB2-APO_active_pr_10_frame_28-strip.nc` |
 | Landed path | `CB2-APO_inactive_pr_9_frame_99-strip.nc` | `CB2-APO_active_pr_10_frame_28-strip.nc` |
 | Size | **32 907 228** bytes (~31.4 MiB) | **32 907 228** bytes (~31.4 MiB) |
-| mtime (Temp) | 2026-09-11 15:48:18 (local) | 2026-09-11 16:01:18 (local) |
-| Copy | copied, not moved (Temp original kept) | copied, not moved (Temp original kept) |
-| git | `*.nc` gitignored — binary **not** committed | same |
+| git | `*.nc` gitignored | same |
 
-### Filename pattern (hypothesis)
+### Filename pattern
 
-Pattern observed: `CB2-APO_{state}_pr_{N}_frame_{F}-strip.nc`
+`CB2-APO_{state}_pr_{N}_frame_{F}-strip.nc` — both pilots smoke-open as Amber NetCDF, **600 frames**, **4566 atoms**.
 
-| Token | Hypothesis |
-|-------|------------|
-| `CB2-APO` | System: CB2 apo |
-| `inactive` / `active` | Conformational / MSM **state label** in the filename (not a guarantee of MSM microstate id). Both labels now on disk. |
-| `pr_9` / `pr_10` | Likely **production run / replica index** (Amber-style `pr` naming); not verified against paper SI |
-| `frame_99` / `frame_28` | Likely **seed / start / reference frame index** used when cutting this chunk — **not** “this file has 1 frame” |
-| `strip` | Solvent/ions stripped (protein-only coords) — consistent with atom count |
+### Smoke-open (pilots)
 
-**Smoke-open contradicts a single-frame file:** both NetCDFs have **600 frames**.
-
-### Smoke-open (`janus_p1`: netCDF4 / mdtraj / MDAnalysis available)
-
-Both pilots identical in shape/format:
-
-| Field | inactive | active |
-|-------|----------|--------|
-| Format | NetCDF3 64-bit offset, Conventions **AMBER** 1.0 | same |
-| Writer | cpptraj V18.01 (`Cpptraj Generated trajectory`) | same |
-| `coordinates` | `(600, 4566, 3)` float32 | `(600, 4566, 3)` float32 |
-| **n_frames** | **600** | **600** |
-| **n_atoms** | **4566** | **4566** |
-| Other vars | `time`, `cell_lengths`, `cell_angles` | same |
-| Topology | **missing locally** — coords-only `.nc`; needs matching `prmtop` / PDB | same |
+| Field | Value |
+|-------|--------|
+| Format | NetCDF3 64-bit offset, Conventions **AMBER** 1.0 |
+| `coordinates` | `(600, 4566, 3)` float32 |
+| Topology | **now available locally** — `CB2-APO_inactive_pr_1-strip.prmtop` |
 
 ## Local inventory
 
 | Path | Content |
 |------|---------|
+| `../CB2_APO.zip` | full share archive (~142 GB; gitignored) |
 | `INGEST_README.md` | this note |
-| `CB2-APO_inactive_pr_9_frame_99-strip.nc` | inactive Amber traj chunk (gitignored) |
-| `CB2-APO_active_pr_10_frame_28-strip.nc` | active Amber traj chunk (gitignored) |
-| `_probe_dl.py` | one-shot tiny-file probe script |
-| `_probe/probe_results.json` | machine-readable 403 results |
+| `CB2-APO_inactive_pr_1-strip.prmtop` | stripped Amber topology (gitignored) |
+| `CB2-APO_inactive_pr_9_frame_99-strip.nc` | inactive pilot |
+| `CB2-APO_active_pr_10_frame_28-strip.nc` | active pilot |
+| `_probe_dl.py` / `_probe/` | historical 403 probe artifacts |
 
-## Next steps (human / PI)
+## Next steps (analysis now unblocked)
 
-1. **Continue browser downloads** (or Box “Download” / multi-select / zip if the UI allows) into this folder — two pilots are **not** enough for MSM/frame-level reanalysis (~thousands of `*.nc` in the share). Scripted GET remains **403 bandwidth**. Prefer **diverse states** if filenames show `I1`–`I4` (or more `active`/`inactive` mix).
-2. **Page 4** is all `inactive_pr_9` — fine for more inactive chunks, but for state diversity jump to ~**page 50** (mix `active`+`inactive`) or late pages (~**240**) for mostly `active`. Search Box for `prmtop` / `.pdb` (not on p.1–4 / sampled pages).
-3. Also grab any **topology** (`*.prmtop`, `*.parm7`, stripped PDB) if present in the share — still **missing** locally.
-4. After a useful subset lands: open with mdtraj/MDAnalysis **+ topology**, optionally align to MSM labels in `data/external/dutta_shukla_2023/msm/`.
-5. Email authors / wait for bandwidth restore remains fallback for full ~153 GB (see `docs/synthesis/DATA_REQUEST_DUTTA_SHUKLA_MSM.md`).
+1. **Open pilots + prmtop** with mdtraj / MDAnalysis (`janus_p1`) — topology was the blocker; atom count should match **4566**.
+2. Optionally extract more `.nc` **on demand** from the local zip (do not unpack all 142 GB).
+3. Align frames to MSM labels in `data/external/dutta_shukla_2023/msm/` when PI authorizes.
+4. Keep zip under `trajectories/`; extract subsets only.
 
 ## Epistemology
 
 - EXTERNAL ingest only; **P2 not reopened as CONVERGENT**.
-- **No contact-probability claims** from these two chunks alone.
-- Final_MSM pickles remain available under `../msm/` for optional comparison when PI authorizes.
+- **No contact-probability claims** from two chunks alone.
+- Final_MSM pickles remain under `../msm/` for optional comparison when PI authorizes.
