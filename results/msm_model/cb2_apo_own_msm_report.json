@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-12T14:39:23Z",
+  "generated_utc": "2026-09-12T19:56:12Z",
   "branch": "feat/cb2-hubs-functional-topology-test",
   "preregistration": "docs\\synthesis\\EXPERIMENT_CB2_APO_OWN_MSM.md",
   "verdicts": {
@@ -11,116 +11,216 @@
     "DUTTA_STATES": "NOT_ALIGNED_OWN_STATES_ONLY"
   },
   "sampling": {
-    "n_per_state": 50,
-    "n_trajs": 100,
+    "n_per_state": 100,
+    "n_trajs": 200,
     "cache_dir": "data\\external\\dutta_shukla_2023\\trajectories\\CB2_APO\\_cache_own_msm",
     "extract": {
       "ok": true,
-      "n_per_state": 50,
+      "n_per_state": 100,
       "dir": "data\\external\\dutta_shukla_2023\\trajectories\\CB2_APO\\_cache_own_msm\\nc",
       "files": {
         "inactive": [
           "CB2-APO_inactive_pr_10_frame_0-strip.nc",
-          "CB2-APO_inactive_pr_10_frame_148-strip.nc",
-          "CB2-APO_inactive_pr_10_frame_198-strip.nc",
-          "CB2-APO_inactive_pr_10_frame_70-strip.nc",
-          "CB2-APO_inactive_pr_11_frame_118-strip.nc",
-          "CB2-APO_inactive_pr_11_frame_168-strip.nc",
-          "CB2-APO_inactive_pr_11_frame_37-strip.nc",
-          "CB2-APO_inactive_pr_11_frame_87-strip.nc",
-          "CB2-APO_inactive_pr_12_frame_136-strip.nc",
-          "CB2-APO_inactive_pr_12_frame_188-strip.nc",
-          "CB2-APO_inactive_pr_12_frame_59-strip.nc",
-          "CB2-APO_inactive_pr_13_frame_109-strip.nc",
-          "CB2-APO_inactive_pr_13_frame_158-strip.nc",
-          "CB2-APO_inactive_pr_13_frame_31-strip.nc",
-          "CB2-APO_inactive_pr_13_frame_80-strip.nc",
-          "CB2-APO_inactive_pr_14_frame_43-strip.nc",
-          "CB2-APO_inactive_pr_14_frame_94-strip.nc",
-          "CB2-APO_inactive_pr_15_frame_57-strip.nc",
-          "CB2-APO_inactive_pr_16_frame_20-strip.nc",
-          "CB2-APO_inactive_pr_16_frame_70-strip.nc",
-          "CB2-APO_inactive_pr_2_frame_1-strip.nc",
-          "CB2-APO_inactive_pr_2_frame_68-strip.nc",
-          "CB2-APO_inactive_pr_3_frame_12-strip.nc",
-          "CB2-APO_inactive_pr_3_frame_185-strip.nc",
-          "CB2-APO_inactive_pr_3_frame_242-strip.nc",
-          "CB2-APO_inactive_pr_3_frame_293-strip.nc",
-          "CB2-APO_inactive_pr_3_frame_79-strip.nc",
-          "CB2-APO_inactive_pr_4_frame_132-strip.nc",
-          "CB2-APO_inactive_pr_4_frame_187-strip.nc",
-          "CB2-APO_inactive_pr_4_frame_242-strip.nc",
-          "CB2-APO_inactive_pr_4_frame_32-strip.nc",
-          "CB2-APO_inactive_pr_4_frame_86-strip.nc",
-          "CB2-APO_inactive_pr_5_frame_138-strip.nc",
-          "CB2-APO_inactive_pr_5_frame_188-strip.nc",
-          "CB2-APO_inactive_pr_5_frame_58-strip.nc",
-          "CB2-APO_inactive_pr_6_frame_108-strip.nc",
-          "CB2-APO_inactive_pr_6_frame_158-strip.nc",
-          "CB2-APO_inactive_pr_6_frame_26-strip.nc",
-          "CB2-APO_inactive_pr_6_frame_78-strip.nc",
-          "CB2-APO_inactive_pr_7_frame_126-strip.nc",
-          "CB2-APO_inactive_pr_7_frame_175-strip.nc",
-          "CB2-APO_inactive_pr_7_frame_47-strip.nc",
-          "CB2-APO_inactive_pr_8_frame_10-strip.nc",
-          "CB2-APO_inactive_pr_8_frame_154-strip.nc",
-          "CB2-APO_inactive_pr_8_frame_28-strip.nc",
-          "CB2-APO_inactive_pr_8_frame_80-strip.nc",
-          "CB2-APO_inactive_pr_9_frame_128-strip.nc",
-          "CB2-APO_inactive_pr_9_frame_179-strip.nc",
+          "CB2-APO_inactive_pr_10_frame_122-strip.nc",
+          "CB2-APO_inactive_pr_10_frame_147-strip.nc",
+          "CB2-APO_inactive_pr_10_frame_171-strip.nc",
+          "CB2-APO_inactive_pr_10_frame_195-strip.nc",
+          "CB2-APO_inactive_pr_10_frame_43-strip.nc",
+          "CB2-APO_inactive_pr_10_frame_69-strip.nc",
+          "CB2-APO_inactive_pr_10_frame_92-strip.nc",
+          "CB2-APO_inactive_pr_11_frame_115-strip.nc",
+          "CB2-APO_inactive_pr_11_frame_141-strip.nc",
+          "CB2-APO_inactive_pr_11_frame_165-strip.nc",
+          "CB2-APO_inactive_pr_11_frame_189-strip.nc",
+          "CB2-APO_inactive_pr_11_frame_33-strip.nc",
+          "CB2-APO_inactive_pr_11_frame_59-strip.nc",
+          "CB2-APO_inactive_pr_11_frame_83-strip.nc",
+          "CB2-APO_inactive_pr_12_frame_107-strip.nc",
+          "CB2-APO_inactive_pr_12_frame_131-strip.nc",
+          "CB2-APO_inactive_pr_12_frame_156-strip.nc",
+          "CB2-APO_inactive_pr_12_frame_182-strip.nc",
+          "CB2-APO_inactive_pr_12_frame_3-strip.nc",
+          "CB2-APO_inactive_pr_12_frame_53-strip.nc",
+          "CB2-APO_inactive_pr_12_frame_78-strip.nc",
+          "CB2-APO_inactive_pr_13_frame_103-strip.nc",
+          "CB2-APO_inactive_pr_13_frame_127-strip.nc",
+          "CB2-APO_inactive_pr_13_frame_151-strip.nc",
+          "CB2-APO_inactive_pr_13_frame_177-strip.nc",
+          "CB2-APO_inactive_pr_13_frame_23-strip.nc",
+          "CB2-APO_inactive_pr_13_frame_5-strip.nc",
+          "CB2-APO_inactive_pr_13_frame_73-strip.nc",
+          "CB2-APO_inactive_pr_14_frame_0-strip.nc",
+          "CB2-APO_inactive_pr_14_frame_35-strip.nc",
+          "CB2-APO_inactive_pr_14_frame_60-strip.nc",
+          "CB2-APO_inactive_pr_14_frame_86-strip.nc",
+          "CB2-APO_inactive_pr_15_frame_20-strip.nc",
+          "CB2-APO_inactive_pr_15_frame_47-strip.nc",
+          "CB2-APO_inactive_pr_15_frame_76-strip.nc",
+          "CB2-APO_inactive_pr_16_frame_100-strip.nc",
+          "CB2-APO_inactive_pr_16_frame_36-strip.nc",
+          "CB2-APO_inactive_pr_16_frame_60-strip.nc",
+          "CB2-APO_inactive_pr_16_frame_86-strip.nc",
+          "CB2-APO_inactive_pr_17_frame_21-strip.nc",
+          "CB2-APO_inactive_pr_2_frame_26-strip.nc",
+          "CB2-APO_inactive_pr_2_frame_54-strip.nc",
+          "CB2-APO_inactive_pr_2_frame_83-strip.nc",
+          "CB2-APO_inactive_pr_3_frame_107-strip.nc",
+          "CB2-APO_inactive_pr_3_frame_135-strip.nc",
+          "CB2-APO_inactive_pr_3_frame_169-strip.nc",
+          "CB2-APO_inactive_pr_3_frame_199-strip.nc",
+          "CB2-APO_inactive_pr_3_frame_227-strip.nc",
+          "CB2-APO_inactive_pr_3_frame_255-strip.nc",
+          "CB2-APO_inactive_pr_3_frame_28-strip.nc",
+          "CB2-APO_inactive_pr_3_frame_36-strip.nc",
+          "CB2-APO_inactive_pr_3_frame_62-strip.nc",
+          "CB2-APO_inactive_pr_3_frame_93-strip.nc",
+          "CB2-APO_inactive_pr_4_frame_118-strip.nc",
+          "CB2-APO_inactive_pr_4_frame_145-strip.nc",
+          "CB2-APO_inactive_pr_4_frame_171-strip.nc",
+          "CB2-APO_inactive_pr_4_frame_198-strip.nc",
+          "CB2-APO_inactive_pr_4_frame_226-strip.nc",
+          "CB2-APO_inactive_pr_4_frame_255-strip.nc",
+          "CB2-APO_inactive_pr_4_frame_28-strip.nc",
+          "CB2-APO_inactive_pr_4_frame_41-strip.nc",
+          "CB2-APO_inactive_pr_4_frame_69-strip.nc",
+          "CB2-APO_inactive_pr_4_frame_95-strip.nc",
+          "CB2-APO_inactive_pr_5_frame_121-strip.nc",
+          "CB2-APO_inactive_pr_5_frame_146-strip.nc",
+          "CB2-APO_inactive_pr_5_frame_171-strip.nc",
+          "CB2-APO_inactive_pr_5_frame_195-strip.nc",
+          "CB2-APO_inactive_pr_5_frame_4-strip.nc",
+          "CB2-APO_inactive_pr_5_frame_66-strip.nc",
+          "CB2-APO_inactive_pr_5_frame_92-strip.nc",
+          "CB2-APO_inactive_pr_6_frame_114-strip.nc",
+          "CB2-APO_inactive_pr_6_frame_14-strip.nc",
+          "CB2-APO_inactive_pr_6_frame_163-strip.nc",
+          "CB2-APO_inactive_pr_6_frame_188-strip.nc",
+          "CB2-APO_inactive_pr_6_frame_31-strip.nc",
+          "CB2-APO_inactive_pr_6_frame_56-strip.nc",
+          "CB2-APO_inactive_pr_6_frame_82-strip.nc",
+          "CB2-APO_inactive_pr_7_frame_106-strip.nc",
+          "CB2-APO_inactive_pr_7_frame_130-strip.nc",
+          "CB2-APO_inactive_pr_7_frame_155-strip.nc",
+          "CB2-APO_inactive_pr_7_frame_179-strip.nc",
+          "CB2-APO_inactive_pr_7_frame_24-strip.nc",
+          "CB2-APO_inactive_pr_7_frame_50-strip.nc",
+          "CB2-APO_inactive_pr_7_frame_78-strip.nc",
+          "CB2-APO_inactive_pr_8_frame_102-strip.nc",
+          "CB2-APO_inactive_pr_8_frame_128-strip.nc",
+          "CB2-APO_inactive_pr_8_frame_157-strip.nc",
+          "CB2-APO_inactive_pr_8_frame_181-strip.nc",
+          "CB2-APO_inactive_pr_8_frame_3-strip.nc",
+          "CB2-APO_inactive_pr_8_frame_57-strip.nc",
+          "CB2-APO_inactive_pr_8_frame_82-strip.nc",
+          "CB2-APO_inactive_pr_9_frame_105-strip.nc",
+          "CB2-APO_inactive_pr_9_frame_129-strip.nc",
+          "CB2-APO_inactive_pr_9_frame_154-strip.nc",
+          "CB2-APO_inactive_pr_9_frame_18-strip.nc",
+          "CB2-APO_inactive_pr_9_frame_24-strip.nc",
           "CB2-APO_inactive_pr_9_frame_48-strip.nc",
+          "CB2-APO_inactive_pr_9_frame_71-strip.nc",
           "CB2-APO_inactive_pr_9_frame_99-strip.nc"
         ],
         "active": [
           "CB2-APO_active_pr_10_frame_1-strip.nc",
-          "CB2-APO_active_pr_10_frame_61-strip.nc",
-          "CB2-APO_active_pr_11_frame_127-strip.nc",
-          "CB2-APO_active_pr_11_frame_6-strip.nc",
-          "CB2-APO_active_pr_12_frame_24-strip.nc",
-          "CB2-APO_active_pr_13_frame_116-strip.nc",
-          "CB2-APO_active_pr_13_frame_162-strip.nc",
-          "CB2-APO_active_pr_13_frame_208-strip.nc",
-          "CB2-APO_active_pr_13_frame_260-strip.nc",
-          "CB2-APO_active_pr_13_frame_39-strip.nc",
-          "CB2-APO_active_pr_13_frame_88-strip.nc",
-          "CB2-APO_active_pr_14_frame_135-strip.nc",
-          "CB2-APO_active_pr_14_frame_182-strip.nc",
-          "CB2-APO_active_pr_14_frame_23-strip.nc",
-          "CB2-APO_active_pr_14_frame_279-strip.nc",
-          "CB2-APO_active_pr_14_frame_328-strip.nc",
-          "CB2-APO_active_pr_14_frame_375-strip.nc",
-          "CB2-APO_active_pr_14_frame_419-strip.nc",
-          "CB2-APO_active_pr_14_frame_466-strip.nc",
-          "CB2-APO_active_pr_14_frame_67-strip.nc",
-          "CB2-APO_active_pr_15_frame_122-strip.nc",
-          "CB2-APO_active_pr_15_frame_168-strip.nc",
-          "CB2-APO_active_pr_15_frame_217-strip.nc",
-          "CB2-APO_active_pr_15_frame_268-strip.nc",
-          "CB2-APO_active_pr_15_frame_316-strip.nc",
-          "CB2-APO_active_pr_15_frame_368-strip.nc",
-          "CB2-APO_active_pr_15_frame_418-strip.nc",
-          "CB2-APO_active_pr_15_frame_47-strip.nc",
-          "CB2-APO_active_pr_15_frame_7-strip.nc",
-          "CB2-APO_active_pr_16_frame_118-strip.nc",
-          "CB2-APO_active_pr_16_frame_17-strip.nc",
-          "CB2-APO_active_pr_16_frame_217-strip.nc",
-          "CB2-APO_active_pr_16_frame_263-strip.nc",
-          "CB2-APO_active_pr_16_frame_309-strip.nc",
-          "CB2-APO_active_pr_16_frame_357-strip.nc",
-          "CB2-APO_active_pr_16_frame_41-strip.nc",
-          "CB2-APO_active_pr_16_frame_458-strip.nc",
-          "CB2-APO_active_pr_16_frame_60-strip.nc",
-          "CB2-APO_active_pr_17_frame_18-strip.nc",
-          "CB2-APO_active_pr_2_frame_46-strip.nc",
-          "CB2-APO_active_pr_3_frame_54-strip.nc",
-          "CB2-APO_active_pr_4_frame_22-strip.nc",
-          "CB2-APO_active_pr_4_frame_71-strip.nc",
-          "CB2-APO_active_pr_5_frame_29-strip.nc",
-          "CB2-APO_active_pr_5_frame_78-strip.nc",
-          "CB2-APO_active_pr_6_frame_71-strip.nc",
-          "CB2-APO_active_pr_7_frame_31-strip.nc",
-          "CB2-APO_active_pr_7_frame_86-strip.nc",
-          "CB2-APO_active_pr_9_frame_47-strip.nc",
+          "CB2-APO_active_pr_10_frame_36-strip.nc",
+          "CB2-APO_active_pr_10_frame_60-strip.nc",
+          "CB2-APO_active_pr_10_frame_88-strip.nc",
+          "CB2-APO_active_pr_11_frame_126-strip.nc",
+          "CB2-APO_active_pr_11_frame_3-strip.nc",
+          "CB2-APO_active_pr_11_frame_58-strip.nc",
+          "CB2-APO_active_pr_11_frame_81-strip.nc",
+          "CB2-APO_active_pr_12_frame_22-strip.nc",
+          "CB2-APO_active_pr_12_frame_45-strip.nc",
+          "CB2-APO_active_pr_13_frame_113-strip.nc",
+          "CB2-APO_active_pr_13_frame_137-strip.nc",
+          "CB2-APO_active_pr_13_frame_16-strip.nc",
+          "CB2-APO_active_pr_13_frame_183-strip.nc",
+          "CB2-APO_active_pr_13_frame_205-strip.nc",
+          "CB2-APO_active_pr_13_frame_229-strip.nc",
+          "CB2-APO_active_pr_13_frame_255-strip.nc",
+          "CB2-APO_active_pr_13_frame_28-strip.nc",
+          "CB2-APO_active_pr_13_frame_35-strip.nc",
+          "CB2-APO_active_pr_13_frame_57-strip.nc",
+          "CB2-APO_active_pr_13_frame_82-strip.nc",
+          "CB2-APO_active_pr_14_frame_105-strip.nc",
+          "CB2-APO_active_pr_14_frame_130-strip.nc",
+          "CB2-APO_active_pr_14_frame_154-strip.nc",
+          "CB2-APO_active_pr_14_frame_178-strip.nc",
+          "CB2-APO_active_pr_14_frame_20-strip.nc",
+          "CB2-APO_active_pr_14_frame_223-strip.nc",
+          "CB2-APO_active_pr_14_frame_246-strip.nc",
+          "CB2-APO_active_pr_14_frame_270-strip.nc",
+          "CB2-APO_active_pr_14_frame_295-strip.nc",
+          "CB2-APO_active_pr_14_frame_32-strip.nc",
+          "CB2-APO_active_pr_14_frame_343-strip.nc",
+          "CB2-APO_active_pr_14_frame_368-strip.nc",
+          "CB2-APO_active_pr_14_frame_39-strip.nc",
+          "CB2-APO_active_pr_14_frame_411-strip.nc",
+          "CB2-APO_active_pr_14_frame_433-strip.nc",
+          "CB2-APO_active_pr_14_frame_458-strip.nc",
+          "CB2-APO_active_pr_14_frame_482-strip.nc",
+          "CB2-APO_active_pr_14_frame_59-strip.nc",
+          "CB2-APO_active_pr_14_frame_85-strip.nc",
+          "CB2-APO_active_pr_15_frame_110-strip.nc",
+          "CB2-APO_active_pr_15_frame_135-strip.nc",
+          "CB2-APO_active_pr_15_frame_159-strip.nc",
+          "CB2-APO_active_pr_15_frame_182-strip.nc",
+          "CB2-APO_active_pr_15_frame_206-strip.nc",
+          "CB2-APO_active_pr_15_frame_23-strip.nc",
+          "CB2-APO_active_pr_15_frame_258-strip.nc",
+          "CB2-APO_active_pr_15_frame_280-strip.nc",
+          "CB2-APO_active_pr_15_frame_305-strip.nc",
+          "CB2-APO_active_pr_15_frame_331-strip.nc",
+          "CB2-APO_active_pr_15_frame_355-strip.nc",
+          "CB2-APO_active_pr_15_frame_38-strip.nc",
+          "CB2-APO_active_pr_15_frame_405-strip.nc",
+          "CB2-APO_active_pr_15_frame_430-strip.nc",
+          "CB2-APO_active_pr_15_frame_454-strip.nc",
+          "CB2-APO_active_pr_15_frame_48-strip.nc",
+          "CB2-APO_active_pr_15_frame_54-strip.nc",
+          "CB2-APO_active_pr_15_frame_83-strip.nc",
+          "CB2-APO_active_pr_16_frame_105-strip.nc",
+          "CB2-APO_active_pr_16_frame_13-strip.nc",
+          "CB2-APO_active_pr_16_frame_153-strip.nc",
+          "CB2-APO_active_pr_16_frame_179-strip.nc",
+          "CB2-APO_active_pr_16_frame_203-strip.nc",
+          "CB2-APO_active_pr_16_frame_225-strip.nc",
+          "CB2-APO_active_pr_16_frame_249-strip.nc",
+          "CB2-APO_active_pr_16_frame_270-strip.nc",
+          "CB2-APO_active_pr_16_frame_293-strip.nc",
+          "CB2-APO_active_pr_16_frame_316-strip.nc",
+          "CB2-APO_active_pr_16_frame_340-strip.nc",
+          "CB2-APO_active_pr_16_frame_366-strip.nc",
+          "CB2-APO_active_pr_16_frame_392-strip.nc",
+          "CB2-APO_active_pr_16_frame_416-strip.nc",
+          "CB2-APO_active_pr_16_frame_439-strip.nc",
+          "CB2-APO_active_pr_16_frame_466-strip.nc",
+          "CB2-APO_active_pr_16_frame_493-strip.nc",
+          "CB2-APO_active_pr_16_frame_65-strip.nc",
+          "CB2-APO_active_pr_16_frame_9-strip.nc",
+          "CB2-APO_active_pr_17_frame_4-strip.nc",
+          "CB2-APO_active_pr_2_frame_29-strip.nc",
+          "CB2-APO_active_pr_2_frame_7-strip.nc",
+          "CB2-APO_active_pr_3_frame_31-strip.nc",
+          "CB2-APO_active_pr_3_frame_59-strip.nc",
+          "CB2-APO_active_pr_3_frame_85-strip.nc",
+          "CB2-APO_active_pr_4_frame_26-strip.nc",
+          "CB2-APO_active_pr_4_frame_50-strip.nc",
+          "CB2-APO_active_pr_4_frame_74-strip.nc",
+          "CB2-APO_active_pr_5_frame_1-strip.nc",
+          "CB2-APO_active_pr_5_frame_34-strip.nc",
+          "CB2-APO_active_pr_5_frame_58-strip.nc",
+          "CB2-APO_active_pr_5_frame_80-strip.nc",
+          "CB2-APO_active_pr_6_frame_49-strip.nc",
+          "CB2-APO_active_pr_6_frame_73-strip.nc",
+          "CB2-APO_active_pr_6_frame_97-strip.nc",
+          "CB2-APO_active_pr_7_frame_35-strip.nc",
+          "CB2-APO_active_pr_7_frame_62-strip.nc",
+          "CB2-APO_active_pr_7_frame_88-strip.nc",
+          "CB2-APO_active_pr_9_frame_22-strip.nc",
+          "CB2-APO_active_pr_9_frame_48-strip.nc",
+          "CB2-APO_active_pr_9_frame_71-strip.nc",
           "CB2-APO_active_pr_9_frame_99-strip.nc"
         ]
       },
@@ -128,111 +228,211 @@
         "inactive": 2598,
         "active": 2373
       },
-      "bytes_written_this_run": 2964781596,
-      "cache_nbytes": 3084838424,
+      "bytes_written_this_run": 327647164,
+      "cache_nbytes": 5987981360,
       "reused": false,
       "seed": 20260912
     },
     "traj_names": [
       "CB2-APO_inactive_pr_10_frame_0-strip.nc",
-      "CB2-APO_inactive_pr_10_frame_148-strip.nc",
-      "CB2-APO_inactive_pr_10_frame_198-strip.nc",
-      "CB2-APO_inactive_pr_10_frame_70-strip.nc",
-      "CB2-APO_inactive_pr_11_frame_118-strip.nc",
-      "CB2-APO_inactive_pr_11_frame_168-strip.nc",
-      "CB2-APO_inactive_pr_11_frame_37-strip.nc",
-      "CB2-APO_inactive_pr_11_frame_87-strip.nc",
-      "CB2-APO_inactive_pr_12_frame_136-strip.nc",
-      "CB2-APO_inactive_pr_12_frame_188-strip.nc",
-      "CB2-APO_inactive_pr_12_frame_59-strip.nc",
-      "CB2-APO_inactive_pr_13_frame_109-strip.nc",
-      "CB2-APO_inactive_pr_13_frame_158-strip.nc",
-      "CB2-APO_inactive_pr_13_frame_31-strip.nc",
-      "CB2-APO_inactive_pr_13_frame_80-strip.nc",
-      "CB2-APO_inactive_pr_14_frame_43-strip.nc",
-      "CB2-APO_inactive_pr_14_frame_94-strip.nc",
-      "CB2-APO_inactive_pr_15_frame_57-strip.nc",
-      "CB2-APO_inactive_pr_16_frame_20-strip.nc",
-      "CB2-APO_inactive_pr_16_frame_70-strip.nc",
-      "CB2-APO_inactive_pr_2_frame_1-strip.nc",
-      "CB2-APO_inactive_pr_2_frame_68-strip.nc",
-      "CB2-APO_inactive_pr_3_frame_12-strip.nc",
-      "CB2-APO_inactive_pr_3_frame_185-strip.nc",
-      "CB2-APO_inactive_pr_3_frame_242-strip.nc",
-      "CB2-APO_inactive_pr_3_frame_293-strip.nc",
-      "CB2-APO_inactive_pr_3_frame_79-strip.nc",
-      "CB2-APO_inactive_pr_4_frame_132-strip.nc",
-      "CB2-APO_inactive_pr_4_frame_187-strip.nc",
-      "CB2-APO_inactive_pr_4_frame_242-strip.nc",
-      "CB2-APO_inactive_pr_4_frame_32-strip.nc",
-      "CB2-APO_inactive_pr_4_frame_86-strip.nc",
-      "CB2-APO_inactive_pr_5_frame_138-strip.nc",
-      "CB2-APO_inactive_pr_5_frame_188-strip.nc",
-      "CB2-APO_inactive_pr_5_frame_58-strip.nc",
-      "CB2-APO_inactive_pr_6_frame_108-strip.nc",
-      "CB2-APO_inactive_pr_6_frame_158-strip.nc",
-      "CB2-APO_inactive_pr_6_frame_26-strip.nc",
-      "CB2-APO_inactive_pr_6_frame_78-strip.nc",
-      "CB2-APO_inactive_pr_7_frame_126-strip.nc",
-      "CB2-APO_inactive_pr_7_frame_175-strip.nc",
-      "CB2-APO_inactive_pr_7_frame_47-strip.nc",
-      "CB2-APO_inactive_pr_8_frame_10-strip.nc",
-      "CB2-APO_inactive_pr_8_frame_154-strip.nc",
-      "CB2-APO_inactive_pr_8_frame_28-strip.nc",
-      "CB2-APO_inactive_pr_8_frame_80-strip.nc",
-      "CB2-APO_inactive_pr_9_frame_128-strip.nc",
-      "CB2-APO_inactive_pr_9_frame_179-strip.nc",
+      "CB2-APO_inactive_pr_10_frame_122-strip.nc",
+      "CB2-APO_inactive_pr_10_frame_147-strip.nc",
+      "CB2-APO_inactive_pr_10_frame_171-strip.nc",
+      "CB2-APO_inactive_pr_10_frame_195-strip.nc",
+      "CB2-APO_inactive_pr_10_frame_43-strip.nc",
+      "CB2-APO_inactive_pr_10_frame_69-strip.nc",
+      "CB2-APO_inactive_pr_10_frame_92-strip.nc",
+      "CB2-APO_inactive_pr_11_frame_115-strip.nc",
+      "CB2-APO_inactive_pr_11_frame_141-strip.nc",
+      "CB2-APO_inactive_pr_11_frame_165-strip.nc",
+      "CB2-APO_inactive_pr_11_frame_189-strip.nc",
+      "CB2-APO_inactive_pr_11_frame_33-strip.nc",
+      "CB2-APO_inactive_pr_11_frame_59-strip.nc",
+      "CB2-APO_inactive_pr_11_frame_83-strip.nc",
+      "CB2-APO_inactive_pr_12_frame_107-strip.nc",
+      "CB2-APO_inactive_pr_12_frame_131-strip.nc",
+      "CB2-APO_inactive_pr_12_frame_156-strip.nc",
+      "CB2-APO_inactive_pr_12_frame_182-strip.nc",
+      "CB2-APO_inactive_pr_12_frame_3-strip.nc",
+      "CB2-APO_inactive_pr_12_frame_53-strip.nc",
+      "CB2-APO_inactive_pr_12_frame_78-strip.nc",
+      "CB2-APO_inactive_pr_13_frame_103-strip.nc",
+      "CB2-APO_inactive_pr_13_frame_127-strip.nc",
+      "CB2-APO_inactive_pr_13_frame_151-strip.nc",
+      "CB2-APO_inactive_pr_13_frame_177-strip.nc",
+      "CB2-APO_inactive_pr_13_frame_23-strip.nc",
+      "CB2-APO_inactive_pr_13_frame_5-strip.nc",
+      "CB2-APO_inactive_pr_13_frame_73-strip.nc",
+      "CB2-APO_inactive_pr_14_frame_0-strip.nc",
+      "CB2-APO_inactive_pr_14_frame_35-strip.nc",
+      "CB2-APO_inactive_pr_14_frame_60-strip.nc",
+      "CB2-APO_inactive_pr_14_frame_86-strip.nc",
+      "CB2-APO_inactive_pr_15_frame_20-strip.nc",
+      "CB2-APO_inactive_pr_15_frame_47-strip.nc",
+      "CB2-APO_inactive_pr_15_frame_76-strip.nc",
+      "CB2-APO_inactive_pr_16_frame_100-strip.nc",
+      "CB2-APO_inactive_pr_16_frame_36-strip.nc",
+      "CB2-APO_inactive_pr_16_frame_60-strip.nc",
+      "CB2-APO_inactive_pr_16_frame_86-strip.nc",
+      "CB2-APO_inactive_pr_17_frame_21-strip.nc",
+      "CB2-APO_inactive_pr_2_frame_26-strip.nc",
+      "CB2-APO_inactive_pr_2_frame_54-strip.nc",
+      "CB2-APO_inactive_pr_2_frame_83-strip.nc",
+      "CB2-APO_inactive_pr_3_frame_107-strip.nc",
+      "CB2-APO_inactive_pr_3_frame_135-strip.nc",
+      "CB2-APO_inactive_pr_3_frame_169-strip.nc",
+      "CB2-APO_inactive_pr_3_frame_199-strip.nc",
+      "CB2-APO_inactive_pr_3_frame_227-strip.nc",
+      "CB2-APO_inactive_pr_3_frame_255-strip.nc",
+      "CB2-APO_inactive_pr_3_frame_28-strip.nc",
+      "CB2-APO_inactive_pr_3_frame_36-strip.nc",
+      "CB2-APO_inactive_pr_3_frame_62-strip.nc",
+      "CB2-APO_inactive_pr_3_frame_93-strip.nc",
+      "CB2-APO_inactive_pr_4_frame_118-strip.nc",
+      "CB2-APO_inactive_pr_4_frame_145-strip.nc",
+      "CB2-APO_inactive_pr_4_frame_171-strip.nc",
+      "CB2-APO_inactive_pr_4_frame_198-strip.nc",
+      "CB2-APO_inactive_pr_4_frame_226-strip.nc",
+      "CB2-APO_inactive_pr_4_frame_255-strip.nc",
+      "CB2-APO_inactive_pr_4_frame_28-strip.nc",
+      "CB2-APO_inactive_pr_4_frame_41-strip.nc",
+      "CB2-APO_inactive_pr_4_frame_69-strip.nc",
+      "CB2-APO_inactive_pr_4_frame_95-strip.nc",
+      "CB2-APO_inactive_pr_5_frame_121-strip.nc",
+      "CB2-APO_inactive_pr_5_frame_146-strip.nc",
+      "CB2-APO_inactive_pr_5_frame_171-strip.nc",
+      "CB2-APO_inactive_pr_5_frame_195-strip.nc",
+      "CB2-APO_inactive_pr_5_frame_4-strip.nc",
+      "CB2-APO_inactive_pr_5_frame_66-strip.nc",
+      "CB2-APO_inactive_pr_5_frame_92-strip.nc",
+      "CB2-APO_inactive_pr_6_frame_114-strip.nc",
+      "CB2-APO_inactive_pr_6_frame_14-strip.nc",
+      "CB2-APO_inactive_pr_6_frame_163-strip.nc",
+      "CB2-APO_inactive_pr_6_frame_188-strip.nc",
+      "CB2-APO_inactive_pr_6_frame_31-strip.nc",
+      "CB2-APO_inactive_pr_6_frame_56-strip.nc",
+      "CB2-APO_inactive_pr_6_frame_82-strip.nc",
+      "CB2-APO_inactive_pr_7_frame_106-strip.nc",
+      "CB2-APO_inactive_pr_7_frame_130-strip.nc",
+      "CB2-APO_inactive_pr_7_frame_155-strip.nc",
+      "CB2-APO_inactive_pr_7_frame_179-strip.nc",
+      "CB2-APO_inactive_pr_7_frame_24-strip.nc",
+      "CB2-APO_inactive_pr_7_frame_50-strip.nc",
+      "CB2-APO_inactive_pr_7_frame_78-strip.nc",
+      "CB2-APO_inactive_pr_8_frame_102-strip.nc",
+      "CB2-APO_inactive_pr_8_frame_128-strip.nc",
+      "CB2-APO_inactive_pr_8_frame_157-strip.nc",
+      "CB2-APO_inactive_pr_8_frame_181-strip.nc",
+      "CB2-APO_inactive_pr_8_frame_3-strip.nc",
+      "CB2-APO_inactive_pr_8_frame_57-strip.nc",
+      "CB2-APO_inactive_pr_8_frame_82-strip.nc",
+      "CB2-APO_inactive_pr_9_frame_105-strip.nc",
+      "CB2-APO_inactive_pr_9_frame_129-strip.nc",
+      "CB2-APO_inactive_pr_9_frame_154-strip.nc",
+      "CB2-APO_inactive_pr_9_frame_18-strip.nc",
+      "CB2-APO_inactive_pr_9_frame_24-strip.nc",
       "CB2-APO_inactive_pr_9_frame_48-strip.nc",
+      "CB2-APO_inactive_pr_9_frame_71-strip.nc",
       "CB2-APO_inactive_pr_9_frame_99-strip.nc",
       "CB2-APO_active_pr_10_frame_1-strip.nc",
-      "CB2-APO_active_pr_10_frame_61-strip.nc",
-      "CB2-APO_active_pr_11_frame_127-strip.nc",
-      "CB2-APO_active_pr_11_frame_6-strip.nc",
-      "CB2-APO_active_pr_12_frame_24-strip.nc",
-      "CB2-APO_active_pr_13_frame_116-strip.nc",
-      "CB2-APO_active_pr_13_frame_162-strip.nc",
-      "CB2-APO_active_pr_13_frame_208-strip.nc",
-      "CB2-APO_active_pr_13_frame_260-strip.nc",
-      "CB2-APO_active_pr_13_frame_39-strip.nc",
-      "CB2-APO_active_pr_13_frame_88-strip.nc",
-      "CB2-APO_active_pr_14_frame_135-strip.nc",
-      "CB2-APO_active_pr_14_frame_182-strip.nc",
-      "CB2-APO_active_pr_14_frame_23-strip.nc",
-      "CB2-APO_active_pr_14_frame_279-strip.nc",
-      "CB2-APO_active_pr_14_frame_328-strip.nc",
-      "CB2-APO_active_pr_14_frame_375-strip.nc",
-      "CB2-APO_active_pr_14_frame_419-strip.nc",
-      "CB2-APO_active_pr_14_frame_466-strip.nc",
-      "CB2-APO_active_pr_14_frame_67-strip.nc",
-      "CB2-APO_active_pr_15_frame_122-strip.nc",
-      "CB2-APO_active_pr_15_frame_168-strip.nc",
-      "CB2-APO_active_pr_15_frame_217-strip.nc",
-      "CB2-APO_active_pr_15_frame_268-strip.nc",
-      "CB2-APO_active_pr_15_frame_316-strip.nc",
-      "CB2-APO_active_pr_15_frame_368-strip.nc",
-      "CB2-APO_active_pr_15_frame_418-strip.nc",
-      "CB2-APO_active_pr_15_frame_47-strip.nc",
-      "CB2-APO_active_pr_15_frame_7-strip.nc",
-      "CB2-APO_active_pr_16_frame_118-strip.nc",
-      "CB2-APO_active_pr_16_frame_17-strip.nc",
-      "CB2-APO_active_pr_16_frame_217-strip.nc",
-      "CB2-APO_active_pr_16_frame_263-strip.nc",
-      "CB2-APO_active_pr_16_frame_309-strip.nc",
-      "CB2-APO_active_pr_16_frame_357-strip.nc",
-      "CB2-APO_active_pr_16_frame_41-strip.nc",
-      "CB2-APO_active_pr_16_frame_458-strip.nc",
-      "CB2-APO_active_pr_16_frame_60-strip.nc",
-      "CB2-APO_active_pr_17_frame_18-strip.nc",
-      "CB2-APO_active_pr_2_frame_46-strip.nc",
-      "CB2-APO_active_pr_3_frame_54-strip.nc",
-      "CB2-APO_active_pr_4_frame_22-strip.nc",
-      "CB2-APO_active_pr_4_frame_71-strip.nc",
-      "CB2-APO_active_pr_5_frame_29-strip.nc",
-      "CB2-APO_active_pr_5_frame_78-strip.nc",
-      "CB2-APO_active_pr_6_frame_71-strip.nc",
-      "CB2-APO_active_pr_7_frame_31-strip.nc",
-      "CB2-APO_active_pr_7_frame_86-strip.nc",
-      "CB2-APO_active_pr_9_frame_47-strip.nc",
+      "CB2-APO_active_pr_10_frame_36-strip.nc",
+      "CB2-APO_active_pr_10_frame_60-strip.nc",
+      "CB2-APO_active_pr_10_frame_88-strip.nc",
+      "CB2-APO_active_pr_11_frame_126-strip.nc",
+      "CB2-APO_active_pr_11_frame_3-strip.nc",
+      "CB2-APO_active_pr_11_frame_58-strip.nc",
+      "CB2-APO_active_pr_11_frame_81-strip.nc",
+      "CB2-APO_active_pr_12_frame_22-strip.nc",
+      "CB2-APO_active_pr_12_frame_45-strip.nc",
+      "CB2-APO_active_pr_13_frame_113-strip.nc",
+      "CB2-APO_active_pr_13_frame_137-strip.nc",
+      "CB2-APO_active_pr_13_frame_16-strip.nc",
+      "CB2-APO_active_pr_13_frame_183-strip.nc",
+      "CB2-APO_active_pr_13_frame_205-strip.nc",
+      "CB2-APO_active_pr_13_frame_229-strip.nc",
+      "CB2-APO_active_pr_13_frame_255-strip.nc",
+      "CB2-APO_active_pr_13_frame_28-strip.nc",
+      "CB2-APO_active_pr_13_frame_35-strip.nc",
+      "CB2-APO_active_pr_13_frame_57-strip.nc",
+      "CB2-APO_active_pr_13_frame_82-strip.nc",
+      "CB2-APO_active_pr_14_frame_105-strip.nc",
+      "CB2-APO_active_pr_14_frame_130-strip.nc",
+      "CB2-APO_active_pr_14_frame_154-strip.nc",
+      "CB2-APO_active_pr_14_frame_178-strip.nc",
+      "CB2-APO_active_pr_14_frame_20-strip.nc",
+      "CB2-APO_active_pr_14_frame_223-strip.nc",
+      "CB2-APO_active_pr_14_frame_246-strip.nc",
+      "CB2-APO_active_pr_14_frame_270-strip.nc",
+      "CB2-APO_active_pr_14_frame_295-strip.nc",
+      "CB2-APO_active_pr_14_frame_32-strip.nc",
+      "CB2-APO_active_pr_14_frame_343-strip.nc",
+      "CB2-APO_active_pr_14_frame_368-strip.nc",
+      "CB2-APO_active_pr_14_frame_39-strip.nc",
+      "CB2-APO_active_pr_14_frame_411-strip.nc",
+      "CB2-APO_active_pr_14_frame_433-strip.nc",
+      "CB2-APO_active_pr_14_frame_458-strip.nc",
+      "CB2-APO_active_pr_14_frame_482-strip.nc",
+      "CB2-APO_active_pr_14_frame_59-strip.nc",
+      "CB2-APO_active_pr_14_frame_85-strip.nc",
+      "CB2-APO_active_pr_15_frame_110-strip.nc",
+      "CB2-APO_active_pr_15_frame_135-strip.nc",
+      "CB2-APO_active_pr_15_frame_159-strip.nc",
+      "CB2-APO_active_pr_15_frame_182-strip.nc",
+      "CB2-APO_active_pr_15_frame_206-strip.nc",
+      "CB2-APO_active_pr_15_frame_23-strip.nc",
+      "CB2-APO_active_pr_15_frame_258-strip.nc",
+      "CB2-APO_active_pr_15_frame_280-strip.nc",
+      "CB2-APO_active_pr_15_frame_305-strip.nc",
+      "CB2-APO_active_pr_15_frame_331-strip.nc",
+      "CB2-APO_active_pr_15_frame_355-strip.nc",
+      "CB2-APO_active_pr_15_frame_38-strip.nc",
+      "CB2-APO_active_pr_15_frame_405-strip.nc",
+      "CB2-APO_active_pr_15_frame_430-strip.nc",
+      "CB2-APO_active_pr_15_frame_454-strip.nc",
+      "CB2-APO_active_pr_15_frame_48-strip.nc",
+      "CB2-APO_active_pr_15_frame_54-strip.nc",
+      "CB2-APO_active_pr_15_frame_83-strip.nc",
+      "CB2-APO_active_pr_16_frame_105-strip.nc",
+      "CB2-APO_active_pr_16_frame_13-strip.nc",
+      "CB2-APO_active_pr_16_frame_153-strip.nc",
+      "CB2-APO_active_pr_16_frame_179-strip.nc",
+      "CB2-APO_active_pr_16_frame_203-strip.nc",
+      "CB2-APO_active_pr_16_frame_225-strip.nc",
+      "CB2-APO_active_pr_16_frame_249-strip.nc",
+      "CB2-APO_active_pr_16_frame_270-strip.nc",
+      "CB2-APO_active_pr_16_frame_293-strip.nc",
+      "CB2-APO_active_pr_16_frame_316-strip.nc",
+      "CB2-APO_active_pr_16_frame_340-strip.nc",
+      "CB2-APO_active_pr_16_frame_366-strip.nc",
+      "CB2-APO_active_pr_16_frame_392-strip.nc",
+      "CB2-APO_active_pr_16_frame_416-strip.nc",
+      "CB2-APO_active_pr_16_frame_439-strip.nc",
+      "CB2-APO_active_pr_16_frame_466-strip.nc",
+      "CB2-APO_active_pr_16_frame_493-strip.nc",
+      "CB2-APO_active_pr_16_frame_65-strip.nc",
+      "CB2-APO_active_pr_16_frame_9-strip.nc",
+      "CB2-APO_active_pr_17_frame_4-strip.nc",
+      "CB2-APO_active_pr_2_frame_29-strip.nc",
+      "CB2-APO_active_pr_2_frame_7-strip.nc",
+      "CB2-APO_active_pr_3_frame_31-strip.nc",
+      "CB2-APO_active_pr_3_frame_59-strip.nc",
+      "CB2-APO_active_pr_3_frame_85-strip.nc",
+      "CB2-APO_active_pr_4_frame_26-strip.nc",
+      "CB2-APO_active_pr_4_frame_50-strip.nc",
+      "CB2-APO_active_pr_4_frame_74-strip.nc",
+      "CB2-APO_active_pr_5_frame_1-strip.nc",
+      "CB2-APO_active_pr_5_frame_34-strip.nc",
+      "CB2-APO_active_pr_5_frame_58-strip.nc",
+      "CB2-APO_active_pr_5_frame_80-strip.nc",
+      "CB2-APO_active_pr_6_frame_49-strip.nc",
+      "CB2-APO_active_pr_6_frame_73-strip.nc",
+      "CB2-APO_active_pr_6_frame_97-strip.nc",
+      "CB2-APO_active_pr_7_frame_35-strip.nc",
+      "CB2-APO_active_pr_7_frame_62-strip.nc",
+      "CB2-APO_active_pr_7_frame_88-strip.nc",
+      "CB2-APO_active_pr_9_frame_22-strip.nc",
+      "CB2-APO_active_pr_9_frame_48-strip.nc",
+      "CB2-APO_active_pr_9_frame_71-strip.nc",
       "CB2-APO_active_pr_9_frame_99-strip.nc"
     ],
     "filename_class_note": "inactive/active in filenames = deposit start-structure class, NOT our MSM states"
@@ -834,289 +1034,589 @@
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_inactive_pr_10_frame_148-strip.nc",
+        "file": "CB2-APO_inactive_pr_10_frame_122-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_inactive_pr_10_frame_198-strip.nc",
+        "file": "CB2-APO_inactive_pr_10_frame_147-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_inactive_pr_10_frame_70-strip.nc",
+        "file": "CB2-APO_inactive_pr_10_frame_171-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_inactive_pr_11_frame_118-strip.nc",
+        "file": "CB2-APO_inactive_pr_10_frame_195-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_inactive_pr_11_frame_168-strip.nc",
+        "file": "CB2-APO_inactive_pr_10_frame_43-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_inactive_pr_11_frame_37-strip.nc",
+        "file": "CB2-APO_inactive_pr_10_frame_69-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_inactive_pr_11_frame_87-strip.nc",
+        "file": "CB2-APO_inactive_pr_10_frame_92-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_inactive_pr_12_frame_136-strip.nc",
+        "file": "CB2-APO_inactive_pr_11_frame_115-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_inactive_pr_12_frame_188-strip.nc",
-        "n_frames": 459,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_12_frame_59-strip.nc",
-        "n_frames": 484,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_13_frame_109-strip.nc",
+        "file": "CB2-APO_inactive_pr_11_frame_141-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_inactive_pr_13_frame_158-strip.nc",
+        "file": "CB2-APO_inactive_pr_11_frame_165-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_inactive_pr_13_frame_31-strip.nc",
+        "file": "CB2-APO_inactive_pr_11_frame_189-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_inactive_pr_13_frame_80-strip.nc",
+        "file": "CB2-APO_inactive_pr_11_frame_33-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_inactive_pr_14_frame_43-strip.nc",
+        "file": "CB2-APO_inactive_pr_11_frame_59-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_inactive_pr_14_frame_94-strip.nc",
-        "n_frames": 401,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_15_frame_57-strip.nc",
+        "file": "CB2-APO_inactive_pr_11_frame_83-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_inactive_pr_16_frame_20-strip.nc",
+        "file": "CB2-APO_inactive_pr_12_frame_107-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_inactive_pr_16_frame_70-strip.nc",
+        "file": "CB2-APO_inactive_pr_12_frame_131-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_inactive_pr_2_frame_1-strip.nc",
+        "file": "CB2-APO_inactive_pr_12_frame_156-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_inactive_pr_2_frame_68-strip.nc",
+        "file": "CB2-APO_inactive_pr_12_frame_182-strip.nc",
+        "n_frames": 429,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_12_frame_3-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_12_frame_53-strip.nc",
+        "n_frames": 378,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_12_frame_78-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_13_frame_103-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_13_frame_127-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_13_frame_151-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_13_frame_177-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_13_frame_23-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_13_frame_5-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_13_frame_73-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_14_frame_0-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_14_frame_35-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_14_frame_60-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_14_frame_86-strip.nc",
+        "n_frames": 351,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_15_frame_20-strip.nc",
+        "n_frames": 294,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_15_frame_47-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_15_frame_76-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_16_frame_100-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_16_frame_36-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_16_frame_60-strip.nc",
+        "n_frames": 356,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_16_frame_86-strip.nc",
+        "n_frames": 344,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_17_frame_21-strip.nc",
+        "n_frames": 251,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_2_frame_26-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_2_frame_54-strip.nc",
+        "n_frames": 324,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_2_frame_83-strip.nc",
+        "n_frames": 515,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_3_frame_107-strip.nc",
+        "n_frames": 331,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_3_frame_135-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_3_frame_169-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_3_frame_199-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_3_frame_227-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_3_frame_255-strip.nc",
+        "n_frames": 551,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_3_frame_28-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_3_frame_36-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_3_frame_62-strip.nc",
+        "n_frames": 476,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_3_frame_93-strip.nc",
+        "n_frames": 286,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_4_frame_118-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_4_frame_145-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_4_frame_171-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_4_frame_198-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_4_frame_226-strip.nc",
+        "n_frames": 464,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_4_frame_255-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_4_frame_28-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_4_frame_41-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_4_frame_69-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_4_frame_95-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_5_frame_121-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_5_frame_146-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_5_frame_171-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_5_frame_195-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_5_frame_4-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_5_frame_66-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_5_frame_92-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_6_frame_114-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_6_frame_14-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_6_frame_163-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_6_frame_188-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_6_frame_31-strip.nc",
+        "n_frames": 332,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_6_frame_56-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_6_frame_82-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_7_frame_106-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_7_frame_130-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_7_frame_155-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_7_frame_179-strip.nc",
+        "n_frames": 281,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_7_frame_24-strip.nc",
+        "n_frames": 358,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_7_frame_50-strip.nc",
+        "n_frames": 429,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_7_frame_78-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_8_frame_102-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_8_frame_128-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_8_frame_157-strip.nc",
+        "n_frames": 320,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_8_frame_181-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_8_frame_3-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_8_frame_57-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_8_frame_82-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_9_frame_105-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_9_frame_129-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_9_frame_154-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_9_frame_18-strip.nc",
         "n_frames": 291,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_inactive_pr_3_frame_12-strip.nc",
-        "n_frames": 415,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_3_frame_185-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_3_frame_242-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_3_frame_293-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_3_frame_79-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_4_frame_132-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_4_frame_187-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_4_frame_242-strip.nc",
-        "n_frames": 541,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_4_frame_32-strip.nc",
-        "n_frames": 449,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_4_frame_86-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_5_frame_138-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_5_frame_188-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_5_frame_58-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_6_frame_108-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_6_frame_158-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_6_frame_26-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_6_frame_78-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_7_frame_126-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_7_frame_175-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_7_frame_47-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_8_frame_10-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_8_frame_154-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_8_frame_28-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_8_frame_80-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_9_frame_128-strip.nc",
-        "n_frames": 600,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_inactive_pr_9_frame_179-strip.nc",
+        "file": "CB2-APO_inactive_pr_9_frame_24-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
         "file": "CB2-APO_inactive_pr_9_frame_48-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_9_frame_71-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
@@ -1134,289 +1634,589 @@
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_10_frame_61-strip.nc",
+        "file": "CB2-APO_active_pr_10_frame_36-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_11_frame_127-strip.nc",
-        "n_frames": 337,
+        "file": "CB2-APO_active_pr_10_frame_60-strip.nc",
+        "n_frames": 283,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_11_frame_6-strip.nc",
-        "n_frames": 299,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_active_pr_12_frame_24-strip.nc",
+        "file": "CB2-APO_active_pr_10_frame_88-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_13_frame_116-strip.nc",
+        "file": "CB2-APO_active_pr_11_frame_126-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_13_frame_162-strip.nc",
+        "file": "CB2-APO_active_pr_11_frame_3-strip.nc",
+        "n_frames": 332,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_11_frame_58-strip.nc",
+        "n_frames": 297,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_11_frame_81-strip.nc",
+        "n_frames": 335,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_12_frame_22-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_13_frame_208-strip.nc",
+        "file": "CB2-APO_active_pr_12_frame_45-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_13_frame_260-strip.nc",
-        "n_frames": 537,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_active_pr_13_frame_39-strip.nc",
+        "file": "CB2-APO_active_pr_13_frame_113-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_13_frame_88-strip.nc",
+        "file": "CB2-APO_active_pr_13_frame_137-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_14_frame_135-strip.nc",
+        "file": "CB2-APO_active_pr_13_frame_16-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_14_frame_182-strip.nc",
-        "n_frames": 507,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_active_pr_14_frame_23-strip.nc",
+        "file": "CB2-APO_active_pr_13_frame_183-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_14_frame_279-strip.nc",
+        "file": "CB2-APO_active_pr_13_frame_205-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_14_frame_328-strip.nc",
+        "file": "CB2-APO_active_pr_13_frame_229-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_14_frame_375-strip.nc",
-        "n_frames": 388,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_active_pr_14_frame_419-strip.nc",
+        "file": "CB2-APO_active_pr_13_frame_255-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_14_frame_466-strip.nc",
+        "file": "CB2-APO_active_pr_13_frame_28-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_14_frame_67-strip.nc",
+        "file": "CB2-APO_active_pr_13_frame_35-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_15_frame_122-strip.nc",
+        "file": "CB2-APO_active_pr_13_frame_57-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_15_frame_168-strip.nc",
+        "file": "CB2-APO_active_pr_13_frame_82-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_15_frame_217-strip.nc",
+        "file": "CB2-APO_active_pr_14_frame_105-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_15_frame_268-strip.nc",
+        "file": "CB2-APO_active_pr_14_frame_130-strip.nc",
+        "n_frames": 282,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_14_frame_154-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_15_frame_316-strip.nc",
+        "file": "CB2-APO_active_pr_14_frame_178-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_15_frame_368-strip.nc",
+        "file": "CB2-APO_active_pr_14_frame_20-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_15_frame_418-strip.nc",
+        "file": "CB2-APO_active_pr_14_frame_223-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_15_frame_47-strip.nc",
+        "file": "CB2-APO_active_pr_14_frame_246-strip.nc",
+        "n_frames": 315,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_14_frame_270-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_15_frame_7-strip.nc",
-        "n_frames": 479,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_active_pr_16_frame_118-strip.nc",
+        "file": "CB2-APO_active_pr_14_frame_295-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_16_frame_17-strip.nc",
+        "file": "CB2-APO_active_pr_14_frame_32-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_16_frame_217-strip.nc",
+        "file": "CB2-APO_active_pr_14_frame_343-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_16_frame_263-strip.nc",
+        "file": "CB2-APO_active_pr_14_frame_368-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_16_frame_309-strip.nc",
+        "file": "CB2-APO_active_pr_14_frame_39-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_16_frame_357-strip.nc",
+        "file": "CB2-APO_active_pr_14_frame_411-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_16_frame_41-strip.nc",
+        "file": "CB2-APO_active_pr_14_frame_433-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_16_frame_458-strip.nc",
+        "file": "CB2-APO_active_pr_14_frame_458-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_16_frame_60-strip.nc",
+        "file": "CB2-APO_active_pr_14_frame_482-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_17_frame_18-strip.nc",
+        "file": "CB2-APO_active_pr_14_frame_59-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_14_frame_85-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_110-strip.nc",
+        "n_frames": 408,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_135-strip.nc",
+        "n_frames": 279,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_159-strip.nc",
+        "n_frames": 261,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_182-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_206-strip.nc",
+        "n_frames": 484,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_23-strip.nc",
+        "n_frames": 399,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_258-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_280-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_305-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_331-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_355-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_38-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_405-strip.nc",
+        "n_frames": 353,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_430-strip.nc",
+        "n_frames": 293,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_454-strip.nc",
+        "n_frames": 302,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_48-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_54-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_83-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_105-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_13-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_153-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_179-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_203-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_225-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_249-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_270-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_293-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_316-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_340-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_366-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_392-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_416-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_439-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_466-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_493-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_65-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_9-strip.nc",
+        "n_frames": 497,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_17_frame_4-strip.nc",
+        "n_frames": 276,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_2_frame_29-strip.nc",
+        "n_frames": 341,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_2_frame_7-strip.nc",
+        "n_frames": 500,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_3_frame_31-strip.nc",
         "n_frames": 275,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_2_frame_46-strip.nc",
+        "file": "CB2-APO_active_pr_3_frame_59-strip.nc",
+        "n_frames": 448,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_3_frame_85-strip.nc",
         "n_frames": 500,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_3_frame_54-strip.nc",
-        "n_frames": 468,
+        "file": "CB2-APO_active_pr_4_frame_26-strip.nc",
+        "n_frames": 496,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_4_frame_22-strip.nc",
+        "file": "CB2-APO_active_pr_4_frame_50-strip.nc",
         "n_frames": 500,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_4_frame_71-strip.nc",
-        "n_frames": 311,
+        "file": "CB2-APO_active_pr_4_frame_74-strip.nc",
+        "n_frames": 500,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_5_frame_29-strip.nc",
-        "n_frames": 384,
-        "n_features": 24,
-        "dt_mda": 100.0
-      },
-      {
-        "file": "CB2-APO_active_pr_5_frame_78-strip.nc",
+        "file": "CB2-APO_active_pr_5_frame_1-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_6_frame_71-strip.nc",
+        "file": "CB2-APO_active_pr_5_frame_34-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_7_frame_31-strip.nc",
+        "file": "CB2-APO_active_pr_5_frame_58-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_7_frame_86-strip.nc",
-        "n_frames": 432,
+        "file": "CB2-APO_active_pr_5_frame_80-strip.nc",
+        "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
       },
       {
-        "file": "CB2-APO_active_pr_9_frame_47-strip.nc",
+        "file": "CB2-APO_active_pr_6_frame_49-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_6_frame_73-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_6_frame_97-strip.nc",
+        "n_frames": 501,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_7_frame_35-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_7_frame_62-strip.nc",
+        "n_frames": 526,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_7_frame_88-strip.nc",
+        "n_frames": 320,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_9_frame_22-strip.nc",
+        "n_frames": 427,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_9_frame_48-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_9_frame_71-strip.nc",
         "n_frames": 600,
         "n_features": 24,
         "dt_mda": 100.0
@@ -1428,9 +2228,9 @@
         "dt_mda": 100.0
       }
     ],
-    "n_frames_total": 56246,
+    "n_frames_total": 109080,
     "frame_dt_ns_assumed": 0.1,
-    "featurize_wall_s": 13.616377353668213,
+    "featurize_wall_s": 22.11031174659729,
     "max_workers": 4,
     "preregistration": "docs\\synthesis\\EXPERIMENT_CB2_APO_OWN_MSM.md",
     "saved_cache": "data\\external\\dutta_shukla_2023\\trajectories\\CB2_APO\\_cache_own_msm\\features_x8_ca.npz"
@@ -1444,10 +2244,10 @@
   },
   "implied_timescales_assessment": {
     "verdict": "NON_CONVERGENT",
-    "reason": "slowest ITS relative change late-vs-mid thirds = 0.953 (flat\u22640.25, marginal\u22640.5)",
-    "slowest_rel_change": 0.952928912186463,
-    "late_mean_frames": 17294.5004158071,
-    "mid_mean_frames": 8855.673295575565,
+    "reason": "slowest ITS relative change late-vs-mid thirds = 0.800 (flat\u22640.25, marginal\u22640.5)",
+    "slowest_rel_change": 0.799872665030219,
+    "late_mean_frames": 6619.257160035773,
+    "mid_mean_frames": 3677.625250186595,
     "recommended_lag_frames": 30,
     "n_finite_slowest": 10,
     "connected_states_per_lag": [
@@ -1486,7 +2286,7 @@
     "status": "CK_SOFT_PASS",
     "lag_frames": 30,
     "lag2_frames": 60,
-    "rel_frobenius_error": 0.2120717507450465,
+    "rel_frobenius_error": 0.2268554635896912,
     "threshold": 0.35,
     "n_shared_states": 50
   },
@@ -1504,11 +2304,11 @@
     "python": "3.12.13"
   },
   "topology_sha256": "db7182785383ee12\u2026",
-  "wall_s": 32.77065563201904,
+  "wall_s": 36.40110993385315,
   "budgets": {
     "max_cache_bytes": 8589934592,
     "max_wall_s": 14400,
-    "cache_nbytes": 3090270664
+    "cache_nbytes": 5993087238
   },
   "epistemology": {
     "own_states_ne_dutta_I1_I4": true,
@@ -1517,12 +2317,20 @@
     "docking": false,
     "full_zip_unpacked": false
   },
-  "locked_pilot": {
-    "n_per_state": 50,
-    "n_trajs": 100,
-    "n_frames": 56246,
-    "stage0": "EXT_OWN_MSM_NON_CONVERGENT",
+  "scale_up": {
+    "pi_authorized": true,
+    "n_per_state": 100,
+    "n_trajs": 200,
+    "n_frames_total": 109080,
+    "pilot_ref": "results/msm_model/cb2_apo_own_msm_report_pilot_n50.json",
+    "pilot_n_per_state": 50,
+    "pilot_n_trajs": 100,
+    "pilot_n_frames_total": 56246,
+    "pilot_its_rel_change": 0.953,
+    "scale_its_rel_change": 0.8,
+    "comparison_md": "results/msm_model/cb2_apo_own_msm_n100_vs_n200.md",
+    "verdict": "EXT_OWN_MSM_NON_CONVERGENT",
     "contacts": "ABORTED",
-    "scale_up": "--n-per-state 100 under same featurization; human decision"
+    "retuned_hyperparams": false
   }
 }

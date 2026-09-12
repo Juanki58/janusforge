@@ -225,3 +225,14 @@ Do **not** commit `.zip` / `.nc` / `.prmtop` / large feature caches under `_cach
 ---
 
 *Fin pre-registro. Ejecutar solo tras presencia de este archivo; no editar umbrales / pares / N_MICROSTATES después de ver resultados.*
+
+---
+
+## Outcome appendix (post-run; settings unchanged)
+
+| Run | CLI | Trajs / frames | ITS rel Δ | Stage-0 | Contacts |
+|-----|-----|----------------|-----------|---------|----------|
+| Pilot (`f45e5b8`) | `--n-per-state 50` | 100 / 56 246 | 0.953 | `EXT_OWN_MSM_NON_CONVERGENT` | ABORTED |
+| Scale-up (PI “si”) | `--n-per-state 100` | 200 / 109 080 | 0.800 | `EXT_OWN_MSM_NON_CONVERGENT` | ABORTED |
+
+Comparison detail: `results/msm_model/cb2_apo_own_msm_n100_vs_n200.md`. Soft CK passed both runs; does not reopen Stage-0.

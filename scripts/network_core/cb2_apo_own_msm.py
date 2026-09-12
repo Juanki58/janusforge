@@ -377,6 +377,16 @@ def extract_stratified(n_per_state: int, skip_extract: bool) -> dict[str, Any]:
         members = choose_stratified(by_state[st], n_per_state, rng)
         chosen[st] = members
 
+    # Drop orphan .nc not in the current stratified set so scale-up stays
+    # within the locked ≤8 GB cache budget (pilot leftovers otherwise accumulate).
+    keep_names = {Path(m).name for members in chosen.values() for m in members}
+    for orphan in NC_DIR.glob("*.nc"):
+        if orphan.name not in keep_names:
+            try:
+                orphan.unlink()
+            except OSError:
+                pass
+
     extracted: dict[str, list[str]] = {"inactive": [], "active": []}
     bytes_written = 0
     t0 = time.time()
@@ -390,12 +400,16 @@ def extract_stratified(n_per_state: int, skip_extract: bool) -> dict[str, Any]:
                         "detail": "walltime during extract",
                         "partial": extracted,
                     }
-                if cache_nbytes() + bytes_written > MAX_CACHE_BYTES:
+                # cache_nbytes() already includes files written this run — do not
+                # add bytes_written (that double-counts and aborts scale-up early).
+                if cache_nbytes() > MAX_CACHE_BYTES:
                     return {
                         "ok": False,
                         "reason": "EXT_OWN_MSM_CACHE_LIMIT",
                         "detail": "disk during extract",
                         "partial": extracted,
+                        "cache_nbytes": cache_nbytes(),
+                        "max_cache_bytes": MAX_CACHE_BYTES,
                     }
                 dest = NC_DIR / Path(member).name
                 if not dest.is_file():
@@ -1050,24 +1064,24 @@ def write_msm_report(payload: dict[str, Any]) -> None:
         "",
         "## Sampling",
         "",
-        f"- N per filename class (inactive/active): **{payload['sampling']['n_per_state']}**",
-        f"- N trajs total: **{payload['sampling']['n_trajs']}**",
-        f"- n_frames_total: **{payload['featurization'].get('n_frames_total')}**",
-        f"- Cache: `{payload['sampling'].get('cache_dir')}`",
+        f"- N per filename class (inactive/active): **{(payload.get('sampling') or {}).get('n_per_state', 'NA')}**",
+        f"- N trajs total: **{(payload.get('sampling') or {}).get('n_trajs', 'NA')}**",
+        f"- n_frames_total: **{(payload.get('featurization') or {}).get('n_frames_total', 'NA')}**",
+        f"- Cache: `{(payload.get('sampling') or {}).get('cache_dir', 'NA')}`",
         f"- Assumed frame dt: **{FRAME_DT_NS_ASSUMED} ns** (MDA dts recorded in JSON)",
         "",
         "## Featurization",
         "",
         "- X8-like 24 Cα–Cα (UniProt → topo via alignment)",
-        f"- Alignment identity: `{payload['residue_map'].get('alignment_identity')}`",
-        f"- All pairs OK: `{payload['residue_map'].get('all_pairs_ok')}`",
+        f"- Alignment identity: `{(payload.get('residue_map') or {}).get('alignment_identity')}`",
+        f"- All pairs OK: `{(payload.get('residue_map') or {}).get('all_pairs_ok')}`",
         "",
         "## MSM / ITS",
         "",
         f"- tICA lag={TICA_LAG_FRAMES}, dim={TICA_DIM}; K-means K={N_MICROSTATES}",
-        f"- **ITS verdict:** `{its.get('verdict')}`",
-        f"- Detail: {its.get('reason')}",
-        f"- Recommended lag: **{its.get('recommended_lag_frames')}** frames",
+        f"- **ITS verdict:** `{(its or {}).get('verdict')}`",
+        f"- Detail: {(its or {}).get('reason')}",
+        f"- Recommended lag: **{(its or {}).get('recommended_lag_frames')}** frames",
         f"- Soft CK: `{payload.get('soft_ck', {})}`",
         f"- ITS plot: `{OUT_ITS_PNG.relative_to(ROOT)}`",
         "",
@@ -1240,7 +1254,12 @@ def main() -> int:
                 "generated_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
                 "branch": git_branch(),
                 "verdicts": v,
-                "sampling": extract,
+                "sampling": {
+                    "n_per_state": args.n_per_state,
+                    "n_trajs": "NA",
+                    "cache_dir": str(CACHE_DIR.relative_to(ROOT)),
+                    "extract": extract,
+                },
                 "featurization": {},
                 "residue_map": map_info,
                 "implied_timescales_assessment": {},

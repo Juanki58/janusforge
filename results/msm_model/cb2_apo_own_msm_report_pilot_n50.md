@@ -1,6 +1,6 @@
 # EXTERNAL — CB2_APO **own** MSM report
 
-**Generated (UTC):** `2026-09-12T19:56:12Z`
+**Generated (UTC):** `2026-09-12T14:39:23Z`
 **Branch:** `feat/cb2-hubs-functional-topology-test`
 **Pre-reg:** `docs/synthesis/EXPERIMENT_CB2_APO_OWN_MSM.md`
 **Commit tip (at run):** see git after commit
@@ -22,9 +22,9 @@
 
 ## Sampling
 
-- N per filename class (inactive/active): **100**
-- N trajs total: **200**
-- n_frames_total: **109080**
+- N per filename class (inactive/active): **50**
+- N trajs total: **100**
+- n_frames_total: **56246**
 - Cache: `data\external\dutta_shukla_2023\trajectories\CB2_APO\_cache_own_msm`
 - Assumed frame dt: **0.1 ns** (MDA dts recorded in JSON)
 
@@ -38,9 +38,9 @@
 
 - tICA lag=5, dim=5; K-means K=50
 - **ITS verdict:** `NON_CONVERGENT`
-- Detail: slowest ITS relative change late-vs-mid thirds = 0.800 (flat≤0.25, marginal≤0.5)
+- Detail: slowest ITS relative change late-vs-mid thirds = 0.953 (flat≤0.25, marginal≤0.5)
 - Recommended lag: **30** frames
-- Soft CK: `{'status': 'CK_SOFT_PASS', 'lag_frames': 30, 'lag2_frames': 60, 'rel_frobenius_error': 0.2268554635896912, 'threshold': 0.35, 'n_shared_states': 50}`
+- Soft CK: `{'status': 'CK_SOFT_PASS', 'lag_frames': 30, 'lag2_frames': 60, 'rel_frobenius_error': 0.2120717507450465, 'threshold': 0.35, 'n_shared_states': 50}`
 - ITS plot: `results\msm_model\cb2_apo_own_msm_its.png`
 
 ## PCCA+ / π (our states)
@@ -62,12 +62,12 @@ _No populations (Stage-0 abort before PCCA+)._
 - `deeptime`: 0.4.5
 - `python`: 3.12.13
 
-## Scale-up status (PI-authorized)
+## Locked pilot status
 
-- **Run:** `--n-per-state 100` (= **200** trajs), **109 080** frames; SAME X8 / tICA / K / MSM as pilot (no retune).
-- **Stage-0:** `EXT_OWN_MSM_NON_CONVERGENT` (ITS late-vs-mid rel Δ ≈ **0.800**; soft CK pass at lag 30 does **not** override).
-- Contacts / soft A/B/C: **ABORTED**.
-- **vs pilot (N=100 trajs / `--n-per-state 50`):** ITS Δ 0.953 → 0.800 (improved, still NON_CONVERGENT). See `results/msm_model/cb2_apo_own_msm_n100_vs_n200.md` and `cb2_apo_own_msm_report_pilot_n50.*`.
+- **Primary run:** N=**50+50** (=100 trajs), **56 246** frames, X8-like 24 Cα distances, deeptime tICA/K-means/MSM.
+- **Provisional Stage-0:** `EXT_OWN_MSM_NON_CONVERGENT` (ITS late-vs-mid rel change ≈0.95; soft CK passed at lag 30 but does **not** override ITS gate).
+- Contacts / soft A/B/C: **ABORTED** (no fabricated architecture).
+- **Path to scale (human decision):** same featurization + hyperparameters; `--n-per-state 100` (200 trajs) under `_cache_own_msm/` without unpacking the full zip. Do **not** retune pairs/K after seeing this result.
 
 ## Hard locks
 
