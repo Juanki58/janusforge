@@ -86,6 +86,7 @@ results/hits/qiu_pyrazole*
 *.gz
 *.zip
 *.tar
+*.tar.xz
 *.7z
 *.nc
 *.prmtop
@@ -96,6 +97,15 @@ results/hits/qiu_pyrazole*
 tools/vina.exe
 tools/vina
 tools/*.exe
+
+# ESMDynamic / ESMFold weights and local inference caches (do not commit)
+data/external/_tmp_esmdynamic/
+**/torch_hub/
+**/.cache/torch/
+**/esmdynamic_weights/
+*.ckpt
+!results/network_core/*.json
+!results/network_core/*.md
 
 # Box probe HTML error stubs (keep JSON/README only)
 data/external/**/_probe/*.bin
