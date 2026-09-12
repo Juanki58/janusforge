@@ -1,0 +1,25 @@
+# CB2 network / MSM analysis stack (Windows-friendly via micromamba)
+# Used by scripts/network_core/* (P1/P2, satellites, external MSM compare).
+#
+#   micromamba create -y -f environments/environment-network.yml
+#   micromamba run -n janus_p1 python scripts/network_core/dynamic_pipeline.py --self-test
+#
+# Note: chemistry/docking track uses requirements.txt (RDKit, etc.) in a separate env.
+# OpenMM MD uses environments/environment-md.yml (Linux/WSL/Docker; AmberTools not on win-64).
+#
+name: janus_p1
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - networkx
+  - mdanalysis
+  - mdtraj
+  - deeptime
+  - scikit-learn
+  - biopython
+  - pyyaml
