@@ -151,6 +151,40 @@ Never write `P2_CONVERGENT` from this experiment.
 
 ---
 
+## Expansion EXTERNAL — larger N TM6/toggle (pre-registered 2026-09-12, before N=25 run)
+
+**Name:** `EXTERNAL_CB2_APO_TM6_TOGGLE_FILENAME_N25`  
+**Trigger:** PI “adelante” on science after README; **do not wait** for Dutta/Shukla authors / filelist.  
+**Prior locked result (N=5+5):** `EXT_APO_TM6_TOGGLE_INDETERMINATE` (3/6 primary \|d\|≥0.8; 1/3 IC opening sign).  
+**Goal:** test whether the INDETERMINATE verdict is a **small-N sampling artifact** of filename stratification, or **stable** under a larger stratified zip sample.
+
+| Item | Locked a priori |
+|------|-----------------|
+| Data | Stream/extract from local `CB2_APO.zip` only — **no full 142 GB unpack** |
+| Cache dir | `trajectories/CB2_APO/_tm6_sample25/` (gitignored `*.nc`) |
+| N | **25 inactive + 25 active** by filename (`*_inactive_*` / `*_active_*`); if wall-clock ~30–60 min forces fewer, document actual N (≥10+10) and keep rules |
+| Stratification | Evenly spaced indices over sorted zip member lists; seed `20260912` (same as N=5) |
+| Features / primary / thresholds | **Identical** to fallback section above — **do not retune** after seeing N=25 stats |
+| Frame cap | ≤200 frames/traj |
+| Optional descriptive | Full 24-pair table already includes TM2/NPxxY-adjacent pairs (Ala79/83–Asn291 etc.) as **annotation only** — not new verdict axes |
+| Soft compare (annotation) | (1) prior `EXT_APO_TM6_TOGGLE_INDETERMINATE` — **stable** vs **flipped**; (2) Dutta & Shukla conserved/unconserved activation-feature narrative (partial TM6/toggle separation expected; filename ≠ MSM state) |
+| Forbidden | Fake filelist; reopen P2; Gi; claim MSM macrostates from filenames |
+
+| Label | Same rules as N=5 fallback |
+|-------|----------------------------|
+| `EXT_APO_TM6_TOGGLE_SEPARATED` / `OVERLAP` / `INDETERMINATE` | unchanged |
+| Soft tags | `EXT_APO_TM6_SOFT_*` + `PRIOR_N5_INDETERMINATE_STABLE` \| `PRIOR_N5_INDETERMINATE_FLIPPED` |
+
+**Outputs (overwrite / supersede N=5 report as current):** `results/network_core/cb2_apo_tm6_toggle.{md,json}` with `run_mode=sample25` and extract metadata.
+
+**CLI:**
+
+```bash
+.\.micromamba\micromamba.exe run -n janus_p1 python scripts/network_core/cb2_apo_tm6_toggle.py --mode sample25
+```
+
+---
+
 ## Outputs
 
 | Path | Content |
@@ -168,8 +202,10 @@ Do **not** commit model weights, `*.pt` hub caches, or proteome `*.tar.xz`.
 
 ```bash
 .\.micromamba\micromamba.exe run -n janus_p1 python scripts/network_core/cb2_esmdynamic.py
-# if UNAVAILABLE early:
-.\.micromamba\micromamba.exe run -n janus_p1 python scripts/network_core/cb2_apo_tm6_toggle.py
+# if UNAVAILABLE early / expansion N=25:
+.\.micromamba\micromamba.exe run -n janus_p1 python scripts/network_core/cb2_apo_tm6_toggle.py --mode sample25
+# prior N=5 cache:
+.\.micromamba\micromamba.exe run -n janus_p1 python scripts/network_core/cb2_apo_tm6_toggle.py --mode sample5
 ```
 
 ---

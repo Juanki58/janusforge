@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """EXTERNAL fallback — CB2_APO TM6/toggle features by filename inactive/active.
 
-Pre-registration: docs/synthesis/EXPERIMENT_CB2_ESMDYNAMIC.md (fallback section).
+Pre-registration: docs/synthesis/EXPERIMENT_CB2_ESMDYNAMIC.md
+  (fallback + Expansion EXTERNAL N=25 section).
 
 Filename inactive/active = simulation start label ONLY — NOT MSM macrostates.
 Does NOT reopen P2 as CONVERGENT; no Gi claims; no fake filelist alignment.
@@ -16,6 +17,7 @@ import hashlib
 import json
 import subprocess
 import sys
+import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -35,8 +37,10 @@ except ImportError as e:  # pragma: no cover
     raise SystemExit(f"MDAnalysis required: {e}") from e
 
 TRAJ_DIR = ROOT / "data" / "external" / "dutta_shukla_2023" / "trajectories" / "CB2_APO"
+ZIP_PATH = ROOT / "data" / "external" / "dutta_shukla_2023" / "trajectories" / "CB2_APO.zip"
 TOPOLOGY = TRAJ_DIR / "CB2-APO_inactive_pr_1-strip.prmtop"
 SAMPLE_DIR = TRAJ_DIR / "_pilot_sample"
+SAMPLE25_DIR = TRAJ_DIR / "_tm6_sample25"
 PRIMARY = {
     "inactive": TRAJ_DIR / "CB2-APO_inactive_pr_9_frame_99-strip.nc",
     "active": TRAJ_DIR / "CB2-APO_active_pr_10_frame_28-strip.nc",
@@ -45,6 +49,7 @@ OUT_DIR = ROOT / "results" / "network_core"
 OUT_JSON = OUT_DIR / "cb2_apo_tm6_toggle.json"
 OUT_MD = OUT_DIR / "cb2_apo_tm6_toggle.md"
 PREREG = ROOT / "docs" / "synthesis" / "EXPERIMENT_CB2_ESMDYNAMIC.md"
+PRIOR_N5_VERDICT = "EXT_APO_TM6_TOGGLE_INDETERMINATE"
 
 UNIPROT_P34972 = (
     "MEECWVTEIANGSKDGLDSNPMKDYMILSGPQKTAVAVLCTLLGLLSALENVAVLYLILSSHQLRRKPSYLFIGSLAGADFLASVVFACSFVNFHVFHGVDSKAVFLLKIGSVTMTFTAS"
@@ -188,7 +193,90 @@ def uniprot_to_topo(u: mda.Universe) -> dict[str, Any]:
     }
 
 
-def resolve_trajs(mode: str) -> dict[str, list[Path]]:
+def list_zip_nc_by_state(zip_path: Path) -> dict[str, list[str]]:
+    out: dict[str, list[str]] = {"inactive": [], "active": []}
+    with zipfile.ZipFile(zip_path, "r") as zf:
+        for name in zf.namelist():
+            base = Path(name).name
+            if not base.endswith("-strip.nc"):
+                continue
+            if "_inactive_" in base:
+                out["inactive"].append(name)
+            elif "_active_" in base:
+                out["active"].append(name)
+    for k in out:
+        out[k] = sorted(out[k])
+    return out
+
+
+def choose_stratified_indices(n_pool: int, n_want: int, rng: np.random.Generator) -> list[int]:
+    if n_want > n_pool:
+        raise ValueError(f"need {n_want} from pool of {n_pool}")
+    idx = np.linspace(0, n_pool - 1, n_want, dtype=int)
+    chosen = sorted(set(int(i) for i in idx))
+    while len(chosen) < n_want:
+        extra = int(rng.integers(0, n_pool))
+        if extra not in chosen:
+            chosen.append(extra)
+    return sorted(chosen)[:n_want]
+
+
+def extract_stratified_sample(
+    n_per_state: int,
+    dest_dir: Path,
+    *,
+    reuse_existing: bool = True,
+) -> dict[str, Any]:
+    """Extract n+n .nc from CB2_APO.zip without unpacking the full archive."""
+    if not ZIP_PATH.is_file():
+        return {"ok": False, "reason": "zip_missing", "zip": str(ZIP_PATH)}
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    print(f"[cb2_apo_tm6_toggle] listing zip members: {ZIP_PATH.name}", flush=True)
+    by_state = list_zip_nc_by_state(ZIP_PATH)
+    rng = np.random.default_rng(SEED)
+    extracted: dict[str, list[str]] = {"inactive": [], "active": []}
+    skipped_existing = 0
+    bytes_written = 0
+    with zipfile.ZipFile(ZIP_PATH, "r") as zf:
+        for st in ("inactive", "active"):
+            pool = by_state[st]
+            if len(pool) < n_per_state:
+                return {
+                    "ok": False,
+                    "reason": f"insufficient_{st}",
+                    "available": {k: len(v) for k, v in by_state.items()},
+                }
+            chosen_idx = choose_stratified_indices(len(pool), n_per_state, rng)
+            for i in chosen_idx:
+                member = pool[i]
+                dest = dest_dir / Path(member).name
+                if reuse_existing and dest.is_file() and dest.stat().st_size > 0:
+                    skipped_existing += 1
+                else:
+                    print(f"[cb2_apo_tm6_toggle] extract {dest.name}", flush=True)
+                    with zf.open(member) as src, dest.open("wb") as dst:
+                        while True:
+                            chunk = src.read(1 << 20)
+                            if not chunk:
+                                break
+                            dst.write(chunk)
+                            bytes_written += len(chunk)
+                extracted[st].append(dest.name)
+    return {
+        "ok": True,
+        "n_per_state": n_per_state,
+        "dir": str(dest_dir.relative_to(ROOT)),
+        "files": extracted,
+        "pool_sizes": {k: len(v) for k, v in by_state.items()},
+        "skipped_existing": skipped_existing,
+        "bytes_written": bytes_written,
+        "zip": str(ZIP_PATH.relative_to(ROOT)),
+    }
+
+
+def resolve_trajs(
+    mode: str, extract_meta: dict[str, Any] | None = None
+) -> tuple[dict[str, list[Path]], dict[str, Any] | None]:
     if mode == "sample5":
         if not SAMPLE_DIR.is_dir():
             raise SystemExit(f"Missing sample dir: {SAMPLE_DIR}")
@@ -200,12 +288,35 @@ def resolve_trajs(mode: str) -> dict[str, list[Path]]:
         )
         if len(inactive) < 1 or len(active) < 1:
             raise SystemExit("sample5 empty")
-        return {"inactive": inactive, "active": active}
+        return {"inactive": inactive, "active": active}, extract_meta
+    if mode == "sample25":
+        meta = extract_meta
+        if meta is None:
+            meta = extract_stratified_sample(25, SAMPLE25_DIR)
+        if not meta.get("ok"):
+            raise SystemExit(f"sample25 extract failed: {meta}")
+        inactive = sorted(
+            p for p in SAMPLE25_DIR.glob("*-strip.nc") if "_inactive_" in p.name
+        )
+        active = sorted(
+            p for p in SAMPLE25_DIR.glob("*-strip.nc") if "_active_" in p.name
+        )
+        # Prefer exact stratified set if extract listed files
+        files = meta.get("files") or {}
+        if files.get("inactive") and files.get("active"):
+            inactive = [SAMPLE25_DIR / n for n in files["inactive"]]
+            active = [SAMPLE25_DIR / n for n in files["active"]]
+        missing = [p for p in inactive + active if not p.is_file()]
+        if missing:
+            raise SystemExit(f"sample25 missing files: {[p.name for p in missing[:5]]}")
+        if len(inactive) < 1 or len(active) < 1:
+            raise SystemExit("sample25 empty")
+        return {"inactive": inactive, "active": active}, meta
     # primary 1+1
     for st, p in PRIMARY.items():
         if not p.is_file():
             raise SystemExit(f"Missing primary traj: {p}")
-    return {"inactive": [PRIMARY["inactive"]], "active": [PRIMARY["active"]]}
+    return {"inactive": [PRIMARY["inactive"]], "active": [PRIMARY["active"]]}, extract_meta
 
 
 def extract_pair_timeseries(
@@ -262,7 +373,44 @@ def cohens_d(a: np.ndarray, b: np.ndarray) -> float:
     return float((np.mean(b) - np.mean(a)) / pooled)
 
 
-def analyze(mode: str, frame_cap: int) -> dict[str, Any]:
+def soft_compare_dutta_narrative(
+    primary_v: str, n_sep: int, n_open_sign: int
+) -> dict[str, str]:
+    """Annotation-only soft compare; never upgrades P2 / MSM claims."""
+    prior_tag = (
+        "PRIOR_N5_INDETERMINATE_STABLE"
+        if primary_v == PRIOR_N5_VERDICT
+        else "PRIOR_N5_INDETERMINATE_FLIPPED"
+    )
+    # Dutta conserved/unconserved activation features: expect partial TM6/toggle
+    # signal under filename proxy, not clean all-or-nothing separation.
+    if primary_v == "EXT_APO_TM6_TOGGLE_SEPARATED":
+        dutta = (
+            "SOFT_COMPAT_DUTTA_PARTIAL_ACTIVATION_FEATURES_STRONG"
+            " — clean filename separation; still ≠ MSM states / conserved map"
+        )
+    elif primary_v == "EXT_APO_TM6_TOGGLE_OVERLAP":
+        dutta = (
+            "SOFT_COMPAT_DUTTA_UNCONSERVED_OR_WEAK_FILENAME_PROXY"
+            " — little TM6/toggle separation by start-label; "
+            "compatible with mixed conserved/unconserved narrative under weak proxy"
+        )
+    else:
+        dutta = (
+            "SOFT_COMPAT_DUTTA_MIXED_CONSERVED_UNCONSERVED"
+            f" — partial signal ({n_sep}/6 |d|≥0.8; IC open {n_open_sign}/3); "
+            "matches expectation that filename inactive/active is a coarse proxy "
+            "for a mixed conserved/unconserved activation-feature story"
+        )
+    return {
+        "PRIOR_N5": prior_tag,
+        "DUTTA_CONSERVED_UNCONSERVED_NARRATIVE": dutta,
+    }
+
+
+def analyze(
+    mode: str, frame_cap: int, extract_meta: dict[str, Any] | None = None
+) -> dict[str, Any]:
     if not TOPOLOGY.is_file():
         raise SystemExit(f"Missing topology: {TOPOLOGY}")
     if not PREREG.is_file():
@@ -305,12 +453,19 @@ def analyze(mode: str, frame_cap: int) -> dict[str, Any]:
             "pairs": pair_meta,
         }
 
-    trajs = resolve_trajs(mode)
+    trajs, extract_meta = resolve_trajs(mode, extract_meta)
     rng = np.random.default_rng(SEED)
     pooled: dict[str, list[np.ndarray]] = {"inactive": [], "active": []}
     smokes: dict[str, list[dict[str, Any]]] = {"inactive": [], "active": []}
+    n_traj = len(trajs["inactive"]) + len(trajs["active"])
+    done = 0
     for st in ("inactive", "active"):
         for nc in trajs[st]:
+            done += 1
+            print(
+                f"[cb2_apo_tm6_toggle] analyze {done}/{n_traj} {nc.name}",
+                flush=True,
+            )
             arr, smoke = extract_pair_timeseries(
                 TOPOLOGY, nc, topo_pairs, frame_cap, rng
             )
@@ -366,17 +521,28 @@ def analyze(mode: str, frame_cap: int) -> dict[str, Any]:
     else:
         primary_v = "EXT_APO_TM6_TOGGLE_INDETERMINATE"
 
+    soft = soft_compare_dutta_narrative(primary_v, n_sep, n_open_sign)
+
     hub_up = {int(h["label"].split(":")[1]) for h in HUBS}
     hub_touch = [
         r
         for r in feature_rows
         if r["uniprot"][0] in hub_up or r["uniprot"][1] in hub_up
     ]
+    # Descriptive N-term / TM2–NPxxY corridor (already in 24-pair set)
+    nterm_idx = {17, 18}  # Ala2.53-Asn7.45, Ala2.49-Asn7.45
+    nterm_rows = [feature_rows[i] for i in nterm_idx if i < len(feature_rows)]
+
+    exp_name = (
+        "EXTERNAL_CB2_APO_TM6_TOGGLE_FILENAME_N25"
+        if mode == "sample25"
+        else "EXTERNAL_CB2_APO_TM6_TOGGLE_FILENAME"
+    )
 
     payload = {
         "generated_utc": datetime.now(timezone.utc).isoformat(),
         "branch": git_branch(),
-        "experiment": "EXTERNAL_CB2_APO_TM6_TOGGLE_FILENAME",
+        "experiment": exp_name,
         "preregistration": str(PREREG.relative_to(ROOT)),
         "epistemology": {
             "filename_inactive_active_neq_msm_macrostate": True,
@@ -384,10 +550,12 @@ def analyze(mode: str, frame_cap: int) -> dict[str, Any]:
             "does_not_reopen_P2_CONVERGENT": True,
             "no_Gi_claim": True,
             "fallback_for": "EXT_ESMDYNAMIC_INDETERMINATE_UNAVAILABLE",
+            "no_fake_filelist": True,
         },
         "run_mode": mode,
         "frame_cap": frame_cap,
         "seed": SEED,
+        "extract": extract_meta,
         "thresholds": {
             "cohens_d_abs": THR_D,
             "n_primary_for_separated": 4,
@@ -406,6 +574,10 @@ def analyze(mode: str, frame_cap: int) -> dict[str, Any]:
                   "atoms_ok": s["atoms_ok"], "sha256": s["sha256"]} for s in smokes[st]]
             for st in ("inactive", "active")
         },
+        "n_traj": {
+            "inactive": len(trajs["inactive"]),
+            "active": len(trajs["active"]),
+        },
         "n_frames_pooled": {
             "inactive": int(X["inactive"].shape[0]),
             "active": int(X["active"].shape[0]),
@@ -417,6 +589,16 @@ def analyze(mode: str, frame_cap: int) -> dict[str, Any]:
             "n_ic_opening_sign_and_d": n_open_sign,
             "n_ic_opening_sign_any": n_open_sign_any,
         },
+        "nterm_tm2_annotation": [
+            {
+                "role": r["role"],
+                "uniprot": r["uniprot"],
+                "cohens_d": r["cohens_d"],
+                "delta": r["delta_active_minus_inactive"],
+                "abs_d_ge_0_8": r["abs_d_ge_0_8"],
+            }
+            for r in nterm_rows
+        ],
         "hub_adjacent_features": [
             {
                 "role": r["role"],
@@ -436,14 +618,19 @@ def analyze(mode: str, frame_cap: int) -> dict[str, Any]:
                 if primary_v == "EXT_APO_TM6_TOGGLE_SEPARATED"
                 else "EXT_APO_TM6_SOFT_NOT_CLEAR_STATE_DEPENDENT"
             ),
+            "SOFT_COMPARE_PRIOR_N5": soft["PRIOR_N5"],
+            "SOFT_COMPARE_DUTTA_NARRATIVE": soft[
+                "DUTTA_CONSERVED_UNCONSERVED_NARRATIVE"
+            ],
         },
         "pi_summary_es": (
-            f"Fallback TM6/toggle (filename inactive vs active, N_traj="
-            f"{len(trajs['inactive'])}+{len(trajs['active'])}): "
-            f"**{primary_v}** — primary pairs |d|≥0.8: {n_sep}/6; "
+            f"TM6/toggle filename inactive vs active, N_traj="
+            f"{len(trajs['inactive'])}+{len(trajs['active'])} "
+            f"(mode={mode}): **{primary_v}** — primary |d|≥0.8: {n_sep}/6; "
             f"apertura IC (active>inactive y |d|≥0.8): {n_open_sign}/3. "
+            f"vs N=5 prior: {soft['PRIOR_N5']}. "
             "Etiqueta de arranque ≠ macroestado MSM; no reabre P2; "
-            "no sustituye ESMDynamic ni contactos MSM."
+            "sin filelist inventado; no Gi."
         ),
     }
     return payload
@@ -459,6 +646,7 @@ def render_md(payload: dict[str, Any]) -> str:
         f"**Branch:** `{payload['branch']}`",
         f"**Pre-reg:** `{payload.get('preregistration')}`",
         f"**Run mode:** `{payload.get('run_mode')}`",
+        f"**Experiment:** `{payload.get('experiment')}`",
         "",
         "## Epistemology",
         "",
@@ -470,21 +658,44 @@ def render_md(payload: dict[str, Any]) -> str:
         "",
         f"- **`{v['EXT_APO_TM6_TOGGLE']}`**",
         f"- Soft vs PDB state-dependence narrative: `{v.get('SOFT_COMPARE_PRIOR_PDB_B')}`",
+        f"- Soft vs prior N=5 INDETERMINATE: `{v.get('SOFT_COMPARE_PRIOR_N5')}`",
+        f"- Soft vs Dutta conserved/unconserved narrative: "
+        f"`{v.get('SOFT_COMPARE_DUTTA_NARRATIVE')}`",
         f"- Filename ≠ MSM: `{v['EXT_APO_TM6_FILENAME_NEQ_MSM']}`",
         f"- P2 unchanged: `{v['P2_STATUS_UNCHANGED']}`",
+        "",
+        "## Sampling",
+        "",
+        f"- N_traj inactive/active: "
+        f"**{payload.get('n_traj', {}).get('inactive')}** / "
+        f"**{payload.get('n_traj', {}).get('active')}**",
+        f"- Frames pooled inactive/active: "
+        f"`{payload['n_frames_pooled']['inactive']}` / "
+        f"`{payload['n_frames_pooled']['active']}`",
+        f"- Seed: `{payload.get('seed')}`; frame_cap: `{payload.get('frame_cap')}`",
+    ]
+    ex = payload.get("extract") or {}
+    if ex:
+        lines += [
+            f"- Zip extract ok: `{ex.get('ok')}`; cache `{ex.get('dir')}`",
+            f"- Zip pools inactive/active: `{ex.get('pool_sizes')}`",
+            f"- Bytes written this run: `{ex.get('bytes_written')}`; "
+            f"reused existing: `{ex.get('skipped_existing')}`",
+        ]
+    lines += [
         "",
         "## Mapping",
         "",
         f"- Alignment identity: `{payload['mapping']['alignment_identity']:.4f}`",
-        f"- Median topo−UniProt offset: `{payload['mapping'].get('median_offset_topo_minus_uniprot')}`",
+        f"- Median topo−UniProt offset: "
+        f"`{payload['mapping'].get('median_offset_topo_minus_uniprot')}`",
         f"- Note: {payload['mapping'].get('note')}",
         "",
         "## Primary toggle summary",
         "",
         f"- |d|≥0.8 among primary 6: **{ps.get('n_abs_d_ge_0_8')}**/6",
-        f"- IC opening (active>inactive & |d|≥0.8): **{ps.get('n_ic_opening_sign_and_d')}**/3",
-        f"- Frames pooled inactive/active: "
-        f"`{payload['n_frames_pooled']['inactive']}` / `{payload['n_frames_pooled']['active']}`",
+        f"- IC opening (active>inactive & |d|≥0.8): "
+        f"**{ps.get('n_ic_opening_sign_and_d')}**/3",
         "",
         "## Primary features",
         "",
@@ -498,6 +709,16 @@ def render_md(payload: dict[str, Any]) -> str:
             f"| {r['role']} | {r['uniprot']} | {r['topo']} | "
             f"{r['mean_inactive']:.2f} | {r['mean_active']:.2f} | "
             f"{r['delta_active_minus_inactive']:.2f} | {r['cohens_d']:.2f} |"
+        )
+    lines += [
+        "",
+        "## N-term / TM2–NPxxY (descriptive only)",
+        "",
+    ]
+    for r in payload.get("nterm_tm2_annotation", []):
+        lines.append(
+            f"- `{r['role']}` UniProt={r['uniprot']} d={r['cohens_d']:.2f} "
+            f"Δ={r['delta']:.2f} Å |d|≥0.8={r['abs_d_ge_0_8']}"
         )
     lines += [
         "",
@@ -527,22 +748,50 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument(
         "--mode",
-        choices=["sample5", "primary"],
-        default="sample5",
-        help="sample5 uses _pilot_sample 5+5; primary uses 1+1 pilots",
+        choices=["sample5", "sample25", "primary"],
+        default="sample25",
+        help="sample25: stratified 25+25 from CB2_APO.zip; "
+        "sample5: _pilot_sample; primary: 1+1 pilots",
     )
     ap.add_argument("--frame-cap", type=int, default=FRAME_CAP)
+    ap.add_argument(
+        "--n-per-state",
+        type=int,
+        default=25,
+        help="For sample25 mode: trajectories per filename label (default 25)",
+    )
     args = ap.parse_args()
 
-    payload = analyze(args.mode, args.frame_cap)
+    extract_meta = None
+    if args.mode == "sample25":
+        extract_meta = extract_stratified_sample(args.n_per_state, SAMPLE25_DIR)
+        if not extract_meta.get("ok"):
+            raise SystemExit(f"extract failed: {extract_meta}")
+
+    payload = analyze(args.mode, args.frame_cap, extract_meta)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    prereg_sha = sha256_file(PREREG)
+    script_sha = sha256_file(Path(__file__))
+    payload["artifact_sha256"] = {
+        "prereg": prereg_sha,
+        "script": script_sha,
+    }
     OUT_JSON.write_text(
         json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
-    OUT_MD.write_text(render_md(payload), encoding="utf-8")
+    json_sha = sha256_file(OUT_JSON)
+    md = render_md(payload)
+    md += (
+        "\n## Artifact SHA256\n\n"
+        f"- `cb2_apo_tm6_toggle.json`: `{json_sha}`\n"
+        f"- prereg `EXPERIMENT_CB2_ESMDYNAMIC.md`: `{prereg_sha}`\n"
+        f"- script `cb2_apo_tm6_toggle.py`: `{script_sha}`\n"
+    )
+    OUT_MD.write_text(md, encoding="utf-8")
     print(f"[cb2_apo_tm6_toggle] wrote {OUT_MD.relative_to(ROOT)}")
     print(f"[cb2_apo_tm6_toggle] {payload['verdicts']['EXT_APO_TM6_TOGGLE']}")
+    print(f"[cb2_apo_tm6_toggle] json_sha={json_sha}")
     return 0
 
 
