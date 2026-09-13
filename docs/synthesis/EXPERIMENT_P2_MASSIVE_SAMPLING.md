@@ -158,7 +158,46 @@ Marcar antes de producción pesada:
 
 ---
 
-## 8. Failure modes (pre-registered)
+## 8. Cloud options (survey 2026-09-13)
+
+Survey for PI (Spain/EU): paid GPU rental vs academic HPC for **Tier B-min ≥ 20 µs** membrane GPCR OpenMM/GROMACS. Prices fluctuate; re-check before purchase. **No accounts created in this survey.**
+
+### Throughput assumptions (order-of-magnitude)
+
+| Sistema | GPU típica | ns/day (orden) | Fuente / nota |
+|---------|------------|----------------|---------------|
+| Soluble pequeño (~44k átomos) | L40S / A100 | ~250–550 | Shadeform/SimAtomic OpenMM 2025 |
+| ApoA1-class / membrana media | A100 / RTX 4090 | ~100–400+ | OpenMM org benchmarks (PME) |
+| **CB2 GPCR + POPC (este experimento)** | A100 / L40S / 4090 | **~100–300** (usar **150–200** en presupuesto) | Escala respecto GTX 1060 local ~20–30 ns/day membrana; **benchmarkear 1–2 ns en el cloud elegido** |
+| Walltime 20 000 ns @ 200 ns/day | 1 GPU | **~100 GPU-días** (~3–4 meses 1×GPU; ~1–2 sem con 8×GPU paralelas / multi-réplica) | Réplicas ≥20 → paralelizar |
+
+**Coste B-min (orden, USD 2026):** RTX 4090 @ ~$0.35–0.70/h → **~$800–1 700** por 20 µs serial; A100 @ ~$1.2–1.8/h → **~$3 000–6 000**. Hyperscalers (AWS/GCP/Azure) suelen **2–4×** más caros. Colab Pro/Pro+ **no** cubre 20 µs continuo de forma realista.
+
+### Comparativa corta
+
+| Opción | Rol vs 20 µs | Precio/h (orden) | Notas PI EU |
+|--------|--------------|------------------|-------------|
+| **Colab Free** | Solo smoke corto | $0 | ≤~12 h/sesión; GPU no garantizada |
+| **Colab Pro (~$10/mo) / Pro+ (~$50/mo)** | Piloto / setup | Unidades de cómputo | Pro+ hasta ~24 h background; A100 quema unidades rápido; **insuficiente solo para B-min** |
+| **RunPod** | **Primario pagado** | 4090 ~$0.34–0.69; A100 ~$1.2–1.8 | UI simple, pods persistentes, región EU; templates nvidia+CUDA |
+| **Vast.ai** | Trial barato / spot | 4090 desde ~$0.1–0.5; A100 variable | Marketplace; **checkpoint obligatorio**; fiabilidad uneven |
+| Paperspace (DO Gradient) | Notebook cómodo | A100 ~$3.1–3.2 + plan Growth | Caro vs RunPod para MD largo |
+| Lambda Labs | Fiable, ML-oriented | A100 ~$1.3–1.8 | Buena UX; poca/no región EU tipificada |
+| CoreWeave | Enterprise / multi-GPU | A100 ~$2.7/GPU (nodos 8×) | Overkill / caro para lab pequeño |
+| AWS g5 / p3 / p4 | Compliance / org | g5 ~$1+/h; p3.2xl ~$3; p4d 8×A100 ~$22–33 | EU (Ireland etc.); premium; Spot ayuda |
+| GCP / Azure GPU | Idem + créditos | A100 on-demand ~$3–4/h típico | GCP Research Credits: faculty hasta ~$5k (España elegible) |
+| **RES (Red Española de Supercomputación)** | **Primario académico** | **Gratis** (calls) | PI EU/ES; HPC + AI/GPU; calls ~6 meses + **fast-track** semanal; [res.es](https://www.res.es/) |
+
+### Recomendación operativa
+
+1. **Primario (gratis, si timeline lo permite):** solicitud **RES** (HPC o AI/GPU) — URL/España encaja; fast-track para smoke, ordinary call para campaña ≥20 µs.  
+2. **Primario pagado (arrancar ya):** **RunPod** Secure Cloud — 1× **RTX 4090** o **L40S**, imagen nvidia + OpenMM (o GROMACS), volume persistente, checkpoint cada 5–10 ns; escalar a N pods = N réplicas.  
+3. **Trial barato (esta semana):** **Vast.ai** 4090 2–10 ns **o** Colab Pro smoke ≤2 ns — medir **ns/day reales** del sistema CB2 antes de comprometer presupuesto B-min.  
+4. **No** planificar B-min solo con Colab; **no** AWS/GCP on-demand como primera opción de coste.
+
+---
+
+## 9. Failure modes (pre-registered)
 
 | Modo | Lectura | Acción |
 |------|---------|--------|
@@ -171,7 +210,7 @@ Marcar antes de producción pesada:
 
 ---
 
-## 9. Gate-1 retest criteria (when Tier B met)
+## 10. Gate-1 retest criteria (when Tier B met)
 
 Reuse Stage-0 spirit from [`P2_STATE_ROUTE_PREGISTRATION.md`](P2_STATE_ROUTE_PREGISTRATION.md) + builder `@ 2dcff23`:
 
@@ -190,7 +229,7 @@ Reuse Stage-0 spirit from [`P2_STATE_ROUTE_PREGISTRATION.md`](P2_STATE_ROUTE_PRE
 
 ---
 
-## 10. Campaign status snapshot
+## 11. Campaign status snapshot
 
 ```yaml
 EXPERIMENT: P2_MASSIVE_SAMPLING
@@ -202,6 +241,7 @@ TIER_A_PRODUCTION_TODAY: NOT_STARTED  # Docker stopped; no CUDA OpenMM; WSL brok
 TIER_B: CHECKLIST_LOCKED_AWAITING_CLUSTER
 P2_REOPEN_AS_CONVERGENT: FALSE
 ACTIVE_ACTION: DOCS_PREREG_PLUS_INFRA_CHECKLIST
+CLOUD_SURVEY: 2026-09-13  # §8 RunPod primary paid; RES primary academic; Colab/Vast trial only
 ```
 
 ---
