@@ -1,13 +1,14 @@
 # RESEARCH STATE — Janusforge CB₂ (repositorio sellado — DEEP_PAUSE)
 
-**Fecha:** 2026-09-13 (EXTERNAL CB2_APO landmarks + own MSM); 2026-09-10 Final_MSM kinetics; satellite X8/X1 2026-09-09; acta P2 2026-08-21  
+**Fecha:** 2026-09-13 (acta freeze EXTERNAL CB2_APO); landmarks + own MSM; 2026-09-10 Final_MSM kinetics; satellite X8/X1 2026-09-09; acta P2 2026-08-21 (`67df445`)  
 **Rama:** `feat/cb2-hubs-functional-topology-test`  
-**Tipo:** **DEEP_PAUSE** con excepciones acotadas PI-authorized: (2026-09-09) satélites **X8**/**X1** (GPCRmd WT); (2026-09-10) **`EXTERNAL_COMPARISON`** cinética Final_MSM; (2026-09-12/13) **EXTERNAL CB2_APO** — landmark geométrico + own MSM estratificado desde zip local (**no** reabre P2 GPCRmd). **`P2_MSM_TRANSITIONS` sigue CLOSED (INSUFFICIENT_SAMPLING)**; arquitectura estructural A/B/C **NOT DECIDED**; **no** P5 / docking / de novo / hub hunt / rescate post hoc de P1.  
+**Tipo:** **DEEP_PAUSE** — capítulo **EXTERNAL CB2_APO síntesis congelada** ([`docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md`](docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md)). Excepciones PI-authorized ya ejecutadas y cerradas: X8/X1; cinética Final_MSM; landmarks + own MSM desde zip local (**no** reabre P2 GPCRmd). **`P2_MSM_TRANSITIONS` sigue CLOSED (INSUFFICIENT_SAMPLING)**; arquitectura A/B/C **NOT DECIDED**; **no** P5 execution / docking / de novo / hub hunt / rescate post hoc de P1. **Credibilidad = síntesis locked + gates**, no más compute `NON_CONVERGENT`.  
 **Objetivo primario:** **caracterizar el mecanismo de control conformacional de CB2** (switch local, red distribuida, o arquitectura estado-dependiente — cualquiera es resultado válido). **No** es objetivo principal “encontrar el switch.”  
-**Anclas de linaje (preservar):** `cfb2a51` (dual-test limpio → topología-only) · `c2869b0` (jerarquía ambiental A/B/C + `Q_membrana` parked) · `2a1193c` (reposo científico / frontera) · `31a881c` (P1 GPCRmd) · **`bb7b57a`** (postura epistémica) · `aaeec78` (P2 dry) · **`2dcff23`** (P2 MSM convergencia / ITS) · **`862dc42`** (landmark STABLE) · **`22d2af1`** (own MSM N=200 NON_CONVERGENT)  
+**Anclas de linaje (preservar):** `cfb2a51` (dual-test limpio → topología-only) · `c2869b0` (jerarquía ambiental A/B/C + `Q_membrana` parked) · `2a1193c` (reposo científico / frontera) · `31a881c` (P1 GPCRmd) · **`bb7b57a`** (postura epistémica) · `aaeec78` (P2 dry) · **`2dcff23`** (P2 MSM convergencia / ITS) · **`67df445`** (acta P2 / DEEP_PAUSE) · **`862dc42`** (landmark STABLE) · **`22d2af1`** (own MSM N=200 NON_CONVERGENT)  
 **Roadmap P1–P6 (contrato científico):** [`docs/synthesis/RESEARCH_ROADMAP.md`](docs/synthesis/RESEARCH_ROADMAP.md) · alias [`docs/synthesis/CB2_RESEARCH_ROADMAP.md`](docs/synthesis/CB2_RESEARCH_ROADMAP.md)  
 **P1 deliverable:** [`results/network_core/p1_dynamic_hub_validation.md`](results/network_core/p1_dynamic_hub_validation.md)  
 **P2 evidence:** [`results/msm_model/p2_msm_convergence_report.md`](results/msm_model/p2_msm_convergence_report.md) · [`results/msm_model/implied_timescales.png`](results/msm_model/implied_timescales.png) · builder `scripts/network_core/p2_msm_builder.py` @ **`2dcff23`**  
+**Acta freeze EXTERNAL CB2_APO (2026-09-13):** [`docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md`](docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md) — veredictos locked; claims/non-claims; next = decisión humana only  
 **Satellite discrimination (2026-09-09):** [`docs/synthesis/EXPERIMENT_X8_REDUCED_FEATURIZATION.md`](docs/synthesis/EXPERIMENT_X8_REDUCED_FEATURIZATION.md) · [`docs/synthesis/EXPERIMENT_X1_MEAN_VS_VARIANCE.md`](docs/synthesis/EXPERIMENT_X1_MEAN_VS_VARIANCE.md)  
 **External Dutta MSM (2026-09-10):** [`docs/synthesis/EXPERIMENT_EXTERNAL_DUTTA_MSM.md`](docs/synthesis/EXPERIMENT_EXTERNAL_DUTTA_MSM.md) · [`results/network_core/external_dutta_msm_compare.md`](results/network_core/external_dutta_msm_compare.md)  
 **External CB2_APO landmark (2026-09-12):** [`docs/synthesis/EXPERIMENT_CB2_LANDMARK_CONTACTS.md`](docs/synthesis/EXPERIMENT_CB2_LANDMARK_CONTACTS.md) · [`results/network_core/cb2_landmark_contacts.md`](results/network_core/cb2_landmark_contacts.md) → **`EXT_LANDMARK_CONTACTS_STABLE`**  
@@ -15,7 +16,7 @@
 **Datos pesados (local, gitignored):** `CB2_APO.zip` bajo `data/external/dutta_shukla_2023/trajectories/` · caches `_cache_*` · recovery dumps · `.micromamba/` — **no** van a GitHub  
 **Pipeline seco / self-test:** `python scripts/network_core/dynamic_pipeline.py --self-test` (andamiaje `b91b57c`; no sustituye traj)  
 **Bitácora extendida:** [`docs/JANUSFORGE_RESEARCH_STATE.md`](docs/JANUSFORGE_RESEARCH_STATE.md)  
-**Puntero síntesis:** [`docs/cb2_mechanistic_frontier_synthesis.md`](docs/cb2_mechanistic_frontier_synthesis.md) (este archivo es la autoridad de freeze / flags)
+**Puntero síntesis:** [`docs/cb2_mechanistic_frontier_synthesis.md`](docs/cb2_mechanistic_frontier_synthesis.md) · acta EXTERNAL: [`docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md`](docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md) (este archivo sigue siendo la autoridad de freeze / flags)
 
 ---
 
@@ -55,9 +56,11 @@
 | **Own MSM** (X8-like 24-D) | Stratified inactive/active trajs from zip: does ITS converge? | **`EXT_OWN_MSM_NON_CONVERGENT`** — pilot N=100 (Δ≈0.95) → scale-up **N=200** (Δ≈0.80); soft CK pass does **not** override ITS | [`results/msm_model/cb2_apo_own_msm_report.md`](results/msm_model/cb2_apo_own_msm_report.md) · [`cb2_apo_own_msm_n100_vs_n200.md`](results/msm_model/cb2_apo_own_msm_n100_vs_n200.md) · tip **`22d2af1`** |
 | Own MSM contacts / A/B/C | After Stage-0 | **ABORTED** (no fabricated networks) | [`results/network_core/cb2_apo_own_msm_contacts.md`](results/network_core/cb2_apo_own_msm_contacts.md) |
 
-**Related EXTERNAL pilots (same zip line; not P2):** TM6/toggle stratified N=25+25; MSM-state contacts Gate 0 **`EXT_MSM_STATE_CONTACTS_INDETERMINATE_NO_ALIGNMENT`** (no traj↔filelist); PDB snapshot B soft-disagreements on pilot contact maps. Data request draft: [`docs/synthesis/DATA_REQUEST_DUTTA_SHUKLA_MSM.md`](docs/synthesis/DATA_REQUEST_DUTTA_SHUKLA_MSM.md) — email **manual**, not automation.
+**Related EXTERNAL pilots (same zip line; not P2):** TM6/toggle stratified N=25+25; MSM-state contacts Gate 0 **`EXT_MSM_STATE_CONTACTS_INDETERMINATE_NO_ALIGNMENT`** (no traj↔filelist); PDB snapshot B soft-disagreements on pilot contact maps; ESMDynamic **`EXT_ESMDYNAMIC_INDETERMINATE_UNAVAILABLE`**. Data request draft: [`docs/synthesis/DATA_REQUEST_DUTTA_SHUKLA_MSM.md`](docs/synthesis/DATA_REQUEST_DUTTA_SHUKLA_MSM.md) — email **manual**, not automation.
 
-**Locks unchanged:** `P2_MSM_TRANSITIONS = CLOSED (INSUFFICIENT_SAMPLING)` · `P2_NETWORK_A_B_C = ABORTED` · architecture A/B/C **NOT DECIDED** · own states `OWN_Sk` **≠** Dutta I1–I4 / pickle alignment · **no** Gi / docking.
+**Síntesis freeze (2026-09-13):** capítulo EXTERNAL CB2_APO cerrado en [`docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md`](docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md). Lectura: soft geométrico ~A vs snapshot B soft-disagree; **cinética undecided**. Next = decisión humana (muestreo masivo **OR** P5 **OR** wait filelist) — no script automático.
+
+**Locks unchanged:** `P2_MSM_TRANSITIONS = CLOSED (INSUFFICIENT_SAMPLING)` · `P2_NETWORK_A_B_C = ABORTED` · architecture A/B/C **NOT DECIDED** · own states `OWN_Sk` **≠** Dutta I1–I4 / pickle alignment · **no** Gi / docking · **`DEEP_PAUSE = TRUE`**.
 
 ---
 
@@ -437,6 +440,7 @@ EMPIRICAL_FOUNDATION:
   EXTERNAL_DUTTA_MSM_KINETICS: EXT_KINETICS_CB1_CB2_DISTINCT  # 2026-09-10; structural ABC INDETERMINATE_NO_TRAJECTORIES
   EXTERNAL_CB2_APO_LANDMARKS: EXT_LANDMARK_CONTACTS_STABLE  # 2026-09-12; geometric ≠ MSM; soft disagree PDB-B
   EXTERNAL_CB2_APO_OWN_MSM: EXT_OWN_MSM_NON_CONVERGENT  # 2026-09-12; N=200; does NOT reopen P2 GPCRmd
+  EXTERNAL_CB2_APO_CHAPTER: SYNTHESIS_FROZEN  # acta docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md (2026-09-13)
 THEORETICAL_MODEL:
   FRAMEWORK: TRIPARTITE_WORKING_HYPOTHESIS  # NOT demonstrated model
   NOTE: ligand × conformational ensemble × lipid bilayer; weights unresolved
@@ -537,7 +541,8 @@ P2_FIRST_RESULT_TO_REVIEW: CONVERGENCE_NOT_BIOLOGICAL_STORY  # reviewed: NON_CON
 DYNAMIC_INTERACTION_LAYERS: docs/synthesis/CB2_DYNAMIC_INTERACTION_LAYERS.md
 HETEROMER_LAYER: FUTURE_NIVEL_C_ADJACENT
 ARCHIVED_NEXT_CALCULATION: PARKED
-NEXT: STRATEGIC_RESOURCE_ALLOCATION_ONLY  # sampling for P2 OR independent P5 — NOT "what script today?"
+NEXT: STRATEGIC_RESOURCE_ALLOCATION_ONLY  # massive sampling OR P5 OR wait filelist — NOT "what script today?"
+EXTERNAL_CB2_APO_ACTA: docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md
 ROADMAP: docs/synthesis/RESEARCH_ROADMAP.md
 DRY_PIPELINE_SELFTEST: scripts/network_core/dynamic_pipeline.py --self-test
 AUTHOR_REQUEST_CONTINGENCY_MORALES: REGISTERED_DO_NOT_EMAIL
@@ -1052,7 +1057,7 @@ python scripts/network_core/dynamic_pipeline.py --self-test --status
 3. Explicitamente NO: switch único; hubs estáticos controlan Gαi2; `CB2_Gi_NETWORK_CANDIDATE`; red plenamente distribuida demostrada; P5 como rescate de P1/P2.
 4. A/B/C preservada (`c2869b0`); **P5 = HYPOTHESIS_READY** (independent; not substitute); **`P5_EXECUTION = BLOCKED_PENDING_DECISION`**.
 5. **`P2_NETWORK_A_B_C = ABORTED`**. P3/P4/P6 **BLOCKED**. **`DECISION_RULE = DISCRIMINATION_ONLY`**. Ancla postura `bb7b57a`.
-6. **Next human decision only:** massive adaptive sampling for P2 **OR** redesign independent membrane (P5) in silico — **NOT** “what script today?”
+6. **Next human decision only:** massive adaptive sampling for P2 **OR** independent membrane (P5) **OR** wait author filelist — **NOT** “what script today?” Ver acta EXTERNAL.
 7. **`DEEP_PAUSE = TRUE`** · **`REPOSITORY = SEALED`** · **`COMPUTATION = PAUSED`** · **`NEW_PHASE = DO_NOT_OPEN`**.
 
 ---
@@ -1060,15 +1065,16 @@ python scripts/network_core/dynamic_pipeline.py --self-test --status
 ## Lectura recomendada al reanudar sesión
 
 1. **Este archivo** (`RESEARCH_STATE.md`) — acta P2 + YAML freeze SEALED
-2. [`results/msm_model/p2_msm_convergence_report.md`](results/msm_model/p2_msm_convergence_report.md) — evidencia Gate 1 (`2dcff23`)
-3. [`results/msm_model/implied_timescales.png`](results/msm_model/implied_timescales.png) — ITS NON_CONVERGENT
-4. [`results/network_core/p1_dynamic_hub_validation.md`](results/network_core/p1_dynamic_hub_validation.md) — veredicto P1 (`31a881c`)
-5. [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) — ancla `cfb2a51`
-6. [`docs/synthesis/RESEARCH_ROADMAP.md`](docs/synthesis/RESEARCH_ROADMAP.md) — contrato P1–P6
-7. [`docs/synthesis/P2_STATE_ROUTE_PREGISTRATION.md`](docs/synthesis/P2_STATE_ROUTE_PREGISTRATION.md) — P2 gate lock (convergencia → A/B/C)
-8. [`docs/synthesis/CB2_DYNAMIC_INTERACTION_LAYERS.md`](docs/synthesis/CB2_DYNAMIC_INTERACTION_LAYERS.md) — mapa multicapa
-9. [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md) — Morales-Pastor / Dutta–Shukla / Trp258
+2. [`docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md`](docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md) — freeze síntesis EXTERNAL CB2_APO (2026-09-13)
+3. [`results/msm_model/p2_msm_convergence_report.md`](results/msm_model/p2_msm_convergence_report.md) — evidencia Gate 1 (`2dcff23`)
+4. [`results/msm_model/implied_timescales.png`](results/msm_model/implied_timescales.png) — ITS NON_CONVERGENT
+5. [`results/network_core/p1_dynamic_hub_validation.md`](results/network_core/p1_dynamic_hub_validation.md) — veredicto P1 (`31a881c`)
+6. [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) — ancla `cfb2a51`
+7. [`docs/synthesis/RESEARCH_ROADMAP.md`](docs/synthesis/RESEARCH_ROADMAP.md) — contrato P1–P6
+8. [`docs/synthesis/P2_STATE_ROUTE_PREGISTRATION.md`](docs/synthesis/P2_STATE_ROUTE_PREGISTRATION.md) — P2 gate lock (convergencia → A/B/C)
+9. [`docs/synthesis/CB2_DYNAMIC_INTERACTION_LAYERS.md`](docs/synthesis/CB2_DYNAMIC_INTERACTION_LAYERS.md) — mapa multicapa
+10. [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md) — Morales-Pastor / Dutta–Shukla / Trp258
 
 ---
 
-*Fin RESEARCH_STATE.md. 2026-08-21 — ACTA P2: P2_MSM_TRANSITIONS=CLOSED (INSUFFICIENT_SAMPLING) @ 2dcff23; P2_NETWORK_A_B_C=ABORTED; architecture A/B/C NOT DECIDED; P3/P4/P6 BLOCKED; P5 HYPOTHESIS_READY (independent, not substitute); DEEP_PAUSE=TRUE; REPOSITORY=SEALED; COMPUTATION=PAUSED; POST_HOC_EXCUSES=FORBIDDEN; DE_NOVO/DOCKING=STOP; evidence p2_msm_convergence_report.md + implied_timescales.png; next = strategic resource allocation only (sampling for P2 OR independent P5) — documentation only / no compute.*
+*Fin RESEARCH_STATE.md. 2026-09-13 — ACTA EXTERNAL CB2_APO frozen (`docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md`); ACTA P2 intacta @ 67df445 / 2dcff23; P2 CLOSED (INSUFFICIENT_SAMPLING); A/B/C NOT DECIDED; EXT landmarks STABLE + own MSM NON_CONVERGENT; filelist blocker; ESMDynamic unavailable; DEEP_PAUSE=TRUE; next = human strategic choice only (massive sampling OR P5 OR wait filelist) — documentation freeze / no compute.*
