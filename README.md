@@ -37,7 +37,9 @@ Prioridad actual del repo: **mecanismo conformacional de CB2** (topología de co
 
 ## Estado científico (corto)
 
-Autoridad de freeze: [`RESEARCH_STATE.md`](RESEARCH_STATE.md) · roadmap: [`docs/synthesis/RESEARCH_ROADMAP.md`](docs/synthesis/RESEARCH_ROADMAP.md)
+Autoridad de freeze: [`RESEARCH_STATE.md`](RESEARCH_STATE.md) · roadmap: [`docs/synthesis/RESEARCH_ROADMAP.md`](docs/synthesis/RESEARCH_ROADMAP.md) · **brief inversores (credibilidad, sin hype):** [`docs/investors/JANUSFORGE_INVESTOR_BRIEF.md`](docs/investors/JANUSFORGE_INVESTOR_BRIEF.md) · PDF: [`docs/investors/JANUSFORGE_INVESTOR_BRIEF.pdf`](docs/investors/JANUSFORGE_INVESTOR_BRIEF.pdf)
+
+**Status (2026-09-13):** el repo está en **DEEP_PAUSE** con campaña P2 de muestreo masivo **pre-registrada** (aún **sin** producción µs local). Objetivo = arquitectura de control conformacional CB2 (A/B/C), **discrimination-only**. LigACN = **CORE_TOPOLOGICAL_ONLY**; P1 **CLOSED (NOT_SUPPORTED)**; P2 **CLOSED (INSUFFICIENT_SAMPLING)**; A/B/C **NOT DECIDED**. EXTERNAL: landmarks **STABLE** (geométrico soft-A), own MSM **NON_CONVERGENT**, soft-B vs PDB en desacuerdo, filelist Dutta bloqueado. Docking/de novo **STOP**. Siguiente hardware: torre NVIDIA para MD — **no** se finge throughput Tier B hoy.
 
 | Flag | Valor |
 |------|--------|
@@ -171,6 +173,7 @@ janusforge/
 | Documento | Rol |
 |-----------|-----|
 | [`RESEARCH_STATE.md`](RESEARCH_STATE.md) | Freeze / flags / actas |
+| [`docs/investors/JANUSFORGE_INVESTOR_BRIEF.md`](docs/investors/JANUSFORGE_INVESTOR_BRIEF.md) | Brief inversores (ES; anti-hype) + [PDF](docs/investors/JANUSFORGE_INVESTOR_BRIEF.pdf) |
 | [`docs/README.md`](docs/README.md) | Índice de docs |
 | [`docs/guia_maestra_biotecnologia_quimiotipos.md`](docs/guia_maestra_biotecnologia_quimiotipos.md) | Norma Nivel 0 (Track 1 vs Track 2) |
 | [`docs/quimioma_cannabico_cb1_cb2.md`](docs/quimioma_cannabico_cb1_cb2.md) | Brújula química |

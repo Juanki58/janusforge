@@ -19,6 +19,7 @@
 **Datos pesados (local, gitignored):** `CB2_APO.zip` bajo `data/external/dutta_shukla_2023/trajectories/` · Morales GPCRmd xtc · caches `_cache_*` · recovery dumps · `.micromamba/` — **no** van a GitHub  
 **Pipeline seco / self-test:** `python scripts/network_core/dynamic_pipeline.py --self-test` (andamiaje `b91b57c`; no sustituye traj)  
 **Bitácora extendida:** [`docs/JANUSFORGE_RESEARCH_STATE.md`](docs/JANUSFORGE_RESEARCH_STATE.md)  
+**Brief inversores (credibilidad / anti-hype):** [`docs/investors/JANUSFORGE_INVESTOR_BRIEF.md`](docs/investors/JANUSFORGE_INVESTOR_BRIEF.md) · PDF [`docs/investors/JANUSFORGE_INVESTOR_BRIEF.pdf`](docs/investors/JANUSFORGE_INVESTOR_BRIEF.pdf) — **no** sustituye este archivo como autoridad de freeze  
 **Puntero síntesis:** [`docs/cb2_mechanistic_frontier_synthesis.md`](docs/cb2_mechanistic_frontier_synthesis.md) · acta EXTERNAL: [`docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md`](docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md) (este archivo sigue siendo la autoridad de freeze / flags)
 
 ---
@@ -1090,6 +1091,7 @@ python scripts/network_core/dynamic_pipeline.py --self-test --status
 8. [`results/network_core/p1_dynamic_hub_validation.md`](results/network_core/p1_dynamic_hub_validation.md) — veredicto P1
 9. [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) — ancla `cfb2a51`
 10. [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md) — Morales-Pastor / Dutta–Shukla
+11. [`docs/investors/JANUSFORGE_INVESTOR_BRIEF.md`](docs/investors/JANUSFORGE_INVESTOR_BRIEF.md) — brief inversores / PDF (credibilidad; no autoridad de freeze)
 
 ---
 
