@@ -1,15 +1,18 @@
 # RESEARCH STATE — Janusforge CB₂ (repositorio sellado — DEEP_PAUSE)
 
-**Fecha:** 2026-09-10 (external Dutta Final_MSM); satellite X8/X1 2026-09-09; acta P2 2026-08-21  
+**Fecha:** 2026-09-13 (EXTERNAL CB2_APO landmarks + own MSM); 2026-09-10 Final_MSM kinetics; satellite X8/X1 2026-09-09; acta P2 2026-08-21  
 **Rama:** `feat/cb2-hubs-functional-topology-test`  
-**Tipo:** **DEEP_PAUSE** con excepciones acotadas: (2026-09-09) satélites **X8**/**X1** sobre GPCRmd WT; (2026-09-10) **`EXTERNAL_COMPARISON`** cinética sobre pickles Dutta Final_MSM (PI authorized). **`P2_MSM_TRANSITIONS` sigue CLOSED (INSUFFICIENT_SAMPLING)**; arquitectura estructural A/B/C **NOT DECIDED**; **no** P5 / docking / de novo / hub hunt / rescate post hoc de P1.  
+**Tipo:** **DEEP_PAUSE** con excepciones acotadas PI-authorized: (2026-09-09) satélites **X8**/**X1** (GPCRmd WT); (2026-09-10) **`EXTERNAL_COMPARISON`** cinética Final_MSM; (2026-09-12/13) **EXTERNAL CB2_APO** — landmark geométrico + own MSM estratificado desde zip local (**no** reabre P2 GPCRmd). **`P2_MSM_TRANSITIONS` sigue CLOSED (INSUFFICIENT_SAMPLING)**; arquitectura estructural A/B/C **NOT DECIDED**; **no** P5 / docking / de novo / hub hunt / rescate post hoc de P1.  
 **Objetivo primario:** **caracterizar el mecanismo de control conformacional de CB2** (switch local, red distribuida, o arquitectura estado-dependiente — cualquiera es resultado válido). **No** es objetivo principal “encontrar el switch.”  
-**Anclas de linaje (preservar):** `cfb2a51` (dual-test limpio → topología-only) · `c2869b0` (jerarquía ambiental A/B/C + `Q_membrana` parked) · `2a1193c` (reposo científico / frontera) · `31a881c` (P1 GPCRmd) · **`bb7b57a`** (postura epistémica) · `aaeec78` (P2 dry) · **`2dcff23`** (P2 MSM convergencia / ITS)  
+**Anclas de linaje (preservar):** `cfb2a51` (dual-test limpio → topología-only) · `c2869b0` (jerarquía ambiental A/B/C + `Q_membrana` parked) · `2a1193c` (reposo científico / frontera) · `31a881c` (P1 GPCRmd) · **`bb7b57a`** (postura epistémica) · `aaeec78` (P2 dry) · **`2dcff23`** (P2 MSM convergencia / ITS) · **`862dc42`** (landmark STABLE) · **`22d2af1`** (own MSM N=200 NON_CONVERGENT)  
 **Roadmap P1–P6 (contrato científico):** [`docs/synthesis/RESEARCH_ROADMAP.md`](docs/synthesis/RESEARCH_ROADMAP.md) · alias [`docs/synthesis/CB2_RESEARCH_ROADMAP.md`](docs/synthesis/CB2_RESEARCH_ROADMAP.md)  
 **P1 deliverable:** [`results/network_core/p1_dynamic_hub_validation.md`](results/network_core/p1_dynamic_hub_validation.md)  
 **P2 evidence:** [`results/msm_model/p2_msm_convergence_report.md`](results/msm_model/p2_msm_convergence_report.md) · [`results/msm_model/implied_timescales.png`](results/msm_model/implied_timescales.png) · builder `scripts/network_core/p2_msm_builder.py` @ **`2dcff23`**  
 **Satellite discrimination (2026-09-09):** [`docs/synthesis/EXPERIMENT_X8_REDUCED_FEATURIZATION.md`](docs/synthesis/EXPERIMENT_X8_REDUCED_FEATURIZATION.md) · [`docs/synthesis/EXPERIMENT_X1_MEAN_VS_VARIANCE.md`](docs/synthesis/EXPERIMENT_X1_MEAN_VS_VARIANCE.md)  
 **External Dutta MSM (2026-09-10):** [`docs/synthesis/EXPERIMENT_EXTERNAL_DUTTA_MSM.md`](docs/synthesis/EXPERIMENT_EXTERNAL_DUTTA_MSM.md) · [`results/network_core/external_dutta_msm_compare.md`](results/network_core/external_dutta_msm_compare.md)  
+**External CB2_APO landmark (2026-09-12):** [`docs/synthesis/EXPERIMENT_CB2_LANDMARK_CONTACTS.md`](docs/synthesis/EXPERIMENT_CB2_LANDMARK_CONTACTS.md) · [`results/network_core/cb2_landmark_contacts.md`](results/network_core/cb2_landmark_contacts.md) → **`EXT_LANDMARK_CONTACTS_STABLE`**  
+**External CB2_APO own MSM (2026-09-12):** [`docs/synthesis/EXPERIMENT_CB2_APO_OWN_MSM.md`](docs/synthesis/EXPERIMENT_CB2_APO_OWN_MSM.md) · [`results/msm_model/cb2_apo_own_msm_report.md`](results/msm_model/cb2_apo_own_msm_report.md) → **`EXT_OWN_MSM_NON_CONVERGENT`** (N=200)  
+**Datos pesados (local, gitignored):** `CB2_APO.zip` bajo `data/external/dutta_shukla_2023/trajectories/` · caches `_cache_*` · recovery dumps · `.micromamba/` — **no** van a GitHub  
 **Pipeline seco / self-test:** `python scripts/network_core/dynamic_pipeline.py --self-test` (andamiaje `b91b57c`; no sustituye traj)  
 **Bitácora extendida:** [`docs/JANUSFORGE_RESEARCH_STATE.md`](docs/JANUSFORGE_RESEARCH_STATE.md)  
 **Puntero síntesis:** [`docs/cb2_mechanistic_frontier_synthesis.md`](docs/cb2_mechanistic_frontier_synthesis.md) (este archivo es la autoridad de freeze / flags)
@@ -37,6 +40,24 @@
 | Structural A/B/C | **`EXT_STRUCTURAL_ABC = INDETERMINATE_NO_TRAJECTORIES`** |
 
 **Locks unchanged:** `P2_MSM_TRANSITIONS = CLOSED (INSUFFICIENT_SAMPLING)` · `P2_NETWORK_A_B_C = ABORTED` · structural architecture A/B/C **NOT DECIDED** · Dutta K=6 **not** a fitting template for our GPCRmd MSM.
+
+---
+
+## EXTERNAL — CB2_APO geometric landmarks + own MSM (2026-09-12 / 13)
+
+**Authorization:** PI-authorized EXTERNAL work on local `CB2_APO` traj zip (stratified extracts). **Does not** reopen P2 GPCRmd Gate-1. **Geometric proximity ≠ MSM metastable identity.**
+
+| Exp | Question | Verdict | Evidence |
+|-----|----------|---------|----------|
+| **Landmark contacts** | Hard-assign frames to 6 Dutta Fig.6 PDB landmarks (RMSD Cα); contact-map stability across landmarks? | **`EXT_LANDMARK_CONTACTS_STABLE`** (mean Jaccard≈0.82; path turnover≈0.14; frac_core≈0.65) | [`results/network_core/cb2_landmark_contacts.md`](results/network_core/cb2_landmark_contacts.md) · tip **`862dc42`** |
+| Soft vs PDB snapshot B | Same soft class as traj maps vs prior PDB-B snapshot? | **`EXT_LANDMARK_SOFT_DISAGREE_PDB_B`** (annotation only) | same report |
+| Geometry ≠ MSM | Explicit lock | **`EXT_LANDMARK_GEOMETRIC_NEQ_MSM = TRUE`** | same report |
+| **Own MSM** (X8-like 24-D) | Stratified inactive/active trajs from zip: does ITS converge? | **`EXT_OWN_MSM_NON_CONVERGENT`** — pilot N=100 (Δ≈0.95) → scale-up **N=200** (Δ≈0.80); soft CK pass does **not** override ITS | [`results/msm_model/cb2_apo_own_msm_report.md`](results/msm_model/cb2_apo_own_msm_report.md) · [`cb2_apo_own_msm_n100_vs_n200.md`](results/msm_model/cb2_apo_own_msm_n100_vs_n200.md) · tip **`22d2af1`** |
+| Own MSM contacts / A/B/C | After Stage-0 | **ABORTED** (no fabricated networks) | [`results/network_core/cb2_apo_own_msm_contacts.md`](results/network_core/cb2_apo_own_msm_contacts.md) |
+
+**Related EXTERNAL pilots (same zip line; not P2):** TM6/toggle stratified N=25+25; MSM-state contacts Gate 0 **`EXT_MSM_STATE_CONTACTS_INDETERMINATE_NO_ALIGNMENT`** (no traj↔filelist); PDB snapshot B soft-disagreements on pilot contact maps. Data request draft: [`docs/synthesis/DATA_REQUEST_DUTTA_SHUKLA_MSM.md`](docs/synthesis/DATA_REQUEST_DUTTA_SHUKLA_MSM.md) — email **manual**, not automation.
+
+**Locks unchanged:** `P2_MSM_TRANSITIONS = CLOSED (INSUFFICIENT_SAMPLING)` · `P2_NETWORK_A_B_C = ABORTED` · architecture A/B/C **NOT DECIDED** · own states `OWN_Sk` **≠** Dutta I1–I4 / pickle alignment · **no** Gi / docking.
 
 ---
 
@@ -109,6 +130,8 @@ Evita expansión infinita del proyecto. Interés ≠ umbral de reopen. Postura a
 | X8 reduced feat. | **`X8_SAMPLING_LIMITED`** — satellite; ITS still NON_CONVERGENT under 24-D set (does **not** reopen P2) |
 | X1 mean vs var | **`X1_MEAN_ALIGNS_STATIC`** — satellite; mean ranks enrich hub-nbhd, variance does not |
 | External Dutta Final_MSM | **`EXT_KINETICS_CB1_CB2_DISTINCT`** — populations/dwells differ; structural A/B/C **`INDETERMINATE_NO_TRAJECTORIES`** |
+| External CB2_APO landmarks | **`EXT_LANDMARK_CONTACTS_STABLE`** — geometric maps similar across 6 PDB landmarks; **`GEOMETRIC_NEQ_MSM`**; soft ≠ PDB snapshot B |
+| External CB2_APO own MSM | **`EXT_OWN_MSM_NON_CONVERGENT`** — N=200 stratified trajs; ITS still non-flat; contacts **ABORTED**; does **not** reopen P2 |
 | P2 network A/B/C | **ABORTED** — no network analysis without convergent MSM |
 | P3 | **BLOCKED** |
 | P4 | **BLOCKED** |
@@ -412,6 +435,8 @@ EMPIRICAL_FOUNDATION:
   P2_MSM_CONVERGENCE: INSUFFICIENT_SAMPLING  # 2dcff23; ITS NON_CONVERGENT; 5 trajs + 1995 frames
   DATA_PROVENANCE_AUDIT: PARTIAL  # GPCRmd/1540 WT local; Dutta Final_MSM pickles recovered 2026-09-10; trajs still missing
   EXTERNAL_DUTTA_MSM_KINETICS: EXT_KINETICS_CB1_CB2_DISTINCT  # 2026-09-10; structural ABC INDETERMINATE_NO_TRAJECTORIES
+  EXTERNAL_CB2_APO_LANDMARKS: EXT_LANDMARK_CONTACTS_STABLE  # 2026-09-12; geometric ≠ MSM; soft disagree PDB-B
+  EXTERNAL_CB2_APO_OWN_MSM: EXT_OWN_MSM_NON_CONVERGENT  # 2026-09-12; N=200; does NOT reopen P2 GPCRmd
 THEORETICAL_MODEL:
   FRAMEWORK: TRIPARTITE_WORKING_HYPOTHESIS  # NOT demonstrated model
   NOTE: ligand × conformational ensemble × lipid bilayer; weights unresolved
@@ -438,6 +463,8 @@ P2_OBJECT: OWN_MSM_GPCRMD_WT_THEN_ABC
 P2_GATE_1: CONVERGENCE_FAILED  # NO → P2_INSUFFICIENT_SAMPLING → STOP (taken @ 2dcff23)
 P2_GATE_2: ABORTED  # A/B/C not run without convergent MSM
 DUTTA_SHUKLA: EXTERNAL_COMPARISON_EXECUTED_KINETICS_ONLY  # Final_MSM recovered; NOT template; structural ABC still INDETERMINATE_NO_TRAJECTORIES
+EXT_LANDMARK_CONTACTS: EXT_LANDMARK_CONTACTS_STABLE  # 862dc42; geometric ≠ MSM
+EXT_OWN_MSM: EXT_OWN_MSM_NON_CONVERGENT  # 22d2af1 N=200; does NOT reopen P2
 
 P3_GALPHA_I2: BLOCKED
 P4_CB1_COMPARISON: BLOCKED
@@ -761,6 +788,8 @@ Cada respuesta abre/cierra **una sola puerta**. Gates worked. P5 execution = **B
 | ¿Composición lipídica cambia estados + red de comunicación CB2? (P5) | ⏸ **`HYPOTHESIS_READY`** — **[HIPÓTESIS_ABIERTA]**; design candidate 0% vs 40% chol; **`P5_EXECUTION = BLOCKED_PENDING_DECISION`**; independiente de P1 |
 | ¿Colesterol cambia **rutas dinámicas** entre estados? (P5 refinada) | ⏸ **`HYPOTHESIS_READY`** — framing preferido; no execution |
 | ¿P2 = own MSM GPCRmd → convergencia → A/B/C (no hub hunt)? | 🔴 **`CLOSED (INSUFFICIENT_SAMPLING)`** @ `2dcff23` — ITS NON_CONVERGENT; 5 trajs + 1995 frames; A/B/C **ABORTED**; architecture **NOT DECIDED**; evidence `p2_msm_convergence_report.md` / `implied_timescales.png` |
+| ¿Landmark geométrico CB2_APO (6 PDBs Dutta) da mapas estables? | 🟢 **`EXT_LANDMARK_CONTACTS_STABLE`** — Jaccard≈0.82; **no** identidad MSM; soft ≠ PDB-B; P2 sin cambios (`862dc42`) |
+| ¿Own MSM CB2_APO (zip estratificado, X8-like) converge? | 🔴 **`EXT_OWN_MSM_NON_CONVERGENT`** — N=200; Δ ITS≈0.80; contacts ABORTED; **no** reabre P2 (`22d2af1`) |
 | ¿Heterómero A2A–CB2 como perturbación alostérica no-ligando-CB2? | ⏸ **Nivel-C-adjacent / futura** — **[LITERATURA_PRIMARIA]** DOI [10.1111/bph.16502](https://doi.org/10.1111/bph.16502) (PMID 39044481); 2025 DOI [10.1016/j.bcp.2025.117280](https://doi.org/10.1016/j.bcp.2025.117280) — **no** pipeline |
 | ¿Hubs TM7–H8 / TM2 intrínsecos vs entorno lipídico? (`Q_membrana` legacy) | ⏸ **PARKED / subsumed under P5** — no execution |
 | ¿Temperatura / redox / pH como switch central? | 🔴 **Nivel C archivado** — no justificado para mecanismo central |

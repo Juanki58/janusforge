@@ -1,10 +1,11 @@
 # RESEARCH ROADMAP — contrato científico CB2 (P1–P6)
 
-**Fecha:** 2026-08-21  
+**Fecha:** 2026-09-13 (notebook sync: EXTERNAL landmarks / own MSM; acta P2 2026-08-21)  
 **Rama:** `feat/cb2-hubs-functional-topology-test`  
-**Tipo:** **DOCUMENTATION ONLY** — acta de cierre P2 + congelación profunda; **`REPOSITORY = SEALED`**; sin compute, sin redes A/B/C, sin docking, sin de novo, sin P5 execution, sin MD/MSM nuevo  
+**Tipo:** **DOCUMENTATION ONLY** baseline — acta de cierre P2 + congelación profunda; **`REPOSITORY = SEALED`**; sin docking, sin de novo, sin P5 execution. Compute **solo** bajo excepciones PI-authorized ya registradas en [`RESEARCH_STATE.md`](../../RESEARCH_STATE.md) (X8/X1; Final_MSM kinetics; CB2_APO landmarks / own MSM). Esas excepciones **no** reabren P2 GPCRmd ni deciden A/B/C.  
 **Autoridad de freeze / flags:** [`RESEARCH_STATE.md`](../../RESEARCH_STATE.md) (`RESEARCH_STATUS = DEEP_PAUSE_SEALED`)  
 **P2 evidence:** [`results/msm_model/p2_msm_convergence_report.md`](../../results/msm_model/p2_msm_convergence_report.md) · [`implied_timescales.png`](../../results/msm_model/implied_timescales.png) · commit **`2dcff23`** / `p2_msm_builder.py`  
+**EXTERNAL CB2_APO (no P2):** landmarks **`EXT_LANDMARK_CONTACTS_STABLE`** (`862dc42`) · own MSM **`EXT_OWN_MSM_NON_CONVERGENT`** N=200 (`22d2af1`)  
 **Pre-registro técnico P1:** [`DYNAMIC_REANALYSIS_PROTOCOL.md`](DYNAMIC_REANALYSIS_PROTOCOL.md) · `P1_NULL` en [`scripts/network_core/dynamic_pipeline.py`](../../scripts/network_core/dynamic_pipeline.py)  
 **P1 deliverable:** [`results/network_core/p1_dynamic_hub_validation.md`](../../results/network_core/p1_dynamic_hub_validation.md) (tip `31a881c`)  
 **Self-test seco (andamiaje):** `python scripts/network_core/dynamic_pipeline.py --self-test` (tip técnico `b91b57c`)  
@@ -50,6 +51,7 @@ REPOSITORY               : SEALED
 | Static topology | **CORE_TOPOLOGICAL_ONLY** — clear aggregate hubs, no Gi enrichment |
 | P1 dynamic | **CLOSED (NOT_SUPPORTED)** — six hubs not persistent dynamic skeleton (GPCRmd/1540 WT) |
 | P2 MSM transitions | **CLOSED (INSUFFICIENT_SAMPLING)** — @ `2dcff23`; ITS NON_CONVERGENT |
+| EXTERNAL landmarks / own MSM (CB2_APO zip) | **`EXT_LANDMARK_CONTACTS_STABLE`** · **`EXT_OWN_MSM_NON_CONVERGENT`** — do **not** reopen P2 |
 | P2 network A/B/C | **ABORTED** — no convergent MSM → no A/B/C |
 | P3 | **BLOCKED** |
 | P4 | **BLOCKED** |

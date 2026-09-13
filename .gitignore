@@ -107,12 +107,36 @@ data/external/_tmp_esmdynamic/
 !results/network_core/*.json
 !results/network_core/*.md
 
-# Box probe HTML error stubs (keep JSON/README only)
-data/external/**/_probe/*.bin
-data/external/**/_probe/*.html
+# Box / traj probe scratch (scripts + HTML stubs + JSON dumps)
+data/external/**/_probe/
 
-# CB2_APO own-MSM stratified extract + feature cache (do not commit)
+# CB2_APO caches / zip helpers (do not commit)
 data/external/**/_cache_own_msm/
+data/external/**/_cache_landmark_contacts/
+data/external/**/_helpers/
+
+# Local micromamba binary / prefix (not part of the scientific record)
+.micromamba/
+
+# One-shot recovery dumps (Box probes, SI PDFs, pagehunts) — local only
+data/external/_recovery_*/
+
+# Optional local mirrors (GitHub code clone, Fig.7 dumps, paper PDFs)
+data/external/dutta_shukla_2023/_code_Cannabinoid_activation/
+data/external/dutta_shukla_2023/main_figure_7/
+data/papers/
+
+# mdtraj / MDAnalysis offset sidecars next to .xtc
+*.xtc_offsets.npz
+**/.*_trj_*.xtc_offsets.npz
+
+# Ephemeral figure dumps in docs/
+docs/*.webp
+docs/*.png
+!docs/**/*.md
+
+# Pilot scratch copies under msm_model (canonical reports live at results/msm_model/*.md)
+results/msm_model/_pilot_*/
 
 # Logs / checkpoints
 *.log

@@ -47,6 +47,10 @@ Autoridad de freeze: [`RESEARCH_STATE.md`](RESEARCH_STATE.md) · roadmap: [`docs
 | P2 MSM (GPCRmd WT) | **CLOSED (INSUFFICIENT_SAMPLING)** — ITS no convergente |
 | P2 redes A/B/C | **ABORTED** |
 | Arquitectura estructural A/B/C | **NOT DECIDED** |
+| EXTERNAL landmarks CB2_APO | **`EXT_LANDMARK_CONTACTS_STABLE`** (geométrico ≠ MSM) |
+| EXTERNAL own MSM CB2_APO | **`EXT_OWN_MSM_NON_CONVERGENT`** (N=200; no reabre P2) |
+
+Datos pesados (`*.zip`, `*.nc`, caches, `.micromamba/`, recovery dumps) viven bajo `data/external/` y están **gitignoreados** — no se clonan con el repo.
 
 ---
 
@@ -125,8 +129,10 @@ Debe imprimir `[PASS]` en los tests sintéticos y escribir `results/network_core
 |----------|---------|
 | MSM propio P2 (GPCRmd) | `micromamba run -n janus_p1 python scripts/network_core/p2_msm_builder.py` |
 | Comparación cinética Dutta Final_MSM | `micromamba run -n janus_p1 python scripts/network_core/external_dutta_msm_compare.py` |
+| Landmark contacts CB2_APO (EXTERNAL) | ver pre-reg `docs/synthesis/EXPERIMENT_CB2_LANDMARK_CONTACTS.md` |
+| Own MSM CB2_APO (EXTERNAL) | ver pre-reg `docs/synthesis/EXPERIMENT_CB2_APO_OWN_MSM.md` |
 
-Los `.xtc` / pickles / zips grandes viven bajo `data/external/` y **no** se clonan por defecto.
+Los `.xtc` / `.nc` / pickles / zips grandes viven bajo `data/external/` y **no** se clonan por defecto (ver `.gitignore`).
 
 ### Química / docking (pausado)
 
