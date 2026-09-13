@@ -1,19 +1,22 @@
-# RESEARCH STATE — Janusforge CB₂ (repositorio sellado — DEEP_PAUSE)
+# RESEARCH STATE — Janusforge CB₂ (DEEP_PAUSE + campaña P2 sampling scoped)
 
-**Fecha:** 2026-09-13 (acta freeze EXTERNAL CB2_APO); landmarks + own MSM; 2026-09-10 Final_MSM kinetics; satellite X8/X1 2026-09-09; acta P2 2026-08-21 (`67df445`)  
+**Fecha:** 2026-09-13 (PI “adelante” = muestreo masivo FIRST; P5 QUEUED; EXTERNAL frozen); acta freeze EXTERNAL CB2_APO; landmarks + own MSM; 2026-09-10 Final_MSM kinetics; satellite X8/X1 2026-09-09; acta P2 2026-08-21 (`67df445`)  
 **Rama:** `feat/cb2-hubs-functional-topology-test`  
-**Tipo:** **DEEP_PAUSE** — capítulo **EXTERNAL CB2_APO síntesis congelada** ([`docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md`](docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md)). Excepciones PI-authorized ya ejecutadas y cerradas: X8/X1; cinética Final_MSM; landmarks + own MSM desde zip local (**no** reabre P2 GPCRmd). **`P2_MSM_TRANSITIONS` sigue CLOSED (INSUFFICIENT_SAMPLING)**; arquitectura A/B/C **NOT DECIDED**; **no** P5 execution / docking / de novo / hub hunt / rescate post hoc de P1. **Credibilidad = síntesis locked + gates**, no más compute `NON_CONVERGENT`.  
+**Tipo:** **DEEP_PAUSE** con excepción scoped — **`P2_MASSIVE_SAMPLING` pre-registrada** ([`docs/synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md`](docs/synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md)). Capítulo **EXTERNAL CB2_APO síntesis congelada** ([`docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md`](docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md)). Excepciones PI previas cerradas: X8/X1; cinética Final_MSM; landmarks + own MSM (**no** reabre P2). **`P2_MSM_TRANSITIONS` sigue CLOSED (INSUFFICIENT_SAMPLING)** hasta Gate-1 sobre target Tier B; arquitectura A/B/C **NOT DECIDED**; **P5 QUEUED / no execution**; **no** docking / de novo / hub hunt. **Credibilidad > pretend MD.**  
+**Decisión PI (2026-09-13):** muestreo masivo **FIRST** → P5 membrana **después** (QUEUED). `DEEP_PAUSE` se levanta **solo** para esta campaña scoped (docs + infra checklist + futura prod Tier B en cluster).  
+**Hardware local (honest):** GTX **1060 6GB**; OpenMM nativo **sin CUDA**; Docker **parado**; WSL **roto**; throughput histórico ~57 ns/day (soluble Docker) → Tier B-min (**≥20 µs**) **no** es local. **No MD production hoy.**  
 **Objetivo primario:** **caracterizar el mecanismo de control conformacional de CB2** (switch local, red distribuida, o arquitectura estado-dependiente — cualquiera es resultado válido). **No** es objetivo principal “encontrar el switch.”  
-**Anclas de linaje (preservar):** `cfb2a51` (dual-test limpio → topología-only) · `c2869b0` (jerarquía ambiental A/B/C + `Q_membrana` parked) · `2a1193c` (reposo científico / frontera) · `31a881c` (P1 GPCRmd) · **`bb7b57a`** (postura epistémica) · `aaeec78` (P2 dry) · **`2dcff23`** (P2 MSM convergencia / ITS) · **`67df445`** (acta P2 / DEEP_PAUSE) · **`862dc42`** (landmark STABLE) · **`22d2af1`** (own MSM N=200 NON_CONVERGENT)  
+**Anclas de linaje (preservar):** `cfb2a51` (dual-test limpio → topología-only) · `c2869b0` (jerarquía ambiental A/B/C + `Q_membrana` parked) · `2a1193c` (reposo científico / frontera) · `31a881c` (P1 GPCRmd) · **`bb7b57a`** (postura epistémica) · `aaeec78` (P2 dry) · **`2dcff23`** (P2 MSM convergencia / ITS) · **`67df445`** (acta P2 / DEEP_PAUSE) · **`862dc42`** (landmark STABLE) · **`22d2af1`** (own MSM N=200 NON_CONVERGENT) · **`b2e0659`** (acta EXTERNAL)  
 **Roadmap P1–P6 (contrato científico):** [`docs/synthesis/RESEARCH_ROADMAP.md`](docs/synthesis/RESEARCH_ROADMAP.md) · alias [`docs/synthesis/CB2_RESEARCH_ROADMAP.md`](docs/synthesis/CB2_RESEARCH_ROADMAP.md)  
 **P1 deliverable:** [`results/network_core/p1_dynamic_hub_validation.md`](results/network_core/p1_dynamic_hub_validation.md)  
 **P2 evidence:** [`results/msm_model/p2_msm_convergence_report.md`](results/msm_model/p2_msm_convergence_report.md) · [`results/msm_model/implied_timescales.png`](results/msm_model/implied_timescales.png) · builder `scripts/network_core/p2_msm_builder.py` @ **`2dcff23`**  
-**Acta freeze EXTERNAL CB2_APO (2026-09-13):** [`docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md`](docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md) — veredictos locked; claims/non-claims; next = decisión humana only  
+**P2 sampling campaign (2026-09-13):** [`docs/synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md`](docs/synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md) — Tier A infra-only; Tier B-min ≥20 µs cluster; **no** reopen as CONVERGENT until gates pass  
+**Acta freeze EXTERNAL CB2_APO (2026-09-13):** [`docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md`](docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md) — veredictos locked; Dutta EXTERNAL **frozen**  
 **Satellite discrimination (2026-09-09):** [`docs/synthesis/EXPERIMENT_X8_REDUCED_FEATURIZATION.md`](docs/synthesis/EXPERIMENT_X8_REDUCED_FEATURIZATION.md) · [`docs/synthesis/EXPERIMENT_X1_MEAN_VS_VARIANCE.md`](docs/synthesis/EXPERIMENT_X1_MEAN_VS_VARIANCE.md)  
 **External Dutta MSM (2026-09-10):** [`docs/synthesis/EXPERIMENT_EXTERNAL_DUTTA_MSM.md`](docs/synthesis/EXPERIMENT_EXTERNAL_DUTTA_MSM.md) · [`results/network_core/external_dutta_msm_compare.md`](results/network_core/external_dutta_msm_compare.md)  
 **External CB2_APO landmark (2026-09-12):** [`docs/synthesis/EXPERIMENT_CB2_LANDMARK_CONTACTS.md`](docs/synthesis/EXPERIMENT_CB2_LANDMARK_CONTACTS.md) · [`results/network_core/cb2_landmark_contacts.md`](results/network_core/cb2_landmark_contacts.md) → **`EXT_LANDMARK_CONTACTS_STABLE`**  
 **External CB2_APO own MSM (2026-09-12):** [`docs/synthesis/EXPERIMENT_CB2_APO_OWN_MSM.md`](docs/synthesis/EXPERIMENT_CB2_APO_OWN_MSM.md) · [`results/msm_model/cb2_apo_own_msm_report.md`](results/msm_model/cb2_apo_own_msm_report.md) → **`EXT_OWN_MSM_NON_CONVERGENT`** (N=200)  
-**Datos pesados (local, gitignored):** `CB2_APO.zip` bajo `data/external/dutta_shukla_2023/trajectories/` · caches `_cache_*` · recovery dumps · `.micromamba/` — **no** van a GitHub  
+**Datos pesados (local, gitignored):** `CB2_APO.zip` bajo `data/external/dutta_shukla_2023/trajectories/` · Morales GPCRmd xtc · caches `_cache_*` · recovery dumps · `.micromamba/` — **no** van a GitHub  
 **Pipeline seco / self-test:** `python scripts/network_core/dynamic_pipeline.py --self-test` (andamiaje `b91b57c`; no sustituye traj)  
 **Bitácora extendida:** [`docs/JANUSFORGE_RESEARCH_STATE.md`](docs/JANUSFORGE_RESEARCH_STATE.md)  
 **Puntero síntesis:** [`docs/cb2_mechanistic_frontier_synthesis.md`](docs/cb2_mechanistic_frontier_synthesis.md) · acta EXTERNAL: [`docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md`](docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md) (este archivo sigue siendo la autoridad de freeze / flags)
@@ -58,9 +61,11 @@
 
 **Related EXTERNAL pilots (same zip line; not P2):** TM6/toggle stratified N=25+25; MSM-state contacts Gate 0 **`EXT_MSM_STATE_CONTACTS_INDETERMINATE_NO_ALIGNMENT`** (no traj↔filelist); PDB snapshot B soft-disagreements on pilot contact maps; ESMDynamic **`EXT_ESMDYNAMIC_INDETERMINATE_UNAVAILABLE`**. Data request draft: [`docs/synthesis/DATA_REQUEST_DUTTA_SHUKLA_MSM.md`](docs/synthesis/DATA_REQUEST_DUTTA_SHUKLA_MSM.md) — email **manual**, not automation.
 
-**Síntesis freeze (2026-09-13):** capítulo EXTERNAL CB2_APO cerrado en [`docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md`](docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md). Lectura: soft geométrico ~A vs snapshot B soft-disagree; **cinética undecided**. Next = decisión humana (muestreo masivo **OR** P5 **OR** wait filelist) — no script automático.
+**Síntesis freeze (2026-09-13):** capítulo EXTERNAL CB2_APO cerrado en [`docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md`](docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md). Lectura: soft geométrico ~A vs snapshot B soft-disagree; **cinética undecided**. Dutta EXTERNAL **permanece frozen**.
 
-**Locks unchanged:** `P2_MSM_TRANSITIONS = CLOSED (INSUFFICIENT_SAMPLING)` · `P2_NETWORK_A_B_C = ABORTED` · architecture A/B/C **NOT DECIDED** · own states `OWN_Sk` **≠** Dutta I1–I4 / pickle alignment · **no** Gi / docking · **`DEEP_PAUSE = TRUE`**.
+**Decisión PI (2026-09-13):** **muestreo masivo FIRST** (ruta P2) → P5 **QUEUED**. Pre-reg: [`docs/synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md`](docs/synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md). Local GTX 1060 **no** alcanza Tier B-min (≥20 µs); Docker/WSL no listos → **no MD production hoy**; checklist cluster locked. **`P2` no pasa a CONVERGENT** hasta Gate-1 sobre target registrado.
+
+**Locks:** `P2_MSM_TRANSITIONS = CLOSED (INSUFFICIENT_SAMPLING)` · `P2_NETWORK_A_B_C = ABORTED` · A/B/C **NOT DECIDED** · own states `OWN_Sk` **≠** Dutta · **no** Gi / docking · **`DEEP_PAUSE = TRUE`** (lifted **only** for scoped P2 sampling campaign) · **`P5_EXECUTION = BLOCKED` / QUEUED**.
 
 ---
 
@@ -91,24 +96,29 @@
 
 **Evidence retained:** `p2_msm_convergence_report.md` · `implied_timescales.png` · commit **`2dcff23`** / `p2_msm_builder.py`.
 
-**Next conversation (human only — do not execute):** strategic resource allocation — massive adaptive sampling for P2 **OR** redesign independent membrane (P5) in silico — **NOT** “what script today?”
+**Next (scoped):** ejecutar checklist Tier B (cluster/Colab) per [`EXPERIMENT_P2_MASSIVE_SAMPLING.md`](docs/synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md); P5 permanece QUEUED; **no** fake Dutta analysis as sampling.
 
-### Definitive YAML freeze (21 Aug 2026)
+### Definitive YAML freeze (21 Aug 2026; amended 2026-09-13 sampling path)
 
 ```yaml
 P1_STATIC_HUBS           : CLOSED (NOT_SUPPORTED)
-P2_MSM_TRANSITIONS       : CLOSED (INSUFFICIENT_SAMPLING)
+P2_MSM_TRANSITIONS       : CLOSED (INSUFFICIENT_SAMPLING)  # reopen ONLY if Tier B Gate-1 passes
 P2_NETWORK_A_B_C         : ABORTED
+P2_MASSIVE_SAMPLING      : PREREGISTERED  # docs/synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md
+P2_SAMPLING_TIER_A       : INFRA_BLOCKED_LOCAL  # no CUDA Docker/WSL today; no pretend MD
+P2_SAMPLING_TIER_B       : AWAITING_CLUSTER  # ≥20 µs min for Gate-1 retest
 P3_GALPHA_I2             : BLOCKED
 P4_CB1_COMPARISON        : BLOCKED
-P5_MEMBRANE              : HYPOTHESIS_READY  # independent; NOT substitute for P2
+P5_MEMBRANE              : HYPOTHESIS_READY  # QUEUED after sampling; NOT substitute for P2
+P5_EXECUTION             : BLOCKED_QUEUED_AFTER_SAMPLING
 P6_CHEMICAL_PERTURBATION : BLOCKED
 DE_NOVO_GENERATION       : STOP
 DOCKING                  : STOP
-COMPUTATION              : PAUSED
+COMPUTATION              : SCOPED_P2_SAMPLING_CAMPAIGN_ONLY  # not general unpause
 POST_HOC_EXCUSES         : FORBIDDEN
-DEEP_PAUSE               : TRUE
-REPOSITORY               : SEALED
+DEEP_PAUSE               : TRUE  # lifted ONLY for scoped P2 sampling campaign
+REPOSITORY               : SEALED_EXCEPT_SCOPED_P2_SAMPLING
+EXTERNAL_CB2_APO         : SYNTHESIS_FROZEN
 ```
 
 ---
@@ -117,7 +127,7 @@ REPOSITORY               : SEALED
 
 **Do not run a question because it is interesting; run it when it produces clear discrimination between two (or more) plausible hypotheses.**
 
-Evita expansión infinita del proyecto. Interés ≠ umbral de reopen. Postura anclada en `bb7b57a`. **`DEEP_PAUSE = TRUE`** · **`REPOSITORY = SEALED`** · **docs only** · **no compute**.
+Evita expansión infinita del proyecto. Interés ≠ umbral de reopen. Postura anclada en `bb7b57a`. **`DEEP_PAUSE = TRUE`** · excepción scoped = campaña P2 sampling pre-registrada · **no** P5 / Dutta / docking.
 
 ---
 
@@ -138,9 +148,10 @@ Evita expansión infinita del proyecto. Interés ≠ umbral de reopen. Postura a
 | P2 network A/B/C | **ABORTED** — no network analysis without convergent MSM |
 | P3 | **BLOCKED** |
 | P4 | **BLOCKED** |
-| P5 | **HYPOTHESIS_READY** — independent membrane line; **NOT** substitute for P2; **NO execution** |
+| P5 | **HYPOTHESIS_READY / QUEUED** — after sampling path; **NOT** substitute for P2; **NO execution** |
+| P2 massive sampling | **PREREGISTERED** — Tier A infra-blocked local; Tier B-min ≥20 µs cluster; Gate-1 not reopened |
 | P6 | **BLOCKED** |
-| Repository | **SEALED** · **`DEEP_PAUSE = TRUE`** · **`COMPUTATION = PAUSED`** |
+| Repository | **SEALED** excepto campaña P2 sampling scoped · **`DEEP_PAUSE = TRUE`** (scoped lift) |
 
 ### Lectura estricta de P1 (lenguaje obligatorio)
 
@@ -279,10 +290,12 @@ POST_HOC_EXCUSES                = FORBIDDEN
 DE_NOVO_GENERATION              = STOP
 DOCKING                         = STOP
 DOCKING_EXECUTION               = STOP
-COMPUTATION_ACTIVE              = NONE
-COMPUTATION                     = PAUSED
+COMPUTATION_ACTIVE              = SCOPED_P2_SAMPLING_DOCS_CHECKLIST
+COMPUTATION                     = SCOPED_P2_SAMPLING_CAMPAIGN_ONLY
 DEEP_PAUSE                      = TRUE
-REPOSITORY                      = SEALED
+REPOSITORY                      = SEALED_EXCEPT_SCOPED_P2_SAMPLING
+P2_MASSIVE_SAMPLING             = PREREGISTERED
+P2_SAMPLING_EXPERIMENT          = docs/synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md
 ORTHOSTERIC_DESIGN              = PAUSED
 MACRO_COORDINATE                = VALIDATED_OUT_OF_SAMPLE
 FUNCTIONAL_EFFICACY             = INDETERMINATE
@@ -451,28 +464,30 @@ PIPELINE_LOCKS:
   DOCKING: STOP
   DE_NOVO_GENERATION: STOP
   OPEN_ENDED_SEARCHES: STOP
-  COMPUTATION_ACTIVE: NONE
-  COMPUTATION: PAUSED
-  DEEP_PAUSE: TRUE
-  REPOSITORY: SEALED
-  P5_EXECUTION: BLOCKED_PENDING_DECISION
+  COMPUTATION_ACTIVE: SCOPED_P2_SAMPLING_DOCS_CHECKLIST
+  COMPUTATION: SCOPED_P2_SAMPLING_CAMPAIGN_ONLY
+  DEEP_PAUSE: TRUE  # lifted ONLY for scoped P2 sampling campaign
+  REPOSITORY: SEALED_EXCEPT_SCOPED_P2_SAMPLING
+  P5_EXECUTION: BLOCKED_QUEUED_AFTER_SAMPLING
   SIX_HUBS_DYNAMIC_SKELETON: REFUTED_UNDER_GPCRMD_WT
-RESEARCH_STATUS: DEEP_PAUSE_SEALED
+RESEARCH_STATUS: DEEP_PAUSE_SCOPED_P2_SAMPLING
 DYNAMIC_REANALYSIS: P1_DONE_FROZEN
 P1_VERDICT: P1_NOT_SUPPORTED
 P1_STATIC_HUBS: CLOSED (NOT_SUPPORTED)
 P2_MSM_TRANSITIONS: CLOSED (INSUFFICIENT_SAMPLING)
 P2_NETWORK_A_B_C: ABORTED
 P2_OBJECT: OWN_MSM_GPCRMD_WT_THEN_ABC
-P2_GATE_1: CONVERGENCE_FAILED  # NO → P2_INSUFFICIENT_SAMPLING → STOP (taken @ 2dcff23)
+P2_GATE_1: CONVERGENCE_FAILED  # NO → P2_INSUFFICIENT_SAMPLING → STOP (taken @ 2dcff23); retest only after Tier B
 P2_GATE_2: ABORTED  # A/B/C not run without convergent MSM
+P2_MASSIVE_SAMPLING: PREREGISTERED  # EXPERIMENT_P2_MASSIVE_SAMPLING.md; Tier B awaiting cluster
 DUTTA_SHUKLA: EXTERNAL_COMPARISON_EXECUTED_KINETICS_ONLY  # Final_MSM recovered; NOT template; structural ABC still INDETERMINATE_NO_TRAJECTORIES
 EXT_LANDMARK_CONTACTS: EXT_LANDMARK_CONTACTS_STABLE  # 862dc42; geometric ≠ MSM
 EXT_OWN_MSM: EXT_OWN_MSM_NON_CONVERGENT  # 22d2af1 N=200; does NOT reopen P2
+EXTERNAL_CB2_APO_CHAPTER: SYNTHESIS_FROZEN
 
 P3_GALPHA_I2: BLOCKED
 P4_CB1_COMPARISON: BLOCKED
-P5_MEMBRANE: HYPOTHESIS_READY  # independent; NOT substitute for P2; NO execution
+P5_MEMBRANE: HYPOTHESIS_READY  # QUEUED after sampling; independent; NOT substitute for P2; NO execution
 P6_CHEMICAL_PERTURBATION: BLOCKED
 # Flags exactos preservados (autoridad — no relajar locks docking/de novo)
 DE_NOVO_GENERATION: STOP
@@ -504,7 +519,7 @@ NEW_HUB_SEARCH: STOP
 NEW_VARIABLES_IN_PIPELINE: NONE
 CONTRACT_v1.0: ARCHIVED_HISTORICAL
 THRESHOLD_MODIFICATION: STOP
-MODO: DEEP_PAUSE_SEALED / DOCUMENTATION_ONLY / NO_COMPUTE
+MODO: DEEP_PAUSE_SCOPED_P2_SAMPLING / PREREG_PLUS_CLUSTER_CHECKLIST
 STATIC_GRAPH_ANALYSIS: CLOSED
 DUAL_VALIDATION_HUBS: CLOSED
 SINK_SET_T: EXTRACTED
@@ -513,7 +528,7 @@ DATA_PROVENANCE: PARTIAL
 DATA_PROVENANCE_AUDIT: PARTIAL
 RECOVERY_ATTEMPT: DONE
 TECHNICAL_SEARCH_TRAJ: STOP
-ACTIVE_ACTION: DOCS_FREEZE_ONLY
+ACTIVE_ACTION: P2_SAMPLING_PREREG_CLUSTER_CHECKLIST
 DUAL_TEST_COMMIT: cfb2a51
 ABC_HIERARCHY_COMMIT: c2869b0
 FREEZE_COMMIT: 2a1193c
@@ -524,8 +539,9 @@ P2_MSM_COMMIT: 2dcff23
 P2_BUILDER: scripts/network_core/p2_msm_builder.py
 P2_EVIDENCE_REPORT: results/msm_model/p2_msm_convergence_report.md
 P2_ITS_PLOT: results/msm_model/implied_timescales.png
+P2_MASSIVE_SAMPLING_PREREG: docs/synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md
 DECISION_RULE: DISCRIMINATION_ONLY
-Q_MEMBRANA: HYPOTHESIS_READY_NO_EXECUTION
+Q_MEMBRANA: HYPOTHESIS_READY_QUEUED_AFTER_SAMPLING
 NIVEL_A_CANONICAL: ACTIVE_BASELINE
 NIVEL_B_CHOLESTEROL_LIPIDS: FUTURE_PRIORITY_HYPOTHESIS
 NIVEL_C_SECONDARY_MODULATORS: ARCHIVED_NOT_JUSTIFIED
@@ -541,7 +557,7 @@ P2_FIRST_RESULT_TO_REVIEW: CONVERGENCE_NOT_BIOLOGICAL_STORY  # reviewed: NON_CON
 DYNAMIC_INTERACTION_LAYERS: docs/synthesis/CB2_DYNAMIC_INTERACTION_LAYERS.md
 HETEROMER_LAYER: FUTURE_NIVEL_C_ADJACENT
 ARCHIVED_NEXT_CALCULATION: PARKED
-NEXT: STRATEGIC_RESOURCE_ALLOCATION_ONLY  # massive sampling OR P5 OR wait filelist — NOT "what script today?"
+NEXT: TIER_B_CLUSTER_ACCESS  # PI provide GPU cluster/Colab + CB2 setup; local cannot hit ≥20 µs
 EXTERNAL_CB2_APO_ACTA: docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md
 ROADMAP: docs/synthesis/RESEARCH_ROADMAP.md
 DRY_PIPELINE_SELFTEST: scripts/network_core/dynamic_pipeline.py --self-test
@@ -1015,7 +1031,8 @@ python scripts/network_core/dynamic_pipeline.py --self-test --status
 | [`docs/synthesis/CB2_DYNAMIC_INTERACTION_LAYERS.md`](docs/synthesis/CB2_DYNAMIC_INTERACTION_LAYERS.md) | **Mapa multicapa** + giro P2 a transiciones; cortafuegos (no todas las capas a la vez) |
 | [`docs/synthesis/CB2_DYNAMIC_LAYERS_LITERATURE_SURVEY.md`](docs/synthesis/CB2_DYNAMIC_LAYERS_LITERATURE_SURVEY.md) | Encuesta bibliográfica capas dinámicas (soporte / cualificación / contradicción; DOI/PMID) |
 | [`docs/synthesis/CB2_RESEARCH_ROADMAP.md`](docs/synthesis/CB2_RESEARCH_ROADMAP.md) | Alias / redirect → `RESEARCH_ROADMAP.md` |
-| [`docs/synthesis/DYNAMIC_REANALYSIS_PROTOCOL.md`](docs/synthesis/DYNAMIC_REANALYSIS_PROTOCOL.md) | **Pre-registro técnico data-blind** P1–P3: dos redes; null degree-matched; self-tests sintéticos; `BLOCKED_PENDING_TRAJECTORIES` |
+| [`docs/synthesis/P2_STATE_ROUTE_PREGISTRATION.md`](docs/synthesis/P2_STATE_ROUTE_PREGISTRATION.md) | P2 own MSM GPCRmd + gate convergencia → A/B/C |
+| [`docs/synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md`](docs/synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md) | **Campaña muestreo P2** — Tier A/B; checklist cluster; no reopen until Gate-1 |
 | [`docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md`](docs/synthesis/MINIMAL_CORE_REANALYSIS_PROTOCOL.md) | Protocolo estático histórico + puntero al dinámico; `CB2_MINIMAL_GI_CORE = NOT_FOUND` |
 | [`results/network_core/static_ligacn_topology_report.md`](results/network_core/static_ligacn_topology_report.md) | Topología estática LigACN→T (**CLOSED**; `STATIC_BOTTLENECKS = SUPPORTED`) |
 | [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) | Dual A/B (**CLOSED**, `cfb2a51`) → **`CORE_TOPOLOGICAL_ONLY`** |
@@ -1048,33 +1065,32 @@ python scripts/network_core/dynamic_pipeline.py --self-test --status
 
 ---
 
-## Próximo paso — DEEP_PAUSE / REPOSITORY SEALED
+## Próximo paso — campaña P2 sampling (scoped)
 
 **[OBSERVACIÓN_PROPIA]**
 
-1. **`RESEARCH_STATUS = DEEP_PAUSE_SEALED`.** P1 = `NOT_SUPPORTED`; **P2 = `INSUFFICIENT_SAMPLING`** @ `2dcff23`. Hipótesis de trabajo multivariable; **no** modelo tripartito demostrado.
-2. Lectura estricta P2: five trajs + 1995 frames **do not** support a convergent MSM for A/B/C. **No** claim non-Markovian biology; **no** claim distributed vs stable vs state-routes. Honest we-do-not-know. Gates worked.
-3. Explicitamente NO: switch único; hubs estáticos controlan Gαi2; `CB2_Gi_NETWORK_CANDIDATE`; red plenamente distribuida demostrada; P5 como rescate de P1/P2.
-4. A/B/C preservada (`c2869b0`); **P5 = HYPOTHESIS_READY** (independent; not substitute); **`P5_EXECUTION = BLOCKED_PENDING_DECISION`**.
-5. **`P2_NETWORK_A_B_C = ABORTED`**. P3/P4/P6 **BLOCKED**. **`DECISION_RULE = DISCRIMINATION_ONLY`**. Ancla postura `bb7b57a`.
-6. **Next human decision only:** massive adaptive sampling for P2 **OR** independent membrane (P5) **OR** wait author filelist — **NOT** “what script today?” Ver acta EXTERNAL.
-7. **`DEEP_PAUSE = TRUE`** · **`REPOSITORY = SEALED`** · **`COMPUTATION = PAUSED`** · **`NEW_PHASE = DO_NOT_OPEN`**.
+1. **PI decidió muestreo masivo FIRST**; P5 **QUEUED**. Pre-reg: [`EXPERIMENT_P2_MASSIVE_SAMPLING.md`](docs/synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md).
+2. **P2 sigue `CLOSED (INSUFFICIENT_SAMPLING)`** @ `2dcff23` hasta Gate-1 sobre **≥20 µs** (Tier B-min) — no reopen por docs.
+3. Local **GTX 1060 6GB**: sin CUDA OpenMM nativo; Docker parado; WSL roto → **no MD hoy**; ~800 días GPU para 20 µs membrana ≈ no Tier B local.
+4. EXTERNAL Dutta **frozen**; no más zip analysis como “sampling.”
+5. **Next concreto:** PI provee acceso cluster/Colab + OK de sistema CB2 WT (Morales-compatible) → arrancar Tier B; restaurar Docker solo para smoke Tier A (≠ Gate-1).
+6. **`DEEP_PAUSE = TRUE`** con lift scoped · **`NEW_PHASE = DO_NOT_OPEN`** · docking/de novo **STOP**.
 
 ---
 
 ## Lectura recomendada al reanudar sesión
 
-1. **Este archivo** (`RESEARCH_STATE.md`) — acta P2 + YAML freeze SEALED
-2. [`docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md`](docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md) — freeze síntesis EXTERNAL CB2_APO (2026-09-13)
-3. [`results/msm_model/p2_msm_convergence_report.md`](results/msm_model/p2_msm_convergence_report.md) — evidencia Gate 1 (`2dcff23`)
-4. [`results/msm_model/implied_timescales.png`](results/msm_model/implied_timescales.png) — ITS NON_CONVERGENT
-5. [`results/network_core/p1_dynamic_hub_validation.md`](results/network_core/p1_dynamic_hub_validation.md) — veredicto P1 (`31a881c`)
-6. [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) — ancla `cfb2a51`
+1. **Este archivo** (`RESEARCH_STATE.md`) — decisión sampling + YAML scoped
+2. [`docs/synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md`](docs/synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md) — pre-reg Tier A/B + checklist cluster
+3. [`docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md`](docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md) — freeze EXTERNAL (Dutta frozen)
+4. [`results/msm_model/p2_msm_convergence_report.md`](results/msm_model/p2_msm_convergence_report.md) — evidencia Gate 1 (`2dcff23`)
+5. [`results/msm_model/implied_timescales.png`](results/msm_model/implied_timescales.png) — ITS NON_CONVERGENT
+6. [`docs/synthesis/P2_STATE_ROUTE_PREGISTRATION.md`](docs/synthesis/P2_STATE_ROUTE_PREGISTRATION.md) — P2 gate lock
 7. [`docs/synthesis/RESEARCH_ROADMAP.md`](docs/synthesis/RESEARCH_ROADMAP.md) — contrato P1–P6
-8. [`docs/synthesis/P2_STATE_ROUTE_PREGISTRATION.md`](docs/synthesis/P2_STATE_ROUTE_PREGISTRATION.md) — P2 gate lock (convergencia → A/B/C)
-9. [`docs/synthesis/CB2_DYNAMIC_INTERACTION_LAYERS.md`](docs/synthesis/CB2_DYNAMIC_INTERACTION_LAYERS.md) — mapa multicapa
-10. [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md) — Morales-Pastor / Dutta–Shukla / Trp258
+8. [`results/network_core/p1_dynamic_hub_validation.md`](results/network_core/p1_dynamic_hub_validation.md) — veredicto P1
+9. [`results/network_core/hubs_dual_validation_report.md`](results/network_core/hubs_dual_validation_report.md) — ancla `cfb2a51`
+10. [`docs/synthesis/CB2_ALLOSTERIC_NETWORK.md`](docs/synthesis/CB2_ALLOSTERIC_NETWORK.md) — Morales-Pastor / Dutta–Shukla
 
 ---
 
-*Fin RESEARCH_STATE.md. 2026-09-13 — ACTA EXTERNAL CB2_APO frozen (`docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md`); ACTA P2 intacta @ 67df445 / 2dcff23; P2 CLOSED (INSUFFICIENT_SAMPLING); A/B/C NOT DECIDED; EXT landmarks STABLE + own MSM NON_CONVERGENT; filelist blocker; ESMDynamic unavailable; DEEP_PAUSE=TRUE; next = human strategic choice only (massive sampling OR P5 OR wait filelist) — documentation freeze / no compute.*
+*Fin RESEARCH_STATE.md. 2026-09-13 — PI sampling FIRST / P5 QUEUED; EXPERIMENT_P2_MASSIVE_SAMPLING pre-reg; local cannot hit Tier B; P2 remains CLOSED until Gate-1; EXTERNAL frozen; DEEP_PAUSE scoped lift only.*
