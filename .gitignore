@@ -74,6 +74,12 @@ results/hits/qiu_pyrazole*
 !data/external/dutta_shukla_2023/main_figure_6/
 !data/external/dutta_shukla_2023/main_figure_6/*.pdb
 
+# Expanded CB2 landmark panel (RCSB/PDBe downloads + 9U7L chain extract; provenance)
+!data/external/cb2_landmark_expanded/
+!data/external/cb2_landmark_expanded/*.pdb
+!data/external/cb2_landmark_expanded/*.cif
+!data/external/cb2_landmark_expanded/MANIFEST.json
+
 # Small curated seed library (operational chemome map; not a mass hit table)
 !data/libraries/quimioma_semillas.csv
 
@@ -113,6 +119,7 @@ data/external/**/_probe/
 # CB2_APO caches / zip helpers (do not commit)
 data/external/**/_cache_own_msm/
 data/external/**/_cache_landmark_contacts/
+data/external/**/_cache_landmark_expanded/
 data/external/**/_helpers/
 
 # Local micromamba binary / prefix (not part of the scientific record)
