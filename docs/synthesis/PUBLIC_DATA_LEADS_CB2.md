@@ -59,16 +59,16 @@ Atlas interno ya lista la mayoría de PDBs: [`CB2_STRUCTURE_ATLAS.md`](CB2_STRUC
 
 *(Espera de PC/cluster; nada de esto reabre P2 Gate-1.)*
 
-| Dato / paper | Pregunta NUEVA (discriminación) | Esfuerzo | Capa |
-|--------------|----------------------------------|----------|------|
-| Panel PDB público más allá de 6 refs Dutta Fig.6: **5ZTY, 6KPC, 6KPF, 6PT0, 8GUR/S/Q/T, 8X3L, 9U7L** ([atlas](CB2_STRUCTURE_ATLAS.md)) | ¿El soft-STABLE de contactos se mantiene al cruzar **ligando / PAM / Gi** vs solo el camino geométrico Dutta? | **Bajo** (solo PDBs) | EXTERNAL |
-| Morales-Pastor Supp Data 3 (degeneracy; ya usado en X1/P1) + clusters PrefCoup 1–3 | ¿Nuestros seis hubs caen en **LigACNtop** / clusters publicados, o son un objeto topológico distinto? (inventario, no rescue de P1) | **Bajo** | EXTERNAL / lit. |
-| Yeliseev CW-EPR sitios (IL3, A270C TM6 EC) + DNP-NMR M293 TM7 / M237 ICL3 | ¿Phase F/G + contactos estáticos predicen **más movilidad** donde EPR/NMR la ven? Checklist de anclas, no restricción MD | **Bajo** | EXTERNAL |
-| Abrol Zenodo avg PDB / prmtop Gi vs βarr2 ([10.5281/zenodo.14227796](https://doi.org/10.5281/zenodo.14227796)) | En **complejo efector**, ¿qué contactos IC difieren Gi vs βarr — sin MSM de activación? | **Medio** (descarga selectiva de avg frames, no 100 GB) | EXTERNAL (hacia P3, no P2) |
-| GPCRmd 1540 WT (+ mutantes si se bajan) + AlloViz / 100 shortest paths (protocolo del paper) | ¿Reproducimos degeneracy LigACN en **nuestro** pipeline de contactos? Test de método, no Gate-1 | **Medio** | EXTERNAL / método |
-| Illinois AEA `CB2_ana_bind` ([IDB-6705697](https://databank.illinois.edu/datasets/IDB-6705697)) | ¿Rutas de **entrada** de endocannabinoide (canal TM1–7) intersectan LigACNtop / ECL2-PAM? | **Medio** si solo paper+readme; **alto** si unpack 85 GB → **no recomendado mientras se espera PC** | EXTERNAL (≠ activación apo) |
-| Dutta Box trajs + filelist ordenado (request ya draft) | Contactos **por metaestable** Dutta (bloqueado hoy: `INDETERMINATE_NO_ALIGNMENT`) | **Medio** (depende de respuesta humana) | EXTERNAL frozen hasta filelist |
-| Paper AEA / Dutta pipelines CB1 vs CB2 (sin traj) | Lectura P4-lite: ¿qué hipótesis CB1≠CB2 ya están **cerradas en lit.** antes de desbloquear P4? | **Bajo** | Lit. only |
+| Dato / paper | Pregunta NUEVA (discriminación) | Esfuerzo | Capa | Status (2026-09-22) |
+|--------------|----------------------------------|----------|------|---------------------|
+| Panel PDB público más allá de 6 refs Dutta Fig.6: **5ZTY, 6KPC, 6KPF, 6PT0, 8GUR/S/Q/T, 8X3L, 9U7L** ([atlas](CB2_STRUCTURE_ATLAS.md)) | ¿El soft-STABLE de contactos se mantiene al cruzar **ligando / PAM / Gi** vs solo el camino geométrico Dutta? | **Bajo** (solo PDBs) | EXTERNAL | ✅ `EXT_LANDMARK_EXPANDED_*` (prior) |
+| Morales-Pastor Supp Data 3 (degeneracy; ya usado en X1/P1) + clusters PrefCoup 1–3 | ¿Nuestros seis hubs caen en **LigACNtop** / clusters publicados, o son un objeto topológico distinto? (inventario, no rescue de P1) | **Bajo** | EXTERNAL / lit. | ✅ `EXT_HUBS_IN_LIGACNTOP` |
+| Yeliseev CW-EPR sitios (IL3, A270C TM6 EC) + DNP-NMR M293 TM7 / M237 ICL3 | ¿Phase F/G + contactos estáticos predicen **más movilidad** donde EPR/NMR la ven? Checklist de anclas, no restricción MD | **Bajo** | EXTERNAL | ✅ `EXT_EPR_NMR_ANCHORS_PARTIAL_AGREE` |
+| Abrol Zenodo avg PDB / prmtop Gi vs βarr2 ([10.5281/zenodo.14227796](https://doi.org/10.5281/zenodo.14227796)) | En **complejo efector**, ¿qué contactos IC difieren Gi vs βarr — sin MSM de activación? | **Medio** (descarga selectiva de avg frames, no 100 GB) | EXTERNAL (hacia P3, no P2) | ✅ `EXT_ABROL_IC_EFFECTOR_PARTIAL` (P3 sigue BLOCKED) |
+| GPCRmd 1540 WT (+ mutantes si se bajan) + AlloViz / 100 shortest paths (protocolo del paper) | ¿Reproducimos degeneracy LigACN en **nuestro** pipeline de contactos? Test de método, no Gate-1 | **Medio** | EXTERNAL / método | ⏳ open (medio esfuerzo; no hoy) |
+| Illinois AEA `CB2_ana_bind` ([IDB-6705697](https://databank.illinois.edu/datasets/IDB-6705697)) | ¿Rutas de **entrada** de endocannabinoide (canal TM1–7) intersectan LigACNtop / ECL2-PAM? | **Medio** si solo paper+readme; **alto** si unpack 85 GB → **no recomendado mientras se espera PC** | EXTERNAL (≠ activación apo) | ✅ lit-only vía P4-lite (no unpack 85 GB) |
+| Dutta Box trajs + filelist ordenado (request ya draft) | Contactos **por metaestable** Dutta (bloqueado hoy: `INDETERMINATE_NO_ALIGNMENT`) | **Medio** (depende de respuesta humana) | EXTERNAL frozen hasta filelist | ⏳ email draft ready — waiting human send/reply |
+| Paper AEA / Dutta pipelines CB1 vs CB2 (sin traj) | Lectura P4-lite: ¿qué hipótesis CB1≠CB2 ya están **cerradas en lit.** antes de desbloquear P4? | **Bajo** | Lit. only | ✅ `EXT_P4LITE_ASYMMETRIES_CLOSED_IN_LIT` |
 
 ---
 
@@ -86,13 +86,14 @@ Atlas interno ya lista la mayoría de PDBs: [`CB2_STRUCTURE_ATLAS.md`](CB2_STRUC
 - **Pregunta nueva:** ¿objeto propio vs objeto publicado — solape, vecindad 1-hop, o disjuntos?  
 - **No es:** reabrir P1 como hub hunt; es **clarificar identidad del objeto** para el informe.
 
-### 3) Tabla de anclas experimentales EPR/NMR ↔ coordenadas ya en repo (esfuerzo bajo)
+### 3) Tabla de anclas experimentales EPR/NMR ↔ coordenadas ya en repo (esfuerzo bajo) — ✅ DONE 2026-09-22
 
 - **Qué:** mapa sitio→predicción cualitativa (movilidad / restricción) desde Phase F/G y contactos estáticos; explicitar **ausencia de DEER CB2**.  
 - **Pregunta nueva:** ¿dónde un futuro DEER (sitios Yeliseev) discriminaría RED_ESTABLE vs rutas-por-estado **si** hubiera muestreo propio?  
-- **No es:** fingir restraints que no existen.
+- **No es:** fingir restraints que no existen.  
+- **Hecho:** [`EXPERIMENT_EXT_EPR_NMR_ANCHORS.md`](EXPERIMENT_EXT_EPR_NMR_ANCHORS.md) · `results/network_core/ext_epr_nmr_anchors.md` → **`EXT_EPR_NMR_ANCHORS_PARTIAL_AGREE`**.
 
-*(Si hay capacidad media sin cluster: Abrol avg Gi vs βarr IC contacts — puente hacia P3, aún EXTERNAL.)*
+*(Abrol avg Gi vs βarr IC contacts — ✅ DONE 2026-09-22: [`EXPERIMENT_EXT_ABROL_IC_CONTACTS.md`](EXPERIMENT_EXT_ABROL_IC_CONTACTS.md) → `EXT_ABROL_IC_EFFECTOR_PARTIAL`; P3 sigue BLOCKED.)*
 
 ---
 

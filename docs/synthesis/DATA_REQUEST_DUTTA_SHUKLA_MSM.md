@@ -3,7 +3,8 @@
 **Status:** `FINAL_MSM_RECOVERED` + local `CB2_APO.zip` — Gate 0 for MSM-state contacts is **`EXT_MSM_STATE_CONTACTS_INDETERMINATE_NO_ALIGNMENT`** (2026-09-12). Email still needed for **traj↔MSM filelist** (not for re-download of 142 GB).
 
 **Action:** draft only — **do NOT email** from automation  
-**Date:** 2026-08-21 (updated 2026-09-12)  
+**Ready-to-send copy (2026-09-22):** [`docs/communications/EMAIL_DRAFT_DUTTA_FILELIST_2026-09-22.md`](../communications/EMAIL_DRAFT_DUTTA_FILELIST_2026-09-22.md) — still **human send**; not sent by agent.  
+**Date:** 2026-08-21 (updated 2026-09-22)  
 **Branch:** `feat/cb2-hubs-functional-topology-test`  
 **P2 role (reformulated):** Dutta & Shukla is **NOT** required to run P2. Real P2 uses **own MSM** on 5 WT GPCRmd Morales-Pastor trajs. Final_MSM pickles are **READY for optional external comparison when PI authorizes** (never a fitting template; different K is allowed). Frame-level contacts **per Dutta macrostate** remain blocked without an ordered filelist.
 
@@ -104,5 +105,18 @@ P2_REAL_MSM_COMPUTE: NOT_GATED_BY_DUTTA (own Morales-Pastor MSM)
 P5_EXECUTION: NOT_OPENED_BY_THIS_REQUEST
 TRAJECTORIES: ZIP_LOCAL (4971 nc); ALIGNMENT_KEY: MISSING
 ```
+
+---
+
+## Related public sampling leads (2026-09-20) — EXTERNAL only
+
+Survey for PI “multitud online”: full triage in [`EXPERIMENT_P2_MASSIVE_SAMPLING.md`](EXPERIMENT_P2_MASSIVE_SAMPLING.md) §12. Sibling Dutta/Shukla deposit (anandamide binding, **not** 2023 apo MSM):
+
+| Deposit | URL | Role vs this request |
+|---------|-----|----------------------|
+| Illinois Data Bank endocannabinoid binding | [IDB-6705697](https://databank.illinois.edu/datasets/IDB-6705697) (`CB2_ana_bind.zip` 85 GB, CC0) | **EXTERNAL**; ligand-binding pathways — does **not** replace filelist for 2023 Final_MSM |
+| Box 2023 (official) | `https://uofi.box.com/s/jzooa0o27z1w9ha0h6va3i51ir7l38j4` | Still the source for MSM objects + apo/holo; **filelist** is the remaining ask |
+
+**No** auto-download of the 85 GB zip. Filelist email remains the only Dutta unblocker for MSM-state contacts.
 
 *Fin — ask authors for ordered filelist (or extra-traj ID); do not re-download 142 GB; do not fake lex/zip order.*

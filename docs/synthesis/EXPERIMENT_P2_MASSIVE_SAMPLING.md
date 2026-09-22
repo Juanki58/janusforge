@@ -238,11 +238,43 @@ PI_DECISION: MASSIVE_SAMPLING_FIRST
 P5: QUEUED_NOT_STARTED
 EXTERNAL_DUTTA: FROZEN
 TIER_A_PRODUCTION_TODAY: NOT_STARTED  # Docker stopped; no CUDA OpenMM; WSL broken
-TIER_B: CHECKLIST_LOCKED_AWAITING_CLUSTER
+TIER_B: BLOCKED_NO_NVIDIA_CUDA_PC  # 2026-09-22 — checklist locked; no local CUDA host; MD NOT run
 P2_REOPEN_AS_CONVERGENT: FALSE
+P2_MSM_TRANSITIONS: CLOSED (INSUFFICIENT_SAMPLING)  # unchanged — do not reopen as CONVERGENT
 ACTIVE_ACTION: DOCS_PREREG_PLUS_INFRA_CHECKLIST
 CLOUD_SURVEY: 2026-09-13  # §8 RunPod primary paid; RES primary academic; Colab/Vast trial only
+PUBLIC_SAMPLING_SURVEY: 2026-09-20  # §12 — quantity online ≠ Gate-1 reopen
+EXTERNAL_BATCH_2026_09_22: EPR_NMR + P4LITE + ABROL_IC  # does not advance Gate-1
 ```
+
+---
+
+## 12. Public sampling leads (survey 2026-09-20)
+
+**PI claim:** “tiene que haber multitud de muestreos por internet.”  
+**Verdict:** Sí hay **muchos** depósitos CB1/CB2 — casi todos son **EXTERNAL / ruido** respecto a reabrir Gate-1 P2 (≥20 µs WT compatible Morales/GPCRmd). **No** se lanzan descargas masivas en este turno.
+
+### Clasificación rápida
+
+| Clase | Ejemplos | ¿Reabre P2 Gate-1? |
+|-------|----------|-------------------|
+| **Misma familia, mismo paper, no WT** | GPCRmd pub [1540](https://gpcrmd.org/dynadb/publications/1540/) mutantes dyn2212–2246 (~2.4 µs c/u) | **NO** — paisaje mutante ≠ WT; sumar ns no = MSM Markov del objeto P2 |
+| **Ya consumido / insuficiente** | dyn**2126** WT (~2 µs) local | **NO** — baseline `INSUFFICIENT_SAMPLING` |
+| **Adaptive grande, otro objeto** | Dutta Box apo/holo; Illinois IDB anandamide CB2 85 GB | **EXTERNAL only** (ya local apo; filelist MSM bloqueado) |
+| **Complejos señalización / unbinding / CG** | Zenodo Abrol βarr/Gi; Dryad CB1 NPS; MemProtMD | **EXTERNAL / ruido** |
+| **Corto / SI sin traj** | Figshare NAM ~200 ns; papers “upon request” | **Ruido** |
+
+### Mejores leads (orden de utilidad)
+
+1. **GPCRmd 1540 inventario** — confirmar si queda **algún** dyn WT adicional (inactive 5ZTY / otra réplica) no descargado; mutantes = EXTERNAL mutacional, no Tier B. Viewer: `https://gpcrmd.org/view/2126/` (+ 2212–2246).  
+2. **Illinois Data Bank** [IDB-6705697](https://databank.illinois.edu/datasets/IDB-6705697) — `CB2_ana_bind.zip` 85 GB, CC0, AEA binding OpenMM/CHARMM36m (**piloto metadata/readme only**; no full download).  
+3. **Zenodo Abrol** [10.5281/zenodo.14227795](https://doi.org/10.5281/zenodo.14227795) + GPCRmd **2091** (phosphoC–βarr2) — piloto pequeño de formato/topo si interesa acoplamiento; **no** Gate-1 P2.  
+4. **Dutta filelist** — seguir [`DATA_REQUEST_DUTTA_SHUKLA_MSM.md`](DATA_REQUEST_DUTTA_SHUKLA_MSM.md); desbloquea EXTERNAL MSM-state, **no** P2.  
+5. **Producción propia Tier B** — sigue siendo la vía honesta a Gate-1 (§5–§8).
+
+### Por qué “multitud” ≠ muestreo Markov-convergente para *nuestra* pregunta
+
+Trayectorias cortas (≤1–2 µs), FF/topo distintos, apo≠holo, ligando distinto (AEA / Gi / βarr vs HU-210), mutantes, Metadynamics/umbrella (no ensemble equilibrio unbiased), CG MemProtMD, y falta de alineación traj↔MSM. Cumplir Tier B-min exige **tiempo agregado + réplicas independientes sobre el mismo objeto WT**.
 
 ---
 

@@ -156,3 +156,19 @@ NEXT: HUMAN_STRATEGIC_CHOICE  # massive sampling OR P5 OR wait filelist
 ---
 
 *Fin acta EXTERNAL CB2_APO. Congela síntesis; no autoriza compute; no reabre P2; no envía email; no escala MSM; no descarga ESMDynamic.*
+
+---
+
+## Appendix — Day log EXTERNAL (post-freeze; discrimination-only)
+
+**2026-09-22** — Batch EXTERNAL bajo [`PUBLIC_DATA_LEADS_CB2.md`](PUBLIC_DATA_LEADS_CB2.md). **No** reabre P2; **no** MD Tier B (blocked: sin PC NVIDIA CUDA); **no** envío automático de email.
+
+| Ítem | Veredicto | Artefactos |
+|------|-----------|------------|
+| EPR/NMR anchors | `EXT_EPR_NMR_ANCHORS_PARTIAL_AGREE` | `EXPERIMENT_EXT_EPR_NMR_ANCHORS.md` · `ext_epr_nmr_anchors.*` |
+| P4-lite lit CB1≠CB2 / AEA | `EXT_P4LITE_ASYMMETRIES_CLOSED_IN_LIT` | `EXPERIMENT_EXT_P4LITE_LIT.md` · `ext_p4lite_lit.*` |
+| Abrol IC avg frames | `EXT_ABROL_IC_EFFECTOR_PARTIAL` (P3 sigue BLOCKED) | `EXPERIMENT_EXT_ABROL_IC_CONTACTS.md` · `ext_abrol_ic_contacts.*` |
+| Dutta filelist email | Draft ready — **not sent** | `docs/communications/EMAIL_DRAFT_DUTTA_FILELIST_2026-09-22.md` |
+| Tier B MD | **BLOCKED** (no NVIDIA CUDA PC) | nota en `EXPERIMENT_P2_MASSIVE_SAMPLING.md` §11 |
+
+**Remaining open (honest):** (1) hardware Tier B / cloud GPU; (2) human email send + author reply for filelist.
