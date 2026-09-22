@@ -1,0 +1,18 @@
+{
+  "experiment": "EXTERNAL_P4LITE_LIT",
+  "pre_reg": "docs/synthesis/EXPERIMENT_EXT_P4LITE_LIT.md",
+  "run_utc": "2026-09-22T05:05:00Z",
+  "verdict": "EXT_P4LITE_ASYMMETRIES_CLOSED_IN_LIT",
+  "p4_compute": "BLOCKED",
+  "p2_reopen": false,
+  "aea_traj_unpacked": false,
+  "claims": [
+    {"id": 1, "status": "CLOSED_IN_LIT", "doi": "10.1038/s42003-023-04868-1"},
+    {"id": 2, "status": "CLOSED_IN_LIT", "doi": "10.1038/s42003-023-04868-1"},
+    {"id": 3, "status": "CLOSED_IN_LIT", "doi": "10.1016/j.jbc.2026.111434"},
+    {"id": 4, "status": "CLOSED_IN_LIT", "doi": "10.1016/j.jbc.2026.111434"},
+    {"id": 5, "status": "CLOSED_IN_LIT", "doi": "10.1021/acschemneuro.1c00760"},
+    {"id": 6, "status": "OPEN_FOR_P4", "doi": null},
+    {"id": 7, "status": "OPEN_FOR_P4", "doi": null}
+  ]
+}
