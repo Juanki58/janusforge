@@ -151,3 +151,6 @@ results/msm_model/_pilot_*/
 
 # Ephemeral scratch under reports
 results/reports/_tmp_*
+
+# Large Dutta SI PDF (local cache; caption cached in results JSON)
+results/network_core/_raw_downloads/42003_2023_4868_MOESM1_ESM.pdf

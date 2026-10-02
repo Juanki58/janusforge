@@ -172,3 +172,17 @@ NEXT: HUMAN_STRATEGIC_CHOICE  # massive sampling OR P5 OR wait filelist
 | Tier B MD | **BLOCKED** (no NVIDIA CUDA PC) | nota en `EXPERIMENT_P2_MASSIVE_SAMPLING.md` §11 |
 
 **Remaining open (honest):** (1) hardware Tier B / cloud GPU; (2) human email send + author reply for filelist.
+
+**2026-10-02** — Batch EXTERNAL optics 1–7 (PI blanket advance; **sin GPU**; **sin** Tier B MD; **sin** envío email; **sin** reopen P2).
+
+| # | Ítem | Veredicto | Artefactos |
+|---|------|-----------|------------|
+| 1 | Toggle-continuo vs PrefCoup multi-trigger | `EXT_TOGGLE_VS_MULTITRIGGER_LEVEL_DISTINCT` | `EXPERIMENT_EXT_TOGGLE_VS_MULTITRIGGER.md` · `ext_toggle_vs_multitrigger.*` |
+| 3 | PrefCoup cluster-2/3 → hub neighborhood | `EXT_PREFCOUP_HUB_NEIGHBORHOOD_OVERLAP` | `EXPERIMENT_EXT_PREFCOUP_HUB_NEIGHBORHOOD.md` · `ext_prefcoup_hub_neighborhood.*` |
+| 2 | AEA/HU308 × Ec21a × hubs TM7 (static) | `EXT_AEA_EC21A_HUB_OVERLAP_PARTIAL` | `EXPERIMENT_EXT_AEA_EC21A_HUB_OVERLAP.md` · `ext_aea_ec21a_hub_overlap.*` |
+| 4 | DEER candidates DOC ONLY | `EXT_DEER_CANDIDATES_DESIGNED_NO_DISTANCES` | `EXPERIMENT_EXT_DEER_CANDIDATES.md` · `ext_deer_candidates.*` |
+| 5 | Ec21a PAM struct vs assay | `EXT_EC21A_PAM_STRUCT_ASSAY_PARTIAL` | `EXPERIMENT_EXT_EC21A_PAM_CHECKLIST.md` · `ext_ec21a_pam_checklist.*` |
+| 6 | Abrol IC × LigACN sinks | `EXT_ABROL_LIGACN_SINK_OVERLAP` (P3 BLOCKED) | `EXPERIMENT_EXT_ABROL_LIGACN_SINKS.md` · `ext_abrol_ligacn_sinks.*` |
+| 7 | Dutta SF22 tunnels × hubs | `EXT_DUTTA_SF22_TUNNEL_HUB_QUALITATIVE_ONLY` | `EXPERIMENT_EXT_DUTTA_SF22_TUNNEL_HUBS.md` · `ext_dutta_sf22_tunnel_hubs.*` |
+
+**Hard stops affirmed:** no Gi claims as proven; P2 not CONVERGENT; no docking; no Tier B; DEER distances not invented; SF22 residue roster not invented.

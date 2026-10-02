@@ -1,0 +1,153 @@
+{
+  "experiment": "EXTERNAL_AEA_EC21A_HUB_OVERLAP",
+  "pre_reg": "docs/synthesis/EXPERIMENT_EXT_AEA_EC21A_HUB_OVERLAP.md",
+  "run_utc": "2026-10-02T23:01:27Z",
+  "verdict": "EXT_AEA_EC21A_HUB_OVERLAP_PARTIAL",
+  "thresholds_A": {
+    "NEAR_LIGAND": 5.0,
+    "SHELL": 8.0
+  },
+  "tm_ranges": {
+    "TM1": [
+      27,
+      51
+    ],
+    "TM5": [
+      185,
+      217
+    ],
+    "TM6": [
+      230,
+      260
+    ],
+    "TM7": [
+      270,
+      300
+    ]
+  },
+  "structures": {
+    "HU308": {
+      "pdb": "data\\external\\cb2_landmark_expanded\\8GUS.pdb",
+      "ligand": "KO3"
+    },
+    "Ec21a_CP55": {
+      "cif": "data\\external\\cb2_landmark_expanded\\9U7L.cif",
+      "ligands": [
+        "A1EOL",
+        "9GF"
+      ],
+      "ligands_found": [
+        "9GF",
+        "A1EOL"
+      ]
+    }
+  },
+  "hubs": [
+    {
+      "hub": "LEU287",
+      "resid": 287,
+      "helices": [
+        "TM7"
+      ],
+      "aea_primary_TM1_TM7_member": true,
+      "aea_alt_TM5_TM6_member": false,
+      "min_A_to_HU308_KO3": 8.162621789791634,
+      "class_HU308": "DISTAL",
+      "min_A_to_Ec21a_A1EOL": 13.875288477031791,
+      "class_Ec21a": "DISTAL",
+      "min_A_to_CP55_9GF": 8.039892049477825,
+      "class_CP55": "DISTAL"
+    },
+    {
+      "hub": "ASN291",
+      "resid": 291,
+      "helices": [
+        "TM7"
+      ],
+      "aea_primary_TM1_TM7_member": true,
+      "aea_alt_TM5_TM6_member": false,
+      "min_A_to_HU308_KO3": 10.035023550532253,
+      "class_HU308": "DISTAL",
+      "min_A_to_Ec21a_A1EOL": 16.525057224104145,
+      "class_Ec21a": "DISTAL",
+      "min_A_to_CP55_9GF": 10.070312657560414,
+      "class_CP55": "DISTAL"
+    },
+    {
+      "hub": "ASN295",
+      "resid": 295,
+      "helices": [
+        "TM7"
+      ],
+      "aea_primary_TM1_TM7_member": true,
+      "aea_alt_TM5_TM6_member": false,
+      "min_A_to_HU308_KO3": 12.319105294719128,
+      "class_HU308": "DISTAL",
+      "min_A_to_Ec21a_A1EOL": 19.955631873655076,
+      "class_Ec21a": "DISTAL",
+      "min_A_to_CP55_9GF": 13.219317399632637,
+      "class_CP55": "DISTAL"
+    }
+  ],
+  "vestibule_residues": [
+    {
+      "residue": "SER268",
+      "resid": 268,
+      "min_A_to_Ec21a": 3.175595416855467,
+      "class_Ec21a": "NEAR_LIGAND",
+      "min_A_to_nearest_TM7_hub": 15.150734200549246
+    },
+    {
+      "residue": "LYS278",
+      "resid": 278,
+      "min_A_to_Ec21a": 3.5758318094579704,
+      "class_Ec21a": "NEAR_LIGAND",
+      "min_A_to_nearest_TM7_hub": 12.57080901492574
+    },
+    {
+      "residue": "PHE183",
+      "resid": 183,
+      "min_A_to_Ec21a": 3.3694454470294732,
+      "class_Ec21a": "NEAR_LIGAND",
+      "min_A_to_nearest_TM7_hub": 17.720836814332312
+    },
+    {
+      "residue": "ILE186",
+      "resid": 186,
+      "min_A_to_Ec21a": 3.5547354616100386,
+      "class_Ec21a": "NEAR_LIGAND",
+      "min_A_to_nearest_TM7_hub": 18.427356685140204
+    },
+    {
+      "residue": "PRO176",
+      "resid": 176,
+      "min_A_to_Ec21a": 12.967712126183386,
+      "class_Ec21a": "DISTAL",
+      "min_A_to_nearest_TM7_hub": 31.80320058795412
+    },
+    {
+      "residue": "PRO178",
+      "resid": 178,
+      "min_A_to_Ec21a": 9.71117872659773,
+      "class_Ec21a": "DISTAL",
+      "min_A_to_nearest_TM7_hub": 28.00701334984423
+    }
+  ],
+  "counts": {
+    "n_hubs_NEAR_HU308": 0,
+    "n_hubs_NEAR_Ec21a": 0,
+    "n_hubs_SHELL_or_NEAR_Ec21a": 0
+  },
+  "governance": {
+    "AEA_TRAJ_UNPACK": false,
+    "docking": "STOP",
+    "P2_REOPEN": false,
+    "Gi_FUNCTIONAL_CLAIM": false,
+    "helix_membership_neq_atomistic_AEA_tunnel": true
+  },
+  "dois": [
+    "10.1016/j.jbc.2026.111434",
+    "10.1038/s41467-023-37112-9",
+    "10.1038/s41467-026-72923-6"
+  ]
+}

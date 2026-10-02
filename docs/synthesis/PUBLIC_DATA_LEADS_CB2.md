@@ -69,6 +69,13 @@ Atlas interno ya lista la mayoría de PDBs: [`CB2_STRUCTURE_ATLAS.md`](CB2_STRUC
 | Illinois AEA `CB2_ana_bind` ([IDB-6705697](https://databank.illinois.edu/datasets/IDB-6705697)) | ¿Rutas de **entrada** de endocannabinoide (canal TM1–7) intersectan LigACNtop / ECL2-PAM? | **Medio** si solo paper+readme; **alto** si unpack 85 GB → **no recomendado mientras se espera PC** | EXTERNAL (≠ activación apo) | ✅ lit-only vía P4-lite (no unpack 85 GB) |
 | Dutta Box trajs + filelist ordenado (request ya draft) | Contactos **por metaestable** Dutta (bloqueado hoy: `INDETERMINATE_NO_ALIGNMENT`) | **Medio** (depende de respuesta humana) | EXTERNAL frozen hasta filelist | ⏳ email draft ready — waiting human send/reply |
 | Paper AEA / Dutta pipelines CB1 vs CB2 (sin traj) | Lectura P4-lite: ¿qué hipótesis CB1≠CB2 ya están **cerradas en lit.** antes de desbloquear P4? | **Bajo** | Lit. only | ✅ `EXT_P4LITE_ASYMMETRIES_CLOSED_IN_LIT` |
+| Ganzoni toggle-continuo vs Morales PrefCoup multi-trigger (SI Note 1) | Tabla de predicciones discriminantes (niveles eficacia vs PrefCoup) | **Bajo** | Lit. only | ✅ `EXT_TOGGLE_VS_MULTITRIGGER_LEVEL_DISTINCT` |
+| Morales SI Note 1 cluster 2/3 contacts × hubs (N291; C288≈L287; D80≈A79) | ¿Vecindad hub en contactos PrefCoup publicados? | **Bajo** | EXTERNAL / SI | ✅ `EXT_PREFCOUP_HUB_NEIGHBORHOOD_OVERLAP` |
+| 8GUS HU-308 + 9U7L Ec21a × hubs TM7 (+ AEA helix TM1–7 / TM5–6) | Intersección geométrica estática de capas | **Bajo** | EXTERNAL / PDB | ✅ `EXT_AEA_EC21A_HUB_OVERLAP_PARTIAL` |
+| Yeliseev EPR sitios → diseño DEER futuro | Pares candidatos **sin** distancias inventadas | **Bajo** | DOC only | ✅ `EXT_DEER_CANDIDATES_DESIGNED_NO_DISTANCES` |
+| Wang 9U7L mutagénesis vs Qi/Niswender assay-dependent EC21a | Checklist struct↔PAM vs tensión farmacológica | **Bajo** | Lit. + PDB | ✅ `EXT_EC21A_PAM_STRUCT_ASSAY_PARTIAL` |
+| Abrol IC contacts × LigACN Sink Set T | ¿Sinks Morales tocan fingerprint efector Abrol? | **Bajo** | EXTERNAL | ✅ `EXT_ABROL_LIGACN_SINK_OVERLAP` (P3 BLOCKED) |
+| Dutta Supp Fig. 22 tunnels × hubs | Membership residue-level vs solo claim cualitativo EC→IC | **Bajo** | SI caption | ✅ `EXT_DUTTA_SF22_TUNNEL_HUB_QUALITATIVE_ONLY` |
 
 ---
 
@@ -106,7 +113,7 @@ Atlas interno ya lista la mayoría de PDBs: [`CB2_STRUCTURE_ATLAS.md`](CB2_STRUC
 | MSM **binding** AEA (Illinois) | No tocado | Pregunta distinta (entrada ≠ activación) |
 | Complejos Gi vs βarr MD (Abrol) | P3 BLOCKED | Dato existe; decisión de scope |
 | Panel cryo-EM multi-ligando como landmarks de red | Atlas + Phase G; **no** fingerprint de contactos multi-PDB post-Dutta-6 | Hueco **bajo esfuerzo** |
-| Toggle continuo (Ganzoni) + multi-trigger (Morales-Pastor) | Survey lit. sí; integración formal en un solo acta de “veredictos ajenos” | Este doc empieza eso |
+| Toggle continuo (Ganzoni) + multi-trigger (Morales-Pastor) | ✅ Discriminación formal | `EXT_TOGGLE_VS_MULTITRIGGER_LEVEL_DISTINCT` (2026-10-02) |
 | Colesterol / membrana como rutas (Yeliseev) | P5 HYPOTHESIS_READY, no ejecutado | Independiente; no rescate P1 |
 | CB1 comparación de red | P4 BLOCKED | Lit. ya da asimetría de pipelines |
 | DEER/FRET distancias activación | **Nadie** (CB2) ha entregado el mapa | No inventar anclas |
