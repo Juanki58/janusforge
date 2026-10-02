@@ -1,0 +1,35 @@
+{
+  "dataset": "dutta_shukla_2023_Final_MSM",
+  "doi": "10.1038/s42003-023-04868-1",
+  "box_share": "https://uofi.box.com/s/jzooa0o27z1w9ha0h6va3i51ir7l38j4",
+  "recovery_status": "FINAL_MSM_COMPLETE",
+  "recovered_at": "2026-09-10",
+  "recovery_method": "user_browser_download_from_Box_Final_MSM",
+  "notes": [
+    "Scripted Box GETs still return HTTP 403 error_message_bandwidth; user browser download succeeded for Final_MSM pickles.",
+    "Trajectory shares not downloaded yet.",
+    "READY for optional external comparison when PI authorizes; do not reopen P2 A/B/C from this ingest alone."
+  ],
+  "files": [
+    {
+      "name": "CB1_msm_feature_final_clustering.pkl",
+      "bytes": 17205855,
+      "sha256": "5851CA89D92B3863F9099538110E264D6B4E207AF27FEBC3794F0BDC80E1BE56"
+    },
+    {
+      "name": "CB1_state_prob.pkl",
+      "bytes": 101054619,
+      "sha256": "14D51227A1D6B51C8C32216C5E514864427DBE26E6B102554D095D8090E7C60C"
+    },
+    {
+      "name": "CB2_msm_feature_final_clustering.pkl",
+      "bytes": 11429097,
+      "sha256": "E4DB17C8E30DE41C0829BDF0F10C00643171CBDD5438E894E1C3F0A99E6C20E8"
+    },
+    {
+      "name": "CB2_state_prob.pkl",
+      "bytes": 67145861,
+      "sha256": "0F273641DC3BD26CEDF38B0F98B3E4B8AFD0E3EADC5F10E38F22AAD16370C079"
+    }
+  ]
+}

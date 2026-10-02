@@ -1,0 +1,12 @@
+﻿MOESM2 download log — Morales-Pastor 2025
+Target: 41467_2025_60003_MOESM2_ESM.pdf
+
+Tried:
+1. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12159191/bin/41467_2025_60003_MOESM2_ESM.pdf -> FAIL 404
+2. https://europepmc.org/articles/PMC12159191?pdf=render -> REJECT (full article PDF ~2.1 MB, not MOESM2)
+3. https://www.ncbi.nlm.nih.gov/pmc/articles/instance/12159191/bin/41467_2025_60003_MOESM2_ESM.pdf -> REJECT (HTML interstitial ~1.8 KB)
+4. europepmc.org .../bin/41467_2025_60003_MOESM2_ESM.pdf -> FAIL connection reset
+5. https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-025-60003-0/MediaObjects/41467_2025_60003_MOESM2_ESM.pdf -> OK 200 size=34257 PDF
+
+Saved: data/external/morales_pastor_2025/41467_2025_60003_MOESM2_ESM.pdf
+SHA256: 2937da830d9a7e46c1509512e54e99908f0dd60e2650ee8bfe58d6bed58f1f08

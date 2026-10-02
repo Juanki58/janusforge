@@ -1,0 +1,1182 @@
+{
+  "generated_utc": "2026-09-11T13:13:46Z",
+  "branch": "feat/cb2-hubs-functional-topology-test",
+  "experiment": "EXPERIMENT_CB2_STATE_PDB_CONTACTS",
+  "epistemology": {
+    "scope": "EXTERNAL_STRUCTURAL_SNAPSHOT",
+    "one_pdb_neq_ensemble": true,
+    "p2_unchanged": true,
+    "no_gi_claim": true,
+    "no_docking": true,
+    "no_p1_hub_hunt": true
+  },
+  "contact_def": {
+    "name": "getcontacts_vdw_envelope_plus_alloviz_filters",
+    "geometry": "|AB| < Rvdw(A)+Rvdw(B)+0.5 Angstrom; A,B non-hydrogen",
+    "slack_A": 0.5,
+    "exclude_sequential_protein": true,
+    "selection": "protein",
+    "limitation": "Full GetContacts chemotypes (hbond angles, pi geometry, water bridges) not reimplemented; persistence uses registered VdW distance envelope only."
+  },
+  "secondary_ca_def": {
+    "cutoff_A": 8.0,
+    "min_sep": 2,
+    "drives_verdict": false
+  },
+  "thresholds": {
+    "mean_jaccard_stable": 0.8,
+    "frac_core_stable": 0.6,
+    "frac_state_specific_B": 0.15,
+    "path_turnover_B": 0.2,
+    "mean_jaccard_diffuse": 0.55
+  },
+  "state_order": [
+    "inactive",
+    "I1",
+    "I2",
+    "I3",
+    "I4",
+    "active"
+  ],
+  "manifest_ok": true,
+  "manifest_detail": {
+    "CB2_ref_inactive_3_b.pdb": {
+      "sha256": "d641a808852c4c9e539f3d43205e501a47d4e43532bfec9fc8ab773371fa43e6",
+      "expected": "d641a808852c4c9e539f3d43205e501a47d4e43532bfec9fc8ab773371fa43e6",
+      "ok": true
+    },
+    "CB2_ref_inactive_I1_b.pdb": {
+      "sha256": "50fefbbe30fbdd2afb2ceed0be5a9656bf1734295da58edd13bf1c792d080bd9",
+      "expected": "50fefbbe30fbdd2afb2ceed0be5a9656bf1734295da58edd13bf1c792d080bd9",
+      "ok": true
+    },
+    "CB2_ref_inactive_I2_b.pdb": {
+      "sha256": "311109f8a6ec3389e527e69ebda704f6db4b795afa6c0403ae993e6ad8bab836",
+      "expected": "311109f8a6ec3389e527e69ebda704f6db4b795afa6c0403ae993e6ad8bab836",
+      "ok": true
+    },
+    "CB2_ref_inactive_I3_b.pdb": {
+      "sha256": "142e770e64d7c0e0ef40cf02fb89e7d56567813ac083b82862f6bdb684a56718",
+      "expected": "142e770e64d7c0e0ef40cf02fb89e7d56567813ac083b82862f6bdb684a56718",
+      "ok": true
+    },
+    "CB2_ref_inactive_I4_b.pdb": {
+      "sha256": "dca5531acdc11a94f055572eba22600aae78ba26bf0b0db975b1ee6e740d0a73",
+      "expected": "dca5531acdc11a94f055572eba22600aae78ba26bf0b0db975b1ee6e740d0a73",
+      "ok": true
+    },
+    "CB2_ref_inactive_active_b.pdb": {
+      "sha256": "41816e10f2ca5e94079d72f59a2226b213b97c9ec922a3ffea7c722c3ad584c1",
+      "expected": "41816e10f2ca5e94079d72f59a2226b213b97c9ec922a3ffea7c722c3ad584c1",
+      "ok": true
+    }
+  },
+  "hub_mapping": {
+    "alignment_identity": 1.0,
+    "n_pdb_residues": 284,
+    "hubs": {
+      "ALA:79": {
+        "status": "OK",
+        "reason": null,
+        "uniprot": 79,
+        "expected_aa": "ALA",
+        "pdb_resid": 59,
+        "pdb_resname": "ALA",
+        "pdb_label": "ALA:59",
+        "aligned_aa1": "A"
+      },
+      "ALA:83": {
+        "status": "OK",
+        "reason": null,
+        "uniprot": 83,
+        "expected_aa": "ALA",
+        "pdb_resid": 63,
+        "pdb_resname": "ALA",
+        "pdb_label": "ALA:63",
+        "aligned_aa1": "A"
+      },
+      "LEU:287": {
+        "status": "OK",
+        "reason": null,
+        "uniprot": 287,
+        "expected_aa": "LEU",
+        "pdb_resid": 255,
+        "pdb_resname": "LEU",
+        "pdb_label": "LEU:255",
+        "aligned_aa1": "L"
+      },
+      "ASN:291": {
+        "status": "OK",
+        "reason": null,
+        "uniprot": 291,
+        "expected_aa": "ASN",
+        "pdb_resid": 259,
+        "pdb_resname": "ASN",
+        "pdb_label": "ASN:259",
+        "aligned_aa1": "N"
+      },
+      "ASN:295": {
+        "status": "OK",
+        "reason": null,
+        "uniprot": 295,
+        "expected_aa": "ASN",
+        "pdb_resid": 263,
+        "pdb_resname": "ASN",
+        "pdb_label": "ASN:263",
+        "aligned_aa1": "N"
+      },
+      "ARG:302": {
+        "status": "OK",
+        "reason": null,
+        "uniprot": 302,
+        "expected_aa": "ARG",
+        "pdb_resid": 270,
+        "pdb_resname": "ARG",
+        "pdb_label": "ARG:270",
+        "aligned_aa1": "R"
+      }
+    }
+  },
+  "hub_incident_mean_jaccard": {
+    "ALA:79": 0.6232010582010582,
+    "ALA:83": 0.6464814814814814,
+    "LEU:287": 0.7055555555555555,
+    "ASN:291": 0.7463131313131314,
+    "ASN:295": 0.6284391534391535,
+    "ARG:302": 0.25052910052910055
+  },
+  "states": {
+    "inactive": {
+      "file": "CB2_ref_inactive_3_b.pdb",
+      "sha256": "d641a808852c4c9e539f3d43205e501a47d4e43532bfec9fc8ab773371fa43e6",
+      "n_atoms": 4566,
+      "n_residues": 288,
+      "n_edges_vdw": 813,
+      "n_edges_ca": 1057,
+      "hub_participation": {
+        "ALA:79": {
+          "status": "OK",
+          "pdb_label": "ALA:59",
+          "degree": 8,
+          "neighbors": [
+            "ALA:57",
+            "ALA:63",
+            "ALA:99",
+            "PHE:61",
+            "SER:100",
+            "SER:55",
+            "THR:96",
+            "TRP:138"
+          ]
+        },
+        "ALA:83": {
+          "status": "OK",
+          "pdb_label": "ALA:63",
+          "degree": 8,
+          "neighbors": [
+            "ALA:59",
+            "CYS:256",
+            "PHE:61",
+            "PHE:67",
+            "PHE:97",
+            "THR:96",
+            "VAL:65",
+            "VAL:66"
+          ]
+        },
+        "LEU:287": {
+          "status": "OK",
+          "pdb_label": "LEU:255",
+          "degree": 7,
+          "neighbors": [
+            "ASN:259",
+            "CYS:225",
+            "CYS:252",
+            "ILE:258",
+            "LEU:257",
+            "PHE:251",
+            "SER:253"
+          ]
+        },
+        "ASN:291": {
+          "status": "OK",
+          "pdb_label": "ASN:259",
+          "degree": 10,
+          "neighbors": [
+            "ASN:263",
+            "ASP:60",
+            "CYS:256",
+            "LEU:222",
+            "LEU:255",
+            "LEU:257",
+            "MET:261",
+            "PRO:264",
+            "VAL:221",
+            "VAL:262"
+          ]
+        },
+        "ASN:295": {
+          "status": "OK",
+          "pdb_label": "ASN:263",
+          "degree": 7,
+          "neighbors": [
+            "ASN:259",
+            "ILE:266",
+            "LEU:222",
+            "TYR:267",
+            "VAL:218",
+            "VAL:221",
+            "VAL:265"
+          ]
+        },
+        "ARG:302": {
+          "status": "OK",
+          "pdb_label": "ARG:270",
+          "degree": 5,
+          "neighbors": [
+            "ALA:268",
+            "ARG:204",
+            "LEU:217",
+            "THR:214",
+            "TYR:267"
+          ]
+        }
+      },
+      "hub_mapping_status": {
+        "ALA:79": "OK",
+        "ALA:83": "OK",
+        "LEU:287": "OK",
+        "ASN:291": "OK",
+        "ASN:295": "OK",
+        "ARG:302": "OK"
+      }
+    },
+    "I1": {
+      "file": "CB2_ref_inactive_I1_b.pdb",
+      "sha256": "50fefbbe30fbdd2afb2ceed0be5a9656bf1734295da58edd13bf1c792d080bd9",
+      "n_atoms": 4566,
+      "n_residues": 288,
+      "n_edges_vdw": 802,
+      "n_edges_ca": 1040,
+      "hub_participation": {
+        "ALA:79": {
+          "status": "OK",
+          "pdb_label": "ALA:59",
+          "degree": 7,
+          "neighbors": [
+            "ALA:57",
+            "ALA:63",
+            "LEU:56",
+            "LEU:62",
+            "PHE:61",
+            "SER:55",
+            "THR:96"
+          ]
+        },
+        "ALA:83": {
+          "status": "OK",
+          "pdb_label": "ALA:63",
+          "degree": 5,
+          "neighbors": [
+            "ALA:59",
+            "PHE:61",
+            "PHE:67",
+            "VAL:65",
+            "VAL:66"
+          ]
+        },
+        "LEU:287": {
+          "status": "OK",
+          "pdb_label": "LEU:255",
+          "degree": 5,
+          "neighbors": [
+            "ASN:259",
+            "CYS:252",
+            "ILE:258",
+            "LEU:257",
+            "SER:253"
+          ]
+        },
+        "ASN:291": {
+          "status": "OK",
+          "pdb_label": "ASN:259",
+          "degree": 9,
+          "neighbors": [
+            "ASN:263",
+            "CYS:225",
+            "CYS:256",
+            "LEU:222",
+            "LEU:255",
+            "LEU:257",
+            "MET:261",
+            "TRP:226",
+            "VAL:221"
+          ]
+        },
+        "ASN:295": {
+          "status": "OK",
+          "pdb_label": "ASN:263",
+          "degree": 7,
+          "neighbors": [
+            "ASN:259",
+            "ASP:60",
+            "ILE:266",
+            "MET:261",
+            "TYR:267",
+            "VAL:218",
+            "VAL:265"
+          ]
+        },
+        "ARG:302": {
+          "status": "OK",
+          "pdb_label": "ARG:270",
+          "degree": 7,
+          "neighbors": [
+            "ALA:212",
+            "ALA:268",
+            "ILE:266",
+            "LEU:211",
+            "LYS:213",
+            "THR:214",
+            "TYR:267"
+          ]
+        }
+      },
+      "hub_mapping_status": {
+        "ALA:79": "OK",
+        "ALA:83": "OK",
+        "LEU:287": "OK",
+        "ASN:291": "OK",
+        "ASN:295": "OK",
+        "ARG:302": "OK"
+      }
+    },
+    "I2": {
+      "file": "CB2_ref_inactive_I2_b.pdb",
+      "sha256": "311109f8a6ec3389e527e69ebda704f6db4b795afa6c0403ae993e6ad8bab836",
+      "n_atoms": 4566,
+      "n_residues": 288,
+      "n_edges_vdw": 851,
+      "n_edges_ca": 1066,
+      "hub_participation": {
+        "ALA:79": {
+          "status": "OK",
+          "pdb_label": "ALA:59",
+          "degree": 7,
+          "neighbors": [
+            "ALA:57",
+            "ALA:63",
+            "ALA:99",
+            "PHE:61",
+            "SER:100",
+            "SER:55",
+            "THR:96"
+          ]
+        },
+        "ALA:83": {
+          "status": "OK",
+          "pdb_label": "ALA:63",
+          "degree": 7,
+          "neighbors": [
+            "ALA:59",
+            "ASP:60",
+            "PHE:61",
+            "PHE:67",
+            "THR:96",
+            "VAL:65",
+            "VAL:66"
+          ]
+        },
+        "LEU:287": {
+          "status": "OK",
+          "pdb_label": "LEU:255",
+          "degree": 5,
+          "neighbors": [
+            "CYS:252",
+            "ILE:258",
+            "LEU:257",
+            "PHE:251",
+            "SER:253"
+          ]
+        },
+        "ASN:291": {
+          "status": "OK",
+          "pdb_label": "ASN:259",
+          "degree": 8,
+          "neighbors": [
+            "ASN:263",
+            "CYS:225",
+            "CYS:256",
+            "LEU:222",
+            "LEU:257",
+            "MET:261",
+            "VAL:221",
+            "VAL:262"
+          ]
+        },
+        "ASN:295": {
+          "status": "OK",
+          "pdb_label": "ASN:263",
+          "degree": 5,
+          "neighbors": [
+            "ASN:259",
+            "ASP:60",
+            "ILE:266",
+            "LEU:56",
+            "VAL:265"
+          ]
+        },
+        "ARG:302": {
+          "status": "OK",
+          "pdb_label": "ARG:270",
+          "degree": 3,
+          "neighbors": [
+            "ALA:268",
+            "LEU:207",
+            "LEU:211"
+          ]
+        }
+      },
+      "hub_mapping_status": {
+        "ALA:79": "OK",
+        "ALA:83": "OK",
+        "LEU:287": "OK",
+        "ASN:291": "OK",
+        "ASN:295": "OK",
+        "ARG:302": "OK"
+      }
+    },
+    "I3": {
+      "file": "CB2_ref_inactive_I3_b.pdb",
+      "sha256": "142e770e64d7c0e0ef40cf02fb89e7d56567813ac083b82862f6bdb684a56718",
+      "n_atoms": 4566,
+      "n_residues": 288,
+      "n_edges_vdw": 781,
+      "n_edges_ca": 1054,
+      "hub_participation": {
+        "ALA:79": {
+          "status": "OK",
+          "pdb_label": "ALA:59",
+          "degree": 5,
+          "neighbors": [
+            "ALA:57",
+            "ALA:63",
+            "PHE:61",
+            "SER:55",
+            "THR:96"
+          ]
+        },
+        "ALA:83": {
+          "status": "OK",
+          "pdb_label": "ALA:63",
+          "degree": 6,
+          "neighbors": [
+            "ALA:59",
+            "ALA:68",
+            "PHE:61",
+            "PHE:67",
+            "THR:96",
+            "VAL:65"
+          ]
+        },
+        "LEU:287": {
+          "status": "OK",
+          "pdb_label": "LEU:255",
+          "degree": 5,
+          "neighbors": [
+            "CYS:252",
+            "ILE:258",
+            "LEU:257",
+            "PHE:251",
+            "SER:253"
+          ]
+        },
+        "ASN:291": {
+          "status": "OK",
+          "pdb_label": "ASN:259",
+          "degree": 7,
+          "neighbors": [
+            "ASN:263",
+            "CYS:256",
+            "LEU:222",
+            "LEU:257",
+            "MET:261",
+            "VAL:221",
+            "VAL:262"
+          ]
+        },
+        "ASN:295": {
+          "status": "OK",
+          "pdb_label": "ASN:263",
+          "degree": 6,
+          "neighbors": [
+            "ASN:259",
+            "ASP:60",
+            "ILE:266",
+            "MET:261",
+            "TYR:267",
+            "VAL:265"
+          ]
+        },
+        "ARG:302": {
+          "status": "OK",
+          "pdb_label": "ARG:270",
+          "degree": 5,
+          "neighbors": [
+            "ALA:268",
+            "ASP:208",
+            "LEU:211",
+            "MET:205",
+            "THR:214"
+          ]
+        }
+      },
+      "hub_mapping_status": {
+        "ALA:79": "OK",
+        "ALA:83": "OK",
+        "LEU:287": "OK",
+        "ASN:291": "OK",
+        "ASN:295": "OK",
+        "ARG:302": "OK"
+      }
+    },
+    "I4": {
+      "file": "CB2_ref_inactive_I4_b.pdb",
+      "sha256": "dca5531acdc11a94f055572eba22600aae78ba26bf0b0db975b1ee6e740d0a73",
+      "n_atoms": 4566,
+      "n_residues": 288,
+      "n_edges_vdw": 834,
+      "n_edges_ca": 1058,
+      "hub_participation": {
+        "ALA:79": {
+          "status": "OK",
+          "pdb_label": "ALA:59",
+          "degree": 8,
+          "neighbors": [
+            "ALA:57",
+            "ALA:63",
+            "LEU:56",
+            "LEU:62",
+            "PHE:61",
+            "SER:100",
+            "SER:55",
+            "TRP:138"
+          ]
+        },
+        "ALA:83": {
+          "status": "OK",
+          "pdb_label": "ALA:63",
+          "degree": 8,
+          "neighbors": [
+            "ALA:59",
+            "ASP:60",
+            "LEU:257",
+            "PHE:61",
+            "PHE:67",
+            "PHE:97",
+            "THR:96",
+            "VAL:65"
+          ]
+        },
+        "LEU:287": {
+          "status": "OK",
+          "pdb_label": "LEU:255",
+          "degree": 5,
+          "neighbors": [
+            "CYS:225",
+            "CYS:252",
+            "ILE:258",
+            "LEU:257",
+            "SER:253"
+          ]
+        },
+        "ASN:291": {
+          "status": "OK",
+          "pdb_label": "ASN:259",
+          "degree": 9,
+          "neighbors": [
+            "ASN:263",
+            "CYS:225",
+            "CYS:256",
+            "LEU:222",
+            "LEU:257",
+            "MET:261",
+            "TRP:226",
+            "VAL:221",
+            "VAL:262"
+          ]
+        },
+        "ASN:295": {
+          "status": "OK",
+          "pdb_label": "ASN:263",
+          "degree": 6,
+          "neighbors": [
+            "ASN:259",
+            "ASP:60",
+            "ILE:266",
+            "LEU:56",
+            "TYR:267",
+            "VAL:265"
+          ]
+        },
+        "ARG:302": {
+          "status": "OK",
+          "pdb_label": "ARG:270",
+          "degree": 4,
+          "neighbors": [
+            "ALA:268",
+            "ARG:275",
+            "ILE:266",
+            "VAL:265"
+          ]
+        }
+      },
+      "hub_mapping_status": {
+        "ALA:79": "OK",
+        "ALA:83": "OK",
+        "LEU:287": "OK",
+        "ASN:291": "OK",
+        "ASN:295": "OK",
+        "ARG:302": "OK"
+      }
+    },
+    "active": {
+      "file": "CB2_ref_inactive_active_b.pdb",
+      "sha256": "41816e10f2ca5e94079d72f59a2226b213b97c9ec922a3ffea7c722c3ad584c1",
+      "n_atoms": 4566,
+      "n_residues": 288,
+      "n_edges_vdw": 828,
+      "n_edges_ca": 1058,
+      "hub_participation": {
+        "ALA:79": {
+          "status": "OK",
+          "pdb_label": "ALA:59",
+          "degree": 7,
+          "neighbors": [
+            "ALA:57",
+            "ALA:63",
+            "LEU:56",
+            "PHE:61",
+            "SER:100",
+            "SER:55",
+            "TRP:138"
+          ]
+        },
+        "ALA:83": {
+          "status": "OK",
+          "pdb_label": "ALA:63",
+          "degree": 7,
+          "neighbors": [
+            "ALA:59",
+            "ASP:60",
+            "PHE:61",
+            "PHE:67",
+            "THR:96",
+            "VAL:65",
+            "VAL:66"
+          ]
+        },
+        "LEU:287": {
+          "status": "OK",
+          "pdb_label": "LEU:255",
+          "degree": 7,
+          "neighbors": [
+            "CYS:225",
+            "CYS:252",
+            "ILE:224",
+            "ILE:258",
+            "LEU:257",
+            "PHE:251",
+            "SER:253"
+          ]
+        },
+        "ASN:291": {
+          "status": "OK",
+          "pdb_label": "ASN:259",
+          "degree": 9,
+          "neighbors": [
+            "ASN:263",
+            "CYS:225",
+            "CYS:256",
+            "LEU:222",
+            "LEU:257",
+            "MET:261",
+            "TRP:226",
+            "VAL:221",
+            "VAL:262"
+          ]
+        },
+        "ASN:295": {
+          "status": "OK",
+          "pdb_label": "ASN:263",
+          "degree": 5,
+          "neighbors": [
+            "ASN:259",
+            "ASP:60",
+            "ILE:266",
+            "TYR:267",
+            "VAL:265"
+          ]
+        },
+        "ARG:302": {
+          "status": "OK",
+          "pdb_label": "ARG:270",
+          "degree": 5,
+          "neighbors": [
+            "ALA:268",
+            "ARG:275",
+            "GLY:272",
+            "ILE:266",
+            "THR:214"
+          ]
+        }
+      },
+      "hub_mapping_status": {
+        "ALA:79": "OK",
+        "ALA:83": "OK",
+        "LEU:287": "OK",
+        "ASN:291": "OK",
+        "ASN:295": "OK",
+        "ARG:302": "OK"
+      }
+    }
+  },
+  "metrics_primary": {
+    "mean_jaccard": 0.6428849523377671,
+    "min_jaccard": 0.5959302325581395,
+    "max_jaccard": 0.6927772126144456,
+    "frac_core": 0.35903614457831323,
+    "n_core_edges": 447,
+    "n_union_edges": 1245,
+    "frac_state_specific": 0.04715425319542926,
+    "n_state_specific": {
+      "inactive": 30,
+      "I1": 30,
+      "I2": 30,
+      "I3": 33,
+      "I4": 61,
+      "active": 48
+    },
+    "path_turnover_frac": 0.34763300842572165,
+    "jaccard_matrix": [
+      [
+        1.0,
+        0.68580375782881,
+        0.6927772126144456,
+        0.6586888657648283,
+        0.5959302325581395,
+        0.6360917248255235
+      ],
+      [
+        0.68580375782881,
+        1.0,
+        0.6646525679758308,
+        0.6858359957401491,
+        0.6039215686274509,
+        0.6170634920634921
+      ],
+      [
+        0.6927772126144456,
+        0.6646525679758308,
+        1.0,
+        0.6636085626911316,
+        0.6343355965082444,
+        0.6364522417153996
+      ],
+      [
+        0.6586888657648283,
+        0.6858359957401491,
+        0.6636085626911316,
+        1.0,
+        0.6005946481665014,
+        0.6203423967774421
+      ],
+      [
+        0.5959302325581395,
+        0.6039215686274509,
+        0.6343355965082444,
+        0.6005946481665014,
+        1.0,
+        0.647175421209118
+      ],
+      [
+        0.6360917248255235,
+        0.6170634920634921,
+        0.6364522417153996,
+        0.6203423967774421,
+        0.647175421209118,
+        1.0
+      ]
+    ]
+  },
+  "metrics_secondary_ca": {
+    "mean_jaccard": 0.7953190563000168,
+    "jaccard_matrix": [
+      [
+        1.0,
+        0.8218940052128584,
+        0.8412836079791848,
+        0.8166953528399311,
+        0.7743288590604027,
+        0.7893401015228426
+      ],
+      [
+        0.8218940052128584,
+        1.0,
+        0.8233766233766234,
+        0.8208695652173913,
+        0.7689713322091062,
+        0.7600671140939598
+      ],
+      [
+        0.8412836079791848,
+        0.8233766233766234,
+        1.0,
+        0.845082680591819,
+        0.7893850042123,
+        0.7803855825649623
+      ],
+      [
+        0.8166953528399311,
+        0.8208695652173913,
+        0.845082680591819,
+        1.0,
+        0.7629382303839732,
+        0.76
+      ],
+      [
+        0.7743288590604027,
+        0.7689713322091062,
+        0.7893850042123,
+        0.7629382303839732,
+        1.0,
+        0.7751677852348994
+      ],
+      [
+        0.7893401015228426,
+        0.7600671140939598,
+        0.7803855825649623,
+        0.76,
+        0.7751677852348994,
+        1.0
+      ]
+    ]
+  },
+  "path_steps": [
+    {
+      "from": "inactive",
+      "to": "I1",
+      "n_appear": 145,
+      "n_disappear": 156,
+      "turnover_frac": 0.31419624217118997,
+      "appear_top": [
+        "ALA:108\u2013LEU:215",
+        "ALA:15\u2013VAL:18",
+        "ALA:196\u2013HIE:199",
+        "ALA:196\u2013LEU:115",
+        "ALA:196\u2013LYS:213",
+        "ALA:196\u2013TYR:189",
+        "ALA:212\u2013ARG:270",
+        "ALA:212\u2013VAL:200",
+        "ALA:250\u2013HIE:75",
+        "ALA:250\u2013ILE:7",
+        "ALA:250\u2013LYS:246",
+        "ALA:278\u2013CYS:281",
+        "ALA:283\u2013LYS:287",
+        "ALA:59\u2013LEU:56",
+        "ALA:59\u2013LEU:62",
+        "ALA:84\u2013LEU:87",
+        "ALA:99\u2013GLY:102",
+        "ARG:111\u2013HIE:199",
+        "ARG:116\u2013CYS:114",
+        "ARG:127\u2013PRO:48",
+        "ARG:157\u2013PRO:167",
+        "ARG:206\u2013VAL:209",
+        "ARG:210\u2013GLY:272",
+        "ARG:210\u2013NME:201",
+        "ARG:210\u2013SER:276"
+      ],
+      "disappear_top": [
+        "ACE:202\u2013LEU:207",
+        "ALA:108\u2013ARG:111",
+        "ALA:123\u2013PRO:119",
+        "ALA:130\u2013ARG:127",
+        "ALA:17\u2013CYS:20",
+        "ALA:17\u2013PHE:77",
+        "ALA:17\u2013VAL:72",
+        "ALA:203\u2013ARG:206",
+        "ALA:203\u2013LEU:207",
+        "ALA:212\u2013GLY:216",
+        "ALA:212\u2013LEU:215",
+        "ALA:212\u2013TYR:189",
+        "ALA:220\u2013LEU:223",
+        "ALA:234\u2013LEU:237",
+        "ALA:248\u2013LEU:232",
+        "ALA:250\u2013MET:254",
+        "ALA:250\u2013PHE:67",
+        "ALA:268\u2013ARG:275",
+        "ALA:278\u2013LEU:37",
+        "ALA:28\u2013ASN:31",
+        "ALA:33\u2013TYR:36",
+        "ALA:57\u2013GLY:54",
+        "ALA:59\u2013ALA:99",
+        "ALA:59\u2013SER:100",
+        "ALA:59\u2013TRP:138"
+      ]
+    },
+    {
+      "from": "I1",
+      "to": "I2",
+      "n_appear": 191,
+      "n_disappear": 142,
+      "turnover_frac": 0.33534743202416917,
+      "appear_top": [
+        "ACE:202\u2013ARG:206",
+        "ALA:108\u2013ARG:111",
+        "ALA:123\u2013THR:126",
+        "ALA:130\u2013LEU:51",
+        "ALA:17\u2013CYS:20",
+        "ALA:196\u2013VAL:200",
+        "ALA:203\u2013ARG:206",
+        "ALA:212\u2013ARG:210",
+        "ALA:212\u2013LEU:115",
+        "ALA:212\u2013LEU:215",
+        "ALA:220\u2013LEU:223",
+        "ALA:231\u2013PRO:228",
+        "ALA:234\u2013LEU:175",
+        "ALA:234\u2013LEU:237",
+        "ALA:248\u2013LEU:232",
+        "ALA:250\u2013MET:254",
+        "ALA:268\u2013SER:271",
+        "ALA:278\u2013LEU:37",
+        "ALA:28\u2013ASN:31",
+        "ALA:28\u2013SER:64",
+        "ALA:33\u2013TYR:36",
+        "ALA:57\u2013GLY:54",
+        "ALA:57\u2013VAL:34",
+        "ALA:59\u2013ALA:99",
+        "ALA:59\u2013SER:100"
+      ],
+      "disappear_top": [
+        "ACE:1\u2013LYS:3",
+        "ALA:108\u2013LEU:215",
+        "ALA:142\u2013MET:95",
+        "ALA:179\u2013LEU:176",
+        "ALA:17\u2013LYS:13",
+        "ALA:196\u2013HIE:199",
+        "ALA:196\u2013LEU:115",
+        "ALA:196\u2013LEU:193",
+        "ALA:196\u2013LYS:213",
+        "ALA:196\u2013TRP:194",
+        "ALA:196\u2013TYR:189",
+        "ALA:196\u2013VAL:192",
+        "ALA:212\u2013ARG:270",
+        "ALA:212\u2013VAL:200",
+        "ALA:234\u2013LEU:232",
+        "ALA:250\u2013HIE:75",
+        "ALA:268\u2013PRO:264",
+        "ALA:278\u2013ARG:275",
+        "ALA:278\u2013CYS:281",
+        "ALA:283\u2013HIE:280",
+        "ALA:283\u2013LYS:286",
+        "ALA:57\u2013ASP:60",
+        "ALA:59\u2013LEU:56",
+        "ALA:59\u2013LEU:62",
+        "ALA:99\u2013MET:137"
+      ]
+    },
+    {
+      "from": "I2",
+      "to": "I3",
+      "n_appear": 130,
+      "n_disappear": 200,
+      "turnover_frac": 0.3363914373088685,
+      "appear_top": [
+        "ACE:1\u2013ASP:4",
+        "ACE:1\u2013LYS:3",
+        "ACE:1\u2013TYR:5",
+        "ACE:202\u2013HIE:279",
+        "ACE:202\u2013SER:276",
+        "ALA:108\u2013LEU:215",
+        "ALA:130\u2013ARG:127",
+        "ALA:142\u2013MET:95",
+        "ALA:179\u2013LEU:176",
+        "ALA:17\u2013LYS:13",
+        "ALA:196\u2013HIE:199",
+        "ALA:196\u2013LEU:193",
+        "ALA:196\u2013NME:201",
+        "ALA:196\u2013TRP:194",
+        "ALA:196\u2013VAL:192",
+        "ALA:203\u2013ARG:275",
+        "ALA:203\u2013HIE:279",
+        "ALA:203\u2013SER:276",
+        "ALA:212\u2013VAL:192",
+        "ALA:212\u2013VAL:200",
+        "ALA:234\u2013LEU:232",
+        "ALA:250\u2013HIE:75",
+        "ALA:268\u2013PRO:264",
+        "ALA:278\u2013ARG:275",
+        "ALA:283\u2013HIE:280"
+      ],
+      "disappear_top": [
+        "ACE:202\u2013ARG:206",
+        "ALA:123\u2013TYR:121",
+        "ALA:130\u2013LEU:51",
+        "ALA:130\u2013PHE:52",
+        "ALA:203\u2013ARG:206",
+        "ALA:203\u2013MET:205",
+        "ALA:212\u2013ARG:210",
+        "ALA:212\u2013LEU:215",
+        "ALA:212\u2013THR:214",
+        "ALA:231\u2013PRO:228",
+        "ALA:234\u2013LEU:175",
+        "ALA:248\u2013LEU:232",
+        "ALA:250\u2013ILE:7",
+        "ALA:250\u2013LYS:246",
+        "ALA:268\u2013VAL:265",
+        "ALA:283\u2013LYS:287",
+        "ALA:28\u2013PHE:61",
+        "ALA:28\u2013SER:64",
+        "ALA:33\u2013LEU:29",
+        "ALA:59\u2013ALA:99",
+        "ALA:59\u2013SER:100",
+        "ALA:63\u2013ASP:60",
+        "ALA:63\u2013VAL:66",
+        "ALA:68\u2013CYS:20",
+        "ALA:84\u2013LEU:149"
+      ]
+    },
+    {
+      "from": "I3",
+      "to": "I4",
+      "n_appear": 228,
+      "n_disappear": 175,
+      "turnover_frac": 0.3994053518334985,
+      "appear_top": [
+        "ACE:1\u2013ASP:81",
+        "ACE:1\u2013PHE:86",
+        "ACE:1\u2013VAL:80",
+        "ACE:202\u2013ARG:204",
+        "ACE:202\u2013ARG:206",
+        "ALA:123\u2013PRO:119",
+        "ALA:130\u2013LEU:125",
+        "ALA:130\u2013PHE:52",
+        "ALA:15\u2013PRO:11",
+        "ALA:203\u2013MET:205",
+        "ALA:212\u2013ARG:210",
+        "ALA:212\u2013ASP:208",
+        "ALA:212\u2013GLY:216",
+        "ALA:212\u2013LEU:215",
+        "ALA:212\u2013THR:214",
+        "ALA:212\u2013VAL:209",
+        "ALA:231\u2013PRO:228",
+        "ALA:234\u2013LEU:175",
+        "ALA:250\u2013LYS:246",
+        "ALA:268\u2013ILE:274",
+        "ALA:268\u2013VAL:34",
+        "ALA:278\u2013CYS:281",
+        "ALA:283\u2013LYS:286",
+        "ALA:28\u2013PHE:61",
+        "ALA:28\u2013SER:64"
+      ],
+      "disappear_top": [
+        "ACE:1\u2013ASP:4",
+        "ACE:1\u2013LYS:3",
+        "ACE:1\u2013TYR:5",
+        "ACE:202\u2013HIE:279",
+        "ACE:202\u2013SER:276",
+        "ALA:108\u2013LEU:215",
+        "ALA:123\u2013ARG:129",
+        "ALA:123\u2013THR:126",
+        "ALA:179\u2013LEU:176",
+        "ALA:17\u2013CYS:20",
+        "ALA:196\u2013LEU:193",
+        "ALA:196\u2013NME:201",
+        "ALA:196\u2013VAL:192",
+        "ALA:196\u2013VAL:200",
+        "ALA:203\u2013ARG:275",
+        "ALA:203\u2013HIE:279",
+        "ALA:203\u2013SER:276",
+        "ALA:212\u2013LEU:115",
+        "ALA:212\u2013VAL:192",
+        "ALA:212\u2013VAL:200",
+        "ALA:220\u2013LEU:217",
+        "ALA:250\u2013HIE:75",
+        "ALA:250\u2013MET:254",
+        "ALA:250\u2013PHE:71",
+        "ALA:250\u2013SER:253"
+      ]
+    },
+    {
+      "from": "I4",
+      "to": "active",
+      "n_appear": 175,
+      "n_disappear": 181,
+      "turnover_frac": 0.3528245787908821,
+      "appear_top": [
+        "ACE:1\u2013LYS:3",
+        "ACE:202\u2013LEU:115",
+        "ACE:202\u2013PRO:118",
+        "ALA:108\u2013TYR:189",
+        "ALA:123\u2013TYR:121",
+        "ALA:179\u2013LEU:176",
+        "ALA:196\u2013ARG:204",
+        "ALA:196\u2013MET:205",
+        "ALA:196\u2013VAL:192",
+        "ALA:203\u2013GLN:198",
+        "ALA:203\u2013HIE:199",
+        "ALA:203\u2013NME:201",
+        "ALA:203\u2013VAL:200",
+        "ALA:212\u2013LEU:193",
+        "ALA:220\u2013LEU:217",
+        "ALA:248\u2013LEU:232",
+        "ALA:250\u2013HIE:75",
+        "ALA:250\u2013MET:254",
+        "ALA:250\u2013SER:253",
+        "ALA:278\u2013LEU:282",
+        "ALA:283\u2013CYS:281",
+        "ALA:283\u2013HIE:279",
+        "ALA:283\u2013HIE:280",
+        "ALA:283\u2013LYS:287",
+        "ALA:63\u2013VAL:66"
+      ],
+      "disappear_top": [
+        "ACE:1\u2013ASP:81",
+        "ACE:1\u2013PHE:86",
+        "ACE:1\u2013VAL:80",
+        "ACE:202\u2013ARG:204",
+        "ACE:202\u2013ARG:206",
+        "ALA:123\u2013PRO:119",
+        "ALA:130\u2013PHE:52",
+        "ALA:15\u2013PRO:11",
+        "ALA:179\u2013PHE:182",
+        "ALA:196\u2013HIE:199",
+        "ALA:196\u2013TRP:194",
+        "ALA:203\u2013MET:205",
+        "ALA:212\u2013LEU:215",
+        "ALA:234\u2013LEU:237",
+        "ALA:268\u2013ILE:266",
+        "ALA:268\u2013SER:271",
+        "ALA:278\u2013LEU:37",
+        "ALA:28\u2013PHE:61",
+        "ALA:33\u2013LEU:29",
+        "ALA:59\u2013LEU:62",
+        "ALA:63\u2013LEU:257",
+        "ALA:63\u2013PHE:97",
+        "ALA:68\u2013PHE:71",
+        "ALA:68\u2013SER:70",
+        "ALA:68\u2013VAL:72"
+      ]
+    }
+  ],
+  "verdicts": {
+    "EXT_PDB_CONTACTS": "EXT_PDB_CONTACTS_STATE_DEPENDENT",
+    "EXT_STRUCTURAL_ABC": "EXT_STRUCTURAL_ABC_SNAPSHOT_B",
+    "Q1_MAPS": "DIFFERS_SUBSTANTIALLY"
+  },
+  "outputs": {
+    "json": "results\\network_core\\cb2_state_pdb_contacts.json",
+    "md": "results\\network_core\\cb2_state_pdb_contacts.md",
+    "png": "results\\network_core\\cb2_state_pdb_contacts_overlap.png"
+  }
+}

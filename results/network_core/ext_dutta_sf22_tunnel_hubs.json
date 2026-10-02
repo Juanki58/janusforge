@@ -1,0 +1,26 @@
+{
+  "experiment": "EXTERNAL_DUTTA_SF22_TUNNEL_HUBS",
+  "pre_reg": "docs/synthesis/EXPERIMENT_EXT_DUTTA_SF22_TUNNEL_HUBS.md",
+  "run_utc": "2026-10-02T23:01:04Z",
+  "verdict": "EXT_DUTTA_SF22_TUNNEL_HUB_QUALITATIVE_ONLY",
+  "si_pdf": "results\\network_core\\_raw_downloads\\42003_2023_4868_MOESM1_ESM.pdf",
+  "si_bytes": 26135767,
+  "caption_extract": null,
+  "residue_roster_found": false,
+  "main_text_claim": "CB2: no clear allosteric-pipeline distinction between active-like (active, I4) and inactive-like (inactive, I1–I3); most metastable states contain extracellular-to-intracellular communications (Supp Fig. 22).",
+  "hub_tunnel_membership": {
+    "ALA79": "INDETERMINATE_NO_RESIDUE_ROSTER",
+    "ALA83": "INDETERMINATE_NO_RESIDUE_ROSTER",
+    "LEU287": "INDETERMINATE_NO_RESIDUE_ROSTER",
+    "ASN291": "INDETERMINATE_NO_RESIDUE_ROSTER",
+    "ASN295": "INDETERMINATE_NO_RESIDUE_ROSTER",
+    "ARG302": "INDETERMINATE_NO_RESIDUE_ROSTER"
+  },
+  "governance": {
+    "P2_REOPEN": false,
+    "invented_tunnel_residues": false,
+    "note": "SF22 is image+caption; residue membership not parseable — prefer INDETERMINATE over inventing"
+  },
+  "doi": "10.1038/s42003-023-04868-1",
+  "prior_p4lite": "EXT_P4LITE_ASYMMETRIES_CLOSED_IN_LIT claim2 (pipelines)"
+}

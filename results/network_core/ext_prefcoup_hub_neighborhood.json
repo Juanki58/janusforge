@@ -1,0 +1,226 @@
+{
+  "experiment": "EXTERNAL_PREFCOUP_HUB_NEIGHBORHOOD",
+  "pre_reg": "docs/synthesis/EXPERIMENT_EXT_PREFCOUP_HUB_NEIGHBORHOOD.md",
+  "run_utc": "2026-10-02T23:01:01Z",
+  "verdict": "EXT_PREFCOUP_HUB_NEIGHBORHOOD_OVERLAP",
+  "si_pdf_present": true,
+  "proxies": {
+    "288": {
+      "hub": 287,
+      "hub_name": "LEU287",
+      "note": "C288≈L287 adjacent Δseq=1; SI uses C288 7x41"
+    },
+    "80": {
+      "hub": 79,
+      "hub_name": "ALA79",
+      "note": "D80≈A79 adjacent Δseq=1; Na-site 2x50"
+    }
+  },
+  "hubs": {
+    "79": "ALA79",
+    "83": "ALA83",
+    "287": "LEU287",
+    "291": "ASN291",
+    "295": "ASN295",
+    "302": "ARG302"
+  },
+  "contacts": [
+    {
+      "cluster": 2,
+      "a": 258,
+      "b": 288,
+      "label": "W258–C288",
+      "stability": "less_stable",
+      "motifs": [
+        "CWxP",
+        "Na_site_adj"
+      ],
+      "class_a": "NON_HUB",
+      "hub_a": null,
+      "class_b": "PROXY_NEIGHBOR",
+      "hub_b": "LEU287",
+      "best_class": "PROXY_NEIGHBOR"
+    },
+    {
+      "cluster": 2,
+      "a": 258,
+      "b": 291,
+      "label": "W258–N291",
+      "stability": "less_stable",
+      "motifs": [
+        "CWxP",
+        "Na_site"
+      ],
+      "class_a": "NON_HUB",
+      "hub_a": null,
+      "class_b": "EXACT_HUB",
+      "hub_b": "ASN291",
+      "best_class": "EXACT_HUB"
+    },
+    {
+      "cluster": 2,
+      "a": 292,
+      "b": 47,
+      "label": "S292–S47",
+      "stability": "more_stable",
+      "motifs": [
+        "Na_site"
+      ],
+      "class_a": "NON_HUB",
+      "hub_a": null,
+      "class_b": "NON_HUB",
+      "hub_b": null,
+      "best_class": "NON_HUB"
+    },
+    {
+      "cluster": 2,
+      "a": 131,
+      "b": 127,
+      "label": "R131–T127",
+      "stability": "more_stable",
+      "motifs": [
+        "DRY"
+      ],
+      "class_a": "NON_HUB",
+      "hub_a": null,
+      "class_b": "NON_HUB",
+      "hub_b": null,
+      "best_class": "NON_HUB"
+    },
+    {
+      "cluster": 2,
+      "a": 40,
+      "b": 87,
+      "label": "C40–F87",
+      "stability": "more_stable",
+      "motifs": [
+        "EC_TM7_1_2"
+      ],
+      "class_a": "NON_HUB",
+      "hub_a": null,
+      "class_b": "NON_HUB",
+      "hub_b": null,
+      "best_class": "NON_HUB"
+    },
+    {
+      "cluster": 2,
+      "a": 40,
+      "b": 91,
+      "label": "C40–F91",
+      "stability": "less_stable",
+      "motifs": [
+        "EC_TM7_1_2"
+      ],
+      "class_a": "NON_HUB",
+      "hub_a": null,
+      "class_b": "NON_HUB",
+      "hub_b": null,
+      "best_class": "NON_HUB"
+    },
+    {
+      "cluster": 2,
+      "a": 285,
+      "b": 44,
+      "label": "S285–G44",
+      "stability": "less_stable",
+      "motifs": [
+        "EC_TM7_1_2"
+      ],
+      "class_a": "NON_HUB",
+      "hub_a": null,
+      "class_b": "NON_HUB",
+      "hub_b": null,
+      "best_class": "NON_HUB"
+    },
+    {
+      "cluster": 3,
+      "a": 295,
+      "b": 51,
+      "label": "N295–N51 (NPxxY)",
+      "stability": "more_stable",
+      "motifs": [
+        "NPxxY"
+      ],
+      "class_a": "EXACT_HUB",
+      "hub_a": "ASN295",
+      "class_b": "NON_HUB",
+      "hub_b": null,
+      "best_class": "EXACT_HUB"
+    },
+    {
+      "cluster": 3,
+      "a": 295,
+      "b": 80,
+      "label": "NPxxY–D80",
+      "stability": "more_stable",
+      "motifs": [
+        "NPxxY",
+        "Na_site"
+      ],
+      "class_a": "EXACT_HUB",
+      "hub_a": "ASN295",
+      "class_b": "PROXY_NEIGHBOR",
+      "hub_b": "ALA79",
+      "best_class": "EXACT_HUB"
+    },
+    {
+      "cluster": 3,
+      "a": 131,
+      "b": 127,
+      "label": "R131–T127",
+      "stability": "more_stable",
+      "motifs": [
+        "DRY"
+      ],
+      "class_a": "NON_HUB",
+      "hub_a": null,
+      "class_b": "NON_HUB",
+      "hub_b": null,
+      "best_class": "NON_HUB"
+    },
+    {
+      "cluster": 3,
+      "a": 131,
+      "b": 246,
+      "label": "R131–T246",
+      "stability": "more_stable",
+      "motifs": [
+        "DRY"
+      ],
+      "class_a": "NON_HUB",
+      "hub_a": null,
+      "class_b": "NON_HUB",
+      "hub_b": null,
+      "best_class": "NON_HUB"
+    }
+  ],
+  "counts": {
+    "n_contacts": 11,
+    "n_exact_hub_touching": 3,
+    "n_proxy_touching": 1
+  },
+  "mutant_overlay": {
+    "cluster_2_mutants": [
+      77,
+      117,
+      217
+    ],
+    "cluster_3_mutants": [
+      199,
+      205,
+      291,
+      302
+    ],
+    "hubs_as_prefcoup_mutants": {
+      "ASN291": 3,
+      "ARG302": 3
+    }
+  },
+  "governance": {
+    "P1_REOPEN": false,
+    "P2_REOPEN": false,
+    "Gi_ENRICHMENT_REOPEN": false,
+    "proxy_neq_identity": true
+  },
+  "doi": "10.1038/s41467-025-60003-0"
+}

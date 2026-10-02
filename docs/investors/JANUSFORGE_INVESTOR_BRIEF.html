@@ -1,0 +1,345 @@
+<!DOCTYPE html><html><head><meta charset='latin-1'/><style>
+@page { size: A4; margin: 1.7cm 1.5cm 1.9cm 1.5cm; }
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 10pt;
+  line-height: 1.45;
+  color: #1a1a1a;
+}
+h1 {
+  font-size: 18pt;
+  margin: 0 0 0.4em 0;
+  color: #111;
+  page-break-after: avoid;
+}
+h2 {
+  font-size: 12.5pt;
+  margin-top: 1.15em;
+  color: #222;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.15em;
+  page-break-after: avoid;
+}
+h3 {
+  font-size: 11pt;
+  margin-top: 0.9em;
+  page-break-after: avoid;
+}
+p, li { margin: 0.28em 0; }
+ul, ol { margin: 0.3em 0 0.5em 1.2em; }
+blockquote {
+  border-left: 3px solid #555;
+  margin: 0.55em 0;
+  padding: 0.2em 0.75em;
+  color: #333;
+  background: #f6f6f6;
+}
+code, pre {
+  font-family: Courier, monospace;
+  font-size: 8pt;
+}
+pre {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 0.5em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.55em 0;
+  font-size: 8.5pt;
+  table-layout: fixed;
+}
+th, td {
+  border: 1px solid #bbb;
+  padding: 0.25em 0.32em;
+  vertical-align: top;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+th { background: #eee; }
+hr { border: none; border-top: 1px solid #ccc; margin: 1.0em 0; }
+.meta { color: #555; font-size: 9pt; margin-bottom: 1.0em; }
+.cover-note {
+  font-size: 9.5pt;
+  color: #333;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 0.55em 0.7em;
+  margin: 0.8em 0 1.1em 0;
+}
+a { color: #1a1a1a; text-decoration: none; }
+</style></head><body><div class="cover-note"><strong>Nota de lectura:</strong> documento de credibilidad cientifica. No es un deck Series-A, no contiene proyecciones financieras ni claims de farmaco. Autoridad: RESEARCH_STATE.md.</div><h1>Janusforge - Brief para inversores / interlocutores técnicos</h1>
+<p><strong>Tipo:</strong> documento de credibilidad (no deck Series-A; no proyección financiera) 
+<strong>Fecha:</strong> 2026-09-13 
+<strong>Idioma primario:</strong> español | <strong>Abstract EN</strong> abajo 
+<strong>Autoridad científica:</strong> <a href="../../RESEARCH_STATE.md"><code>RESEARCH_STATE.md</code></a> 
+<strong>Fuente regenerable PDF:</strong> este Markdown | script <code>scripts/build_investor_brief_pdf.py</code> 
+<strong>Rama de referencia:</strong> <code>feat/cb2-hubs-functional-topology-test</code></p>
+<hr>
+<h2>English abstract (short)</h2>
+<p>Janusforge is an early computational research program on <strong>CB2 conformational control</strong>, not a drug company and not a Series-A biotech package. Locked results: static LigACN hubs are <strong>topology-only</strong> (no Gi enrichment); dynamic hub skeleton <strong>P1 CLOSED NOT_SUPPORTED</strong>; own MSM <strong>P2 CLOSED INSUFFICIENT_SAMPLING</strong>; architecture models A/B/C <strong>NOT DECIDED</strong>. External Dutta work: geometric landmarks <strong>STABLE</strong> (soft-A), own MSM <strong>NON_CONVERGENT</strong>, PDB soft-B disagreement, filelist blocked. Repo is in <strong>DEEP_PAUSE</strong>; docking/de novo <strong>STOP</strong>. Next capital use is honest sampling capacity (NVIDIA MD workstation / cluster toward &gt;=20 µs), not a claim that the CB2 switch was found.</p>
+<hr>
+<h2>1. Qué es esto (y qué no es)</h2>
+<p><strong>Janusforge</strong> es un programa de investigación computacional sobre el receptor cannabinoide <strong>CB2 (CNR2)</strong>. El norte científico actual es <strong>caracterizar el mecanismo de control conformacional</strong> del receptor (switch local vs red distribuida vs arquitectura estado-dependiente - cualquiera es resultado válido).</p>
+<p><strong>No es:</strong></p>
+<ul>
+<li>un paquete Series-A de biotech con pipeline clínico;</li>
+<li>un claim de haber "encontrado el switch de CB2";</li>
+<li>una demostración de mecanismo Gi / sesgo funcional cerrado;</li>
+<li>una campaña activa de docking o diseño <em>de novo</em> (ambas en <strong>STOP</strong>);</li>
+<li>un producto farmacéutico listo para licencia.</li>
+</ul>
+<p>La misión histórica del repo (ligandos "Janus" CB1-ant / CB2-ago x fibrosis) <strong>sigue como contexto de programa</strong>, pero <strong>no</strong> es el entregable científico congelado hoy. Lo que se puede mostrar con rigor es la <strong>línea de mecanismo CB2</strong> y la disciplina del cuaderno.</p>
+<hr>
+<h2>2. Estado actual (un párrafo)</h2>
+<p>El proyecto está en <strong>DEEP_PAUSE</strong> con una excepción acotada: campaña de <strong>muestreo masivo P2 pre-registrada</strong> (docs + checklist; <strong>sin</strong> producción µs local hoy). P1 (seis hubs estáticos como esqueleto dinámico persistente) está <strong>CLOSED (NOT_SUPPORTED)</strong>. P2 (MSM propio sobre GPCRmd WT) está <strong>CLOSED (INSUFFICIENT_SAMPLING)</strong> - ITS no convergente con ~2 µs / 1995 frames. La discriminación arquitectónica A/B/C (<strong>red estable / rutas por estado / distribuida</strong>) quedó <strong>ABORTED / NOT DECIDED</strong>. LigACN estático: <strong>CORE_TOPOLOGICAL_ONLY</strong> (bottlenecks reales; <strong>sin</strong> enriquecimiento PrefCoup_Galphai2). Trabajo EXTERNAL Dutta: landmarks geométricos <strong>STABLE</strong> (lectura soft-A); own MSM <strong>NON_CONVERGENT</strong> (N=200); desacuerdo soft vs snapshot PDB-B; filelist de alineación bloqueado. Docking / de novo <strong>STOP</strong>. Hardware actual (GTX 1060) <strong>no</strong> produce el Tier B-min (&gt;=20 µs) necesario para reabrir Gate-1 con honestidad.</p>
+<hr>
+<h2>3. Qué se aprendió (valor real)</h2>
+<table>
+<thead>
+<tr>
+<th>Aprendizaje</th>
+<th>Lectura estricta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coordenada macroconformacional CB2 (activo vs inactivo)</td>
+<td><strong>GENERALIZES</strong> out-of-sample (Phase G) - reconocimiento estructural; <strong>no</strong> eficacia funcional fina</td>
+</tr>
+<tr>
+<td>Seis hubs LigACN (TM2 / TM7 / H8)</td>
+<td>Bottlenecks topológicos <strong>reales</strong> en el grafo estático; <strong>no</strong> núcleo funcional Gi demostrado</td>
+</tr>
+<tr>
+<td>Dual test topología x función</td>
+<td>Veredicto <strong>CORE_TOPOLOGICAL_ONLY</strong> - arquitectura != salida funcional</td>
+</tr>
+<tr>
+<td>Persistencia dinámica de esos seis hubs (P1)</td>
+<td><strong>NOT_SUPPORTED</strong> bajo trayectorias GPCRmd/1540 WT analizadas</td>
+</tr>
+<tr>
+<td>MSM propio (P2 Gate-1)</td>
+<td>Muestreo insuficiente para MSM convergente; <strong>no</strong> se inventó biología sobre ITS fallido</td>
+</tr>
+<tr>
+<td>Featurización reducida (X8)</td>
+<td>Sigue NON_CONVERGENT -&gt; el cuello es <strong>sampling</strong>, no solo representación</td>
+</tr>
+<tr>
+<td>EXTERNAL landmarks Dutta</td>
+<td>Mapas de contacto geométricos estables entre 6 PDBs; <strong>geométrico != identidad MSM</strong></td>
+</tr>
+<tr>
+<td>EXTERNAL own MSM (N=200)</td>
+<td>Todavía NON_CONVERGENT; no reabre P2 GPCRmd</td>
+</tr>
+<tr>
+<td>Gobernanza</td>
+<td>Pre-registros, gates, actas freeze, <code>POST_HOC_EXCUSES = FORBIDDEN</code> - el cuaderno cierra puertas cuando debe</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Frase útil sin overreach:</strong> el modelo simple de que unos pocos hubs estáticos constituyen el mecanismo CB2-&gt;Gi <strong>no está soportado</strong> por los datos analizados. Eso <strong>no</strong> prueba que CB2 sea "plenamente distribuido" bajo todas las condiciones.</p>
+<hr>
+<h2>4. Qué NO se afirma (anti-hype)</h2>
+<table>
+<thead>
+<tr>
+<th>Claim tentador</th>
+<th>Estado en el repo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Encontramos el switch de CB2"</td>
+<td><strong>NO</strong></td>
+</tr>
+<tr>
+<td>"Demostramos el mecanismo Gi"</td>
+<td><strong>NO</strong> (<code>FUNCTIONAL_Gi_ENRICHMENT = NOT_SUPPORTED</code>)</td>
+</tr>
+<tr>
+<td>"Arquitectura A/B/C resuelta"</td>
+<td><strong>NOT DECIDED</strong></td>
+</tr>
+<tr>
+<td>"Nuestro MSM converge"</td>
+<td><strong>NO</strong> (P2 + EXTERNAL own MSM)</td>
+</tr>
+<tr>
+<td>"Landmark geométrico = estado metaestable Dutta"</td>
+<td><strong>NO</strong> (<code>GEOMETRIC_NEQ_MSM</code>)</td>
+</tr>
+<tr>
+<td>"Ya producimos µs de MD propios a escala Tier B"</td>
+<td><strong>NO</strong></td>
+</tr>
+<tr>
+<td>Proyecciones financieras / tamaño de equipo / IP portfolio</td>
+<td><strong>No inventados aquí</strong></td>
+</tr>
+<tr>
+<td>Drug claims / lead clínico</td>
+<td><strong>Fuera de alcance de este brief</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>5. Riesgos y límites (sinceros)</h2>
+<ol>
+<li><strong>Muestreo.</strong> Sin ensemble &gt;= Tier B-min (~&gt;=20 µs pre-registrados, réplicas independientes), Gate-1 no se reabre. El hardware actual no lo alcanza.</li>
+<li><strong>Datos externos incompletos.</strong> Pickles Final_MSM Dutta recuperados (cinética CB1!=CB2); trayectorias alineadas / filelist <strong>bloqueados</strong> -&gt; A/B/C estructural externo <strong>INDETERMINATE</strong>.</li>
+<li><strong>Confusión geométrico&lt;-&gt;MSM.</strong> Soft-A geométrico puede coexistir con cinética undecided; no forzar narrativa.</li>
+<li><strong>Scope creep.</strong> Interés != umbral de reopen. Docking/de novo siguen STOP precisamente para no quemar capital en score hunting.</li>
+<li><strong>TRL bajo.</strong> Esto es ciencia de mecanismo temprana, no asset listo para partnering farmacéutico.</li>
+<li><strong>Una sola línea de compute.</strong> PI / notebook + agentes documentados; no hay "equipo Series-A" detrás del freeze.</li>
+</ol>
+<hr>
+<h2>6. Uso de capital siguiente (honesto)</h2>
+<p><strong>Prioridad #1 - capacidad de muestreo MD</strong></p>
+<ul>
+<li>Torre / workstation <strong>NVIDIA</strong> (o acceso cluster equivalente) capaz de producción OpenMM/GROMACS CUDA.</li>
+<li>Objetivo científico pre-registrado: alcanzar <strong>Tier B-min (&gt;=20 µs)</strong> del experimento P2 para <strong>re-testear Gate-1</strong> (ITS / convergencia), no para "encontrar el switch".</li>
+<li>Smoke Tier A (infra) != Gate-1. Credibilidad &gt; pretend MD.</li>
+</ul>
+<p><strong>Prioridad #2 (después, QUEUED)</strong></p>
+<ul>
+<li>Línea membrana / colesterol (<strong>P5</strong>): hipótesis lista; <strong>no</strong> ejecuta ahora; <strong>no</strong> rescata P1/P2.</li>
+</ul>
+<p><strong>No pedir capital para (ahora):</strong></p>
+<ul>
+<li>campañas de docking / librerías <em>de novo</em>;</li>
+<li>narrativa de fármaco Janus cerrado;</li>
+<li>"completar el mecanismo Gi" sin MSM convergente.</li>
+</ul>
+<p>Detalle técnico: <a href="../synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md"><code>docs/synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md</code></a>.</p>
+<hr>
+<h2>7. Nivel de investigación (opinión sincera)</h2>
+<h3>Lectura TRL-like / madurez académica</h3>
+<table>
+<thead>
+<tr>
+<th>Dimensión</th>
+<th>Rating honesto</th>
+<th>Comentario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Madurez de <strong>programa fármaco</strong></td>
+<td><strong>TRL ~1-2</strong> (idea / principios observados)</td>
+<td>No hay asset clínico ni lead defendible activo</td>
+</tr>
+<tr>
+<td>Madurez de <strong>mecanismo CB2 (este repo)</strong></td>
+<td><strong>Preprint-grade early / tesis doctoral temprana</strong></td>
+<td>Preguntas bien formuladas; gates; cierres negativos útiles</td>
+</tr>
+<tr>
+<td>Madurez de <strong>infra MD a escala de campo</strong></td>
+<td><strong>Pre-productivo</strong></td>
+<td>Stack documentado; producción µs <strong>aún no</strong></td>
+</tr>
+<tr>
+<td>Madurez de <strong>gobernanza / notebook</strong></td>
+<td><strong>Alta para un proyecto individual</strong></td>
+<td>Freeze YAML, pre-regs, actas, anti-post-hoc</td>
+</tr>
+<tr>
+<td>Comparación vs lab académico CB2 MD/MSM</td>
+<td><strong>Por debajo</strong> de grupos con cientos de µs publicados</td>
+<td>Correcto: no fingir paridad con Dutta (~700 µs) o Morales (~2 µs WT ya reanalizables)</td>
+</tr>
+<tr>
+<td>Comparación vs biotech Series-A</td>
+<td><strong>No comparable</strong></td>
+<td>Este documento no debe usarse como si lo fuera</td>
+</tr>
+</tbody>
+</table>
+<h3>Opinión (tono brief / inversores)</h3>
+<p>Janusforge, en su estado actual, es <strong>investigación de mecanismo computacional temprana con disciplina epistémica por encima de la media</strong>, no un paquete de inversión biotech maduro. El valor demostrable hoy es: (i) haber <strong>falsificado</strong> con limpieza varias hipótesis atractivas pero frágiles; (ii) saber <strong>exactamente</strong> qué experimento discrimina la siguiente frontera (muestreo -&gt; MSM convergente -&gt; A/B/C); (iii) haber <strong>parado</strong> docking/de novo cuando el cuaderno lo exigía. El valor <strong>no</strong> demostrable hoy es un mecanismo CB2-&gt;Gi cerrado, un switch, ni un pipeline de fármaco.</p>
+<p>Quien invierta tiempo o capital aquí debería hacerlo como <strong>apoyo a ciencia de muestreo y rigor</strong>, no como compra de un asset farmacéutico. Si alguien necesita un pitch de "ya tenemos el interruptor de CB2", este proyecto <strong>no</strong> lo es - y eso es precisamente lo que lo hace creíble.</p>
+<hr>
+<h2>8. Equipo / rigor del cuaderno (sin inventar tamaño)</h2>
+<ul>
+<li>Trabajo organizado como <strong>cuaderno científico versionado en Git</strong> (commits citables, flags de freeze, pre-registros antes de ver resultados).</li>
+<li>Autoridad operativa: <code>RESEARCH_STATE.md</code> (no slides).</li>
+<li>Regla de decisión: <strong>solo preguntas que discriminen &gt;=2 hipótesis</strong> (<code>DISCRIMINATION_ONLY</code>).</li>
+<li>No se inventan aquí headcount, advisors, ni portfolio de patentes.</li>
+</ul>
+<hr>
+<h2>9. Tabla de flags (snapshot)</h2>
+<pre><code class="language-text">PRIMARY_OBJECTIVE = CHARACTERIZE_CB2_CONFORMATIONAL_CONTROL
+STATIC_LIGACN = CORE_TOPOLOGICAL_ONLY
+P1_STATIC_HUBS = CLOSED (NOT_SUPPORTED)
+P2_MSM_TRANSITIONS = CLOSED (INSUFFICIENT_SAMPLING)
+P2_NETWORK_A_B_C = ABORTED
+ARCHITECTURE_A_B_C = NOT DECIDED
+EXTERNAL_LANDMARKS = EXT_LANDMARK_CONTACTS_STABLE
+EXTERNAL_OWN_MSM = EXT_OWN_MSM_NON_CONVERGENT
+DUTTA_FILELIST = BLOCKED
+P2_MASSIVE_SAMPLING = PREREGISTERED (no µs production today)
+P5_MEMBRANE = HYPOTHESIS_READY / QUEUED
+DOCKING / DE_NOVO = STOP
+DEEP_PAUSE = TRUE (scoped lift only for sampling campaign)
+</code></pre>
+<hr>
+<h2>10. Lecturas recomendadas (repo)</h2>
+<table>
+<thead>
+<tr>
+<th>Documento</th>
+<th>Rol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../RESEARCH_STATE.md"><code>RESEARCH_STATE.md</code></a></td>
+<td>Autoridad de freeze</td>
+</tr>
+<tr>
+<td><a href="../synthesis/RESEARCH_ROADMAP.md"><code>docs/synthesis/RESEARCH_ROADMAP.md</code></a></td>
+<td>Contrato P1-P6</td>
+</tr>
+<tr>
+<td><a href="../synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md"><code>docs/synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md</code></a></td>
+<td>Uso de capital / muestreo</td>
+</tr>
+<tr>
+<td><a href="../synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md"><code>docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md</code></a></td>
+<td>Freeze EXTERNAL</td>
+</tr>
+<tr>
+<td><a href="../../results/msm_model/p2_msm_convergence_report.md"><code>results/msm_model/p2_msm_convergence_report.md</code></a></td>
+<td>Evidencia Gate-1</td>
+</tr>
+<tr>
+<td><a href="../../results/network_core/hubs_dual_validation_report.md"><code>results/network_core/hubs_dual_validation_report.md</code></a></td>
+<td>CORE_TOPOLOGICAL_ONLY</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>11. Regenerar PDF / HTML</h2>
+<pre><code class="language-powershell"># Desde la raíz del repo
+python scripts/build_investor_brief_pdf.py
+</code></pre>
+<p>Salidas:</p>
+<ul>
+<li><code>docs/investors/JANUSFORGE_INVESTOR_BRIEF.pdf</code></li>
+<li><code>docs/investors/JANUSFORGE_INVESTOR_BRIEF.html</code> (fallback / preview)</li>
+</ul>
+<p>Si <code>xhtml2pdf</code> falla en otra máquina:</p>
+<pre><code class="language-powershell">pandoc docs/investors/JANUSFORGE_INVESTOR_BRIEF.md -o docs/investors/JANUSFORGE_INVESTOR_BRIEF.pdf --pdf-engine=xelatex
+# o:
+pandoc docs/investors/JANUSFORGE_INVESTOR_BRIEF.md -o docs/investors/JANUSFORGE_INVESTOR_BRIEF.html -s
+</code></pre>
+<hr>
+<p><em>Fin del brief. 2026-09-13 - credibilidad &gt; hype; muestreo primero; sin claim de switch.</em></p></body></html>

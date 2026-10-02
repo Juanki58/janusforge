@@ -1,0 +1,621 @@
+{
+  "experiment": "X8_REDUCED_FEATURIZATION",
+  "generated_utc": "2026-09-09T20:08:59.485003+00:00",
+  "preregistration": "docs\\synthesis\\EXPERIMENT_X8_REDUCED_FEATURIZATION.md",
+  "baseline": {
+    "commit": "2dcff23",
+    "n_features": 15753,
+    "n_frames": 1995,
+    "its_verdict": "NON_CONVERGENT",
+    "connected_states_per_lag": [
+      25,
+      25,
+      8,
+      1,
+      8,
+      1,
+      8,
+      1,
+      1,
+      1
+    ],
+    "report": "results/msm_model/p2_msm_convergence_report.md"
+  },
+  "sha256_verification": {
+    "manifest": "data\\external\\morales_pastor_2025\\trajectories\\MANIFEST.json",
+    "all_ok": true,
+    "files": [
+      {
+        "path": "gpcrmd_dyn2126/24306_dyn_2126.psf",
+        "bytes": 10429330,
+        "expected_bytes": 10429330,
+        "sha256": "fce9db151fbf5f7f0ed2b235ff0fd5d962dd8da91fe97afa34f675ab8e2f02e1",
+        "expected_sha256": "fce9db151fbf5f7f0ed2b235ff0fd5d962dd8da91fe97afa34f675ab8e2f02e1",
+        "sha_ok": true,
+        "status": "OK",
+        "sha_reused_from_cache": true
+      },
+      {
+        "path": "gpcrmd_dyn2126/24307_trj_2126.xtc",
+        "bytes": 77700544,
+        "expected_bytes": 77700544,
+        "sha256": "1fe13c425c67dd1325208af71131b34fdc3407b868f8c2489930c3d81e53e134",
+        "expected_sha256": "1fe13c425c67dd1325208af71131b34fdc3407b868f8c2489930c3d81e53e134",
+        "sha_ok": true,
+        "status": "OK",
+        "sha_reused_from_cache": true
+      },
+      {
+        "path": "gpcrmd_dyn2126/24308_trj_2126.xtc",
+        "bytes": 77697176,
+        "expected_bytes": 77697176,
+        "sha256": "6fef31e2ae0e10eac4590be5b9e205a5b29e3b96d4ee64cc0227dd39c3628be4",
+        "expected_sha256": "6fef31e2ae0e10eac4590be5b9e205a5b29e3b96d4ee64cc0227dd39c3628be4",
+        "sha_ok": true,
+        "status": "OK",
+        "sha_reused_from_cache": true
+      },
+      {
+        "path": "gpcrmd_dyn2126/24309_trj_2126.xtc",
+        "bytes": 77595656,
+        "expected_bytes": 77595656,
+        "sha256": "598ca435644396c1e2503d94d5b75e2469307effe1790a68cc490971b44eadd2",
+        "expected_sha256": "598ca435644396c1e2503d94d5b75e2469307effe1790a68cc490971b44eadd2",
+        "sha_ok": true,
+        "status": "OK",
+        "sha_reused_from_cache": true
+      },
+      {
+        "path": "gpcrmd_dyn2126/24310_trj_2126.xtc",
+        "bytes": 77726792,
+        "expected_bytes": 77726792,
+        "sha256": "fec3d8115a3a0d47bc45de20fd15baee5d21c0c46d3599e3970b9c4d08953f3d",
+        "expected_sha256": "fec3d8115a3a0d47bc45de20fd15baee5d21c0c46d3599e3970b9c4d08953f3d",
+        "sha_ok": true,
+        "status": "OK",
+        "sha_reused_from_cache": true
+      },
+      {
+        "path": "gpcrmd_dyn2126/24311_trj_2126.xtc",
+        "bytes": 77651580,
+        "expected_bytes": 77651580,
+        "sha256": "467c225dea6cca37e94fd7e7521d406446c32fecf34f46e7d98b303290efa99b",
+        "expected_sha256": "467c225dea6cca37e94fd7e7521d406446c32fecf34f46e7d98b303290efa99b",
+        "sha_ok": true,
+        "status": "OK",
+        "sha_reused_from_cache": true
+      },
+      {
+        "path": "gpcrmd_dyn2126/tmp_dyn_0_2417.pdb",
+        "bytes": 5417685,
+        "expected_bytes": 5417685,
+        "sha256": "a6468f3e0a93547b71a0a300b8ad1e9d664d30b62b4789dfcf53728033436350",
+        "expected_sha256": "a6468f3e0a93547b71a0a300b8ad1e9d664d30b62b4789dfcf53728033436350",
+        "sha_ok": true,
+        "status": "OK",
+        "sha_reused_from_cache": true
+      }
+    ]
+  },
+  "software_versions": {
+    "numpy": "2.4.6",
+    "MDAnalysis": "2.10.0",
+    "deeptime": "0.4.5",
+    "matplotlib": "3.11.1",
+    "sklearn": "1.9.0",
+    "python": "3.12.13"
+  },
+  "featurization": {
+    "featurization": "reduced_ca_pairwise_preregistered",
+    "n_features": 24,
+    "pairs": [
+      {
+        "i": 131,
+        "j": 245,
+        "role": "Arg3.50-Lys6.35"
+      },
+      {
+        "i": 131,
+        "j": 240,
+        "role": "Arg3.50-Asp6.30"
+      },
+      {
+        "i": 131,
+        "j": 258,
+        "role": "Arg3.50-Trp6.48"
+      },
+      {
+        "i": 128,
+        "j": 245,
+        "role": "Tyr3.47region-Lys6.35"
+      },
+      {
+        "i": 211,
+        "j": 258,
+        "role": "Pro5.50-Trp6.48"
+      },
+      {
+        "i": 207,
+        "j": 258,
+        "role": "TM5mid-Trp6.48"
+      },
+      {
+        "i": 215,
+        "j": 245,
+        "role": "TM5IC-Lys6.35"
+      },
+      {
+        "i": 215,
+        "j": 240,
+        "role": "TM5IC-Asp6.30"
+      },
+      {
+        "i": 201,
+        "j": 258,
+        "role": "TM5mid2-Trp6.48"
+      },
+      {
+        "i": 258,
+        "j": 291,
+        "role": "Trp6.48-Asn7.45"
+      },
+      {
+        "i": 258,
+        "j": 295,
+        "role": "Trp6.48-Asn7.49"
+      },
+      {
+        "i": 258,
+        "j": 285,
+        "role": "Trp6.48-Ser7.39"
+      },
+      {
+        "i": 245,
+        "j": 291,
+        "role": "Lys6.35-Asn7.45"
+      },
+      {
+        "i": 240,
+        "j": 295,
+        "role": "Asp6.30-Asn7.49"
+      },
+      {
+        "i": 264,
+        "j": 295,
+        "role": "TM6Cterm-Asn7.49"
+      },
+      {
+        "i": 131,
+        "j": 295,
+        "role": "Arg3.50-Asn7.49"
+      },
+      {
+        "i": 131,
+        "j": 291,
+        "role": "Arg3.50-Asn7.45"
+      },
+      {
+        "i": 83,
+        "j": 291,
+        "role": "Ala2.53-Asn7.45"
+      },
+      {
+        "i": 79,
+        "j": 291,
+        "role": "Ala2.49-Asn7.45"
+      },
+      {
+        "i": 87,
+        "j": 285,
+        "role": "Phe87-Ser285"
+      },
+      {
+        "i": 183,
+        "j": 258,
+        "role": "PheECL2-Trp6.48"
+      },
+      {
+        "i": 268,
+        "j": 285,
+        "role": "Ser6.58-Ser7.39"
+      },
+      {
+        "i": 287,
+        "j": 295,
+        "role": "Leu7.41-Asn7.49"
+      },
+      {
+        "i": 302,
+        "j": 295,
+        "role": "Arg8.46-Asn7.49"
+      }
+    ],
+    "selection": "protein and name CA and (resid 79 or resid 83 or resid 87 or resid 128 or resid 131 or resid 183 or resid 201 or resid 207 or resid 211 or resid 215 or resid 240 or resid 245 or resid 258 or resid 264 or resid 268 or resid 285 or resid 287 or resid 291 or resid 295 or resid 302)",
+    "distance_unit": "angstrom",
+    "per_trajectory": [
+      {
+        "xtc": "24307_trj_2126.xtc",
+        "n_frames": 399,
+        "n_features": 24,
+        "dt_reported_by_mda": 1.0
+      },
+      {
+        "xtc": "24308_trj_2126.xtc",
+        "n_frames": 399,
+        "n_features": 24,
+        "dt_reported_by_mda": 1.0
+      },
+      {
+        "xtc": "24309_trj_2126.xtc",
+        "n_frames": 399,
+        "n_features": 24,
+        "dt_reported_by_mda": 1.0
+      },
+      {
+        "xtc": "24310_trj_2126.xtc",
+        "n_frames": 399,
+        "n_features": 24,
+        "dt_reported_by_mda": 1.0
+      },
+      {
+        "xtc": "24311_trj_2126.xtc",
+        "n_frames": 399,
+        "n_features": 24,
+        "dt_reported_by_mda": 1.0
+      }
+    ],
+    "frame_dt_ns_assumed": 1.0,
+    "preregistration": "docs\\synthesis\\EXPERIMENT_X8_REDUCED_FEATURIZATION.md"
+  },
+  "clustering": {
+    "tica_lag_frames": 5,
+    "tica_dim": 5,
+    "n_microstates": 25,
+    "kmeans_seed": 20260821,
+    "kmeans_max_iter": 500
+  },
+  "n_frames_total": 1995,
+  "n_replicas": 5,
+  "implied_timescales": {
+    "lags_frames": [
+      1,
+      2,
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      40,
+      50
+    ],
+    "lags_ns_assumed": [
+      1.0,
+      2.0,
+      5.0,
+      10.0,
+      15.0,
+      20.0,
+      25.0,
+      30.0,
+      40.0,
+      50.0
+    ],
+    "n_its_requested": 8,
+    "its_frames": [
+      [
+        27.148755690919767,
+        2.4462163346608805,
+        1.7877217216599246,
+        1.4618955038992154,
+        1.2729717011049964,
+        1.0151064642434464,
+        0.9417403046227294,
+        0.8836654789463715
+      ],
+      [
+        43.47755665941719,
+        4.365503799650367,
+        3.0627371035656874,
+        2.3067092934378848,
+        1.950506735816109,
+        1.8190599114382118,
+        1.679526972997772,
+        1.4367343137001019
+      ],
+      [
+        123.43006673458339,
+        10.010650894097635,
+        6.294085332350295,
+        5.243718627873778,
+        4.566118344366842,
+        3.8484892722895974,
+        3.238830187809728,
+        3.041875761940792
+      ],
+      [
+        305.906806838435,
+        19.207268736186847,
+        10.2288124653828,
+        8.77627888081375,
+        8.391436748593986,
+        7.673022076784018,
+        6.6554854829902546,
+        6.187561779963557
+      ],
+      [
+        399.2315251200747,
+        28.75551625511254,
+        14.249718984001928,
+        13.777364282584712,
+        11.441147139370958,
+        10.522593263601397,
+        10.286575604055226,
+        9.19068642936772
+      ],
+      [
+        486.30096059907135,
+        39.996534430498095,
+        18.80463203594975,
+        13.970249613839062,
+        12.844889772021231,
+        12.406251498915765,
+        10.527207745495945,
+        10.01506728321143
+      ],
+      [
+        556.034238666028,
+        43.77233410151445,
+        23.05872545271801,
+        16.999440935024055,
+        15.13786024097166,
+        15.12607836749612,
+        13.749241806252392,
+        12.105677660356502
+      ],
+      [
+        605.2186275147465,
+        54.32589119038369,
+        23.8917841867508,
+        21.375256213214552,
+        21.026416747403644,
+        18.858825662556466,
+        17.904943000984833,
+        14.942924749444977
+      ],
+      [
+        875.7042518318912,
+        63.63764666664624,
+        34.658885951134046,
+        26.009217487605998,
+        24.17042124546288,
+        21.840506732513422,
+        20.997221347497465,
+        19.3057505224182
+      ],
+      [
+        932.5041112893786,
+        79.8764210982101,
+        38.22435571465335,
+        31.96247783191882,
+        30.884760984915967,
+        28.217701092581965,
+        26.394228022924132,
+        23.73364279135217
+      ]
+    ],
+    "per_lag": [
+      {
+        "lag_frames": 1,
+        "lag_ns_assumed": 1.0,
+        "timescales_frames": [
+          27.148755690919767,
+          2.4462163346608805,
+          1.7877217216599246,
+          1.4618955038992154,
+          1.2729717011049964,
+          1.0151064642434464,
+          0.9417403046227294,
+          0.8836654789463715
+        ],
+        "n_states_connected": 25
+      },
+      {
+        "lag_frames": 2,
+        "lag_ns_assumed": 2.0,
+        "timescales_frames": [
+          43.47755665941719,
+          4.365503799650367,
+          3.0627371035656874,
+          2.3067092934378848,
+          1.950506735816109,
+          1.8190599114382118,
+          1.679526972997772,
+          1.4367343137001019
+        ],
+        "n_states_connected": 25
+      },
+      {
+        "lag_frames": 5,
+        "lag_ns_assumed": 5.0,
+        "timescales_frames": [
+          123.43006673458339,
+          10.010650894097635,
+          6.294085332350295,
+          5.243718627873778,
+          4.566118344366842,
+          3.8484892722895974,
+          3.238830187809728,
+          3.041875761940792
+        ],
+        "n_states_connected": 25
+      },
+      {
+        "lag_frames": 10,
+        "lag_ns_assumed": 10.0,
+        "timescales_frames": [
+          305.906806838435,
+          19.207268736186847,
+          10.2288124653828,
+          8.77627888081375,
+          8.391436748593986,
+          7.673022076784018,
+          6.6554854829902546,
+          6.187561779963557
+        ],
+        "n_states_connected": 25
+      },
+      {
+        "lag_frames": 15,
+        "lag_ns_assumed": 15.0,
+        "timescales_frames": [
+          399.2315251200747,
+          28.75551625511254,
+          14.249718984001928,
+          13.777364282584712,
+          11.441147139370958,
+          10.522593263601397,
+          10.286575604055226,
+          9.19068642936772
+        ],
+        "n_states_connected": 25
+      },
+      {
+        "lag_frames": 20,
+        "lag_ns_assumed": 20.0,
+        "timescales_frames": [
+          486.30096059907135,
+          39.996534430498095,
+          18.80463203594975,
+          13.970249613839062,
+          12.844889772021231,
+          12.406251498915765,
+          10.527207745495945,
+          10.01506728321143
+        ],
+        "n_states_connected": 25
+      },
+      {
+        "lag_frames": 25,
+        "lag_ns_assumed": 25.0,
+        "timescales_frames": [
+          556.034238666028,
+          43.77233410151445,
+          23.05872545271801,
+          16.999440935024055,
+          15.13786024097166,
+          15.12607836749612,
+          13.749241806252392,
+          12.105677660356502
+        ],
+        "n_states_connected": 25
+      },
+      {
+        "lag_frames": 30,
+        "lag_ns_assumed": 30.0,
+        "timescales_frames": [
+          605.2186275147465,
+          54.32589119038369,
+          23.8917841867508,
+          21.375256213214552,
+          21.026416747403644,
+          18.858825662556466,
+          17.904943000984833,
+          14.942924749444977
+        ],
+        "n_states_connected": 25
+      },
+      {
+        "lag_frames": 40,
+        "lag_ns_assumed": 40.0,
+        "timescales_frames": [
+          875.7042518318912,
+          63.63764666664624,
+          34.658885951134046,
+          26.009217487605998,
+          24.17042124546288,
+          21.840506732513422,
+          20.997221347497465,
+          19.3057505224182
+        ],
+        "n_states_connected": 25
+      },
+      {
+        "lag_frames": 50,
+        "lag_ns_assumed": 50.0,
+        "timescales_frames": [
+          932.5041112893786,
+          79.8764210982101,
+          38.22435571465335,
+          31.96247783191882,
+          30.884760984915967,
+          28.217701092581965,
+          26.394228022924132,
+          23.73364279135217
+        ],
+        "n_states_connected": 25
+      }
+    ]
+  },
+  "implied_timescales_assessment": {
+    "verdict": "NON_CONVERGENT",
+    "reason": "slowest ITS relative change late-vs-mid thirds = 0.674 (flat\u22640.25, marginal\u22640.5)",
+    "slowest_rel_change": 0.6741694642440774,
+    "late_mean_frames": 804.4756635453388,
+    "mid_mean_frames": 480.52224146172466,
+    "recommended_lag_frames": 30,
+    "n_finite_slowest": 10,
+    "connected_states_per_lag": [
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25
+    ]
+  },
+  "material_improvement": {
+    "materially_improves": false,
+    "cond1_finite_positive_its_ge3": true,
+    "cond2_connected_not_majority_collapse": true,
+    "cond3_qualitative_flattening": false,
+    "cond3_note": "fails flattening clause (verdict=NON_CONVERGENT, pathological=False, rel=0.6741694642440774)",
+    "n_finite_slowest": 10,
+    "n_successful_lags": 10,
+    "n_lags_connected_le1": 0,
+    "connected_states_per_lag": [
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25
+    ],
+    "its_verdict": "NON_CONVERGENT",
+    "pathological_like_baseline": false
+  },
+  "x8_verdict": "X8_SAMPLING_LIMITED",
+  "indeterminate_reason": null,
+  "provisional_p2_label": "P2_INSUFFICIENT_SAMPLING",
+  "governance": {
+    "reopens_p2_abc": false,
+    "p2_status_remains": "CLOSED (INSUFFICIENT_SAMPLING)",
+    "no_docking": true,
+    "no_de_novo": true,
+    "no_new_hub_hunt": true
+  },
+  "artifacts": {
+    "its_png": "results\\msm_model\\x8_implied_timescales.png",
+    "its_json": "results\\msm_model\\x8_implied_timescales.json",
+    "report_json": "results/msm_model/x8_reduced_featurization_report.json",
+    "report_md": "results/msm_model/x8_reduced_featurization_report.md"
+  }
+}

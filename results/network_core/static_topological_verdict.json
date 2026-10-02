@@ -1,0 +1,37 @@
+{
+  "report_field": "STATIC_TOPOLOGICAL_BOTTLENECKS",
+  "STATIC_TOPOLOGICAL_BOTTLENECKS": "TOPOLOGICAL_HUBS_IDENTIFIED",
+  "rationale": "6 non-S/T node(s) enriched vs degree-preserving null (alpha=0.05) on S\u2192T shortest-path participation and/or betweenness.",
+  "significant_hub_nodes": [
+    "ALA:83",
+    "ALA:79",
+    "ASN:291",
+    "ASN:295",
+    "LEU:287",
+    "ARG:302"
+  ],
+  "S_final": [
+    "8D0:1",
+    "SER:285",
+    "PHE:87"
+  ],
+  "T": [
+    "ARG:131",
+    "ASP:240",
+    "SER:303",
+    "SER:69"
+  ],
+  "governance": {
+    "STATIC_GRAPH_ANALYSIS": "CLOSED",
+    "CB2_MINIMAL_GI_CORE": "BLOCKED_PENDING_DYNAMIC_VALIDATION",
+    "CB1_COMPARISON": "BLOCKED",
+    "DOCKING": "STOP",
+    "DE_NOVO_GENERATION": "STOP",
+    "NEW_CHEMISTRY": "STOP",
+    "TECHNICAL_SEARCH_TRAJ": "NOT_STARTED_THIS_RUN; prior ENLACE_REGISTRADO only",
+    "MODO": "READ_ONLY / PUBLIC_DATA_REANALYSIS",
+    "report_field": "STATIC_TOPOLOGICAL_BOTTLENECKS"
+  },
+  "interpretation_limit": "Describes topological properties of the aggregated published LigACN only. Does NOT establish residues as causally necessary for Gi. Dynamic causal core remains BLOCKED_PENDING_DYNAMIC_VALIDATION.",
+  "run_utc": "2026-08-20T15:34:45Z"
+}

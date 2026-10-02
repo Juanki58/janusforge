@@ -1,0 +1,482 @@
+{
+  "generated_utc": "2026-09-12T09:23:11Z",
+  "branch": "feat/cb2-hubs-functional-topology-test",
+  "experiment": "EXPERIMENT_CB2_APO_PILOT_CONTACTS",
+  "epistemology": {
+    "scope": "EXTERNAL_APO_TRAJ_PILOT",
+    "few_trajs_neq_ensemble": true,
+    "p2_unchanged": true,
+    "no_gi_claim": true,
+    "no_docking": true,
+    "no_p1_hub_hunt": true,
+    "soft_compare_prior": "EXT_PDB_CONTACTS_STATE_DEPENDENT / EXT_STRUCTURAL_ABC_SNAPSHOT_B"
+  },
+  "contact_def": {
+    "name": "getcontacts_vdw_envelope_plus_alloviz_filters",
+    "geometry": "|AB| < Rvdw(A)+Rvdw(B)+0.5 Angstrom; A,B non-hydrogen",
+    "slack_A": 0.5,
+    "exclude_sequential_protein": true,
+    "p_ij_edge_threshold": 0.1,
+    "selection": "protein",
+    "limitation": "Full GetContacts chemotypes (hbond angles, pi geometry, water bridges) not reimplemented; persistence uses registered VdW distance envelope only."
+  },
+  "secondary_ca_def": {
+    "cutoff_A": 8.0,
+    "min_sep": 2,
+    "p_ij_edge_threshold": 0.1,
+    "drives_verdict": false
+  },
+  "thresholds": {
+    "jaccard_stable": 0.8,
+    "mean_frac_private_B": 0.15,
+    "jaccard_diffuse": 0.55
+  },
+  "topology": {
+    "file": "CB2-APO_inactive_pr_1-strip.prmtop",
+    "sha256": "db7182785383ee12d8fbeaf76edeb564987fc4fc4c392fdbd41a74a517efcd8c",
+    "path": "data\\external\\dutta_shukla_2023\\trajectories\\CB2_APO\\CB2-APO_inactive_pr_1-strip.prmtop"
+  },
+  "smoke_all_ok": true,
+  "hub_mapping": {
+    "alignment_identity": 1.0,
+    "n_protein_residues": 284,
+    "hubs": {
+      "ALA:79": {
+        "status": "OK",
+        "reason": null,
+        "uniprot": 79,
+        "expected_aa": "ALA",
+        "topo_resid": 59,
+        "topo_resname": "ALA",
+        "topo_label": "ALA:59",
+        "aligned_aa1": "A"
+      },
+      "ALA:83": {
+        "status": "OK",
+        "reason": null,
+        "uniprot": 83,
+        "expected_aa": "ALA",
+        "topo_resid": 63,
+        "topo_resname": "ALA",
+        "topo_label": "ALA:63",
+        "aligned_aa1": "A"
+      },
+      "LEU:287": {
+        "status": "OK",
+        "reason": null,
+        "uniprot": 287,
+        "expected_aa": "LEU",
+        "topo_resid": 255,
+        "topo_resname": "LEU",
+        "topo_label": "LEU:255",
+        "aligned_aa1": "L"
+      },
+      "ASN:291": {
+        "status": "OK",
+        "reason": null,
+        "uniprot": 291,
+        "expected_aa": "ASN",
+        "topo_resid": 259,
+        "topo_resname": "ASN",
+        "topo_label": "ASN:259",
+        "aligned_aa1": "N"
+      },
+      "ASN:295": {
+        "status": "OK",
+        "reason": null,
+        "uniprot": 295,
+        "expected_aa": "ASN",
+        "topo_resid": 263,
+        "topo_resname": "ASN",
+        "topo_label": "ASN:263",
+        "aligned_aa1": "N"
+      },
+      "ARG:302": {
+        "status": "OK",
+        "reason": null,
+        "uniprot": 302,
+        "expected_aa": "ARG",
+        "topo_resid": 270,
+        "topo_resname": "ARG",
+        "topo_label": "ARG:270",
+        "aligned_aa1": "R"
+      }
+    },
+    "note": "Project hub labels use UniProt P34972 indices; topo resid may differ (N-term truncation)."
+  },
+  "hub_incident_jaccard": {
+    "ALA:79": 1.0,
+    "ALA:83": 0.8,
+    "LEU:287": 0.7,
+    "ASN:291": 1.0,
+    "ASN:295": 0.7777777777777778,
+    "ARG:302": 0.21428571428571427
+  },
+  "states": {
+    "inactive": {
+      "smoke": {
+        "file": "5_trajs",
+        "n_atoms": 4566,
+        "n_frames": 2957,
+        "n_residues": 288,
+        "atoms_ok": true,
+        "first_res": [
+          "ACE:1",
+          "MET:2",
+          "LYS:3"
+        ],
+        "last_res": [
+          "LYS:286",
+          "LYS:287",
+          "NME:288"
+        ]
+      },
+      "sha256": "multi",
+      "n_edges_vdw": 1169,
+      "n_edges_ca": 1400,
+      "hub_participation": {
+        "ALA:79": {
+          "status": "OK",
+          "topo_label": "ALA:59",
+          "degree": 10,
+          "neighbors": [
+            "ALA:57",
+            "ALA:63",
+            "ALA:99",
+            "LEU:56",
+            "LEU:62",
+            "PHE:61",
+            "SER:100",
+            "SER:55",
+            "THR:96",
+            "TRP:138"
+          ]
+        },
+        "ALA:83": {
+          "status": "OK",
+          "topo_label": "ALA:63",
+          "degree": 9,
+          "neighbors": [
+            "ALA:59",
+            "ALA:68",
+            "ASP:60",
+            "LEU:257",
+            "PHE:61",
+            "PHE:67",
+            "THR:96",
+            "VAL:65",
+            "VAL:66"
+          ]
+        },
+        "LEU:287": {
+          "status": "OK",
+          "topo_label": "LEU:255",
+          "degree": 8,
+          "neighbors": [
+            "ASN:259",
+            "CYS:225",
+            "CYS:252",
+            "ILE:258",
+            "LEU:257",
+            "PHE:251",
+            "PRO:228",
+            "SER:253"
+          ]
+        },
+        "ASN:291": {
+          "status": "OK",
+          "topo_label": "ASN:259",
+          "degree": 10,
+          "neighbors": [
+            "ASN:263",
+            "CYS:225",
+            "CYS:256",
+            "LEU:222",
+            "LEU:255",
+            "LEU:257",
+            "MET:261",
+            "TRP:226",
+            "VAL:221",
+            "VAL:262"
+          ]
+        },
+        "ASN:295": {
+          "status": "OK",
+          "topo_label": "ASN:263",
+          "degree": 9,
+          "neighbors": [
+            "ASN:259",
+            "ASP:60",
+            "ILE:266",
+            "LEU:56",
+            "MET:261",
+            "TYR:267",
+            "VAL:218",
+            "VAL:221",
+            "VAL:265"
+          ]
+        },
+        "ARG:302": {
+          "status": "OK",
+          "topo_label": "ARG:270",
+          "degree": 11,
+          "neighbors": [
+            "ALA:212",
+            "ALA:268",
+            "ASP:208",
+            "ILE:266",
+            "LEU:207",
+            "LEU:211",
+            "LEU:217",
+            "LYS:213",
+            "MET:205",
+            "THR:214",
+            "TYR:267"
+          ]
+        }
+      },
+      "trajs": [
+        {
+          "file": "CB2-APO_inactive_pr_10_frame_0-strip.nc",
+          "sha256": "de5fd427321173a3be81125c738b28bd1c3156cf7f6ec439538b0c54f155b5d7",
+          "n_atoms": 4566,
+          "n_frames": 557,
+          "n_frames_used": 557,
+          "atoms_ok": true
+        },
+        {
+          "file": "CB2-APO_inactive_pr_13_frame_171-strip.nc",
+          "sha256": "673ad0b09612d255501471072930ffc5c11d0ea22eb74357933e327ed94c3a64",
+          "n_atoms": 4566,
+          "n_frames": 600,
+          "n_frames_used": 600,
+          "atoms_ok": true
+        },
+        {
+          "file": "CB2-APO_inactive_pr_3_frame_268-strip.nc",
+          "sha256": "f2f855c1bc3abdfc7fae6081d3da47effba3aba8a4530a3f3aea65b490705003",
+          "n_atoms": 4566,
+          "n_frames": 600,
+          "n_frames_used": 600,
+          "atoms_ok": true
+        },
+        {
+          "file": "CB2-APO_inactive_pr_6_frame_193-strip.nc",
+          "sha256": "9ed79052563b062daf770de946a98dbd6e990683b6a74cb66661b1767840640e",
+          "n_atoms": 4566,
+          "n_frames": 600,
+          "n_frames_used": 600,
+          "atoms_ok": true
+        },
+        {
+          "file": "CB2-APO_inactive_pr_9_frame_99-strip.nc",
+          "sha256": "d9bfed9a0d45a2860c047bbdbe34e5c59f504ec8f3c37e72801a636ba39da4a7",
+          "n_atoms": 4566,
+          "n_frames": 600,
+          "n_frames_used": 600,
+          "atoms_ok": true
+        }
+      ],
+      "n_trajs": 5
+    },
+    "active": {
+      "smoke": {
+        "file": "5_trajs",
+        "n_atoms": 4566,
+        "n_frames": 2832,
+        "n_residues": 288,
+        "atoms_ok": true,
+        "first_res": [
+          "ACE:1",
+          "MET:2",
+          "LYS:3"
+        ],
+        "last_res": [
+          "LYS:286",
+          "LYS:287",
+          "NME:288"
+        ]
+      },
+      "sha256": "multi",
+      "n_edges_vdw": 1173,
+      "n_edges_ca": 1475,
+      "hub_participation": {
+        "ALA:79": {
+          "status": "OK",
+          "topo_label": "ALA:59",
+          "degree": 10,
+          "neighbors": [
+            "ALA:57",
+            "ALA:63",
+            "ALA:99",
+            "LEU:56",
+            "LEU:62",
+            "PHE:61",
+            "SER:100",
+            "SER:55",
+            "THR:96",
+            "TRP:138"
+          ]
+        },
+        "ALA:83": {
+          "status": "OK",
+          "topo_label": "ALA:63",
+          "degree": 9,
+          "neighbors": [
+            "ALA:59",
+            "ALA:68",
+            "ASP:60",
+            "PHE:61",
+            "PHE:67",
+            "PHE:97",
+            "THR:96",
+            "VAL:65",
+            "VAL:66"
+          ]
+        },
+        "LEU:287": {
+          "status": "OK",
+          "topo_label": "LEU:255",
+          "degree": 9,
+          "neighbors": [
+            "ASN:259",
+            "CYS:225",
+            "CYS:252",
+            "ILE:224",
+            "ILE:258",
+            "LEU:257",
+            "PHE:251",
+            "SER:253",
+            "VAL:229"
+          ]
+        },
+        "ASN:291": {
+          "status": "OK",
+          "topo_label": "ASN:259",
+          "degree": 10,
+          "neighbors": [
+            "ASN:263",
+            "CYS:225",
+            "CYS:256",
+            "LEU:222",
+            "LEU:255",
+            "LEU:257",
+            "MET:261",
+            "TRP:226",
+            "VAL:221",
+            "VAL:262"
+          ]
+        },
+        "ASN:295": {
+          "status": "OK",
+          "topo_label": "ASN:263",
+          "degree": 7,
+          "neighbors": [
+            "ASN:259",
+            "ASP:60",
+            "ILE:266",
+            "LEU:56",
+            "MET:261",
+            "TYR:267",
+            "VAL:265"
+          ]
+        },
+        "ARG:302": {
+          "status": "OK",
+          "topo_label": "ARG:270",
+          "degree": 6,
+          "neighbors": [
+            "ALA:268",
+            "ARG:275",
+            "GLY:272",
+            "ILE:266",
+            "THR:214",
+            "VAL:265"
+          ]
+        }
+      },
+      "trajs": [
+        {
+          "file": "CB2-APO_active_pr_10_frame_1-strip.nc",
+          "sha256": "7fa62758527180009f2b9d6e115aff3a92bd153b60c81332dae12a9fb63e8b84",
+          "n_atoms": 4566,
+          "n_frames": 432,
+          "n_frames_used": 432,
+          "atoms_ok": true
+        },
+        {
+          "file": "CB2-APO_active_pr_14_frame_196-strip.nc",
+          "sha256": "2d2ce7746549d448215fb30bab0df9a7feca173d518948d2c9ca6b1b5cdfc527",
+          "n_atoms": 4566,
+          "n_frames": 600,
+          "n_frames_used": 600,
+          "atoms_ok": true
+        },
+        {
+          "file": "CB2-APO_active_pr_15_frame_343-strip.nc",
+          "sha256": "f6b83315330e20179da6ee548c99697205f49395518c9449c38c0915f062b55f",
+          "n_atoms": 4566,
+          "n_frames": 600,
+          "n_frames_used": 600,
+          "atoms_ok": true
+        },
+        {
+          "file": "CB2-APO_active_pr_16_frame_5-strip.nc",
+          "sha256": "e716fe7c468ad70dfbcc770b35b593b7a55cc0f5af958ed57d52f3d8048c7aa6",
+          "n_atoms": 4566,
+          "n_frames": 600,
+          "n_frames_used": 600,
+          "atoms_ok": true
+        },
+        {
+          "file": "CB2-APO_active_pr_9_frame_99-strip.nc",
+          "sha256": "4fa888a15b076a9b0833a363b14cef4ab2585b9b421e0815254a7cd4eb95fa92",
+          "n_atoms": 4566,
+          "n_frames": 600,
+          "n_frames_used": 600,
+          "atoms_ok": true
+        }
+      ],
+      "n_trajs": 5
+    }
+  },
+  "metrics_primary": {
+    "jaccard_inactive_active": 0.7702191987906274,
+    "n_edges": {
+      "inactive": 1169,
+      "active": 1173
+    },
+    "n_shared": 1019,
+    "n_union": 1323,
+    "frac_private": {
+      "inactive": 0.1283147989734816,
+      "active": 0.13128729752770674
+    },
+    "mean_frac_private": 0.1298010482505942,
+    "n_private": {
+      "inactive": 150,
+      "active": 154
+    }
+  },
+  "metrics_secondary_ca": {
+    "jaccard_inactive_active": 0.7392619479733817,
+    "n_edges": {
+      "inactive": 1400,
+      "active": 1475
+    }
+  },
+  "sample_extract": null,
+  "verdicts": {
+    "EXT_APO_PILOT_CONTACTS": "EXT_APO_PILOT_CONTACTS_INDETERMINATE",
+    "Q2_MAPS": "DIFFERS_SUBSTANTIALLY",
+    "EXT_APO_PILOT_SOFT_COMPARE_PDB": "EXT_APO_PILOT_SOFT_DISAGREE_PDB_B",
+    "EXT_APO_PILOT_SINGLE_TRAJ_LIMIT": "FALSE_SAMPLE",
+    "EXT_APO_PILOT_NEEDS_MORE_TRAJS": "OPTIONAL",
+    "P2_STATUS_UNCHANGED": "CLOSED_ABORTED_NOT_CONVERGENT"
+  },
+  "outputs": {
+    "json": "results\\network_core\\cb2_apo_pilot_contacts_sample5.json",
+    "md": "results\\network_core\\cb2_apo_pilot_contacts_sample5.md"
+  },
+  "run_mode": "stratified_sample"
+}

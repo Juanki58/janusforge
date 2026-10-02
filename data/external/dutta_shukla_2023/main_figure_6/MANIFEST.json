@@ -1,0 +1,89 @@
+{
+  "dataset": "dutta_shukla_2023_Main_Figure_6",
+  "doi": "10.1038/s42003-023-04868-1",
+  "folder": "Main_Figure_6",
+  "box_folder_id": "202821403551",
+  "box_share_official": "https://uofi.box.com/s/jzooa0o27z1w9ha0h6va3i51ir7l38j4/folder/202821403551",
+  "box_share_alt": "iw1wlcdg44gjs7ufx4rriuulindibj5t",
+  "github_path": "https://github.com/ShuklaGroup/Cannabinoid_activation/tree/main/Main_Figure_6",
+  "recovery_status": "MAIN_FIGURE_6_SMALL_FILES_COMPLETE",
+  "recovered_at": "2026-09-10T12:19:27+00:00",
+  "recovery_method": "github_raw_fallback_byte_match_box_listing",
+  "notes": [
+    "Box folder listing HTTP 200: confirmed Main_Figure_6, 10 files.",
+    "Scripted Box downloads HTTP 403 (bandwidth) for official and alt shares.",
+    "Browser MCP had no controllable tab.",
+    "Six CB2_ref_*.pdb + two .py scripts recovered from GitHub raw; byte sizes match Box listing exactly (PDBs 369980 each).",
+    "Box also lists CB2_state_prob.pkl (~64 MB) and CB2_msm_feature_final_clustering.pkl (~11 MB); those already live under ../msm/ — not re-downloaded here."
+  ],
+  "box_inventory_all_files": [
+    {"name": "CB2-APO_vampnet_activation_feature_bar_plt.py", "bytes": 2966, "box_file_id": "1187283629713"},
+    {"name": "CB2-APO_vampnet_states_TPT.py", "bytes": 3244, "box_file_id": "1187288938505"},
+    {"name": "CB2_ref_inactive_3_b.pdb", "bytes": 369980, "box_file_id": "1187288122102"},
+    {"name": "CB2_ref_inactive_I1_b.pdb", "bytes": 369980, "box_file_id": "1187290858152"},
+    {"name": "CB2_ref_inactive_I2_b.pdb", "bytes": 369980, "box_file_id": "1187285201674"},
+    {"name": "CB2_ref_inactive_I3_b.pdb", "bytes": 369980, "box_file_id": "1187287547254"},
+    {"name": "CB2_ref_inactive_I4_b.pdb", "bytes": 369980, "box_file_id": "1187285969250"},
+    {"name": "CB2_ref_inactive_active_b.pdb", "bytes": 369980, "box_file_id": "1187286134760"},
+    {"name": "CB2_msm_feature_final_clustering.pkl", "bytes": 11429097, "box_file_id": "1187281376356", "local": "../msm/"},
+    {"name": "CB2_state_prob.pkl", "bytes": 67145861, "box_file_id": "1187285378640", "local": "../msm/"}
+  ],
+  "files": [
+    {
+      "name": "CB2_ref_inactive_3_b.pdb",
+      "box_file_id": 1187288122102,
+      "bytes": 369980,
+      "sha256": "d641a808852c4c9e539f3d43205e501a47d4e43532bfec9fc8ab773371fa43e6",
+      "source": "github_raw"
+    },
+    {
+      "name": "CB2_ref_inactive_I1_b.pdb",
+      "box_file_id": 1187290858152,
+      "bytes": 369980,
+      "sha256": "50fefbbe30fbdd2afb2ceed0be5a9656bf1734295da58edd13bf1c792d080bd9",
+      "source": "github_raw"
+    },
+    {
+      "name": "CB2_ref_inactive_I2_b.pdb",
+      "box_file_id": 1187285201674,
+      "bytes": 369980,
+      "sha256": "311109f8a6ec3389e527e69ebda704f6db4b795afa6c0403ae993e6ad8bab836",
+      "source": "github_raw"
+    },
+    {
+      "name": "CB2_ref_inactive_I3_b.pdb",
+      "box_file_id": 1187287547254,
+      "bytes": 369980,
+      "sha256": "142e770e64d7c0e0ef40cf02fb89e7d56567813ac083b82862f6bdb684a56718",
+      "source": "github_raw"
+    },
+    {
+      "name": "CB2_ref_inactive_I4_b.pdb",
+      "box_file_id": 1187285969250,
+      "bytes": 369980,
+      "sha256": "dca5531acdc11a94f055572eba22600aae78ba26bf0b0db975b1ee6e740d0a73",
+      "source": "github_raw"
+    },
+    {
+      "name": "CB2_ref_inactive_active_b.pdb",
+      "box_file_id": 1187286134760,
+      "bytes": 369980,
+      "sha256": "41816e10f2ca5e94079d72f59a2226b213b97c9ec922a3ffea7c722c3ad584c1",
+      "source": "github_raw"
+    },
+    {
+      "name": "CB2-APO_vampnet_activation_feature_bar_plt.py",
+      "box_file_id": 1187283629713,
+      "bytes": 2966,
+      "sha256": "520ed5800bd1ef20d3198dae43d1336972abc9d528533402b5b0208de168d3cf",
+      "source": "github_raw"
+    },
+    {
+      "name": "CB2-APO_vampnet_states_TPT.py",
+      "box_file_id": 1187288938505,
+      "bytes": 3244,
+      "sha256": "29780436cca060f7c33803f4a36ecc8c1ff3f88f68dd86ecdb004011cba940d7",
+      "source": "github_raw"
+    }
+  ]
+}

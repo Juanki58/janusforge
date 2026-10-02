@@ -1,0 +1,359 @@
+{
+  "run_utc": "2026-09-21T19:03:33Z",
+  "governance": {
+    "mode": "EXTERNAL_HUBS_VS_LIGACN_INVENTORY",
+    "MODO": "READ_ONLY_DATA",
+    "P1_DYNAMIC_HUBS": "CLOSED_NOT_SUPPORTED_UNCHANGED",
+    "P2_MSM": "CLOSED_INSUFFICIENT_SAMPLING_UNCHANGED",
+    "STATIC_DUAL_TEST": "CORE_TOPOLOGICAL_ONLY_UNCHANGED",
+    "Gi_claims": "STOP",
+    "docking": "STOP",
+    "de_novo": "STOP",
+    "hub_list": "FIXED_A_PRIORI_NO_RETUNE",
+    "literature_doi": "10.1038/s41467-025-60003-0",
+    "prefcoup_code": "https://github.com/GPCRmd/prefcoup_cb2r",
+    "zenodo": "10.5281/zenodo.15270434"
+  },
+  "platform": "Windows-11-10.0.26200-SP0",
+  "verdict": {
+    "primary": "EXT_HUBS_IN_LIGACNTOP",
+    "prefcoup_overlay": "PARTIAL",
+    "rules": {
+      "EXT_HUBS_IN_LIGACNTOP": ">=5/6 hubs are LigACNtop nodes",
+      "PARTIAL": "2-4/6 in LigACNtop",
+      "DISTINCT": "<=1/6 in LigACNtop and median dist>=2",
+      "INDETERMINATE_MISSING_SUPP": "MOESM5 missing"
+    }
+  },
+  "plain_language": "Los seis hubs caen **dentro de LigACNtop** (6/6 nodos con degeneracy\u22650.146; distancia 0). No son un objeto topol\u00f3gico disjunto del mapa publicado. Overlay PrefCoup clusters 1\u20133: 2/6 posiciones hub (N291A y R302A en cluster 3); el resto no est\u00e1 en mutantes PrefCoup simulados de esos clusters. Esto **no** reabre el enrichment Fisher del dual-test ni P1 din\u00e1mico.",
+  "provenance": {
+    "moesm5": "results/network_core/_raw_downloads/41467_2025_60003_MOESM5_ESM.xlsx",
+    "moesm5_sha256": "ff53ec7bf227e0d2c3e5ced9fb81e2e56e61fb5d6ec373c1e3f2c574e77c09b9",
+    "moesm5_bytes": 970304,
+    "moesm3": "results/network_core/_raw_downloads/41467_2025_60003_MOESM3_ESM.xlsx",
+    "moesm3_sha256": "f296cb131c22d32de9985fe54fb17422f72385aed2b0596e8ed180f07b7e2a7a",
+    "ligacntop_cutoff": 0.146,
+    "n_ligacntop_edges": 33,
+    "n_ligacntop_nodes": 41,
+    "ligacntop_nodes": [
+      "8D0:1",
+      "ALA:244",
+      "ALA:280",
+      "ALA:77",
+      "ALA:79",
+      "ALA:83",
+      "ARG:131",
+      "ARG:242",
+      "ARG:302",
+      "ASN:291",
+      "ASN:295",
+      "ASP:240",
+      "CYS:284",
+      "CYS:288",
+      "GLU:305",
+      "HSD:95",
+      "ILE:129",
+      "ILE:290",
+      "ILE:298",
+      "ILE:73",
+      "LEU:125",
+      "LEU:287",
+      "LEU:289",
+      "LEU:71",
+      "LYS:278",
+      "LYS:279",
+      "MET:26",
+      "MET:286",
+      "PHE:281",
+      "PHE:81",
+      "PHE:87",
+      "PRO:296",
+      "SER:123",
+      "SER:285",
+      "SER:292",
+      "SER:303",
+      "SER:69",
+      "SER:75",
+      "THR:246",
+      "TYR:299",
+      "VAL:297"
+    ],
+    "prefcoup_groups_verify": {
+      "expected": {
+        "1": [
+          "109",
+          "125",
+          "176",
+          "285",
+          "292"
+        ],
+        "2": [
+          "117",
+          "217",
+          "77"
+        ],
+        "3": [
+          "199",
+          "205",
+          "291",
+          "302"
+        ]
+      },
+      "json_provenance": {
+        "path": "results/network_core/_raw_downloads/prefcoup_cb2r/pca_groups_published.json",
+        "sha256": "1f2fe28b7270e38cfe27d18cedc44cf460ebfd4176cc967682df8527f62dfd68",
+        "match_published_dict": true,
+        "source_url": "https://raw.githubusercontent.com/GPCRmd/prefcoup_cb2r/main/clustering.ipynb",
+        "notebook_sha256_at_fetch": "6e7c2067c7ed9a39efba11cfe24217001037f334a32963402ba7eb87a69b6029"
+      },
+      "notebook": {
+        "present": false,
+        "note": "Full clustering.ipynb optional; slim pca_groups_published.json is sufficient"
+      },
+      "match_published_dict": true
+    },
+    "prefcoup_groups_source": "GPCRmd/prefcoup_cb2r clustering.ipynb `groups` dict (Zenodo 10.5281/zenodo.15270434 points at same code; v.1.0.0 zip is LICENSE-only)"
+  },
+  "prefcoup_clusters": {
+    "1": [
+      "109",
+      "125",
+      "176",
+      "285",
+      "292"
+    ],
+    "2": [
+      "77",
+      "117",
+      "217"
+    ],
+    "3": [
+      "199",
+      "205",
+      "291",
+      "302"
+    ]
+  },
+  "prefcoup_simulated_uncatched": [
+    "297",
+    "61"
+  ],
+  "hubs": [
+    {
+      "ligacn": "ALA:79",
+      "short": "ALA79",
+      "bw": "2.49",
+      "uniprot_position": 79,
+      "in_LigACN": true,
+      "in_LigACNtop": true,
+      "dist_to_LigACNtop": 0,
+      "max_incident_degeneracy": 0.2265,
+      "ligacntop_edges_incident": [
+        [
+          "ALA:83",
+          "ALA:79",
+          0.2265
+        ],
+        [
+          "ALA:79",
+          "SER:75",
+          0.1565
+        ]
+      ],
+      "prefcoup_cluster": "NOT_IN_SIMULATED_PREFCOUP_CLUSTERS",
+      "sd1": {
+        "status": "PRESENT",
+        "mutations": [
+          {
+            "mutant": "A79V",
+            "pct_wt_expression": 20.42946591,
+            "coupling_profile": "NoCoup_Gi_bArr",
+            "simulated": "not simulated"
+          }
+        ]
+      }
+    },
+    {
+      "ligacn": "ALA:83",
+      "short": "ALA83",
+      "bw": "2.53",
+      "uniprot_position": 83,
+      "in_LigACN": true,
+      "in_LigACNtop": true,
+      "dist_to_LigACNtop": 0,
+      "max_incident_degeneracy": 0.376,
+      "ligacntop_edges_incident": [
+        [
+          "PHE:87",
+          "ALA:83",
+          0.376
+        ],
+        [
+          "ALA:83",
+          "ALA:79",
+          0.2265
+        ],
+        [
+          "ALA:83",
+          "PHE:81",
+          0.1575
+        ]
+      ],
+      "prefcoup_cluster": "NOT_IN_SIMULATED_PREFCOUP_CLUSTERS",
+      "sd1": {
+        "status": "PRESENT",
+        "mutations": [
+          {
+            "mutant": "A83V",
+            "pct_wt_expression": 72.1045113,
+            "coupling_profile": "NoCoup_Gi_bArr",
+            "simulated": "not simulated"
+          }
+        ]
+      }
+    },
+    {
+      "ligacn": "LEU:287",
+      "short": "LEU287",
+      "bw": "7.41",
+      "uniprot_position": 287,
+      "in_LigACN": true,
+      "in_LigACNtop": true,
+      "dist_to_LigACNtop": 0,
+      "max_incident_degeneracy": 0.4165,
+      "ligacntop_edges_incident": [
+        [
+          "LEU:287",
+          "LEU:289",
+          0.4165
+        ],
+        [
+          "SER:285",
+          "LEU:287",
+          0.3855
+        ]
+      ],
+      "prefcoup_cluster": "NOT_IN_SIMULATED_PREFCOUP_CLUSTERS",
+      "sd1": {
+        "status": "PRESENT",
+        "mutations": [
+          {
+            "mutant": "L287A",
+            "pct_wt_expression": 51.15821889,
+            "coupling_profile": "Coup_Gi_bArr",
+            "simulated": "not simulated"
+          }
+        ]
+      }
+    },
+    {
+      "ligacn": "ASN:291",
+      "short": "ASN291",
+      "bw": "7.45",
+      "uniprot_position": 291,
+      "in_LigACN": true,
+      "in_LigACNtop": true,
+      "dist_to_LigACNtop": 0,
+      "max_incident_degeneracy": 0.4055,
+      "ligacntop_edges_incident": [
+        [
+          "LEU:289",
+          "ASN:291",
+          0.4055
+        ],
+        [
+          "ASN:291",
+          "ASN:295",
+          0.399
+        ]
+      ],
+      "prefcoup_cluster": "3",
+      "sd1": {
+        "status": "PRESENT",
+        "mutations": [
+          {
+            "mutant": "N291A",
+            "pct_wt_expression": 101.8849675,
+            "coupling_profile": "PrefCoup_Gi",
+            "simulated": "simulated"
+          }
+        ]
+      }
+    },
+    {
+      "ligacn": "ASN:295",
+      "short": "ASN295",
+      "bw": "7.49",
+      "uniprot_position": 295,
+      "in_LigACN": true,
+      "in_LigACNtop": true,
+      "dist_to_LigACNtop": 0,
+      "max_incident_degeneracy": 0.399,
+      "ligacntop_edges_incident": [
+        [
+          "ASN:291",
+          "ASN:295",
+          0.399
+        ],
+        [
+          "ASN:295",
+          "VAL:297",
+          0.156
+        ]
+      ],
+      "prefcoup_cluster": "NOT_IN_SIMULATED_PREFCOUP_CLUSTERS",
+      "sd1": {
+        "status": "PRESENT",
+        "mutations": [
+          {
+            "mutant": "N295A",
+            "pct_wt_expression": 77.92948329,
+            "coupling_profile": "NoCoup_Gi_bArr",
+            "simulated": "not simulated"
+          }
+        ]
+      }
+    },
+    {
+      "ligacn": "ARG:302",
+      "short": "ARG302",
+      "bw": "8.46",
+      "uniprot_position": 302,
+      "in_LigACN": true,
+      "in_LigACNtop": true,
+      "dist_to_LigACNtop": 0,
+      "max_incident_degeneracy": 0.3015,
+      "ligacntop_edges_incident": [
+        [
+          "ARG:302",
+          "THR:246",
+          0.3015
+        ],
+        [
+          "ILE:298",
+          "ARG:302",
+          0.2955
+        ]
+      ],
+      "prefcoup_cluster": "3",
+      "sd1": {
+        "status": "PRESENT",
+        "mutations": [
+          {
+            "mutant": "R302A",
+            "pct_wt_expression": 85.16676041,
+            "coupling_profile": "PrefCoup_Gi",
+            "simulated": "simulated"
+          }
+        ]
+      }
+    }
+  ],
+  "aggregates": {
+    "n_hubs_in_LigACNtop": 6,
+    "n_hubs_in_any_PrefCoup_cluster": 2,
+    "jaccard_hubs_vs_LigACNtop_nodes": 0.14634146341463414,
+    "n_LigACN_nodes": 100,
+    "n_LigACN_undirected_edges": 176
+  }
+}
