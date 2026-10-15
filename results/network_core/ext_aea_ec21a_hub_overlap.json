@@ -136,7 +136,9 @@
   "counts": {
     "n_hubs_NEAR_HU308": 0,
     "n_hubs_NEAR_Ec21a": 0,
-    "n_hubs_SHELL_or_NEAR_Ec21a": 0
+    "n_hubs_SHELL_or_NEAR_Ec21a": 0,
+    "n_vestibule_residues_DISTAL_from_TM7_hubs": 6,
+    "n_vestibule_residues_NEAR_or_SHELL_to_TM7_hubs": 0
   },
   "governance": {
     "AEA_TRAJ_UNPACK": false,

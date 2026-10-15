@@ -8,6 +8,7 @@
 
 **`EXT_AEA_EC21A_HUB_OVERLAP_PARTIAL`**
 
+> Partial basis: TM7 hubs lie on the locked AEA helix shell; classify the Ec21a layer using vestibule-residue→nearest-hub distances.
 > Hubs L287/N291/N295 son miembros de **TM7** (corredor AEA primario a nivel de hélice).  
 > Capas: bolsillo ortostérico/HU-308 vs plug Ec21a vestibular (ECL2).  
 > Helix membership ≠ tunnel atomístico AEA (trajs no desempaquetadas).
@@ -22,14 +23,14 @@
 
 ## Ec21a vestibule residues vs nearest TM7 hub
 
-| Residue | min Å → Ec21a | class | min Å → nearest hub TM7 |
-|---------|--------------:|-------|------------------------:|
-| SER268 | 3.18 | NEAR_LIGAND | 15.15 |
-| LYS278 | 3.58 | NEAR_LIGAND | 12.57 |
-| PHE183 | 3.37 | NEAR_LIGAND | 17.72 |
-| ILE186 | 3.55 | NEAR_LIGAND | 18.43 |
-| PRO176 | 12.97 | DISTAL | 31.80 |
-| PRO178 | 9.71 | DISTAL | 28.01 |
+| Residue | min Å → Ec21a | class | min Å → nearest hub TM7 | hub-distance class |
+|---------|--------------:|-------|------------------------:|--------------------|
+| SER268 | 3.18 | NEAR_LIGAND | 15.15 | **DISTAL** |
+| LYS278 | 3.58 | NEAR_LIGAND | 12.57 | **DISTAL** |
+| PHE183 | 3.37 | NEAR_LIGAND | 17.72 | **DISTAL** |
+| ILE186 | 3.55 | NEAR_LIGAND | 18.43 | **DISTAL** |
+| PRO176 | 12.97 | DISTAL | 31.80 | **DISTAL** |
+| PRO178 | 9.71 | DISTAL | 28.01 | **DISTAL** |
 
 ## Governance
 

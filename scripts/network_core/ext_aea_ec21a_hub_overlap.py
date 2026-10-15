@@ -178,21 +178,34 @@ def main() -> int:
         )
 
     hubs_tm7 = all("TM7" in r["helices"] for r in hub_rows)
-    ec_distal = all(r["class_Ec21a"] == "DISTAL" for r in hub_rows)
-    if n_near_hu >= 2 and n_shell_ec >= 1:
+    vestibule_hub_distances = [
+        r["min_A_to_nearest_TM7_hub"] for r in vest_rows
+    ]
+    required_distances_present = (
+        all(r["min_A_to_HU308_KO3"] is not None for r in hub_rows)
+        and all(r["min_A_to_Ec21a_A1EOL"] is not None for r in hub_rows)
+        and all(d is not None for d in vestibule_hub_distances)
+    )
+    vestibule_hub_classes = [_class(d) for d in vestibule_hub_distances]
+    vestibule_layered = bool(vestibule_hub_classes) and all(
+        c == "DISTAL" for c in vestibule_hub_classes
+    )
+    vestibule_mixed = (
+        "DISTAL" in vestibule_hub_classes
+        and any(c in ("NEAR_LIGAND", "SHELL") for c in vestibule_hub_classes)
+    )
+    if not required_distances_present:
+        verdict = "EXT_AEA_EC21A_HUB_OVERLAP_INDETERMINATE"
+    elif n_near_hu >= 2 and n_shell_ec >= 1:
         verdict = "EXT_AEA_EC21A_HUB_OVERLAP_STRONG"
-    elif hubs_tm7 and (
-        ec_distal
-        or n_near_hu >= 1
-        or any(r["class_CP55"] in ("NEAR_LIGAND", "SHELL") for r in hub_rows)
-    ):
+    elif hubs_tm7 and (vestibule_layered or vestibule_mixed):
         verdict = "EXT_AEA_EC21A_HUB_OVERLAP_PARTIAL"
     elif all(
         r["class_HU308"] == "DISTAL" and r["class_Ec21a"] == "DISTAL" for r in hub_rows
-    ):
+    ) and not hubs_tm7:
         verdict = "EXT_AEA_EC21A_HUB_OVERLAP_ABSENT"
     else:
-        verdict = "EXT_AEA_EC21A_HUB_OVERLAP_PARTIAL"
+        verdict = "EXT_AEA_EC21A_HUB_OVERLAP_INDETERMINATE"
 
     payload = {
         "experiment": "EXTERNAL_AEA_EC21A_HUB_OVERLAP",
@@ -215,6 +228,12 @@ def main() -> int:
             "n_hubs_NEAR_HU308": n_near_hu,
             "n_hubs_NEAR_Ec21a": n_near_ec,
             "n_hubs_SHELL_or_NEAR_Ec21a": n_shell_ec,
+            "n_vestibule_residues_DISTAL_from_TM7_hubs": sum(
+                c == "DISTAL" for c in vestibule_hub_classes
+            ),
+            "n_vestibule_residues_NEAR_or_SHELL_to_TM7_hubs": sum(
+                c in ("NEAR_LIGAND", "SHELL") for c in vestibule_hub_classes
+            ),
         },
         "governance": {
             "AEA_TRAJ_UNPACK": False,
@@ -247,6 +266,7 @@ def main() -> int:
         "",
         f"**`{verdict}`**",
         "",
+        "> Partial basis: TM7 hubs lie on the locked AEA helix shell; classify the Ec21a layer using vestibule-residue→nearest-hub distances.",
         "> Hubs L287/N291/N295 son miembros de **TM7** (corredor AEA primario a nivel de hélice).  ",
         "> Capas: bolsillo ortostérico/HU-308 vs plug Ec21a vestibular (ECL2).  ",
         "> Helix membership ≠ tunnel atomístico AEA (trajs no desempaquetadas).",
@@ -266,13 +286,14 @@ def main() -> int:
         "",
         "## Ec21a vestibule residues vs nearest TM7 hub",
         "",
-        "| Residue | min Å → Ec21a | class | min Å → nearest hub TM7 |",
-        "|---------|--------------:|-------|------------------------:|",
+        "| Residue | min Å → Ec21a | class | min Å → nearest hub TM7 | hub-distance class |",
+        "|---------|--------------:|-------|------------------------:|--------------------|",
     ]
     for r in vest_rows:
         lines.append(
             f"| {r['residue']} | {fmt(r['min_A_to_Ec21a'])} | {r['class_Ec21a']} | "
-            f"{fmt(r['min_A_to_nearest_TM7_hub'])} |"
+            f"{fmt(r['min_A_to_nearest_TM7_hub'])} | "
+            f"**{_class(r['min_A_to_nearest_TM7_hub'])}** |"
         )
     lines += [
         "",
