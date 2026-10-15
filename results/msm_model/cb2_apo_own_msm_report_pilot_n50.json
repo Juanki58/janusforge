@@ -1,0 +1,1528 @@
+{
+  "generated_utc": "2026-09-12T14:39:23Z",
+  "branch": "feat/cb2-hubs-functional-topology-test",
+  "preregistration": "docs\\synthesis\\EXPERIMENT_CB2_APO_OWN_MSM.md",
+  "verdicts": {
+    "EXT_OWN_MSM_STAGE0": "EXT_OWN_MSM_NON_CONVERGENT",
+    "ITS_VERDICT": "NON_CONVERGENT",
+    "CK_SOFT": "CK_SOFT_PASS",
+    "ALLOW_CONTACTS": "NO",
+    "P2_STATUS_UNCHANGED": "CLOSED_INSUFFICIENT_SAMPLING",
+    "DUTTA_STATES": "NOT_ALIGNED_OWN_STATES_ONLY"
+  },
+  "sampling": {
+    "n_per_state": 50,
+    "n_trajs": 100,
+    "cache_dir": "data\\external\\dutta_shukla_2023\\trajectories\\CB2_APO\\_cache_own_msm",
+    "extract": {
+      "ok": true,
+      "n_per_state": 50,
+      "dir": "data\\external\\dutta_shukla_2023\\trajectories\\CB2_APO\\_cache_own_msm\\nc",
+      "files": {
+        "inactive": [
+          "CB2-APO_inactive_pr_10_frame_0-strip.nc",
+          "CB2-APO_inactive_pr_10_frame_148-strip.nc",
+          "CB2-APO_inactive_pr_10_frame_198-strip.nc",
+          "CB2-APO_inactive_pr_10_frame_70-strip.nc",
+          "CB2-APO_inactive_pr_11_frame_118-strip.nc",
+          "CB2-APO_inactive_pr_11_frame_168-strip.nc",
+          "CB2-APO_inactive_pr_11_frame_37-strip.nc",
+          "CB2-APO_inactive_pr_11_frame_87-strip.nc",
+          "CB2-APO_inactive_pr_12_frame_136-strip.nc",
+          "CB2-APO_inactive_pr_12_frame_188-strip.nc",
+          "CB2-APO_inactive_pr_12_frame_59-strip.nc",
+          "CB2-APO_inactive_pr_13_frame_109-strip.nc",
+          "CB2-APO_inactive_pr_13_frame_158-strip.nc",
+          "CB2-APO_inactive_pr_13_frame_31-strip.nc",
+          "CB2-APO_inactive_pr_13_frame_80-strip.nc",
+          "CB2-APO_inactive_pr_14_frame_43-strip.nc",
+          "CB2-APO_inactive_pr_14_frame_94-strip.nc",
+          "CB2-APO_inactive_pr_15_frame_57-strip.nc",
+          "CB2-APO_inactive_pr_16_frame_20-strip.nc",
+          "CB2-APO_inactive_pr_16_frame_70-strip.nc",
+          "CB2-APO_inactive_pr_2_frame_1-strip.nc",
+          "CB2-APO_inactive_pr_2_frame_68-strip.nc",
+          "CB2-APO_inactive_pr_3_frame_12-strip.nc",
+          "CB2-APO_inactive_pr_3_frame_185-strip.nc",
+          "CB2-APO_inactive_pr_3_frame_242-strip.nc",
+          "CB2-APO_inactive_pr_3_frame_293-strip.nc",
+          "CB2-APO_inactive_pr_3_frame_79-strip.nc",
+          "CB2-APO_inactive_pr_4_frame_132-strip.nc",
+          "CB2-APO_inactive_pr_4_frame_187-strip.nc",
+          "CB2-APO_inactive_pr_4_frame_242-strip.nc",
+          "CB2-APO_inactive_pr_4_frame_32-strip.nc",
+          "CB2-APO_inactive_pr_4_frame_86-strip.nc",
+          "CB2-APO_inactive_pr_5_frame_138-strip.nc",
+          "CB2-APO_inactive_pr_5_frame_188-strip.nc",
+          "CB2-APO_inactive_pr_5_frame_58-strip.nc",
+          "CB2-APO_inactive_pr_6_frame_108-strip.nc",
+          "CB2-APO_inactive_pr_6_frame_158-strip.nc",
+          "CB2-APO_inactive_pr_6_frame_26-strip.nc",
+          "CB2-APO_inactive_pr_6_frame_78-strip.nc",
+          "CB2-APO_inactive_pr_7_frame_126-strip.nc",
+          "CB2-APO_inactive_pr_7_frame_175-strip.nc",
+          "CB2-APO_inactive_pr_7_frame_47-strip.nc",
+          "CB2-APO_inactive_pr_8_frame_10-strip.nc",
+          "CB2-APO_inactive_pr_8_frame_154-strip.nc",
+          "CB2-APO_inactive_pr_8_frame_28-strip.nc",
+          "CB2-APO_inactive_pr_8_frame_80-strip.nc",
+          "CB2-APO_inactive_pr_9_frame_128-strip.nc",
+          "CB2-APO_inactive_pr_9_frame_179-strip.nc",
+          "CB2-APO_inactive_pr_9_frame_48-strip.nc",
+          "CB2-APO_inactive_pr_9_frame_99-strip.nc"
+        ],
+        "active": [
+          "CB2-APO_active_pr_10_frame_1-strip.nc",
+          "CB2-APO_active_pr_10_frame_61-strip.nc",
+          "CB2-APO_active_pr_11_frame_127-strip.nc",
+          "CB2-APO_active_pr_11_frame_6-strip.nc",
+          "CB2-APO_active_pr_12_frame_24-strip.nc",
+          "CB2-APO_active_pr_13_frame_116-strip.nc",
+          "CB2-APO_active_pr_13_frame_162-strip.nc",
+          "CB2-APO_active_pr_13_frame_208-strip.nc",
+          "CB2-APO_active_pr_13_frame_260-strip.nc",
+          "CB2-APO_active_pr_13_frame_39-strip.nc",
+          "CB2-APO_active_pr_13_frame_88-strip.nc",
+          "CB2-APO_active_pr_14_frame_135-strip.nc",
+          "CB2-APO_active_pr_14_frame_182-strip.nc",
+          "CB2-APO_active_pr_14_frame_23-strip.nc",
+          "CB2-APO_active_pr_14_frame_279-strip.nc",
+          "CB2-APO_active_pr_14_frame_328-strip.nc",
+          "CB2-APO_active_pr_14_frame_375-strip.nc",
+          "CB2-APO_active_pr_14_frame_419-strip.nc",
+          "CB2-APO_active_pr_14_frame_466-strip.nc",
+          "CB2-APO_active_pr_14_frame_67-strip.nc",
+          "CB2-APO_active_pr_15_frame_122-strip.nc",
+          "CB2-APO_active_pr_15_frame_168-strip.nc",
+          "CB2-APO_active_pr_15_frame_217-strip.nc",
+          "CB2-APO_active_pr_15_frame_268-strip.nc",
+          "CB2-APO_active_pr_15_frame_316-strip.nc",
+          "CB2-APO_active_pr_15_frame_368-strip.nc",
+          "CB2-APO_active_pr_15_frame_418-strip.nc",
+          "CB2-APO_active_pr_15_frame_47-strip.nc",
+          "CB2-APO_active_pr_15_frame_7-strip.nc",
+          "CB2-APO_active_pr_16_frame_118-strip.nc",
+          "CB2-APO_active_pr_16_frame_17-strip.nc",
+          "CB2-APO_active_pr_16_frame_217-strip.nc",
+          "CB2-APO_active_pr_16_frame_263-strip.nc",
+          "CB2-APO_active_pr_16_frame_309-strip.nc",
+          "CB2-APO_active_pr_16_frame_357-strip.nc",
+          "CB2-APO_active_pr_16_frame_41-strip.nc",
+          "CB2-APO_active_pr_16_frame_458-strip.nc",
+          "CB2-APO_active_pr_16_frame_60-strip.nc",
+          "CB2-APO_active_pr_17_frame_18-strip.nc",
+          "CB2-APO_active_pr_2_frame_46-strip.nc",
+          "CB2-APO_active_pr_3_frame_54-strip.nc",
+          "CB2-APO_active_pr_4_frame_22-strip.nc",
+          "CB2-APO_active_pr_4_frame_71-strip.nc",
+          "CB2-APO_active_pr_5_frame_29-strip.nc",
+          "CB2-APO_active_pr_5_frame_78-strip.nc",
+          "CB2-APO_active_pr_6_frame_71-strip.nc",
+          "CB2-APO_active_pr_7_frame_31-strip.nc",
+          "CB2-APO_active_pr_7_frame_86-strip.nc",
+          "CB2-APO_active_pr_9_frame_47-strip.nc",
+          "CB2-APO_active_pr_9_frame_99-strip.nc"
+        ]
+      },
+      "pool_sizes": {
+        "inactive": 2598,
+        "active": 2373
+      },
+      "bytes_written_this_run": 2964781596,
+      "cache_nbytes": 3084838424,
+      "reused": false,
+      "seed": 20260912
+    },
+    "traj_names": [
+      "CB2-APO_inactive_pr_10_frame_0-strip.nc",
+      "CB2-APO_inactive_pr_10_frame_148-strip.nc",
+      "CB2-APO_inactive_pr_10_frame_198-strip.nc",
+      "CB2-APO_inactive_pr_10_frame_70-strip.nc",
+      "CB2-APO_inactive_pr_11_frame_118-strip.nc",
+      "CB2-APO_inactive_pr_11_frame_168-strip.nc",
+      "CB2-APO_inactive_pr_11_frame_37-strip.nc",
+      "CB2-APO_inactive_pr_11_frame_87-strip.nc",
+      "CB2-APO_inactive_pr_12_frame_136-strip.nc",
+      "CB2-APO_inactive_pr_12_frame_188-strip.nc",
+      "CB2-APO_inactive_pr_12_frame_59-strip.nc",
+      "CB2-APO_inactive_pr_13_frame_109-strip.nc",
+      "CB2-APO_inactive_pr_13_frame_158-strip.nc",
+      "CB2-APO_inactive_pr_13_frame_31-strip.nc",
+      "CB2-APO_inactive_pr_13_frame_80-strip.nc",
+      "CB2-APO_inactive_pr_14_frame_43-strip.nc",
+      "CB2-APO_inactive_pr_14_frame_94-strip.nc",
+      "CB2-APO_inactive_pr_15_frame_57-strip.nc",
+      "CB2-APO_inactive_pr_16_frame_20-strip.nc",
+      "CB2-APO_inactive_pr_16_frame_70-strip.nc",
+      "CB2-APO_inactive_pr_2_frame_1-strip.nc",
+      "CB2-APO_inactive_pr_2_frame_68-strip.nc",
+      "CB2-APO_inactive_pr_3_frame_12-strip.nc",
+      "CB2-APO_inactive_pr_3_frame_185-strip.nc",
+      "CB2-APO_inactive_pr_3_frame_242-strip.nc",
+      "CB2-APO_inactive_pr_3_frame_293-strip.nc",
+      "CB2-APO_inactive_pr_3_frame_79-strip.nc",
+      "CB2-APO_inactive_pr_4_frame_132-strip.nc",
+      "CB2-APO_inactive_pr_4_frame_187-strip.nc",
+      "CB2-APO_inactive_pr_4_frame_242-strip.nc",
+      "CB2-APO_inactive_pr_4_frame_32-strip.nc",
+      "CB2-APO_inactive_pr_4_frame_86-strip.nc",
+      "CB2-APO_inactive_pr_5_frame_138-strip.nc",
+      "CB2-APO_inactive_pr_5_frame_188-strip.nc",
+      "CB2-APO_inactive_pr_5_frame_58-strip.nc",
+      "CB2-APO_inactive_pr_6_frame_108-strip.nc",
+      "CB2-APO_inactive_pr_6_frame_158-strip.nc",
+      "CB2-APO_inactive_pr_6_frame_26-strip.nc",
+      "CB2-APO_inactive_pr_6_frame_78-strip.nc",
+      "CB2-APO_inactive_pr_7_frame_126-strip.nc",
+      "CB2-APO_inactive_pr_7_frame_175-strip.nc",
+      "CB2-APO_inactive_pr_7_frame_47-strip.nc",
+      "CB2-APO_inactive_pr_8_frame_10-strip.nc",
+      "CB2-APO_inactive_pr_8_frame_154-strip.nc",
+      "CB2-APO_inactive_pr_8_frame_28-strip.nc",
+      "CB2-APO_inactive_pr_8_frame_80-strip.nc",
+      "CB2-APO_inactive_pr_9_frame_128-strip.nc",
+      "CB2-APO_inactive_pr_9_frame_179-strip.nc",
+      "CB2-APO_inactive_pr_9_frame_48-strip.nc",
+      "CB2-APO_inactive_pr_9_frame_99-strip.nc",
+      "CB2-APO_active_pr_10_frame_1-strip.nc",
+      "CB2-APO_active_pr_10_frame_61-strip.nc",
+      "CB2-APO_active_pr_11_frame_127-strip.nc",
+      "CB2-APO_active_pr_11_frame_6-strip.nc",
+      "CB2-APO_active_pr_12_frame_24-strip.nc",
+      "CB2-APO_active_pr_13_frame_116-strip.nc",
+      "CB2-APO_active_pr_13_frame_162-strip.nc",
+      "CB2-APO_active_pr_13_frame_208-strip.nc",
+      "CB2-APO_active_pr_13_frame_260-strip.nc",
+      "CB2-APO_active_pr_13_frame_39-strip.nc",
+      "CB2-APO_active_pr_13_frame_88-strip.nc",
+      "CB2-APO_active_pr_14_frame_135-strip.nc",
+      "CB2-APO_active_pr_14_frame_182-strip.nc",
+      "CB2-APO_active_pr_14_frame_23-strip.nc",
+      "CB2-APO_active_pr_14_frame_279-strip.nc",
+      "CB2-APO_active_pr_14_frame_328-strip.nc",
+      "CB2-APO_active_pr_14_frame_375-strip.nc",
+      "CB2-APO_active_pr_14_frame_419-strip.nc",
+      "CB2-APO_active_pr_14_frame_466-strip.nc",
+      "CB2-APO_active_pr_14_frame_67-strip.nc",
+      "CB2-APO_active_pr_15_frame_122-strip.nc",
+      "CB2-APO_active_pr_15_frame_168-strip.nc",
+      "CB2-APO_active_pr_15_frame_217-strip.nc",
+      "CB2-APO_active_pr_15_frame_268-strip.nc",
+      "CB2-APO_active_pr_15_frame_316-strip.nc",
+      "CB2-APO_active_pr_15_frame_368-strip.nc",
+      "CB2-APO_active_pr_15_frame_418-strip.nc",
+      "CB2-APO_active_pr_15_frame_47-strip.nc",
+      "CB2-APO_active_pr_15_frame_7-strip.nc",
+      "CB2-APO_active_pr_16_frame_118-strip.nc",
+      "CB2-APO_active_pr_16_frame_17-strip.nc",
+      "CB2-APO_active_pr_16_frame_217-strip.nc",
+      "CB2-APO_active_pr_16_frame_263-strip.nc",
+      "CB2-APO_active_pr_16_frame_309-strip.nc",
+      "CB2-APO_active_pr_16_frame_357-strip.nc",
+      "CB2-APO_active_pr_16_frame_41-strip.nc",
+      "CB2-APO_active_pr_16_frame_458-strip.nc",
+      "CB2-APO_active_pr_16_frame_60-strip.nc",
+      "CB2-APO_active_pr_17_frame_18-strip.nc",
+      "CB2-APO_active_pr_2_frame_46-strip.nc",
+      "CB2-APO_active_pr_3_frame_54-strip.nc",
+      "CB2-APO_active_pr_4_frame_22-strip.nc",
+      "CB2-APO_active_pr_4_frame_71-strip.nc",
+      "CB2-APO_active_pr_5_frame_29-strip.nc",
+      "CB2-APO_active_pr_5_frame_78-strip.nc",
+      "CB2-APO_active_pr_6_frame_71-strip.nc",
+      "CB2-APO_active_pr_7_frame_31-strip.nc",
+      "CB2-APO_active_pr_7_frame_86-strip.nc",
+      "CB2-APO_active_pr_9_frame_47-strip.nc",
+      "CB2-APO_active_pr_9_frame_99-strip.nc"
+    ],
+    "filename_class_note": "inactive/active in filenames = deposit start-structure class, NOT our MSM states"
+  },
+  "residue_map": {
+    "alignment_identity": 1.0,
+    "all_pairs_ok": true,
+    "n_protein_residues": 284,
+    "mapped_pairs": [
+      {
+        "uniprot": [
+          131,
+          245
+        ],
+        "topo": [
+          111,
+          213
+        ],
+        "role": "Arg3.50-Lys6.35",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          131,
+          240
+        ],
+        "topo": [
+          111,
+          208
+        ],
+        "role": "Arg3.50-Asp6.30",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          131,
+          258
+        ],
+        "topo": [
+          111,
+          226
+        ],
+        "role": "Arg3.50-Trp6.48",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          128,
+          245
+        ],
+        "topo": [
+          108,
+          213
+        ],
+        "role": "Tyr3.47region-Lys6.35",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          211,
+          258
+        ],
+        "topo": [
+          191,
+          226
+        ],
+        "role": "Pro5.50-Trp6.48",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          207,
+          258
+        ],
+        "topo": [
+          187,
+          226
+        ],
+        "role": "TM5mid-Trp6.48",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          215,
+          245
+        ],
+        "topo": [
+          195,
+          213
+        ],
+        "role": "TM5IC-Lys6.35",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          215,
+          240
+        ],
+        "topo": [
+          195,
+          208
+        ],
+        "role": "TM5IC-Asp6.30",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          201,
+          258
+        ],
+        "topo": [
+          181,
+          226
+        ],
+        "role": "TM5mid2-Trp6.48",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          258,
+          291
+        ],
+        "topo": [
+          226,
+          259
+        ],
+        "role": "Trp6.48-Asn7.45",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          258,
+          295
+        ],
+        "topo": [
+          226,
+          263
+        ],
+        "role": "Trp6.48-Asn7.49",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          258,
+          285
+        ],
+        "topo": [
+          226,
+          253
+        ],
+        "role": "Trp6.48-Ser7.39",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          245,
+          291
+        ],
+        "topo": [
+          213,
+          259
+        ],
+        "role": "Lys6.35-Asn7.45",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          240,
+          295
+        ],
+        "topo": [
+          208,
+          263
+        ],
+        "role": "Asp6.30-Asn7.49",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          264,
+          295
+        ],
+        "topo": [
+          232,
+          263
+        ],
+        "role": "TM6Cterm-Asn7.49",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          131,
+          295
+        ],
+        "topo": [
+          111,
+          263
+        ],
+        "role": "Arg3.50-Asn7.49",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          131,
+          291
+        ],
+        "topo": [
+          111,
+          259
+        ],
+        "role": "Arg3.50-Asn7.45",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          83,
+          291
+        ],
+        "topo": [
+          63,
+          259
+        ],
+        "role": "Ala2.53-Asn7.45",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          79,
+          291
+        ],
+        "topo": [
+          59,
+          259
+        ],
+        "role": "Ala2.49-Asn7.45",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          87,
+          285
+        ],
+        "topo": [
+          67,
+          253
+        ],
+        "role": "Phe87-Ser285",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          183,
+          258
+        ],
+        "topo": [
+          163,
+          226
+        ],
+        "role": "PheECL2-Trp6.48",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          268,
+          285
+        ],
+        "topo": [
+          236,
+          253
+        ],
+        "role": "Ser6.58-Ser7.39",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          287,
+          295
+        ],
+        "topo": [
+          255,
+          263
+        ],
+        "role": "Leu7.41-Asn7.49",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          302,
+          295
+        ],
+        "topo": [
+          270,
+          263
+        ],
+        "role": "Arg8.46-Asn7.49",
+        "ok": true
+      }
+    ]
+  },
+  "featurization": {
+    "featurization": "x8_reduced_ca_uniprot_mapped_to_topo",
+    "n_features": 24,
+    "pairs": [
+      {
+        "uniprot": [
+          131,
+          245
+        ],
+        "topo": [
+          111,
+          213
+        ],
+        "role": "Arg3.50-Lys6.35",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          131,
+          240
+        ],
+        "topo": [
+          111,
+          208
+        ],
+        "role": "Arg3.50-Asp6.30",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          131,
+          258
+        ],
+        "topo": [
+          111,
+          226
+        ],
+        "role": "Arg3.50-Trp6.48",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          128,
+          245
+        ],
+        "topo": [
+          108,
+          213
+        ],
+        "role": "Tyr3.47region-Lys6.35",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          211,
+          258
+        ],
+        "topo": [
+          191,
+          226
+        ],
+        "role": "Pro5.50-Trp6.48",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          207,
+          258
+        ],
+        "topo": [
+          187,
+          226
+        ],
+        "role": "TM5mid-Trp6.48",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          215,
+          245
+        ],
+        "topo": [
+          195,
+          213
+        ],
+        "role": "TM5IC-Lys6.35",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          215,
+          240
+        ],
+        "topo": [
+          195,
+          208
+        ],
+        "role": "TM5IC-Asp6.30",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          201,
+          258
+        ],
+        "topo": [
+          181,
+          226
+        ],
+        "role": "TM5mid2-Trp6.48",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          258,
+          291
+        ],
+        "topo": [
+          226,
+          259
+        ],
+        "role": "Trp6.48-Asn7.45",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          258,
+          295
+        ],
+        "topo": [
+          226,
+          263
+        ],
+        "role": "Trp6.48-Asn7.49",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          258,
+          285
+        ],
+        "topo": [
+          226,
+          253
+        ],
+        "role": "Trp6.48-Ser7.39",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          245,
+          291
+        ],
+        "topo": [
+          213,
+          259
+        ],
+        "role": "Lys6.35-Asn7.45",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          240,
+          295
+        ],
+        "topo": [
+          208,
+          263
+        ],
+        "role": "Asp6.30-Asn7.49",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          264,
+          295
+        ],
+        "topo": [
+          232,
+          263
+        ],
+        "role": "TM6Cterm-Asn7.49",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          131,
+          295
+        ],
+        "topo": [
+          111,
+          263
+        ],
+        "role": "Arg3.50-Asn7.49",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          131,
+          291
+        ],
+        "topo": [
+          111,
+          259
+        ],
+        "role": "Arg3.50-Asn7.45",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          83,
+          291
+        ],
+        "topo": [
+          63,
+          259
+        ],
+        "role": "Ala2.53-Asn7.45",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          79,
+          291
+        ],
+        "topo": [
+          59,
+          259
+        ],
+        "role": "Ala2.49-Asn7.45",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          87,
+          285
+        ],
+        "topo": [
+          67,
+          253
+        ],
+        "role": "Phe87-Ser285",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          183,
+          258
+        ],
+        "topo": [
+          163,
+          226
+        ],
+        "role": "PheECL2-Trp6.48",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          268,
+          285
+        ],
+        "topo": [
+          236,
+          253
+        ],
+        "role": "Ser6.58-Ser7.39",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          287,
+          295
+        ],
+        "topo": [
+          255,
+          263
+        ],
+        "role": "Leu7.41-Asn7.49",
+        "ok": true
+      },
+      {
+        "uniprot": [
+          302,
+          295
+        ],
+        "topo": [
+          270,
+          263
+        ],
+        "role": "Arg8.46-Asn7.49",
+        "ok": true
+      }
+    ],
+    "alignment_identity": 1.0,
+    "per_trajectory": [
+      {
+        "file": "CB2-APO_inactive_pr_10_frame_0-strip.nc",
+        "n_frames": 557,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_10_frame_148-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_10_frame_198-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_10_frame_70-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_11_frame_118-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_11_frame_168-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_11_frame_37-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_11_frame_87-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_12_frame_136-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_12_frame_188-strip.nc",
+        "n_frames": 459,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_12_frame_59-strip.nc",
+        "n_frames": 484,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_13_frame_109-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_13_frame_158-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_13_frame_31-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_13_frame_80-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_14_frame_43-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_14_frame_94-strip.nc",
+        "n_frames": 401,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_15_frame_57-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_16_frame_20-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_16_frame_70-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_2_frame_1-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_2_frame_68-strip.nc",
+        "n_frames": 291,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_3_frame_12-strip.nc",
+        "n_frames": 415,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_3_frame_185-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_3_frame_242-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_3_frame_293-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_3_frame_79-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_4_frame_132-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_4_frame_187-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_4_frame_242-strip.nc",
+        "n_frames": 541,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_4_frame_32-strip.nc",
+        "n_frames": 449,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_4_frame_86-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_5_frame_138-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_5_frame_188-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_5_frame_58-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_6_frame_108-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_6_frame_158-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_6_frame_26-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_6_frame_78-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_7_frame_126-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_7_frame_175-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_7_frame_47-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_8_frame_10-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_8_frame_154-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_8_frame_28-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_8_frame_80-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_9_frame_128-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_9_frame_179-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_9_frame_48-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_inactive_pr_9_frame_99-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_10_frame_1-strip.nc",
+        "n_frames": 432,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_10_frame_61-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_11_frame_127-strip.nc",
+        "n_frames": 337,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_11_frame_6-strip.nc",
+        "n_frames": 299,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_12_frame_24-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_13_frame_116-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_13_frame_162-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_13_frame_208-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_13_frame_260-strip.nc",
+        "n_frames": 537,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_13_frame_39-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_13_frame_88-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_14_frame_135-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_14_frame_182-strip.nc",
+        "n_frames": 507,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_14_frame_23-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_14_frame_279-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_14_frame_328-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_14_frame_375-strip.nc",
+        "n_frames": 388,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_14_frame_419-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_14_frame_466-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_14_frame_67-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_122-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_168-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_217-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_268-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_316-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_368-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_418-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_47-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_15_frame_7-strip.nc",
+        "n_frames": 479,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_118-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_17-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_217-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_263-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_309-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_357-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_41-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_458-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_16_frame_60-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_17_frame_18-strip.nc",
+        "n_frames": 275,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_2_frame_46-strip.nc",
+        "n_frames": 500,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_3_frame_54-strip.nc",
+        "n_frames": 468,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_4_frame_22-strip.nc",
+        "n_frames": 500,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_4_frame_71-strip.nc",
+        "n_frames": 311,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_5_frame_29-strip.nc",
+        "n_frames": 384,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_5_frame_78-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_6_frame_71-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_7_frame_31-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_7_frame_86-strip.nc",
+        "n_frames": 432,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_9_frame_47-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      },
+      {
+        "file": "CB2-APO_active_pr_9_frame_99-strip.nc",
+        "n_frames": 600,
+        "n_features": 24,
+        "dt_mda": 100.0
+      }
+    ],
+    "n_frames_total": 56246,
+    "frame_dt_ns_assumed": 0.1,
+    "featurize_wall_s": 13.616377353668213,
+    "max_workers": 4,
+    "preregistration": "docs\\synthesis\\EXPERIMENT_CB2_APO_OWN_MSM.md",
+    "saved_cache": "data\\external\\dutta_shukla_2023\\trajectories\\CB2_APO\\_cache_own_msm\\features_x8_ca.npz"
+  },
+  "tica_kmeans": {
+    "tica_lag_frames": 5,
+    "tica_dim": 5,
+    "n_microstates": 50,
+    "kmeans_seed": 20260912,
+    "kmeans_max_iter": 500
+  },
+  "implied_timescales_assessment": {
+    "verdict": "NON_CONVERGENT",
+    "reason": "slowest ITS relative change late-vs-mid thirds = 0.953 (flat\u22640.25, marginal\u22640.5)",
+    "slowest_rel_change": 0.952928912186463,
+    "late_mean_frames": 17294.5004158071,
+    "mid_mean_frames": 8855.673295575565,
+    "recommended_lag_frames": 30,
+    "n_finite_slowest": 10,
+    "connected_states_per_lag": [
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50
+    ],
+    "tol_flat": 0.25,
+    "tol_marginal": 0.5
+  },
+  "implied_timescales": {
+    "lags_frames": [
+      1,
+      2,
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      40,
+      50
+    ],
+    "n_its": 8,
+    "plot": "results\\msm_model\\cb2_apo_own_msm_its.png",
+    "json": "results\\msm_model\\cb2_apo_own_msm_its.json"
+  },
+  "soft_ck": {
+    "status": "CK_SOFT_PASS",
+    "lag_frames": 30,
+    "lag2_frames": 60,
+    "rel_frobenius_error": 0.2120717507450465,
+    "threshold": 0.35,
+    "n_shared_states": 50
+  },
+  "lag_used_frames": 30,
+  "populations": [],
+  "n_metastable_pcca": null,
+  "contacts_verdict": "ABORTED",
+  "software_versions": {
+    "numpy": "2.4.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "matplotlib": "3.11.1",
+    "MDAnalysis": "2.10.0",
+    "deeptime": "0.4.5",
+    "python": "3.12.13"
+  },
+  "topology_sha256": "db7182785383ee12\u2026",
+  "wall_s": 32.77065563201904,
+  "budgets": {
+    "max_cache_bytes": 8589934592,
+    "max_wall_s": 14400,
+    "cache_nbytes": 3090270664
+  },
+  "epistemology": {
+    "own_states_ne_dutta_I1_I4": true,
+    "p2_reopened": false,
+    "gi_claims": false,
+    "docking": false,
+    "full_zip_unpacked": false
+  },
+  "locked_pilot": {
+    "n_per_state": 50,
+    "n_trajs": 100,
+    "n_frames": 56246,
+    "stage0": "EXT_OWN_MSM_NON_CONVERGENT",
+    "contacts": "ABORTED",
+    "scale_up": "--n-per-state 100 under same featurization; human decision"
+  }
+}

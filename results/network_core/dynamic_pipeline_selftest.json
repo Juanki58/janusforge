@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-20T23:19:16Z",
+  "mode": "SYNTHETIC_SELFTEST_DATA_BLIND",
+  "protocol": "docs/synthesis/DYNAMIC_REANALYSIS_PROTOCOL.md",
+  "p1_null_preregistered": {
+    "name": "exact_in_out_degree_multiset_match",
+    "n_null": 200,
+    "alpha": 0.05,
+    "primary_metric": "pct_disconn",
+    "tail": "upper",
+    "reproducibility": {
+      "min_replicas": 2,
+      "min_states_if_msm": 2,
+      "hub_rank_spearman_min": 0.7,
+      "note": "If reproducibility gate fails -> INDETERMINATE, not retune alpha"
+    },
+    "forbidden": [
+      "universal_W=-ln(p)",
+      "a_priori_flow_gt_50pct",
+      "post_hoc_hub_list",
+      "call_result_switch"
+    ]
+  },
+  "pipeline_stages": [
+    "trajectories",
+    "normalize_select_frames",
+    "persistence_net",
+    "communication_net",
+    "microstates_msm",
+    "centrality_paths_robustness",
+    "mutagenesis_cross",
+    "cb1_comparison",
+    "optional_membrane_module"
+  ],
+  "optional_deps": {
+    "MDAnalysis": false,
+    "PyEMMA": false,
+    "networkx": true,
+    "numpy": true
+  },
+  "tests": [
+    {
+      "name": "noise_no_false_hubs",
+      "passed": true,
+      "detail": {
+        "obs_pct_disconn": 0.0,
+        "null_mean": 0.0,
+        "p_upper": 1.0,
+        "alpha": 0.05,
+        "null_rule": "exact_in_out_degree_multiset_match",
+        "expectation": "p >= alpha (no false bottleneck call)"
+      }
+    },
+    {
+      "name": "planted_bottleneck_recovered",
+      "passed": true,
+      "detail": {
+        "obs_pct_disconn": 1.0,
+        "p_upper": 0.009900990099009901,
+        "flow_fraction": 1.0,
+        "null_rule": "exact_in_out_degree_multiset_match",
+        "expectation": "obs~1, p<alpha, high flow through planted B"
+      }
+    },
+    {
+      "name": "null_distribution_shape",
+      "passed": true,
+      "detail": {
+        "n_pvalues": 30,
+        "median_p": 1.0,
+        "frac_p_lt_alpha": 0.0,
+        "expectation": "FPR not inflated; median p not near 0"
+      }
+    },
+    {
+      "name": "persistence_vs_communication_not_mixed",
+      "passed": true,
+      "detail": {
+        "n_contact_edges": 30,
+        "n_info_edges": 37,
+        "high_weight_overlap": 0,
+        "expectation": "anti-correlated blocks => zero high-weight edge overlap"
+      }
+    },
+    {
+      "name": "microstate_seed_frame_order_independence",
+      "passed": true,
+      "detail": {
+        "same_seed_identical": true,
+        "shuffle_order_equiv_up_to_perm": true,
+        "recovers_truth_seed0": true,
+        "recovers_truth_seed7": true,
+        "expectation": "k-means on separated blobs stable to seed/order (label perm OK)"
+      }
+    }
+  ],
+  "all_passed": true,
+  "naming_lock": "never call result switch"
+}

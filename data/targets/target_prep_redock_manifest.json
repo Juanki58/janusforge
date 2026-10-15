@@ -1,0 +1,88 @@
+{
+  "targets": {
+    "cb1_5tgz": {
+      "center_x": 43.638,
+      "center_y": 27.47,
+      "center_z": 318.531,
+      "size_x": 20.0,
+      "size_y": 20.0,
+      "size_z": 20.0,
+      "source": "co-crystallized_ligand_centroid",
+      "ligand_resname": "ZDG",
+      "ligand_chain": "A",
+      "ligand_resseq": 2001,
+      "ligand_natoms": 33,
+      "ligand_pdb": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb1\\5TGZ_ligand.pdb",
+      "receptor_pdbqt": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb1\\cb1_5tgz_clean.pdbqt",
+      "receptor_pdbqt_legacy": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb1\\5TGZ_rec.pdbqt",
+      "clean_pdb": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb1\\5TGZ_clean.pdb",
+      "pdb_id": "5TGZ",
+      "chains_kept": [
+        "A"
+      ],
+      "grid_config": "configs/grid_cb1_5tgz.txt"
+    },
+    "cb2_6pt0": {
+      "center_x": 98.379,
+      "center_y": 109.559,
+      "center_z": 123.801,
+      "size_x": 20.0,
+      "size_y": 20.0,
+      "size_z": 20.0,
+      "source": "co-crystallized_ligand_centroid",
+      "ligand_resname": "WI5",
+      "ligand_chain": "R",
+      "ligand_resseq": 401,
+      "ligand_natoms": 32,
+      "ligand_pdb": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb2\\6PT0_ligand.pdb",
+      "receptor_pdbqt": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb2\\cb2_6pt0_clean.pdbqt",
+      "receptor_pdbqt_legacy": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb2\\6PT0_rec.pdbqt",
+      "clean_pdb": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb2\\6PT0_clean.pdb",
+      "pdb_id": "6PT0",
+      "chains_kept": [
+        "R"
+      ],
+      "grid_config": "configs/grid_cb2_6pt0.txt"
+    },
+    "cb2_6kpc": {
+      "center_x": 10.524,
+      "center_y": 1.258,
+      "center_z": -45.17,
+      "size_x": 20.0,
+      "size_y": 20.0,
+      "size_z": 20.0,
+      "source": "co-crystallized_ligand_centroid",
+      "ligand_resname": "E3R",
+      "ligand_chain": "A",
+      "ligand_resseq": 1201,
+      "ligand_natoms": 29,
+      "ligand_pdb": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb2\\6KPC_ligand.pdb",
+      "receptor_pdbqt": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb2\\cb2_6kpc_clean.pdbqt",
+      "receptor_pdbqt_legacy": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb2\\6KPC_rec.pdbqt",
+      "clean_pdb": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb2\\6KPC_clean.pdb",
+      "pdb_id": "6KPC",
+      "chains_kept": [
+        "A"
+      ],
+      "grid_config": "configs/grid_cb2_6kpc.txt"
+    }
+  },
+  "ref_ligands": {
+    "apd371": {
+      "pdb_id": "8GUQ",
+      "ligand_resname": "KNF",
+      "ligand_chain": "R",
+      "ligand_resseq": 401,
+      "ligand_natoms": 26,
+      "ligand_pdb": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb2\\8GUQ_apd371_ligand.pdb",
+      "ref_ligand_pdbqt": "C:\\Users\\juanc\\projects\\janusforge\\data\\targets\\cb2\\apd371_ref.pdbqt",
+      "note": "APD371/Olorinab extra\u00eddo de 8GUQ (6KPC contiene agonista E3R, no APD371)"
+    }
+  },
+  "box_size_A": 20.0,
+  "notes": {
+    "6KPC_ligand": "E3R (agonista cristal); APD371 proviene de 8GUQ (KNF)",
+    "6PT0_chains": "Solo cadena R (CNR2); Gi/Nb35 excluidos",
+    "5TGZ_chains": "Cadena A (CNR1 chimera)"
+  }
+}

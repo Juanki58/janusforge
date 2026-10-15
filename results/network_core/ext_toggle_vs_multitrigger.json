@@ -1,0 +1,60 @@
+{
+  "experiment": "EXTERNAL_TOGGLE_VS_MULTITRIGGER",
+  "pre_reg": "docs/synthesis/EXPERIMENT_EXT_TOGGLE_VS_MULTITRIGGER.md",
+  "run_utc": "2026-10-02T23:01:01Z",
+  "verdict": "EXT_TOGGLE_VS_MULTITRIGGER_LEVEL_DISTINCT",
+  "si_pdf_present": true,
+  "rows": [
+    {
+      "id": 1,
+      "prediction": "PrefCoup_Gαi2 arises from mutations that need not hit W258",
+      "toggle_continuum": "Neutral/underspecified — continuum is ligand–W258 efficacy, not PrefCoup mutant census",
+      "multi_trigger": "SUPPORTED — clusters 1–3 mutate sites across TM3/5/7/ECL2; W258 not required as mutant site",
+      "relation": "LEVEL_OK",
+      "anchor": "Morales SI Table 1 / clusters; Ganzoni scaffold edits"
+    },
+    {
+      "id": 2,
+      "prediction": "W258 partner-contact stability changes in some PrefCoup clusters only",
+      "toggle_continuum": "Would predict W258 contacts always central if toggle were unique PrefCoup gate",
+      "multi_trigger": "SUPPORTED — SI Note 1: cluster1 W258–L195↑; cluster2 W258–C288/N291↓; cluster3 CWxP not highlighted",
+      "relation": "CONFLICT",
+      "anchor": "Morales SI Note 1 (MOESM1)"
+    },
+    {
+      "id": 3,
+      "prediction": "Single-position HU-308 edits retune efficacy continuum via W258 without unique PrefCoup path claim",
+      "toggle_continuum": "SUPPORTED — Ganzoni / Kosar",
+      "multi_trigger": "Compatible — does not assert single PrefCoup trigger",
+      "relation": "LEVEL_OK",
+      "anchor": "DOI 10.1039/D6SC00062B; 10.1021/acscentsci.3c01461"
+    },
+    {
+      "id": 4,
+      "prediction": "Na-site / NPxxY / DRY appear as PrefCoup features independent of CWxP in ≥1 cluster",
+      "toggle_continuum": "False if toggle-only model of PrefCoup",
+      "multi_trigger": "SUPPORTED — cluster3 NPxxY+Na+DRY; cluster2 Na+DRY+EC TM7/1/2; CWxP not universal",
+      "relation": "CONFLICT",
+      "anchor": "Morales SI Note 1 + Fig. 5E summary"
+    },
+    {
+      "id": 5,
+      "prediction": "Operational chain ligando → Trp258 → Gαi2 is sufficient",
+      "toggle_continuum": "Tempting over-read of Ganzoni — NOT claimed as Gi-sufficient by authors as unique path",
+      "multi_trigger": "REJECTED — multiple triggers → same PrefCoup; LigACN distributed",
+      "relation": "CONFLICT",
+      "anchor": "Morales title/abstract; project RESEARCH_STATE prohibition"
+    }
+  ],
+  "governance": {
+    "P2_REOPEN": false,
+    "Gi_FUNCTIONAL_CLAIM": false,
+    "docking": "STOP",
+    "note": "Level-distinct: pocket efficacy continuum vs PrefCoup multi-entry — both lit-true; chain→Gi forbidden"
+  },
+  "dois": [
+    "10.1039/D6SC00062B",
+    "10.1021/acscentsci.3c01461",
+    "10.1038/s41467-025-60003-0"
+  ]
+}

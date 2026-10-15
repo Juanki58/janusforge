@@ -1,0 +1,302 @@
+{
+  "its": {
+    "lags_frames": [
+      1,
+      2,
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      40,
+      50
+    ],
+    "lags_ns_assumed": [
+      1.0,
+      2.0,
+      5.0,
+      10.0,
+      15.0,
+      20.0,
+      25.0,
+      30.0,
+      40.0,
+      50.0
+    ],
+    "n_its_requested": 8,
+    "its_frames": [
+      [
+        4.9863768291458666,
+        3.294745476562783,
+        2.836871379327015,
+        2.2562237772438016,
+        2.1171406391606986,
+        2.027602052205948,
+        1.8506152224084904,
+        1.5911405871025346
+      ],
+      [
+        8.593920412530057,
+        8.09456593001211,
+        7.969722400168415,
+        6.492972231295999,
+        5.858830438094319,
+        4.639577682529676,
+        4.575986651633937,
+        4.369756431999924
+      ],
+      [
+        197.00869836288268,
+        51.3677509018126,
+        32.79971776918245,
+        26.352592543383086,
+        8.327356345099313,
+        5.265646494496598,
+        4.612079368328858,
+        NaN
+      ],
+      [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ],
+      [
+        590.7160118904138,
+        154.1011482635121,
+        98.38742325315812,
+        79.06546973386921,
+        24.98361141233862,
+        15.797282923995834,
+        13.836384162524045,
+        NaN
+      ],
+      [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ],
+      [
+        983.9828511796013,
+        256.8315767687307,
+        163.9584644494381,
+        131.7892890995077,
+        41.642058694584065,
+        26.32940761652988,
+        23.060896961262063,
+        NaN
+      ],
+      [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ],
+      [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ],
+      [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ]
+    ],
+    "per_lag": [
+      {
+        "lag_frames": 1,
+        "lag_ns_assumed": 1.0,
+        "timescales_frames": [
+          4.9863768291458666,
+          3.294745476562783,
+          2.836871379327015,
+          2.2562237772438016,
+          2.1171406391606986,
+          2.027602052205948,
+          1.8506152224084904,
+          1.5911405871025346
+        ],
+        "n_states_connected": 25
+      },
+      {
+        "lag_frames": 2,
+        "lag_ns_assumed": 2.0,
+        "timescales_frames": [
+          8.593920412530057,
+          8.09456593001211,
+          7.969722400168415,
+          6.492972231295999,
+          5.858830438094319,
+          4.639577682529676,
+          4.575986651633937,
+          4.369756431999924
+        ],
+        "n_states_connected": 25
+      },
+      {
+        "lag_frames": 5,
+        "lag_ns_assumed": 5.0,
+        "timescales_frames": [
+          197.00869836288268,
+          51.3677509018126,
+          32.79971776918245,
+          26.352592543383086,
+          8.327356345099313,
+          5.265646494496598,
+          4.612079368328858,
+          NaN
+        ],
+        "n_states_connected": 8
+      },
+      {
+        "lag_frames": 10,
+        "lag_ns_assumed": 10.0,
+        "timescales_frames": [
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        "n_states_connected": 1
+      },
+      {
+        "lag_frames": 15,
+        "lag_ns_assumed": 15.0,
+        "timescales_frames": [
+          590.7160118904138,
+          154.1011482635121,
+          98.38742325315812,
+          79.06546973386921,
+          24.98361141233862,
+          15.797282923995834,
+          13.836384162524045,
+          NaN
+        ],
+        "n_states_connected": 8
+      },
+      {
+        "lag_frames": 20,
+        "lag_ns_assumed": 20.0,
+        "timescales_frames": [
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        "n_states_connected": 1
+      },
+      {
+        "lag_frames": 25,
+        "lag_ns_assumed": 25.0,
+        "timescales_frames": [
+          983.9828511796013,
+          256.8315767687307,
+          163.9584644494381,
+          131.7892890995077,
+          41.642058694584065,
+          26.32940761652988,
+          23.060896961262063,
+          NaN
+        ],
+        "n_states_connected": 8
+      },
+      {
+        "lag_frames": 30,
+        "lag_ns_assumed": 30.0,
+        "timescales_frames": [
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        "n_states_connected": 1
+      },
+      {
+        "lag_frames": 40,
+        "lag_ns_assumed": 40.0,
+        "timescales_frames": [
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        "n_states_connected": 1
+      },
+      {
+        "lag_frames": 50,
+        "lag_ns_assumed": 50.0,
+        "timescales_frames": [
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        "n_states_connected": 1
+      }
+    ]
+  },
+  "assessment": {
+    "verdict": "NON_CONVERGENT",
+    "reason": "pathological ITS spectrum: 5/10 lags with non-finite or non-positive slowest timescale; connected-state counts=[25, 25, 8, 1, 8, 1, 8, 1, 1, 1]",
+    "slowest_rel_change": null,
+    "recommended_lag_frames": 1,
+    "n_finite_slowest": 5,
+    "connected_states_per_lag": [
+      25,
+      25,
+      8,
+      1,
+      8,
+      1,
+      8,
+      1,
+      1,
+      1
+    ]
+  }
+}

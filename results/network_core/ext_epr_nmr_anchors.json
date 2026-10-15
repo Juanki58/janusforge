@@ -1,0 +1,59 @@
+{
+  "experiment": "EXTERNAL_EPR_NMR_ANCHORS",
+  "pre_reg": "docs/synthesis/EXPERIMENT_EXT_EPR_NMR_ANCHORS.md",
+  "run_utc": "2026-09-22T05:00:00Z",
+  "verdict": "EXT_EPR_NMR_ANCHORS_PARTIAL_AGREE",
+  "secondary": {
+    "DEER_CB2": "ABSENT",
+    "restraints_added": false,
+    "p2_reopen": false,
+    "gi_claim": false
+  },
+  "sites": [
+    {
+      "id": "EPR_ICL3_CENTER",
+      "residues": ["H217", "G225"],
+      "lit": "High CW-EPR mobility (Yeliseev 2021)",
+      "repo_prior": "IC TM3-TM6 opening; IL3 absent from inactive crystal construct; not in six hubs",
+      "call": "AGREE"
+    },
+    {
+      "id": "EPR_A270C_TM6_EC",
+      "residues": ["A270"],
+      "lit": "More mobile with CP-55,940 vs SR-144,528",
+      "repo_prior": "Not in Phase F/G feature set",
+      "call": "NO_PRIOR_PRED"
+    },
+    {
+      "id": "NMR_M237_ICL3",
+      "residues": ["M237"],
+      "lit": "Broad DNP-MAS conformational space",
+      "repo_prior": "ICL3 flex / non-hub",
+      "call": "AGREE"
+    },
+    {
+      "id": "NMR_M293_TM7",
+      "residues": ["M293"],
+      "lit": "Restricted + ligand-sensitive near NPxxY",
+      "repo_prior": "TM7 hubs LEU287/ASN291/ASN295; STATIC_BOTTLENECKS",
+      "call": "AGREE"
+    },
+    {
+      "id": "DEER_PROPOSED",
+      "residues": [],
+      "lit": "Proposed, not published as CB2 distance map",
+      "repo_prior": null,
+      "call": "ABSENT_RESTRAINT"
+    }
+  ],
+  "phase_f_tm3_tm6_ic_A": {
+    "5ZTY": 10.2797,
+    "6KPF": 14.796,
+    "6PT0": 15.3343
+  },
+  "dois": [
+    "10.1016/j.bbamem.2021.183603",
+    "10.1021/acsomega.3c04681",
+    "10.1038/s41598-021-83245-6"
+  ]
+}

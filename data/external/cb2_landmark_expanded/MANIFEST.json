@@ -1,0 +1,290 @@
+{
+  "experiment": "EXPERIMENT_CB2_LANDMARK_EXPANDED",
+  "prereg": "docs/synthesis/EXPERIMENT_CB2_LANDMARK_EXPANDED.md",
+  "created_utc": "2026-09-21T00:00:00Z",
+  "note": "Gate0 pass/drop filled by runner; geometric landmark \u2260 MSM state.",
+  "dutta_fig6": {
+    "dir": "data/external/dutta_shukla_2023/main_figure_6",
+    "landmarks": [
+      {
+        "id": "dutta_inactive",
+        "file": "CB2_ref_inactive_3_b.pdb",
+        "state_ligand": "Dutta Fig.6 inactive ref (geometric)"
+      },
+      {
+        "id": "dutta_I1",
+        "file": "CB2_ref_inactive_I1_b.pdb",
+        "state_ligand": "Dutta Fig.6 I1 ref (geometric)"
+      },
+      {
+        "id": "dutta_I2",
+        "file": "CB2_ref_inactive_I2_b.pdb",
+        "state_ligand": "Dutta Fig.6 I2 ref (geometric)"
+      },
+      {
+        "id": "dutta_I3",
+        "file": "CB2_ref_inactive_I3_b.pdb",
+        "state_ligand": "Dutta Fig.6 I3 ref (geometric)"
+      },
+      {
+        "id": "dutta_I4",
+        "file": "CB2_ref_inactive_I4_b.pdb",
+        "state_ligand": "Dutta Fig.6 I4 ref (geometric)"
+      },
+      {
+        "id": "dutta_active",
+        "file": "CB2_ref_inactive_active_b.pdb",
+        "state_ligand": "Dutta Fig.6 active ref (geometric)"
+      }
+    ]
+  },
+  "rcsb_panel": [
+    {
+      "accession": "5ZTY",
+      "file": "5ZTY.pdb",
+      "state_ligand": "inactive / antagonist AM10257",
+      "doi": "10.1016/j.cell.2018.12.011",
+      "source_url": "https://files.rcsb.org/download/5ZTY.pdb",
+      "sha256": "7a2685dcfa99605e85a0871d914ab16e11b21e60239fe368f714aecf66f40935",
+      "bytes": 652860
+    },
+    {
+      "accession": "6KPC",
+      "file": "6KPC.pdb",
+      "state_ligand": "active crystal / E3R",
+      "doi": "10.1016/j.cell.2020.01.008",
+      "source_url": "https://files.rcsb.org/download/6KPC.pdb",
+      "sha256": "42eb34f32225b8eb3fa769c746803ddaa16eca7f6bd5de4a669c273390dc022d",
+      "bytes": 610578
+    },
+    {
+      "accession": "6KPF",
+      "file": "6KPF.pdb",
+      "state_ligand": "active + Gi / AM12033-class",
+      "doi": "10.1016/j.cell.2020.01.008",
+      "source_url": "https://files.rcsb.org/download/6KPF.pdb",
+      "sha256": "4f7fb5652e4c46854d538416bcef11a942fd6fae33c057fabc3611cf362a08d3",
+      "bytes": 775251
+    },
+    {
+      "accession": "6PT0",
+      "file": "6PT0.pdb",
+      "state_ligand": "active + Gi / WIN 55,212-2",
+      "doi": "10.1016/j.cell.2020.01.007",
+      "source_url": "https://files.rcsb.org/download/6PT0.pdb",
+      "sha256": "3dfb5aff6b75ffd189491b5b67ff10d3ad6857504213d675266ecaffeb3249f8",
+      "bytes": 898614
+    },
+    {
+      "accession": "8GUR",
+      "file": "8GUR.pdb",
+      "state_ligand": "active + Gi / CP55,940",
+      "doi": "10.1038/s41467-023-37112-9",
+      "source_url": "https://files.rcsb.org/download/8GUR.pdb",
+      "sha256": "76aa4579334f50b5bd2ac998444be18f29679aa00f9980f5c70ca19d5e22a40c",
+      "bytes": 779625
+    },
+    {
+      "accession": "8GUS",
+      "file": "8GUS.pdb",
+      "state_ligand": "active + Gi / HU-308",
+      "doi": "10.1038/s41467-023-37112-9",
+      "source_url": "https://files.rcsb.org/download/8GUS.pdb",
+      "sha256": "1dd3f4fb84c09e7478043ce637ab45003cf632fcff701dabdbb49826cb920a35",
+      "bytes": 778167
+    },
+    {
+      "accession": "8GUQ",
+      "file": "8GUQ.pdb",
+      "state_ligand": "active + Gi / Olorinab (\u03b2arr-biased)",
+      "doi": "10.1038/s41467-023-37112-9",
+      "source_url": "https://files.rcsb.org/download/8GUQ.pdb",
+      "sha256": "da92dd167389e19e01a7aeacc18c236b33e6028583c00a9d29ad458e7d6e594d",
+      "bytes": 775008
+    },
+    {
+      "accession": "8GUT",
+      "file": "8GUT.pdb",
+      "state_ligand": "active + Gi / LEI-102",
+      "doi": "10.1038/s41467-023-37112-9",
+      "source_url": "https://files.rcsb.org/download/8GUT.pdb",
+      "sha256": "86340e37cd2fcdd62564cb72bf35856f6c9788fa387009d6b2cee17b5497cc44",
+      "bytes": 772416
+    },
+    {
+      "accession": "8X3L",
+      "file": "8X3L.pdb",
+      "state_ligand": "active + G / entropy-driven",
+      "doi": "10.1073/pnas.2401091121",
+      "source_url": "https://files.rcsb.org/download/8X3L.pdb",
+      "sha256": "ff531cee0ba3b9f438ee5015d4f761176b00e47b40eb1ba51863ee5e6cd6bf20",
+      "bytes": 768447
+    },
+    {
+      "accession": "9U7L",
+      "file": "9U7L.pdb",
+      "cif_source": "9U7L.cif",
+      "state_ligand": "active + PAM Ec21a + CP55,940",
+      "doi": "10.1038/s41467-026-72923-6",
+      "source_url": "https://files.rcsb.org/download/9U7L.cif",
+      "note": "RCSB PDB format 404; mmCIF downloaded and CB2 chain R extracted to MDA-readable PDB",
+      "sha256": "a04ab198a032a1502977eb37ff4ba4cecd839f8e78fe44e0b579af8257ef7d25",
+      "bytes": 184555
+    }
+  ],
+  "gate0": {
+    "ok": true,
+    "verdict": "GATE0_PASS",
+    "n_matched_ca": 265,
+    "landmark_order": [
+      "dutta_inactive",
+      "dutta_I1",
+      "dutta_I2",
+      "dutta_I3",
+      "dutta_I4",
+      "dutta_active",
+      "5ZTY",
+      "6KPC",
+      "6KPF",
+      "6PT0",
+      "8GUQ",
+      "8GUR",
+      "8GUS",
+      "8GUT",
+      "8X3L",
+      "9U7L"
+    ],
+    "dropped": [],
+    "per_landmark": {
+      "dutta_inactive": {
+        "sha256": "d641a808852c4c9e539f3d43205e501a47d4e43532bfec9fc8ab773371fa43e6",
+        "chainID": "_",
+        "identity_topo_pdb": 1.0,
+        "identity_uniprot": 1.0,
+        "n_matched_ca_common": 265,
+        "state_ligand": "Dutta Fig.6 dutta_inactive (geometric)"
+      },
+      "dutta_I1": {
+        "sha256": "50fefbbe30fbdd2afb2ceed0be5a9656bf1734295da58edd13bf1c792d080bd9",
+        "chainID": "_",
+        "identity_topo_pdb": 1.0,
+        "identity_uniprot": 1.0,
+        "n_matched_ca_common": 265,
+        "state_ligand": "Dutta Fig.6 dutta_I1 (geometric)"
+      },
+      "dutta_I2": {
+        "sha256": "311109f8a6ec3389e527e69ebda704f6db4b795afa6c0403ae993e6ad8bab836",
+        "chainID": "_",
+        "identity_topo_pdb": 1.0,
+        "identity_uniprot": 1.0,
+        "n_matched_ca_common": 265,
+        "state_ligand": "Dutta Fig.6 dutta_I2 (geometric)"
+      },
+      "dutta_I3": {
+        "sha256": "142e770e64d7c0e0ef40cf02fb89e7d56567813ac083b82862f6bdb684a56718",
+        "chainID": "_",
+        "identity_topo_pdb": 1.0,
+        "identity_uniprot": 1.0,
+        "n_matched_ca_common": 265,
+        "state_ligand": "Dutta Fig.6 dutta_I3 (geometric)"
+      },
+      "dutta_I4": {
+        "sha256": "dca5531acdc11a94f055572eba22600aae78ba26bf0b0db975b1ee6e740d0a73",
+        "chainID": "_",
+        "identity_topo_pdb": 1.0,
+        "identity_uniprot": 1.0,
+        "n_matched_ca_common": 265,
+        "state_ligand": "Dutta Fig.6 dutta_I4 (geometric)"
+      },
+      "dutta_active": {
+        "sha256": "41816e10f2ca5e94079d72f59a2226b213b97c9ec922a3ffea7c722c3ad584c1",
+        "chainID": "_",
+        "identity_topo_pdb": 1.0,
+        "identity_uniprot": 1.0,
+        "n_matched_ca_common": 265,
+        "state_ligand": "Dutta Fig.6 dutta_active (geometric)"
+      },
+      "5ZTY": {
+        "sha256": "7a2685dcfa99605e85a0871d914ab16e11b21e60239fe368f714aecf66f40935",
+        "chainID": "A",
+        "identity_topo_pdb": 0.9859154929577465,
+        "identity_uniprot": 0.973421926910299,
+        "n_matched_ca_common": 265,
+        "state_ligand": "inactive / antagonist AM10257"
+      },
+      "6KPC": {
+        "sha256": "42eb34f32225b8eb3fa769c746803ddaa16eca7f6bd5de4a669c273390dc022d",
+        "chainID": "A",
+        "identity_topo_pdb": 0.9821428571428571,
+        "identity_uniprot": 0.9696969696969697,
+        "n_matched_ca_common": 265,
+        "state_ligand": "active crystal / E3R"
+      },
+      "6KPF": {
+        "sha256": "4f7fb5652e4c46854d538416bcef11a942fd6fae33c057fabc3611cf362a08d3",
+        "chainID": "R",
+        "identity_topo_pdb": 0.9964788732394366,
+        "identity_uniprot": 1.0,
+        "n_matched_ca_common": 265,
+        "state_ligand": "active + Gi / AM12033-class"
+      },
+      "6PT0": {
+        "sha256": "3dfb5aff6b75ffd189491b5b67ff10d3ad6857504213d675266ecaffeb3249f8",
+        "chainID": "R",
+        "identity_topo_pdb": 1.0,
+        "identity_uniprot": 1.0,
+        "n_matched_ca_common": 265,
+        "state_ligand": "active + Gi / WIN 55,212-2"
+      },
+      "8GUR": {
+        "sha256": "76aa4579334f50b5bd2ac998444be18f29679aa00f9980f5c70ca19d5e22a40c",
+        "chainID": "R",
+        "identity_topo_pdb": 0.9963898916967509,
+        "identity_uniprot": 1.0,
+        "n_matched_ca_common": 265,
+        "state_ligand": "active + Gi / CP55,940"
+      },
+      "8GUS": {
+        "sha256": "1dd3f4fb84c09e7478043ce637ab45003cf632fcff701dabdbb49826cb920a35",
+        "chainID": "R",
+        "identity_topo_pdb": 0.9964788732394366,
+        "identity_uniprot": 1.0,
+        "n_matched_ca_common": 265,
+        "state_ligand": "active + Gi / HU-308"
+      },
+      "8GUQ": {
+        "sha256": "da92dd167389e19e01a7aeacc18c236b33e6028583c00a9d29ad458e7d6e594d",
+        "chainID": "R",
+        "identity_topo_pdb": 0.9964788732394366,
+        "identity_uniprot": 1.0,
+        "n_matched_ca_common": 265,
+        "state_ligand": "active + Gi / Olorinab (\u03b2arr-biased)"
+      },
+      "8GUT": {
+        "sha256": "86340e37cd2fcdd62564cb72bf35856f6c9788fa387009d6b2cee17b5497cc44",
+        "chainID": "R",
+        "identity_topo_pdb": 0.9964788732394366,
+        "identity_uniprot": 1.0,
+        "n_matched_ca_common": 265,
+        "state_ligand": "active + Gi / LEI-102"
+      },
+      "8X3L": {
+        "sha256": "ff531cee0ba3b9f438ee5015d4f761176b00e47b40eb1ba51863ee5e6cd6bf20",
+        "chainID": "R",
+        "identity_topo_pdb": 0.9964539007092199,
+        "identity_uniprot": 1.0,
+        "n_matched_ca_common": 265,
+        "state_ligand": "active + G / entropy-driven"
+      },
+      "9U7L": {
+        "sha256": "a04ab198a032a1502977eb37ff4ba4cecd839f8e78fe44e0b579af8257ef7d25",
+        "chainID": "R",
+        "identity_topo_pdb": 1.0,
+        "identity_uniprot": 1.0,
+        "n_matched_ca_common": 265,
+        "state_ligand": "active + PAM Ec21a + CP55,940"
+      }
+    },
+    "updated_utc": "2026-09-20T22:35:13Z"
+  }
+}
