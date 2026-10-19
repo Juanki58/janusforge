@@ -2,7 +2,7 @@
   "experiment": "EXPERIMENT_CB2_LANDMARK_EXPANDED",
   "prereg": "docs/synthesis/EXPERIMENT_CB2_LANDMARK_EXPANDED.md",
   "created_utc": "2026-09-21T00:00:00Z",
-  "note": "Gate0 pass/drop filled by runner; geometric landmark \u2260 MSM state.",
+  "note": "Gate0 pass/drop filled by runner; geometric landmark ≠ MSM state.",
   "dutta_fig6": {
     "dir": "data/external/dutta_shukla_2023/main_figure_6",
     "landmarks": [
@@ -96,7 +96,7 @@
     {
       "accession": "8GUQ",
       "file": "8GUQ.pdb",
-      "state_ligand": "active + Gi / Olorinab (\u03b2arr-biased)",
+      "state_ligand": "active + Gi / Olorinab (βarr-biased)",
       "doi": "10.1038/s41467-023-37112-9",
       "source_url": "https://files.rcsb.org/download/8GUQ.pdb",
       "sha256": "da92dd167389e19e01a7aeacc18c236b33e6028583c00a9d29ad458e7d6e594d",
@@ -130,6 +130,17 @@
       "note": "RCSB PDB format 404; mmCIF downloaded and CB2 chain R extracted to MDA-readable PDB",
       "sha256": "a04ab198a032a1502977eb37ff4ba4cecd839f8e78fe44e0b579af8257ef7d25",
       "bytes": 184555
+    },
+    {
+      "accession": "12JA",
+      "file": "12JA.cif",
+      "coordinate_format": "mmCIF",
+      "state_ligand": "active + Gi / agonist '1029",
+      "doi": "10.1021/acs.jmedchem.6c00835",
+      "source_url": "https://files.rcsb.org/download/12ja.cif",
+      "sha256": "4e3944d312c00b88669a7fd96e7a21292de24b87f30a3e4ead67f5b279310ab6",
+      "bytes": 807724,
+      "resolution": 2.9
     }
   ],
   "gate0": {
@@ -258,7 +269,7 @@
         "identity_topo_pdb": 0.9964788732394366,
         "identity_uniprot": 1.0,
         "n_matched_ca_common": 265,
-        "state_ligand": "active + Gi / Olorinab (\u03b2arr-biased)"
+        "state_ligand": "active + Gi / Olorinab (βarr-biased)"
       },
       "8GUT": {
         "sha256": "86340e37cd2fcdd62564cb72bf35856f6c9788fa387009d6b2cee17b5497cc44",
@@ -286,5 +297,43 @@
       }
     },
     "updated_utc": "2026-09-20T22:35:13Z"
-  }
+  },
+  "expanded": [
+    {
+      "accession": "12IY",
+      "file": "12IY.cif",
+      "coordinate_format": "mmCIF",
+      "state_ligand": "CB2 only (no Gi) / agonist '5249 local refine",
+      "doi": "10.1021/acs.jmedchem.6c00835",
+      "source_url": "https://files.rcsb.org/download/12IY.cif",
+      "sha256": "c3aa49ea47609daa054bf63dedd1621a4e0375b8336c3c850318eb5d83483a23",
+      "bytes": 293961,
+      "resolution": 2.94,
+      "note": "Receptor-only deposit; not usable for intermolecular CB2-Gi XL"
+    },
+    {
+      "accession": "12JA",
+      "file": "12JA.cif",
+      "coordinate_format": "mmCIF",
+      "state_ligand": "active + Gi / agonist '1029",
+      "doi": "10.1021/acs.jmedchem.6c00835",
+      "source_url": "https://files.rcsb.org/download/12JA.cif",
+      "sha256": "4e3944d312c00b88669a7fd96e7a21292de24b87f30a3e4ead67f5b279310ab6",
+      "bytes": 807724,
+      "resolution": 2.9,
+      "note": "CB2-Gi complex; used in EXT_CB2_GI_XL_12IY_12JA"
+    },
+    {
+      "accession": "12IZ",
+      "file": "12IZ.cif",
+      "coordinate_format": "mmCIF",
+      "state_ligand": "active + Gi / agonist '5249",
+      "doi": "10.1021/acs.jmedchem.6c00835",
+      "source_url": "https://files.rcsb.org/download/12IZ.cif",
+      "sha256": "f58dd7d1f28e6bfc3ee376c6adf19dc86e849e64eac55a2db8a93819f0c8f4d7",
+      "bytes": 979505,
+      "resolution": 2.72,
+      "note": "Gi counterpart of 12IY series; appendix in EXT_CB2_GI_XL_12IY_12JA"
+    }
+  ]
 }

@@ -45,8 +45,8 @@
 | **8GUR** | Activo + Gi | CP55,940 (9GF) | **2.84** | cryo-EM 2.84 Å; **ciego Phase G** | DOI [10.1038/s41467-023-37112-9](https://doi.org/10.1038/s41467-023-37112-9); PMID 36922494; PDB **8GUR** |
 | **8GUQ** | Activo + Gi (KNF) | APD371 / Olorinab | ~3.08 | agonista β-arrestina-biased | DOI [10.1038/s41467-023-37112-9](https://doi.org/10.1038/s41467-023-37112-9); PMID 36922494; PDB **8GUQ** |
 | **8GUT** | Activo + Gi | LEI-102 | **2.98** | cryo-EM | DOI [10.1038/s41467-023-37112-9](https://doi.org/10.1038/s41467-023-37112-9); PMID 36922494; PDB **8GUT** |
-| **12IY** | Activo + Gi | agonista '5249 (Rachman series) | ~2.9 (local refined) | cryo-EM 2026; validación docking | DOI [10.1021/acs.jmedchem.6c00835](https://doi.org/10.1021/acs.jmedchem.6c00835); PMID 42397716; PDB **12IY** |
-| **12IZ** | Activo + Gi | (serie Rachman 2026) | — | Entrada UniProt P34972; verificar antes de uso operativo | DOI [10.1021/acs.jmedchem.6c00835](https://doi.org/10.1021/acs.jmedchem.6c00835); PMID 42397716; PDB **12IZ** |
+| **12IY** | CB2 solo; sin Gi | agonista '5249 (Rachman series) | 2.94 | cryo-EM 2026; receptor monomérico | DOI [10.1021/acs.jmedchem.6c00835](https://doi.org/10.1021/acs.jmedchem.6c00835); PDB **12IY** |
+| **12IZ** | Activo + Gi | agonista '5249 (Rachman) | **2.72** | CB2–Gi full complex (contraparte Gi de 12IY) | DOI [10.1021/acs.jmedchem.6c00835](https://doi.org/10.1021/acs.jmedchem.6c00835); PDB **12IZ** |
 | **12JA** | Activo + Gi | agonista '1029 (Rachman series) | **2.9** | cryo-EM EMD-76465 | DOI [10.1021/acs.jmedchem.6c00835](https://doi.org/10.1021/acs.jmedchem.6c00835); PMID 42397716; PDB **12JA** |
 | **8X3L** | Activo + G | (selectividad entropy-driven) | **3.13** | cryo-EM 2024 | DOI [10.1073/pnas.2401091121](https://doi.org/10.1073/pnas.2401091121); PDB **8X3L** |
 | **9U7L** | Activo + PAM | CP55,940 + **Ec21a** (vestíbulo ECL2) | **3.2** | PAM alostérico CB2-selectivo | DOI [10.1038/s41467-026-72923-6](https://doi.org/10.1038/s41467-026-72923-6); PMID 42115595; PDB **9U7L** |
@@ -112,13 +112,15 @@
 
 ## 5. Serie 12IY / 12IZ / 12JA (2026)
 
+Corrección verificada en RCSB (2026-10-19): **12IY es CB2 sin proteína Gi** y no se debe clasificar como complejo CB2–Gi; **12JA** sí contiene CB2–Gi y agonista '1029. Por tanto, **12IY no** sirve para XL intermolecular CB2–Gi; usar **12JA** (panel PI) y, como apéndice de la serie '5249, **12IZ**.
+
 **[LITERATURA_PRIMARIA]** Estructuras cryo-EM asociadas a **Rachman *et al.* 2026** (*J. Med. Chem.*, DOI [10.1021/acs.jmedchem.6c00835](https://doi.org/10.1021/acs.jmedchem.6c00835); PMID 42397716):
 
 | PDB | Descripción verificada | Relevancia Janusforge |
 |-----|------------------------|----------------------|
-| **12IY** | CB2–Gi con agonista '5249; refinamiento local | Validación experimental de poses de docking a escala de biblioteca |
+| **12IY** | CB2 solo con agonista '5249; 2.94 Å | No aporta geometría CB2–Gi |
 | **12JA** | CB2–Gi con agonista '1029; EMD-76465; ~2.9 Å | idem |
-| **12IZ** | Entrada en hit list UniProt P34972 | **Verificar caso a caso** antes de plantilla operativa |
+| **12IZ** | CB2–Gi con agonista '5249; ~2.72 Å | Contraparte Gi de la serie 12IY (XL appendix ALL_WITHIN) |
 
 **[OBSERVACIÓN_PROPIA]** Estas entradas amplían el atlas activo 2026 pero **no** reabren pipelines computacionales del proyecto.
 
