@@ -186,3 +186,15 @@ NEXT: HUMAN_STRATEGIC_CHOICE  # massive sampling OR P5 OR wait filelist
 | 7 | Dutta SF22 tunnels × hubs | `EXT_DUTTA_SF22_TUNNEL_HUB_QUALITATIVE_ONLY` | `EXPERIMENT_EXT_DUTTA_SF22_TUNNEL_HUBS.md` · `ext_dutta_sf22_tunnel_hubs.*` |
 
 **Hard stops affirmed:** no Gi claims as proven; P2 not CONVERGENT; no docking; no Tier B; DEER distances not invented; SF22 residue roster not invented.
+
+
+**2026-10-19** — Batch EXTERNAL literature leads (PI decision: XL 2014 + trafficking confounder; probes/GRAB deferred). **No** reopen P2; **no** advance P5; **no** docking; **no** Tier B MD.
+
+| # | Ítem | Veredicto | Artefactos |
+|---|------|-----------|------------|
+| 1 | Mnpotra 2014 CB2–Gi XL → modern complex PDBs | `EXT_CB2_GI_XL_STRUCTURAL_SUPPORTED` | `EXPERIMENT_EXT_CB2_GI_CROSSLINK_2014.md` · `ext_cb2_gi_crosslink_2014.*` |
+| 2 | Oyagawa 2025 anterograde trafficking | `TRAFFICKING_CONFOUNDER_CB2_2025` REGISTERED | `TRAFFICKING_CONFOUNDER_CB2_2025.md` |
+| 3 | Fluorescent probes 2024 / GRAB-CB2 2026 / Sharma kinetics / variants | DEFERRED | anotado en `PUBLIC_DATA_LEADS_CB2.md` §8 |
+
+**Hard stops affirmed:** XL = intermolecular proximity only (not intramolecular CB2 map; not hub/P3 proof); P2 closed; P5 not advanced; Abrol avg fused-chain numbering left `NO_GAI_MAP` (no invented offset).
+

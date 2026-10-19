@@ -1,0 +1,1017 @@
+{
+  "run_utc": "2026-10-19T13:26:08Z",
+  "branch": "feat/cb2-hubs-functional-topology-test",
+  "experiment": "EXT_CB2_GI_CROSSLINK_2014",
+  "paper": {
+    "citation": "Mnpotra et al. J Biol Chem 2014",
+    "doi": "10.1074/jbc.M113.539916",
+    "pmid": "24855641",
+    "pmc": "PMC4106340"
+  },
+  "xl_pairs_definition": [
+    {
+      "id": "C134_C351",
+      "cb2_resid": 134,
+      "cb2_resname": "CYS",
+      "cb2_bw": "C3.53/C3.54(134)",
+      "gai_resid": 351,
+      "gai_resname": "CYS",
+      "gai_site": "a5 i-3",
+      "chemistry": "HgCl2 Cys-Cys",
+      "ca_lo": 7.0,
+      "ca_hi": 10.0,
+      "source": "experimental_XL"
+    },
+    {
+      "id": "K245_K349",
+      "cb2_resid": 245,
+      "cb2_resname": "LYS",
+      "cb2_bw": "K6.35(245)",
+      "gai_resid": 349,
+      "gai_resname": "LYS",
+      "gai_site": "a5 i-5",
+      "chemistry": "DSS Lys-Lys",
+      "ca_lo": 0.0,
+      "ca_hi": 24.2,
+      "source": "experimental_XL"
+    },
+    {
+      "id": "K215_K317",
+      "cb2_resid": 215,
+      "cb2_resname": "LYS",
+      "cb2_bw": "K5.64(215)",
+      "gai_resid": 317,
+      "gai_resname": "LYS",
+      "gai_site": "a4b6 loop",
+      "chemistry": "DSS Lys-Lys",
+      "ca_lo": 0.0,
+      "ca_hi": 24.2,
+      "source": "experimental_XL"
+    }
+  ],
+  "pro139_pocket_gai_resids": [
+    34,
+    194,
+    196,
+    336,
+    340,
+    343,
+    344
+  ],
+  "structures": [
+    {
+      "label": "6PT0",
+      "path": "data/external/cb2_landmark_expanded/6PT0.pdb",
+      "exists": true,
+      "has_gi_expected": true,
+      "note": "WIN-CB2-Gi complex",
+      "chains": {
+        "A": {
+          "n_ca": 353,
+          "resid_min": 2,
+          "resid_max": 354
+        },
+        "B": {
+          "n_ca": 340,
+          "resid_min": 1,
+          "resid_max": 340
+        },
+        "C": {
+          "n_ca": 61,
+          "resid_min": 6,
+          "resid_max": 66
+        },
+        "E": {
+          "n_ca": 232,
+          "resid_min": 2,
+          "resid_max": 247
+        },
+        "R": {
+          "n_ca": 298,
+          "resid_min": 22,
+          "resid_max": 319
+        }
+      },
+      "receptor_chain": "R",
+      "gai_chain": "A",
+      "pairs": {
+        "C134_C351": {
+          "status": "OK",
+          "ca_ca_A": 8.249,
+          "call": "WITHIN",
+          "cb2": "CYS134:R",
+          "gai": "CYS351:A",
+          "window_A": [
+            7.0,
+            10.0
+          ]
+        },
+        "K245_K349": {
+          "status": "OK",
+          "ca_ca_A": 16.256,
+          "call": "WITHIN",
+          "cb2": "LYS245:R",
+          "gai": "LYS349:A",
+          "window_A": [
+            0.0,
+            24.2
+          ]
+        },
+        "K215_K317": {
+          "status": "OK",
+          "ca_ca_A": 21.932,
+          "call": "WITHIN",
+          "cb2": "LYS215:R",
+          "gai": "LYS317:A",
+          "window_A": [
+            0.0,
+            24.2
+          ]
+        }
+      },
+      "pro139": {
+        "status": "OK",
+        "min_ca_ca_A": 6.363,
+        "nearest": "ILE343:A",
+        "n_pocket": 7,
+        "pocket_distances": [
+          {
+            "gai": "VAL34:A",
+            "ca_ca_A": 8.053
+          },
+          {
+            "gai": "LEU194:A",
+            "ca_ca_A": 8.325
+          },
+          {
+            "gai": "PHE196:A",
+            "ca_ca_A": 11.47
+          },
+          {
+            "gai": "PHE336:A",
+            "ca_ca_A": 11.602
+          },
+          {
+            "gai": "THR340:A",
+            "ca_ca_A": 7.768
+          },
+          {
+            "gai": "ILE343:A",
+            "ca_ca_A": 6.363
+          },
+          {
+            "gai": "ILE344:A",
+            "ca_ca_A": 7.978
+          }
+        ],
+        "note": "MD registering contact (Mnpotra), NOT an experimental cross-link"
+      },
+      "structure_call": "ALL_WITHIN",
+      "status": "OK"
+    },
+    {
+      "label": "6KPF",
+      "path": "data/external/cb2_landmark_expanded/6KPF.pdb",
+      "exists": true,
+      "has_gi_expected": true,
+      "note": "agonist-CB2-Gi cryo-EM",
+      "chains": {
+        "A": {
+          "n_ca": 218,
+          "resid_min": 3,
+          "resid_max": 354
+        },
+        "B": {
+          "n_ca": 338,
+          "resid_min": 3,
+          "resid_max": 340
+        },
+        "C": {
+          "n_ca": 57,
+          "resid_min": 7,
+          "resid_max": 63
+        },
+        "R": {
+          "n_ca": 290,
+          "resid_min": 21,
+          "resid_max": 319
+        },
+        "S": {
+          "n_ca": 232,
+          "resid_min": 2,
+          "resid_max": 235
+        }
+      },
+      "receptor_chain": "R",
+      "gai_chain": "A",
+      "pairs": {
+        "C134_C351": {
+          "status": "OK",
+          "ca_ca_A": 7.966,
+          "call": "WITHIN",
+          "cb2": "CYS134:R",
+          "gai": "CYS351:A",
+          "window_A": [
+            7.0,
+            10.0
+          ]
+        },
+        "K245_K349": {
+          "status": "OK",
+          "ca_ca_A": 15.731,
+          "call": "WITHIN",
+          "cb2": "LYS245:R",
+          "gai": "LYS349:A",
+          "window_A": [
+            0.0,
+            24.2
+          ]
+        },
+        "K215_K317": {
+          "status": "OK",
+          "ca_ca_A": 21.62,
+          "call": "WITHIN",
+          "cb2": "LYS215:R",
+          "gai": "LYS317:A",
+          "window_A": [
+            0.0,
+            24.2
+          ]
+        }
+      },
+      "pro139": {
+        "status": "OK",
+        "min_ca_ca_A": 6.17,
+        "nearest": "ILE343:A",
+        "n_pocket": 7,
+        "pocket_distances": [
+          {
+            "gai": "VAL34:A",
+            "ca_ca_A": 7.592
+          },
+          {
+            "gai": "LEU194:A",
+            "ca_ca_A": 8.02
+          },
+          {
+            "gai": "PHE196:A",
+            "ca_ca_A": 10.894
+          },
+          {
+            "gai": "PHE336:A",
+            "ca_ca_A": 11.005
+          },
+          {
+            "gai": "THR340:A",
+            "ca_ca_A": 7.593
+          },
+          {
+            "gai": "ILE343:A",
+            "ca_ca_A": 6.17
+          },
+          {
+            "gai": "ILE344:A",
+            "ca_ca_A": 7.984
+          }
+        ],
+        "note": "MD registering contact (Mnpotra), NOT an experimental cross-link"
+      },
+      "structure_call": "ALL_WITHIN",
+      "status": "OK"
+    },
+    {
+      "label": "8GUR",
+      "path": "data/external/cb2_landmark_expanded/8GUR.pdb",
+      "exists": true,
+      "has_gi_expected": true,
+      "note": "CP55,940-CB2-Gi",
+      "chains": {
+        "A": {
+          "n_ca": 227,
+          "resid_min": 3,
+          "resid_max": 354
+        },
+        "B": {
+          "n_ca": 339,
+          "resid_min": 2,
+          "resid_max": 340
+        },
+        "C": {
+          "n_ca": 58,
+          "resid_min": 6,
+          "resid_max": 63
+        },
+        "R": {
+          "n_ca": 282,
+          "resid_min": 22,
+          "resid_max": 312
+        },
+        "S": {
+          "n_ca": 233,
+          "resid_min": 1,
+          "resid_max": 236
+        }
+      },
+      "receptor_chain": "R",
+      "gai_chain": "A",
+      "pairs": {
+        "C134_C351": {
+          "status": "OK",
+          "ca_ca_A": 7.829,
+          "call": "WITHIN",
+          "cb2": "CYS134:R",
+          "gai": "CYS351:A",
+          "window_A": [
+            7.0,
+            10.0
+          ]
+        },
+        "K245_K349": {
+          "status": "OK",
+          "ca_ca_A": 15.512,
+          "call": "WITHIN",
+          "cb2": "LYS245:R",
+          "gai": "LYS349:A",
+          "window_A": [
+            0.0,
+            24.2
+          ]
+        },
+        "K215_K317": {
+          "status": "OK",
+          "ca_ca_A": 22.088,
+          "call": "WITHIN",
+          "cb2": "LYS215:R",
+          "gai": "LYS317:A",
+          "window_A": [
+            0.0,
+            24.2
+          ]
+        }
+      },
+      "pro139": {
+        "status": "OK",
+        "min_ca_ca_A": 6.596,
+        "nearest": "ILE343:A",
+        "n_pocket": 7,
+        "pocket_distances": [
+          {
+            "gai": "VAL34:A",
+            "ca_ca_A": 7.815
+          },
+          {
+            "gai": "LEU194:A",
+            "ca_ca_A": 8.058
+          },
+          {
+            "gai": "PHE196:A",
+            "ca_ca_A": 10.935
+          },
+          {
+            "gai": "PHE336:A",
+            "ca_ca_A": 11.228
+          },
+          {
+            "gai": "THR340:A",
+            "ca_ca_A": 7.692
+          },
+          {
+            "gai": "ILE343:A",
+            "ca_ca_A": 6.596
+          },
+          {
+            "gai": "ILE344:A",
+            "ca_ca_A": 8.379
+          }
+        ],
+        "note": "MD registering contact (Mnpotra), NOT an experimental cross-link"
+      },
+      "structure_call": "ALL_WITHIN",
+      "status": "OK"
+    },
+    {
+      "label": "8GUS",
+      "path": "data/external/cb2_landmark_expanded/8GUS.pdb",
+      "exists": true,
+      "has_gi_expected": true,
+      "note": "HU-308-CB2-Gi",
+      "chains": {
+        "A": {
+          "n_ca": 218,
+          "resid_min": 3,
+          "resid_max": 354
+        },
+        "B": {
+          "n_ca": 338,
+          "resid_min": 3,
+          "resid_max": 340
+        },
+        "C": {
+          "n_ca": 57,
+          "resid_min": 7,
+          "resid_max": 63
+        },
+        "R": {
+          "n_ca": 290,
+          "resid_min": 21,
+          "resid_max": 319
+        },
+        "S": {
+          "n_ca": 232,
+          "resid_min": 2,
+          "resid_max": 235
+        }
+      },
+      "receptor_chain": "R",
+      "gai_chain": "A",
+      "pairs": {
+        "C134_C351": {
+          "status": "OK",
+          "ca_ca_A": 7.852,
+          "call": "WITHIN",
+          "cb2": "CYS134:R",
+          "gai": "CYS351:A",
+          "window_A": [
+            7.0,
+            10.0
+          ]
+        },
+        "K245_K349": {
+          "status": "OK",
+          "ca_ca_A": 15.533,
+          "call": "WITHIN",
+          "cb2": "LYS245:R",
+          "gai": "LYS349:A",
+          "window_A": [
+            0.0,
+            24.2
+          ]
+        },
+        "K215_K317": {
+          "status": "OK",
+          "ca_ca_A": 21.992,
+          "call": "WITHIN",
+          "cb2": "LYS215:R",
+          "gai": "LYS317:A",
+          "window_A": [
+            0.0,
+            24.2
+          ]
+        }
+      },
+      "pro139": {
+        "status": "OK",
+        "min_ca_ca_A": 6.395,
+        "nearest": "ILE343:A",
+        "n_pocket": 7,
+        "pocket_distances": [
+          {
+            "gai": "VAL34:A",
+            "ca_ca_A": 7.597
+          },
+          {
+            "gai": "LEU194:A",
+            "ca_ca_A": 7.765
+          },
+          {
+            "gai": "PHE196:A",
+            "ca_ca_A": 10.56
+          },
+          {
+            "gai": "PHE336:A",
+            "ca_ca_A": 10.902
+          },
+          {
+            "gai": "THR340:A",
+            "ca_ca_A": 7.302
+          },
+          {
+            "gai": "ILE343:A",
+            "ca_ca_A": 6.395
+          },
+          {
+            "gai": "ILE344:A",
+            "ca_ca_A": 8.163
+          }
+        ],
+        "note": "MD registering contact (Mnpotra), NOT an experimental cross-link"
+      },
+      "structure_call": "ALL_WITHIN",
+      "status": "OK"
+    },
+    {
+      "label": "8GUQ",
+      "path": "data/external/cb2_landmark_expanded/8GUQ.pdb",
+      "exists": true,
+      "has_gi_expected": true,
+      "note": "Olorinab-CB2-Gi",
+      "chains": {
+        "A": {
+          "n_ca": 218,
+          "resid_min": 3,
+          "resid_max": 354
+        },
+        "B": {
+          "n_ca": 338,
+          "resid_min": 3,
+          "resid_max": 340
+        },
+        "C": {
+          "n_ca": 57,
+          "resid_min": 7,
+          "resid_max": 63
+        },
+        "R": {
+          "n_ca": 290,
+          "resid_min": 21,
+          "resid_max": 319
+        },
+        "S": {
+          "n_ca": 232,
+          "resid_min": 2,
+          "resid_max": 235
+        }
+      },
+      "receptor_chain": "R",
+      "gai_chain": "A",
+      "pairs": {
+        "C134_C351": {
+          "status": "OK",
+          "ca_ca_A": 8.284,
+          "call": "WITHIN",
+          "cb2": "CYS134:R",
+          "gai": "CYS351:A",
+          "window_A": [
+            7.0,
+            10.0
+          ]
+        },
+        "K245_K349": {
+          "status": "OK",
+          "ca_ca_A": 16.172,
+          "call": "WITHIN",
+          "cb2": "LYS245:R",
+          "gai": "LYS349:A",
+          "window_A": [
+            0.0,
+            24.2
+          ]
+        },
+        "K215_K317": {
+          "status": "OK",
+          "ca_ca_A": 22.073,
+          "call": "WITHIN",
+          "cb2": "LYS215:R",
+          "gai": "LYS317:A",
+          "window_A": [
+            0.0,
+            24.2
+          ]
+        }
+      },
+      "pro139": {
+        "status": "OK",
+        "min_ca_ca_A": 5.945,
+        "nearest": "ILE343:A",
+        "n_pocket": 7,
+        "pocket_distances": [
+          {
+            "gai": "VAL34:A",
+            "ca_ca_A": 7.661
+          },
+          {
+            "gai": "LEU194:A",
+            "ca_ca_A": 7.925
+          },
+          {
+            "gai": "PHE196:A",
+            "ca_ca_A": 10.948
+          },
+          {
+            "gai": "PHE336:A",
+            "ca_ca_A": 10.757
+          },
+          {
+            "gai": "THR340:A",
+            "ca_ca_A": 7.321
+          },
+          {
+            "gai": "ILE343:A",
+            "ca_ca_A": 5.945
+          },
+          {
+            "gai": "ILE344:A",
+            "ca_ca_A": 7.739
+          }
+        ],
+        "note": "MD registering contact (Mnpotra), NOT an experimental cross-link"
+      },
+      "structure_call": "ALL_WITHIN",
+      "status": "OK"
+    },
+    {
+      "label": "8GUT",
+      "path": "data/external/cb2_landmark_expanded/8GUT.pdb",
+      "exists": true,
+      "has_gi_expected": true,
+      "note": "LEI-102-CB2-Gi",
+      "chains": {
+        "A": {
+          "n_ca": 218,
+          "resid_min": 3,
+          "resid_max": 354
+        },
+        "B": {
+          "n_ca": 338,
+          "resid_min": 3,
+          "resid_max": 340
+        },
+        "C": {
+          "n_ca": 57,
+          "resid_min": 7,
+          "resid_max": 63
+        },
+        "R": {
+          "n_ca": 290,
+          "resid_min": 21,
+          "resid_max": 319
+        },
+        "S": {
+          "n_ca": 232,
+          "resid_min": 2,
+          "resid_max": 235
+        }
+      },
+      "receptor_chain": "R",
+      "gai_chain": "A",
+      "pairs": {
+        "C134_C351": {
+          "status": "OK",
+          "ca_ca_A": 7.803,
+          "call": "WITHIN",
+          "cb2": "CYS134:R",
+          "gai": "CYS351:A",
+          "window_A": [
+            7.0,
+            10.0
+          ]
+        },
+        "K245_K349": {
+          "status": "OK",
+          "ca_ca_A": 15.478,
+          "call": "WITHIN",
+          "cb2": "LYS245:R",
+          "gai": "LYS349:A",
+          "window_A": [
+            0.0,
+            24.2
+          ]
+        },
+        "K215_K317": {
+          "status": "OK",
+          "ca_ca_A": 21.735,
+          "call": "WITHIN",
+          "cb2": "LYS215:R",
+          "gai": "LYS317:A",
+          "window_A": [
+            0.0,
+            24.2
+          ]
+        }
+      },
+      "pro139": {
+        "status": "OK",
+        "min_ca_ca_A": 6.255,
+        "nearest": "ILE343:A",
+        "n_pocket": 7,
+        "pocket_distances": [
+          {
+            "gai": "VAL34:A",
+            "ca_ca_A": 7.599
+          },
+          {
+            "gai": "LEU194:A",
+            "ca_ca_A": 7.855
+          },
+          {
+            "gai": "PHE196:A",
+            "ca_ca_A": 10.607
+          },
+          {
+            "gai": "PHE336:A",
+            "ca_ca_A": 11.176
+          },
+          {
+            "gai": "THR340:A",
+            "ca_ca_A": 7.273
+          },
+          {
+            "gai": "ILE343:A",
+            "ca_ca_A": 6.255
+          },
+          {
+            "gai": "ILE344:A",
+            "ca_ca_A": 7.929
+          }
+        ],
+        "note": "MD registering contact (Mnpotra), NOT an experimental cross-link"
+      },
+      "structure_call": "ALL_WITHIN",
+      "status": "OK"
+    },
+    {
+      "label": "8X3L",
+      "path": "data/external/cb2_landmark_expanded/8X3L.pdb",
+      "exists": true,
+      "has_gi_expected": true,
+      "note": "CB2-G complex (Shen 2024)",
+      "chains": {
+        "A": {
+          "n_ca": 218,
+          "resid_min": 3,
+          "resid_max": 354
+        },
+        "B": {
+          "n_ca": 338,
+          "resid_min": 3,
+          "resid_max": 340
+        },
+        "C": {
+          "n_ca": 57,
+          "resid_min": 7,
+          "resid_max": 63
+        },
+        "R": {
+          "n_ca": 287,
+          "resid_min": 24,
+          "resid_max": 319
+        },
+        "S": {
+          "n_ca": 230,
+          "resid_min": 2,
+          "resid_max": 235
+        }
+      },
+      "receptor_chain": "R",
+      "gai_chain": "A",
+      "pairs": {
+        "C134_C351": {
+          "status": "OK",
+          "ca_ca_A": 7.654,
+          "call": "WITHIN",
+          "cb2": "CYS134:R",
+          "gai": "CYS351:A",
+          "window_A": [
+            7.0,
+            10.0
+          ]
+        },
+        "K245_K349": {
+          "status": "OK",
+          "ca_ca_A": 15.767,
+          "call": "WITHIN",
+          "cb2": "LYS245:R",
+          "gai": "LYS349:A",
+          "window_A": [
+            0.0,
+            24.2
+          ]
+        },
+        "K215_K317": {
+          "status": "OK",
+          "ca_ca_A": 23.195,
+          "call": "WITHIN",
+          "cb2": "LYS215:R",
+          "gai": "LYS317:A",
+          "window_A": [
+            0.0,
+            24.2
+          ]
+        }
+      },
+      "pro139": {
+        "status": "OK",
+        "min_ca_ca_A": 6.564,
+        "nearest": "ILE343:A",
+        "n_pocket": 7,
+        "pocket_distances": [
+          {
+            "gai": "VAL34:A",
+            "ca_ca_A": 8.376
+          },
+          {
+            "gai": "LEU194:A",
+            "ca_ca_A": 8.65
+          },
+          {
+            "gai": "PHE196:A",
+            "ca_ca_A": 11.752
+          },
+          {
+            "gai": "PHE336:A",
+            "ca_ca_A": 11.735
+          },
+          {
+            "gai": "THR340:A",
+            "ca_ca_A": 7.912
+          },
+          {
+            "gai": "ILE343:A",
+            "ca_ca_A": 6.564
+          },
+          {
+            "gai": "ILE344:A",
+            "ca_ca_A": 8.045
+          }
+        ],
+        "note": "MD registering contact (Mnpotra), NOT an experimental cross-link"
+      },
+      "structure_call": "ALL_WITHIN",
+      "status": "OK"
+    },
+    {
+      "label": "9U7L",
+      "path": "data/external/cb2_landmark_expanded/9U7L.pdb",
+      "exists": true,
+      "has_gi_expected": false,
+      "note": "PAM complex; Gi absent in local file",
+      "chains": {
+        "R": {
+          "n_ca": 298,
+          "resid_min": 22,
+          "resid_max": 319
+        }
+      },
+      "receptor_chain": "R",
+      "gai_chain": null,
+      "status": "NO_GI_COMPLEX",
+      "pairs": {
+        "C134_C351": {
+          "call": "N/A_NO_GI",
+          "status": "N/A"
+        },
+        "K245_K349": {
+          "call": "N/A_NO_GI",
+          "status": "N/A"
+        },
+        "K215_K317": {
+          "call": "N/A_NO_GI",
+          "status": "N/A"
+        }
+      },
+      "pro139": {
+        "status": "N/A_NO_GI"
+      }
+    },
+    {
+      "label": "5ZTY",
+      "path": "data/external/cb2_landmark_expanded/5ZTY.pdb",
+      "exists": true,
+      "has_gi_expected": false,
+      "note": "inactive crystal \u2014 no Gi",
+      "chains": {
+        "A": {
+          "n_ca": 449,
+          "resid_min": 19,
+          "resid_max": 1160
+        }
+      },
+      "receptor_chain": "A",
+      "gai_chain": null,
+      "status": "NO_GI_COMPLEX",
+      "pairs": {
+        "C134_C351": {
+          "call": "N/A_NO_GI",
+          "status": "N/A"
+        },
+        "K245_K349": {
+          "call": "N/A_NO_GI",
+          "status": "N/A"
+        },
+        "K215_K317": {
+          "call": "N/A_NO_GI",
+          "status": "N/A"
+        }
+      },
+      "pro139": {
+        "status": "N/A_NO_GI"
+      }
+    },
+    {
+      "label": "6KPC",
+      "path": "data/external/cb2_landmark_expanded/6KPC.pdb",
+      "exists": true,
+      "has_gi_expected": false,
+      "note": "active crystal \u2014 no Gi",
+      "chains": {
+        "A": {
+          "n_ca": 445,
+          "resid_min": 19,
+          "resid_max": 1160
+        }
+      },
+      "receptor_chain": "A",
+      "gai_chain": null,
+      "status": "NO_GI_COMPLEX",
+      "pairs": {
+        "C134_C351": {
+          "call": "N/A_NO_GI",
+          "status": "N/A"
+        },
+        "K245_K349": {
+          "call": "N/A_NO_GI",
+          "status": "N/A"
+        },
+        "K215_K317": {
+          "call": "N/A_NO_GI",
+          "status": "N/A"
+        }
+      },
+      "pro139": {
+        "status": "N/A_NO_GI"
+      }
+    },
+    {
+      "label": "Abrol_Gi_Empty",
+      "path": "data/external/abrol_heo_2024/avg_pdbs/CB2R-WT-NoPhosphoC_Gi-Empty_avgframe569.pdb",
+      "exists": true,
+      "has_gi_expected": true,
+      "note": "Abrol/Heo avg frame Gi-Empty (MD model, not cryo)",
+      "chains": {
+        "X": {
+          "n_ca": 1084,
+          "resid_min": 1,
+          "resid_max": 1084
+        }
+      },
+      "receptor_chain": "X",
+      "gai_chain": null,
+      "status": "NO_GAI_MAP",
+      "pairs": {},
+      "pro139": {
+        "status": "NO_GAI"
+      }
+    },
+    {
+      "label": "Abrol_Gi_GDP",
+      "path": "data/external/abrol_heo_2024/avg_pdbs/CB2R-WT-NoPhosphoC_Gi-GDP_avgframe1262.pdb",
+      "exists": true,
+      "has_gi_expected": true,
+      "note": "Abrol/Heo avg frame Gi-GDP (MD model, not cryo)",
+      "chains": {
+        "X": {
+          "n_ca": 1084,
+          "resid_min": 1,
+          "resid_max": 1084
+        }
+      },
+      "receptor_chain": "X",
+      "gai_chain": null,
+      "status": "NO_GAI_MAP",
+      "pairs": {},
+      "pro139": {
+        "status": "NO_GAI"
+      }
+    }
+  ],
+  "aggregate": {
+    "verdict": "EXT_CB2_GI_XL_STRUCTURAL_SUPPORTED",
+    "reason": "All three XL pairs WITHIN in >=70% of primary cryo/X-ray CB2-Gi panel",
+    "n_primary_structures": 7,
+    "pair_tallies_primary": {
+      "C134_C351": {
+        "WITHIN": 7,
+        "BORDERLINE": 0,
+        "OUT": 0,
+        "MISSING": 0,
+        "n": 7
+      },
+      "K245_K349": {
+        "WITHIN": 7,
+        "BORDERLINE": 0,
+        "OUT": 0,
+        "MISSING": 0,
+        "n": 7
+      },
+      "K215_K317": {
+        "WITHIN": 7,
+        "BORDERLINE": 0,
+        "OUT": 0,
+        "MISSING": 0,
+        "n": 7
+      }
+    },
+    "within_fraction_primary": {
+      "C134_C351": 1.0,
+      "K245_K349": 1.0,
+      "K215_K317": 1.0
+    },
+    "non_claims": [
+      "XL = intermolecular CB2<->Gi proximity under crosslinking chemistry, not intramolecular CB2 distances",
+      "Geometric compatibility != proof of Janusforge hubs or P3 effector mechanism",
+      "Pro139 pocket proximity is MD registering contact from Mnpotra, not an experimental XL",
+      "Abrol avg frames are secondary (MD models), not primary cryo evidence",
+      "P2 not reopened; P5 not advanced; no docking/de novo; no Tier B MD"
+    ]
+  }
+}

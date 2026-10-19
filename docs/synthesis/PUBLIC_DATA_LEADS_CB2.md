@@ -1,6 +1,6 @@
 # PUBLIC DATA LEADS — CB2 (informe para PI)
 
-**Fecha:** 2026-09-20  
+**Fecha:** 2026-09-20 · **Update:** 2026-10-19 (XL 2014 + trafficking confounder + deferred probes/GRAB)  
 **Tipo:** DOCUMENTATION ONLY — síntesis de literatura + depósitos públicos 2019–2026; **sin** compute nuevo.  
 **Audiencia:** PI (español, postura de credibilidad).  
 **Autoridad de freeze:** [`RESEARCH_STATE.md`](../../RESEARCH_STATE.md) · acta EXTERNAL [`ACTA_EXTERNAL_CB2_APO_2026-09.md`](ACTA_EXTERNAL_CB2_APO_2026-09.md) · roadmap [`RESEARCH_ROADMAP.md`](RESEARCH_ROADMAP.md)
@@ -16,6 +16,12 @@
 **Claim que NO defendemos:** “no hay literatura ni datos útiles en la misma dirección.” Eso es falso.
 
 ---
+
+### Nuevo anclaje primario: crosslinks CB2–Gαi1 (2014)
+
+**[LITERATURA_PRIMARIA]** Mnpotra et al. mapearon la interfaz CB2–Gαi1 con crosslinking químico y LC-MS/MS e identificaron tres pares: Cys134^3.54–Cys351, Lys245^6.35–Lys349 y Lys215^5.64–Lys317 (DOI [10.1074/jbc.M113.539916](https://doi.org/10.1074/jbc.M113.539916)). Completa el identificador primario pendiente que constaba en [`RESEARCH_STATE.md`](../../RESEARCH_STATE.md); no constituye evidencia de una ruta alostérica intramolecular de CB2.
+
+**[OBSERVACIÓN_PROPIA · EXTERNAL 2026-10-19]** Pre-reg [`EXPERIMENT_EXT_CB2_GI_CROSSLINK_2014.md`](EXPERIMENT_EXT_CB2_GI_CROSSLINK_2014.md) → veredicto **`EXT_CB2_GI_XL_STRUCTURAL_SUPPORTED`** ([`ext_cb2_gi_crosslink_2014.md`](../../results/network_core/ext_cb2_gi_crosslink_2014.md)). En siete PDBs CB2–Gi locales (`6PT0`, `6KPF`, `8GUQ`, `8GUR`, `8GUS`, `8GUT`, `8X3L`), las distancias Cα–Cα cumplen los rangos del artículo: Cys134–Cys351 **7.65–8.28 Å** (HgCl₂: 7–10 Å), Lys245–Lys349 **15.48–16.26 Å** y Lys215–Lys317 **21.62–23.20 Å** (DSS: ≤24.2 Å). Auditoría descriptiva con endpoints SG/NZ y hashes: [`ext_cb2_gi_crosslink_audit.md`](../../results/network_core/ext_cb2_gi_crosslink_audit.md). Proximidad **intermolecular** ≠ hubs Janusforge / P3 / alostería intramolecular. Tráfico 2025: [`TRAFFICKING_CONFOUNDER_CB2_2025.md`](TRAFFICKING_CONFOUNDER_CB2_2025.md). P2/P5 unchanged.
 
 ## 1. No sois únicos
 
@@ -76,6 +82,12 @@ Atlas interno ya lista la mayoría de PDBs: [`CB2_STRUCTURE_ATLAS.md`](CB2_STRUC
 | Wang 9U7L mutagénesis vs Qi/Niswender assay-dependent EC21a | Checklist struct↔PAM vs tensión farmacológica | **Bajo** | Lit. + PDB | ✅ `EXT_EC21A_PAM_STRUCT_ASSAY_PARTIAL` |
 | Abrol IC contacts × LigACN Sink Set T | ¿Sinks Morales tocan fingerprint efector Abrol? | **Bajo** | EXTERNAL | ✅ `EXT_ABROL_LIGACN_SINK_OVERLAP` (P3 BLOCKED) |
 | Dutta Supp Fig. 22 tunnels × hubs | Membership residue-level vs solo claim cualitativo EC→IC | **Bajo** | SI caption | ✅ `EXT_DUTTA_SF22_TUNNEL_HUB_QUALITATIVE_ONLY` |
+| Mnpotra 2014 XL CB2–Gi (C134–C351; K245–K349; K215–K317) × panel cryo local | ¿Proximidad intermolecular XL compatible con geometría moderna CB2–Gi? (no hubs/P3) | **Bajo** | EXTERNAL | ✅ `EXT_CB2_GI_XL_STRUCTURAL_SUPPORTED` (2026-10-19) |
+| Oyagawa 2025 anterograde trafficking | ¿Registrar confusor de abundancia superficial en ensayos de horas? | **Bajo** (DOC) | EXTERNAL / assay | ✅ `TRAFFICKING_CONFOUNDER_CB2_2025` REGISTERED |
+| Fluorescent paired probes (Chem. Sci. 2024) | Ortogonal localization/state — **DEFERRED** | — | FUTURE | ⏸ DEFERRED (PI 2026-10-19) |
+| GRAB-CB2 / eCB2.0 (IJMS 2026) | Sensor fluorescente de activación — **DEFERRED** | — | FUTURE | ⏸ DEFERRED (PI 2026-10-19) |
+| Sharma 2023 BRET kinetics / lipophilicity | Reanálisis cinético vs TR-FRET leads — **DEFERRED** | — | FUTURE | ⏸ DEFERRED (PI 2026-10-19) |
+| Ahn Q63R / H316Y variants | Sensibilidad de fondo genético — **DEFERRED** | — | FUTURE | ⏸ DEFERRED (PI 2026-10-19) |
 
 ---
 
@@ -145,8 +157,26 @@ Atlas interno ya lista la mayoría de PDBs: [`CB2_STRUCTURE_ATLAS.md`](CB2_STRUC
 11. Yeliseev et al. EPR (2021) [10.1016/j.bbamem.2021.183603](https://doi.org/10.1016/j.bbamem.2021.183603)  
 12. DNP-MAS NMR CB2 (2023) [10.1021/acsomega.3c04681](https://doi.org/10.1021/acsomega.3c04681)  
 13. Wang et al. Ec21a / 9U7L (2026) [10.1038/s41467-026-72923-6](https://doi.org/10.1038/s41467-026-72923-6)  
-14. Shen et al. 8X3L (2024) [10.1073/pnas.2401091121](https://doi.org/10.1073/pnas.2401091121)  
+14. Shen et al. 8X3L (2024) [10.1073/pnas.2401091121](https://doi.org/10.1073/pnas.2401091121)
+15. Mnpotra et al. CB2–Gαi1 crosslinking (2014) [10.1074/jbc.M113.539916](https://doi.org/10.1074/jbc.M113.539916)  
+16. Oyagawa et al. trafficking (2025) [10.1007/s00018-025-05961-w](https://doi.org/10.1007/s00018-025-05961-w)  
 
 ---
+
+## 8. Leads 2026-10-19 (PI decision) — ejecutado / diferido
+
+**Decisión PI:** nota bibliográfica + comparación estructural del crosslinking CB2–Gi 2014; registrar tráfico 2025 como confusor de ensayos largos; **diferir** sondas fluorescentes (2024), GRAB-CB2 (2026), cinética/lipofilia y variantes. **No** reopen P2; **no** advance P5.
+
+| Lead | Status | Artefacto / veredicto |
+|------|--------|------------------------|
+| Crosslinking CB2–Gi Mnpotra 2014 | ✅ DONE | [`EXPERIMENT_EXT_CB2_GI_CROSSLINK_2014.md`](EXPERIMENT_EXT_CB2_GI_CROSSLINK_2014.md) · `results/network_core/ext_cb2_gi_crosslink_2014.*` → **`EXT_CB2_GI_XL_STRUCTURAL_SUPPORTED`** |
+| Tráfico anterógrado Oyagawa 2025 | ✅ REGISTERED | [`TRAFFICKING_CONFOUNDER_CB2_2025.md`](TRAFFICKING_CONFOUNDER_CB2_2025.md) |
+| Sondas fluorescentes pareadas (Chem. Sci. 2024) | ⏸ DEFERRED | PMC [PMC11485011](https://pmc.ncbi.nlm.nih.gov/articles/PMC11485011/) — fase futura |
+| GRAB-CB2 / eCB2.0 (IJMS 2026) | ⏸ DEFERRED | PMC [PMC12984142](https://pmc.ncbi.nlm.nih.gov/articles/PMC12984142/) — fase futura |
+| Sharma 2023 BRET kinetics / lipophilicity | ⏸ DEFERRED | PMC [PMC10094510](https://pmc.ncbi.nlm.nih.gov/articles/PMC10094510/) |
+| Variantes Q63R / H316Y | ⏸ DEFERRED | PubMed [20124950](https://pubmed.ncbi.nlm.nih.gov/20124950/) |
+
+**Epistémico XL (recordatorio):** compatibilidad geométrica intermolecular ≠ prueba de hubs ni de mecanismo Gi funcional.
+
 
 *Fin del informe. Flags de freeze P2 / EXTERNAL no se modifican por este documento.*

@@ -1,5 +1,9 @@
 # RESEARCH STATE — Janusforge CB₂ (DEEP_PAUSE + campaña P2 sampling scoped)
 
+### Addendum de alcance (2026-10-19)
+
+Por instrucción humana explícita (2026-10-19) se autoriza: (1) comparación estructural EXTERNAL de los tres crosslinks CB2–Gαi1 de Mnpotra et al. (2014) frente a PDBs CB2–Gi locales — pre-reg [`docs/synthesis/EXPERIMENT_EXT_CB2_GI_CROSSLINK_2014.md`](docs/synthesis/EXPERIMENT_EXT_CB2_GI_CROSSLINK_2014.md), veredicto `EXT_CB2_GI_XL_STRUCTURAL_SUPPORTED` en [`results/network_core/ext_cb2_gi_crosslink_2014.md`](results/network_core/ext_cb2_gi_crosslink_2014.md) (auditoría descriptiva complementaria: [`ext_cb2_gi_crosslink_audit.md`](results/network_core/ext_cb2_gi_crosslink_audit.md)); (2) registro del confusor de tráfico Oyagawa 2025 [`docs/synthesis/TRAFFICKING_CONFOUNDER_CB2_2025.md`](docs/synthesis/TRAFFICKING_CONFOUNDER_CB2_2025.md); (3) deferral de sondas/GRAB/cinética/variantes (ver PUBLIC_DATA_LEADS §8). XL = proximidad **intermolecular** CB2↔Gi, no mapa intramolecular ni prueba de hubs/P3. **No** autoriza MD Tier B, docking, reopen P2, ni advance P5.
+
 **Fecha:** 2026-09-13 (PI “adelante” = muestreo masivo FIRST; P5 QUEUED; EXTERNAL frozen); acta freeze EXTERNAL CB2_APO; landmarks + own MSM; 2026-09-10 Final_MSM kinetics; satellite X8/X1 2026-09-09; acta P2 2026-08-21 (`67df445`)  
 **Rama:** `feat/cb2-hubs-functional-topology-test`  
 **Tipo:** **DEEP_PAUSE** con excepción scoped — **`P2_MASSIVE_SAMPLING` pre-registrada** ([`docs/synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md`](docs/synthesis/EXPERIMENT_P2_MASSIVE_SAMPLING.md)). Capítulo **EXTERNAL CB2_APO síntesis congelada** ([`docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md`](docs/synthesis/ACTA_EXTERNAL_CB2_APO_2026-09.md)). Excepciones PI previas cerradas: X8/X1; cinética Final_MSM; landmarks + own MSM (**no** reabre P2). **`P2_MSM_TRANSITIONS` sigue CLOSED (INSUFFICIENT_SAMPLING)** hasta Gate-1 sobre target Tier B; arquitectura A/B/C **NOT DECIDED**; **P5 QUEUED / no execution**; **no** docking / de novo / hub hunt. **Credibilidad > pretend MD.**  
@@ -251,7 +255,7 @@ Working hypothesis (framing): CB2 activity appears to emerge from the interactio
 
 ### 2. Complejo cuaternario y acoplamiento
 
-**Tema de literatura (IDs primarios pendientes si no están en repo):** interfaz TM3 / TM5 / TM6–Gαi; apertura coordinada con TM5 intracelular. **[HIPÓTESIS_ABIERTA]** / tema a anclar con DOI primario — **no** inventar citas de “crosslinking de complejo cuaternario” sin ID verificado en `RESEARCH_STATE` / síntesis. Paisaje multi-estado CB1/CB2 ya anclado: **[LITERATURA_PRIMARIA]** Dutta & Shukla (2023), DOI [10.1038/s42003-023-04868-1](https://doi.org/10.1038/s42003-023-04868-1).
+**[LITERATURA_PRIMARIA]** Interfaz CB2–Gαi1: Mnpotra et al. (2014), crosslinking químico/LC-MS/MS, DOI [10.1074/jbc.M113.539916](https://doi.org/10.1074/jbc.M113.539916). **[OBSERVACIÓN_PROPIA]** Comparación EXTERNAL: `EXT_CB2_GI_XL_STRUCTURAL_SUPPORTED` ([`ext_cb2_gi_crosslink_2014.md`](results/network_core/ext_cb2_gi_crosslink_2014.md); audit descriptivo [`ext_cb2_gi_crosslink_audit.md`](results/network_core/ext_cb2_gi_crosslink_audit.md)). Proximidad intermolecular ≠ hubs/P3. La coordinación TM5 intracelular y su papel funcional siguen siendo **[HIPÓTESIS_ABIERTA]**. Paisaje multi-estado CB1/CB2: Dutta & Shukla (2023), DOI [10.1038/s42003-023-04868-1](https://doi.org/10.1038/s42003-023-04868-1).
 
 ### 3. Biofísica de membrana / liposomas reconstituidos
 
