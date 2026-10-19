@@ -10,13 +10,16 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+import shlex
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
 PDB_DIR = ROOT / "data" / "external" / "cb2_landmark_expanded"
 OUT_DIR = ROOT / "results" / "network_core"
-STRUCTURES = ("6PT0", "6KPF", "8GUQ", "8GUR", "8GUS", "8GUT", "8X3L")
+STRUCTURE_FILES = {key: f"{key}.pdb" for key in ("6PT0", "6KPF", "8GUQ", "8GUR", "8GUS", "8GUT", "8X3L")}
+STRUCTURE_FILES["12JA"] = "12JA.cif"
+STRUCTURES = tuple(STRUCTURE_FILES)
 
 # Chain R is human CB2 (UniProt P34972); chain A is human Gαi1 (P63096)
 # in the local RCSB PDB files. Residue numbers are UniProt-aligned PDB numbers.
@@ -61,6 +64,8 @@ CROSSLINKS = (
 
 
 def read_atoms(path: Path) -> dict[tuple[str, int, str], tuple[str, tuple[float, float, float]]]:
+    if path.suffix.lower() in {".cif", ".mmcif"}:
+        return read_cif_atoms(path)
     atoms = {}
     for line in path.read_text(errors="replace").splitlines():
         if not line.startswith("ATOM  "):
@@ -80,6 +85,40 @@ def read_atoms(path: Path) -> dict[tuple[str, int, str], tuple[str, tuple[float,
     return atoms
 
 
+def read_cif_atoms(path: Path) -> dict[tuple[str, int, str], tuple[str, tuple[float, float, float]]]:
+    lines = path.read_text(errors="replace").splitlines()
+    headers = None
+    atoms = {}
+    for line in lines:
+        if line.startswith("_atom_site."):
+            headers = headers or []
+            headers.append(line.strip())
+            continue
+        if headers is None:
+            continue
+        if not line or line.startswith("#"):
+            break
+        row = shlex.split(line)
+        if len(row) != len(headers):
+            continue
+        values = dict(zip(headers, row))
+        if values.get("_atom_site.group_PDB") not in {"ATOM", "HETATM"}:
+            continue
+        if values.get("_atom_site.pdbx_PDB_model_num", "1") != "1":
+            continue
+        if values.get("_atom_site.label_alt_id", ".") not in {".", "?", "A"}:
+            continue
+        if values.get("_atom_site.type_symbol", "").upper() in {"H", "D"}:
+            continue
+        try:
+            key = (values["_atom_site.auth_asym_id"], int(values["_atom_site.auth_seq_id"]), values["_atom_site.auth_atom_id"])
+            xyz = tuple(float(values[f"_atom_site.Cartn_{axis}"]) for axis in "xyz")
+        except (KeyError, ValueError):
+            continue
+        atoms[key] = (values.get("_atom_site.auth_comp_id", "UNK"), xyz)
+    return atoms
+
+
 def distance(a: tuple[float, float, float], b: tuple[float, float, float]) -> float:
     return math.sqrt(sum((x - y) ** 2 for x, y in zip(a, b)))
 
@@ -87,7 +126,7 @@ def distance(a: tuple[float, float, float], b: tuple[float, float, float]) -> fl
 def audit() -> dict:
     rows = []
     for pdb_id in STRUCTURES:
-        path = PDB_DIR / f"{pdb_id}.pdb"
+        path = PDB_DIR / STRUCTURE_FILES[pdb_id]
         atoms = read_atoms(path)
         structure = {
             "pdb_id": pdb_id,
@@ -195,6 +234,7 @@ def render_markdown(result: dict) -> str:
         "8GUS": "HU-308",
         "8GUT": "LEI-102",
         "8X3L": "agonist (8X3L)",
+        "12JA": "agonist '1029",
     }
     by_id = {s["pdb_id"]: s for s in result["structures"]}
     order = [link["id"] for link in CROSSLINKS]

@@ -23,6 +23,7 @@ The source paper assessed Cα–Cα separations: 7–10 Å for the HgCl₂ cyste
 | 8GUS | HU-308 | 7.85 (4.33) | 15.53 (16.31) | 21.99 (28.43) |
 | 8GUT | LEI-102 | 7.80 (3.98) | 15.48 (20.78) | 21.74 (29.09) |
 | 8X3L | agonist (8X3L) | 7.65 (3.91) | 15.77 (18.17) | 23.20 (31.90) |
+| 12JA | agonist '1029 | 7.87 (3.87) | 16.14 (20.31) | 23.34 (29.66) |
 
 ## Interpretation
 
