@@ -1,6 +1,6 @@
 # PUBLIC DATA LEADS — CB2 (informe para PI)
 
-**Fecha:** 2026-09-20 · **Update:** 2026-10-19 (XL 2014 + trafficking confounder + deferred probes/GRAB)  
+**Fecha:** 2026-09-20 · **Update:** 2026-10-19 (XL 2014; 12IY/12JA XL extension; trafficking; surface×cAMP design; deferred probes/GRAB)  
 **Tipo:** DOCUMENTATION ONLY — síntesis de literatura + depósitos públicos 2019–2026; **sin** compute nuevo.  
 **Audiencia:** PI (español, postura de credibilidad).  
 **Autoridad de freeze:** [`RESEARCH_STATE.md`](../../RESEARCH_STATE.md) · acta EXTERNAL [`ACTA_EXTERNAL_CB2_APO_2026-09.md`](ACTA_EXTERNAL_CB2_APO_2026-09.md) · roadmap [`RESEARCH_ROADMAP.md`](RESEARCH_ROADMAP.md)
@@ -90,6 +90,8 @@ Atlas interno ya lista la mayoría de PDBs: [`CB2_STRUCTURE_ATLAS.md`](CB2_STRUC
 | GRAB-CB2 / eCB2.0 (IJMS 2026) | Sensor fluorescente de activación — **DEFERRED** | — | FUTURE | ⏸ DEFERRED (PI 2026-10-19) |
 | Sharma 2023 BRET kinetics / lipophilicity | Reanálisis cinético vs TR-FRET leads — **DEFERRED** | — | FUTURE | ⏸ DEFERRED (PI 2026-10-19) |
 | Ahn Q63R / H316Y variants | Sensibilidad de fondo genético — **DEFERRED** | — | FUTURE | ⏸ DEFERRED (PI 2026-10-19) |
+| 12IY / 12JA XL extension (same Mnpotra windows) | ¿Parejas XL 2014 compatibles en estructuras Rachman 2026? | **Bajo** | EXTERNAL | ✅ `EXT_CB2_GI_XL_12IY_12JA_PARTIAL` |
+| Surface + cAMP time series (design only) | ¿Separar confusor de abundancia (Oyagawa) de cinética de señal (Sharma)? | **Design** | FUTURE wet-lab | 📋 `EXPERIMENT_DESIGN_SURFACE_CAMP_TIMESERIES` (not run) |
 
 ---
 
@@ -177,8 +179,13 @@ Atlas interno ya lista la mayoría de PDBs: [`CB2_STRUCTURE_ATLAS.md`](CB2_STRUC
 | GRAB-CB2 / eCB2.0 (IJMS 2026) | ⏸ DEFERRED | PMC [PMC12984142](https://pmc.ncbi.nlm.nih.gov/articles/PMC12984142/) — fase futura |
 | Sharma 2023 BRET kinetics / lipophilicity | ⏸ DEFERRED | PMC [PMC10094510](https://pmc.ncbi.nlm.nih.gov/articles/PMC10094510/) |
 | Variantes Q63R / H316Y | ⏸ DEFERRED | PubMed [20124950](https://pubmed.ncbi.nlm.nih.gov/20124950/) |
+| 12IY / 12JA XL (Rachman 2026) | ✅ DONE | [`EXPERIMENT_EXT_CB2_GI_XL_12IY_12JA.md`](EXPERIMENT_EXT_CB2_GI_XL_12IY_12JA.md) → **`EXT_CB2_GI_XL_12IY_12JA_PARTIAL`** (12JA ALL_WITHIN; 12IY N/A_NO_GI; 12IZ appendix ALL_WITHIN) |
+| Surface + Gi/cAMP time series | 📋 DESIGN ONLY | [`EXPERIMENT_DESIGN_SURFACE_CAMP_TIMESERIES.md`](EXPERIMENT_DESIGN_SURFACE_CAMP_TIMESERIES.md) — no wet-lab; no P2/P5 reopen |
 
 **Epistémico XL (recordatorio):** compatibilidad geométrica intermolecular ≠ prueba de hubs ni de mecanismo Gi funcional.
 
 
 *Fin del informe. Flags de freeze P2 / EXTERNAL no se modifican por este documento.*
+
+
+**Actualización 2026-10-19:** ampliada auditoría geométrica de crosslinks Mnpotra a **12JA**; los tres pares cumplen los criterios Cα publicados. **12IY se excluye** del conjunto CB2–Gi: RCSB lo clasifica como CB2 receptor-only. Propuesta documental de ensayo temporal de CB2 superficial + Gi/cAMP: [EXPERIMENT_CB2_SURFACE_SIGNAL_TIMECOURSE.md](EXPERIMENT_CB2_SURFACE_SIGNAL_TIMECOURSE.md). No altera P2/P5 ni autoriza trabajo de laboratorio.

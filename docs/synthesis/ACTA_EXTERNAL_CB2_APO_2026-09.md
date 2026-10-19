@@ -198,3 +198,13 @@ NEXT: HUMAN_STRATEGIC_CHOICE  # massive sampling OR P5 OR wait filelist
 
 **Hard stops affirmed:** XL = intermolecular proximity only (not intramolecular CB2 map; not hub/P3 proof); P2 closed; P5 not advanced; Abrol avg fused-chain numbering left `NO_GAI_MAP` (no invented offset).
 
+
+**2026-10-19 (b)** — XL extension 12IY/12JA + surface×cAMP assay **design** (PI order). **No** P2 reopen; **no** P5 advance; **no** Tier B MD; **no** wet-lab run.
+
+| # | Ítem | Veredicto | Artefactos |
+|---|------|-----------|------------|
+| 1 | Mnpotra XL windows × 12IY / 12JA (same protocol as 2014 compare) | `EXT_CB2_GI_XL_12IY_12JA_PARTIAL` | `EXPERIMENT_EXT_CB2_GI_XL_12IY_12JA.md` · `ext_cb2_gi_xl_12iy_12ja.*` |
+| 2 | Surface abundance + Gi/cAMP time series | DESIGN ONLY (not executed) | `EXPERIMENT_DESIGN_SURFACE_CAMP_TIMESERIES.md` |
+
+**Notes:** 12IY deposit is receptor-only (local refinement) → `N/A_NO_GI` for intermolecular XL; 12JA ALL_WITHIN; appendix 12IZ (Gi + '5249) ALL_WITHIN. Design cites Oyagawa 2025 + Sharma 2023; does **not** reopen kinetic gates.
+
