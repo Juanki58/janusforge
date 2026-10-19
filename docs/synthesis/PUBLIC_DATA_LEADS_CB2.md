@@ -44,6 +44,8 @@ Muchos grupos trabajan activación, redes alostéricas, toggle, MSM y estructura
 | **DNP-MAS NMR (ACS Omega 2023)** | Ensemble local: TM7 ligando-sensible; ICL3 siempre flexible | DOI [10.1021/acsomega.3c04681](https://doi.org/10.1021/acsomega.3c04681) |
 | **Wang / Li et al.** | PAM Ec21a + CP55940 + Gi (vestíbulo ECL2) | DOI [10.1038/s41467-026-72923-6](https://doi.org/10.1038/s41467-026-72923-6); PDB **9U7L** |
 | **Shen / Shao et al.** | Entropy-driven subtype recognition; cryo CB2–G | DOI [10.1073/pnas.2401091121](https://doi.org/10.1073/pnas.2401091121); PDB **8X3L** |
+| **Mnpotra / Reggio / Song** | Crosslinking químico CB2–Gαi1 (Cys–Cys / Lys–Lys); interfaz experimental | DOI [10.1074/jbc.M113.539916](https://doi.org/10.1074/jbc.M113.539916); PMC [PMC4106340](https://pmc.ncbi.nlm.nih.gov/articles/PMC4106340/) |
+| **Oyagawa / Grimsey / Glass** | Tráfico anterógrado CB2 inducido por ligando (chaperoning); confusor de ensayos largos | DOI [10.1007/s00018-025-05961-w](https://doi.org/10.1007/s00018-025-05961-w); PMC [PMC12748375](https://pmc.ncbi.nlm.nih.gov/articles/PMC12748375/) |
 
 Atlas interno ya lista la mayoría de PDBs: [`CB2_STRUCTURE_ATLAS.md`](CB2_STRUCTURE_ATLAS.md). Encuesta de capas: [`CB2_DYNAMIC_LAYERS_LITERATURE_SURVEY.md`](CB2_DYNAMIC_LAYERS_LITERATURE_SURVEY.md).
 
