@@ -1,0 +1,133 @@
+{
+  "experiment": "X1_MEAN_VS_VARIANCE",
+  "generated_utc": "2026-09-09T20:12:37.303670+00:00",
+  "preregistration": "docs\\synthesis\\EXPERIMENT_X1_MEAN_VS_VARIANCE.md",
+  "contact_def": {
+    "name": "getcontacts_vdw_envelope_plus_alloviz_filters",
+    "geometry": "|AB| < Rvdw(A)+Rvdw(B)+0.5 Angstrom; A,B non-hydrogen",
+    "vdw_radii_A": {
+      "H": 1.2,
+      "C": 1.7,
+      "N": 1.55,
+      "O": 1.52,
+      "S": 1.8,
+      "P": 1.8,
+      "F": 1.47,
+      "CL": 1.75,
+      "BR": 1.85,
+      "I": 1.98
+    },
+    "slack_A": 0.5,
+    "exclude_sequential_protein": true,
+    "p_ij_edge_threshold": 0.1,
+    "selection": "protein or resname 8D0",
+    "references": [
+      "Morales-Pastor et al. 2025 Methods (GetContacts + AlloViz p>=0.1, drop |i-j|==1)",
+      "https://getcontacts.github.io/interactions.html (vdW criterion)"
+    ],
+    "limitation": "Full GetContacts chemotypes (hbond angles, pi geometry, water bridges) not reimplemented; persistence uses registered VdW distance envelope only."
+  },
+  "traj_dir": "data\\external\\morales_pastor_2025\\trajectories\\gpcrmd_dyn2126",
+  "traj_sha256": {
+    "24306_dyn_2126.psf": "fce9db151fbf5f7f0ed2b235ff0fd5d962dd8da91fe97afa34f675ab8e2f02e1",
+    "24307_trj_2126.xtc": "1fe13c425c67dd1325208af71131b34fdc3407b868f8c2489930c3d81e53e134",
+    "24308_trj_2126.xtc": "6fef31e2ae0e10eac4590be5b9e205a5b29e3b96d4ee64cc0227dd39c3628be4",
+    "24309_trj_2126.xtc": "598ca435644396c1e2503d94d5b75e2469307effe1790a68cc490971b44eadd2",
+    "24310_trj_2126.xtc": "fec3d8115a3a0d47bc45de20fd15baee5d21c0c46d3599e3970b9c4d08953f3d",
+    "24311_trj_2126.xtc": "467c225dea6cca37e94fd7e7521d406446c32fecf34f46e7d98b303290efa99b"
+  },
+  "hubs": [
+    "ALA:79",
+    "ALA:83",
+    "LEU:287",
+    "ASN:291",
+    "ASN:295",
+    "ARG:302"
+  ],
+  "S_set": [
+    "8D0:1",
+    "SER:285",
+    "PHE:87"
+  ],
+  "T_set": [
+    "ARG:131",
+    "ASP:240",
+    "SER:303",
+    "SER:69"
+  ],
+  "ligacn": {
+    "moesm5": "results\\network_core\\_raw_downloads\\41467_2025_60003_MOESM5_ESM.xlsx",
+    "n_directed_edges": 239,
+    "n_nodes": 100,
+    "n_hub_nodes_present": 6,
+    "ref_ligacn_size": 176,
+    "ref_hub_nbhd_size": 66,
+    "hub_closed_neighborhood_n_nodes": 22
+  },
+  "per_replica": [
+    {
+      "xtc": "24307_trj_2126.xtc",
+      "n_frames": 399
+    },
+    {
+      "xtc": "24308_trj_2126.xtc",
+      "n_frames": 399
+    },
+    {
+      "xtc": "24309_trj_2126.xtc",
+      "n_frames": 399
+    },
+    {
+      "xtc": "24310_trj_2126.xtc",
+      "n_frames": 399
+    },
+    {
+      "xtc": "24311_trj_2126.xtc",
+      "n_frames": 399
+    }
+  ],
+  "n_frames_pooled": 1995,
+  "metrics": {
+    "k": 200,
+    "k_eff": 200,
+    "n_eligible_edges": 1128,
+    "n_frames_pooled": 1995,
+    "ref_hub_nbhd_size": 66,
+    "ref_ligacn_size": 176,
+    "overlap_mean_hub": 25,
+    "overlap_var_hub": 0,
+    "overlap_mean_ligacn": 74,
+    "overlap_var_ligacn": 2,
+    "jaccard_mean_hub": 0.1037344398340249,
+    "jaccard_var_hub": 0.0,
+    "jaccard_mean_ligacn": 0.24503311258278146,
+    "jaccard_var_ligacn": 0.0053475935828877,
+    "p_mean_hub": 0.000999000999000999,
+    "p_var_hub": 1.0,
+    "p_mean_ligacn": 0.000999000999000999,
+    "p_var_ligacn": 1.0,
+    "mean_beats_null_hub": true,
+    "var_beats_null_hub": false,
+    "var_more_than_mean": false,
+    "diff_var_minus_mean_hub": -25,
+    "null_hub_mean": 11.485,
+    "null_hub_p95": 16.049999999999955,
+    "alpha": 0.05,
+    "n_null": 1000,
+    "rng_seed": 20260821
+  },
+  "x1_verdict": "X1_MEAN_ALIGNS_STATIC",
+  "indeterminate_reason": null,
+  "governance": {
+    "reuses_p1_contact_def": true,
+    "no_new_cutoff": true,
+    "no_new_hub_hunt": true,
+    "no_gi_mechanism_claim": true,
+    "no_cholesterol_rescue_of_p1": true
+  },
+  "artifacts": {
+    "report_json": "results/network_core/x1_mean_vs_variance_report.json",
+    "report_md": "results/network_core/x1_mean_vs_variance_report.md",
+    "rank_lists": "results/network_core/x1_rank_lists.json"
+  }
+}

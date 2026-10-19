@@ -1,0 +1,1104 @@
+{
+  "generated_utc": "2026-09-20T23:30:41Z",
+  "branch": "feat/cb2-hubs-functional-topology-test",
+  "git_sha": "ff26bf01ad55edb3036fe7ab0bee23c92121f333",
+  "prereg": "docs\\synthesis\\EXPERIMENT_CB2_LANDMARK_EXPANDED.md",
+  "contact_def": {
+    "name": "getcontacts_vdw_envelope_plus_alloviz_filters",
+    "slack_A": 0.5,
+    "exclude_sequential_protein": true,
+    "p_ij_edge_threshold": 0.1
+  },
+  "soft_tau_A": 2.0,
+  "prior_dutta6_mean_jaccard": 0.8214,
+  "gate0": {
+    "ok": true,
+    "verdict": "GATE0_PASS",
+    "topo_n_atoms": 4566,
+    "topo_n_ca": 284,
+    "topo_uniprot_align": {
+      "alignment_identity": 1.0,
+      "median_offset_resid_minus_uniprot": -20,
+      "n_aligned": 284,
+      "n_residues": 284
+    },
+    "common_uniprot_positions": {
+      "n": 265,
+      "head": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "tail": [
+        302,
+        303,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        312,
+        316
+      ]
+    },
+    "n_matched_ca": 265,
+    "landmark_order": [
+      "dutta_inactive",
+      "dutta_I1",
+      "dutta_I2",
+      "dutta_I3",
+      "dutta_I4",
+      "dutta_active",
+      "5ZTY",
+      "6KPC",
+      "6KPF",
+      "6PT0",
+      "8GUQ",
+      "8GUR",
+      "8GUS",
+      "8GUT",
+      "8X3L",
+      "9U7L"
+    ],
+    "per_landmark": {
+      "dutta_inactive": {
+        "id": "dutta_inactive",
+        "kind": "dutta",
+        "file": "CB2_ref_inactive_3_b.pdb",
+        "path": "data\\external\\dutta_shukla_2023\\main_figure_6\\CB2_ref_inactive_3_b.pdb",
+        "sha256": "d641a808852c4c9e539f3d43205e501a47d4e43532bfec9fc8ab773371fa43e6",
+        "state_ligand": "Dutta Fig.6 dutta_inactive (geometric)",
+        "accession": null,
+        "chainID": "_",
+        "n_atoms_file": 4566,
+        "n_ca_chain": 284,
+        "identity_topo_pdb": 1.0,
+        "identity_uniprot": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "median_offset_resid_minus_uniprot": -20,
+          "n_aligned": 284,
+          "n_residues": 284
+        },
+        "n_matched_ca": 284,
+        "matched_uniprot_head": [
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "matched_uniprot_tail": [
+          315,
+          316,
+          317,
+          329,
+          345
+        ],
+        "n_matched_ca_common": 265
+      },
+      "dutta_I1": {
+        "id": "dutta_I1",
+        "kind": "dutta",
+        "file": "CB2_ref_inactive_I1_b.pdb",
+        "path": "data\\external\\dutta_shukla_2023\\main_figure_6\\CB2_ref_inactive_I1_b.pdb",
+        "sha256": "50fefbbe30fbdd2afb2ceed0be5a9656bf1734295da58edd13bf1c792d080bd9",
+        "state_ligand": "Dutta Fig.6 dutta_I1 (geometric)",
+        "accession": null,
+        "chainID": "_",
+        "n_atoms_file": 4566,
+        "n_ca_chain": 284,
+        "identity_topo_pdb": 1.0,
+        "identity_uniprot": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "median_offset_resid_minus_uniprot": -20,
+          "n_aligned": 284,
+          "n_residues": 284
+        },
+        "n_matched_ca": 284,
+        "matched_uniprot_head": [
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "matched_uniprot_tail": [
+          315,
+          316,
+          317,
+          329,
+          345
+        ],
+        "n_matched_ca_common": 265
+      },
+      "dutta_I2": {
+        "id": "dutta_I2",
+        "kind": "dutta",
+        "file": "CB2_ref_inactive_I2_b.pdb",
+        "path": "data\\external\\dutta_shukla_2023\\main_figure_6\\CB2_ref_inactive_I2_b.pdb",
+        "sha256": "311109f8a6ec3389e527e69ebda704f6db4b795afa6c0403ae993e6ad8bab836",
+        "state_ligand": "Dutta Fig.6 dutta_I2 (geometric)",
+        "accession": null,
+        "chainID": "_",
+        "n_atoms_file": 4566,
+        "n_ca_chain": 284,
+        "identity_topo_pdb": 1.0,
+        "identity_uniprot": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "median_offset_resid_minus_uniprot": -20,
+          "n_aligned": 284,
+          "n_residues": 284
+        },
+        "n_matched_ca": 284,
+        "matched_uniprot_head": [
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "matched_uniprot_tail": [
+          315,
+          316,
+          317,
+          329,
+          345
+        ],
+        "n_matched_ca_common": 265
+      },
+      "dutta_I3": {
+        "id": "dutta_I3",
+        "kind": "dutta",
+        "file": "CB2_ref_inactive_I3_b.pdb",
+        "path": "data\\external\\dutta_shukla_2023\\main_figure_6\\CB2_ref_inactive_I3_b.pdb",
+        "sha256": "142e770e64d7c0e0ef40cf02fb89e7d56567813ac083b82862f6bdb684a56718",
+        "state_ligand": "Dutta Fig.6 dutta_I3 (geometric)",
+        "accession": null,
+        "chainID": "_",
+        "n_atoms_file": 4566,
+        "n_ca_chain": 284,
+        "identity_topo_pdb": 1.0,
+        "identity_uniprot": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "median_offset_resid_minus_uniprot": -20,
+          "n_aligned": 284,
+          "n_residues": 284
+        },
+        "n_matched_ca": 284,
+        "matched_uniprot_head": [
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "matched_uniprot_tail": [
+          315,
+          316,
+          317,
+          329,
+          345
+        ],
+        "n_matched_ca_common": 265
+      },
+      "dutta_I4": {
+        "id": "dutta_I4",
+        "kind": "dutta",
+        "file": "CB2_ref_inactive_I4_b.pdb",
+        "path": "data\\external\\dutta_shukla_2023\\main_figure_6\\CB2_ref_inactive_I4_b.pdb",
+        "sha256": "dca5531acdc11a94f055572eba22600aae78ba26bf0b0db975b1ee6e740d0a73",
+        "state_ligand": "Dutta Fig.6 dutta_I4 (geometric)",
+        "accession": null,
+        "chainID": "_",
+        "n_atoms_file": 4566,
+        "n_ca_chain": 284,
+        "identity_topo_pdb": 1.0,
+        "identity_uniprot": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "median_offset_resid_minus_uniprot": -20,
+          "n_aligned": 284,
+          "n_residues": 284
+        },
+        "n_matched_ca": 284,
+        "matched_uniprot_head": [
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "matched_uniprot_tail": [
+          315,
+          316,
+          317,
+          329,
+          345
+        ],
+        "n_matched_ca_common": 265
+      },
+      "dutta_active": {
+        "id": "dutta_active",
+        "kind": "dutta",
+        "file": "CB2_ref_inactive_active_b.pdb",
+        "path": "data\\external\\dutta_shukla_2023\\main_figure_6\\CB2_ref_inactive_active_b.pdb",
+        "sha256": "41816e10f2ca5e94079d72f59a2226b213b97c9ec922a3ffea7c722c3ad584c1",
+        "state_ligand": "Dutta Fig.6 dutta_active (geometric)",
+        "accession": null,
+        "chainID": "_",
+        "n_atoms_file": 4566,
+        "n_ca_chain": 284,
+        "identity_topo_pdb": 1.0,
+        "identity_uniprot": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "median_offset_resid_minus_uniprot": -20,
+          "n_aligned": 284,
+          "n_residues": 284
+        },
+        "n_matched_ca": 284,
+        "matched_uniprot_head": [
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "matched_uniprot_tail": [
+          315,
+          316,
+          317,
+          329,
+          345
+        ],
+        "n_matched_ca_common": 265
+      },
+      "5ZTY": {
+        "id": "5ZTY",
+        "kind": "rcsb",
+        "file": "5ZTY.pdb",
+        "path": "data\\external\\cb2_landmark_expanded\\5ZTY.pdb",
+        "sha256": "7a2685dcfa99605e85a0871d914ab16e11b21e60239fe368f714aecf66f40935",
+        "state_ligand": "inactive / antagonist AM10257",
+        "accession": "5ZTY",
+        "chainID": "A",
+        "n_atoms_file": 3741,
+        "n_ca_chain": 451,
+        "identity_topo_pdb": 0.9859154929577465,
+        "identity_uniprot": 0.973421926910299,
+        "uniprot_align": {
+          "alignment_identity": 0.973421926910299,
+          "median_offset_resid_minus_uniprot": 0,
+          "n_aligned": 301,
+          "n_residues": 449
+        },
+        "n_matched_ca": 278,
+        "matched_uniprot_head": [
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "matched_uniprot_tail": [
+          315,
+          316,
+          317,
+          329,
+          345
+        ],
+        "n_matched_ca_common": 265
+      },
+      "6KPC": {
+        "id": "6KPC",
+        "kind": "rcsb",
+        "file": "6KPC.pdb",
+        "path": "data\\external\\cb2_landmark_expanded\\6KPC.pdb",
+        "sha256": "42eb34f32225b8eb3fa769c746803ddaa16eca7f6bd5de4a669c273390dc022d",
+        "state_ligand": "active crystal / E3R",
+        "accession": "6KPC",
+        "chainID": "A",
+        "n_atoms_file": 3500,
+        "n_ca_chain": 445,
+        "identity_topo_pdb": 0.9821428571428571,
+        "identity_uniprot": 0.9696969696969697,
+        "uniprot_align": {
+          "alignment_identity": 0.9696969696969697,
+          "median_offset_resid_minus_uniprot": 0,
+          "n_aligned": 297,
+          "n_residues": 445
+        },
+        "n_matched_ca": 270,
+        "matched_uniprot_head": [
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "matched_uniprot_tail": [
+          308,
+          309,
+          310,
+          312,
+          316
+        ],
+        "n_matched_ca_common": 265
+      },
+      "6KPF": {
+        "id": "6KPF",
+        "kind": "rcsb",
+        "file": "6KPF.pdb",
+        "path": "data\\external\\cb2_landmark_expanded\\6KPF.pdb",
+        "sha256": "4f7fb5652e4c46854d538416bcef11a942fd6fae33c057fabc3611cf362a08d3",
+        "state_ligand": "active + Gi / AM12033-class",
+        "accession": "6KPF",
+        "chainID": "R",
+        "n_atoms_file": 8775,
+        "n_ca_chain": 290,
+        "identity_topo_pdb": 0.9964788732394366,
+        "identity_uniprot": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "median_offset_resid_minus_uniprot": 0,
+          "n_aligned": 290,
+          "n_residues": 290
+        },
+        "n_matched_ca": 281,
+        "matched_uniprot_head": [
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "matched_uniprot_tail": [
+          315,
+          316,
+          317,
+          329,
+          345
+        ],
+        "n_matched_ca_common": 265
+      },
+      "6PT0": {
+        "id": "6PT0",
+        "kind": "rcsb",
+        "file": "6PT0.pdb",
+        "path": "data\\external\\cb2_landmark_expanded\\6PT0.pdb",
+        "sha256": "3dfb5aff6b75ffd189491b5b67ff10d3ad6857504213d675266ecaffeb3249f8",
+        "state_ligand": "active + Gi / WIN 55,212-2",
+        "accession": "6PT0",
+        "chainID": "R",
+        "n_atoms_file": 10232,
+        "n_ca_chain": 298,
+        "identity_topo_pdb": 1.0,
+        "identity_uniprot": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "median_offset_resid_minus_uniprot": 0,
+          "n_aligned": 298,
+          "n_residues": 298
+        },
+        "n_matched_ca": 284,
+        "matched_uniprot_head": [
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "matched_uniprot_tail": [
+          315,
+          316,
+          317,
+          329,
+          345
+        ],
+        "n_matched_ca_common": 265
+      },
+      "8GUR": {
+        "id": "8GUR",
+        "kind": "rcsb",
+        "file": "8GUR.pdb",
+        "path": "data\\external\\cb2_landmark_expanded\\8GUR.pdb",
+        "sha256": "76aa4579334f50b5bd2ac998444be18f29679aa00f9980f5c70ca19d5e22a40c",
+        "state_ligand": "active + Gi / CP55,940",
+        "accession": "8GUR",
+        "chainID": "R",
+        "n_atoms_file": 8888,
+        "n_ca_chain": 282,
+        "identity_topo_pdb": 0.9963898916967509,
+        "identity_uniprot": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "median_offset_resid_minus_uniprot": 0,
+          "n_aligned": 282,
+          "n_residues": 282
+        },
+        "n_matched_ca": 274,
+        "matched_uniprot_head": [
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "matched_uniprot_tail": [
+          308,
+          309,
+          310,
+          312,
+          316
+        ],
+        "n_matched_ca_common": 265
+      },
+      "8GUS": {
+        "id": "8GUS",
+        "kind": "rcsb",
+        "file": "8GUS.pdb",
+        "path": "data\\external\\cb2_landmark_expanded\\8GUS.pdb",
+        "sha256": "1dd3f4fb84c09e7478043ce637ab45003cf632fcff701dabdbb49826cb920a35",
+        "state_ligand": "active + Gi / HU-308",
+        "accession": "8GUS",
+        "chainID": "R",
+        "n_atoms_file": 8805,
+        "n_ca_chain": 290,
+        "identity_topo_pdb": 0.9964788732394366,
+        "identity_uniprot": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "median_offset_resid_minus_uniprot": 0,
+          "n_aligned": 290,
+          "n_residues": 290
+        },
+        "n_matched_ca": 281,
+        "matched_uniprot_head": [
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "matched_uniprot_tail": [
+          315,
+          316,
+          317,
+          329,
+          345
+        ],
+        "n_matched_ca_common": 265
+      },
+      "8GUQ": {
+        "id": "8GUQ",
+        "kind": "rcsb",
+        "file": "8GUQ.pdb",
+        "path": "data\\external\\cb2_landmark_expanded\\8GUQ.pdb",
+        "sha256": "da92dd167389e19e01a7aeacc18c236b33e6028583c00a9d29ad458e7d6e594d",
+        "state_ligand": "active + Gi / Olorinab (\u03b2arr-biased)",
+        "accession": "8GUQ",
+        "chainID": "R",
+        "n_atoms_file": 8789,
+        "n_ca_chain": 290,
+        "identity_topo_pdb": 0.9964788732394366,
+        "identity_uniprot": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "median_offset_resid_minus_uniprot": 0,
+          "n_aligned": 290,
+          "n_residues": 290
+        },
+        "n_matched_ca": 281,
+        "matched_uniprot_head": [
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "matched_uniprot_tail": [
+          315,
+          316,
+          317,
+          329,
+          345
+        ],
+        "n_matched_ca_common": 265
+      },
+      "8GUT": {
+        "id": "8GUT",
+        "kind": "rcsb",
+        "file": "8GUT.pdb",
+        "path": "data\\external\\cb2_landmark_expanded\\8GUT.pdb",
+        "sha256": "86340e37cd2fcdd62564cb72bf35856f6c9788fa387009d6b2cee17b5497cc44",
+        "state_ligand": "active + Gi / LEI-102",
+        "accession": "8GUT",
+        "chainID": "R",
+        "n_atoms_file": 8800,
+        "n_ca_chain": 290,
+        "identity_topo_pdb": 0.9964788732394366,
+        "identity_uniprot": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "median_offset_resid_minus_uniprot": 0,
+          "n_aligned": 290,
+          "n_residues": 290
+        },
+        "n_matched_ca": 281,
+        "matched_uniprot_head": [
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "matched_uniprot_tail": [
+          315,
+          316,
+          317,
+          329,
+          345
+        ],
+        "n_matched_ca_common": 265
+      },
+      "8X3L": {
+        "id": "8X3L",
+        "kind": "rcsb",
+        "file": "8X3L.pdb",
+        "path": "data\\external\\cb2_landmark_expanded\\8X3L.pdb",
+        "sha256": "ff531cee0ba3b9f438ee5015d4f761176b00e47b40eb1ba51863ee5e6cd6bf20",
+        "state_ligand": "active + G / entropy-driven",
+        "accession": "8X3L",
+        "chainID": "R",
+        "n_atoms_file": 8743,
+        "n_ca_chain": 287,
+        "identity_topo_pdb": 0.9964539007092199,
+        "identity_uniprot": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "median_offset_resid_minus_uniprot": 0,
+          "n_aligned": 287,
+          "n_residues": 287
+        },
+        "n_matched_ca": 279,
+        "matched_uniprot_head": [
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "matched_uniprot_tail": [
+          315,
+          316,
+          317,
+          329,
+          345
+        ],
+        "n_matched_ca_common": 265
+      },
+      "9U7L": {
+        "id": "9U7L",
+        "kind": "rcsb",
+        "file": "9U7L.pdb",
+        "path": "data\\external\\cb2_landmark_expanded\\9U7L.pdb",
+        "sha256": "a04ab198a032a1502977eb37ff4ba4cecd839f8e78fe44e0b579af8257ef7d25",
+        "state_ligand": "active + PAM Ec21a + CP55,940",
+        "accession": "9U7L",
+        "chainID": "R",
+        "n_atoms_file": 2306,
+        "n_ca_chain": 298,
+        "identity_topo_pdb": 1.0,
+        "identity_uniprot": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "median_offset_resid_minus_uniprot": 0,
+          "n_aligned": 298,
+          "n_residues": 298
+        },
+        "n_matched_ca": 284,
+        "matched_uniprot_head": [
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "matched_uniprot_tail": [
+          315,
+          316,
+          317,
+          329,
+          345
+        ],
+        "n_matched_ca_common": 265
+      }
+    },
+    "dropped": [],
+    "note": "Geometric landmark labels are structural refs only; NOT MSM metastable identity. Dropped PDBs listed in dropped[]."
+  },
+  "extract": {
+    "ok": true,
+    "n_per_state": 50,
+    "dir": "data\\external\\dutta_shukla_2023\\trajectories\\CB2_APO\\_cache_landmark_expanded\\nc",
+    "files": {
+      "inactive": [
+        "CB2-APO_inactive_pr_10_frame_0-strip.nc",
+        "CB2-APO_inactive_pr_10_frame_148-strip.nc",
+        "CB2-APO_inactive_pr_10_frame_198-strip.nc",
+        "CB2-APO_inactive_pr_10_frame_70-strip.nc",
+        "CB2-APO_inactive_pr_11_frame_118-strip.nc",
+        "CB2-APO_inactive_pr_11_frame_168-strip.nc",
+        "CB2-APO_inactive_pr_11_frame_37-strip.nc",
+        "CB2-APO_inactive_pr_11_frame_87-strip.nc",
+        "CB2-APO_inactive_pr_12_frame_136-strip.nc",
+        "CB2-APO_inactive_pr_12_frame_188-strip.nc",
+        "CB2-APO_inactive_pr_12_frame_59-strip.nc",
+        "CB2-APO_inactive_pr_13_frame_109-strip.nc",
+        "CB2-APO_inactive_pr_13_frame_158-strip.nc",
+        "CB2-APO_inactive_pr_13_frame_31-strip.nc",
+        "CB2-APO_inactive_pr_13_frame_80-strip.nc",
+        "CB2-APO_inactive_pr_14_frame_43-strip.nc",
+        "CB2-APO_inactive_pr_14_frame_94-strip.nc",
+        "CB2-APO_inactive_pr_15_frame_57-strip.nc",
+        "CB2-APO_inactive_pr_16_frame_20-strip.nc",
+        "CB2-APO_inactive_pr_16_frame_70-strip.nc",
+        "CB2-APO_inactive_pr_2_frame_1-strip.nc",
+        "CB2-APO_inactive_pr_2_frame_68-strip.nc",
+        "CB2-APO_inactive_pr_3_frame_12-strip.nc",
+        "CB2-APO_inactive_pr_3_frame_185-strip.nc",
+        "CB2-APO_inactive_pr_3_frame_242-strip.nc",
+        "CB2-APO_inactive_pr_3_frame_293-strip.nc",
+        "CB2-APO_inactive_pr_3_frame_79-strip.nc",
+        "CB2-APO_inactive_pr_4_frame_132-strip.nc",
+        "CB2-APO_inactive_pr_4_frame_187-strip.nc",
+        "CB2-APO_inactive_pr_4_frame_242-strip.nc",
+        "CB2-APO_inactive_pr_4_frame_32-strip.nc",
+        "CB2-APO_inactive_pr_4_frame_86-strip.nc",
+        "CB2-APO_inactive_pr_5_frame_138-strip.nc",
+        "CB2-APO_inactive_pr_5_frame_188-strip.nc",
+        "CB2-APO_inactive_pr_5_frame_58-strip.nc",
+        "CB2-APO_inactive_pr_6_frame_108-strip.nc",
+        "CB2-APO_inactive_pr_6_frame_158-strip.nc",
+        "CB2-APO_inactive_pr_6_frame_26-strip.nc",
+        "CB2-APO_inactive_pr_6_frame_78-strip.nc",
+        "CB2-APO_inactive_pr_7_frame_126-strip.nc",
+        "CB2-APO_inactive_pr_7_frame_175-strip.nc",
+        "CB2-APO_inactive_pr_7_frame_47-strip.nc",
+        "CB2-APO_inactive_pr_8_frame_10-strip.nc",
+        "CB2-APO_inactive_pr_8_frame_154-strip.nc",
+        "CB2-APO_inactive_pr_8_frame_28-strip.nc",
+        "CB2-APO_inactive_pr_8_frame_80-strip.nc",
+        "CB2-APO_inactive_pr_9_frame_128-strip.nc",
+        "CB2-APO_inactive_pr_9_frame_179-strip.nc",
+        "CB2-APO_inactive_pr_9_frame_48-strip.nc",
+        "CB2-APO_inactive_pr_9_frame_99-strip.nc"
+      ],
+      "active": [
+        "CB2-APO_active_pr_10_frame_1-strip.nc",
+        "CB2-APO_active_pr_10_frame_61-strip.nc",
+        "CB2-APO_active_pr_11_frame_127-strip.nc",
+        "CB2-APO_active_pr_11_frame_6-strip.nc",
+        "CB2-APO_active_pr_12_frame_24-strip.nc",
+        "CB2-APO_active_pr_13_frame_116-strip.nc",
+        "CB2-APO_active_pr_13_frame_162-strip.nc",
+        "CB2-APO_active_pr_13_frame_208-strip.nc",
+        "CB2-APO_active_pr_13_frame_260-strip.nc",
+        "CB2-APO_active_pr_13_frame_39-strip.nc",
+        "CB2-APO_active_pr_13_frame_88-strip.nc",
+        "CB2-APO_active_pr_14_frame_135-strip.nc",
+        "CB2-APO_active_pr_14_frame_182-strip.nc",
+        "CB2-APO_active_pr_14_frame_23-strip.nc",
+        "CB2-APO_active_pr_14_frame_279-strip.nc",
+        "CB2-APO_active_pr_14_frame_328-strip.nc",
+        "CB2-APO_active_pr_14_frame_375-strip.nc",
+        "CB2-APO_active_pr_14_frame_419-strip.nc",
+        "CB2-APO_active_pr_14_frame_466-strip.nc",
+        "CB2-APO_active_pr_14_frame_67-strip.nc",
+        "CB2-APO_active_pr_15_frame_122-strip.nc",
+        "CB2-APO_active_pr_15_frame_168-strip.nc",
+        "CB2-APO_active_pr_15_frame_217-strip.nc",
+        "CB2-APO_active_pr_15_frame_268-strip.nc",
+        "CB2-APO_active_pr_15_frame_316-strip.nc",
+        "CB2-APO_active_pr_15_frame_368-strip.nc",
+        "CB2-APO_active_pr_15_frame_418-strip.nc",
+        "CB2-APO_active_pr_15_frame_47-strip.nc",
+        "CB2-APO_active_pr_15_frame_7-strip.nc",
+        "CB2-APO_active_pr_16_frame_118-strip.nc",
+        "CB2-APO_active_pr_16_frame_17-strip.nc",
+        "CB2-APO_active_pr_16_frame_217-strip.nc",
+        "CB2-APO_active_pr_16_frame_263-strip.nc",
+        "CB2-APO_active_pr_16_frame_309-strip.nc",
+        "CB2-APO_active_pr_16_frame_357-strip.nc",
+        "CB2-APO_active_pr_16_frame_41-strip.nc",
+        "CB2-APO_active_pr_16_frame_458-strip.nc",
+        "CB2-APO_active_pr_16_frame_60-strip.nc",
+        "CB2-APO_active_pr_17_frame_18-strip.nc",
+        "CB2-APO_active_pr_2_frame_46-strip.nc",
+        "CB2-APO_active_pr_3_frame_54-strip.nc",
+        "CB2-APO_active_pr_4_frame_22-strip.nc",
+        "CB2-APO_active_pr_4_frame_71-strip.nc",
+        "CB2-APO_active_pr_5_frame_29-strip.nc",
+        "CB2-APO_active_pr_5_frame_78-strip.nc",
+        "CB2-APO_active_pr_6_frame_71-strip.nc",
+        "CB2-APO_active_pr_7_frame_31-strip.nc",
+        "CB2-APO_active_pr_7_frame_86-strip.nc",
+        "CB2-APO_active_pr_9_frame_47-strip.nc",
+        "CB2-APO_active_pr_9_frame_99-strip.nc"
+      ]
+    },
+    "pool_sizes": {
+      "inactive": 2598,
+      "active": 2373
+    },
+    "bytes_written_this_run": 0,
+    "cache_nbytes": 3084838424,
+    "sources": {
+      "cache_copy": 100,
+      "zip": 0,
+      "already": 0
+    },
+    "reused": false,
+    "seed": 20260913
+  },
+  "n_trajs": 100,
+  "total_frames": 56246,
+  "occupancy": {
+    "dutta_inactive": {
+      "n_frames": 4076,
+      "frac": 0.07246737545781033,
+      "mean_rmsd": 1.5626416406487247,
+      "low_n": false
+    },
+    "dutta_I1": {
+      "n_frames": 4251,
+      "frac": 0.0755787078192227,
+      "mean_rmsd": 1.669940534444088,
+      "low_n": false
+    },
+    "dutta_I2": {
+      "n_frames": 11319,
+      "frac": 0.2012409771361519,
+      "mean_rmsd": 1.3713334392136114,
+      "low_n": false
+    },
+    "dutta_I3": {
+      "n_frames": 8157,
+      "frac": 0.14502364612594673,
+      "mean_rmsd": 1.534959859075844,
+      "low_n": false
+    },
+    "dutta_I4": {
+      "n_frames": 2006,
+      "frac": 0.03566475838281833,
+      "mean_rmsd": 1.8809819169018733,
+      "low_n": false
+    },
+    "dutta_active": {
+      "n_frames": 14678,
+      "frac": 0.2609607794332041,
+      "mean_rmsd": 2.059051506961445,
+      "low_n": false
+    },
+    "5ZTY": {
+      "n_frames": 884,
+      "frac": 0.015716673185648757,
+      "mean_rmsd": 1.7084116149816206,
+      "low_n": false
+    },
+    "6KPC": {
+      "n_frames": 231,
+      "frac": 0.0041069587170643245,
+      "mean_rmsd": 2.301800103974036,
+      "low_n": false
+    },
+    "6KPF": {
+      "n_frames": 0,
+      "frac": 0.0,
+      "mean_rmsd": null,
+      "low_n": true
+    },
+    "6PT0": {
+      "n_frames": 4406,
+      "frac": 0.0783344593393308,
+      "mean_rmsd": 2.1304602020110504,
+      "low_n": false
+    },
+    "8GUQ": {
+      "n_frames": 254,
+      "frac": 0.004515876684564235,
+      "mean_rmsd": 2.201290385746301,
+      "low_n": false
+    },
+    "8GUR": {
+      "n_frames": 44,
+      "frac": 0.0007822778508693952,
+      "mean_rmsd": 2.404063343600453,
+      "low_n": true
+    },
+    "8GUS": {
+      "n_frames": 5850,
+      "frac": 0.10400739608149913,
+      "mean_rmsd": 2.129020124563514,
+      "low_n": false
+    },
+    "8GUT": {
+      "n_frames": 89,
+      "frac": 0.0015823347438040038,
+      "mean_rmsd": 2.2370652004403264,
+      "low_n": true
+    },
+    "8X3L": {
+      "n_frames": 0,
+      "frac": 0.0,
+      "mean_rmsd": null,
+      "low_n": true
+    },
+    "9U7L": {
+      "n_frames": 1,
+      "frac": 1.7779042065213526e-05,
+      "mean_rmsd": 2.049068879108236,
+      "low_n": true
+    }
+  },
+  "assign_hist": {
+    "dutta_inactive": 4076,
+    "dutta_I1": 4251,
+    "dutta_I2": 11319,
+    "dutta_I3": 8157,
+    "dutta_I4": 2006,
+    "dutta_active": 14678,
+    "5ZTY": 884,
+    "6KPC": 231,
+    "6KPF": 0,
+    "6PT0": 4406,
+    "8GUQ": 254,
+    "8GUR": 44,
+    "8GUS": 5850,
+    "8GUT": 89,
+    "8X3L": 0,
+    "9U7L": 1
+  },
+  "metrics_primary": {
+    "n_edges": {
+      "dutta_inactive": 1123,
+      "dutta_I1": 1104,
+      "dutta_I2": 1131,
+      "dutta_I3": 1103,
+      "dutta_I4": 1166,
+      "dutta_active": 1170,
+      "5ZTY": 1181,
+      "6KPC": 1161,
+      "6KPF": 0,
+      "6PT0": 1175,
+      "8GUQ": 1116,
+      "8GUR": 1073,
+      "8GUS": 1135,
+      "8GUT": 1145,
+      "8X3L": 0,
+      "9U7L": 804
+    },
+    "pairwise_jaccard": {
+      "dutta_inactive|dutta_I1": 0.8969335604770017,
+      "dutta_inactive|dutta_I2": 0.8689883913764511,
+      "dutta_inactive|dutta_I3": 0.8627615062761507,
+      "dutta_inactive|dutta_I4": 0.7513389441469013,
+      "dutta_inactive|dutta_active": 0.7665639445300462,
+      "dutta_inactive|5ZTY": 0.8640776699029126,
+      "dutta_inactive|6KPC": 0.7941869599371564,
+      "dutta_inactive|6PT0": 0.7995301487862176,
+      "dutta_inactive|8GUQ": 0.7616050354051928,
+      "dutta_inactive|8GUS": 0.7709803921568628,
+      "dutta_I1|dutta_I2": 0.8395061728395061,
+      "dutta_I1|dutta_I3": 0.8315352697095436,
+      "dutta_I1|dutta_I4": 0.7434715821812596,
+      "dutta_I1|dutta_active": 0.7546296296296297,
+      "dutta_I1|5ZTY": 0.8236233040702314,
+      "dutta_I1|6KPC": 0.7736883320281911,
+      "dutta_I1|6PT0": 0.7790788446526151,
+      "dutta_I1|8GUQ": 0.750788643533123,
+      "dutta_I1|8GUS": 0.7574568288854003,
+      "dutta_I2|dutta_I3": 0.8980458793542906,
+      "dutta_I2|dutta_I4": 0.797339593114241,
+      "dutta_I2|dutta_active": 0.7892690513219285,
+      "dutta_I2|5ZTY": 0.8720647773279352,
+      "dutta_I2|6KPC": 0.8306709265175719,
+      "dutta_I2|6PT0": 0.8287073750991277,
+      "dutta_I2|8GUQ": 0.7904382470119522,
+      "dutta_I2|8GUS": 0.8012718600953895,
+      "dutta_I3|dutta_I4": 0.7866141732283465,
+      "dutta_I3|dutta_active": 0.7968379446640316,
+      "dutta_I3|5ZTY": 0.8798353909465021,
+      "dutta_I3|6KPC": 0.8331983805668016,
+      "dutta_I3|6PT0": 0.8311897106109325,
+      "dutta_I3|8GUQ": 0.793856103476152,
+      "dutta_I3|8GUS": 0.8004827031375704,
+      "dutta_I4|dutta_active": 0.858392999204455,
+      "dutta_I4|5ZTY": 0.8012279355333844,
+      "dutta_I4|6KPC": 0.822239624119029,
+      "dutta_I4|6PT0": 0.8713029576338929,
+      "dutta_I4|8GUQ": 0.8704918032786885,
+      "dutta_I4|8GUS": 0.9079601990049752,
+      "dutta_active|5ZTY": 0.8224806201550388,
+      "dutta_active|6KPC": 0.8514694201747418,
+      "dutta_active|6PT0": 0.9003241491085899,
+      "dutta_active|8GUQ": 0.8939519469759735,
+      "dutta_active|8GUS": 0.9176372712146422,
+      "5ZTY|6KPC": 0.8796147672552167,
+      "5ZTY|6PT0": 0.8580441640378549,
+      "5ZTY|8GUQ": 0.8072383949645948,
+      "5ZTY|8GUS": 0.8221872541306058,
+      "6KPC|6PT0": 0.8778135048231511,
+      "6KPC|8GUQ": 0.8259823576583801,
+      "6KPC|8GUS": 0.8486312399355878,
+      "6PT0|8GUQ": 0.8902640264026402,
+      "6PT0|8GUS": 0.9075144508670521,
+      "8GUQ|8GUS": 0.9206484641638225
+    },
+    "mean_jaccard": 0.8304724514116271,
+    "min_jaccard": 0.7434715821812596,
+    "max_jaccard": 0.9206484641638225,
+    "frac_core": 0.6042780748663101,
+    "frac_state_specific": 0.011873804802797138,
+    "n_state_specific": {
+      "dutta_inactive": 8,
+      "dutta_I1": 23,
+      "dutta_I2": 13,
+      "dutta_I3": 13,
+      "dutta_I4": 25,
+      "dutta_active": 20,
+      "5ZTY": 7,
+      "6KPC": 19,
+      "6PT0": 4,
+      "8GUQ": 11,
+      "8GUS": 6
+    },
+    "path_turnover_frac": 0.14410144297928001,
+    "path_steps": [
+      {
+        "step": "dutta_inactive\u2192dutta_I1",
+        "appear": 51,
+        "disappear": 70,
+        "turnover": 0.1030664395229983
+      },
+      {
+        "step": "dutta_I1\u2192dutta_I2",
+        "appear": 111,
+        "disappear": 84,
+        "turnover": 0.16049382716049382
+      },
+      {
+        "step": "dutta_I2\u2192dutta_I3",
+        "appear": 46,
+        "disappear": 74,
+        "turnover": 0.10195412064570943
+      },
+      {
+        "step": "dutta_I3\u2192dutta_I4",
+        "appear": 167,
+        "disappear": 104,
+        "turnover": 0.21338582677165355
+      },
+      {
+        "step": "dutta_I4\u2192dutta_active",
+        "appear": 91,
+        "disappear": 87,
+        "turnover": 0.14160700079554495
+      }
+    ],
+    "path_defined": true,
+    "occupied_landmarks": [
+      "dutta_inactive",
+      "dutta_I1",
+      "dutta_I2",
+      "dutta_I3",
+      "dutta_I4",
+      "dutta_active",
+      "5ZTY",
+      "6KPC",
+      "6PT0",
+      "8GUQ",
+      "8GUS"
+    ],
+    "delta_mean_j_vs_dutta6_prior": 0.009072451411627047,
+    "mean_jaccard_primary_vs_ca": 0.7265963292624831
+  },
+  "metrics_ca_secondary": {
+    "n_edges": {
+      "dutta_inactive": 1253,
+      "dutta_I1": 1228,
+      "dutta_I2": 1232,
+      "dutta_I3": 1192,
+      "dutta_I4": 1286,
+      "dutta_active": 1295,
+      "5ZTY": 1279,
+      "6KPC": 1303,
+      "6KPF": 0,
+      "6PT0": 1300,
+      "8GUQ": 1256,
+      "8GUR": 1206,
+      "8GUS": 1264,
+      "8GUT": 1245,
+      "8X3L": 0,
+      "9U7L": 1038
+    },
+    "mean_jaccard_vs_primary": 0.7265963292624831
+  },
+  "soft_sensitivity": {
+    "mean_entropy": 2.754344958278483,
+    "mean_jaccard": 0.9791259182896823,
+    "frac_core": 0.9378531073446328,
+    "frac_state_specific": 0.0006782752277515987,
+    "path_turnover_frac": 0.020809978956971266,
+    "soft_class_annotation": "EXT_LANDMARK_EXPANDED_STABLE",
+    "differs_from_hard": false,
+    "soft_mass": {
+      "dutta_inactive": 3686.3574588489028,
+      "dutta_I1": 3139.590034299778,
+      "dutta_I2": 4034.157592309615,
+      "dutta_I3": 3747.237937864581,
+      "dutta_I4": 3069.7733135077474,
+      "dutta_active": 3606.4984291221217,
+      "5ZTY": 3754.376869932039,
+      "6KPC": 3609.790772753467,
+      "6KPF": 3365.306485818771,
+      "6PT0": 3691.3555806477316,
+      "8GUQ": 3470.32080912716,
+      "8GUR": 3427.227414175487,
+      "8GUS": 3569.0088967716097,
+      "8GUT": 3442.8953981407803,
+      "8X3L": 3334.9584953190392,
+      "9U7L": 3297.144511361153
+    }
+  },
+  "verdicts": {
+    "EXT_LANDMARK_EXPANDED_CONTACTS": "EXT_LANDMARK_EXPANDED_STABLE",
+    "Q_MAPS": "SIMILAR_OVERALL",
+    "EXT_LANDMARK_EXPANDED_SOFT_COMPARE_DUTTA6": "EXT_LANDMARK_EXPANDED_SOFT_AGREE_DUTTA6_STABLE",
+    "EXT_LANDMARK_EXPANDED_SOFT_COMPARE_PDB": "EXT_LANDMARK_EXPANDED_SOFT_DISAGREE_PDB_B",
+    "EXT_LANDMARK_GEOMETRIC_NEQ_MSM": "TRUE",
+    "P2_STATUS_UNCHANGED": "CLOSED_ABORTED_NOT_CONVERGENT"
+  },
+  "wall_s": 3335.517920732498,
+  "pi_summary_es": "Landmark geom\u00e9trico CB2 expandido (Dutta-6 + panel cryo/cristal): Gate0 OK (landmarks=16, C\u03b1 comunes=265, drop=ninguno). N=50+50 trajs, frames=56246. Veredicto duro: **EXT_LANDMARK_EXPANDED_STABLE** (mean Jaccard=0.830, \u0394 vs Dutta-6 prior=0.009, frac_core=0.604, path_turnover=0.14410144297928001). Soft Dutta-6: EXT_LANDMARK_EXPANDED_SOFT_AGREE_DUTTA6_STABLE. Soft PDB-B: EXT_LANDMARK_EXPANDED_SOFT_DISAGREE_PDB_B. Importante: proximidad geom\u00e9trica \u2260 identidad MSM; sin claims Gi. P2 sin cambios. SHA `ff26bf01ad55edb3036fe7ab0bee23c92121f333`.",
+  "epistemology": {
+    "geometric_neq_msm": true,
+    "not_kinetic_msm": true,
+    "not_dutta_pickles": true,
+    "p2_unchanged": true,
+    "no_gi_claims": true,
+    "external_only": true
+  }
+}

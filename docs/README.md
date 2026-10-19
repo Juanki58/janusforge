@@ -28,6 +28,13 @@
 **Datos operativos (mapa, no hit table masiva):**  
 [`../data/libraries/quimioma_semillas.csv`](../data/libraries/quimioma_semillas.csv) — semillas / controles / comparadores con SMILES curados (PubChem) y roles.
 
+### Inversores / interlocutores técnicos (credibilidad)
+
+| Documento | Contenido |
+|-----------|-----------|
+| [investors/JANUSFORGE_INVESTOR_BRIEF.md](investors/JANUSFORGE_INVESTOR_BRIEF.md) | Brief ES (abstract EN): estado locked, qué se aprendió, qué **no** se afirma, riesgos, uso de capital (muestreo MD), nivel de investigación sincero. **No** es un deck Series-A. |
+| [investors/JANUSFORGE_INVESTOR_BRIEF.pdf](investors/JANUSFORGE_INVESTOR_BRIEF.pdf) | PDF regenerable con `python scripts/build_investor_brief_pdf.py` (`markdown` + `xhtml2pdf`). |
+
 ### Exportación consolidada
 
 | Archivo | Contenido |

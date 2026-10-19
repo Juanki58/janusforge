@@ -1,0 +1,67 @@
+{
+  "test": "micronetwork_directed_dock",
+  "timestamp_utc": "2026-08-20T08:00:01.358560+00:00",
+  "engine": {
+    "vina": "C:\\Users\\juanc\\projects\\janusforge\\tools\\vina.exe",
+    "exhaustiveness": 16,
+    "num_modes": 9,
+    "seed": 42,
+    "ph": 7.4
+  },
+  "ligand_identity": {
+    "HU-308": {
+      "status": "PASS",
+      "computed_inchikey": "CFMRIVODIXTERW-BDTNDASRSA-N",
+      "expected_inchikey": "CFMRIVODIXTERW-BDTNDASRSA-N",
+      "pubchem_cid": 11553430
+    },
+    "HU-433": {
+      "status": "PASS",
+      "computed_inchikey": "CFMRIVODIXTERW-JTGIGXABSA-N",
+      "expected_inchikey": "CFMRIVODIXTERW-JTGIGXABSA-N",
+      "pubchem_cid": 59386636
+    }
+  },
+  "runs": [
+    {
+      "pdb_id": "6PT0",
+      "ligand_id": "HU-308",
+      "status": "OK",
+      "vina_affinity_kcal_mol": -9.465,
+      "dock_error": null,
+      "docked_pdbqt": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6PT0\\HU-308\\HU-308_docked.pdbqt",
+      "ligand_pdbqt": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6PT0\\HU-308\\HU-308_lig.pdbqt",
+      "work_dir": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6PT0\\HU-308"
+    },
+    {
+      "pdb_id": "6PT0",
+      "ligand_id": "HU-433",
+      "status": "OK",
+      "vina_affinity_kcal_mol": -9.873,
+      "dock_error": null,
+      "docked_pdbqt": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6PT0\\HU-433\\HU-433_docked.pdbqt",
+      "ligand_pdbqt": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6PT0\\HU-433\\HU-433_lig.pdbqt",
+      "work_dir": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6PT0\\HU-433"
+    },
+    {
+      "pdb_id": "6KPF",
+      "ligand_id": "HU-308",
+      "status": "OK",
+      "vina_affinity_kcal_mol": -9.577,
+      "dock_error": null,
+      "docked_pdbqt": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6KPF\\HU-308\\HU-308_docked.pdbqt",
+      "ligand_pdbqt": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6KPF\\HU-308\\HU-308_lig.pdbqt",
+      "work_dir": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6KPF\\HU-308"
+    },
+    {
+      "pdb_id": "6KPF",
+      "ligand_id": "HU-433",
+      "status": "OK",
+      "vina_affinity_kcal_mol": -9.256,
+      "dock_error": null,
+      "docked_pdbqt": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6KPF\\HU-433\\HU-433_docked.pdbqt",
+      "ligand_pdbqt": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6KPF\\HU-433\\HU-433_lig.pdbqt",
+      "work_dir": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6KPF\\HU-433"
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "test": "micronetwork_local_modes",
+  "timestamp_utc": "2026-08-20T08:03:57.768384+00:00",
+  "primary_question": "¿HU-308 y HU-433 presentan microdescriptores locales reproduciblemente diferentes?",
+  "cross_link": "results\\conformational\\micronetwork_falsification_report.md",
+  "descriptor_definition": {
+    "name": "LOCAL_MICROSWITCH_VECTOR",
+    "components": [
+      "dist_Trp258_A",
+      "dist_Phe183_A",
+      "dist_Ser285_A",
+      "torsion_Trp258_deg"
+    ],
+    "frozen_verdict_criteria": {
+      "DISTINCT_LOCAL_MODES": "Δd > 0.3 Å in ≥2 distance components OR Δtorsion > 10.0°",
+      "IDENTICAL_LOCAL_MODES": "neither criterion met",
+      "INDETERMINATE": "missing poses or state disagreement"
+    }
+  },
+  "reference_trp258_canonical_6PT0": {
+    "chi1": 105.25,
+    "chi2": -87.93
+  },
+  "control_vectors_cocrystal": {
+    "6PT0": [
+      4.92,
+      4.21,
+      3.35,
+      0.0
+    ],
+    "6KPF": [
+      3.87,
+      3.86,
+      3.07,
+      33.14
+    ],
+    "8GUR_CP55940": [
+      4.89,
+      4.55,
+      2.61,
+      22.03
+    ],
+    "5ZTY_AM10257": [
+      3.91,
+      4.16,
+      4.49,
+      46.24
+    ]
+  },
+  "probes": {
+    "HU-308": {
+      "by_state": {
+        "6PT0": {
+          "pose_path": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6PT0\\HU-308\\HU-308_docked.pdbqt",
+          "status": "COMPUTED",
+          "vector": [
+            5.146038962153327,
+            4.530448294429274,
+            3.3301216194007166,
+            0.0
+          ],
+          "components": {
+            "dist_Trp258_A": 5.146038962153327,
+            "dist_Phe183_A": 4.530448294429274,
+            "dist_Ser285_A": 3.3301216194007166,
+            "torsion_Trp258_deg": 0.0
+          },
+          "docked_pdbqt": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6PT0\\HU-308\\HU-308_docked.pdbqt"
+        },
+        "6KPF": {
+          "pose_path": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6KPF\\HU-308\\HU-308_docked.pdbqt",
+          "status": "COMPUTED",
+          "vector": [
+            4.1951228825864,
+            4.195892775382429,
+            2.6983393040905734,
+            33.136057876325964
+          ],
+          "components": {
+            "dist_Trp258_A": 4.1951228825864,
+            "dist_Phe183_A": 4.195892775382429,
+            "dist_Ser285_A": 2.6983393040905734,
+            "torsion_Trp258_deg": 33.136057876325964
+          },
+          "docked_pdbqt": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6KPF\\HU-308\\HU-308_docked.pdbqt"
+        }
+      }
+    },
+    "HU-433": {
+      "by_state": {
+        "6PT0": {
+          "pose_path": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6PT0\\HU-433\\HU-433_docked.pdbqt",
+          "status": "COMPUTED",
+          "vector": [
+            6.4698421928204795,
+            4.280688689154719,
+            3.057737235277094,
+            0.0
+          ],
+          "components": {
+            "dist_Trp258_A": 6.4698421928204795,
+            "dist_Phe183_A": 4.280688689154719,
+            "dist_Ser285_A": 3.057737235277094,
+            "torsion_Trp258_deg": 0.0
+          },
+          "docked_pdbqt": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6PT0\\HU-433\\HU-433_docked.pdbqt"
+        },
+        "6KPF": {
+          "pose_path": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6KPF\\HU-433\\HU-433_docked.pdbqt",
+          "status": "COMPUTED",
+          "vector": [
+            4.510445210841167,
+            4.435135559272636,
+            3.0588300050836397,
+            33.136057876325964
+          ],
+          "components": {
+            "dist_Trp258_A": 4.510445210841167,
+            "dist_Phe183_A": 4.435135559272636,
+            "dist_Ser285_A": 3.0588300050836397,
+            "torsion_Trp258_deg": 33.136057876325964
+          },
+          "docked_pdbqt": "C:\\Users\\juanc\\projects\\janusforge\\data\\docking_poses\\micronetwork_test\\6KPF\\HU-433\\HU-433_docked.pdbqt"
+        }
+      }
+    }
+  },
+  "per_state_comparison": {
+    "6PT0": {
+      "status": "COMPUTED",
+      "HU-308_vector": [
+        5.146038962153327,
+        4.530448294429274,
+        3.3301216194007166,
+        0.0
+      ],
+      "HU-433_vector": [
+        6.4698421928204795,
+        4.280688689154719,
+        3.057737235277094,
+        0.0
+      ],
+      "pair_verdict": {
+        "verdict": "IDENTICAL_LOCAL_MODES",
+        "delta_vector": {
+          "dist_Trp258_A": 1.3238,
+          "dist_Phe183_A": 0.2498,
+          "dist_Ser285_A": 0.2724,
+          "torsion_Trp258_deg": 0.0
+        },
+        "distance_components_over_0.3A": 1,
+        "torsion_over_10deg": false,
+        "criteria": {
+          "DIST_DELTA_A": 0.3,
+          "MIN_DIST_COMPONENTS": 2,
+          "TORSION_DELTA_DEG": 10.0
+        }
+      }
+    },
+    "6KPF": {
+      "status": "COMPUTED",
+      "HU-308_vector": [
+        4.1951228825864,
+        4.195892775382429,
+        2.6983393040905734,
+        33.136057876325964
+      ],
+      "HU-433_vector": [
+        4.510445210841167,
+        4.435135559272636,
+        3.0588300050836397,
+        33.136057876325964
+      ],
+      "pair_verdict": {
+        "verdict": "DISTINCT_LOCAL_MODES",
+        "delta_vector": {
+          "dist_Trp258_A": 0.3153,
+          "dist_Phe183_A": 0.2392,
+          "dist_Ser285_A": 0.3605,
+          "torsion_Trp258_deg": 0.0
+        },
+        "distance_components_over_0.3A": 2,
+        "torsion_over_10deg": false,
+        "criteria": {
+          "DIST_DELTA_A": 0.3,
+          "MIN_DIST_COMPONENTS": 2,
+          "TORSION_DELTA_DEG": 10.0
+        }
+      }
+    }
+  },
+  "primary_verdict": {
+    "verdict": "INDETERMINATE",
+    "reason": "State disagreement (plasticity): 6PT0=IDENTICAL_LOCAL_MODES, 6KPF=DISTINCT_LOCAL_MODES. Difference in one state not reproduced in the other.",
+    "per_state_verdicts": {
+      "6PT0": "IDENTICAL_LOCAL_MODES",
+      "6KPF": "DISTINCT_LOCAL_MODES"
+    },
+    "plasticity_note": true
+  }
+}

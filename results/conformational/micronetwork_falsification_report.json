@@ -1,0 +1,221 @@
+{
+  "test": "micronetwork_falsification",
+  "timestamp_utc": "2026-08-19T12:57:02.006691+00:00",
+  "governance": {
+    "DE_NOVO_GENERATION": "STOP",
+    "THRESHOLD_MODIFICATION": "STOP",
+    "CONTRACT_v1.0": "FROZEN",
+    "DESCRIPTOR_FROZEN_BEFORE_EXECUTION": true
+  },
+  "descriptor_definition": {
+    "name": "LOCAL_MICROSWITCH_VECTOR",
+    "components": [
+      "dist_Trp258_A",
+      "dist_Phe183_A",
+      "dist_Ser285_A",
+      "torsion_Trp258_deg"
+    ],
+    "component_descriptions": {
+      "dist_Trp258_A": "Min heavy-atom dist ligand → Trp258^6.48 indole ring (Å)",
+      "dist_Phe183_A": "Dist ligand centroid → Phe183^ECL2 aromatic ring centroid (Å)",
+      "dist_Ser285_A": "Min heavy-atom dist ligand → Ser285^7.39 hydroxyl O (Å)",
+      "torsion_Trp258_deg": "chi1/chi2 deviation of Trp258 sidechain vs 6PT0 canonical (°)"
+    },
+    "normalization": "z-score per component using independent σ → Euclidean D = sqrt(Σzᵢ²)",
+    "threshold": "ΔV ≥ 1.5σ"
+  },
+  "sigma_estimation": {
+    "available": true,
+    "method": "Option B: half-range of 6PT0 vs 6KPF co-crystallised ligand descriptors",
+    "limitation": "6PT0 (WIN55,212-2) and 6KPF (AM12033) are different ligands; σ includes ligand-identity variance → conservative (overestimates σ)",
+    "sigma_per_component": {
+      "dist_Trp258_A": 0.5267,
+      "dist_Phe183_A": 0.1742,
+      "dist_Ser285_A": 0.1385,
+      "torsion_Trp258_deg": 16.568
+    },
+    "sigma_vector": [
+      0.5267,
+      0.1742,
+      0.1385,
+      16.568
+    ],
+    "n_observations": 2,
+    "source_pdbs": [
+      "6PT0",
+      "6KPF"
+    ],
+    "descriptors_used": {
+      "6PT0": {
+        "vector": [
+          4.920430977058821,
+          4.211608674273672,
+          3.348833528260255,
+          0.0
+        ],
+        "components": {
+          "dist_Trp258_A": 4.920430977058821,
+          "dist_Phe183_A": 4.211608674273672,
+          "dist_Ser285_A": 3.348833528260255,
+          "torsion_Trp258_deg": 0.0
+        },
+        "trp258_chi1": 105.25251074876614,
+        "trp258_chi2": -87.92800006432222,
+        "ligand_n_heavy_atoms": 32
+      },
+      "6KPF": {
+        "vector": [
+          3.8671139109159873,
+          3.8632436294048462,
+          3.0719202463605733,
+          33.136057876325964
+        ],
+        "components": {
+          "dist_Trp258_A": 3.8671139109159873,
+          "dist_Phe183_A": 3.8632436294048462,
+          "dist_Ser285_A": 3.0719202463605733,
+          "torsion_Trp258_deg": 33.136057876325964
+        },
+        "trp258_chi1": 80.88486751159782,
+        "trp258_chi2": -65.47323899569116,
+        "ligand_n_heavy_atoms": 29
+      }
+    }
+  },
+  "reference_trp258_canonical": {
+    "pdb": "6PT0",
+    "chi1": 105.25,
+    "chi2": -87.93
+  },
+  "panel_results": {
+    "6PT0": {
+      "label": "WIN55,212-2 (co-crystallised, 6PT0 reference agonist)",
+      "role": "reference_agonist",
+      "status": "COMPUTED",
+      "vector": [
+        4.920430977058821,
+        4.211608674273672,
+        3.348833528260255,
+        0.0
+      ],
+      "components": {
+        "dist_Trp258_A": 4.920430977058821,
+        "dist_Phe183_A": 4.211608674273672,
+        "dist_Ser285_A": 3.348833528260255,
+        "torsion_Trp258_deg": 0.0
+      },
+      "trp258_chi1": 105.25,
+      "trp258_chi2": -87.93,
+      "ligand_n_heavy_atoms": 32
+    },
+    "6KPF": {
+      "label": "CP55,940-like (co-crystallised, 6KPF active agonist)",
+      "role": "cross_check_agonist",
+      "status": "COMPUTED",
+      "vector": [
+        3.8671139109159873,
+        3.8632436294048462,
+        3.0719202463605733,
+        33.136057876325964
+      ],
+      "components": {
+        "dist_Trp258_A": 3.8671139109159873,
+        "dist_Phe183_A": 3.8632436294048462,
+        "dist_Ser285_A": 3.0719202463605733,
+        "torsion_Trp258_deg": 33.136057876325964
+      },
+      "trp258_chi1": 80.88,
+      "trp258_chi2": -65.47,
+      "ligand_n_heavy_atoms": 29
+    },
+    "8GUR": {
+      "label": "CP55,940 (co-crystallised, 8GUR positive control)",
+      "role": "positive_control",
+      "status": "COMPUTED",
+      "vector": [
+        4.892541364158291,
+        4.547569572395255,
+        2.6105493674703806,
+        22.03091404140337
+      ],
+      "components": {
+        "dist_Trp258_A": 4.892541364158291,
+        "dist_Phe183_A": 4.547569572395255,
+        "dist_Ser285_A": 2.6105493674703806,
+        "torsion_Trp258_deg": 22.03091404140337
+      },
+      "trp258_chi1": 95.45,
+      "trp258_chi2": -68.2,
+      "ligand_n_heavy_atoms": 27
+    },
+    "5ZTY": {
+      "label": "AM10257 (co-crystallised, 5ZTY negative/antagonist control)",
+      "role": "negative_control",
+      "status": "COMPUTED",
+      "vector": [
+        3.914321524862261,
+        4.160289418140617,
+        4.492542375982669,
+        46.24102622981698
+      ],
+      "components": {
+        "dist_Trp258_A": 3.914321524862261,
+        "dist_Phe183_A": 4.160289418140617,
+        "dist_Ser285_A": 4.492542375982669,
+        "torsion_Trp258_deg": 46.24102622981698
+      },
+      "trp258_chi1": 107.13,
+      "trp258_chi2": -134.13,
+      "ligand_n_heavy_atoms": 31
+    },
+    "HU-308": {
+      "label": "HU-308 (enantiomer A, reference active)",
+      "role": "primary_probe_A",
+      "status": "NO_POSE_AVAILABLE",
+      "reason": "No docked pose for HU-308 found in results/. Docking not yet performed for this compound.",
+      "vector": null
+    },
+    "HU-433": {
+      "label": "HU-433 (enantiomer B, witness)",
+      "role": "primary_probe_B",
+      "status": "NO_POSE_AVAILABLE",
+      "reason": "No docked pose for HU-433 found in results/. Docking not yet performed for this compound.",
+      "vector": null
+    }
+  },
+  "primary_verdict": {
+    "verdict": "INDETERMINATE",
+    "reason": "No docked poses available for HU-308 and/or HU-433. Cannot compute ΔV between enantiomers. Docking with Vina against 6PT0 (and cross-check on 6KPF) is required.",
+    "delta_v": null,
+    "threshold": 1.5
+  },
+  "control_distances": {
+    "6PT0_vs_6KPF": {
+      "raw_euclidean": 33.1558,
+      "normalized_euclidean": 3.9995
+    },
+    "6PT0_vs_8GUR": {
+      "raw_euclidean": 22.0459,
+      "normalized_euclidean": 5.8228
+    },
+    "6PT0_vs_5ZTY": {
+      "raw_euclidean": 46.2661,
+      "normalized_euclidean": 8.9284
+    },
+    "6KPF_vs_8GUR": {
+      "raw_euclidean": 11.1829,
+      "normalized_euclidean": 5.547
+    },
+    "6KPF_vs_5ZTY": {
+      "raw_euclidean": 13.1852,
+      "normalized_euclidean": 10.4284
+    },
+    "8GUR_vs_5ZTY": {
+      "raw_euclidean": 24.3059,
+      "normalized_euclidean": 13.9704
+    }
+  },
+  "secondary_pharmacology": {
+    "note": "Contexto farmacológico documentado (NO usado como training truth): Trabajo reciente con derivados de HU-308 en CB2 encontró continua de actividad asociada con la interacción con Trp258^6.48. El paper original de HU-308/HU-433 (Mechoulam et al.) reportó que HU-433 tiene mucho menor afinidad hCB2 pero mayor potencia biológica en algunos modelos; diferencias en [35S]GTPγS no estadísticamente significativas; los autores propusieron orientaciones de unión diferentes. Estos datos contextualizan pero NO validan el descriptor."
+  }
+}

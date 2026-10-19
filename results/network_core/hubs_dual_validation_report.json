@@ -1,0 +1,494 @@
+{
+  "run_utc": "2026-08-20T19:26:38Z",
+  "branch": "feat/cb2-hubs-functional-topology-test",
+  "governance": {
+    "mode": "CLOSED_DUAL_VALIDATION",
+    "MODO": "READ_ONLY_DATA",
+    "DE_NOVO_GENERATION": "STOP",
+    "DOCKING": "STOP",
+    "NEW_DOCKING": "STOP",
+    "NEW_CHEMISTRY": "STOP",
+    "NEW_SEARCH": "STOP",
+    "CONTRACT_v1.0": "ARCHIVED_HISTORICAL",
+    "TECHNICAL_SEARCH_TRAJ": "STOP",
+    "hub_list": "FIXED_A_PRIORI_NO_RETUNE",
+    "literature_doi": "10.1038/s41467-025-60003-0"
+  },
+  "software": {
+    "python": "3.14.6",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pandas": "3.0.5",
+    "networkx": "3.6.1",
+    "numpy": "2.4.6"
+  },
+  "inputs": {
+    "moesm5": "results/network_core/_raw_downloads/41467_2025_60003_MOESM5_ESM.xlsx",
+    "moesm5_sha256": "ff53ec7bf227e0d2c3e5ced9fb81e2e56e61fb5d6ec373c1e3f2c574e77c09b9",
+    "moesm3": "results/network_core/_raw_downloads/41467_2025_60003_MOESM3_ESM.xlsx",
+    "moesm3_sha256": "f296cb131c22d32de9985fe54fb17422f72385aed2b0596e8ed180f07b7e2a7a",
+    "sheet": "WT_degeneracy",
+    "doi": "10.1038/s41467-025-60003-0"
+  },
+  "hubs_fixed": [
+    {
+      "ligacn": "ALA:79",
+      "short": "ALA79",
+      "ballesteros": "2.49"
+    },
+    {
+      "ligacn": "ALA:83",
+      "short": "ALA83",
+      "ballesteros": "2.53"
+    },
+    {
+      "ligacn": "LEU:287",
+      "short": "LEU287",
+      "ballesteros": "7.41"
+    },
+    {
+      "ligacn": "ASN:291",
+      "short": "ASN291",
+      "ballesteros": "7.45"
+    },
+    {
+      "ligacn": "ASN:295",
+      "short": "ASN295",
+      "ballesteros": "7.49"
+    },
+    {
+      "ligacn": "ARG:302",
+      "short": "ARG302",
+      "ballesteros": "8.46"
+    }
+  ],
+  "test_A": {
+    "test": "A_topology",
+    "primary_metric": "pct_disconn",
+    "primary_significance_rule": "TOPOLOGICAL_BOTTLENECK_SUPPORTED iff empirical one-sided p < 0.05 for pct_disconn after hub knockout vs exact (in,out)-degree-matched null knockouts of equal size (upper-tail: larger %Disconn = stronger impact). Equivalently: observed impact in upper \u226595th percentile of nulls. Secondary metrics (residual connectivity, \u0394L, Eff_res) reported but do not override the primary call unless primary is undefined.",
+    "alpha": 0.05,
+    "n_null": 1000,
+    "rng_seed": 20260820,
+    "degree_matching": {
+      "name": "exact_in_out_degree_multiset_match",
+      "hub_io_list": [
+        {
+          "node": "ALA:79",
+          "in": 4,
+          "out": 4
+        },
+        {
+          "node": "ALA:83",
+          "in": 3,
+          "out": 2
+        },
+        {
+          "node": "LEU:287",
+          "in": 2,
+          "out": 3
+        },
+        {
+          "node": "ASN:291",
+          "in": 3,
+          "out": 2
+        },
+        {
+          "node": "ASN:295",
+          "in": 3,
+          "out": 4
+        },
+        {
+          "node": "ARG:302",
+          "in": 2,
+          "out": 3
+        }
+      ],
+      "hub_io_multiset": {
+        "2,3": 2,
+        "3,2": 2,
+        "3,4": 1,
+        "4,4": 1
+      },
+      "exclude_from_pool": [
+        "8D0:1",
+        "ALA:79",
+        "ALA:83",
+        "ARG:131",
+        "ARG:302",
+        "ASN:291",
+        "ASN:295",
+        "ASP:240",
+        "LEU:287",
+        "PHE:87",
+        "SER:285",
+        "SER:303",
+        "SER:69"
+      ],
+      "pool_size": 87,
+      "pool_counts_per_hub_io": {
+        "4,4": 3,
+        "3,2": 6,
+        "2,3": 8,
+        "3,4": 3
+      },
+      "n_null_requested": 1000,
+      "n_null_realized": 1000,
+      "sampling_attempts": 1000
+    },
+    "graph": {
+      "n_nodes": 100,
+      "n_edges": 239,
+      "note_on_117_edges": "PI text mentioned 117 edges; recovered WT_degeneracy DiGraph has 239 directed weight>0 off-diagonal edges (same construction as static_ligacn_topology). Documented actual count."
+    },
+    "S": [
+      "8D0:1",
+      "SER:285",
+      "PHE:87"
+    ],
+    "T": [
+      "ARG:131",
+      "ASP:240",
+      "SER:303",
+      "SER:69"
+    ],
+    "ausente_not_forced": [
+      "TRP:258",
+      "PHE:183"
+    ],
+    "hubs": [
+      "ALA:79",
+      "ALA:83",
+      "LEU:287",
+      "ASN:291",
+      "ASN:295",
+      "ARG:302"
+    ],
+    "baseline_WT": {
+      "pct_disconn": 0.0,
+      "residual_connectivity_ligand_to_T": 1.0,
+      "mean_path_length_connected_ST": 7.083333333333333,
+      "Eff_res": 0.11759604084543422,
+      "n_connected_pairs": 12
+    },
+    "hub_knockout": {
+      "pct_disconn": 0.33333333333333337,
+      "residual_connectivity_ligand_to_T": 1.0,
+      "mean_path_length_connected_ST": 17.75,
+      "delta_L_vs_WT": 10.666666666666668,
+      "Eff_res": 0.09718447817686185,
+      "delta_Eff_vs_WT": -0.020411562668572372,
+      "n_connected_pairs": 8,
+      "n_nodes_remaining": 94,
+      "n_edges_remaining": 208
+    },
+    "null_summary": {
+      "pct_disconn_mean": 0.026500000000000013,
+      "pct_disconn_std": 0.03880828949249548,
+      "pct_disconn_p95": 0.08333333333333337,
+      "delta_L_mean": 0.3248030303030305,
+      "Eff_res_mean": 0.10375337233942755,
+      "Eff_res_p05": 0.09037469602471125,
+      "residual_connectivity_mean": 1.0
+    },
+    "p_values": {
+      "pct_disconn_upper": 0.000999000999000999,
+      "delta_L_upper": 0.000999000999000999,
+      "Eff_res_lower": 0.15584415584415584,
+      "residual_connectivity_lower": 1.0
+    },
+    "outcome": "TOPOLOGICAL_BOTTLENECK_SUPPORTED",
+    "supported": true,
+    "epistemic_tag": "[INTERNAL_REANALYSIS]"
+  },
+  "test_B": {
+    "test": "B_function",
+    "expression_floor_pct_WT": 25.0,
+    "category_policy": "Respect SD1 experimental categories exactly; do not collapse neutral/NoCoup into false. PrefCoup_barr kept distinct from PrefCoup_Gi.",
+    "safeguard": {
+      "distinction": "position_membership = which hubs appear in PrefCoup/Coup/Uncoupled lists; statistical_attribution = Fisher enrichment of PrefCoup_Gi among expression-filtered hub-position mutants vs non-hub background.",
+      "multiple_mutations_policy": "Each mutation/category reported separately under per_hub_mutations; no premature single-label collapse."
+    },
+    "background_counts": {
+      "n_SD1_rows_parsed": 359,
+      "n_after_expression_filter": 326,
+      "category_counts_filtered": {
+        "Coup_Gi_bArr": 249,
+        "PrefCoup_Gi": 60,
+        "NoCoup_Gi_bArr": 15,
+        "PrefCoup_barr": 2
+      },
+      "PrefCoup_Gi_filtered": 60,
+      "Coup_Gi_bArr_filtered": 249,
+      "PrefCoup_Gi_unfiltered": 64,
+      "Coup_Gi_bArr_unfiltered": 250,
+      "note_14_of_20": "Prior narrative 14 PrefCoup / 20 Coup does not match full SD1 (64 PrefCoup_Gi / 250 Coup_Gi_bArr unfiltered; 60/249 after \u226525.0% WT expression). Enrichment uses expression-filtered full mutagenic background."
+    },
+    "per_hub_mutations": [
+      {
+        "node": "ALA:79",
+        "short": "ALA79",
+        "ballesteros": "2.49",
+        "position": 79,
+        "n_mutations_in_SD1": 1,
+        "mutations": [
+          {
+            "mutant": "A79V",
+            "position": 79,
+            "pct_wt_expression": 20.42946591,
+            "expression_filter_excluded": true,
+            "expression_floor_pct_WT": 25.0,
+            "coupling_profile_raw": "NoCoup_Gi_bArr",
+            "coupling_profile_mapped": "Uncoupled_No_effect",
+            "Gi2_Emax_raw": 0.0,
+            "bArr1_Emax_raw": 0.0,
+            "Gi2_Emax_norm": 0.0,
+            "bArr1_Emax_norm": 0.0,
+            "simulated": "not simulated",
+            "position_membership_PrefCoup_Gai2": false,
+            "position_membership_Coup_Gai2_barr1": false,
+            "position_membership_Uncoupled_No_effect": true
+          }
+        ],
+        "status": "PRESENT",
+        "note": "Single SD1 mutant at this position."
+      },
+      {
+        "node": "ALA:83",
+        "short": "ALA83",
+        "ballesteros": "2.53",
+        "position": 83,
+        "n_mutations_in_SD1": 1,
+        "mutations": [
+          {
+            "mutant": "A83V",
+            "position": 83,
+            "pct_wt_expression": 72.1045113,
+            "expression_filter_excluded": false,
+            "expression_floor_pct_WT": 25.0,
+            "coupling_profile_raw": "NoCoup_Gi_bArr",
+            "coupling_profile_mapped": "Uncoupled_No_effect",
+            "Gi2_Emax_raw": 0.0,
+            "bArr1_Emax_raw": 0.0,
+            "Gi2_Emax_norm": 0.0,
+            "bArr1_Emax_norm": 0.0,
+            "simulated": "not simulated",
+            "position_membership_PrefCoup_Gai2": false,
+            "position_membership_Coup_Gai2_barr1": false,
+            "position_membership_Uncoupled_No_effect": true
+          }
+        ],
+        "status": "PRESENT",
+        "note": "Single SD1 mutant at this position."
+      },
+      {
+        "node": "LEU:287",
+        "short": "LEU287",
+        "ballesteros": "7.41",
+        "position": 287,
+        "n_mutations_in_SD1": 1,
+        "mutations": [
+          {
+            "mutant": "L287A",
+            "position": 287,
+            "pct_wt_expression": 51.15821889,
+            "expression_filter_excluded": false,
+            "expression_floor_pct_WT": 25.0,
+            "coupling_profile_raw": "Coup_Gi_bArr",
+            "coupling_profile_mapped": "Coup_G\u03b1i2_\u03b2arr1",
+            "Gi2_Emax_raw": 1.04638928666667,
+            "bArr1_Emax_raw": 0.100127372333333,
+            "Gi2_Emax_norm": 1.39385305159816,
+            "bArr1_Emax_norm": 1.37686500121026,
+            "simulated": "not simulated",
+            "position_membership_PrefCoup_Gai2": false,
+            "position_membership_Coup_Gai2_barr1": true,
+            "position_membership_Uncoupled_No_effect": false
+          }
+        ],
+        "status": "PRESENT",
+        "note": "Single SD1 mutant at this position."
+      },
+      {
+        "node": "ASN:291",
+        "short": "ASN291",
+        "ballesteros": "7.45",
+        "position": 291,
+        "n_mutations_in_SD1": 1,
+        "mutations": [
+          {
+            "mutant": "N291A",
+            "position": 291,
+            "pct_wt_expression": 101.8849675,
+            "expression_filter_excluded": false,
+            "expression_floor_pct_WT": 25.0,
+            "coupling_profile_raw": "PrefCoup_Gi",
+            "coupling_profile_mapped": "PrefCoup_G\u03b1i2",
+            "Gi2_Emax_raw": 0.396139751333333,
+            "bArr1_Emax_raw": 0.0,
+            "Gi2_Emax_norm": 0.464022590096628,
+            "bArr1_Emax_norm": 0.0,
+            "simulated": "simulated",
+            "position_membership_PrefCoup_Gai2": true,
+            "position_membership_Coup_Gai2_barr1": false,
+            "position_membership_Uncoupled_No_effect": false
+          }
+        ],
+        "status": "PRESENT",
+        "note": "Single SD1 mutant at this position."
+      },
+      {
+        "node": "ASN:295",
+        "short": "ASN295",
+        "ballesteros": "7.49",
+        "position": 295,
+        "n_mutations_in_SD1": 1,
+        "mutations": [
+          {
+            "mutant": "N295A",
+            "position": 295,
+            "pct_wt_expression": 77.92948329,
+            "expression_filter_excluded": false,
+            "expression_floor_pct_WT": 25.0,
+            "coupling_profile_raw": "NoCoup_Gi_bArr",
+            "coupling_profile_mapped": "Uncoupled_No_effect",
+            "Gi2_Emax_raw": 0.0,
+            "bArr1_Emax_raw": 0.0,
+            "Gi2_Emax_norm": 0.0,
+            "bArr1_Emax_norm": 0.0,
+            "simulated": "not simulated",
+            "position_membership_PrefCoup_Gai2": false,
+            "position_membership_Coup_Gai2_barr1": false,
+            "position_membership_Uncoupled_No_effect": true
+          }
+        ],
+        "status": "PRESENT",
+        "note": "Single SD1 mutant at this position."
+      },
+      {
+        "node": "ARG:302",
+        "short": "ARG302",
+        "ballesteros": "8.46",
+        "position": 302,
+        "n_mutations_in_SD1": 1,
+        "mutations": [
+          {
+            "mutant": "R302A",
+            "position": 302,
+            "pct_wt_expression": 85.16676041,
+            "expression_filter_excluded": false,
+            "expression_floor_pct_WT": 25.0,
+            "coupling_profile_raw": "PrefCoup_Gi",
+            "coupling_profile_mapped": "PrefCoup_G\u03b1i2",
+            "Gi2_Emax_raw": 1.08423460433333,
+            "bArr1_Emax_raw": 0.0,
+            "Gi2_Emax_norm": 1.30452320622957,
+            "bArr1_Emax_norm": 0.0,
+            "simulated": "simulated",
+            "position_membership_PrefCoup_Gai2": true,
+            "position_membership_Coup_Gai2_barr1": false,
+            "position_membership_Uncoupled_No_effect": false
+          }
+        ],
+        "status": "PRESENT",
+        "note": "Single SD1 mutant at this position."
+      }
+    ],
+    "position_membership": {
+      "PrefCoup_G\u03b1i2_positions": [
+        {
+          "node": "ASN:291",
+          "mutant": "N291A"
+        },
+        {
+          "node": "ARG:302",
+          "mutant": "R302A"
+        }
+      ],
+      "Coup_G\u03b1i2_\u03b2arr1_positions": [
+        {
+          "node": "LEU:287",
+          "mutant": "L287A"
+        }
+      ],
+      "Uncoupled_No_effect_positions": [
+        {
+          "node": "ALA:83",
+          "mutant": "A83V"
+        },
+        {
+          "node": "ASN:295",
+          "mutant": "N295A"
+        }
+      ],
+      "PrefCoup_\u03b2arr_positions": [],
+      "excluded_low_expression": [
+        {
+          "node": "ALA:79",
+          "mutant": "A79V",
+          "pct_wt_expression": 20.42946591,
+          "coupling_profile_mapped": "Uncoupled_No_effect"
+        }
+      ],
+      "missing": []
+    },
+    "statistical_attribution": {
+      "test": "Fisher exact (one-sided greater) PrefCoup_Gi enrichment",
+      "contingency_table": {
+        "rows": [
+          "hub_positions",
+          "nonhub_positions"
+        ],
+        "cols": [
+          "PrefCoup_Gi",
+          "not_PrefCoup_Gi"
+        ],
+        "table": [
+          [
+            2,
+            3
+          ],
+          [
+            58,
+            263
+          ]
+        ]
+      },
+      "n_hub_mutants_in_test": 5,
+      "hub_category_counts_filtered": {
+        "NoCoup_Gi_bArr": 2,
+        "PrefCoup_Gi": 2,
+        "Coup_Gi_bArr": 1
+      },
+      "odds_ratio": 3.0229885057471266,
+      "p_value": 0.22959492287156136,
+      "alpha": 0.05,
+      "interpretation_limit": "Significant enrichment attributes PrefCoup bias to the *set* vs background; it does not prove each hub position is causally PrefCoup."
+    },
+    "missing": [],
+    "functional_data_status": "OK",
+    "outcome": "FUNCTIONAL_ENRICHMENT_NOT_SUPPORTED",
+    "supported": false,
+    "epistemic_tag": "[INTERNAL_REANALYSIS] + [LITERATURA_PRIMARIA] categories from Morales-Pastor SD1"
+  },
+  "verdict": {
+    "combined_verdict": "CORE_TOPOLOGICAL_ONLY",
+    "interpretation_exact": "CORE_TOPOLOGICAL_ONLY \u2192 network architecture without sufficient functional evidence",
+    "formal_name_if_supported": null,
+    "forbidden_language": [
+      "switch",
+      "n\u00facleo universal probado",
+      "CORE_FOUND"
+    ],
+    "A_outcome": "TOPOLOGICAL_BOTTLENECK_SUPPORTED",
+    "B_outcome": "FUNCTIONAL_ENRICHMENT_NOT_SUPPORTED",
+    "A_p_primary_pct_disconn": 0.000999000999000999,
+    "B_p_fisher_PrefCoup": 0.22959492287156136,
+    "test_C_convergence": {
+      "executed": false,
+      "reason": "Skipped: requires A and B both SUPPORTED",
+      "A_supported": true,
+      "B_supported": false
+    },
+    "epistemic_tag": "[INTERNAL_REANALYSIS]",
+    "limit": "Topology \u2260 causal Gi necessity unless B supports; even CORE_CANDIDATE_SUPPORTED is a network candidate pending human review \u2014 not a switch."
+  }
+}

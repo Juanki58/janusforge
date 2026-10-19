@@ -1,0 +1,99 @@
+{
+  "generated_utc": "2026-09-12T12:00:24.325943+00:00",
+  "branch": "feat/cb2-hubs-functional-topology-test",
+  "experiment": "EXTERNAL_ESMDYNAMIC",
+  "preregistration": "docs\\synthesis\\EXPERIMENT_CB2_ESMDYNAMIC.md",
+  "epistemology": {
+    "not_msm_state_contacts": true,
+    "does_not_reopen_P2_CONVERGENT": true,
+    "no_Gi_claim": true,
+    "no_experimental_validation_on_CB2": true,
+    "verdicts_provisional_soft": true
+  },
+  "input": {
+    "uniprot": "P34972",
+    "protein_id_proteome": "sp_P34972_CNR2_HUMAN",
+    "sequence_len": 360,
+    "hubs": [
+      {
+        "label": "ALA:79",
+        "short": "ALA79",
+        "bw": "2.49"
+      },
+      {
+        "label": "ALA:83",
+        "short": "ALA83",
+        "bw": "2.53"
+      },
+      {
+        "label": "LEU:287",
+        "short": "LEU287",
+        "bw": "7.41"
+      },
+      {
+        "label": "ASN:291",
+        "short": "ASN291",
+        "bw": "7.45"
+      },
+      {
+        "label": "ASN:295",
+        "short": "ASN295",
+        "bw": "7.49"
+      },
+      {
+        "label": "ARG:302",
+        "short": "ARG302",
+        "bw": "8.46"
+      }
+    ]
+  },
+  "environment": {
+    "docker_present": true,
+    "docker_daemon_ok": false,
+    "docker_error": "Command '['docker', 'info']' returned non-zero exit status 1.",
+    "torch_ok": false,
+    "torch_version": null,
+    "cuda_ok": false,
+    "esm_package_ok": false,
+    "gpu_name": "NVIDIA GeForce GTX 1060 6GB",
+    "vram_mb": 6144.0,
+    "proteome_id": "sp_P34972_CNR2_HUMAN",
+    "proteome_archive": "human_proteome_preds_04.tar.xz",
+    "proteome_table_row": "sp_P34972_CNR2_HUMAN,human_proteome_preds_04.tar.xz",
+    "proteome_table_sha256": "259f4e90369e240d9331eda6cd5eb8d88c58be6fe612d885871d2296be998e73",
+    "runnable_inference": false,
+    "blockers": [
+      "docker_daemon_unavailable",
+      "torch_not_installed_in_runner_env",
+      "esmdynamic_package_not_installed",
+      "gpu_vram_likely_insufficient_for_esmdynamic",
+      "proteome_shard_too_large_to_fetch_for_single_protein",
+      "esmdynamic_inference_stack_incomplete"
+    ],
+    "notes": [
+      "gpu_vram_6144MB_below_comfortable_ESMFold_margin",
+      "proteome_table_lists_CNR2_in_preds_04_shard",
+      "human_proteome_preds_04.tar.xz_is_multi_GB_full_shard_not_fetched_this_session"
+    ],
+    "paper_doi": "10.1038/s41467-026-76361-2",
+    "code_url": "https://github.com/ShuklaGroup/esmdynamic",
+    "weights_doi": "10.13012/B2IDB-3773897_V2",
+    "sequence_len": 360,
+    "sequence_sha256": "c497f29417b886ff019812f69b1ed95fa872225c9180283496bec6d9ca65f664"
+  },
+  "maps": null,
+  "metrics": null,
+  "verdicts": {
+    "EXT_ESMDYNAMIC": "EXT_ESMDYNAMIC_INDETERMINATE_UNAVAILABLE",
+    "EXT_ESMDYNAMIC_SOFT_COMPARE": "EXT_ESMDYNAMIC_SOFT_COMPARE_NA",
+    "P2_STATUS_UNCHANGED": "CLOSED_INSUFFICIENT_SAMPLING",
+    "EXT_MSM_FILELIST": "NOT_FABRICATED",
+    "FALLBACK": "EXTERNAL_CB2_APO_TM6_TOGGLE_FILENAME"
+  },
+  "fallback_proposed": {
+    "name": "EXTERNAL_CB2_APO_TM6_TOGGLE_FILENAME",
+    "script": "scripts/network_core/cb2_apo_tm6_toggle.py",
+    "note": "filename inactive/active start-label proxy; not MSM states"
+  },
+  "pi_summary_es": "ESMDynamic no se pudo ejecutar en esta sesión (Docker daemon caído, sin torch/esmdynamic en el env, VRAM GTX 1060 6 GB insuficiente con margen, y el shard proteoma CNR2 ~multi-GB). Veredicto: EXT_ESMDYNAMIC_INDETERMINATE_UNAVAILABLE. No sustituye contactos MSM; no reabre P2. Se ejecuta el fallback TM6/toggle sobre CB2_APO local."
+}

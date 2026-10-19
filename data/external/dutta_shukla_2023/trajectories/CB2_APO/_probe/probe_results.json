@@ -1,0 +1,26 @@
+[
+  {
+    "name": "mv_short_file",
+    "file_id": 1046788274875,
+    "expected": 121,
+    "url": "https://uofi.app.box.com/index.php?rm=box_download_shared_file&shared_name=xl7tpf345rt8tikjaidfa8rm7gy2wrpj&file_id=f_1046788274875",
+    "status": 403,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 800,
+    "bandwidth": true,
+    "html": true,
+    "head_ascii": "  <!DOCTYPE html><html lang=\"en-US\"><head><meta name=\"robots\" content=\"noindex, nofollow\"><title>Box - Free Online File Storage, Internet File Sharing, Access Documents &amp; Files Anywhere, Backup Data, Share Files</title><link rel=\"shortcut icon\" h"
+  },
+  {
+    "name": "list",
+    "file_id": 1046785195564,
+    "expected": 201,
+    "url": "https://uofi.app.box.com/index.php?rm=box_download_shared_file&shared_name=xl7tpf345rt8tikjaidfa8rm7gy2wrpj&file_id=f_1046785195564",
+    "status": 403,
+    "ctype": "text/html; charset=utf-8",
+    "bytes": 800,
+    "bandwidth": true,
+    "html": true,
+    "head_ascii": "  <!DOCTYPE html><html lang=\"en-US\"><head><meta name=\"robots\" content=\"noindex, nofollow\"><title>Box - Free Online File Storage, Internet File Sharing, Access Documents &amp; Files Anywhere, Backup Data, Share Files</title><link rel=\"shortcut icon\" h"
+  }
+]

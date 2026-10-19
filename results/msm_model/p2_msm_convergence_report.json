@@ -1,0 +1,769 @@
+{
+  "generated_utc": "2026-08-21T11:16:14Z",
+  "stage": "P2_STAGE1_CONVERGENCE_ONLY",
+  "auto_advanced": false,
+  "data_source": {
+    "path": "data\\external\\morales_pastor_2025\\trajectories\\gpcrmd_dyn2126",
+    "gpcrmd_publication_id": 1540,
+    "dynamic_id": 2126,
+    "psf": "24306_dyn_2126.psf",
+    "xtcs": [
+      "24307_trj_2126.xtc",
+      "24308_trj_2126.xtc",
+      "24309_trj_2126.xtc",
+      "24310_trj_2126.xtc",
+      "24311_trj_2126.xtc"
+    ],
+    "dutta_shukla_role": "NOT_USED"
+  },
+  "sha256_verification": {
+    "manifest": "data\\external\\morales_pastor_2025\\trajectories\\MANIFEST.json",
+    "all_ok": true,
+    "files": [
+      {
+        "path": "gpcrmd_dyn2126/24306_dyn_2126.psf",
+        "bytes": 10429330,
+        "expected_bytes": 10429330,
+        "sha256": "fce9db151fbf5f7f0ed2b235ff0fd5d962dd8da91fe97afa34f675ab8e2f02e1",
+        "expected_sha256": "fce9db151fbf5f7f0ed2b235ff0fd5d962dd8da91fe97afa34f675ab8e2f02e1",
+        "sha_ok": true,
+        "status": "OK",
+        "sha_reused_from_cache": false
+      },
+      {
+        "path": "gpcrmd_dyn2126/24307_trj_2126.xtc",
+        "bytes": 77700544,
+        "expected_bytes": 77700544,
+        "sha256": "1fe13c425c67dd1325208af71131b34fdc3407b868f8c2489930c3d81e53e134",
+        "expected_sha256": "1fe13c425c67dd1325208af71131b34fdc3407b868f8c2489930c3d81e53e134",
+        "sha_ok": true,
+        "status": "OK",
+        "sha_reused_from_cache": false
+      },
+      {
+        "path": "gpcrmd_dyn2126/24308_trj_2126.xtc",
+        "bytes": 77697176,
+        "expected_bytes": 77697176,
+        "sha256": "6fef31e2ae0e10eac4590be5b9e205a5b29e3b96d4ee64cc0227dd39c3628be4",
+        "expected_sha256": "6fef31e2ae0e10eac4590be5b9e205a5b29e3b96d4ee64cc0227dd39c3628be4",
+        "sha_ok": true,
+        "status": "OK",
+        "sha_reused_from_cache": false
+      },
+      {
+        "path": "gpcrmd_dyn2126/24309_trj_2126.xtc",
+        "bytes": 77595656,
+        "expected_bytes": 77595656,
+        "sha256": "598ca435644396c1e2503d94d5b75e2469307effe1790a68cc490971b44eadd2",
+        "expected_sha256": "598ca435644396c1e2503d94d5b75e2469307effe1790a68cc490971b44eadd2",
+        "sha_ok": true,
+        "status": "OK",
+        "sha_reused_from_cache": false
+      },
+      {
+        "path": "gpcrmd_dyn2126/24310_trj_2126.xtc",
+        "bytes": 77726792,
+        "expected_bytes": 77726792,
+        "sha256": "fec3d8115a3a0d47bc45de20fd15baee5d21c0c46d3599e3970b9c4d08953f3d",
+        "expected_sha256": "fec3d8115a3a0d47bc45de20fd15baee5d21c0c46d3599e3970b9c4d08953f3d",
+        "sha_ok": true,
+        "status": "OK",
+        "sha_reused_from_cache": false
+      },
+      {
+        "path": "gpcrmd_dyn2126/24311_trj_2126.xtc",
+        "bytes": 77651580,
+        "expected_bytes": 77651580,
+        "sha256": "467c225dea6cca37e94fd7e7521d406446c32fecf34f46e7d98b303290efa99b",
+        "expected_sha256": "467c225dea6cca37e94fd7e7521d406446c32fecf34f46e7d98b303290efa99b",
+        "sha_ok": true,
+        "status": "OK",
+        "sha_reused_from_cache": false
+      },
+      {
+        "path": "gpcrmd_dyn2126/tmp_dyn_0_2417.pdb",
+        "bytes": 5417685,
+        "expected_bytes": 5417685,
+        "sha256": "a6468f3e0a93547b71a0a300b8ad1e9d664d30b62b4789dfcf53728033436350",
+        "expected_sha256": "a6468f3e0a93547b71a0a300b8ad1e9d664d30b62b4789dfcf53728033436350",
+        "sha_ok": true,
+        "status": "OK",
+        "sha_reused_from_cache": false
+      }
+    ]
+  },
+  "software_versions": {
+    "numpy": "2.4.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "matplotlib": "3.11.1",
+    "MDAnalysis": "2.10.0",
+    "deeptime": "0.4.5",
+    "mdtraj": "1.11.1",
+    "python": "3.12.13"
+  },
+  "featurization": {
+    "selection": "protein and name CA and ((resid 31:56) or (resid 67:91) or (resid 107:132) or (resid 148:172) or (resid 193:217) or (resid 239:264) or (resid 276:300))",
+    "tm_helices_human_cb2_uniprot": {
+      "TM1": {
+        "start": 31,
+        "end": 56
+      },
+      "TM2": {
+        "start": 67,
+        "end": 91
+      },
+      "TM3": {
+        "start": 107,
+        "end": 132
+      },
+      "TM4": {
+        "start": 148,
+        "end": 172
+      },
+      "TM5": {
+        "start": 193,
+        "end": 217
+      },
+      "TM6": {
+        "start": 239,
+        "end": 264
+      },
+      "TM7": {
+        "start": 276,
+        "end": 300
+      }
+    },
+    "source": "scripts/conformational/residue_maps.py TM_HELICES['cb2'] (GPCRdb)",
+    "n_ca": 178,
+    "ca_resids": [
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      260,
+      261,
+      262,
+      263,
+      264,
+      276,
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      284,
+      285,
+      286,
+      287,
+      288,
+      289,
+      290,
+      291,
+      292,
+      293,
+      294,
+      295,
+      296,
+      297,
+      298,
+      299,
+      300
+    ],
+    "n_pairwise_features": 15753,
+    "distance_unit": "angstrom",
+    "per_trajectory": [
+      {
+        "xtc": "24307_trj_2126.xtc",
+        "n_frames": 399,
+        "n_features": 15753,
+        "dt_reported_by_mda": 1.0
+      },
+      {
+        "xtc": "24308_trj_2126.xtc",
+        "n_frames": 399,
+        "n_features": 15753,
+        "dt_reported_by_mda": 1.0
+      },
+      {
+        "xtc": "24309_trj_2126.xtc",
+        "n_frames": 399,
+        "n_features": 15753,
+        "dt_reported_by_mda": 1.0
+      },
+      {
+        "xtc": "24310_trj_2126.xtc",
+        "n_frames": 399,
+        "n_features": 15753,
+        "dt_reported_by_mda": 1.0
+      },
+      {
+        "xtc": "24311_trj_2126.xtc",
+        "n_frames": 399,
+        "n_features": 15753,
+        "dt_reported_by_mda": 1.0
+      }
+    ],
+    "frame_dt_ns_assumed": 1.0,
+    "frame_dt_note": "Lag/ITS reported in frames; ns scale assumes GPCRmd-typical 1.0 ns/frame (MDA dt often uninformative on these XTC).",
+    "loaded_from_cache": null
+  },
+  "clustering": {
+    "tica_lag_frames": 5,
+    "tica_dim": 5,
+    "n_microstates": 25,
+    "kmeans_seed": 20260821,
+    "kmeans_max_iter": 500
+  },
+  "n_replicas": 5,
+  "n_frames_total": 1995,
+  "frames_per_replica": [
+    399,
+    399,
+    399,
+    399,
+    399
+  ],
+  "implied_timescales": {
+    "lags_frames": [
+      1,
+      2,
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      40,
+      50
+    ],
+    "lags_ns_assumed": [
+      1.0,
+      2.0,
+      5.0,
+      10.0,
+      15.0,
+      20.0,
+      25.0,
+      30.0,
+      40.0,
+      50.0
+    ],
+    "n_its_requested": 8,
+    "its_frames": [
+      [
+        4.9863768291458666,
+        3.294745476562783,
+        2.836871379327015,
+        2.2562237772438016,
+        2.1171406391606986,
+        2.027602052205948,
+        1.8506152224084904,
+        1.5911405871025346
+      ],
+      [
+        8.593920412530057,
+        8.09456593001211,
+        7.969722400168415,
+        6.492972231295999,
+        5.858830438094319,
+        4.639577682529676,
+        4.575986651633937,
+        4.369756431999924
+      ],
+      [
+        197.00869836288268,
+        51.3677509018126,
+        32.79971776918245,
+        26.352592543383086,
+        8.327356345099313,
+        5.265646494496598,
+        4.612079368328858,
+        NaN
+      ],
+      [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ],
+      [
+        590.7160118904138,
+        154.1011482635121,
+        98.38742325315812,
+        79.06546973386921,
+        24.98361141233862,
+        15.797282923995834,
+        13.836384162524045,
+        NaN
+      ],
+      [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ],
+      [
+        983.9828511796013,
+        256.8315767687307,
+        163.9584644494381,
+        131.7892890995077,
+        41.642058694584065,
+        26.32940761652988,
+        23.060896961262063,
+        NaN
+      ],
+      [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ],
+      [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ],
+      [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ]
+    ],
+    "per_lag": [
+      {
+        "lag_frames": 1,
+        "lag_ns_assumed": 1.0,
+        "timescales_frames": [
+          4.9863768291458666,
+          3.294745476562783,
+          2.836871379327015,
+          2.2562237772438016,
+          2.1171406391606986,
+          2.027602052205948,
+          1.8506152224084904,
+          1.5911405871025346
+        ],
+        "n_states_connected": 25
+      },
+      {
+        "lag_frames": 2,
+        "lag_ns_assumed": 2.0,
+        "timescales_frames": [
+          8.593920412530057,
+          8.09456593001211,
+          7.969722400168415,
+          6.492972231295999,
+          5.858830438094319,
+          4.639577682529676,
+          4.575986651633937,
+          4.369756431999924
+        ],
+        "n_states_connected": 25
+      },
+      {
+        "lag_frames": 5,
+        "lag_ns_assumed": 5.0,
+        "timescales_frames": [
+          197.00869836288268,
+          51.3677509018126,
+          32.79971776918245,
+          26.352592543383086,
+          8.327356345099313,
+          5.265646494496598,
+          4.612079368328858,
+          NaN
+        ],
+        "n_states_connected": 8
+      },
+      {
+        "lag_frames": 10,
+        "lag_ns_assumed": 10.0,
+        "timescales_frames": [
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        "n_states_connected": 1
+      },
+      {
+        "lag_frames": 15,
+        "lag_ns_assumed": 15.0,
+        "timescales_frames": [
+          590.7160118904138,
+          154.1011482635121,
+          98.38742325315812,
+          79.06546973386921,
+          24.98361141233862,
+          15.797282923995834,
+          13.836384162524045,
+          NaN
+        ],
+        "n_states_connected": 8
+      },
+      {
+        "lag_frames": 20,
+        "lag_ns_assumed": 20.0,
+        "timescales_frames": [
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        "n_states_connected": 1
+      },
+      {
+        "lag_frames": 25,
+        "lag_ns_assumed": 25.0,
+        "timescales_frames": [
+          983.9828511796013,
+          256.8315767687307,
+          163.9584644494381,
+          131.7892890995077,
+          41.642058694584065,
+          26.32940761652988,
+          23.060896961262063,
+          NaN
+        ],
+        "n_states_connected": 8
+      },
+      {
+        "lag_frames": 30,
+        "lag_ns_assumed": 30.0,
+        "timescales_frames": [
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        "n_states_connected": 1
+      },
+      {
+        "lag_frames": 40,
+        "lag_ns_assumed": 40.0,
+        "timescales_frames": [
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        "n_states_connected": 1
+      },
+      {
+        "lag_frames": 50,
+        "lag_ns_assumed": 50.0,
+        "timescales_frames": [
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        "n_states_connected": 1
+      }
+    ]
+  },
+  "implied_timescales_assessment": {
+    "verdict": "NON_CONVERGENT",
+    "reason": "pathological ITS spectrum: 5/10 lags with non-finite or non-positive slowest timescale; connected-state counts=[25, 25, 8, 1, 8, 1, 8, 1, 1, 1]",
+    "slowest_rel_change": null,
+    "recommended_lag_frames": 1,
+    "n_finite_slowest": 5,
+    "connected_states_per_lag": [
+      25,
+      25,
+      8,
+      1,
+      8,
+      1,
+      8,
+      1,
+      1,
+      1
+    ]
+  },
+  "lag_used_frames": 1,
+  "lag_used_ns_assumed": 1.0,
+  "n_metastable_pcca": 2,
+  "spectral_gap_selection": {
+    "n_metastable": 2,
+    "eigenvalues": [
+      1.000000000268633,
+      -0.8182835080104965,
+      0.7382198628684673,
+      -0.7029278664077857,
+      0.6419669556254635,
+      -0.6235444796876038,
+      -0.610673138389894,
+      0.5825380102001045,
+      0.5334019682357694
+    ],
+    "spectral_gaps": [
+      {
+        "after_index": 1,
+        "n_states_if_cut": 2,
+        "gap": 0.08006364514202924
+      },
+      {
+        "after_index": 2,
+        "n_states_if_cut": 3,
+        "gap": 0.035291996460681596
+      },
+      {
+        "after_index": 3,
+        "n_states_if_cut": 4,
+        "gap": 0.06096091078232224
+      },
+      {
+        "after_index": 4,
+        "n_states_if_cut": 5,
+        "gap": 0.018422475937859617
+      },
+      {
+        "after_index": 5,
+        "n_states_if_cut": 6,
+        "gap": 0.012871341297709837
+      },
+      {
+        "after_index": 6,
+        "n_states_if_cut": 7,
+        "gap": 0.02813512818978947
+      },
+      {
+        "after_index": 7,
+        "n_states_if_cut": 8,
+        "gap": 0.049136041964335186
+      }
+    ],
+    "method": "max_spectral_gap"
+  },
+  "n_connected_microstates": 25,
+  "timescales_at_lag_frames": [
+    4.9863768291458666,
+    3.294745476562783,
+    2.836871379327015,
+    2.2562237772438016,
+    2.1171406391606986,
+    2.027602052205948,
+    1.8506152224084904,
+    1.5911405871025346
+  ],
+  "populations": [
+    {
+      "macrostate": 0,
+      "n_frames": 1079,
+      "population_pct_of_assigned_frames": 54.08521303258146,
+      "stationary_probability_pcca": 0.49587906507560875
+    },
+    {
+      "macrostate": 1,
+      "n_frames": 916,
+      "population_pct_of_assigned_frames": 45.91478696741854,
+      "stationary_probability_pcca": 0.5041209349243914
+    }
+  ],
+  "n_frames_assigned": 1995,
+  "n_frames_unassigned": 0,
+  "provisional_label_for_human": "P2_INSUFFICIENT_SAMPLING",
+  "artifacts": {
+    "implied_timescales_png": "results\\msm_model\\implied_timescales.png",
+    "implied_timescales_json": "results\\msm_model\\implied_timescales.json",
+    "frame_assignments_npz": "results\\msm_model\\frame_macrostate_assignments.npz",
+    "dtrajs_micro_npz": "results\\msm_model\\dtrajs_microstates.npz",
+    "report_md": "results/msm_model/p2_msm_convergence_report.md",
+    "report_json": "results/msm_model/p2_msm_convergence_report.json"
+  },
+  "stop": {
+    "networks": false,
+    "biology_interpretation": false,
+    "p5_docking_denovo": false
+  }
+}

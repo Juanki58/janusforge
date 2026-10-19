@@ -1,0 +1,25 @@
+Formal Sink Set T — Morales-Pastor et al. 2025 Nat Commun
+DOI 10.1038/s41467-025-60003-0 | PMID 40500255 | PMC PMC12159191
+
+SOURCE NOTE:
+- MOESM2 (41467_2025_60003_MOESM2_ESM.pdf) = "Description of Additional Supplementary Files" only
+  (lists Supplementary Data 1–4). It does NOT contain the intracellular sink residue list.
+- Formal definition recovered from article Methods (Dijkstra / LigACN path termini), PMC full text
+  (PMC12159191, paragraph describing 100 shortest pathways / sinks).
+
+DEFINITION (from Methods):
+Taking the resulting networks from the WT simulations, Dijkstra's algorithm (NetworkX) was used
+to calculate the 100 shortest pathways connecting the ligand CHEMBL5085420 (source) and four
+selected residues in the intracellular domain of the receptor (sinks) for each replica
+(100 pathways × 4 sinks × 5 replicas = 2000 pathways).
+
+SINK SET T (four residues; Ballesteros–Weinstein numbering in parentheses as published):
+1. Arg131 (3×50)   — R131^3.50
+2. Asp240 (6×30)   — D240^6.30
+3. Ser303 (8×47)   — S303^8.47
+4. Ser69  (2×39)   — S69^2.39
+
+Selection criterion (paper): proximity to the G protein in the CB2R–G protein complex
+(Supplementary Fig. 12 in SI / MOESM1).
+
+STATUS: EXTRACTED (primary Methods text). MOESM2 recovered but is inventory-only.

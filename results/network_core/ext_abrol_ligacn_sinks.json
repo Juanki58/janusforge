@@ -1,0 +1,86 @@
+{
+  "experiment": "EXTERNAL_ABROL_LIGACN_SINKS",
+  "pre_reg": "docs/synthesis/EXPERIMENT_EXT_ABROL_LIGACN_SINKS.md",
+  "run_utc": "2026-10-02T23:01:03Z",
+  "verdict": "EXT_ABROL_LIGACN_SINK_OVERLAP",
+  "source_note": "parsed_from_ext_abrol_ic_contacts.json",
+  "sink_set_T": [
+    {
+      "label": "ARG:131",
+      "resid": 131,
+      "bw": "3x50"
+    },
+    {
+      "label": "ASP:240",
+      "resid": 240,
+      "bw": "6x30"
+    },
+    {
+      "label": "SER:303",
+      "resid": 303,
+      "bw": "8x47"
+    },
+    {
+      "label": "SER:69",
+      "resid": 69,
+      "bw": "2x39"
+    }
+  ],
+  "sink_hits": [
+    {
+      "sink": "ARG:131",
+      "resid": 131,
+      "bw": "3x50",
+      "in_any_abrol_IC": true,
+      "systems": [
+        "WT_BARR2_NoP",
+        "WT_BARR2_P",
+        "WT_Gi_Empty",
+        "WT_Gi_GDP"
+      ]
+    },
+    {
+      "sink": "ASP:240",
+      "resid": 240,
+      "bw": "6x30",
+      "in_any_abrol_IC": true,
+      "systems": [
+        "WT_Gi_Empty"
+      ]
+    },
+    {
+      "sink": "SER:303",
+      "resid": 303,
+      "bw": "8x47",
+      "in_any_abrol_IC": true,
+      "systems": [
+        "WT_BARR2_P",
+        "WT_Gi_Empty"
+      ]
+    },
+    {
+      "sink": "SER:69",
+      "resid": 69,
+      "bw": "2x39",
+      "in_any_abrol_IC": true,
+      "systems": [
+        "WT_BARR2_P"
+      ]
+    }
+  ],
+  "n_sinks_hit": 4,
+  "per_system_n_contacts": {
+    "WT_Gi_Empty": 16,
+    "WT_Gi_GDP": 13,
+    "WT_BARR2_NoP": 21,
+    "WT_BARR2_P": 21
+  },
+  "union_size": 38,
+  "governance": {
+    "P3_PROJECT_GATE": "BLOCKED",
+    "Gi_FUNCTIONAL_CLAIM": false,
+    "P2_REOPEN": false,
+    "avg_frame_neq_MSM": true
+  },
+  "prior_abrol_verdict": "EXT_ABROL_IC_EFFECTOR_PARTIAL"
+}
