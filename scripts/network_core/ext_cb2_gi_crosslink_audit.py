@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[2]
 PDB_DIR = ROOT / "data" / "external" / "cb2_landmark_expanded"
 OUT_DIR = ROOT / "results" / "network_core"
 STRUCTURE_FILES = {key: f"{key}.pdb" for key in ("6PT0", "6KPF", "8GUQ", "8GUR", "8GUS", "8GUT", "8X3L")}
+STRUCTURE_FILES["12IZ"] = "12IZ.cif"
 STRUCTURE_FILES["12JA"] = "12JA.cif"
 STRUCTURES = tuple(STRUCTURE_FILES)
 
@@ -198,8 +199,17 @@ def audit() -> dict:
 
     return {
         "analysis": "EXT_CB2_GI_CROSSLINK_STATIC_GEOMETRY",
+        "verdict": "EXT_CB2_GI_XL_12IY_12JA_PARTIAL",
         "scope": "retrospective static coordinate audit; no dynamics or P2 inference",
         "source_paper_doi": "10.1074/jbc.M113.539916",
+        "excluded_structures": [
+            {
+                "pdb_id": "12IY",
+                "status": "N/A_NO_GI",
+                "reason": "CB2 receptor-only structure; no G alpha i chain for intermolecular cross-link distances",
+                "source_url": "https://www.rcsb.org/structure/12IY",
+            }
+        ],
         "structures": rows,
         "summary": summary,
     }
@@ -217,7 +227,7 @@ def render_markdown(result: dict) -> str:
         "",
         "Mnpotra et al. identified three CB2–Gαi1 cross-linked residue pairs by chemical cross-linking and LC-MS/MS. This audit measures Cα–Cα distances, the metric compared with cutoffs in the paper, and also records reactive-atom endpoint distances (SG–SG or NZ–NZ). Local chain R is CB2 (UniProt P34972); chain A is Gαi1 (P63096). Coordinates use PDB residue numbering aligned to those UniProt accessions. No structural alignment, refinement, side-chain rotamer search, linker modelling, or dynamics was performed.",
         "",
-        "Source paper: [Mnpotra et al., JBC (2014), DOI 10.1074/jbc.M113.539916](https://doi.org/10.1074/jbc.M113.539916). Local structures selected from the expanded landmark panel: 6PT0, 6KPF, 8GUQ, 8GUR, 8GUS, 8GUT, and 8X3L.",
+        "Source paper: [Mnpotra et al., JBC (2014), DOI 10.1074/jbc.M113.539916](https://doi.org/10.1074/jbc.M113.539916). Local CB2–Gi structures audited: 6PT0, 6KPF, 8GUQ, 8GUR, 8GUS, 8GUT, 8X3L, 12IZ, and 12JA. Verdict: `EXT_CB2_GI_XL_12IY_12JA_PARTIAL`; 12IY is `N/A_NO_GI` because it has no Gi chain ([RCSB 12IY](https://www.rcsb.org/structure/12IY)).",
         "",
         "## Comparison using the paper's distance criteria",
         "",
@@ -235,6 +245,7 @@ def render_markdown(result: dict) -> str:
         "8GUT": "LEI-102",
         "8X3L": "agonist (8X3L)",
         "12JA": "agonist '1029",
+        "12IZ": "agonist '5249",
     }
     by_id = {s["pdb_id"]: s for s in result["structures"]}
     order = [link["id"] for link in CROSSLINKS]
@@ -252,7 +263,7 @@ def render_markdown(result: dict) -> str:
             "",
             "## Interpretation",
             "",
-            "All seven snapshots fall within the source paper's Cα-distance range for Cys134–Cys351 (7–10 Å) and below its maximum Cα distance for both lysine pairs (24.2 Å). Under that source-defined geometric screen, the published cross-links are compatible with each of these static CB2–Gi structures. The parenthesized NZ endpoint distances are longer for Lys215–Lys317, which shows why the source paper's Cα-based criterion must remain distinct from reactive-atom endpoint distances.",
+            f"All {len(result['structures'])} CB2–Gi snapshots fall within the source paper's Cα-distance range for Cys134–Cys351 (7–10 Å) and below its maximum Cα distance for both lysine pairs (24.2 Å). Under that source-defined geometric screen, the published cross-links are compatible with each of these static CB2–Gi structures. The parenthesized NZ endpoint distances are longer for Lys215–Lys317, which shows why the source paper's Cα-based criterion must remain distinct from reactive-atom endpoint distances. 12IY is not counted: it is receptor-only (`N/A_NO_GI`), not a failed cross-link geometry.",
             "",
             "These are single static structures with engineered constructs and ligand-specific contexts. Passing a geometric cutoff does not establish cross-link formation probability or biological occupancy; the experiment was performed in membranes without exogenous agonist, while the structures represent ligand-bound cryo-EM complexes. This audit does not establish Gi rearrangement in cells, CB2 internal allostery, or an MSM architecture. No P2 result or status is changed.",
             "",

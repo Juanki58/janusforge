@@ -1,7 +1,16 @@
 {
   "analysis": "EXT_CB2_GI_CROSSLINK_STATIC_GEOMETRY",
+  "verdict": "EXT_CB2_GI_XL_12IY_12JA_PARTIAL",
   "scope": "retrospective static coordinate audit; no dynamics or P2 inference",
   "source_paper_doi": "10.1074/jbc.M113.539916",
+  "excluded_structures": [
+    {
+      "pdb_id": "12IY",
+      "status": "N/A_NO_GI",
+      "reason": "CB2 receptor-only structure; no G alpha i chain for intermolecular cross-link distances",
+      "source_url": "https://www.rcsb.org/structure/12IY"
+    }
+  ],
   "structures": [
     {
       "pdb_id": "6PT0",
@@ -431,6 +440,67 @@
       ]
     },
     {
+      "pdb_id": "12IZ",
+      "file": "data/external/cb2_landmark_expanded/12IZ.cif",
+      "sha256": "f58dd7d1f28e6bfc3ee376c6adf19dc86e849e64eac55a2db8a93819f0c8f4d7",
+      "crosslinks": [
+        {
+          "id": "CNR2_C134_GNAI1_C351",
+          "cb2_residue": 134,
+          "cb2_resname": "CYS",
+          "cb2_atom": "SG",
+          "gai1_residue": 351,
+          "gai1_resname": "CYS",
+          "gai1_atom": "SG",
+          "chemistry": "HgCl2 sulfhydryl cross-link",
+          "ca_distance_min_angstrom": 7.0,
+          "ca_distance_max_angstrom": 10.0,
+          "cb2_chain": "R",
+          "gai1_chain": "A",
+          "residue_identity_ok": true,
+          "endpoint_distance_angstrom": 3.91,
+          "ca_distance_angstrom": 7.89,
+          "passes_source_ca_distance_cutoff": true
+        },
+        {
+          "id": "CNR2_K245_GNAI1_K349",
+          "cb2_residue": 245,
+          "cb2_resname": "LYS",
+          "cb2_atom": "NZ",
+          "gai1_residue": 349,
+          "gai1_resname": "LYS",
+          "gai1_atom": "NZ",
+          "chemistry": "DSS lysine\u2013lysine cross-link",
+          "ca_distance_min_angstrom": null,
+          "ca_distance_max_angstrom": 24.2,
+          "cb2_chain": "R",
+          "gai1_chain": "A",
+          "residue_identity_ok": true,
+          "endpoint_distance_angstrom": 19.01,
+          "ca_distance_angstrom": 15.62,
+          "passes_source_ca_distance_cutoff": true
+        },
+        {
+          "id": "CNR2_K215_GNAI1_K317",
+          "cb2_residue": 215,
+          "cb2_resname": "LYS",
+          "cb2_atom": "NZ",
+          "gai1_residue": 317,
+          "gai1_resname": "LYS",
+          "gai1_atom": "NZ",
+          "chemistry": "DSS lysine\u2013lysine cross-link",
+          "ca_distance_min_angstrom": null,
+          "ca_distance_max_angstrom": 24.2,
+          "cb2_chain": "R",
+          "gai1_chain": "A",
+          "residue_identity_ok": true,
+          "endpoint_distance_angstrom": 27.61,
+          "ca_distance_angstrom": 21.61,
+          "passes_source_ca_distance_cutoff": true
+        }
+      ]
+    },
+    {
       "pdb_id": "12JA",
       "file": "data/external/cb2_landmark_expanded/12JA.cif",
       "sha256": "4e3944d312c00b88669a7fd96e7a21292de24b87f30a3e4ead67f5b279310ab6",
@@ -494,34 +564,34 @@
   ],
   "summary": {
     "CNR2_C134_GNAI1_C351": {
-      "n_structures_with_both_atoms": 8,
+      "n_structures_with_both_atoms": 9,
       "min_angstrom": 3.64,
       "max_angstrom": 4.33,
       "mean_angstrom": 3.92,
       "ca_min_angstrom": 7.65,
       "ca_max_angstrom": 8.28,
-      "ca_mean_angstrom": 7.94,
-      "n_within_source_ca_cutoff": 8
+      "ca_mean_angstrom": 7.93,
+      "n_within_source_ca_cutoff": 9
     },
     "CNR2_K245_GNAI1_K349": {
-      "n_structures_with_both_atoms": 8,
+      "n_structures_with_both_atoms": 9,
       "min_angstrom": 16.29,
       "max_angstrom": 22.29,
-      "mean_angstrom": 19.15,
+      "mean_angstrom": 19.13,
       "ca_min_angstrom": 15.48,
       "ca_max_angstrom": 16.26,
-      "ca_mean_angstrom": 15.82,
-      "n_within_source_ca_cutoff": 8
+      "ca_mean_angstrom": 15.8,
+      "n_within_source_ca_cutoff": 9
     },
     "CNR2_K215_GNAI1_K317": {
-      "n_structures_with_both_atoms": 8,
-      "min_angstrom": 28.43,
+      "n_structures_with_both_atoms": 9,
+      "min_angstrom": 27.61,
       "max_angstrom": 31.9,
-      "mean_angstrom": 29.81,
-      "ca_min_angstrom": 21.62,
+      "mean_angstrom": 29.57,
+      "ca_min_angstrom": 21.61,
       "ca_max_angstrom": 23.34,
-      "ca_mean_angstrom": 22.25,
-      "n_within_source_ca_cutoff": 8
+      "ca_mean_angstrom": 22.18,
+      "n_within_source_ca_cutoff": 9
     }
   }
 }

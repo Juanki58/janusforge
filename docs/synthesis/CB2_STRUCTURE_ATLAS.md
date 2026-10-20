@@ -120,7 +120,7 @@ Corrección verificada en RCSB (2026-10-19): **12IY es CB2 sin proteína Gi** y 
 |-----|------------------------|----------------------|
 | **12IY** | CB2 solo con agonista '5249; 2.94 Å | No aporta geometría CB2–Gi |
 | **12JA** | CB2–Gi con agonista '1029; EMD-76465; ~2.9 Å | idem |
-| **12IZ** | CB2–Gi con agonista '5249; ~2.72 Å | Contraparte Gi de la serie 12IY (XL appendix ALL_WITHIN) |
+| **12IZ** | CB2–Gi con agonista '5249; 2.72 Å | Contraparte Gi de 12IY; auditoría Mnpotra: 3/3 parejas `WITHIN` |
 
 **[OBSERVACIÓN_PROPIA]** Estas entradas amplían el atlas activo 2026 pero **no** reabren pipelines computacionales del proyecto.
 

@@ -8,7 +8,7 @@
 
 Mnpotra et al. identified three CB2–Gαi1 cross-linked residue pairs by chemical cross-linking and LC-MS/MS. This audit measures Cα–Cα distances, the metric compared with cutoffs in the paper, and also records reactive-atom endpoint distances (SG–SG or NZ–NZ). Local chain R is CB2 (UniProt P34972); chain A is Gαi1 (P63096). Coordinates use PDB residue numbering aligned to those UniProt accessions. No structural alignment, refinement, side-chain rotamer search, linker modelling, or dynamics was performed.
 
-Source paper: [Mnpotra et al., JBC (2014), DOI 10.1074/jbc.M113.539916](https://doi.org/10.1074/jbc.M113.539916). Local structures selected from the expanded landmark panel: 6PT0, 6KPF, 8GUQ, 8GUR, 8GUS, 8GUT, and 8X3L.
+Source paper: [Mnpotra et al., JBC (2014), DOI 10.1074/jbc.M113.539916](https://doi.org/10.1074/jbc.M113.539916). Local CB2–Gi structures audited: 6PT0, 6KPF, 8GUQ, 8GUR, 8GUS, 8GUT, 8X3L, 12IZ, and 12JA. Verdict: `EXT_CB2_GI_XL_12IY_12JA_PARTIAL`; 12IY is `N/A_NO_GI` because it has no Gi chain ([RCSB 12IY](https://www.rcsb.org/structure/12IY)).
 
 ## Comparison using the paper's distance criteria
 
@@ -23,11 +23,12 @@ The source paper assessed Cα–Cα separations: 7–10 Å for the HgCl₂ cyste
 | 8GUS | HU-308 | 7.85 (4.33) | 15.53 (16.31) | 21.99 (28.43) |
 | 8GUT | LEI-102 | 7.80 (3.98) | 15.48 (20.78) | 21.74 (29.09) |
 | 8X3L | agonist (8X3L) | 7.65 (3.91) | 15.77 (18.17) | 23.20 (31.90) |
+| 12IZ | agonist '5249 | 7.89 (3.91) | 15.62 (19.01) | 21.61 (27.61) |
 | 12JA | agonist '1029 | 7.87 (3.87) | 16.14 (20.31) | 23.34 (29.66) |
 
 ## Interpretation
 
-All seven snapshots fall within the source paper's Cα-distance range for Cys134–Cys351 (7–10 Å) and below its maximum Cα distance for both lysine pairs (24.2 Å). Under that source-defined geometric screen, the published cross-links are compatible with each of these static CB2–Gi structures. The parenthesized NZ endpoint distances are longer for Lys215–Lys317, which shows why the source paper's Cα-based criterion must remain distinct from reactive-atom endpoint distances.
+All 9 CB2–Gi snapshots fall within the source paper's Cα-distance range for Cys134–Cys351 (7–10 Å) and below its maximum Cα distance for both lysine pairs (24.2 Å). This includes supplementary structure 12IZ: 7.89 Å, 15.62 Å, and 21.61 Å for the three pairs, respectively (3/3 `WITHIN`). Under that source-defined geometric screen, the published cross-links are compatible with each of these static CB2–Gi structures. The parenthesized NZ endpoint distances are longer for Lys215–Lys317, which shows why the source paper's Cα-based criterion must remain distinct from reactive-atom endpoint distances. 12IY is not counted: it is receptor-only (`N/A_NO_GI`), not a failed cross-link geometry.
 
 These are single static structures with engineered constructs and ligand-specific contexts. Passing a geometric cutoff does not establish cross-link formation probability or biological occupancy; the experiment was performed in membranes without exogenous agonist, while the structures represent ligand-bound cryo-EM complexes. This audit does not establish Gi rearrangement in cells, CB2 internal allostery, or an MSM architecture. No P2 result or status is changed.
 
