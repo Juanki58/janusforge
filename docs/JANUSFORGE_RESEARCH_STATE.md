@@ -39,11 +39,13 @@
 
 ---
 
-## 1. Mission
+## 1. Current mission and reprioritization (2026-10-21)
 
-Ligando **monomolecular** con perfil **CB1 antagonista + CB2 agonista** (“Janus” / “Yin-Yang”), orientado a **fibrosis** (IPF como filtro de indicación *después* del receptor).
+**Prioridad vigente, a petición del usuario:** avanzar primero la hipótesis de **antagonismo CB1** periférico/dirigido al pulmón para IPF. CB2 se mantiene como opción complementaria, pero debe demostrar valor funcional adicional antes de ser requisito para priorizar moléculas.
 
-Fuentes: `README.md`; `docs/guia_maestra_biotecnologia_quimiotipos.md`; commit `daaa269`.
+El perfil monomolecular **CB1 antagonista + CB2 agonista** (“Janus” / “Yin-Yang”) queda registrado como hipótesis original y línea secundaria, no como puerta obligatoria de entrada. La evidencia humana pública es discordante entre cohortes de célula única; la priorización CB1 es provisional y responde a la evidencia espacial y ex vivo más específica, más una asociación independiente en tejido completo. No equivale a potencia farmacológica ni eficacia clínica.
+
+Base de esta actualización: [`priorizacion_cb1_humano_ipf_2026-10-21.md`](priorizacion_cb1_humano_ipf_2026-10-21.md). La trayectoria histórica de la hipótesis dual continúa en §2 y en los informes asociados.
 
 ---
 
