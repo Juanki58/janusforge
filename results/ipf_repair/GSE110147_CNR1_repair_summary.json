@@ -1,0 +1,147 @@
+{
+  "dataset": "GSE110147",
+  "platform": "GPL6244",
+  "n_IPF": 22,
+  "n_control": 11,
+  "n_other_excluded": 15,
+  "available_signature_genes": {
+    "fibrosis": [
+      "COL1A1",
+      "COL1A2",
+      "COL3A1",
+      "FN1",
+      "ACTA2",
+      "POSTN",
+      "SPP1",
+      "CTGF",
+      "MMP7"
+    ],
+    "AT2_repair": [
+      "SFTPC",
+      "SFTPD",
+      "SFTPA1",
+      "SFTPA2",
+      "SFTPB",
+      "ABCA3"
+    ],
+    "AT1_repair": [
+      "AGER",
+      "PDPN",
+      "CAV1",
+      "HOPX",
+      "AQP5"
+    ],
+    "aberrant_epithelial": [
+      "KRT17",
+      "KRT8",
+      "KRT19",
+      "CLDN4",
+      "MMP7",
+      "KRT5"
+    ]
+  },
+  "groups": {
+    "IPF": {
+      "n": 22,
+      "CNR1_median_log2": 6.8279250000000005,
+      "fibrosis_median_zscore": 0.4868533962424014,
+      "AT2_repair_median_zscore": -0.4435778159230584,
+      "AT1_repair_median_zscore": -0.3784316769700574,
+      "aberrant_epithelial_median_zscore": 0.5014450595888809
+    },
+    "Control": {
+      "n": 11,
+      "CNR1_median_log2": 6.25834,
+      "fibrosis_median_zscore": -0.9500534515405211,
+      "AT2_repair_median_zscore": 0.9432869892911163,
+      "AT1_repair_median_zscore": 0.7572153025763569,
+      "aberrant_epithelial_median_zscore": -0.48247064970166764
+    }
+  },
+  "correlations": {
+    "IPF": {
+      "fibrosis": {
+        "n": 22,
+        "rho": 0.028797289666854884,
+        "p_nominal": 0.8987720143803856
+      },
+      "AT2_repair": {
+        "n": 22,
+        "rho": 0.40711462450592883,
+        "p_nominal": 0.06004366570541113
+      },
+      "AT1_repair": {
+        "n": 22,
+        "rho": 0.32241671372106157,
+        "p_nominal": 0.143355980602899
+      },
+      "aberrant_epithelial": {
+        "n": 22,
+        "rho": -0.37436476566911353,
+        "p_nominal": 0.08607231632476404
+      }
+    },
+    "Control": {
+      "fibrosis": {
+        "n": 11,
+        "rho": -0.09090909090909091,
+        "p_nominal": 0.7903727377532903
+      },
+      "AT2_repair": {
+        "n": 11,
+        "rho": 0.27272727272727276,
+        "p_nominal": 0.4171414371425311
+      },
+      "AT1_repair": {
+        "n": 11,
+        "rho": -0.8090909090909091,
+        "p_nominal": 0.002558580199713917
+      },
+      "aberrant_epithelial": {
+        "n": 11,
+        "rho": -0.29090909090909095,
+        "p_nominal": 0.3854569696913654
+      }
+    },
+    "IPF+Control": {
+      "fibrosis": {
+        "n": 33,
+        "rho": 0.3913770053475936,
+        "p_nominal": 0.02430362797253107
+      },
+      "AT2_repair": {
+        "n": 33,
+        "rho": -0.16042780748663105,
+        "p_nominal": 0.37247394812358225
+      },
+      "AT1_repair": {
+        "n": 33,
+        "rho": -0.3355614973262032,
+        "p_nominal": 0.05624967445354633
+      },
+      "aberrant_epithelial": {
+        "n": 33,
+        "rho": 0.05147058823529412,
+        "p_nominal": 0.7760550005541944
+      }
+    }
+  },
+  "group_tests": {
+    "fibrosis": {
+      "IPF_minus_control_median_z": 1.4369068477829225,
+      "p_nominal": 4.187958761721965e-06
+    },
+    "AT2_repair": {
+      "IPF_minus_control_median_z": -1.3868648052141748,
+      "p_nominal": 7.2144611845526474e-06
+    },
+    "AT1_repair": {
+      "IPF_minus_control_median_z": -1.1356469795464144,
+      "p_nominal": 4.187958761721965e-06
+    },
+    "aberrant_epithelial": {
+      "IPF_minus_control_median_z": 0.9839157092905485,
+      "p_nominal": 0.0009552411309001987
+    }
+  }
+}
