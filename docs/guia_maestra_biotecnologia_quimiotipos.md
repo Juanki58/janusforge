@@ -89,5 +89,6 @@ Enlaces subordinados; no alteran la norma de este documento:
 - [`quimiotipos_varinas_thcv.md`](quimiotipos_varinas_thcv.md) — biosíntesis C3/varinas, landraces, hipótesis H1–H5
 - [`criterio_exito_janus.md`](criterio_exito_janus.md) — gates de éxito pre-ensayo
 - [`literatura_prioridad_y_novelty.md`](literatura_prioridad_y_novelty.md) — auditoría de prior art / novelty (2026-08-06): el *rationale* Janus×IPF es intelectualmente predecible; el hueco demostrable es el cierre experimental (análogo limpio + fibrosis pulmonar), no el concepto
+- [`ip_gate_janusforge.md`](ip_gate_janusforge.md) — gate IP pre-NCE / pre-divulgación (2026-08-12); landscape [`../results/reports/qiu_0ip_novelty_landscape.md`](../results/reports/qiu_0ip_novelty_landscape.md); **not legal advice**
 - [`apendice_ip_supply_botanico.md`](apendice_ip_supply_botanico.md) — puerta botánica/IP abierta a coste cero (método, AEMPS, IRTA/CSIC); no desplaza Track 1
 - [`../results/reports/retrospective_panel_separation.md`](../results/reports/retrospective_panel_separation.md) — separación proxy del panel retrospectivo (gap dual ≈ −0.20 kcal/mol)
