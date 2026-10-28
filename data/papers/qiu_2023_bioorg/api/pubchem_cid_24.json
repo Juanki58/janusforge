@@ -1,0 +1,9 @@
+Invoke-WebRequest : Error en el servidor remoto: (404) No se encontró.
+En C:\Users\juanc\AppData\Local\Temp\ps-script-5b316905-bf9f-49b2-b23b-49f3cec32b91.ps1: 121 Carácter: 5
++     Invoke-WebRequest -Uri "https://pubchem.ncbi.nlm.nih.gov/rest/pug ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-WebRequest], WebExc 
+   eption
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand
+ 
+

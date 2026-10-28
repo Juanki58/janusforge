@@ -1,0 +1,15 @@
+Invoke-WebRequest : 
+
+404 Not Found
+
+Not Found
+The requested URL was not found on this server.
+
+
+En C:\Users\juanc\AppData\Local\Temp\ps-script-5b316905-bf9f-49b2-b23b-49f3cec32b91.ps1: 148 Carácter: 5
++     Invoke-WebRequest -Uri "https://bindingdb.org/axis2/services/BDBS ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-WebRequest], WebExc 
+   eption
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand
+
