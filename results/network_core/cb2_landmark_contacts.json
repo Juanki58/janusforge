@@ -1,0 +1,628 @@
+{
+  "generated_utc": "2026-09-12T23:05:20Z",
+  "branch": "feat/cb2-hubs-functional-topology-test",
+  "git_sha": "22d2af1d282a6bd72d55863fed2e4156032d930f",
+  "prereg": "docs\\synthesis\\EXPERIMENT_CB2_LANDMARK_CONTACTS.md",
+  "contact_def": {
+    "name": "getcontacts_vdw_envelope_plus_alloviz_filters",
+    "slack_A": 0.5,
+    "exclude_sequential_protein": true,
+    "p_ij_edge_threshold": 0.1
+  },
+  "soft_tau_A": 2.0,
+  "gate0": {
+    "ok": true,
+    "verdict": "GATE0_PASS",
+    "topo_n_atoms": 4566,
+    "topo_n_ca": 284,
+    "topo_uniprot_align": {
+      "alignment_identity": 1.0,
+      "n_aligned": 284,
+      "median_offset_resid_minus_uniprot": -20,
+      "n_residues": 284
+    },
+    "matched_resids": {
+      "n": 284,
+      "head": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "tail": [
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287
+      ]
+    },
+    "n_matched_ca": 284,
+    "per_landmark": {
+      "inactive": {
+        "file": "CB2_ref_inactive_3_b.pdb",
+        "sha256": "d641a808852c4c9e539f3d43205e501a47d4e43532bfec9fc8ab773371fa43e6",
+        "n_atoms": 4566,
+        "n_ca": 284,
+        "identity_topo_pdb": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "n_aligned": 284,
+          "median_offset_resid_minus_uniprot": -20,
+          "n_residues": 284
+        },
+        "n_matched_ca": 284,
+        "matched_resids_head": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "matched_resids_tail": [
+          283,
+          284,
+          285,
+          286,
+          287
+        ],
+        "n_matched_ca_common": 284
+      },
+      "I1": {
+        "file": "CB2_ref_inactive_I1_b.pdb",
+        "sha256": "50fefbbe30fbdd2afb2ceed0be5a9656bf1734295da58edd13bf1c792d080bd9",
+        "n_atoms": 4566,
+        "n_ca": 284,
+        "identity_topo_pdb": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "n_aligned": 284,
+          "median_offset_resid_minus_uniprot": -20,
+          "n_residues": 284
+        },
+        "n_matched_ca": 284,
+        "matched_resids_head": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "matched_resids_tail": [
+          283,
+          284,
+          285,
+          286,
+          287
+        ],
+        "n_matched_ca_common": 284
+      },
+      "I2": {
+        "file": "CB2_ref_inactive_I2_b.pdb",
+        "sha256": "311109f8a6ec3389e527e69ebda704f6db4b795afa6c0403ae993e6ad8bab836",
+        "n_atoms": 4566,
+        "n_ca": 284,
+        "identity_topo_pdb": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "n_aligned": 284,
+          "median_offset_resid_minus_uniprot": -20,
+          "n_residues": 284
+        },
+        "n_matched_ca": 284,
+        "matched_resids_head": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "matched_resids_tail": [
+          283,
+          284,
+          285,
+          286,
+          287
+        ],
+        "n_matched_ca_common": 284
+      },
+      "I3": {
+        "file": "CB2_ref_inactive_I3_b.pdb",
+        "sha256": "142e770e64d7c0e0ef40cf02fb89e7d56567813ac083b82862f6bdb684a56718",
+        "n_atoms": 4566,
+        "n_ca": 284,
+        "identity_topo_pdb": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "n_aligned": 284,
+          "median_offset_resid_minus_uniprot": -20,
+          "n_residues": 284
+        },
+        "n_matched_ca": 284,
+        "matched_resids_head": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "matched_resids_tail": [
+          283,
+          284,
+          285,
+          286,
+          287
+        ],
+        "n_matched_ca_common": 284
+      },
+      "I4": {
+        "file": "CB2_ref_inactive_I4_b.pdb",
+        "sha256": "dca5531acdc11a94f055572eba22600aae78ba26bf0b0db975b1ee6e740d0a73",
+        "n_atoms": 4566,
+        "n_ca": 284,
+        "identity_topo_pdb": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "n_aligned": 284,
+          "median_offset_resid_minus_uniprot": -20,
+          "n_residues": 284
+        },
+        "n_matched_ca": 284,
+        "matched_resids_head": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "matched_resids_tail": [
+          283,
+          284,
+          285,
+          286,
+          287
+        ],
+        "n_matched_ca_common": 284
+      },
+      "active": {
+        "file": "CB2_ref_inactive_active_b.pdb",
+        "sha256": "41816e10f2ca5e94079d72f59a2226b213b97c9ec922a3ffea7c722c3ad584c1",
+        "n_atoms": 4566,
+        "n_ca": 284,
+        "identity_topo_pdb": 1.0,
+        "uniprot_align": {
+          "alignment_identity": 1.0,
+          "n_aligned": 284,
+          "median_offset_resid_minus_uniprot": -20,
+          "n_residues": 284
+        },
+        "n_matched_ca": 284,
+        "matched_resids_head": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "matched_resids_tail": [
+          283,
+          284,
+          285,
+          286,
+          287
+        ],
+        "n_matched_ca_common": 284
+      }
+    },
+    "note": "Geometric landmark labels are structural refs only; NOT MSM metastable identity."
+  },
+  "extract": {
+    "ok": true,
+    "n_per_state": 50,
+    "dir": "data\\external\\dutta_shukla_2023\\trajectories\\CB2_APO\\_cache_landmark_contacts\\nc",
+    "files": {
+      "inactive": [
+        "CB2-APO_inactive_pr_10_frame_0-strip.nc",
+        "CB2-APO_inactive_pr_10_frame_148-strip.nc",
+        "CB2-APO_inactive_pr_10_frame_198-strip.nc",
+        "CB2-APO_inactive_pr_10_frame_70-strip.nc",
+        "CB2-APO_inactive_pr_11_frame_118-strip.nc",
+        "CB2-APO_inactive_pr_11_frame_168-strip.nc",
+        "CB2-APO_inactive_pr_11_frame_37-strip.nc",
+        "CB2-APO_inactive_pr_11_frame_87-strip.nc",
+        "CB2-APO_inactive_pr_12_frame_136-strip.nc",
+        "CB2-APO_inactive_pr_12_frame_188-strip.nc",
+        "CB2-APO_inactive_pr_12_frame_59-strip.nc",
+        "CB2-APO_inactive_pr_13_frame_109-strip.nc",
+        "CB2-APO_inactive_pr_13_frame_158-strip.nc",
+        "CB2-APO_inactive_pr_13_frame_31-strip.nc",
+        "CB2-APO_inactive_pr_13_frame_80-strip.nc",
+        "CB2-APO_inactive_pr_14_frame_43-strip.nc",
+        "CB2-APO_inactive_pr_14_frame_94-strip.nc",
+        "CB2-APO_inactive_pr_15_frame_57-strip.nc",
+        "CB2-APO_inactive_pr_16_frame_20-strip.nc",
+        "CB2-APO_inactive_pr_16_frame_70-strip.nc",
+        "CB2-APO_inactive_pr_2_frame_1-strip.nc",
+        "CB2-APO_inactive_pr_2_frame_68-strip.nc",
+        "CB2-APO_inactive_pr_3_frame_12-strip.nc",
+        "CB2-APO_inactive_pr_3_frame_185-strip.nc",
+        "CB2-APO_inactive_pr_3_frame_242-strip.nc",
+        "CB2-APO_inactive_pr_3_frame_293-strip.nc",
+        "CB2-APO_inactive_pr_3_frame_79-strip.nc",
+        "CB2-APO_inactive_pr_4_frame_132-strip.nc",
+        "CB2-APO_inactive_pr_4_frame_187-strip.nc",
+        "CB2-APO_inactive_pr_4_frame_242-strip.nc",
+        "CB2-APO_inactive_pr_4_frame_32-strip.nc",
+        "CB2-APO_inactive_pr_4_frame_86-strip.nc",
+        "CB2-APO_inactive_pr_5_frame_138-strip.nc",
+        "CB2-APO_inactive_pr_5_frame_188-strip.nc",
+        "CB2-APO_inactive_pr_5_frame_58-strip.nc",
+        "CB2-APO_inactive_pr_6_frame_108-strip.nc",
+        "CB2-APO_inactive_pr_6_frame_158-strip.nc",
+        "CB2-APO_inactive_pr_6_frame_26-strip.nc",
+        "CB2-APO_inactive_pr_6_frame_78-strip.nc",
+        "CB2-APO_inactive_pr_7_frame_126-strip.nc",
+        "CB2-APO_inactive_pr_7_frame_175-strip.nc",
+        "CB2-APO_inactive_pr_7_frame_47-strip.nc",
+        "CB2-APO_inactive_pr_8_frame_10-strip.nc",
+        "CB2-APO_inactive_pr_8_frame_154-strip.nc",
+        "CB2-APO_inactive_pr_8_frame_28-strip.nc",
+        "CB2-APO_inactive_pr_8_frame_80-strip.nc",
+        "CB2-APO_inactive_pr_9_frame_128-strip.nc",
+        "CB2-APO_inactive_pr_9_frame_179-strip.nc",
+        "CB2-APO_inactive_pr_9_frame_48-strip.nc",
+        "CB2-APO_inactive_pr_9_frame_99-strip.nc"
+      ],
+      "active": [
+        "CB2-APO_active_pr_10_frame_1-strip.nc",
+        "CB2-APO_active_pr_10_frame_61-strip.nc",
+        "CB2-APO_active_pr_11_frame_127-strip.nc",
+        "CB2-APO_active_pr_11_frame_6-strip.nc",
+        "CB2-APO_active_pr_12_frame_24-strip.nc",
+        "CB2-APO_active_pr_13_frame_116-strip.nc",
+        "CB2-APO_active_pr_13_frame_162-strip.nc",
+        "CB2-APO_active_pr_13_frame_208-strip.nc",
+        "CB2-APO_active_pr_13_frame_260-strip.nc",
+        "CB2-APO_active_pr_13_frame_39-strip.nc",
+        "CB2-APO_active_pr_13_frame_88-strip.nc",
+        "CB2-APO_active_pr_14_frame_135-strip.nc",
+        "CB2-APO_active_pr_14_frame_182-strip.nc",
+        "CB2-APO_active_pr_14_frame_23-strip.nc",
+        "CB2-APO_active_pr_14_frame_279-strip.nc",
+        "CB2-APO_active_pr_14_frame_328-strip.nc",
+        "CB2-APO_active_pr_14_frame_375-strip.nc",
+        "CB2-APO_active_pr_14_frame_419-strip.nc",
+        "CB2-APO_active_pr_14_frame_466-strip.nc",
+        "CB2-APO_active_pr_14_frame_67-strip.nc",
+        "CB2-APO_active_pr_15_frame_122-strip.nc",
+        "CB2-APO_active_pr_15_frame_168-strip.nc",
+        "CB2-APO_active_pr_15_frame_217-strip.nc",
+        "CB2-APO_active_pr_15_frame_268-strip.nc",
+        "CB2-APO_active_pr_15_frame_316-strip.nc",
+        "CB2-APO_active_pr_15_frame_368-strip.nc",
+        "CB2-APO_active_pr_15_frame_418-strip.nc",
+        "CB2-APO_active_pr_15_frame_47-strip.nc",
+        "CB2-APO_active_pr_15_frame_7-strip.nc",
+        "CB2-APO_active_pr_16_frame_118-strip.nc",
+        "CB2-APO_active_pr_16_frame_17-strip.nc",
+        "CB2-APO_active_pr_16_frame_217-strip.nc",
+        "CB2-APO_active_pr_16_frame_263-strip.nc",
+        "CB2-APO_active_pr_16_frame_309-strip.nc",
+        "CB2-APO_active_pr_16_frame_357-strip.nc",
+        "CB2-APO_active_pr_16_frame_41-strip.nc",
+        "CB2-APO_active_pr_16_frame_458-strip.nc",
+        "CB2-APO_active_pr_16_frame_60-strip.nc",
+        "CB2-APO_active_pr_17_frame_18-strip.nc",
+        "CB2-APO_active_pr_2_frame_46-strip.nc",
+        "CB2-APO_active_pr_3_frame_54-strip.nc",
+        "CB2-APO_active_pr_4_frame_22-strip.nc",
+        "CB2-APO_active_pr_4_frame_71-strip.nc",
+        "CB2-APO_active_pr_5_frame_29-strip.nc",
+        "CB2-APO_active_pr_5_frame_78-strip.nc",
+        "CB2-APO_active_pr_6_frame_71-strip.nc",
+        "CB2-APO_active_pr_7_frame_31-strip.nc",
+        "CB2-APO_active_pr_7_frame_86-strip.nc",
+        "CB2-APO_active_pr_9_frame_47-strip.nc",
+        "CB2-APO_active_pr_9_frame_99-strip.nc"
+      ]
+    },
+    "pool_sizes": {
+      "inactive": 2598,
+      "active": 2373
+    },
+    "bytes_written_this_run": 2931874368,
+    "cache_nbytes": 3084839150,
+    "sources": {
+      "cache_copy": 3,
+      "zip": 95,
+      "already": 2
+    },
+    "reused": false,
+    "seed": 20260913
+  },
+  "n_trajs": 100,
+  "total_frames": 56246,
+  "occupancy": {
+    "inactive": {
+      "n_frames": 5490,
+      "frac": 0.09760694093802226,
+      "mean_rmsd": 1.886438891199309,
+      "low_n": false
+    },
+    "I1": {
+      "n_frames": 3655,
+      "frac": 0.06498239874835544,
+      "mean_rmsd": 1.8220138811543565,
+      "low_n": false
+    },
+    "I2": {
+      "n_frames": 12510,
+      "frac": 0.2224158162358212,
+      "mean_rmsd": 1.7112516139697338,
+      "low_n": false
+    },
+    "I3": {
+      "n_frames": 8837,
+      "frac": 0.15711339473029193,
+      "mean_rmsd": 1.8808123168808828,
+      "low_n": false
+    },
+    "I4": {
+      "n_frames": 1020,
+      "frac": 0.018134622906517798,
+      "mean_rmsd": 2.4478318122602003,
+      "low_n": false
+    },
+    "active": {
+      "n_frames": 24734,
+      "frac": 0.43974682644099133,
+      "mean_rmsd": 2.4347711418986298,
+      "low_n": false
+    }
+  },
+  "assign_hist": {
+    "inactive": 5490,
+    "I1": 3655,
+    "I2": 12510,
+    "I3": 8837,
+    "I4": 1020,
+    "active": 24734
+  },
+  "metrics_primary": {
+    "n_edges": {
+      "inactive": 1138,
+      "I1": 1101,
+      "I2": 1132,
+      "I3": 1105,
+      "I4": 1175,
+      "active": 1165
+    },
+    "pairwise_jaccard": {
+      "inactive|I1": 0.8926458157227388,
+      "inactive|I2": 0.8822553897180763,
+      "inactive|I3": 0.8722871452420701,
+      "inactive|I4": 0.7509462528387585,
+      "inactive|active": 0.7701767870868562,
+      "I1|I2": 0.8439306358381503,
+      "I1|I3": 0.8429406850459482,
+      "I1|I4": 0.7400611620795107,
+      "I1|active": 0.7606837606837606,
+      "I2|I3": 0.910333048676345,
+      "I2|I4": 0.7925407925407926,
+      "I2|active": 0.8029827315541601,
+      "I3|I4": 0.786833855799373,
+      "I3|active": 0.810207336523126,
+      "I4|active": 0.8615751789976134
+    },
+    "mean_jaccard": 0.8213600385564852,
+    "min_jaccard": 0.7400611620795107,
+    "max_jaccard": 0.910333048676345,
+    "frac_core": 0.6503496503496503,
+    "frac_state_specific": 0.024428896125329936,
+    "n_state_specific": {
+      "inactive": 19,
+      "I1": 28,
+      "I2": 13,
+      "I3": 14,
+      "I4": 54,
+      "active": 40
+    },
+    "path_turnover_frac": 0.1409362929931559,
+    "path_steps": [
+      {
+        "step": "inactive\u2192I1",
+        "appear": 45,
+        "disappear": 82,
+        "turnover": 0.1073541842772612,
+        "appear_sample": [
+          "ACE:202\u2013LEU:211",
+          "ALA:108\u2013ILE:185",
+          "ALA:196\u2013LYS:213",
+          "ALA:196\u2013TYR:189",
+          "ALA:203\u2013LEU:211",
+          "ALA:203\u2013VAL:209",
+          "ALA:268\u2013ARG:210",
+          "ALA:63\u2013SER:260"
+        ],
+        "disappear_sample": [
+          "ACE:1\u2013ASP:4",
+          "ACE:1\u2013TYR:5",
+          "ACE:202\u2013ARG:206",
+          "ACE:202\u2013LEU:207",
+          "ALA:196\u2013ALA:212",
+          "ALA:196\u2013ARG:210",
+          "ALA:196\u2013LEU:211",
+          "ALA:203\u2013ARG:206"
+        ]
+      },
+      {
+        "step": "I1\u2192I2",
+        "appear": 110,
+        "disappear": 79,
+        "turnover": 0.15606936416184972,
+        "appear_sample": [
+          "ACE:1\u2013ASP:4",
+          "ACE:1\u2013TYR:5",
+          "ACE:202\u2013ARG:206",
+          "ACE:202\u2013LEU:207",
+          "ALA:15\u2013PRO:11",
+          "ALA:196\u2013VAL:200",
+          "ALA:203\u2013ARG:206",
+          "ALA:203\u2013LEU:207"
+        ],
+        "disappear_sample": [
+          "ACE:1\u2013MET:6",
+          "ACE:202\u2013ASP:208",
+          "ACE:202\u2013LEU:211",
+          "ALA:108\u2013ILE:185",
+          "ALA:17\u2013PHE:77",
+          "ALA:196\u2013LEU:115",
+          "ALA:196\u2013LYS:213",
+          "ALA:196\u2013TYR:189"
+        ]
+      },
+      {
+        "step": "I2\u2192I3",
+        "appear": 39,
+        "disappear": 66,
+        "turnover": 0.089666951323655,
+        "appear_sample": [
+          "ALA:196\u2013ALA:212",
+          "ALA:196\u2013ARG:210",
+          "ALA:212\u2013LEU:193",
+          "ARG:111\u2013HIE:199",
+          "ARG:111\u2013TYR:121",
+          "ARG:111\u2013VAL:192",
+          "ARG:204\u2013ARG:270",
+          "ARG:210\u2013HIE:199"
+        ],
+        "disappear_sample": [
+          "ACE:1\u2013VAL:80",
+          "ALA:212\u2013ARG:111",
+          "ALA:212\u2013GLY:216",
+          "ALA:212\u2013LEU:115",
+          "ALA:212\u2013TYR:189",
+          "ALA:68\u2013GLY:24",
+          "ARG:111\u2013ARG:210",
+          "ARG:111\u2013LEU:215"
+        ]
+      },
+      {
+        "step": "I3\u2192I4",
+        "appear": 171,
+        "disappear": 101,
+        "turnover": 0.21316614420062696,
+        "appear_sample": [
+          "ACE:1\u2013ASP:81",
+          "ACE:1\u2013GLY:79",
+          "ACE:1\u2013HIE:78",
+          "ACE:1\u2013LEU:165",
+          "ACE:1\u2013PHE:86",
+          "ACE:1\u2013PRO:164",
+          "ACE:202\u2013ARG:210",
+          "ACE:202\u2013ASP:208"
+        ],
+        "disappear_sample": [
+          "ACE:1\u2013ASP:4",
+          "ALA:108\u2013LEU:215",
+          "ALA:123\u2013ARG:129",
+          "ALA:123\u2013THR:126",
+          "ALA:196\u2013ALA:212",
+          "ALA:196\u2013ARG:210",
+          "ALA:203\u2013LEU:207",
+          "ALA:248\u2013LEU:232"
+        ]
+      },
+      {
+        "step": "I4\u2192active",
+        "appear": 82,
+        "disappear": 92,
+        "turnover": 0.13842482100238662,
+        "appear_sample": [
+          "ACE:1\u2013MET:6",
+          "ACE:1\u2013PHE:74",
+          "ACE:1\u2013VAL:80",
+          "ACE:202\u2013ARG:116",
+          "ACE:202\u2013LYS:195",
+          "ACE:202\u2013PRO:118",
+          "ACE:202\u2013VAL:200",
+          "ALA:123\u2013THR:126"
+        ],
+        "disappear_sample": [
+          "ACE:1\u2013ASP:81",
+          "ACE:1\u2013LEU:165",
+          "ACE:202\u2013ARG:206",
+          "ACE:202\u2013ARG:210",
+          "ACE:202\u2013ASP:208",
+          "ACE:202\u2013LEU:207",
+          "ACE:202\u2013LEU:211",
+          "ALA:17\u2013HIE:75"
+        ]
+      }
+    ],
+    "occupied_landmarks": [
+      "inactive",
+      "I1",
+      "I2",
+      "I3",
+      "I4",
+      "active"
+    ],
+    "mean_jaccard_primary_vs_ca": 0.7282231898755772
+  },
+  "metrics_ca_secondary": {
+    "n_edges": {
+      "inactive": 1258,
+      "I1": 1213,
+      "I2": 1251,
+      "I3": 1197,
+      "I4": 1290,
+      "active": 1293
+    },
+    "mean_jaccard_vs_primary": 0.7282231898755772
+  },
+  "soft_sensitivity": {
+    "mean_entropy": 1.7528822080468547,
+    "mean_jaccard": 0.9652587705458101,
+    "frac_core": 0.9290894439967768,
+    "frac_state_specific": 0.0013921428000497219,
+    "path_turnover_frac": 0.021572806804663273,
+    "soft_class_annotation": "EXT_LANDMARK_CONTACTS_STABLE",
+    "differs_from_hard": false,
+    "soft_mass": {
+      "inactive": 9783.66610306585,
+      "I1": 8137.196220269147,
+      "I2": 10710.962990697952,
+      "I3": 9455.867299171981,
+      "I4": 8215.746379526992,
+      "active": 9942.561007268096
+    }
+  },
+  "verdicts": {
+    "EXT_LANDMARK_CONTACTS": "EXT_LANDMARK_CONTACTS_STABLE",
+    "Q_MAPS": "SIMILAR_OVERALL",
+    "EXT_LANDMARK_SOFT_COMPARE_PDB": "EXT_LANDMARK_SOFT_DISAGREE_PDB_B",
+    "EXT_LANDMARK_GEOMETRIC_NEQ_MSM": "TRUE",
+    "P2_STATUS_UNCHANGED": "CLOSED_ABORTED_NOT_CONVERGENT"
+  },
+  "wall_s": 3364.0334649086,
+  "pi_summary_es": "Landmark geom\u00e9trico CB2 (6 PDBs Dutta): Gate0 OK (C\u03b1 emparejados=284, offset topo\u2212UniProt\u2248-20). N=50+50 trajs, frames=56246. Veredicto duro: **EXT_LANDMARK_CONTACTS_STABLE** (mean Jaccard=0.821, path turnover=0.141, frac_core=0.650). Compare PDB snapshot: EXT_LANDMARK_SOFT_DISAGREE_PDB_B. Importante: proximidad geom\u00e9trica \u2260 identidad MSM. P2 sin cambios. SHA `22d2af1d282a6bd72d55863fed2e4156032d930f`.",
+  "epistemology": {
+    "geometric_neq_msm": true,
+    "not_kinetic_msm": true,
+    "not_dutta_pickles": true,
+    "p2_unchanged": true,
+    "no_gi": true
+  }
+}

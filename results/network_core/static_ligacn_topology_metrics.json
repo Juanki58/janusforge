@@ -1,0 +1,1351 @@
+{
+  "run_utc": "2026-08-20T15:34:45Z",
+  "governance": {
+    "STATIC_GRAPH_ANALYSIS": "CLOSED",
+    "CB2_MINIMAL_GI_CORE": "BLOCKED_PENDING_DYNAMIC_VALIDATION",
+    "CB1_COMPARISON": "BLOCKED",
+    "DOCKING": "STOP",
+    "DE_NOVO_GENERATION": "STOP",
+    "NEW_CHEMISTRY": "STOP",
+    "TECHNICAL_SEARCH_TRAJ": "NOT_STARTED_THIS_RUN; prior ENLACE_REGISTRADO only",
+    "MODO": "READ_ONLY / PUBLIC_DATA_REANALYSIS",
+    "report_field": "STATIC_TOPOLOGICAL_BOTTLENECKS"
+  },
+  "graph_definition": {
+    "matrix_file": "results/network_core/_raw_downloads/41467_2025_60003_MOESM5_ESM.xlsx",
+    "sheet": "WT_degeneracy",
+    "sha256": "ff53ec7bf227e0d2c3e5ced9fb81e2e56e61fb5d6ec373c1e3f2c574e77c09b9",
+    "bytes": 970304,
+    "contacts_file": "results/network_core/_raw_downloads/41467_2025_60003_MOESM4_ESM.xlsx",
+    "contacts_sheets": [
+      "Inactive structure contacts",
+      "Active structure contacts"
+    ],
+    "contacts_sha256": "04a7d0c084e97bf40fa2637e996258e527d4b422b257a172623c13f289ad929c",
+    "sd1_file": "results/network_core/_raw_downloads/41467_2025_60003_MOESM3_ESM.xlsx",
+    "sd1_sha256": "f296cb131c22d32de9985fe54fb17422f72385aed2b0596e8ed180f07b7e2a7a",
+    "n_nodes": 100,
+    "n_edges": 239,
+    "weight_meaning": "Supp Data 3 degeneracy / information transmission (pathway participation frequency)",
+    "software": {
+      "python": "3.14.6",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "pandas": "3.0.5",
+      "networkx": "3.6.1",
+      "numpy": "2.4.6"
+    }
+  },
+  "source_set_S": {
+    "S_final": [
+      "8D0:1",
+      "SER:285",
+      "PHE:87"
+    ],
+    "S_definition_rule": "S = {8D0:1} \u222a {nodes u | w(8D0:1\u2192u)>0 in WT_degeneracy AND residue number of u appears in SD2 Inactive and/or Active contact columns}. Literature pocket names probed only for AUSENTE / exclusion log; no substitution of AUSENTE residues.",
+    "verified_members": [
+      {
+        "label": "8D0:1",
+        "status": "IN_GRAPH",
+        "role": "explicit_ligand_source_node_in_WT_degeneracy",
+        "in_WT_degeneracy": true,
+        "contact_evidence": {
+          "residue_number_token": "LIG",
+          "n_contact_columns_involving_residue": 82,
+          "ligand_contact_columns": [
+            "Inactive structure contacts:101-LIG",
+            "Inactive structure contacts:113-LIG",
+            "Inactive structure contacts:285-LIG",
+            "Inactive structure contacts:28-LIG",
+            "Inactive structure contacts:258-LIG",
+            "Inactive structure contacts:265-LIG",
+            "Inactive structure contacts:261-LIG",
+            "Inactive structure contacts:100-LIG",
+            "Inactive structure contacts:183-LIG",
+            "Inactive structure contacts:288-LIG",
+            "Inactive structure contacts:284-LIG",
+            "Inactive structure contacts:281-LIG",
+            "Inactive structure contacts:282-LIG",
+            "Inactive structure contacts:114-LIG",
+            "Inactive structure contacts:110-LIG",
+            "Inactive structure contacts:27-LIG",
+            "Inactive structure contacts:91-LIG",
+            "Inactive structure contacts:278-LIG",
+            "Inactive structure contacts:87-LIG",
+            "Inactive structure contacts:182-LIG",
+            "Inactive structure contacts:109-LIG",
+            "Inactive structure contacts:26-LIG",
+            "Inactive structure contacts:194-LIG",
+            "Inactive structure contacts:106-LIG",
+            "Inactive structure contacts:184-LIG",
+            "Inactive structure contacts:191-LIG",
+            "Inactive structure contacts:181-LIG",
+            "Inactive structure contacts:117-LIG",
+            "Inactive structure contacts:90-LIG",
+            "Inactive structure contacts:102-LIG",
+            "Inactive structure contacts:25-LIG",
+            "Inactive structure contacts:103-LIG",
+            "Inactive structure contacts:279-LIG",
+            "Inactive structure contacts:262-LIG",
+            "Inactive structure contacts:98-LIG",
+            "Inactive structure contacts:99-LIG",
+            "Inactive structure contacts:190-LIG",
+            "Inactive structure contacts:94-LIG",
+            "Inactive structure contacts:93-LIG",
+            "Inactive structure contacts:264-LIG",
+            "Inactive structure contacts:97-LIG",
+            "Inactive structure contacts:33-LIG",
+            "Inactive structure contacts:95-LIG",
+            "Inactive structure contacts:34-LIG",
+            "Inactive structure contacts:86-LIG",
+            "Inactive structure contacts:29-LIG",
+            "Inactive structure contacts:286-LIG",
+            "Inactive structure contacts:186-LIG",
+            "Inactive structure contacts:24-LIG",
+            "Inactive structure contacts:283-LIG",
+            "Inactive structure contacts:20-LIG",
+            "Inactive structure contacts:21-LIG",
+            "Inactive structure contacts:19-LIG",
+            "Inactive structure contacts:22-LIG",
+            "Inactive structure contacts:180-LIG",
+            "Inactive structure contacts:23-LIG",
+            "Inactive structure contacts:257-LIG",
+            "Inactive structure contacts:89-LIG",
+            "Inactive structure contacts:195-LIG",
+            "Inactive structure contacts:254-LIG",
+            "Inactive structure contacts:289-LIG",
+            "Inactive structure contacts:83-LIG",
+            "Inactive structure contacts:287-LIG",
+            "Inactive structure contacts:291-LIG",
+            "Inactive structure contacts:292-LIG",
+            "Inactive structure contacts:84-LIG",
+            "Inactive structure contacts:280-LIG",
+            "Inactive structure contacts:30-LIG",
+            "Inactive structure contacts:88-LIG",
+            "Inactive structure contacts:185-LIG",
+            "Inactive structure contacts:260-LIG",
+            "Inactive structure contacts:116-LIG",
+            "Inactive structure contacts:96-LIG",
+            "Inactive structure contacts:275-LIG",
+            "Inactive structure contacts:273-LIG",
+            "Inactive structure contacts:272-LIG",
+            "Inactive structure contacts:268-LIG",
+            "Inactive structure contacts:277-LIG",
+            "Inactive structure contacts:269-LIG",
+            "Inactive structure contacts:198-LIG",
+            "Inactive structure contacts:202-LIG",
+            "Inactive structure contacts:120-LIG"
+          ],
+          "by_sheet": [
+            {
+              "sheet": "Inactive structure contacts",
+              "residue_number_token": "LIG",
+              "n_contact_columns_involving_residue": 82,
+              "ligand_contact_columns": [
+                "101-LIG",
+                "113-LIG",
+                "285-LIG",
+                "28-LIG",
+                "258-LIG",
+                "265-LIG",
+                "261-LIG",
+                "100-LIG",
+                "183-LIG",
+                "288-LIG",
+                "284-LIG",
+                "281-LIG",
+                "282-LIG",
+                "114-LIG",
+                "110-LIG",
+                "27-LIG",
+                "91-LIG",
+                "278-LIG",
+                "87-LIG",
+                "182-LIG",
+                "109-LIG",
+                "26-LIG",
+                "194-LIG",
+                "106-LIG",
+                "184-LIG",
+                "191-LIG",
+                "181-LIG",
+                "117-LIG",
+                "90-LIG",
+                "102-LIG",
+                "25-LIG",
+                "103-LIG",
+                "279-LIG",
+                "262-LIG",
+                "98-LIG",
+                "99-LIG",
+                "190-LIG",
+                "94-LIG",
+                "93-LIG",
+                "264-LIG",
+                "97-LIG",
+                "33-LIG",
+                "95-LIG",
+                "34-LIG",
+                "86-LIG",
+                "29-LIG",
+                "286-LIG",
+                "186-LIG",
+                "24-LIG",
+                "283-LIG",
+                "20-LIG",
+                "21-LIG",
+                "19-LIG",
+                "22-LIG",
+                "180-LIG",
+                "23-LIG",
+                "257-LIG",
+                "89-LIG",
+                "195-LIG",
+                "254-LIG",
+                "289-LIG",
+                "83-LIG",
+                "287-LIG",
+                "291-LIG",
+                "292-LIG",
+                "84-LIG",
+                "280-LIG",
+                "30-LIG",
+                "88-LIG",
+                "185-LIG",
+                "260-LIG",
+                "116-LIG",
+                "96-LIG",
+                "275-LIG",
+                "273-LIG",
+                "272-LIG",
+                "268-LIG",
+                "277-LIG",
+                "269-LIG",
+                "198-LIG",
+                "202-LIG",
+                "120-LIG"
+              ],
+              "ligand_contact_wt_or_global_mean": {
+                "101-LIG": 0.043,
+                "113-LIG": 0.624,
+                "285-LIG": 0.9978,
+                "28-LIG": 0.0,
+                "258-LIG": 0.1694,
+                "265-LIG": 0.3014,
+                "261-LIG": 0.275,
+                "100-LIG": 0.0,
+                "183-LIG": 0.8252,
+                "288-LIG": 0.5488000000000001,
+                "284-LIG": 0.0026,
+                "281-LIG": 0.9067999999999999,
+                "282-LIG": 0.048400000000000006,
+                "114-LIG": 0.6679999999999999,
+                "110-LIG": 0.7163999999999999,
+                "27-LIG": 0.0,
+                "91-LIG": 0.28159999999999996,
+                "278-LIG": 0.2212,
+                "87-LIG": 0.9104000000000001,
+                "182-LIG": 0.8932,
+                "109-LIG": 0.33099999999999996,
+                "26-LIG": 0.0012000000000000001,
+                "194-LIG": 0.567,
+                "106-LIG": 0.5444,
+                "184-LIG": 0.6134000000000001,
+                "191-LIG": 0.33480000000000004,
+                "181-LIG": 0.0414,
+                "117-LIG": 0.11699999999999999,
+                "90-LIG": 0.772,
+                "102-LIG": 0.0,
+                "25-LIG": 0.6206,
+                "103-LIG": 0.0006000000000000001,
+                "279-LIG": 0.001,
+                "262-LIG": 0.0,
+                "98-LIG": 0.0006000000000000001,
+                "99-LIG": 0.039,
+                "190-LIG": 0.08159999999999998,
+                "94-LIG": 0.8514000000000002,
+                "93-LIG": 0.0,
+                "264-LIG": 0.0,
+                "97-LIG": 0.0,
+                "33-LIG": 0.0,
+                "95-LIG": 0.0076,
+                "34-LIG": 0.0,
+                "86-LIG": 0.0,
+                "29-LIG": 0.0,
+                "286-LIG": 0.0,
+                "186-LIG": 0.03819999999999998,
+                "24-LIG": 0.00199999999999998,
+                "283-LIG": 0.0,
+                "20-LIG": 0.0078,
+                "21-LIG": 0.055600000000000004,
+                "19-LIG": 0.012199999999999999,
+                "22-LIG": 0.1998,
+                "180-LIG": 0.0,
+                "23-LIG": 0.002,
+                "257-LIG": 0.087,
+                "89-LIG": 0.0,
+                "195-LIG": 0.0,
+                "254-LIG": 0.025,
+                "289-LIG": 0.0006000000000000001,
+                "83-LIG": 0.0,
+                "287-LIG": 0.028000000000000004,
+                "291-LIG": 0.018,
+                "292-LIG": 0.0,
+                "84-LIG": 0.0,
+                "280-LIG": 0.0,
+                "30-LIG": 0.0,
+                "88-LIG": 0.0,
+                "185-LIG": 0.024,
+                "260-LIG": 0.0,
+                "116-LIG": 0.0,
+                "96-LIG": 0.0,
+                "275-LIG": 0.0,
+                "273-LIG": 0.0,
+                "272-LIG": 0.0,
+                "268-LIG": 0.0,
+                "277-LIG": 0.0,
+                "269-LIG": 0.0,
+                "198-LIG": 0.0,
+                "202-LIG": 0.0,
+                "120-LIG": 0.0
+              },
+              "wt_rows_found": 5
+            },
+            {
+              "sheet": "Active structure contacts",
+              "residue_number_token": "LIG",
+              "n_contact_columns_involving_residue": 0,
+              "ligand_contact_columns": [],
+              "ligand_contact_wt_or_global_mean": {},
+              "wt_rows_found": 3
+            }
+          ],
+          "note": "SD2 Inactive carries residue\u2013LIG columns; Active sheet in recovered MOESM4 has no LIG columns."
+        },
+        "inclusion_basis": "Present as node 8D0:1 in Supp Data 3 WT_degeneracy; Morales-Pastor Methods: Dijkstra source = ligand CHEMBL5085420."
+      },
+      {
+        "label": "SER:285",
+        "status": "IN_GRAPH_AND_CONTACT_SET",
+        "role": "direct_LigACN_out_neighbor_of_ligand",
+        "in_WT_degeneracy": true,
+        "has_residue_LIG_contact_column": true,
+        "degeneracy_edge_weight_from_ligand": 0.8025,
+        "contact_evidence": {
+          "residue_number_token": "285",
+          "n_contact_columns_involving_residue": 60,
+          "ligand_contact_columns": [
+            "Inactive structure contacts:285-LIG"
+          ],
+          "by_sheet": [
+            {
+              "sheet": "Inactive structure contacts",
+              "residue_number_token": "285",
+              "n_contact_columns_involving_residue": 35,
+              "ligand_contact_columns": [
+                "285-LIG"
+              ],
+              "ligand_contact_wt_or_global_mean": {
+                "285-LIG": 0.9978
+              },
+              "wt_rows_found": 5
+            },
+            {
+              "sheet": "Active structure contacts",
+              "residue_number_token": "285",
+              "n_contact_columns_involving_residue": 25,
+              "ligand_contact_columns": [],
+              "ligand_contact_wt_or_global_mean": {},
+              "wt_rows_found": 3
+            }
+          ],
+          "note": "SD2 Inactive carries residue\u2013LIG columns; Active sheet in recovered MOESM4 has no LIG columns."
+        },
+        "inclusion_basis": "Out-neighbor of 8D0:1 with weight>0 in WT_degeneracy AND residue number appears in SD2 contact columns (Inactive and/or Active); explicit LIG contact column(s): ['Inactive structure contacts:285-LIG']."
+      },
+      {
+        "label": "PHE:87",
+        "status": "IN_GRAPH_AND_CONTACT_SET",
+        "role": "direct_LigACN_out_neighbor_of_ligand",
+        "in_WT_degeneracy": true,
+        "has_residue_LIG_contact_column": true,
+        "degeneracy_edge_weight_from_ligand": 0.1975,
+        "contact_evidence": {
+          "residue_number_token": "87",
+          "n_contact_columns_involving_residue": 65,
+          "ligand_contact_columns": [
+            "Inactive structure contacts:87-LIG"
+          ],
+          "by_sheet": [
+            {
+              "sheet": "Inactive structure contacts",
+              "residue_number_token": "87",
+              "n_contact_columns_involving_residue": 38,
+              "ligand_contact_columns": [
+                "87-LIG"
+              ],
+              "ligand_contact_wt_or_global_mean": {
+                "87-LIG": 0.9104000000000001
+              },
+              "wt_rows_found": 5
+            },
+            {
+              "sheet": "Active structure contacts",
+              "residue_number_token": "87",
+              "n_contact_columns_involving_residue": 27,
+              "ligand_contact_columns": [],
+              "ligand_contact_wt_or_global_mean": {},
+              "wt_rows_found": 3
+            }
+          ],
+          "note": "SD2 Inactive carries residue\u2013LIG columns; Active sheet in recovered MOESM4 has no LIG columns."
+        },
+        "inclusion_basis": "Out-neighbor of 8D0:1 with weight>0 in WT_degeneracy AND residue number appears in SD2 contact columns (Inactive and/or Active); explicit LIG contact column(s): ['Inactive structure contacts:87-LIG']."
+      }
+    ],
+    "ausente_or_excluded": [
+      {
+        "label": "TRP:258",
+        "status": "AUSENTE",
+        "reason": "Not present in WT_degeneracy node set; not substituted. SD2 LIG-contact columns (if any): ['Inactive structure contacts:258-LIG'].",
+        "contact_evidence": {
+          "residue_number_token": "258",
+          "n_contact_columns_involving_residue": 82,
+          "ligand_contact_columns": [
+            "Inactive structure contacts:258-LIG"
+          ],
+          "by_sheet": [
+            {
+              "sheet": "Inactive structure contacts",
+              "residue_number_token": "258",
+              "n_contact_columns_involving_residue": 45,
+              "ligand_contact_columns": [
+                "258-LIG"
+              ],
+              "ligand_contact_wt_or_global_mean": {
+                "258-LIG": 0.1694
+              },
+              "wt_rows_found": 5
+            },
+            {
+              "sheet": "Active structure contacts",
+              "residue_number_token": "258",
+              "n_contact_columns_involving_residue": 37,
+              "ligand_contact_columns": [],
+              "ligand_contact_wt_or_global_mean": {},
+              "wt_rows_found": 3
+            }
+          ],
+          "note": "SD2 Inactive carries residue\u2013LIG columns; Active sheet in recovered MOESM4 has no LIG columns."
+        },
+        "probe": "literature_or_informal_pocket_candidate"
+      },
+      {
+        "label": "PHE:183",
+        "status": "AUSENTE",
+        "reason": "Not present in WT_degeneracy node set; not substituted. SD2 LIG-contact columns (if any): ['Inactive structure contacts:183-LIG'].",
+        "contact_evidence": {
+          "residue_number_token": "183",
+          "n_contact_columns_involving_residue": 71,
+          "ligand_contact_columns": [
+            "Inactive structure contacts:183-LIG"
+          ],
+          "by_sheet": [
+            {
+              "sheet": "Inactive structure contacts",
+              "residue_number_token": "183",
+              "n_contact_columns_involving_residue": 37,
+              "ligand_contact_columns": [
+                "183-LIG"
+              ],
+              "ligand_contact_wt_or_global_mean": {
+                "183-LIG": 0.8252
+              },
+              "wt_rows_found": 5
+            },
+            {
+              "sheet": "Active structure contacts",
+              "residue_number_token": "183",
+              "n_contact_columns_involving_residue": 34,
+              "ligand_contact_columns": [],
+              "ligand_contact_wt_or_global_mean": {},
+              "wt_rows_found": 3
+            }
+          ],
+          "note": "SD2 Inactive carries residue\u2013LIG columns; Active sheet in recovered MOESM4 has no LIG columns."
+        },
+        "probe": "literature_or_informal_pocket_candidate"
+      }
+    ],
+    "ligand_node": "8D0:1",
+    "primary_source_for_paths": "8D0:1"
+  },
+  "sink_set_T": {
+    "members": [
+      {
+        "matrix_label": "ARG:131",
+        "paper_name": "Arg131",
+        "bw": "3x50",
+        "in_graph": true,
+        "status": "IN_GRAPH"
+      },
+      {
+        "matrix_label": "ASP:240",
+        "paper_name": "Asp240",
+        "bw": "6x30",
+        "in_graph": true,
+        "status": "IN_GRAPH"
+      },
+      {
+        "matrix_label": "SER:303",
+        "paper_name": "Ser303",
+        "bw": "8x47",
+        "in_graph": true,
+        "status": "IN_GRAPH"
+      },
+      {
+        "matrix_label": "SER:69",
+        "paper_name": "Ser69",
+        "bw": "2x39",
+        "in_graph": true,
+        "status": "IN_GRAPH"
+      }
+    ],
+    "used_for_paths": [
+      "ARG:131",
+      "ASP:240",
+      "SER:303",
+      "SER:69"
+    ]
+  },
+  "connectivity": {
+    "primary_source": "8D0:1",
+    "n_sinks": 4,
+    "n_reachable": 4,
+    "per_sink": {
+      "ARG:131": {
+        "sink": "ARG:131",
+        "in_graph": true,
+        "reachable": true,
+        "status": "PATH_EXISTS",
+        "n_hop_shortest_paths": 2,
+        "hop_length": 8,
+        "n_weighted_shortest_paths": 1,
+        "weighted_length_sum_inv_w": 45.079860978416946,
+        "n_simple_paths_cutoff": 2,
+        "simple_path_cutoff": 8
+      },
+      "ASP:240": {
+        "sink": "ASP:240",
+        "in_graph": true,
+        "reachable": true,
+        "status": "PATH_EXISTS",
+        "n_hop_shortest_paths": 1,
+        "hop_length": 8,
+        "n_weighted_shortest_paths": 1,
+        "weighted_length_sum_inv_w": 38.829860978416946,
+        "n_simple_paths_cutoff": 1,
+        "simple_path_cutoff": 8
+      },
+      "SER:303": {
+        "sink": "SER:303",
+        "in_graph": true,
+        "reachable": true,
+        "status": "PATH_EXISTS",
+        "n_hop_shortest_paths": 1,
+        "hop_length": 6,
+        "n_weighted_shortest_paths": 1,
+        "weighted_length_sum_inv_w": 27.226366567703643,
+        "n_simple_paths_cutoff": 12,
+        "simple_path_cutoff": 8
+      },
+      "SER:69": {
+        "sink": "SER:69",
+        "in_graph": true,
+        "reachable": true,
+        "status": "PATH_EXISTS",
+        "n_hop_shortest_paths": 4,
+        "hop_length": 6,
+        "n_weighted_shortest_paths": 1,
+        "weighted_length_sum_inv_w": 34.018278503455214,
+        "n_simple_paths_cutoff": 41,
+        "simple_path_cutoff": 8
+      }
+    },
+    "nodes_on_shortest_paths": {
+      "PHE:87": 6,
+      "ALA:83": 6,
+      "ALA:79": 5,
+      "SER:75": 4,
+      "SER:123": 2,
+      "LEU:125": 1,
+      "ILE:129": 2,
+      "THR:127": 1,
+      "SER:285": 2,
+      "LEU:287": 2,
+      "ASN:291": 2,
+      "ASN:295": 2,
+      "ILE:298": 1,
+      "ARG:302": 1,
+      "ARG:242": 1,
+      "TYR:299": 1,
+      "PHE:81": 1,
+      "ALA:77": 2,
+      "ILE:73": 3,
+      "LEU:71": 1
+    },
+    "top_bottleneck_edges": [
+      {
+        "edge": [
+          "8D0:1",
+          "PHE:87"
+        ],
+        "count_on_hop_shortest": 6
+      },
+      {
+        "edge": [
+          "PHE:87",
+          "ALA:83"
+        ],
+        "count_on_hop_shortest": 6
+      },
+      {
+        "edge": [
+          "ALA:83",
+          "ALA:79"
+        ],
+        "count_on_hop_shortest": 5
+      },
+      {
+        "edge": [
+          "ALA:79",
+          "SER:75"
+        ],
+        "count_on_hop_shortest": 4
+      },
+      {
+        "edge": [
+          "ILE:73",
+          "SER:69"
+        ],
+        "count_on_hop_shortest": 3
+      },
+      {
+        "edge": [
+          "SER:75",
+          "SER:123"
+        ],
+        "count_on_hop_shortest": 2
+      },
+      {
+        "edge": [
+          "ILE:129",
+          "ARG:131"
+        ],
+        "count_on_hop_shortest": 2
+      },
+      {
+        "edge": [
+          "8D0:1",
+          "SER:285"
+        ],
+        "count_on_hop_shortest": 2
+      },
+      {
+        "edge": [
+          "SER:285",
+          "LEU:287"
+        ],
+        "count_on_hop_shortest": 2
+      },
+      {
+        "edge": [
+          "LEU:287",
+          "ASN:291"
+        ],
+        "count_on_hop_shortest": 2
+      },
+      {
+        "edge": [
+          "ASN:291",
+          "ASN:295"
+        ],
+        "count_on_hop_shortest": 2
+      },
+      {
+        "edge": [
+          "ALA:77",
+          "ILE:73"
+        ],
+        "count_on_hop_shortest": 2
+      },
+      {
+        "edge": [
+          "SER:123",
+          "LEU:125"
+        ],
+        "count_on_hop_shortest": 1
+      },
+      {
+        "edge": [
+          "LEU:125",
+          "ILE:129"
+        ],
+        "count_on_hop_shortest": 1
+      },
+      {
+        "edge": [
+          "SER:123",
+          "THR:127"
+        ],
+        "count_on_hop_shortest": 1
+      }
+    ]
+  },
+  "enrichment": {
+    "null_model": "Directed configuration-model style rewiring preserving in- and out-degree sequences of WT LigACN DiGraph; n_null=200; seed=20260820. Self-loops/multiedges avoided when possible.",
+    "n_null_realized": 200,
+    "obs_n_sinks_reachable": 4,
+    "null_mean_n_sinks_reachable": 4.0,
+    "node_enrichment": [
+      {
+        "node": "ALA:83",
+        "obs_path_participation": 0.13043478260869565,
+        "null_mean_participation": 0.008896214441837365,
+        "p_participation": 0.01990049751243781,
+        "obs_st_betweenness": 0.5,
+        "null_mean_st_betweenness": 0.028041666666666666,
+        "p_st_betweenness": 0.024875621890547265
+      },
+      {
+        "node": "PHE:87",
+        "obs_path_participation": 0.13043478260869565,
+        "null_mean_participation": 0.01421886402688163,
+        "p_participation": 0.03482587064676617,
+        "obs_st_betweenness": 0.5,
+        "null_mean_st_betweenness": 0.04263690476190476,
+        "p_st_betweenness": 0.024875621890547265
+      },
+      {
+        "node": "ALA:79",
+        "obs_path_participation": 0.10869565217391304,
+        "null_mean_participation": 0.024189187821547664,
+        "p_participation": 0.07462686567164178,
+        "obs_st_betweenness": 0.4375,
+        "null_mean_st_betweenness": 0.0754315476190476,
+        "p_st_betweenness": 0.04975124378109453
+      },
+      {
+        "node": "SER:75",
+        "obs_path_participation": 0.08695652173913043,
+        "null_mean_participation": 0.037265578728640385,
+        "p_participation": 0.16417910447761194,
+        "obs_st_betweenness": 0.375,
+        "null_mean_st_betweenness": 0.10837202380952381,
+        "p_st_betweenness": 0.12437810945273632
+      },
+      {
+        "node": "ILE:73",
+        "obs_path_participation": 0.06521739130434782,
+        "null_mean_participation": 0.013064622090101308,
+        "p_participation": 0.07960199004975124,
+        "obs_st_betweenness": 0.1875,
+        "null_mean_st_betweenness": 0.038482142857142854,
+        "p_st_betweenness": 0.07462686567164178
+      },
+      {
+        "node": "ASN:291",
+        "obs_path_participation": 0.043478260869565216,
+        "null_mean_participation": 0.004984967522989344,
+        "p_participation": 0.05472636815920398,
+        "obs_st_betweenness": 0.5,
+        "null_mean_st_betweenness": 0.013583333333333334,
+        "p_st_betweenness": 0.004975124378109453
+      },
+      {
+        "node": "ASN:295",
+        "obs_path_participation": 0.043478260869565216,
+        "null_mean_participation": 0.010040682558110484,
+        "p_participation": 0.0945273631840796,
+        "obs_st_betweenness": 0.5,
+        "null_mean_st_betweenness": 0.027544642857142854,
+        "p_st_betweenness": 0.014925373134328358
+      },
+      {
+        "node": "LEU:287",
+        "obs_path_participation": 0.043478260869565216,
+        "null_mean_participation": 0.007988540411539367,
+        "p_participation": 0.0845771144278607,
+        "obs_st_betweenness": 0.5,
+        "null_mean_st_betweenness": 0.0218125,
+        "p_st_betweenness": 0.009950248756218905
+      },
+      {
+        "node": "SER:285",
+        "obs_path_participation": 0.043478260869565216,
+        "null_mean_participation": 0.003536227661227661,
+        "p_participation": 0.03980099502487562,
+        "obs_st_betweenness": 0.5,
+        "null_mean_st_betweenness": 0.01150297619047619,
+        "p_st_betweenness": 0.009950248756218905
+      },
+      {
+        "node": "ILE:129",
+        "obs_path_participation": 0.043478260869565216,
+        "null_mean_participation": 0.017259377527376687,
+        "p_participation": 0.1691542288557214,
+        "obs_st_betweenness": 0.25,
+        "null_mean_st_betweenness": 0.050875000000000004,
+        "p_st_betweenness": 0.12437810945273632
+      },
+      {
+        "node": "SER:123",
+        "obs_path_participation": 0.043478260869565216,
+        "null_mean_participation": 0.016033590508786263,
+        "p_participation": 0.13930348258706468,
+        "obs_st_betweenness": 0.25,
+        "null_mean_st_betweenness": 0.04226488095238096,
+        "p_st_betweenness": 0.08955223880597014
+      },
+      {
+        "node": "ALA:77",
+        "obs_path_participation": 0.043478260869565216,
+        "null_mean_participation": 0.010429887387304588,
+        "p_participation": 0.09950248756218906,
+        "obs_st_betweenness": 0.125,
+        "null_mean_st_betweenness": 0.028761904761904763,
+        "p_st_betweenness": 0.08955223880597014
+      },
+      {
+        "node": "ARG:242",
+        "obs_path_participation": 0.021739130434782608,
+        "null_mean_participation": 0.018197029679325242,
+        "p_participation": 1.0,
+        "obs_st_betweenness": 0.25,
+        "null_mean_st_betweenness": 0.05313095238095238,
+        "p_st_betweenness": 0.12935323383084577
+      },
+      {
+        "node": "ARG:302",
+        "obs_path_participation": 0.021739130434782608,
+        "null_mean_participation": 0.006981343143826448,
+        "p_participation": 0.07960199004975124,
+        "obs_st_betweenness": 0.25,
+        "null_mean_st_betweenness": 0.01938988095238095,
+        "p_st_betweenness": 0.03482587064676617
+      },
+      {
+        "node": "ILE:298",
+        "obs_path_participation": 0.021739130434782608,
+        "null_mean_participation": 0.013438904479297917,
+        "p_participation": 1.0,
+        "obs_st_betweenness": 0.25,
+        "null_mean_st_betweenness": 0.03870833333333333,
+        "p_st_betweenness": 0.07960199004975124
+      },
+      {
+        "node": "TYR:299",
+        "obs_path_participation": 0.021739130434782608,
+        "null_mean_participation": 0.021712995671348097,
+        "p_participation": 1.0,
+        "obs_st_betweenness": 0.25,
+        "null_mean_st_betweenness": 0.06866964285714286,
+        "p_st_betweenness": 0.13432835820895522
+      },
+      {
+        "node": "LEU:125",
+        "obs_path_participation": 0.021739130434782608,
+        "null_mean_participation": 0.013317393926926688,
+        "p_participation": 1.0,
+        "obs_st_betweenness": 0.125,
+        "null_mean_st_betweenness": 0.04400297619047619,
+        "p_st_betweenness": 0.13930348258706468
+      },
+      {
+        "node": "THR:127",
+        "obs_path_participation": 0.021739130434782608,
+        "null_mean_participation": 0.039584137642895076,
+        "p_participation": 0.8109452736318408,
+        "obs_st_betweenness": 0.125,
+        "null_mean_st_betweenness": 0.11516964285714285,
+        "p_st_betweenness": 1.0
+      },
+      {
+        "node": "LEU:71",
+        "obs_path_participation": 0.021739130434782608,
+        "null_mean_participation": 0.011462678852106731,
+        "p_participation": 1.0,
+        "obs_st_betweenness": 0.0625,
+        "null_mean_st_betweenness": 0.0364702380952381,
+        "p_st_betweenness": 0.9950248756218906
+      },
+      {
+        "node": "PHE:81",
+        "obs_path_participation": 0.021739130434782608,
+        "null_mean_participation": 0.007131202148764468,
+        "p_participation": 0.08955223880597014,
+        "obs_st_betweenness": 0.0625,
+        "null_mean_st_betweenness": 0.025342261904761902,
+        "p_st_betweenness": 0.0945273631840796
+      }
+    ]
+  },
+  "descriptive_top_intermediates": [
+    "ALA:83",
+    "ALA:79",
+    "SER:75",
+    "ILE:73",
+    "SER:123",
+    "ILE:129",
+    "LEU:287",
+    "ASN:291",
+    "ASN:295",
+    "ALA:77",
+    "LEU:125",
+    "THR:127",
+    "ILE:298"
+  ],
+  "mutagenesis_overlap": [
+    {
+      "node": "ALA:83",
+      "position": 83,
+      "sd1_rows": [
+        {
+          "mutant": "A83V",
+          "position": 83,
+          "pct_wt_expression": 72.1045113,
+          "Gi2_Emax_raw": 0.0,
+          "bArr1_Emax_raw": 0.0,
+          "Gi2_Emax_norm": 0.0,
+          "bArr1_Emax_norm": 0.0,
+          "simulated": "not simulated",
+          "coupling_profile": "NoCoup_Gi_bArr"
+        }
+      ],
+      "sd3_degeneracy_sheet_present": false,
+      "sd3_sheet_name": null
+    },
+    {
+      "node": "ALA:79",
+      "position": 79,
+      "sd1_rows": [
+        {
+          "mutant": "A79V",
+          "position": 79,
+          "pct_wt_expression": 20.42946591,
+          "Gi2_Emax_raw": 0.0,
+          "bArr1_Emax_raw": 0.0,
+          "Gi2_Emax_norm": 0.0,
+          "bArr1_Emax_norm": 0.0,
+          "simulated": "not simulated",
+          "coupling_profile": "NoCoup_Gi_bArr"
+        }
+      ],
+      "sd3_degeneracy_sheet_present": false,
+      "sd3_sheet_name": null
+    },
+    {
+      "node": "SER:75",
+      "position": 75,
+      "sd1_rows": [
+        {
+          "mutant": "S75A",
+          "position": 75,
+          "pct_wt_expression": 29.24568785,
+          "Gi2_Emax_raw": 0.0,
+          "bArr1_Emax_raw": 0.0,
+          "Gi2_Emax_norm": 0.0,
+          "bArr1_Emax_norm": 0.0,
+          "simulated": "not simulated",
+          "coupling_profile": "NoCoup_Gi_bArr"
+        }
+      ],
+      "sd3_degeneracy_sheet_present": false,
+      "sd3_sheet_name": null
+    },
+    {
+      "node": "ILE:73",
+      "position": 73,
+      "sd1_rows": [
+        {
+          "mutant": "I73A",
+          "position": 73,
+          "pct_wt_expression": 43.99828785,
+          "Gi2_Emax_raw": 0.0,
+          "bArr1_Emax_raw": 0.0,
+          "Gi2_Emax_norm": 0.0,
+          "bArr1_Emax_norm": 0.0,
+          "simulated": "not simulated",
+          "coupling_profile": "NoCoup_Gi_bArr"
+        }
+      ],
+      "sd3_degeneracy_sheet_present": false,
+      "sd3_sheet_name": null
+    },
+    {
+      "node": "SER:123",
+      "position": 123,
+      "sd1_rows": [
+        {
+          "mutant": "S123A",
+          "position": 123,
+          "pct_wt_expression": 30.9058352,
+          "Gi2_Emax_raw": 0.583980579333333,
+          "bArr1_Emax_raw": 0.0,
+          "Gi2_Emax_norm": 0.901412135975628,
+          "bArr1_Emax_norm": 0.0,
+          "simulated": "not simulated",
+          "coupling_profile": "PrefCoup_Gi"
+        }
+      ],
+      "sd3_degeneracy_sheet_present": false,
+      "sd3_sheet_name": null
+    },
+    {
+      "node": "ILE:129",
+      "position": 129,
+      "sd1_rows": [
+        {
+          "mutant": "I129A",
+          "position": 129,
+          "pct_wt_expression": 42.41777677,
+          "Gi2_Emax_raw": 0.4698269395,
+          "bArr1_Emax_raw": 0.074874582,
+          "Gi2_Emax_norm": 0.657084635770894,
+          "bArr1_Emax_norm": 1.24176800593117,
+          "simulated": "not simulated",
+          "coupling_profile": "Coup_Gi_bArr"
+        }
+      ],
+      "sd3_degeneracy_sheet_present": false,
+      "sd3_sheet_name": null
+    },
+    {
+      "node": "LEU:287",
+      "position": 287,
+      "sd1_rows": [
+        {
+          "mutant": "L287A",
+          "position": 287,
+          "pct_wt_expression": 51.15821889,
+          "Gi2_Emax_raw": 1.04638928666667,
+          "bArr1_Emax_raw": 0.100127372333333,
+          "Gi2_Emax_norm": 1.39385305159816,
+          "bArr1_Emax_norm": 1.37686500121026,
+          "simulated": "not simulated",
+          "coupling_profile": "Coup_Gi_bArr"
+        }
+      ],
+      "sd3_degeneracy_sheet_present": false,
+      "sd3_sheet_name": null
+    },
+    {
+      "node": "ASN:291",
+      "position": 291,
+      "sd1_rows": [
+        {
+          "mutant": "N291A",
+          "position": 291,
+          "pct_wt_expression": 101.8849675,
+          "Gi2_Emax_raw": 0.396139751333333,
+          "bArr1_Emax_raw": 0.0,
+          "Gi2_Emax_norm": 0.464022590096628,
+          "bArr1_Emax_norm": 0.0,
+          "simulated": "simulated",
+          "coupling_profile": "PrefCoup_Gi"
+        }
+      ],
+      "sd3_degeneracy_sheet_present": true,
+      "sd3_sheet_name": "291_degeneracy"
+    },
+    {
+      "node": "ASN:295",
+      "position": 295,
+      "sd1_rows": [
+        {
+          "mutant": "N295A",
+          "position": 295,
+          "pct_wt_expression": 77.92948329,
+          "Gi2_Emax_raw": 0.0,
+          "bArr1_Emax_raw": 0.0,
+          "Gi2_Emax_norm": 0.0,
+          "bArr1_Emax_norm": 0.0,
+          "simulated": "not simulated",
+          "coupling_profile": "NoCoup_Gi_bArr"
+        }
+      ],
+      "sd3_degeneracy_sheet_present": false,
+      "sd3_sheet_name": null
+    },
+    {
+      "node": "ALA:77",
+      "position": 77,
+      "sd1_rows": [
+        {
+          "mutant": "A77V",
+          "position": 77,
+          "pct_wt_expression": 95.95876446,
+          "Gi2_Emax_raw": 0.328452202333333,
+          "bArr1_Emax_raw": 0.0,
+          "Gi2_Emax_norm": 0.388023467638858,
+          "bArr1_Emax_norm": 0.0,
+          "simulated": "simulated",
+          "coupling_profile": "PrefCoup_Gi"
+        }
+      ],
+      "sd3_degeneracy_sheet_present": true,
+      "sd3_sheet_name": "77_degeneracy"
+    },
+    {
+      "node": "LEU:125",
+      "position": 125,
+      "sd1_rows": [
+        {
+          "mutant": "L125A",
+          "position": 125,
+          "pct_wt_expression": 73.10944835,
+          "Gi2_Emax_raw": 1.02535195566667,
+          "bArr1_Emax_raw": 0.0,
+          "Gi2_Emax_norm": 1.26646257635446,
+          "bArr1_Emax_norm": 0.0,
+          "simulated": "simulated",
+          "coupling_profile": "PrefCoup_Gi"
+        }
+      ],
+      "sd3_degeneracy_sheet_present": true,
+      "sd3_sheet_name": "125_degeneracy"
+    },
+    {
+      "node": "THR:127",
+      "position": 127,
+      "sd1_rows": [
+        {
+          "mutant": "T127A",
+          "position": 127,
+          "pct_wt_expression": 150.1227541,
+          "Gi2_Emax_raw": 1.10268199233333,
+          "bArr1_Emax_raw": 0.227465932666667,
+          "Gi2_Emax_norm": 1.23421595132239,
+          "bArr1_Emax_norm": 1.06591800025802,
+          "simulated": "not simulated",
+          "coupling_profile": "Coup_Gi_bArr"
+        }
+      ],
+      "sd3_degeneracy_sheet_present": false,
+      "sd3_sheet_name": null
+    },
+    {
+      "node": "ARG:302",
+      "position": 302,
+      "sd1_rows": [
+        {
+          "mutant": "R302A",
+          "position": 302,
+          "pct_wt_expression": 85.16676041,
+          "Gi2_Emax_raw": 1.08423460433333,
+          "bArr1_Emax_raw": 0.0,
+          "Gi2_Emax_norm": 1.30452320622957,
+          "bArr1_Emax_norm": 0.0,
+          "simulated": "simulated",
+          "coupling_profile": "PrefCoup_Gi"
+        }
+      ],
+      "sd3_degeneracy_sheet_present": true,
+      "sd3_sheet_name": "302_degeneracy"
+    },
+    {
+      "node": "PHE:87",
+      "position": 87,
+      "sd1_rows": [
+        {
+          "mutant": "F87A",
+          "position": 87,
+          "pct_wt_expression": 77.15715749,
+          "Gi2_Emax_raw": 1.11135225233333,
+          "bArr1_Emax_raw": 0.194198912,
+          "Gi2_Emax_norm": 1.3595179823372,
+          "bArr1_Emax_norm": 1.77061659478227,
+          "simulated": "not simulated",
+          "coupling_profile": "Coup_Gi_bArr"
+        }
+      ],
+      "sd3_degeneracy_sheet_present": false,
+      "sd3_sheet_name": null
+    },
+    {
+      "node": "SER:285",
+      "position": 285,
+      "sd1_rows": [
+        {
+          "mutant": "S285A",
+          "position": 285,
+          "pct_wt_expression": 76.74044807,
+          "Gi2_Emax_raw": 0.851790526333333,
+          "bArr1_Emax_raw": 0.0,
+          "Gi2_Emax_norm": 1.04298578720081,
+          "bArr1_Emax_norm": 0.0,
+          "simulated": "simulated",
+          "coupling_profile": "PrefCoup_Gi"
+        }
+      ],
+      "sd3_degeneracy_sheet_present": true,
+      "sd3_sheet_name": "285_degeneracy"
+    },
+    {
+      "node": "ILE:298",
+      "position": 298,
+      "sd1_rows": [],
+      "sd3_degeneracy_sheet_present": false,
+      "sd3_sheet_name": null
+    },
+    {
+      "node": "ARG:242",
+      "position": 242,
+      "sd1_rows": [
+        {
+          "mutant": "R242A",
+          "position": 242,
+          "pct_wt_expression": 115.5916098,
+          "Gi2_Emax_raw": 1.09643153066667,
+          "bArr1_Emax_raw": 0.208756001666667,
+          "Gi2_Emax_norm": 1.26324631922761,
+          "bArr1_Emax_norm": 1.27047643930398,
+          "simulated": "not simulated",
+          "coupling_profile": "Coup_Gi_bArr"
+        }
+      ],
+      "sd3_degeneracy_sheet_present": false,
+      "sd3_sheet_name": null
+    },
+    {
+      "node": "TYR:299",
+      "position": 299,
+      "sd1_rows": [
+        {
+          "mutant": "Y299A",
+          "position": 299,
+          "pct_wt_expression": 11.89642571,
+          "Gi2_Emax_raw": 0.0,
+          "bArr1_Emax_raw": 0.0,
+          "Gi2_Emax_norm": 0.0,
+          "bArr1_Emax_norm": 0.0,
+          "simulated": "not simulated",
+          "coupling_profile": "NoCoup_Gi_bArr"
+        }
+      ],
+      "sd3_degeneracy_sheet_present": false,
+      "sd3_sheet_name": null
+    },
+    {
+      "node": "PHE:81",
+      "position": 81,
+      "sd1_rows": [
+        {
+          "mutant": "F81A",
+          "position": 81,
+          "pct_wt_expression": 146.8209857,
+          "Gi2_Emax_raw": 0.863705064333333,
+          "bArr1_Emax_raw": 0.099715803,
+          "Gi2_Emax_norm": 0.968868925712107,
+          "bArr1_Emax_norm": 0.477782031747548,
+          "simulated": "not simulated",
+          "coupling_profile": "Coup_Gi_bArr"
+        }
+      ],
+      "sd3_degeneracy_sheet_present": false,
+      "sd3_sheet_name": null
+    },
+    {
+      "node": "LEU:71",
+      "position": 71,
+      "sd1_rows": [
+        {
+          "mutant": "L71A",
+          "position": 71,
+          "pct_wt_expression": 22.32105244,
+          "Gi2_Emax_raw": 0.515802910333333,
+          "bArr1_Emax_raw": 0.0,
+          "Gi2_Emax_norm": 0.902164111495961,
+          "bArr1_Emax_norm": 0.0,
+          "simulated": "not simulated",
+          "coupling_profile": "PrefCoup_Gi"
+        }
+      ],
+      "sd3_degeneracy_sheet_present": false,
+      "sd3_sheet_name": null
+    }
+  ],
+  "verdict": {
+    "STATIC_TOPOLOGICAL_BOTTLENECKS": "TOPOLOGICAL_HUBS_IDENTIFIED",
+    "rationale": "6 non-S/T node(s) enriched vs degree-preserving null (alpha=0.05) on S\u2192T shortest-path participation and/or betweenness.",
+    "significant_hub_nodes": [
+      "ALA:83",
+      "ALA:79",
+      "ASN:291",
+      "ASN:295",
+      "LEU:287",
+      "ARG:302"
+    ],
+    "significant_hub_detail": [
+      {
+        "node": "ALA:83",
+        "obs_path_participation": 0.13043478260869565,
+        "null_mean_participation": 0.008896214441837365,
+        "p_participation": 0.01990049751243781,
+        "obs_st_betweenness": 0.5,
+        "null_mean_st_betweenness": 0.028041666666666666,
+        "p_st_betweenness": 0.024875621890547265
+      },
+      {
+        "node": "ALA:79",
+        "obs_path_participation": 0.10869565217391304,
+        "null_mean_participation": 0.024189187821547664,
+        "p_participation": 0.07462686567164178,
+        "obs_st_betweenness": 0.4375,
+        "null_mean_st_betweenness": 0.0754315476190476,
+        "p_st_betweenness": 0.04975124378109453
+      },
+      {
+        "node": "ASN:291",
+        "obs_path_participation": 0.043478260869565216,
+        "null_mean_participation": 0.004984967522989344,
+        "p_participation": 0.05472636815920398,
+        "obs_st_betweenness": 0.5,
+        "null_mean_st_betweenness": 0.013583333333333334,
+        "p_st_betweenness": 0.004975124378109453
+      },
+      {
+        "node": "ASN:295",
+        "obs_path_participation": 0.043478260869565216,
+        "null_mean_participation": 0.010040682558110484,
+        "p_participation": 0.0945273631840796,
+        "obs_st_betweenness": 0.5,
+        "null_mean_st_betweenness": 0.027544642857142854,
+        "p_st_betweenness": 0.014925373134328358
+      },
+      {
+        "node": "LEU:287",
+        "obs_path_participation": 0.043478260869565216,
+        "null_mean_participation": 0.007988540411539367,
+        "p_participation": 0.0845771144278607,
+        "obs_st_betweenness": 0.5,
+        "null_mean_st_betweenness": 0.0218125,
+        "p_st_betweenness": 0.009950248756218905
+      },
+      {
+        "node": "ARG:302",
+        "obs_path_participation": 0.021739130434782608,
+        "null_mean_participation": 0.006981343143826448,
+        "p_participation": 0.07960199004975124,
+        "obs_st_betweenness": 0.25,
+        "null_mean_st_betweenness": 0.01938988095238095,
+        "p_st_betweenness": 0.03482587064676617
+      }
+    ],
+    "fraction_sinks_reachable": 1.0,
+    "median_simple_path_redundancy": 7.0,
+    "alpha": 0.05,
+    "epistemic_tag": "[INTERNAL_REANALYSIS]",
+    "interpretation_limit": "Describes topological properties of the aggregated published LigACN only. Does NOT establish residues as causally necessary for Gi. Dynamic causal core remains BLOCKED_PENDING_DYNAMIC_VALIDATION."
+  },
+  "traj_status_oneliner": "Trajectories/MSM: **not recovered this run** \u2014 GPCRmd/1540 and Box `jzooa0o27z1w9ha0h6va3i51ir7l38j4` remain ENLACE_REGISTRADO only (no new multi-cycle hunt)."
+}

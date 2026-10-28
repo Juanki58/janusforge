@@ -1,0 +1,189 @@
+{
+  "status": "DESCRIPTIVE_ONLY",
+  "governance": {
+    "DE_NOVO_GENERATION": "STOP",
+    "THRESHOLD_MODIFICATION": "STOP",
+    "ORTHOSTERIC_DESIGN": "PAUSED",
+    "CONTRACT_v1.0": "ARCHIVED_HISTORICAL",
+    "NEW_DOCKING": "STOP",
+    "NEW_CHEMISTRY": "STOP",
+    "MODO": "READ_ONLY / PUBLIC_DATA_REANALYSIS"
+  },
+  "access_date_utc": "2026-08-20T12:15:33Z",
+  "metrics": {
+    "status": "DESCRIPTIVE_ONLY",
+    "epistemic_tag": "[INTERNAL_REANALYSIS]",
+    "graph_source": "MOESM5 WT_degeneracy (Supp Data 3)",
+    "n_nodes": 100,
+    "n_edges": 117,
+    "ligand_node_present": true,
+    "pre_registered_orthosteric_proxy_S": [
+      "8D0:1",
+      "PHE:87",
+      "SER:285"
+    ],
+    "pre_registered_intracellular_sinks_T": null,
+    "sink_blocker": "Exact intracellular coupling-site sink list not recovered from SI/xlsx; core connectivity test not executed.",
+    "degree_summary": {
+      "min": 0,
+      "max": 6,
+      "mean": 2.34
+    },
+    "top15_transmission_participation": [
+      {
+        "node": "SER:285",
+        "participation_sum_transmission": 1.605
+      },
+      {
+        "node": "8D0:1",
+        "participation_sum_transmission": 1.0
+      },
+      {
+        "node": "ASN:291",
+        "participation_sum_transmission": 0.8370000000000001
+      },
+      {
+        "node": "PHE:87",
+        "participation_sum_transmission": 0.7015
+      },
+      {
+        "node": "ALA:83",
+        "participation_sum_transmission": 0.6025
+      },
+      {
+        "node": "ASN:295",
+        "participation_sum_transmission": 0.512
+      },
+      {
+        "node": "LEU:287",
+        "participation_sum_transmission": 0.48250000000000004
+      },
+      {
+        "node": "ALA:280",
+        "participation_sum_transmission": 0.469
+      },
+      {
+        "node": "SER:75",
+        "participation_sum_transmission": 0.4305
+      },
+      {
+        "node": "ILE:129",
+        "participation_sum_transmission": 0.4245
+      },
+      {
+        "node": "LYS:279",
+        "participation_sum_transmission": 0.41100000000000003
+      },
+      {
+        "node": "LEU:289",
+        "participation_sum_transmission": 0.41100000000000003
+      },
+      {
+        "node": "ALA:79",
+        "participation_sum_transmission": 0.4
+      },
+      {
+        "node": "ARG:131",
+        "participation_sum_transmission": 0.3825
+      },
+      {
+        "node": "CYS:284",
+        "participation_sum_transmission": 0.382
+      }
+    ],
+    "top10_betweenness": [
+      {
+        "node": "SER:75",
+        "betweenness": 0.3581117295403009
+      },
+      {
+        "node": "PHE:87",
+        "betweenness": 0.3502370645227788
+      },
+      {
+        "node": "SER:285",
+        "betweenness": 0.33436404864976293
+      },
+      {
+        "node": "ALA:79",
+        "betweenness": 0.33219954648526073
+      },
+      {
+        "node": "ALA:83",
+        "betweenness": 0.32653061224489793
+      },
+      {
+        "node": "8D0:1",
+        "betweenness": 0.30921459492888065
+      },
+      {
+        "node": "LEU:287",
+        "betweenness": 0.27293341579055863
+      },
+      {
+        "node": "ASN:291",
+        "betweenness": 0.19552669552669555
+      },
+      {
+        "node": "PHE:72",
+        "betweenness": 0.18161203875489573
+      },
+      {
+        "node": "TYR:70",
+        "betweenness": 0.1443001443001443
+      }
+    ],
+    "top10_closeness": [
+      {
+        "node": "SER:75",
+        "closeness": 0.1408419709073304
+      },
+      {
+        "node": "ALA:79",
+        "closeness": 0.14023094283397972
+      },
+      {
+        "node": "ALA:83",
+        "closeness": 0.1381334714668048
+      },
+      {
+        "node": "PHE:87",
+        "closeness": 0.13552717955233679
+      },
+      {
+        "node": "8D0:1",
+        "closeness": 0.13033561420658193
+      },
+      {
+        "node": "PHE:72",
+        "closeness": 0.1298121780049491
+      },
+      {
+        "node": "ALA:77",
+        "closeness": 0.1298121780049491
+      },
+      {
+        "node": "LEU:71",
+        "closeness": 0.12955203335964857
+      },
+      {
+        "node": "ILE:73",
+        "closeness": 0.12852179850191778
+      },
+      {
+        "node": "SER:123",
+        "closeness": 0.12750781981551212
+      }
+    ],
+    "path_redundancy_note": "Full S↔T path redundancy not computed: T undefined. Published LigACN object has 117 positive-transmission edges on 100 nodes (already the union of 100 shortest pathways).",
+    "leave_one_out": {
+      "status": "NOT_EXECUTED",
+      "reason": "Blocked by unrecovered sink set T (protocol §5)."
+    },
+    "candidate_core_search": {
+      "status": "NOT_EXECUTED",
+      "reason": "Would require locked S and T; T missing -> INDETERMINATE."
+    }
+  },
+  "note": "Descriptive metrics on published WT degeneracy only; not a validated minimal core."
+}

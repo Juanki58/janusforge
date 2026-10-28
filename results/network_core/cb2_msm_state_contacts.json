@@ -1,0 +1,155 @@
+{
+  "generated_utc": "2026-09-12T11:14:27Z",
+  "branch": "feat/cb2-hubs-functional-topology-test",
+  "experiment": "EXPERIMENT_CB2_MSM_STATE_CONTACTS",
+  "epistemology": {
+    "scope": "EXTERNAL_MSM_STATE_CONTACTS",
+    "filename_neq_msm_state": true,
+    "p2_unchanged": true,
+    "no_gi_claim": true,
+    "no_docking": true,
+    "no_p1_hub_hunt": true,
+    "soft_compare_prior": "EXT_PDB_CONTACTS_STATE_DEPENDENT / EXT_STRUCTURAL_ABC_SNAPSHOT_B",
+    "prior_filename_pilot": "EXT_APO_PILOT_CONTACTS_INDETERMINATE"
+  },
+  "contact_def": {
+    "name": "getcontacts_vdw_envelope_plus_alloviz_filters",
+    "geometry": "|AB| < Rvdw(A)+Rvdw(B)+0.5 Angstrom; A,B non-hydrogen",
+    "slack_A": 0.5,
+    "exclude_sequential_protein": true,
+    "p_ij_edge_threshold": 0.1,
+    "p_ij_report_threshold_high": 0.5,
+    "selection": "protein",
+    "applied": false,
+    "reason": "gate0_failed"
+  },
+  "thresholds": {
+    "jaccard_stable": 0.8,
+    "mean_frac_private_B": 0.15,
+    "jaccard_diffuse": 0.55
+  },
+  "sampling_plan_registered": {
+    "n_per_state_pilot": 5,
+    "frame_cap": 200,
+    "dom_frac_min": 0.9,
+    "seed": 20260912,
+    "cache_dir": "data\\external\\dutta_shukla_2023\\trajectories\\CB2_APO\\_cache_msm_states",
+    "executed": false
+  },
+  "msm": {
+    "n_traj": 4972,
+    "state_prob_sha256": "0f273641dc3bd26cedf38b0f98b3e4b8afd0e3eadc5f10e38f22aad16370c079",
+    "clustering_sha256": "e4db17c8e30de41c0829bdf0f10c00643171cbdd5438e894e1c3f0a99e6c20e8",
+    "idx_to_label": {
+      "0": "I1",
+      "1": "I2",
+      "2": "I3",
+      "3": "inactive",
+      "4": "I4",
+      "5": "active"
+    },
+    "label_source": "ShuklaGroup/Cannabinoid_activation Main_Figure_6/CB2-APO_vampnet_states_TPT.py labels=['I1','I2','I3','Inactive','I4','Active']"
+  },
+  "gate0_alignment": {
+    "ok": false,
+    "method": null,
+    "n_traj_msm": 4972,
+    "n_len_mismatch_sp_cl": 0,
+    "T_min_median_max": [
+      250,
+      600,
+      600
+    ],
+    "sidecars_scanned": [],
+    "zip": {
+      "exists": true,
+      "n_entries": 4974,
+      "n_nc": 4971,
+      "n_inactive_filename": 2598,
+      "n_active_filename": 2373,
+      "helpers": {
+        "CB2_APO/CB2-APO_inactive_pr_1-strip.prmtop": {
+          "bytes": 1989174
+        },
+        "CB2_APO/list": {
+          "bytes": 201,
+          "text": "CB2-APO_inactive_pr_17_frame_0-strip.nc\nCB2-APO_inactive_pr_17_frame_1-strip.nc\nCB2-APO_inactive_pr_17_frame_23-strip.nc\nCB2-APO_inactive_pr_17_frame_2-strip.nc\nCB2-APO_inactive_pr_17_frame_4-strip.nc\n",
+          "n_nc_lines": 5
+        },
+        "CB2_APO/mv_short_file": {
+          "bytes": 121,
+          "text": "ls -l CB2*-strip.nc| awk '{if ($5 < 13711345) print $9}' > list\nwhile read line \ndo \n  mv ${line} shorter_traj\ndone<list\n",
+          "n_nc_lines": 0
+        }
+      },
+      "note": "Filename inactive/active = simulation start label, NOT MSM macrostate. Zip member order is not validated as MSM list order."
+    },
+    "missing_mapping_key": "No co-deposited traj filename/path list of length n_traj aligned to CB2_state_prob.pkl list indices. Pickles are anonymous list[ndarray] only. Zip has 4971 .nc vs MSM n_traj=4972 (delta=1). Zip helper CB2_APO/list has only 5 short-traj names (not MSM order). Authors' load order (glob / box pagination) is not reconstructible from available artifacts. Lexicographic / zip-member / natural sort are NOT accepted without independent validation.",
+    "rejected_heuristics": [
+      "lexicographic_sort_of_nc_names",
+      "zip_member_order",
+      "natural_sort",
+      "filename_inactive_active_as_msm_label",
+      "majority_hard_state_without_index_map"
+    ],
+    "verdict_if_fail": "EXT_MSM_STATE_CONTACTS_INDETERMINATE_NO_ALIGNMENT"
+  },
+  "stationary_populations": {
+    "n_frames": 2785341,
+    "pi_hard_by_label": {
+      "I1": 0.07537676715346524,
+      "I2": 0.09715614712884348,
+      "I3": 0.18947662063639606,
+      "inactive": 0.17192652533388192,
+      "I4": 0.036361077512591815,
+      "active": 0.4297028622348215
+    },
+    "pi_soft_by_label": {
+      "I1": 0.08416162076134583,
+      "I2": 0.09777516070346082,
+      "I3": 0.19509912179319694,
+      "inactive": 0.15967073547544475,
+      "I4": 0.0400904278760408,
+      "active": 0.4232029348641673
+    },
+    "pi_hard_by_idx": {
+      "0": 0.07537676715346524,
+      "1": 0.09715614712884348,
+      "2": 0.18947662063639606,
+      "3": 0.17192652533388192,
+      "4": 0.036361077512591815,
+      "5": 0.4297028622348215
+    },
+    "traj_dom_counts_by_label": {
+      "I2": 461,
+      "inactive": 851,
+      "I1": 362,
+      "I3": 923,
+      "active": 2182,
+      "I4": 193
+    },
+    "n_traj_dom_frac_ge_0.9": 4827,
+    "path_order": [
+      "inactive",
+      "I1",
+      "I2",
+      "I3",
+      "I4",
+      "active"
+    ]
+  },
+  "metrics_primary": null,
+  "hub_mapping": null,
+  "verdicts": {
+    "EXT_MSM_STATE_CONTACTS": "EXT_MSM_STATE_CONTACTS_INDETERMINATE_NO_ALIGNMENT",
+    "EXT_MSM_SOFT_COMPARE_PDB": "EXT_MSM_SOFT_COMPARE_NA",
+    "EXT_MSM_FILENAME_NEQ_MSM_STATE": "TRUE",
+    "EXT_MSM_UPGRADES_FILENAME_PILOT": "FALSE_NO_ALIGNMENT",
+    "P2_STATUS_UNCHANGED": "CLOSED_ABORTED_NOT_CONVERGENT",
+    "MISSING_KEY": "traj_index_to_nc_filename_filelist"
+  },
+  "outputs": {
+    "json": "results\\network_core\\cb2_msm_state_contacts.json",
+    "md": "results\\network_core\\cb2_msm_state_contacts.md"
+  }
+}

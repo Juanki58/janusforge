@@ -1,0 +1,323 @@
+{
+  "run_utc": "2026-10-19T13:33:49Z",
+  "branch": "feat/cb2-hubs-functional-topology-test",
+  "experiment": "EXT_CB2_GI_XL_12IY_12JA",
+  "parent_protocol": "EXT_CB2_GI_CROSSLINK_2014",
+  "xl_pairs_definition": [
+    {
+      "id": "C134_C351",
+      "cb2_resid": 134,
+      "cb2_resname": "CYS",
+      "cb2_bw": "C3.53/C3.54(134)",
+      "gai_resid": 351,
+      "gai_resname": "CYS",
+      "gai_site": "a5 i-3",
+      "chemistry": "HgCl2 Cys-Cys",
+      "ca_lo": 7.0,
+      "ca_hi": 10.0,
+      "source": "experimental_XL"
+    },
+    {
+      "id": "K245_K349",
+      "cb2_resid": 245,
+      "cb2_resname": "LYS",
+      "cb2_bw": "K6.35(245)",
+      "gai_resid": 349,
+      "gai_resname": "LYS",
+      "gai_site": "a5 i-5",
+      "chemistry": "DSS Lys-Lys",
+      "ca_lo": 0.0,
+      "ca_hi": 24.2,
+      "source": "experimental_XL"
+    },
+    {
+      "id": "K215_K317",
+      "cb2_resid": 215,
+      "cb2_resname": "LYS",
+      "cb2_bw": "K5.64(215)",
+      "gai_resid": 317,
+      "gai_resname": "LYS",
+      "gai_site": "a4b6 loop",
+      "chemistry": "DSS Lys-Lys",
+      "ca_lo": 0.0,
+      "ca_hi": 24.2,
+      "source": "experimental_XL"
+    }
+  ],
+  "structures": [
+    {
+      "label": "12IY",
+      "path": "data/external/cb2_landmark_expanded/12IY.cif",
+      "exists": true,
+      "has_gi_expected": false,
+      "note": "Locally refined CB2 + agonist '5249 (Rachman 2026); receptor-only deposit",
+      "format": "cif",
+      "sha256": "c3aa49ea47609daa054bf63dedd1621a4e0375b8336c3c850318eb5d83483a23",
+      "chains": {
+        "R": {
+          "n_ca": 277,
+          "resid_min": 22,
+          "resid_max": 309
+        }
+      },
+      "receptor_chain": "R",
+      "gai_chain": null,
+      "status": "NO_GI_COMPLEX",
+      "pairs": {
+        "C134_C351": {
+          "call": "N/A_NO_GI",
+          "status": "N/A"
+        },
+        "K245_K349": {
+          "call": "N/A_NO_GI",
+          "status": "N/A"
+        },
+        "K215_K317": {
+          "call": "N/A_NO_GI",
+          "status": "N/A"
+        }
+      },
+      "pro139": {
+        "status": "N/A_NO_GI"
+      }
+    },
+    {
+      "label": "12JA",
+      "path": "data/external/cb2_landmark_expanded/12JA.cif",
+      "exists": true,
+      "has_gi_expected": true,
+      "note": "CB2\u2013Gi + agonist '1029 (Rachman 2026)",
+      "format": "cif",
+      "sha256": "4e3944d312c00b88669a7fd96e7a21292de24b87f30a3e4ead67f5b279310ab6",
+      "chains": {
+        "A": {
+          "n_ca": 225,
+          "resid_min": 5,
+          "resid_max": 354
+        },
+        "B": {
+          "n_ca": 339,
+          "resid_min": 2,
+          "resid_max": 340
+        },
+        "C": {
+          "n_ca": 55,
+          "resid_min": 9,
+          "resid_max": 63
+        },
+        "R": {
+          "n_ca": 282,
+          "resid_min": 22,
+          "resid_max": 312
+        }
+      },
+      "pairs": {
+        "C134_C351": {
+          "status": "OK",
+          "ca_ca_A": 7.872,
+          "call": "WITHIN",
+          "cb2": "CYS134:R",
+          "gai": "CYS351:A",
+          "window_A": [
+            7.0,
+            10.0
+          ]
+        },
+        "K245_K349": {
+          "status": "OK",
+          "ca_ca_A": 16.143,
+          "call": "WITHIN",
+          "cb2": "LYS245:R",
+          "gai": "LYS349:A",
+          "window_A": [
+            0.0,
+            24.2
+          ]
+        },
+        "K215_K317": {
+          "status": "OK",
+          "ca_ca_A": 23.336,
+          "call": "WITHIN",
+          "cb2": "LYS215:R",
+          "gai": "LYS317:A",
+          "window_A": [
+            0.0,
+            24.2
+          ]
+        }
+      },
+      "pro139": {
+        "status": "OK",
+        "min_ca_ca_A": 6.69,
+        "nearest": "ILE343:A",
+        "n_pocket": 7,
+        "pocket_distances": [
+          {
+            "gai": "VAL34:A",
+            "ca_ca_A": 8.238
+          },
+          {
+            "gai": "LEU194:A",
+            "ca_ca_A": 8.004
+          },
+          {
+            "gai": "PHE196:A",
+            "ca_ca_A": 11.482
+          },
+          {
+            "gai": "PHE336:A",
+            "ca_ca_A": 11.152
+          },
+          {
+            "gai": "THR340:A",
+            "ca_ca_A": 7.606
+          },
+          {
+            "gai": "ILE343:A",
+            "ca_ca_A": 6.69
+          },
+          {
+            "gai": "ILE344:A",
+            "ca_ca_A": 8.219
+          }
+        ],
+        "note": "MD registering contact (Mnpotra), NOT an experimental cross-link"
+      },
+      "structure_call": "ALL_WITHIN",
+      "status": "OK",
+      "receptor_chain": "R",
+      "gai_chain": "A"
+    },
+    {
+      "label": "12IZ",
+      "path": "data/external/cb2_landmark_expanded/12IZ.cif",
+      "exists": true,
+      "has_gi_expected": true,
+      "note": "APPENDIX: CB2\u2013Gi + agonist '5249 (full complex; Gi counterpart of 12IY series)",
+      "format": "cif",
+      "sha256": "f58dd7d1f28e6bfc3ee376c6adf19dc86e849e64eac55a2db8a93819f0c8f4d7",
+      "chains": {
+        "A": {
+          "n_ca": 218,
+          "resid_min": 3,
+          "resid_max": 354
+        },
+        "B": {
+          "n_ca": 338,
+          "resid_min": 3,
+          "resid_max": 340
+        },
+        "C": {
+          "n_ca": 56,
+          "resid_min": 8,
+          "resid_max": 63
+        },
+        "R": {
+          "n_ca": 277,
+          "resid_min": 22,
+          "resid_max": 309
+        },
+        "S": {
+          "n_ca": 231,
+          "resid_min": 2,
+          "resid_max": 235
+        }
+      },
+      "pairs": {
+        "C134_C351": {
+          "status": "OK",
+          "ca_ca_A": 7.891,
+          "call": "WITHIN",
+          "cb2": "CYS134:R",
+          "gai": "CYS351:A",
+          "window_A": [
+            7.0,
+            10.0
+          ]
+        },
+        "K245_K349": {
+          "status": "OK",
+          "ca_ca_A": 15.62,
+          "call": "WITHIN",
+          "cb2": "LYS245:R",
+          "gai": "LYS349:A",
+          "window_A": [
+            0.0,
+            24.2
+          ]
+        },
+        "K215_K317": {
+          "status": "OK",
+          "ca_ca_A": 21.609,
+          "call": "WITHIN",
+          "cb2": "LYS215:R",
+          "gai": "LYS317:A",
+          "window_A": [
+            0.0,
+            24.2
+          ]
+        }
+      },
+      "pro139": {
+        "status": "OK",
+        "min_ca_ca_A": 6.297,
+        "nearest": "ILE343:A",
+        "n_pocket": 7,
+        "pocket_distances": [
+          {
+            "gai": "VAL34:A",
+            "ca_ca_A": 7.617
+          },
+          {
+            "gai": "LEU194:A",
+            "ca_ca_A": 7.887
+          },
+          {
+            "gai": "PHE196:A",
+            "ca_ca_A": 10.836
+          },
+          {
+            "gai": "PHE336:A",
+            "ca_ca_A": 11.047
+          },
+          {
+            "gai": "THR340:A",
+            "ca_ca_A": 7.276
+          },
+          {
+            "gai": "ILE343:A",
+            "ca_ca_A": 6.297
+          },
+          {
+            "gai": "ILE344:A",
+            "ca_ca_A": 7.949
+          }
+        ],
+        "note": "MD registering contact (Mnpotra), NOT an experimental cross-link"
+      },
+      "structure_call": "ALL_WITHIN",
+      "status": "OK",
+      "receptor_chain": "R",
+      "gai_chain": "A"
+    }
+  ],
+  "aggregate": {
+    "verdict": "EXT_CB2_GI_XL_12IY_12JA_PARTIAL",
+    "reason": "12JA (Gi complex): all three XL pairs WITHIN Mnpotra windows; 12IY is locally refined receptor-only (no Gi) \u2014 XL intermolecular map N/A for 12IY",
+    "protocol_source": "EXPERIMENT_EXT_CB2_GI_CROSSLINK_2014 (identical XL pairs + C\u03b1 windows)",
+    "12IY_status": "NO_GI_COMPLEX",
+    "12JA_status": "OK",
+    "12JA_structure_call": "ALL_WITHIN",
+    "12IZ_appendix": {
+      "structure_call": "ALL_WITHIN",
+      "all_within": true,
+      "role": "APPENDIX only \u2014 Gi counterpart for '5249 series; not in PI primary pair"
+    },
+    "non_claims": [
+      "XL = intermolecular CB2\u2194Gi proximity, not intramolecular CB2 distances",
+      "Geometric compatibility \u2260 Gi functional proof; \u2260 Janusforge hubs; \u2260 P3",
+      "12IY receptor-only deposit does not support XL mapping (honest N/A_NO_GI)",
+      "P2 not reopened; P5 not advanced; no docking; no Tier B MD"
+    ]
+  }
+}

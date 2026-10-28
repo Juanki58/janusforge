@@ -1,0 +1,1479 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-21T09:11:52Z",
+  "scope": {
+    "system": "Morales-Pastor WT CB2 / GPCRmd publication_id 1540 / dyn2126",
+    "replicas": 5,
+    "hubs_fixed": [
+      {
+        "label": "ALA:79",
+        "short": "ALA79",
+        "bw": "2.49"
+      },
+      {
+        "label": "ALA:83",
+        "short": "ALA83",
+        "bw": "2.53"
+      },
+      {
+        "label": "LEU:287",
+        "short": "LEU287",
+        "bw": "7.41"
+      },
+      {
+        "label": "ASN:291",
+        "short": "ASN291",
+        "bw": "7.45"
+      },
+      {
+        "label": "ASN:295",
+        "short": "ASN295",
+        "bw": "7.49"
+      },
+      {
+        "label": "ARG:302",
+        "short": "ARG302",
+        "bw": "8.46"
+      }
+    ],
+    "S_set": [
+      "8D0:1",
+      "SER:285",
+      "PHE:87"
+    ],
+    "T_set": [
+      "ARG:131",
+      "ASP:240",
+      "SER:303",
+      "SER:69"
+    ],
+    "excluded": [
+      "Dutta_MSM",
+      "CB1",
+      "new_MD",
+      "docking",
+      "de_novo",
+      "Gai2_reinterpretation"
+    ],
+    "gates": {
+      "P2_P6": "BLOCKED",
+      "CONTRACT_v1.0": "ARCHIVED_HISTORICAL"
+    }
+  },
+  "definitions_frozen_a_priori": {
+    "A_contact_persistence": {
+      "name": "getcontacts_vdw_envelope_plus_alloviz_filters",
+      "geometry": "|AB| < Rvdw(A)+Rvdw(B)+0.5 Angstrom; A,B non-hydrogen",
+      "vdw_radii_A": {
+        "H": 1.2,
+        "C": 1.7,
+        "N": 1.55,
+        "O": 1.52,
+        "S": 1.8,
+        "P": 1.8,
+        "F": 1.47,
+        "CL": 1.75,
+        "BR": 1.85,
+        "I": 1.98
+      },
+      "slack_A": 0.5,
+      "exclude_sequential_protein": true,
+      "p_ij_edge_threshold": 0.1,
+      "selection": "protein or resname 8D0",
+      "references": [
+        "Morales-Pastor et al. 2025 Methods (GetContacts + AlloViz p>=0.1, drop |i-j|==1)",
+        "https://getcontacts.github.io/interactions.html (vdW criterion)"
+      ],
+      "limitation": "Full GetContacts chemotypes (hbond angles, pi geometry, water bridges) not reimplemented; persistence uses registered VdW distance envelope only."
+    },
+    "B_communication": {
+      "name": "DCC_Ca_fluctuation_correlation",
+      "formula": "DCC_ij = <\u0394r_i\u00b7\u0394r_j> / (sqrt(<\u0394r_i\u00b7\u0394r_i>) sqrt(<\u0394r_j\u00b7\u0394r_j>))",
+      "alignment": "protein CA; mobile=reference=protein and name CA; ref=frame 0",
+      "edge_threshold_abs": 0.3,
+      "exclude_sequential_sep_lt": 2,
+      "weight": "abs(DCC)",
+      "caveat": "Correlation is not causality.",
+      "note": "Matrix never mixed with contact persistence weights."
+    },
+    "P1_NULL": {
+      "name": "exact_in_out_degree_multiset_match",
+      "n_null": 200,
+      "alpha": 0.05,
+      "primary_metric": "pct_disconn",
+      "tail": "upper",
+      "reproducibility": {
+        "min_replicas": 2,
+        "min_states_if_msm": 2,
+        "hub_rank_spearman_min": 0.7,
+        "note": "If reproducibility gate fails -> INDETERMINATE, not retune alpha"
+      },
+      "forbidden": [
+        "universal_W=-ln(p)",
+        "a_priori_flow_gt_50pct",
+        "post_hoc_hub_list",
+        "call_result_switch"
+      ],
+      "n_null_real_run": 1000
+    },
+    "channels_combined_score": false
+  },
+  "inputs": {
+    "trajectories": [
+      {
+        "path": "data/external/morales_pastor_2025/trajectories/gpcrmd_dyn2126/24307_trj_2126.xtc",
+        "bytes": 77700544,
+        "sha256": "1fe13c425c67dd1325208af71131b34fdc3407b868f8c2489930c3d81e53e134"
+      },
+      {
+        "path": "data/external/morales_pastor_2025/trajectories/gpcrmd_dyn2126/24308_trj_2126.xtc",
+        "bytes": 77697176,
+        "sha256": "6fef31e2ae0e10eac4590be5b9e205a5b29e3b96d4ee64cc0227dd39c3628be4"
+      },
+      {
+        "path": "data/external/morales_pastor_2025/trajectories/gpcrmd_dyn2126/24309_trj_2126.xtc",
+        "bytes": 77595656,
+        "sha256": "598ca435644396c1e2503d94d5b75e2469307effe1790a68cc490971b44eadd2"
+      },
+      {
+        "path": "data/external/morales_pastor_2025/trajectories/gpcrmd_dyn2126/24310_trj_2126.xtc",
+        "bytes": 77726792,
+        "sha256": "fec3d8115a3a0d47bc45de20fd15baee5d21c0c46d3599e3970b9c4d08953f3d"
+      },
+      {
+        "path": "data/external/morales_pastor_2025/trajectories/gpcrmd_dyn2126/24311_trj_2126.xtc",
+        "bytes": 77651580,
+        "sha256": "467c225dea6cca37e94fd7e7521d406446c32fecf34f46e7d98b303290efa99b"
+      }
+    ],
+    "topology": {
+      "psf": {
+        "path": "data/external/morales_pastor_2025/trajectories/gpcrmd_dyn2126/24306_dyn_2126.psf",
+        "sha256": "fce9db151fbf5f7f0ed2b235ff0fd5d962dd8da91fe97afa34f675ab8e2f02e1",
+        "bytes": 10429330
+      },
+      "pdb": {
+        "path": "data/external/morales_pastor_2025/trajectories/gpcrmd_dyn2126/tmp_dyn_0_2417.pdb",
+        "sha256": "a6468f3e0a93547b71a0a300b8ad1e9d664d30b62b4789dfcf53728033436350",
+        "bytes": 5417685
+      }
+    },
+    "frames_per_replica": [
+      399,
+      399,
+      399,
+      399,
+      399
+    ],
+    "note_dt": "XTC header dt may be unreliable; report uses frame counts. GPCRmd/Morales deposit \u2248 400 ns / replica with ~1 frame/ns."
+  },
+  "per_replica": [
+    {
+      "replica": 1,
+      "xtc": "data/external/morales_pastor_2025/trajectories/gpcrmd_dyn2126/24307_trj_2126.xtc",
+      "n_frames": 399,
+      "n_frames_used_contacts": 399,
+      "dt_ps_header": 1.0,
+      "A_persistence": {
+        "channel": "persistence",
+        "n_nodes": 290,
+        "n_edges": 1106,
+        "hubs_missing_from_graph": [],
+        "hubs_present": [
+          "ALA:79",
+          "ALA:83",
+          "LEU:287",
+          "ASN:291",
+          "ASN:295",
+          "ARG:302"
+        ],
+        "S_present": [
+          "8D0:1",
+          "SER:285",
+          "PHE:87"
+        ],
+        "T_present": [
+          "ARG:131",
+          "ASP:240",
+          "SER:303",
+          "SER:69"
+        ],
+        "status": "OK",
+        "null_rule": {
+          "name": "exact_in_out_degree_multiset_match",
+          "hub_io_multiset": {
+            "7,7": 2,
+            "8,8": 2,
+            "9,9": 2
+          },
+          "pool_size": 277,
+          "n_null_requested": 1000,
+          "n_null_realized": 1000,
+          "attempts": 1000
+        },
+        "primary_metric": "pct_disconn",
+        "primary": {
+          "observed": 0.0,
+          "p_upper": 1.0,
+          "alpha": 0.05,
+          "significant": false,
+          "null_mean": 0.0,
+          "null_std": 0.0,
+          "null_p05": 0.0,
+          "null_p50": 0.0,
+          "null_p95": 0.0,
+          "effect_z": NaN
+        },
+        "strength": {
+          "observed": 38.58897243107769,
+          "p_upper": 0.22277722277722278,
+          "significant": false,
+          "null_mean": 37.20486967418547,
+          "null_std": 1.7454807807624828,
+          "null_p05": 34.127443609022556,
+          "null_p50": 37.200501253132835,
+          "null_p95": 39.98245614035088,
+          "effect_z": 0.7929636190480451
+        },
+        "betweenness_observed_only": {
+          "observed": 0.22860998974753302,
+          "note": "Descriptive; not null-tested (cost)."
+        },
+        "per_hub_degree": {
+          "ALA:79": 9,
+          "ALA:83": 7,
+          "LEU:287": 8,
+          "ASN:291": 9,
+          "ASN:295": 8,
+          "ARG:302": 7
+        },
+        "per_hub_strength": {
+          "ALA:79": 7.177944862155388,
+          "ALA:83": 5.887218045112782,
+          "LEU:287": 6.235588972431078,
+          "ASN:291": 7.508771929824562,
+          "ASN:295": 6.328320802005012,
+          "ARG:302": 5.451127819548872
+        }
+      },
+      "B_communication": {
+        "channel": "communication",
+        "n_nodes": 289,
+        "n_edges": 2880,
+        "hubs_missing_from_graph": [],
+        "hubs_present": [
+          "ALA:79",
+          "ALA:83",
+          "LEU:287",
+          "ASN:291",
+          "ASN:295",
+          "ARG:302"
+        ],
+        "S_present": [
+          "SER:285",
+          "PHE:87"
+        ],
+        "T_present": [
+          "ARG:131",
+          "ASP:240",
+          "SER:303",
+          "SER:69"
+        ],
+        "status": "INDETERMINATE_NULL_INFEASIBLE",
+        "null_error": "Cannot exact-match IO (39, 39): need 1, pool has 0"
+      },
+      "A_hub_ranks": {
+        "ALA:79": 68.0,
+        "ALA:83": 149.0,
+        "LEU:287": 125.0,
+        "ASN:291": 50.0,
+        "ASN:295": 119.0,
+        "ARG:302": 189.0
+      },
+      "B_hub_ranks": {
+        "ALA:79": 98.0,
+        "ALA:83": 133.0,
+        "LEU:287": 205.0,
+        "ASN:291": 59.0,
+        "ASN:295": 9.0,
+        "ARG:302": 250.0
+      }
+    },
+    {
+      "replica": 2,
+      "xtc": "data/external/morales_pastor_2025/trajectories/gpcrmd_dyn2126/24308_trj_2126.xtc",
+      "n_frames": 399,
+      "n_frames_used_contacts": 399,
+      "dt_ps_header": 1.0,
+      "A_persistence": {
+        "channel": "persistence",
+        "n_nodes": 290,
+        "n_edges": 1104,
+        "hubs_missing_from_graph": [],
+        "hubs_present": [
+          "ALA:79",
+          "ALA:83",
+          "LEU:287",
+          "ASN:291",
+          "ASN:295",
+          "ARG:302"
+        ],
+        "S_present": [
+          "8D0:1",
+          "SER:285",
+          "PHE:87"
+        ],
+        "T_present": [
+          "ARG:131",
+          "ASP:240",
+          "SER:303",
+          "SER:69"
+        ],
+        "status": "OK",
+        "null_rule": {
+          "name": "exact_in_out_degree_multiset_match",
+          "hub_io_multiset": {
+            "7,7": 2,
+            "8,8": 1,
+            "9,9": 3
+          },
+          "pool_size": 277,
+          "n_null_requested": 1000,
+          "n_null_realized": 1000,
+          "attempts": 1000
+        },
+        "primary_metric": "pct_disconn",
+        "primary": {
+          "observed": 0.0,
+          "p_upper": 1.0,
+          "alpha": 0.05,
+          "significant": false,
+          "null_mean": 0.0,
+          "null_std": 0.0,
+          "null_p05": 0.0,
+          "null_p50": 0.0,
+          "null_p95": 0.0,
+          "effect_z": NaN
+        },
+        "strength": {
+          "observed": 39.18796992481203,
+          "p_upper": 0.2047952047952048,
+          "significant": false,
+          "null_mean": 36.99509273182957,
+          "null_std": 2.585475625161988,
+          "null_p05": 32.28771929824561,
+          "null_p50": 37.180451127819545,
+          "null_p95": 40.89523809523809,
+          "effect_z": 0.8481523367078996
+        },
+        "betweenness_observed_only": {
+          "observed": 0.2233435858003332,
+          "note": "Descriptive; not null-tested (cost)."
+        },
+        "per_hub_degree": {
+          "ALA:79": 9,
+          "ALA:83": 7,
+          "LEU:287": 8,
+          "ASN:291": 9,
+          "ASN:295": 9,
+          "ARG:302": 7
+        },
+        "per_hub_strength": {
+          "ALA:79": 7.160401002506266,
+          "ALA:83": 6.007518796992481,
+          "LEU:287": 6.453634085213032,
+          "ASN:291": 7.827067669172933,
+          "ASN:295": 6.228070175438597,
+          "ARG:302": 5.511278195488722
+        }
+      },
+      "B_communication": {
+        "channel": "communication",
+        "n_nodes": 289,
+        "n_edges": 2300,
+        "hubs_missing_from_graph": [],
+        "hubs_present": [
+          "ALA:79",
+          "ALA:83",
+          "LEU:287",
+          "ASN:291",
+          "ASN:295",
+          "ARG:302"
+        ],
+        "S_present": [
+          "SER:285",
+          "PHE:87"
+        ],
+        "T_present": [
+          "ARG:131",
+          "ASP:240",
+          "SER:303",
+          "SER:69"
+        ],
+        "status": "OK",
+        "null_rule": {
+          "name": "exact_in_out_degree_multiset_match",
+          "hub_io_multiset": {
+            "13,13": 1,
+            "22,22": 1,
+            "24,24": 2,
+            "27,27": 1,
+            "31,31": 1
+          },
+          "pool_size": 277,
+          "n_null_requested": 1000,
+          "n_null_realized": 1000,
+          "attempts": 1000
+        },
+        "primary_metric": "hub_set_strength",
+        "primary": {
+          "observed": 62.308640384713996,
+          "p_upper": 0.919080919080919,
+          "alpha": 0.05,
+          "significant": false,
+          "null_mean": 63.69577652628908,
+          "null_std": 1.1115700059201588,
+          "null_p05": 62.12488112184746,
+          "null_p50": 63.57658283760625,
+          "null_p95": 65.68157798115251,
+          "effect_z": -1.2479071351217428
+        },
+        "strength": {
+          "observed": 62.308640384713996,
+          "p_upper": 0.919080919080919,
+          "significant": false,
+          "null_mean": 63.69577652628908,
+          "null_std": 1.1115700059201588,
+          "null_p05": 62.12488112184746,
+          "null_p50": 63.57658283760625,
+          "null_p95": 65.68157798115251,
+          "effect_z": -1.2479071351217428
+        },
+        "betweenness_observed_only": {
+          "observed": 0.1247822299651568,
+          "note": "Descriptive; not null-tested (cost)."
+        },
+        "per_hub_degree": {
+          "ALA:79": 24,
+          "ALA:83": 22,
+          "LEU:287": 13,
+          "ASN:291": 27,
+          "ASN:295": 31,
+          "ARG:302": 24
+        },
+        "per_hub_strength": {
+          "ALA:79": 10.504820653119527,
+          "ALA:83": 9.65186884381618,
+          "LEU:287": 5.151409427417641,
+          "ASN:291": 11.8011339015723,
+          "ASN:295": 14.137148090209235,
+          "ARG:302": 11.06225946857911
+        }
+      },
+      "A_hub_ranks": {
+        "ALA:79": 69.0,
+        "ALA:83": 140.0,
+        "LEU:287": 110.0,
+        "ASN:291": 37.0,
+        "ASN:295": 129.0,
+        "ARG:302": 187.0
+      },
+      "B_hub_ranks": {
+        "ALA:79": 35.0,
+        "ALA:83": 56.0,
+        "LEU:287": 242.0,
+        "ASN:291": 20.0,
+        "ASN:295": 10.0,
+        "ARG:302": 27.0
+      }
+    },
+    {
+      "replica": 3,
+      "xtc": "data/external/morales_pastor_2025/trajectories/gpcrmd_dyn2126/24309_trj_2126.xtc",
+      "n_frames": 399,
+      "n_frames_used_contacts": 399,
+      "dt_ps_header": 1.0,
+      "A_persistence": {
+        "channel": "persistence",
+        "n_nodes": 290,
+        "n_edges": 1125,
+        "hubs_missing_from_graph": [],
+        "hubs_present": [
+          "ALA:79",
+          "ALA:83",
+          "LEU:287",
+          "ASN:291",
+          "ASN:295",
+          "ARG:302"
+        ],
+        "S_present": [
+          "8D0:1",
+          "SER:285",
+          "PHE:87"
+        ],
+        "T_present": [
+          "ARG:131",
+          "ASP:240",
+          "SER:303",
+          "SER:69"
+        ],
+        "status": "OK",
+        "null_rule": {
+          "name": "exact_in_out_degree_multiset_match",
+          "hub_io_multiset": {
+            "7,7": 2,
+            "8,8": 1,
+            "9,9": 3
+          },
+          "pool_size": 277,
+          "n_null_requested": 1000,
+          "n_null_realized": 1000,
+          "attempts": 1000
+        },
+        "primary_metric": "pct_disconn",
+        "primary": {
+          "observed": 0.0,
+          "p_upper": 1.0,
+          "alpha": 0.05,
+          "significant": false,
+          "null_mean": 0.0,
+          "null_std": 0.0,
+          "null_p05": 0.0,
+          "null_p50": 0.0,
+          "null_p95": 0.0,
+          "effect_z": NaN
+        },
+        "strength": {
+          "observed": 39.28320802005012,
+          "p_upper": 0.17782217782217782,
+          "significant": false,
+          "null_mean": 36.90421553884712,
+          "null_std": 2.574497099609612,
+          "null_p05": 32.159774436090224,
+          "null_p50": 37.150375939849624,
+          "null_p95": 40.64774436090225,
+          "effect_z": 0.92406104538387
+        },
+        "betweenness_observed_only": {
+          "observed": 0.20689558503139818,
+          "note": "Descriptive; not null-tested (cost)."
+        },
+        "per_hub_degree": {
+          "ALA:79": 9,
+          "ALA:83": 7,
+          "LEU:287": 8,
+          "ASN:291": 9,
+          "ASN:295": 9,
+          "ARG:302": 7
+        },
+        "per_hub_strength": {
+          "ALA:79": 7.43859649122807,
+          "ALA:83": 6.035087719298246,
+          "LEU:287": 6.458646616541353,
+          "ASN:291": 7.746867167919799,
+          "ASN:295": 6.463659147869674,
+          "ARG:302": 5.140350877192982
+        }
+      },
+      "B_communication": {
+        "channel": "communication",
+        "n_nodes": 289,
+        "n_edges": 4451,
+        "hubs_missing_from_graph": [],
+        "hubs_present": [
+          "ALA:79",
+          "ALA:83",
+          "LEU:287",
+          "ASN:291",
+          "ASN:295",
+          "ARG:302"
+        ],
+        "S_present": [
+          "SER:285",
+          "PHE:87"
+        ],
+        "T_present": [
+          "ARG:131",
+          "ASP:240",
+          "SER:303",
+          "SER:69"
+        ],
+        "status": "OK",
+        "null_rule": {
+          "name": "exact_in_out_degree_multiset_match",
+          "hub_io_multiset": {
+            "16,16": 1,
+            "19,19": 1,
+            "24,24": 1,
+            "30,30": 1,
+            "45,45": 1,
+            "49,49": 1
+          },
+          "pool_size": 277,
+          "n_null_requested": 1000,
+          "n_null_realized": 1000,
+          "attempts": 1000
+        },
+        "primary_metric": "hub_set_strength",
+        "primary": {
+          "observed": 78.09394793817656,
+          "p_upper": 0.987012987012987,
+          "alpha": 0.05,
+          "significant": false,
+          "null_mean": 81.21605078704,
+          "null_std": 1.4055398782283153,
+          "null_p05": 78.9925703540116,
+          "null_p50": 81.24117052486437,
+          "null_p95": 83.54272064371771,
+          "effect_z": -2.2212837196756476
+        },
+        "strength": {
+          "observed": 78.09394793817656,
+          "p_upper": 0.987012987012987,
+          "significant": false,
+          "null_mean": 81.21605078704,
+          "null_std": 1.4055398782283153,
+          "null_p05": 78.9925703540116,
+          "null_p50": 81.24117052486437,
+          "null_p95": 83.54272064371771,
+          "effect_z": -2.2212837196756476
+        },
+        "betweenness_observed_only": {
+          "observed": 0.021268873403019743,
+          "note": "Descriptive; not null-tested (cost)."
+        },
+        "per_hub_degree": {
+          "ALA:79": 24,
+          "ALA:83": 19,
+          "LEU:287": 30,
+          "ASN:291": 45,
+          "ASN:295": 49,
+          "ARG:302": 16
+        },
+        "per_hub_strength": {
+          "ALA:79": 10.675798170670264,
+          "ALA:83": 8.209813229441755,
+          "LEU:287": 12.22157094707889,
+          "ASN:291": 18.707033894103244,
+          "ASN:295": 20.916239650787688,
+          "ARG:302": 7.363492046094725
+        }
+      },
+      "A_hub_ranks": {
+        "ALA:79": 56.0,
+        "ALA:83": 145.0,
+        "LEU:287": 115.0,
+        "ASN:291": 40.0,
+        "ASN:295": 111.0,
+        "ARG:302": 207.0
+      },
+      "B_hub_ranks": {
+        "ALA:79": 187.0,
+        "ALA:83": 230.0,
+        "LEU:287": 162.0,
+        "ASN:291": 60.0,
+        "ASN:295": 31.0,
+        "ARG:302": 255.0
+      }
+    },
+    {
+      "replica": 4,
+      "xtc": "data/external/morales_pastor_2025/trajectories/gpcrmd_dyn2126/24310_trj_2126.xtc",
+      "n_frames": 399,
+      "n_frames_used_contacts": 399,
+      "dt_ps_header": 1.0,
+      "A_persistence": {
+        "channel": "persistence",
+        "n_nodes": 290,
+        "n_edges": 1117,
+        "hubs_missing_from_graph": [],
+        "hubs_present": [
+          "ALA:79",
+          "ALA:83",
+          "LEU:287",
+          "ASN:291",
+          "ASN:295",
+          "ARG:302"
+        ],
+        "S_present": [
+          "8D0:1",
+          "SER:285",
+          "PHE:87"
+        ],
+        "T_present": [
+          "ARG:131",
+          "ASP:240",
+          "SER:303",
+          "SER:69"
+        ],
+        "status": "OK",
+        "null_rule": {
+          "name": "exact_in_out_degree_multiset_match",
+          "hub_io_multiset": {
+            "7,7": 2,
+            "8,8": 2,
+            "9,9": 2
+          },
+          "pool_size": 277,
+          "n_null_requested": 1000,
+          "n_null_realized": 1000,
+          "attempts": 1000
+        },
+        "primary_metric": "pct_disconn",
+        "primary": {
+          "observed": 0.0,
+          "p_upper": 1.0,
+          "alpha": 0.05,
+          "significant": false,
+          "null_mean": 0.0,
+          "null_std": 0.0,
+          "null_p05": 0.0,
+          "null_p50": 0.0,
+          "null_p95": 0.0,
+          "effect_z": NaN
+        },
+        "strength": {
+          "observed": 39.874686716791985,
+          "p_upper": 0.10589410589410589,
+          "significant": false,
+          "null_mean": 36.97688471177945,
+          "null_std": 2.5153523942516154,
+          "null_p05": 32.28508771929825,
+          "null_p50": 37.32581453634085,
+          "null_p95": 40.46641604010025,
+          "effect_z": 1.1520461354182185
+        },
+        "betweenness_observed_only": {
+          "observed": 0.21021962706651287,
+          "note": "Descriptive; not null-tested (cost)."
+        },
+        "per_hub_degree": {
+          "ALA:79": 9,
+          "ALA:83": 7,
+          "LEU:287": 8,
+          "ASN:291": 9,
+          "ASN:295": 8,
+          "ARG:302": 7
+        },
+        "per_hub_strength": {
+          "ALA:79": 7.31077694235589,
+          "ALA:83": 6.1077694235588975,
+          "LEU:287": 6.556390977443609,
+          "ASN:291": 7.87719298245614,
+          "ASN:295": 6.30827067669173,
+          "ARG:302": 5.714285714285714
+        }
+      },
+      "B_communication": {
+        "channel": "communication",
+        "n_nodes": 289,
+        "n_edges": 2684,
+        "hubs_missing_from_graph": [],
+        "hubs_present": [
+          "ALA:79",
+          "ALA:83",
+          "LEU:287",
+          "ASN:291",
+          "ASN:295",
+          "ARG:302"
+        ],
+        "S_present": [
+          "SER:285",
+          "PHE:87"
+        ],
+        "T_present": [
+          "ARG:131",
+          "ASP:240",
+          "SER:303",
+          "SER:69"
+        ],
+        "status": "OK",
+        "null_rule": {
+          "name": "exact_in_out_degree_multiset_match",
+          "hub_io_multiset": {
+            "8,8": 1,
+            "17,17": 1,
+            "18,18": 1,
+            "20,20": 1,
+            "24,24": 1,
+            "32,32": 1
+          },
+          "pool_size": 277,
+          "n_null_requested": 1000,
+          "n_null_realized": 1000,
+          "attempts": 1000
+        },
+        "primary_metric": "hub_set_strength",
+        "primary": {
+          "observed": 52.27600345351142,
+          "p_upper": 0.999000999000999,
+          "alpha": 0.05,
+          "significant": false,
+          "null_mean": 56.363660499047185,
+          "null_std": 1.8803157300542603,
+          "null_p05": 53.408089282260136,
+          "null_p50": 56.240779224716434,
+          "null_p95": 59.73047754476897,
+          "effect_z": -2.1739205709978324
+        },
+        "strength": {
+          "observed": 52.27600345351142,
+          "p_upper": 0.999000999000999,
+          "significant": false,
+          "null_mean": 56.363660499047185,
+          "null_std": 1.8803157300542603,
+          "null_p05": 53.408089282260136,
+          "null_p50": 56.240779224716434,
+          "null_p95": 59.73047754476897,
+          "effect_z": -2.1739205709978324
+        },
+        "betweenness_observed_only": {
+          "observed": 0.08437379016647309,
+          "note": "Descriptive; not null-tested (cost)."
+        },
+        "per_hub_degree": {
+          "ALA:79": 32,
+          "ALA:83": 20,
+          "LEU:287": 8,
+          "ASN:291": 18,
+          "ASN:295": 24,
+          "ARG:302": 17
+        },
+        "per_hub_strength": {
+          "ALA:79": 14.051742685823964,
+          "ALA:83": 9.110884916208082,
+          "LEU:287": 3.4079243611205916,
+          "ASN:291": 7.557252958377626,
+          "ASN:295": 10.413848321885016,
+          "ARG:302": 7.734350210096137
+        }
+      },
+      "A_hub_ranks": {
+        "ALA:79": 62.0,
+        "ALA:83": 134.0,
+        "LEU:287": 110.0,
+        "ASN:291": 35.0,
+        "ASN:295": 121.0,
+        "ARG:302": 169.0
+      },
+      "B_hub_ranks": {
+        "ALA:79": 34.0,
+        "ALA:83": 117.0,
+        "LEU:287": 270.0,
+        "ASN:291": 155.0,
+        "ASN:295": 90.0,
+        "ARG:302": 148.0
+      }
+    },
+    {
+      "replica": 5,
+      "xtc": "data/external/morales_pastor_2025/trajectories/gpcrmd_dyn2126/24311_trj_2126.xtc",
+      "n_frames": 399,
+      "n_frames_used_contacts": 399,
+      "dt_ps_header": 1.0,
+      "A_persistence": {
+        "channel": "persistence",
+        "n_nodes": 290,
+        "n_edges": 1112,
+        "hubs_missing_from_graph": [],
+        "hubs_present": [
+          "ALA:79",
+          "ALA:83",
+          "LEU:287",
+          "ASN:291",
+          "ASN:295",
+          "ARG:302"
+        ],
+        "S_present": [
+          "8D0:1",
+          "SER:285",
+          "PHE:87"
+        ],
+        "T_present": [
+          "ARG:131",
+          "ASP:240",
+          "SER:303",
+          "SER:69"
+        ],
+        "status": "OK",
+        "null_rule": {
+          "name": "exact_in_out_degree_multiset_match",
+          "hub_io_multiset": {
+            "7,7": 2,
+            "8,8": 2,
+            "9,9": 2
+          },
+          "pool_size": 277,
+          "n_null_requested": 1000,
+          "n_null_realized": 1000,
+          "attempts": 1000
+        },
+        "primary_metric": "pct_disconn",
+        "primary": {
+          "observed": 0.0,
+          "p_upper": 1.0,
+          "alpha": 0.05,
+          "significant": false,
+          "null_mean": 0.0,
+          "null_std": 0.0,
+          "null_p05": 0.0,
+          "null_p50": 0.0,
+          "null_p95": 0.0,
+          "effect_z": NaN
+        },
+        "strength": {
+          "observed": 38.94987468671679,
+          "p_upper": 0.17682317682317683,
+          "significant": false,
+          "null_mean": 36.81297744360902,
+          "null_std": 2.2941096511177714,
+          "null_p05": 32.77794486215539,
+          "null_p50": 37.16791979949875,
+          "null_p95": 39.98358395989975,
+          "effect_z": 0.9314712756064628
+        },
+        "betweenness_observed_only": {
+          "observed": 0.2278690888119954,
+          "note": "Descriptive; not null-tested (cost)."
+        },
+        "per_hub_degree": {
+          "ALA:79": 9,
+          "ALA:83": 7,
+          "LEU:287": 8,
+          "ASN:291": 9,
+          "ASN:295": 8,
+          "ARG:302": 7
+        },
+        "per_hub_strength": {
+          "ALA:79": 7.406015037593985,
+          "ALA:83": 5.894736842105263,
+          "LEU:287": 6.31328320802005,
+          "ASN:291": 7.864661654135338,
+          "ASN:295": 6.147869674185463,
+          "ARG:302": 5.323308270676692
+        }
+      },
+      "B_communication": {
+        "channel": "communication",
+        "n_nodes": 289,
+        "n_edges": 2417,
+        "hubs_missing_from_graph": [],
+        "hubs_present": [
+          "ALA:79",
+          "ALA:83",
+          "LEU:287",
+          "ASN:291",
+          "ASN:295",
+          "ARG:302"
+        ],
+        "S_present": [
+          "SER:285",
+          "PHE:87"
+        ],
+        "T_present": [
+          "ARG:131",
+          "ASP:240",
+          "SER:303",
+          "SER:69"
+        ],
+        "status": "OK",
+        "null_rule": {
+          "name": "exact_in_out_degree_multiset_match",
+          "hub_io_multiset": {
+            "11,11": 1,
+            "12,12": 1,
+            "14,14": 1,
+            "18,18": 1,
+            "23,23": 1,
+            "31,31": 1
+          },
+          "pool_size": 277,
+          "n_null_requested": 1000,
+          "n_null_realized": 1000,
+          "attempts": 1000
+        },
+        "primary_metric": "hub_set_strength",
+        "primary": {
+          "observed": 47.08706722279723,
+          "p_upper": 0.999000999000999,
+          "alpha": 0.05,
+          "significant": false,
+          "null_mean": 52.686492189198205,
+          "null_std": 1.480121874423623,
+          "null_p05": 50.25702045233989,
+          "null_p50": 52.64203869547181,
+          "null_p95": 55.094232714752806,
+          "effect_z": -3.783083719765615
+        },
+        "strength": {
+          "observed": 47.08706722279723,
+          "p_upper": 0.999000999000999,
+          "significant": false,
+          "null_mean": 52.686492189198205,
+          "null_std": 1.480121874423623,
+          "null_p05": 50.25702045233989,
+          "null_p50": 52.64203869547181,
+          "null_p95": 55.094232714752806,
+          "effect_z": -3.783083719765615
+        },
+        "betweenness_observed_only": {
+          "observed": 0.08628532713898568,
+          "note": "Descriptive; not null-tested (cost)."
+        },
+        "per_hub_degree": {
+          "ALA:79": 23,
+          "ALA:83": 12,
+          "LEU:287": 11,
+          "ASN:291": 18,
+          "ASN:295": 31,
+          "ARG:302": 14
+        },
+        "per_hub_strength": {
+          "ALA:79": 10.106627265041631,
+          "ALA:83": 5.769513177937368,
+          "LEU:287": 4.0572588460275725,
+          "ASN:291": 8.022700512879487,
+          "ASN:295": 12.954151024165224,
+          "ARG:302": 6.176816396745952
+        }
+      },
+      "A_hub_ranks": {
+        "ALA:79": 58.0,
+        "ALA:83": 153.0,
+        "LEU:287": 120.0,
+        "ASN:291": 35.0,
+        "ASN:295": 135.0,
+        "ARG:302": 204.0
+      },
+      "B_hub_ranks": {
+        "ALA:79": 66.0,
+        "ALA:83": 223.0,
+        "LEU:287": 267.0,
+        "ASN:291": 127.0,
+        "ASN:295": 31.0,
+        "ARG:302": 206.0
+      }
+    }
+  ],
+  "aggregate": {
+    "A_persistence": {
+      "channel": "persistence",
+      "n_nodes": 290,
+      "n_edges": 1128,
+      "hubs_missing_from_graph": [],
+      "hubs_present": [
+        "ALA:79",
+        "ALA:83",
+        "LEU:287",
+        "ASN:291",
+        "ASN:295",
+        "ARG:302"
+      ],
+      "S_present": [
+        "8D0:1",
+        "SER:285",
+        "PHE:87"
+      ],
+      "T_present": [
+        "ARG:131",
+        "ASP:240",
+        "SER:303",
+        "SER:69"
+      ],
+      "status": "OK",
+      "null_rule": {
+        "name": "exact_in_out_degree_multiset_match",
+        "hub_io_multiset": {
+          "7,7": 2,
+          "8,8": 1,
+          "9,9": 3
+        },
+        "pool_size": 277,
+        "n_null_requested": 1000,
+        "n_null_realized": 1000,
+        "attempts": 1000
+      },
+      "primary_metric": "pct_disconn",
+      "primary": {
+        "observed": 0.0,
+        "p_upper": 1.0,
+        "alpha": 0.05,
+        "significant": false,
+        "null_mean": 0.0,
+        "null_std": 0.0,
+        "null_p05": 0.0,
+        "null_p50": 0.0,
+        "null_p95": 0.0,
+        "effect_z": NaN
+      },
+      "strength": {
+        "observed": 39.217042606516294,
+        "p_upper": 0.18281718281718282,
+        "significant": false,
+        "null_mean": 36.61750325814536,
+        "null_std": 2.880853313876635,
+        "null_p05": 30.982581453634086,
+        "null_p50": 37.183208020050124,
+        "null_p95": 40.47764411027569,
+        "effect_z": 0.9023504722886597
+      },
+      "betweenness_observed_only": {
+        "observed": 0.2241625816993464,
+        "note": "Descriptive; not null-tested (cost)."
+      },
+      "per_hub_degree": {
+        "ALA:79": 9,
+        "ALA:83": 7,
+        "LEU:287": 8,
+        "ASN:291": 9,
+        "ASN:295": 9,
+        "ARG:302": 7
+      },
+      "per_hub_strength": {
+        "ALA:79": 7.29874686716792,
+        "ALA:83": 5.986466165413534,
+        "LEU:287": 6.388972431077694,
+        "ASN:291": 7.764912280701754,
+        "ASN:295": 6.349874686716792,
+        "ARG:302": 5.428070175438596
+      },
+      "primary_metric_note": "pct_disconn observed=0 and null=0 on this dense contact graph (S\u2013T remains connected after hub or null knockout); strength secondary p reported separately."
+    },
+    "B_communication": {
+      "channel": "communication",
+      "n_nodes": 289,
+      "n_edges": 2411,
+      "hubs_missing_from_graph": [],
+      "hubs_present": [
+        "ALA:79",
+        "ALA:83",
+        "LEU:287",
+        "ASN:291",
+        "ASN:295",
+        "ARG:302"
+      ],
+      "S_present": [
+        "SER:285",
+        "PHE:87"
+      ],
+      "T_present": [
+        "ARG:131",
+        "ASP:240",
+        "SER:303",
+        "SER:69"
+      ],
+      "status": "OK",
+      "null_rule": {
+        "name": "exact_in_out_degree_multiset_match",
+        "hub_io_multiset": {
+          "12,12": 1,
+          "16,16": 1,
+          "18,18": 1,
+          "22,22": 2,
+          "27,27": 1
+        },
+        "pool_size": 277,
+        "n_null_requested": 1000,
+        "n_null_realized": 1000,
+        "attempts": 1000
+      },
+      "primary_metric": "hub_set_strength",
+      "primary": {
+        "observed": 51.49045892249111,
+        "p_upper": 0.999000999000999,
+        "alpha": 0.05,
+        "significant": false,
+        "null_mean": 56.15025220987973,
+        "null_std": 1.6485672730154475,
+        "null_p05": 53.53978737526344,
+        "null_p50": 56.12076715576822,
+        "null_p95": 58.91404380683495,
+        "effect_z": -2.8265715107065335
+      },
+      "strength": {
+        "observed": 51.49045892249111,
+        "p_upper": 0.999000999000999,
+        "significant": false,
+        "null_mean": 56.15025220987973,
+        "null_std": 1.6485672730154475,
+        "null_p05": 53.53978737526344,
+        "null_p50": 56.12076715576822,
+        "null_p95": 58.91404380683495,
+        "effect_z": -2.8265715107065335
+      },
+      "betweenness_observed_only": {
+        "observed": 0.14781746031746032,
+        "note": "Descriptive; not null-tested (cost)."
+      },
+      "per_hub_degree": {
+        "ALA:79": 22,
+        "ALA:83": 18,
+        "LEU:287": 12,
+        "ASN:291": 22,
+        "ASN:295": 27,
+        "ARG:302": 16
+      },
+      "per_hub_strength": {
+        "ALA:79": 9.929361562981818,
+        "ALA:83": 7.965462818608408,
+        "LEU:287": 4.823319042268877,
+        "ASN:291": 9.696670723507108,
+        "ASN:295": 12.02295813876408,
+        "ARG:302": 7.05268663636081
+      }
+    },
+    "reproducibility": {
+      "spearman_hub_ranks_A": 0.9888212141408493,
+      "spearman_hub_ranks_B": 0.5742516349413562,
+      "spearman_min_preregistered": 0.7,
+      "A_repro_pass": true,
+      "B_repro_pass": false
+    },
+    "channel_gates": {
+      "A_pass": false,
+      "A_reason": "NULL_NOT_EXCEEDED",
+      "B_pass": false,
+      "B_reason": "REPRO_FAIL"
+    }
+  },
+  "robustness": {
+    "leave_one_replica_out": [
+      {
+        "left_out_replica": 1,
+        "A_pass": false,
+        "B_pass": false,
+        "A_p": 1.0,
+        "B_p": 0.988011988011988,
+        "spearman_A": 0.9882170539595837,
+        "spearman_B": 0.5141486923738315,
+        "verdict": "P1_NOT_SUPPORTED"
+      },
+      {
+        "left_out_replica": 2,
+        "A_pass": false,
+        "B_pass": false,
+        "A_p": 1.0,
+        "B_p": 1.0,
+        "spearman_A": 0.9887600296973197,
+        "spearman_B": 0.59857764653863,
+        "verdict": "P1_NOT_SUPPORTED"
+      },
+      {
+        "left_out_replica": 3,
+        "A_pass": false,
+        "B_pass": false,
+        "A_p": 1.0,
+        "B_p": 1.0,
+        "spearman_A": 0.9923691274230594,
+        "spearman_B": 0.6828430146998746,
+        "verdict": "P1_NOT_SUPPORTED"
+      },
+      {
+        "left_out_replica": 4,
+        "A_pass": false,
+        "B_pass": false,
+        "A_p": 1.0,
+        "B_p": 1.0,
+        "spearman_A": 0.9886550290121723,
+        "spearman_B": 0.5994233878885266,
+        "verdict": "P1_NOT_SUPPORTED"
+      },
+      {
+        "left_out_replica": 5,
+        "A_pass": false,
+        "B_pass": false,
+        "A_p": 1.0,
+        "B_p": 1.0,
+        "spearman_A": 0.986104830612112,
+        "spearman_B": 0.4762654332059188,
+        "verdict": "P1_NOT_SUPPORTED"
+      }
+    ],
+    "traj_length_first_half": {
+      "A_persistence": {
+        "channel": "persistence",
+        "n_nodes": 290,
+        "n_edges": 1116,
+        "hubs_missing_from_graph": [],
+        "hubs_present": [
+          "ALA:79",
+          "ALA:83",
+          "LEU:287",
+          "ASN:291",
+          "ASN:295",
+          "ARG:302"
+        ],
+        "S_present": [
+          "8D0:1",
+          "SER:285",
+          "PHE:87"
+        ],
+        "T_present": [
+          "ARG:131",
+          "ASP:240",
+          "SER:303",
+          "SER:69"
+        ],
+        "status": "OK",
+        "null_rule": {
+          "name": "exact_in_out_degree_multiset_match",
+          "hub_io_multiset": {
+            "7,7": 2,
+            "8,8": 1,
+            "9,9": 3
+          },
+          "pool_size": 277,
+          "n_null_requested": 1000,
+          "n_null_realized": 1000,
+          "attempts": 1000
+        },
+        "primary_metric": "pct_disconn",
+        "primary": {
+          "observed": 0.0,
+          "p_upper": 1.0,
+          "alpha": 0.05,
+          "significant": false,
+          "null_mean": 0.0,
+          "null_std": 0.0,
+          "null_p05": 0.0,
+          "null_p50": 0.0,
+          "null_p95": 0.0,
+          "effect_z": NaN
+        },
+        "strength": {
+          "observed": 39.278391959798995,
+          "p_upper": 0.3016983016983017,
+          "significant": false,
+          "null_mean": 37.93198994974874,
+          "null_std": 2.2819147441240766,
+          "null_p05": 33.80678391959799,
+          "null_p50": 38.313065326633165,
+          "null_p95": 41.07316582914573,
+          "effect_z": 0.5900316887461445
+        },
+        "betweenness_observed_only": {
+          "observed": 0.2301999231064975,
+          "note": "Descriptive; not null-tested (cost)."
+        },
+        "per_hub_degree": {
+          "ALA:79": 9,
+          "ALA:83": 7,
+          "LEU:287": 8,
+          "ASN:291": 9,
+          "ASN:295": 9,
+          "ARG:302": 7
+        },
+        "per_hub_strength": {
+          "ALA:79": 7.343718592964824,
+          "ALA:83": 6.001005025125628,
+          "LEU:287": 6.393969849246231,
+          "ASN:291": 7.71859296482412,
+          "ASN:295": 6.3859296482412065,
+          "ARG:302": 5.435175879396985
+        }
+      },
+      "B_communication": {
+        "channel": "communication",
+        "n_nodes": 289,
+        "n_edges": 2297,
+        "hubs_missing_from_graph": [],
+        "hubs_present": [
+          "ALA:79",
+          "ALA:83",
+          "LEU:287",
+          "ASN:291",
+          "ASN:295",
+          "ARG:302"
+        ],
+        "S_present": [
+          "SER:285",
+          "PHE:87"
+        ],
+        "T_present": [
+          "ARG:131",
+          "ASP:240",
+          "SER:303",
+          "SER:69"
+        ],
+        "status": "OK",
+        "null_rule": {
+          "name": "exact_in_out_degree_multiset_match",
+          "hub_io_multiset": {
+            "9,9": 1,
+            "15,15": 1,
+            "18,18": 2,
+            "20,20": 1,
+            "25,25": 1
+          },
+          "pool_size": 277,
+          "n_null_requested": 1000,
+          "n_null_realized": 1000,
+          "attempts": 1000
+        },
+        "primary_metric": "hub_set_strength",
+        "primary": {
+          "observed": 46.113295251683155,
+          "p_upper": 1.0,
+          "alpha": 0.05,
+          "significant": false,
+          "null_mean": 50.55559088001389,
+          "null_std": 1.1936744828610812,
+          "null_p05": 48.67745181908246,
+          "null_p50": 50.56633488778054,
+          "null_p95": 52.501392177636994,
+          "effect_z": -3.7215301927901923
+        },
+        "strength": {
+          "observed": 46.113295251683155,
+          "p_upper": 1.0,
+          "significant": false,
+          "null_mean": 50.55559088001389,
+          "null_std": 1.1936744828610812,
+          "null_p05": 48.67745181908246,
+          "null_p50": 50.56633488778054,
+          "null_p95": 52.501392177636994,
+          "effect_z": -3.7215301927901923
+        },
+        "betweenness_observed_only": {
+          "observed": 0.11984610917537745,
+          "note": "Descriptive; not null-tested (cost)."
+        },
+        "per_hub_degree": {
+          "ALA:79": 20,
+          "ALA:83": 18,
+          "LEU:287": 9,
+          "ASN:291": 15,
+          "ASN:295": 25,
+          "ARG:302": 18
+        },
+        "per_hub_strength": {
+          "ALA:79": 9.095276868152537,
+          "ALA:83": 7.950582332970745,
+          "LEU:287": 3.586257972709155,
+          "ASN:291": 6.908217208166896,
+          "ASN:295": 10.969415906630921,
+          "ARG:302": 7.603544963052894
+        }
+      }
+    },
+    "bootstrap_replicas_n100_null200": {
+      "frac_A_significant": 0.0,
+      "frac_B_significant": 0.0
+    }
+  },
+  "verdict": "P1_NOT_SUPPORTED",
+  "verdict_note": "no signal above null in either channel; communication hub-rank Spearman also below pre-registered gate",
+  "suggested_story": "distributed",
+  "suggested_story_note": "One of persistent / persistent+plastic / distributed / state-specific only if supported; else null. state-specific requires MSM (P2 BLOCKED).",
+  "does_not_answer": [
+    "Gi control",
+    "CB2-specificity",
+    "MSM state changes",
+    "membrane",
+    "chemical switch"
+  ],
+  "artifacts": {
+    "json": "results/network_core/p1_dynamic_hub_validation.json",
+    "md": "results/network_core/p1_dynamic_hub_validation.md"
+  }
+}

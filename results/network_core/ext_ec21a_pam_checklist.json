@@ -1,0 +1,79 @@
+{
+  "experiment": "EXTERNAL_EC21A_PAM_CHECKLIST",
+  "pre_reg": "docs/synthesis/EXPERIMENT_EXT_EC21A_PAM_CHECKLIST.md",
+  "run_utc": "2026-10-02T23:01:03Z",
+  "verdict": "EXT_EC21A_PAM_STRUCT_ASSAY_PARTIAL",
+  "structure_9U7L_present": true,
+  "rows": [
+    {
+      "residue": "S268^6.58",
+      "struct_role": "Portion II contact with Ec21a (Wang/9U7L)",
+      "mutant_effect": "CP55 retained; PAM almost abolished (S268A)",
+      "call": "AGREE",
+      "source": "Wang Nat Commun 2026"
+    },
+    {
+      "residue": "K278^7.32",
+      "struct_role": "Portion II contact",
+      "mutant_effect": "CP55 retained; PAM almost abolished (K278A)",
+      "call": "AGREE",
+      "source": "Wang 2026"
+    },
+    {
+      "residue": "F183 ECL2",
+      "struct_role": "Portion I/II hydrophobic enclosure",
+      "mutant_effect": "F183A PAM loss; F183L partial rescue",
+      "call": "AGREE",
+      "source": "Wang 2026"
+    },
+    {
+      "residue": "I186 ECL2",
+      "struct_role": "Portion I enclosure",
+      "mutant_effect": "I186A PAM loss",
+      "call": "AGREE",
+      "source": "Wang 2026"
+    },
+    {
+      "residue": "P176 / P178 ECL2",
+      "struct_role": "ECL2 flexibility / CB2 motif",
+      "mutant_effect": "PAM abolished / strongly attenuated",
+      "call": "AGREE",
+      "source": "Wang 2026 / atlas"
+    },
+    {
+      "residue": "E181 ECL2",
+      "struct_role": "Map poorly resolved near portion II",
+      "mutant_effect": "Slight PAM attenuation",
+      "call": "PARTIAL",
+      "source": "Wang 2026"
+    },
+    {
+      "residue": "F106 / P184 / M22 / Y25",
+      "struct_role": "Portion III pocket",
+      "mutant_effect": "Mixed; some abolish cellular response (not PAM-selective)",
+      "call": "PARTIAL",
+      "source": "Wang 2026"
+    },
+    {
+      "residue": "EC21a scaffold (cross-lab)",
+      "struct_role": "Same chemotype discussed as PAM in Wang",
+      "mutant_effect": "Qi/Niswender 2024: inverse agonist / assay-dependent at CB2 (PI hydrolysis / GIRK)",
+      "call": "TENSION_ASSAY",
+      "source": "DOI via PMID 39575892 / PMC11636628"
+    }
+  ],
+  "counts": {
+    "n_AGREE": 5,
+    "n_TENSION_ASSAY": 1
+  },
+  "governance": {
+    "docking": "STOP",
+    "P2_REOPEN": false,
+    "Gi_FUNCTIONAL_CLAIM": false,
+    "harmonize_Wang_vs_Qi": false
+  },
+  "dois": [
+    "10.1038/s41467-026-72923-6",
+    "PMID:39575892"
+  ]
+}

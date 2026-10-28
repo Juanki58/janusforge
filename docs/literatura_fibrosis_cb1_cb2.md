@@ -2,13 +2,13 @@
 
 > Documento vivo de investigación para **janusforge**.  
 > Idioma: castellano. Formato: prosa científica accesible.  
-> Última ampliación: 2026-08-06.  
+> Última ampliación: 2026-10-21.  
 > Propósito: anclar *qué* se busca, *para qué* y *por qué*, más allá de un cribado genérico de cannabinoides.  
 > Brújula química (quimioma cannábico + THCV): [`quimioma_cannabico_cb1_cb2.md`](quimioma_cannabico_cb1_cb2.md).
 
 ---
 
-## 0. Norte del proyecto (brújula fijada)
+## 0. Hipótesis de partida (2026-08-06; actualización de prioridad en §0.1)
 
 Tres decisiones operativas condicionan cómo leer el resto de esta memoria:
 
@@ -17,6 +17,12 @@ Tres decisiones operativas condicionan cómo leer el resto de esta memoria:
 3. **Mapa vivo antes que docking masivo.** El inventario y el juicio químico viven en [`quimioma_cannabico_cb1_cb2.md`](quimioma_cannabico_cb1_cb2.md); esta memoria ancla la biología de fibrosis y el eje ECS.
 
 **Puente químico.** El prototipo natural imperfecto del perfil Janus es **Δ9-THCV** (antagonismo CB1 en muchos ensayos / dosis bajas + agonismo parcial CB2, con flip agonista CB1 a dosis altas). URB447 y otros duales sintéticos siguen siendo *comparadores de diseño*, no el norte cannabis. Detalle, matriz y criterios de fracaso temprano: documento del quimioma. Origen vegetal de las varinas (biosíntesis C3, landraces, por qué la planta co-produce THC) e hipótesis THCV-like: [`quimiotipos_varinas_thcv.md`](quimiotipos_varinas_thcv.md).
+
+### 0.1. Actualización de prioridad translacional (2026-10-21)
+
+La brújula Janus descrita arriba documenta la hipótesis original. Tras contrastar tres conjuntos humanos de IPF, la prioridad actual pasa a **validar primero el antagonismo CB1** para IPF. CB2 sigue como posible brazo complementario, pero debe demostrar valor funcional adicional. La evidencia de expresión es discordante en célula única: una cohorte sugiere CNR2 más alto en macrófagos SPP1+; no se descarta CB2. La priorización CB1 se apoya sobre todo en la evidencia espacial y ex vivo más específica, no en una supuesta superioridad de potencia molecular.
+
+Detalle y datos: [`priorizacion_cb1_humano_ipf_2026-10-21.md`](priorizacion_cb1_humano_ipf_2026-10-21.md). Esta actualización supersede la afirmación de §0 de que la prioridad absoluta del programa es exigir un perfil dual limpio antes de filtrar la indicación.
 
 ---
 

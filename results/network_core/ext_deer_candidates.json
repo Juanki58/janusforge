@@ -1,0 +1,61 @@
+{
+  "experiment": "EXTERNAL_DEER_CANDIDATES",
+  "pre_reg": "docs/synthesis/EXPERIMENT_EXT_DEER_CANDIDATES.md",
+  "run_utc": "2026-10-02T23:01:03Z",
+  "verdict": "EXT_DEER_CANDIDATES_DESIGNED_NO_DISTANCES",
+  "DEER_CB2_DISTANCE_MAP": "ABSENT",
+  "restraints_added": false,
+  "pairs": [
+    {
+      "id": "D1",
+      "site_a": "ICL3 center (~G225C class; Yeliseev)",
+      "site_b": "ICL3 edge / TM6 IC",
+      "discriminates": "Local ICL3 mobility vs broader IC opening",
+      "distance_A": null,
+      "status": "DESIGN_ONLY"
+    },
+    {
+      "id": "D2",
+      "site_a": "TM3 IC near R131 DRY",
+      "site_b": "TM6 IC near T246",
+      "discriminates": "Activation opening axis (Phase F/G TM3–TM6 IC)",
+      "distance_A": null,
+      "status": "DESIGN_ONLY"
+    },
+    {
+      "id": "D3",
+      "site_a": "M293 / TM7 hub corridor (N291–N295)",
+      "site_b": "TM2 A79–A83 neighborhood",
+      "discriminates": "Static hub corridor persistence vs state-route",
+      "distance_A": null,
+      "status": "DESIGN_ONLY"
+    },
+    {
+      "id": "D4",
+      "site_a": "A270C TM6 EC tip (Yeliseev)",
+      "site_b": "ECL2 / vestibule",
+      "discriminates": "EC tip mobility; Phase F/G had NO_PRIOR_PRED for A270",
+      "distance_A": null,
+      "status": "DESIGN_ONLY"
+    },
+    {
+      "id": "D5",
+      "site_a": "N291 or N295",
+      "site_b": "R302 H8",
+      "discriminates": "TM7–H8 bottleneck neighborhood (static topology)",
+      "distance_A": null,
+      "status": "DESIGN_ONLY"
+    }
+  ],
+  "governance": {
+    "invented_distances": false,
+    "P2_REOPEN": false,
+    "MD_run": false,
+    "note": "Design doc only; conditional on future own sampling"
+  },
+  "refs": [
+    "10.1016/j.bbamem.2021.183603",
+    "10.1021/acsomega.3c04681",
+    "results/network_core/ext_epr_nmr_anchors.md"
+  ]
+}

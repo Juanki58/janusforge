@@ -1,0 +1,301 @@
+{
+  "experiment": "EXTERNAL_ABROL_IC_CONTACTS",
+  "pre_reg": "docs/synthesis/EXPERIMENT_EXT_ABROL_IC_CONTACTS.md",
+  "run_utc": "2026-09-22T05:06:40Z",
+  "verdict": "EXT_ABROL_IC_EFFECTOR_PARTIAL",
+  "download": {
+    "zip_present": true,
+    "zip_sha256": "1bbace2586c238f2c003b00854271456a8612e882823ecacd616758e8db4df2c",
+    "zip_bytes": 96996645,
+    "extracted": {
+      "WT_Gi_Empty": true,
+      "WT_Gi_GDP": true,
+      "WT_BARR2_NoP": true,
+      "WT_BARR2_P": true
+    }
+  },
+  "systems": {
+    "WT_Gi_Empty": {
+      "label": "WT_Gi_Empty",
+      "pdb": "CB2R-WT-NoPhosphoC_Gi-Empty_avgframe569.pdb",
+      "path": "C:\\Users\\juanc\\projects\\janusforge\\data\\external\\abrol_heo_2024\\avg_pdbs\\CB2R-WT-NoPhosphoC_Gi-Empty_avgframe569.pdb",
+      "pdb_sha256": "3aa5869869706034e13f90d9b5ed78ddeb7d7b3a194b273c5ad77e18e7ecd7f0",
+      "n_protein_res": 1084,
+      "n_mapped_to_uniprot": 360,
+      "identity": 0.875,
+      "mapped_uni_range": [
+        1,
+        360
+      ],
+      "n_ic_mapped": 109,
+      "n_effector_res": 724,
+      "contact_method": "vdw+0.5_or_ca8",
+      "n_contacts_residue": 16,
+      "cb2_contact_residues": [
+        63,
+        131,
+        134,
+        135,
+        138,
+        142,
+        219,
+        223,
+        236,
+        238,
+        239,
+        240,
+        242,
+        302,
+        303,
+        307
+      ],
+      "cb2_contact_labels": [
+        "GLN:63",
+        "ARG:131",
+        "CYS:134",
+        "LEU:135",
+        "PRO:138",
+        "LYS:142",
+        "HSD:219",
+        "LEU:223",
+        "ARG:236",
+        "ARG:238",
+        "LEU:239",
+        "ASP:240",
+        "ARG:242",
+        "ARG:302",
+        "SER:303",
+        "ARG:307"
+      ],
+      "hubs_touching_effector": [
+        302
+      ],
+      "status": "OK"
+    },
+    "WT_Gi_GDP": {
+      "label": "WT_Gi_GDP",
+      "pdb": "CB2R-WT-NoPhosphoC_Gi-GDP_avgframe1262.pdb",
+      "path": "C:\\Users\\juanc\\projects\\janusforge\\data\\external\\abrol_heo_2024\\avg_pdbs\\CB2R-WT-NoPhosphoC_Gi-GDP_avgframe1262.pdb",
+      "pdb_sha256": "2ec2d740e45d7280d2b1a9be2a2e13e7ea81e43e870def20b01ff628e3327809",
+      "n_protein_res": 1084,
+      "n_mapped_to_uniprot": 360,
+      "identity": 0.875,
+      "mapped_uni_range": [
+        1,
+        360
+      ],
+      "n_ic_mapped": 109,
+      "n_effector_res": 724,
+      "contact_method": "vdw+0.5_or_ca8",
+      "n_contacts_residue": 13,
+      "cb2_contact_residues": [
+        131,
+        134,
+        147,
+        216,
+        219,
+        220,
+        222,
+        229,
+        230,
+        231,
+        232,
+        239,
+        304
+      ],
+      "cb2_contact_labels": [
+        "ARG:131",
+        "CYS:134",
+        "ARG:147",
+        "ALA:216",
+        "HSD:219",
+        "VAL:220",
+        "SER:222",
+        "ARG:229",
+        "GLN:230",
+        "VAL:231",
+        "PRO:232",
+        "LEU:239",
+        "GLY:304"
+      ],
+      "hubs_touching_effector": [],
+      "status": "OK"
+    },
+    "WT_BARR2_NoP": {
+      "label": "WT_BARR2_NoP",
+      "pdb": "CB2R-WT-NoPhosphoC_BARR2_avgframe676.pdb",
+      "path": "C:\\Users\\juanc\\projects\\janusforge\\data\\external\\abrol_heo_2024\\avg_pdbs\\CB2R-WT-NoPhosphoC_BARR2_avgframe676.pdb",
+      "pdb_sha256": "bde509bb9a5829379ff5c208ab55e43c30a16f1b9e435a002ddbdc075be44c28",
+      "n_protein_res": 667,
+      "n_mapped_to_uniprot": 319,
+      "identity": 0.9655172413793104,
+      "mapped_uni_range": [
+        1,
+        319
+      ],
+      "n_ic_mapped": 108,
+      "n_effector_res": 348,
+      "contact_method": "vdw+0.5_or_ca8",
+      "n_contacts_residue": 21,
+      "cb2_contact_residues": [
+        67,
+        131,
+        134,
+        136,
+        137,
+        138,
+        139,
+        140,
+        142,
+        143,
+        219,
+        222,
+        228,
+        229,
+        231,
+        239,
+        243,
+        246,
+        302,
+        304,
+        305
+      ],
+      "cb2_contact_labels": [
+        "LYS:67",
+        "ARG:131",
+        "CYS:134",
+        "ARG:136",
+        "TYR:137",
+        "PRO:138",
+        "PRO:139",
+        "SER:140",
+        "LYS:142",
+        "ALA:143",
+        "HSD:219",
+        "SER:222",
+        "ASP:228",
+        "ARG:229",
+        "VAL:231",
+        "LEU:239",
+        "LEU:243",
+        "THR:246",
+        "ARG:302",
+        "GLY:304",
+        "GLU:305"
+      ],
+      "hubs_touching_effector": [
+        302
+      ],
+      "status": "OK"
+    },
+    "WT_BARR2_P": {
+      "label": "WT_BARR2_P",
+      "pdb": "CB2R-WT-PhosphoC_BARR2_avgframe29.pdb",
+      "path": "C:\\Users\\juanc\\projects\\janusforge\\data\\external\\abrol_heo_2024\\avg_pdbs\\CB2R-WT-PhosphoC_BARR2_avgframe29.pdb",
+      "pdb_sha256": "6a6b9104c7ae1d09f57fb91775ea5182f634fa39d22d1f520d619a9903fcf864",
+      "n_protein_res": 763,
+      "n_mapped_to_uniprot": 360,
+      "identity": 0.9694444444444444,
+      "mapped_uni_range": [
+        1,
+        360
+      ],
+      "n_ic_mapped": 109,
+      "n_effector_res": 403,
+      "contact_method": "vdw+0.5_or_ca8",
+      "n_contacts_residue": 21,
+      "cb2_contact_residues": [
+        67,
+        69,
+        70,
+        131,
+        134,
+        135,
+        138,
+        139,
+        142,
+        219,
+        220,
+        223,
+        229,
+        232,
+        233,
+        236,
+        238,
+        243,
+        246,
+        302,
+        303
+      ],
+      "cb2_contact_labels": [
+        "LYS:67",
+        "SER:69",
+        "TYR:70",
+        "ARG:131",
+        "CYS:134",
+        "LEU:135",
+        "PRO:138",
+        "PRO:139",
+        "LYS:142",
+        "HSD:219",
+        "VAL:220",
+        "LEU:223",
+        "ARG:229",
+        "PRO:232",
+        "GLY:233",
+        "ARG:236",
+        "ARG:238",
+        "LEU:243",
+        "THR:246",
+        "ARG:302",
+        "SER:303"
+      ],
+      "hubs_touching_effector": [
+        302
+      ],
+      "status": "OK"
+    }
+  },
+  "metrics": {
+    "jaccard_GiEmpty_vs_BARR2P": 0.4230769230769231,
+    "jaccard_GiEmpty_vs_GiGDP": 0.16,
+    "jaccard_BARR2NoP_vs_BARR2P": 0.3548387096774194,
+    "n_GiEmpty": 16,
+    "n_BARR2P": 21
+  },
+  "ic_windows": [
+    [
+      60,
+      80,
+      "ICL1_TM2"
+    ],
+    [
+      130,
+      150,
+      "ICL2_DRY"
+    ],
+    [
+      215,
+      250,
+      "ICL3_TM56"
+    ],
+    [
+      290,
+      320,
+      "TM7_H8"
+    ]
+  ],
+  "hubs": [
+    79,
+    83,
+    287,
+    291,
+    295,
+    302
+  ],
+  "p3_project_gate": "BLOCKED",
+  "gi_functional_claim": false,
+  "p2_reopen": false,
+  "doi_zenodo": "10.5281/zenodo.14227795",
+  "doi_paper": "10.1016/j.bbrc.2024.151100"
+}
